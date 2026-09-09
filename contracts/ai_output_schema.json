@@ -1,0 +1,95 @@
+{
+  "source_doc_id": "FIR_45_2026",
+  "entities": [
+    {
+      "id": "ent_01",
+      "canonical_name": "Vikas Kumar",
+      "aliases": ["Bicky"],
+      "type": "PERSON",
+      "char_span": [73, 95],
+      "ai_confidence": 0.94
+    },
+    {
+      "id": "ent_02",
+      "canonical_name": "Rajendra Singh",
+      "aliases": ["Raju Bhai"],
+      "type": "PERSON",
+      "char_span": [471, 499],
+      "ai_confidence": 0.96
+    },
+    {
+      "id": "ent_03",
+      "value": "9876543210",
+      "type": "PHONE",
+      "char_span": [188, 198],
+      "ai_confidence": 1.0
+    },
+    {
+      "id": "ent_04",
+      "value": "864201948201948",
+      "type": "IMEI",
+      "char_span": [207, 222],
+      "ai_confidence": 1.0
+    },
+    {
+      "id": "ent_05",
+      "value": "9123456789",
+      "type": "PHONE",
+      "char_span": [318, 328],
+      "ai_confidence": 1.0
+    },
+    {
+      "id": "ent_06",
+      "value": "359876102938475",
+      "type": "IMEI",
+      "char_span": [337, 352],
+      "ai_confidence": 1.0
+    },
+    {
+      "id": "ent_07",
+      "value": "30291827465",
+      "type": "ACCOUNT",
+      "bank": "SBI",
+      "char_span": [419, 430],
+      "ai_confidence": 1.0
+    }
+  ],
+  "relationships": [
+    {
+      "source": "ent_01",
+      "target": "ent_03",
+      "relation": "OWNS_DEVICE"
+    },
+    {
+      "source": "ent_03",
+      "target": "ent_04",
+      "relation": "ASSOCIATED_IMEI"
+    },
+    {
+      "source": "ent_02",
+      "target": "ent_05",
+      "relation": "OWNS_DEVICE"
+    },
+    {
+      "source": "ent_05",
+      "target": "ent_06",
+      "relation": "ASSOCIATED_IMEI"
+    },
+    {
+      "source": "ent_03",
+      "target": "ent_05",
+      "relation": "COMMUNICATED_WITH"
+    },
+    {
+      "source": "ent_01",
+      "target": "ent_07",
+      "relation": "TRANSFERRED_FUNDS",
+      "amount": 500000
+    },
+    {
+      "source": "ent_02",
+      "target": "ent_07",
+      "relation": "CONTROLS_ACCOUNT"
+    }
+  ]
+}

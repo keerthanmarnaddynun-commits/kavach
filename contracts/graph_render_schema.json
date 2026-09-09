@@ -1,0 +1,28 @@
+{
+  "summary": {
+    "total_nodes": 7,
+    "total_edges": 7,
+    "kingpin_node_id": "ent_02",
+    "document_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "elements": {
+    "nodes": [
+      { "data": { "id": "ent_01", "label": "Vikas Kumar (Bicky)", "type": "PERSON", "isKingpin": false, "centrality_score": 0.35, "ai_confidence": 0.94 } },
+      { "data": { "id": "ent_02", "label": "Rajendra Singh (Raju Bhai)", "type": "PERSON", "isKingpin": true, "centrality_score": 0.89, "ai_confidence": 0.96 } },
+      { "data": { "id": "ent_03", "label": "9876543210", "type": "PHONE", "isKingpin": false, "centrality_score": 0.20, "ai_confidence": 1.0 } },
+      { "data": { "id": "ent_04", "label": "IMEI: 86420...", "type": "IMEI", "isKingpin": false, "centrality_score": 0.15, "ai_confidence": 1.0 } },
+      { "data": { "id": "ent_05", "label": "9123456789", "type": "PHONE", "isKingpin": false, "centrality_score": 0.55, "ai_confidence": 1.0 } },
+      { "data": { "id": "ent_06", "label": "IMEI: 35987...", "type": "IMEI", "isKingpin": false, "centrality_score": 0.15, "ai_confidence": 1.0 } },
+      { "data": { "id": "ent_07", "label": "SBI: 30291...", "type": "ACCOUNT", "isKingpin": false, "centrality_score": 0.60, "ai_confidence": 1.0 } }
+    ],
+    "edges": [
+      { "data": { "id": "edge_01", "source": "ent_01", "target": "ent_03", "label": "OWNS_DEVICE" } },
+      { "data": { "id": "edge_02", "source": "ent_03", "target": "ent_04", "label": "ASSOCIATED_IMEI" } },
+      { "data": { "id": "edge_03", "source": "ent_02", "target": "ent_05", "label": "OWNS_DEVICE" } },
+      { "data": { "id": "edge_04", "source": "ent_05", "target": "ent_06", "label": "ASSOCIATED_IMEI" } },
+      { "data": { "id": "edge_05", "source": "ent_03", "target": "ent_05", "label": "COMMUNICATED_WITH" } },
+      { "data": { "id": "edge_06", "source": "ent_01", "target": "ent_07", "label": "TRANSFERRED_FUNDS" } },
+      { "data": { "id": "edge_07", "source": "ent_02", "target": "ent_07", "label": "CONTROLS_ACCOUNT" } }
+    ]
+  }
+}

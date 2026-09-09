@@ -1,0 +1,7 @@
+FIR No. 45/2026 ki investigation ke dauran, yeh clear ho gaya ki suspect Vikas Kumar urf Bicky Sector 
+42 se ek illegal hawala operation run kar raha tha. Arrest ke time, uske paas se ek burner mobile 
+number 9876543210 (IMEI: 864201948201948) recover hua. Telecom CDR analysis se pata chala ki 
+this device was in continuous contact with a master number 9123456789 (IMEI: 359876102938475). 
+Financial tracing show karti hai ki Vikas ne total INR 5,00,000 transfer kiye into SBI Account 
+30291827465, jo ki syndicate mastermind Rajendra Singh @ Raju Bhai dwara strictly control kiya 
+jaata hai.

@@ -1,0 +1,10 @@
+# --- Team 2: AI & Extraction ---
+torch==2.1.0
+transformers==4.35.2
+sentencepiece==0.1.99
+
+# --- Team 3: Backend & Database ---
+fastapi==0.104.1
+uvicorn==0.24.0
+neo4j==5.14.1
+python-multipart==0.0.6
