@@ -1,6 +1,6 @@
 # Crimi-Nex AI Engine: Implementation & Decision Log
 
-## [2026-09-10] - Phase 1 to 3 Core Implementation
+## [10-09-2026] - Phase 1 to 3 Core Implementation
 
 ### 1. Model Selection & Architecture
 * **Initial Proposal:** `ai4bharat/indic-bert` / `ai4bharat/IndicNER`

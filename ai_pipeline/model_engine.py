@@ -19,6 +19,11 @@ from typing import Any, Dict, List, Optional
 import torch
 from transformers import Pipeline, pipeline
 
+from dotenv import load_dotenv
+load_dotenv() 
+
+hf_token = os.environ.get("HF_TOKEN")
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -66,6 +71,7 @@ def load_pipeline(force_reload: bool = False) -> Pipeline:
 
     logger.info("Initializing NER Pipeline on CPU...")
     device = get_target_device()
+    hf_token = os.environ.get("HF_TOKEN")
 
     # Attempt 1: Try Primary Indic Model (ai4bharat/IndicNER)
     try:
@@ -76,6 +82,7 @@ def load_pipeline(force_reload: bool = False) -> Pipeline:
             tokenizer=PRIMARY_MODEL_ID,
             aggregation_strategy="simple",
             device=device,
+            token=hf_token,
         )
         logger.info(f"Successfully loaded primary model: '{PRIMARY_MODEL_ID}'.")
         return _NER_PIPELINE
