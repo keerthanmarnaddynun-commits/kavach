@@ -5,7 +5,10 @@ It compares the open-access Davlan/xlm-roberta-base-ner-hrl against the gated ai
 """
 import os
 import time
+from dotenv import load_dotenv
 from transformers import pipeline
+
+load_dotenv()
 
 # Note for Dev A: To test IndicNER, set your Hugging Face token as an environment variable in your terminal:
 # $env:HF_TOKEN="your_huggingface_token_here"
