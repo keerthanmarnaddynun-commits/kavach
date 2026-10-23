@@ -1,4 +1,4 @@
-# Crimi-Nex: Model Evaluation & Benchmark Results Log
+=# Crimi-Nex: Model Evaluation & Benchmark Results Log
 **Date:** 10-09-2026
 
 ## 1. Hinglish FIR Ablation Study (`benchmark.py`)

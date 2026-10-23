@@ -17,3 +17,4 @@ def process_text(raw_text: str) -> dict:
     final_json = compile_contract_1("FIR_45_2026", persons, objects)
     
     return final_json
+
