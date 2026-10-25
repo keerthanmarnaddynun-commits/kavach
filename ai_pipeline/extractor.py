@@ -7,7 +7,7 @@ Integrates Dev A (model_engine) and Dev B (regex_engine).
 import sys
 import os
 
-# Add the ai_pipeline directory and project root to Python module path
+# Add ai_pipeline directory and project root to Python module search path
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
