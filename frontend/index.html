@@ -7,33 +7,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { display: flex; height: 100vh; background-color: #0f172a; color: #f8fafc; }
+    body { display: flex; height: 100vh; background-color: #0b0f19; color: #f8fafc; }
     
     #sidebar {
-      width: 420px;
+      width: 400px;
       padding: 24px;
-      background: #1e293b;
+      background: #111827;
       display: flex;
       flex-direction: column;
       gap: 16px;
-      border-right: 1px solid #334155;
+      border-right: 1px solid #1f2937;
       overflow-y: auto;
     }
 
-    h2 { font-size: 1.25rem; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
-    p.subtitle { font-size: 0.85rem; color: #94a3b8; line-height: 1.4; }
+    h2 { font-size: 1.2rem; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+    p.subtitle { font-size: 0.82rem; color: #9ca3af; line-height: 1.4; }
 
     textarea {
       width: 100%;
-      height: 180px;
-      background: #0f172a;
-      border: 1px solid #334155;
+      height: 160px;
+      background: #030712;
+      border: 1px solid #374151;
       border-radius: 8px;
-      color: #e2e8f0;
+      color: #f3f4f6;
       padding: 12px;
       font-size: 0.85rem;
       resize: vertical;
+      line-height: 1.4;
     }
+    textarea:focus { outline: 1px solid #3b82f6; }
 
     button {
       background: #2563eb;
@@ -48,8 +50,8 @@
     button:hover { background: #1d4ed8; }
 
     .summary-card {
-      background: #0f172a;
-      border: 1px solid #334155;
+      background: #030712;
+      border: 1px solid #1f2937;
       border-radius: 8px;
       padding: 14px;
       display: none;
@@ -59,7 +61,7 @@
     }
     .badge {
       display: inline-block;
-      padding: 4px 8px;
+      padding: 4px 10px;
       border-radius: 4px;
       background: #dc2626;
       color: white;
@@ -67,26 +69,48 @@
       width: fit-content;
     }
 
-    #cy { flex: 1; height: 100%; background: #0b0f19; }
+    .legend {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #030712;
+      border: 1px solid #1f2937;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 0.8rem;
+    }
+    .legend-item { display: flex; align-items: center; gap: 8px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+    #cy { flex: 1; height: 100%; background: #080c14; }
   </style>
 </head>
 <body>
   <div id="sidebar">
     <h2>🛡️ Kavach Network AI</h2>
-    <p class="subtitle">Extracts entities, detects syndicated relationships, calculates centrality, and identifies the syndicate Kingpin.</p>
+    <p class="subtitle">Indic NLP extraction, graph centrality scoring, and automated syndicate Kingpin identification.</p>
     
-    <label style="font-size: 0.85rem; color: #cbd5e1; font-weight: 600;">Surveillance / FIR Input Text:</label>
+    <label style="font-size: 0.82rem; color: #9ca3af; font-weight: 600;">Surveillance / FIR Input Text:</label>
     <textarea id="inputText">Special Cell surveillance report: Vikas Kumar alias Bicky is operating a syndicate. Intercepted device 9876543210 with IMEI 864201948201948. This device was in continuous contact with a master number 9123456789 having IMEI 359876102938475. Financial tracing show karti hai ki Vikas ne total INR 5,00,000 transfer kiye into SBI Account 30291827465. Yeh account Rajendra Singh urf Raju Bhai ke dwara strictly control kiya jaata hai.</textarea>
 
     <button id="analyzeBtn" onclick="runAnalysis()">Run Network Analysis</button>
 
     <div id="summaryCard" class="summary-card">
-      <span style="color: #94a3b8;">Identified Kingpin</span>
+      <span style="color: #9ca3af;">Identified Syndicate Kingpin</span>
       <span id="kingpinBadge" class="badge">None</span>
-      <div style="display: flex; justify-content: space-between; margin-top: 8px;">
-        <span>Total Nodes: <b id="totalNodes" style="color: #38bdf8;">0</b></span>
-        <span>Total Edges: <b id="totalEdges" style="color: #38bdf8;">0</b></span>
+      <div style="display: flex; justify-content: space-between; margin-top: 6px;">
+        <span>Nodes: <b id="totalNodes" style="color: #38bdf8;">0</b></span>
+        <span>Edges: <b id="totalEdges" style="color: #38bdf8;">0</b></span>
       </div>
+    </div>
+
+    <div class="legend">
+      <span style="font-weight: 600; color: #9ca3af; margin-bottom: 2px;">Node Legend</span>
+      <div class="legend-item"><span class="dot" style="background:#ef4444; border: 2px solid #facc15;"></span> Syndicate Kingpin</div>
+      <div class="legend-item"><span class="dot" style="background:#f59e0b;"></span> Person / Operative</div>
+      <div class="legend-item"><span class="dot" style="background:#10b981;"></span> Phone / MSISDN</div>
+      <div class="legend-item"><span class="dot" style="background:#06b6d4;"></span> IMEI Device</div>
+      <div class="legend-item"><span class="dot" style="background:#8b5cf6;"></span> Bank Account</div>
     </div>
   </div>
 
@@ -108,7 +132,7 @@
           body: JSON.stringify({ text: text, doc_id: "FIR_UI_01" })
         });
 
-        if (!response.ok) throw new Error("API request failed with " + response.status);
+        if (!response.ok) throw new Error("API error: " + response.status);
         const data = await response.json();
 
         // Update Summary Card
@@ -119,7 +143,7 @@
 
         renderGraph(data.elements);
       } catch (err) {
-        alert("Error connecting to backend: " + err.message);
+        alert("Backend connection error: " + err.message);
       } finally {
         btn.innerText = "Run Network Analysis";
         btn.disabled = false;
@@ -137,63 +161,87 @@
             selector: 'node',
             style: {
               'label': 'data(label)',
-              'color': '#ffffff',
+              'color': '#f8fafc',
               'font-size': '11px',
               'text-valign': 'bottom',
               'text-margin-y': 6,
-              'background-color': '#3b82f6',
-              'width': 40,
-              'height': 40
+              'background-color': '#64748b',
+              'width': 36,
+              'height': 36,
+              'border-width': 0
             }
           },
           {
             selector: 'node[type = "PERSON"]',
-            style: { 'background-color': '#f59e0b' }
+            style: {
+              'background-color': '#f59e0b',
+              'width': 42,
+              'height': 42
+            }
           },
           {
             selector: 'node[type = "PHONE"]',
-            style: { 'background-color': '#10b981' }
+            style: {
+              'background-color': '#10b981',
+              'width': 34,
+              'height': 34
+            }
+          },
+          {
+            selector: 'node[type = "IMEI"]',
+            style: {
+              'background-color': '#06b6d4',
+              'width': 32,
+              'height': 32
+            }
           },
           {
             selector: 'node[type = "ACCOUNT"]',
-            style: { 'background-color': '#8b5cf6' }
+            style: {
+              'background-color': '#8b5cf6',
+              'width': 38,
+              'height': 38
+            }
           },
           {
-            selector: 'node[isKingpin = true]',
+            selector: 'node[?isKingpin]',
             style: {
               'background-color': '#ef4444',
               'width': 60,
               'height': 60,
               'border-width': 4,
-              'border-color': '#facc15'
+              'border-color': '#facc15',
+              'font-weight': 'bold',
+              'font-size': '13px'
             }
           },
           {
             selector: 'edge',
             style: {
               'width': 2,
-              'line-color': '#475569',
-              'target-arrow-color': '#94a3b8',
+              'line-color': '#334155',
+              'target-arrow-color': '#64748b',
               'target-arrow-shape': 'triangle',
               'curve-style': 'bezier',
               'label': 'data(label)',
               'font-size': '9px',
               'color': '#94a3b8',
               'text-rotation': 'autorotate',
-              'text-background-color': '#0f172a',
-              'text-background-opacity': 0.8
+              'text-background-color': '#0b0f19',
+              'text-background-opacity': 0.85,
+              'text-background-padding': '2px'
             }
           }
         ],
         layout: {
           name: 'cose',
-          padding: 50,
-          animate: true
+          padding: 60,
+          animate: true,
+          nodeRepulsion: 6000
         }
       });
     }
 
-    // Auto-run on initial load
     window.onload = runAnalysis;
   </script>
 </body>
