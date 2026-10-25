@@ -67,24 +67,39 @@ def compile_contract_1(doc_id: str, persons: List[Dict[str, Any]], objects: Dict
     Deduplicates persons, pairs devices with their IMEIs to preserve deterministic
     IDs (ent_01 through ent_07), and resolves all Contract 1 relationships.
     """
-    # 1. Deduplicate Persons
+    # 1. Deduplicate Persons & Merge Sub-Tokens / Overlapping Aliases
     deduped_persons = []
     for p in persons:
         name = p["canonical_name"].strip()
+        cur_name_lower = name.lower()
+        cur_aliases = [a.strip().lower() for a in p.get("aliases", [])]
         matched = False
-        for dp in deduped_persons:
-            existing_name = dp["canonical_name"].strip()
-            existing_aliases = [a.lower() for a in dp.get("aliases", [])]
 
-            if (name.lower() in existing_aliases or
-                name.lower() in existing_name.lower() or
-                existing_name.lower() in name.lower()):
+        for dp in deduped_persons:
+            existing_name_lower = dp["canonical_name"].strip().lower()
+            existing_aliases = [a.strip().lower() for a in dp.get("aliases", [])]
+
+            # Check direct name overlap
+            name_overlap = (
+                cur_name_lower in existing_name_lower or 
+                existing_name_lower in cur_name_lower
+            )
+
+            # Check alias overlap (handles tokens like 'icky' inside 'bicky', or 'raju bhai')
+            alias_overlap = (
+                any(cur_name_lower in ea or ea in cur_name_lower for ea in existing_aliases) or
+                any(any(ca in ea or ea in ca for ca in cur_aliases) for ea in existing_aliases) or
+                any(ca in existing_name_lower or existing_name_lower in ca for ca in cur_aliases)
+            )
+
+            if name_overlap or alias_overlap:
                 matched = True
-                if len(name) > len(existing_name):
+                # Keep the longer, more descriptive canonical name
+                if len(name) > len(dp["canonical_name"]):
                     dp["canonical_name"] = name
                     dp["char_span"] = p["char_span"]
                 for al in p.get("aliases", []):
-                    if al not in dp["aliases"]:
+                    if al and al not in dp["aliases"]:
                         dp["aliases"].append(al)
                 break
 
