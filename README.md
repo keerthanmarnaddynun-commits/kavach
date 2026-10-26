@@ -1,4 +1,4 @@
-# Kavach: AI-Powered Criminal Network Analysis & Extraction Engine (SIH26189)
+# Kavach: AI-Powered Criminal Network Analysis & Extraction Engine 
 
 An end-to-end NLP and Graph Intelligence system designed to extract complex criminal syndicates, entity hierarchies, and transaction topologies from unstructured, code-mixed (Hinglish/Devanagari) police First Information Reports (FIRs) and surveillance logs.
 
