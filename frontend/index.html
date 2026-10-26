@@ -132,18 +132,26 @@
           body: JSON.stringify({ text: text, doc_id: "FIR_UI_01" })
         });
 
-        if (!response.ok) throw new Error("API error: " + response.status);
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status + " " + response.statusText);
+        }
+        
         const data = await response.json();
 
         // Update Summary Card
         document.getElementById("summaryCard").style.display = "flex";
-        document.getElementById("totalNodes").innerText = data.summary.total_nodes;
-        document.getElementById("totalEdges").innerText = data.summary.total_edges;
-        document.getElementById("kingpinBadge").innerText = "👑 " + data.summary.kingpin_node_id;
+        document.getElementById("totalNodes").innerText = data.summary?.total_nodes ?? 0;
+        document.getElementById("totalEdges").innerText = data.summary?.total_edges ?? 0;
+        
+        // Find kingpin display label from nodes list
+        const kingpinId = data.summary?.kingpin_node_id;
+        const kingpinNode = data.elements?.nodes?.find(n => n.data.id === kingpinId);
+        const kingpinLabel = kingpinNode ? kingpinNode.data.label : kingpinId;
+        document.getElementById("kingpinBadge").innerText = "👑 " + (kingpinLabel || "None");
 
         renderGraph(data.elements);
       } catch (err) {
-        alert("Backend connection error: " + err.message);
+        alert("Backend connection error: " + err.message + "\n\nMake sure the FastAPI backend is running on http://127.0.0.1:8000 with CORS enabled.");
       } finally {
         btn.innerText = "Run Network Analysis";
         btn.disabled = false;
@@ -207,12 +215,12 @@
             selector: 'node[?isKingpin]',
             style: {
               'background-color': '#ef4444',
-              'width': 60,
-              'height': 60,
-              'border-width': 4,
+              'width': 58,
+              'height': 58,
+              'border-width': 3,
               'border-color': '#facc15',
               'font-weight': 'bold',
-              'font-size': '13px'
+              'font-size': '12px'
             }
           },
           {

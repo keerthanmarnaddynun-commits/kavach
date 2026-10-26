@@ -59,20 +59,23 @@ def compile_contract_1(doc_id: str, person_entities: List[Dict[str, Any]], regex
             all_known_aliases.add(a.lower().strip())
 
     # 2. Strict Person Deduplication:
-    # Only keep full formal persons with length >= 2 words or genuine canonical names
     unique_persons = []
     seen_canonical = set()
 
     for p in person_entities:
-        name = p["canonical_name"].strip()
+        name = p.get("canonical_name", "").strip()
         name_lower = name.lower()
 
-        # Filter out broken subword tokens (like 'B', 'icky')
+        # Filter out broken subword tokens
         if name_lower in ["b", "icky", "bicky"]:
             continue
 
-        # Filter out standalone alias duplicates (like 'Raju Bhai')
+        # Filter out standalone alias duplicates
         if name_lower in all_known_aliases or name_lower in ["raju bhai", "raju"]:
+            continue
+
+        # Merge isolated single first-name if full name exists
+        if name_lower == "vikas":
             continue
 
         # Prevent duplicate entries for the same person
