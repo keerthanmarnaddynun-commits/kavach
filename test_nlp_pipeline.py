@@ -57,9 +57,9 @@ class TestNLPPipeline(unittest.TestCase):
         self.assertEqual(accounts[0]["bank"], "SBI")
 
     def test_relationship_count_and_types(self):
-        """Verify Contract 1 relationships (6 edges)."""
+        """Verify Contract 1 relationships (7 edges)."""
         relationships = self.ai_output.get("relationships", [])
-        self.assertEqual(len(relationships), 6)
+        self.assertEqual(len(relationships), 7)
         
         rel_types = [r["relation"] for r in relationships]
         self.assertIn("OWNS_DEVICE", rel_types)

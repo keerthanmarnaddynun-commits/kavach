@@ -63,3 +63,4 @@ Davlan/xlm-roberta-base-ner-hrl     Total Latency: 0.2615s (Avg: 0.0436s/sentenc
 ai4bharat/IndicNER                  Total Latency: 0.3717s (Avg: 0.0619s/sentence)
 =========================================================================================================
 ```
+

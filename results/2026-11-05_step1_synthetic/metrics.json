@@ -1,0 +1,104 @@
+{
+  "row_counts": {
+    "cdr_csv": 7469,
+    "bank_csv": 1482
+  },
+  "entity_counts": {
+    "people": 21,
+    "phones": 49,
+    "accounts": 19,
+    "imeis": 48
+  },
+  "top_5_phones": [
+    {
+      "rank": 1,
+      "phone": "7394210470",
+      "count": 1402,
+      "role": "DECOY_CIVILIAN",
+      "owner_name": "Harish Chawla (Royal Pizza)",
+      "distinct_contacts": 23
+    },
+    {
+      "rank": 2,
+      "phone": "9705466889",
+      "count": 1148,
+      "role": "LIEUTENANT",
+      "owner_name": "Rashid Khan",
+      "distinct_contacts": 12
+    },
+    {
+      "rank": 3,
+      "phone": "6727889579",
+      "count": 1110,
+      "role": "LIEUTENANT",
+      "owner_name": "Farooq Ahmed",
+      "distinct_contacts": 13
+    },
+    {
+      "rank": 4,
+      "phone": "8192832764",
+      "count": 943,
+      "role": "LIEUTENANT",
+      "owner_name": "Devendra Yadav",
+      "distinct_contacts": 11
+    },
+    {
+      "rank": 5,
+      "phone": "8303911718",
+      "count": 908,
+      "role": "LIEUTENANT",
+      "owner_name": "Sanjay Mehra",
+      "distinct_contacts": 10
+    }
+  ],
+  "kingpins": [
+    {
+      "person_id": "PER_A_KP_01",
+      "name": "Rajendra Singh",
+      "phone": "7389083863",
+      "count": 12,
+      "rank": 48,
+      "total_phones": 49,
+      "distinct_contacts": 2
+    },
+    {
+      "person_id": "PER_B_KP_01",
+      "name": "Mukhtar Ansari",
+      "phone": "8680443699",
+      "count": 12,
+      "rank": 49,
+      "total_phones": 49,
+      "distinct_contacts": 2
+    }
+  ],
+  "pizza_shop": {
+    "phone": "7394210470",
+    "name": "Harish Chawla (Royal Pizza)",
+    "role": "DECOY_CIVILIAN",
+    "rank": 1,
+    "count": 1402,
+    "distinct_contacts": 23,
+    "total_phones": 49
+  },
+  "file_hashes": {
+    "run1": {
+      "truth_json": "3d4f26976a62c4920311ef52bf320d9fa3acb204076dec5c7880d02123a8fa96",
+      "cdr_csv": "6bccbd88c50b1b671eb1da0a963e9c20d001d40c68f6fb1ad9048db827a2dc80",
+      "bank_csv": "77ef80ba091133793089fa6883ce6333000c0b8362fc066afc58b6a9215801e3"
+    },
+    "run2": {
+      "truth_json": "3d4f26976a62c4920311ef52bf320d9fa3acb204076dec5c7880d02123a8fa96",
+      "cdr_csv": "6bccbd88c50b1b671eb1da0a963e9c20d001d40c68f6fb1ad9048db827a2dc80",
+      "bank_csv": "77ef80ba091133793089fa6883ce6333000c0b8362fc066afc58b6a9215801e3"
+    },
+    "matches": {
+      "truth_json": true,
+      "cdr_csv": true,
+      "bank_csv": true,
+      "all_match": true
+    }
+  },
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "python_version_short": "3.13.7",
+  "generator_script_sha256": "1a9df2680772d7b72a3ae0988f2b894007aeb545266864bf2bcffe6b8ad19465"
+}
