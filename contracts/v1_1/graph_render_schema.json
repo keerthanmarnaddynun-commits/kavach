@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GraphRenderContractV1_1",
+  "type": "object",
+  "properties": {
+    "summary": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.1"
+        },
+        "total_nodes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_edges": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kingpin_node_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "document_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        }
+      },
+      "required": [
+        "schema_version",
+        "total_nodes",
+        "total_edges",
+        "kingpin_node_id",
+        "document_hash"
+      ],
+      "additionalProperties": false
+    },
+    "elements": {
+      "type": "object",
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "PERSON",
+                      "PHONE",
+                      "IMEI",
+                      "ACCOUNT",
+                      "AADHAAR",
+                      "PAN",
+                      "UPI",
+                      "VEHICLE"
+                    ]
+                  },
+                  "isKingpin": {
+                    "type": "boolean"
+                  },
+                  "centrality_score": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                  },
+                  "ai_confidence": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "SUSPECT",
+                      "OFFICER",
+                      "COMPLAINANT",
+                      "WITNESS"
+                    ]
+                  },
+                  "community": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "scores": {
+                    "type": "object",
+                    "properties": {
+                      "degree": {
+                        "type": "number"
+                      },
+                      "betweenness": {
+                        "type": "number"
+                      },
+                      "eigenvector": {
+                        "type": "number"
+                      },
+                      "financial": {
+                        "type": "number"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "id",
+                  "label",
+                  "type",
+                  "isKingpin",
+                  "centrality_score",
+                  "ai_confidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "data"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string",
+                    "enum": [
+                      "OWNS_DEVICE",
+                      "ASSOCIATED_IMEI",
+                      "COMMUNICATED_WITH",
+                      "CONTROLS_ACCOUNT",
+                      "TRANSFERRED_FUNDS"
+                    ]
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "weight": {
+                    "type": "number"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "evidence_char_span": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "required": [
+                  "id",
+                  "source",
+                  "target",
+                  "label"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "data"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "nodes",
+        "edges"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "summary",
+    "elements"
+  ],
+  "additionalProperties": false
+}
+

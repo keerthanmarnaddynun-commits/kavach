@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIOutputContractV1_1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "source_doc_id": {
+      "type": "string"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ent_\\d{2,}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "PERSON",
+              "PHONE",
+              "IMEI",
+              "ACCOUNT",
+              "AADHAAR",
+              "PAN",
+              "UPI",
+              "VEHICLE"
+            ]
+          },
+          "canonical_name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "father_name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "SUSPECT",
+              "OFFICER",
+              "COMPLAINANT",
+              "WITNESS"
+            ]
+          },
+          "bank": {
+            "type": "string"
+          },
+          "char_span": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "mentions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "char_span": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "surface": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "NAME",
+                    "ALIAS",
+                    "FATHER",
+                    "VALUE"
+                  ]
+                }
+              },
+              "required": [
+                "char_span",
+                "surface",
+                "kind"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "ai_confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "confidence_breakdown": {
+            "type": "object",
+            "properties": {
+              "model": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 1.0
+              },
+              "validator": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 1.0
+              },
+              "context": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 1.0
+              }
+            },
+            "additionalProperties": false
+          },
+          "flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "char_span",
+          "mentions",
+          "ai_confidence"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "PERSON"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "canonical_name"
+              ]
+            },
+            "else": {
+              "required": [
+                "value"
+              ],
+              "not": {
+                "required": [
+                  "role"
+                ]
+              }
+            }
+          }
+        ],
+        "additionalProperties": false
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string",
+            "enum": [
+              "OWNS_DEVICE",
+              "ASSOCIATED_IMEI",
+              "COMMUNICATED_WITH",
+              "CONTROLS_ACCOUNT",
+              "TRANSFERRED_FUNDS"
+            ]
+          },
+          "amount": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "evidence_char_span": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "required": [
+          "source",
+          "target",
+          "relation"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_doc_id",
+    "entities",
+    "relationships"
+  ],
+  "additionalProperties": false
+}
+

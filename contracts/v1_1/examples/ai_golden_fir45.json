@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.1",
+  "source_doc_id": "FIR_45_2026",
+  "entities": [
+    {
+      "id": "ent_01",
+      "canonical_name": "Vikas Kumar",
+      "aliases": [
+        "Bicky"
+      ],
+      "type": "PERSON",
+      "role": "SUSPECT",
+      "char_span": [
+        73,
+        84
+      ],
+      "mentions": [
+        {
+          "char_span": [
+            73,
+            84
+          ],
+          "surface": "Vikas Kumar",
+          "kind": "NAME"
+        },
+        {
+          "char_span": [
+            89,
+            94
+          ],
+          "surface": "Bicky",
+          "kind": "ALIAS"
+        }
+      ],
+      "ai_confidence": 0.94
+    },
+    {
+      "id": "ent_02",
+      "canonical_name": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ],
+      "type": "PERSON",
+      "role": "SUSPECT",
+      "char_span": [
+        528,
+        542
+      ],
+      "mentions": [
+        {
+          "char_span": [
+            528,
+            542
+          ],
+          "surface": "Rajendra Singh",
+          "kind": "NAME"
+        },
+        {
+          "char_span": [
+            545,
+            554
+          ],
+          "surface": "Raju Bhai",
+          "kind": "ALIAS"
+        }
+      ],
+      "ai_confidence": 0.96
+    },
+    {
+      "id": "ent_03",
+      "value": "9876543210",
+      "type": "PHONE",
+      "char_span": [
+        209,
+        219
+      ],
+      "mentions": [
+        {
+          "char_span": [
+            209,
+            219
+          ],
+          "surface": "9876543210",
+          "kind": "VALUE"
+        }
+      ],
+      "ai_confidence": 1.0
+    },
+    {
+      "id": "ent_04",
+      "value": "864201948201948",
+      "type": "IMEI",
+      "char_span": [
+        227,
+        242
+      ],
+      "mentions": [
+        {
+          "char_span": [
+            227,
+            242
+          ],
+          "surface": "864201948201948",
+          "kind": "VALUE"
+        }
+      ],
+      "ai_confidence": 1.0
+    },
+    {
+      "id": "ent_05",
+      "value": "9123456789",
+      "type": "PHONE",
+      "char_span": [
+        355,
+        365
+      ],
+      "mentions": [
+        {
+          "char_span": [
+            355,
+            365
+          ],
+          "surface": "9123456789",
+          "kind": "VALUE"
+        }
+      ],
+      "ai_confidence": 1.0
+    },
+    {
+      "id": "ent_06",
+      "value": "359876102938475",
+      "type": "IMEI",
+      "char_span": [
+        373,
+        388
+      ],
+      "mentions": [
+        {
+          "char_span": [
+            373,
+            388
+          ],
+          "surface": "359876102938475",
+          "kind": "VALUE"
+        }
+      ],
+      "ai_confidence": 1.0
+    },
+    {
+      "id": "ent_07",
+      "value": "30291827465",
+      "type": "ACCOUNT",
+      "bank": "SBI",
+      "char_span": [
+        488,
+        499
+      ],
+      "mentions": [
+        {
+          "char_span": [
+            488,
+            499
+          ],
+          "surface": "30291827465",
+          "kind": "VALUE"
+        }
+      ],
+      "ai_confidence": 1.0
+    }
+  ],
+  "relationships": [
+    {
+      "source": "ent_01",
+      "target": "ent_03",
+      "relation": "OWNS_DEVICE"
+    },
+    {
+      "source": "ent_03",
+      "target": "ent_04",
+      "relation": "ASSOCIATED_IMEI"
+    },
+    {
+      "source": "ent_02",
+      "target": "ent_05",
+      "relation": "OWNS_DEVICE"
+    },
+    {
+      "source": "ent_05",
+      "target": "ent_06",
+      "relation": "ASSOCIATED_IMEI"
+    },
+    {
+      "source": "ent_03",
+      "target": "ent_05",
+      "relation": "COMMUNICATED_WITH"
+    },
+    {
+      "source": "ent_01",
+      "target": "ent_07",
+      "relation": "TRANSFERRED_FUNDS",
+      "amount": 500000.0
+    },
+    {
+      "source": "ent_02",
+      "target": "ent_07",
+      "relation": "CONTROLS_ACCOUNT"
+    }
+  ]
+}
+
