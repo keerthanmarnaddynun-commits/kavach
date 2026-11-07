@@ -524,6 +524,7 @@ def test_embed_valid_values_property():
         ("Recovered item was {} as documented.", "as documented."),
     ]
 
+    chk = generate_verhoeff_check_digit("23456789012")
     items_to_test = [
         (find_phones, "+91-98765-43210"),
         (find_imeis, "490154203237518"),
@@ -533,6 +534,7 @@ def test_embed_valid_values_property():
         (find_vehicle_plates, "DL-8C-AB-5198"),
         (find_amounts, "Rs. 1,57,400/-"),
         (find_accounts, "Account 30291827465"),
+        (find_aadhaar, f"Aadhaar 23456789012{chk}"),
     ]
 
     for finder_fn, val in items_to_test:
@@ -540,8 +542,8 @@ def test_embed_valid_values_property():
             prefix = prefix_tmpl.split("{}")[0]
             sentence = f"{prefix}{val} {suffix}"
             expected_start = len(prefix)
-            # For account, find_accounts spans only the digits
-            if finder_fn == find_accounts:
+            # For account and aadhaar, finders span only the digits
+            if finder_fn in (find_accounts, find_aadhaar):
                 digits_only = val.split()[-1]
                 expected_start = sentence.find(digits_only)
                 expected_end = expected_start + len(digits_only)
