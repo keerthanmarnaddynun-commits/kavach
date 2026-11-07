@@ -3,6 +3,7 @@ torch==2.1.0
 transformers==4.35.2
 sentencepiece==0.1.99
 python-dotenv==1.0.0
+numpy==1.26.4
 
 # --- Team 3: Backend & Database ---
 fastapi==0.104.1
@@ -13,4 +14,5 @@ networkx==3.2.1
 
 # --- Tests: contracts ---
 jsonschema==4.20.0
+pytest==9.0.2
 
