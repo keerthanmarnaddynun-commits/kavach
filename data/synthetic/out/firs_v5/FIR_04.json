@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_04",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_04",
+    "T_IMEI_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rashid Khan",
+      "surface": "Rashid Khan",
+      "start": 214,
+      "end": 225,
+      "char_span": [
+        214,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": [
+        "Shooter"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_LT_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Shooter",
+      "surface": "Shooter",
+      "start": 230,
+      "end": 237,
+      "char_span": [
+        230,
+        237
+      ],
+      "role": null,
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Asif Khan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Asif Khan",
+      "surface": "Asif Khan",
+      "start": 247,
+      "end": 256,
+      "char_span": [
+        247,
+        256
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Asif Khan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Amit Tomar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Amit Tomar",
+      "surface": "Amit Tomar",
+      "start": 313,
+      "end": 323,
+      "char_span": [
+        313,
+        323
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Amit Tomar",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 25,000/-",
+      "surface": "Rs. 25,000/-",
+      "start": 448,
+      "end": 460,
+      "char_span": [
+        448,
+        460
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_B_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rashid Khan",
+      "surface": "Rashid Khan",
+      "start": 548,
+      "end": 559,
+      "char_span": [
+        548,
+        559
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": [
+        "Shooter"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "9165726284",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9165726284",
+      "surface": "9165726284",
+      "start": 597,
+      "end": 607,
+      "char_span": [
+        597,
+        607
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9165726284",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "9165726284",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9165726284",
+      "surface": "9165726284",
+      "start": 639,
+      "end": 649,
+      "char_span": [
+        639,
+        649
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9165726284",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "977694531473790",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "977694531473790",
+      "surface": "977694531473790",
+      "start": 667,
+      "end": 682,
+      "char_span": [
+        667,
+        682
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "977694531473790",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_LT_02",
+      "target_key": "9165726284",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        522,
+        698
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9165726284",
+      "target_key": "977694531473790",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        522,
+        698
+      ]
+    }
+  ]
+}

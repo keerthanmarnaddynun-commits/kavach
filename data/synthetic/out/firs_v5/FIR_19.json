@@ -1,0 +1,387 @@
+{
+  "source_doc_id": "FIR_19",
+  "split": "train",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_02",
+    "T_IMEI_HG_04",
+    "T_CALL_HG_02",
+    "T_TXNA_HG_03",
+    "T_CTRL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Salman Mirza",
+      "surface": "Salman Mirza",
+      "start": 214,
+      "end": 226,
+      "char_span": [
+        214,
+        226
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "Sallu"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Sallu",
+      "surface": "Sallu",
+      "start": 231,
+      "end": 236,
+      "char_span": [
+        231,
+        236
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Feroz Mirza",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Feroz Mirza",
+      "surface": "Feroz Mirza",
+      "start": 246,
+      "end": 257,
+      "char_span": [
+        246,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Feroz Mirza",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-9773782639",
+      "surface": "+91-9773782639",
+      "start": 346,
+      "end": 360,
+      "char_span": [
+        346,
+        360
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7963605766",
+      "surface": "7963605766",
+      "start": 378,
+      "end": 388,
+      "char_span": [
+        378,
+        388
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "COMPLAINANT:Suresh Bansal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Bansal",
+      "surface": "Suresh Bansal",
+      "start": 446,
+      "end": 459,
+      "char_span": [
+        446,
+        459
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Suresh Bansal",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "53839750530",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "53839750530",
+      "surface": "53839750530",
+      "start": 582,
+      "end": 593,
+      "char_span": [
+        582,
+        593
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "53839750530",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "AMOUNT:14593.60",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "14,593.60",
+      "surface": "14,593.60",
+      "start": 604,
+      "end": 613,
+      "char_span": [
+        604,
+        613
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 14593.6,
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "35273976748813",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "35273976748813",
+      "surface": "35273976748813",
+      "start": 632,
+      "end": 646,
+      "char_span": [
+        632,
+        646
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "35273976748813",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "35273976748813",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "35273976748813",
+      "surface": "35273976748813",
+      "start": 693,
+      "end": 707,
+      "char_span": [
+        693,
+        707
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "35273976748813",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 721,
+      "end": 735,
+      "char_span": [
+        721,
+        735
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    },
+    {
+      "id": "E12",
+      "entity_key": "AMOUNT:18500.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "18,500",
+      "surface": "18,500",
+      "start": 819,
+      "end": 825,
+      "char_span": [
+        819,
+        825
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 18500.0,
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Salman Mirza",
+      "surface": "Salman Mirza",
+      "start": 895,
+      "end": 907,
+      "char_span": [
+        895,
+        907
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "Sallu"
+      ]
+    },
+    {
+      "id": "E14",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-9773782639",
+      "surface": "+91-9773782639",
+      "start": 949,
+      "end": 963,
+      "char_span": [
+        949,
+        963
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-9773782639",
+      "surface": "+91-9773782639",
+      "start": 1020,
+      "end": 1034,
+      "char_span": [
+        1020,
+        1034
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "921465840449970",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "921465840449970",
+      "surface": "921465840449970",
+      "start": 1050,
+      "end": 1065,
+      "char_span": [
+        1050,
+        1065
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "921465840449970",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9773782639",
+      "target_key": "7963605766",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        301,
+        428
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "53839750530",
+      "target_key": "35273976748813",
+      "source_mention": "E7",
+      "target_mention": "E9",
+      "source": "E7",
+      "target": "E9",
+      "amount": 14593.6,
+      "evidence_char_span": [
+        533,
+        767
+      ],
+      "txn_id": "TXN000457"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_KP_01",
+      "target_key": "35273976748813",
+      "source_mention": "E11",
+      "target_mention": "E10",
+      "source": "E11",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        533,
+        767
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_05",
+      "target_key": "9773782639",
+      "source_mention": "E13",
+      "target_mention": "E14",
+      "source": "E13",
+      "target": "E14",
+      "amount": null,
+      "evidence_char_span": [
+        887,
+        1082
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9773782639",
+      "target_key": "921465840449970",
+      "source_mention": "E15",
+      "target_mention": "E16",
+      "source": "E15",
+      "target": "E16",
+      "amount": null,
+      "evidence_char_span": [
+        887,
+        1082
+      ]
+    }
+  ]
+}

@@ -1,0 +1,483 @@
+{
+  "source_doc_id": "FIR_94",
+  "split": "test",
+  "fir_type": "MULTI_SUSPECT",
+  "template_ids": [
+    "T_OWNS_HI_05",
+    "T_IMEI_HI_06",
+    "T_CALL_HI_03",
+    "T_TXN_HI_02",
+    "T_CTRL_HI_04"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सलमान मिर्ज़ा",
+      "surface": "सलमान मिर्ज़ा",
+      "start": 200,
+      "end": 213,
+      "char_span": [
+        200,
+        213
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "सल्लू"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "सल्लू",
+      "surface": "सल्लू",
+      "start": 219,
+      "end": 224,
+      "char_span": [
+        219,
+        224
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Feroz Mirza",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "फिरोज़ मिर्ज़ा",
+      "surface": "फिरोज़ मिर्ज़ा",
+      "start": 236,
+      "end": 250,
+      "char_span": [
+        236,
+        250
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Feroz Mirza",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सलमान मिर्ज़ा",
+      "surface": "सलमान मिर्ज़ा",
+      "start": 330,
+      "end": 343,
+      "char_span": [
+        330,
+        343
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "सल्लू"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:145300.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 1,45,300.00",
+      "surface": "INR 1,45,300.00",
+      "start": 359,
+      "end": 374,
+      "char_span": [
+        359,
+        374
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 145300.0,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7909670546688937",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "7909670546688937",
+      "surface": "7909670546688937",
+      "start": 388,
+      "end": 404,
+      "char_span": [
+        388,
+        404
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7909670546688937",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "7909670546688937",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "7909670546688937",
+      "surface": "7909670546688937",
+      "start": 459,
+      "end": 475,
+      "char_span": [
+        459,
+        475
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7909670546688937",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "मुख्तार अंसारी",
+      "surface": "मुख्तार अंसारी",
+      "start": 492,
+      "end": 506,
+      "char_span": [
+        492,
+        506
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "बड़े मियां"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "WITNESS:Mohan Lal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "मोहन लाल",
+      "surface": "मोहन लाल",
+      "start": 540,
+      "end": 548,
+      "char_span": [
+        540,
+        548
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Mohan Lal",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "AMOUNT:500000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "5 लाख",
+      "surface": "5 लाख",
+      "start": 650,
+      "end": 655,
+      "char_span": [
+        650,
+        655
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 500000.0,
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "PER_A_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "विकास शर्मा",
+      "surface": "विकास शर्मा",
+      "start": 735,
+      "end": 746,
+      "char_span": [
+        735,
+        746
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": [
+        "विक्की",
+        "विकू",
+        "कल्लू"
+      ]
+    },
+    {
+      "id": "E12",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "विक्की",
+      "surface": "विक्की",
+      "start": 752,
+      "end": 758,
+      "char_span": [
+        752,
+        758
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "विकू",
+      "surface": "विकू",
+      "start": 764,
+      "end": 768,
+      "char_span": [
+        764,
+        768
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "कल्लू",
+      "surface": "कल्लू",
+      "start": 774,
+      "end": 779,
+      "char_span": [
+        774,
+        779
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "FATHER:Harish Sharma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "हरीश शर्मा",
+      "surface": "हरीश शर्मा",
+      "start": 791,
+      "end": 801,
+      "char_span": [
+        791,
+        801
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Harish Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "97737 82639",
+      "surface": "97737 82639",
+      "start": 859,
+      "end": 870,
+      "char_span": [
+        859,
+        870
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E17",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7963605766",
+      "surface": "7963605766",
+      "start": 885,
+      "end": 895,
+      "char_span": [
+        885,
+        895
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    },
+    {
+      "id": "E18",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सलमान मिर्ज़ा",
+      "surface": "सलमान मिर्ज़ा",
+      "start": 950,
+      "end": 963,
+      "char_span": [
+        950,
+        963
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "सल्लू"
+      ]
+    },
+    {
+      "id": "E19",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "97737 82639",
+      "surface": "97737 82639",
+      "start": 998,
+      "end": 1009,
+      "char_span": [
+        998,
+        1009
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E20",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "97737 82639",
+      "surface": "97737 82639",
+      "start": 1044,
+      "end": 1055,
+      "char_span": [
+        1044,
+        1055
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E21",
+      "entity_key": "921465840449970",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "921465840449970",
+      "surface": "921465840449970",
+      "start": 1070,
+      "end": 1085,
+      "char_span": [
+        1070,
+        1085
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "921465840449970",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_B_OP_05",
+      "target_key": "7909670546688937",
+      "source_mention": "E4",
+      "target_mention": "E6",
+      "source": "E4",
+      "target": "E6",
+      "amount": 145300.0,
+      "evidence_char_span": [
+        293,
+        525
+      ],
+      "txn_id": "TXN000140"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_KP_01",
+      "target_key": "7909670546688937",
+      "source_mention": "E8",
+      "target_mention": "E7",
+      "source": "E8",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        293,
+        525
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9773782639",
+      "target_key": "7963605766",
+      "source_mention": "E16",
+      "target_mention": "E17",
+      "source": "E16",
+      "target": "E17",
+      "amount": null,
+      "evidence_char_span": [
+        829,
+        913
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_05",
+      "target_key": "9773782639",
+      "source_mention": "E18",
+      "target_mention": "E19",
+      "source": "E18",
+      "target": "E19",
+      "amount": null,
+      "evidence_char_span": [
+        914,
+        1107
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9773782639",
+      "target_key": "921465840449970",
+      "source_mention": "E20",
+      "target_mention": "E21",
+      "source": "E20",
+      "target": "E21",
+      "amount": null,
+      "evidence_char_span": [
+        914,
+        1107
+      ]
+    }
+  ]
+}

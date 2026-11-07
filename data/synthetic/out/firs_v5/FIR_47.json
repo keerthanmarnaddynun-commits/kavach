@@ -1,0 +1,445 @@
+{
+  "source_doc_id": "FIR_47",
+  "split": "train",
+  "fir_type": "MULTI_SUSPECT",
+  "template_ids": [
+    "T_OWNS_HI_04",
+    "T_IMEI_HI_02",
+    "T_CALL_HI_01",
+    "T_TXN_HI_04",
+    "T_CTRL_HI_01"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "दीपक चौहान",
+      "surface": "दीपक चौहान",
+      "start": 187,
+      "end": 197,
+      "char_span": [
+        187,
+        197
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "दीपू"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "दीपू",
+      "surface": "दीपू",
+      "start": 203,
+      "end": 207,
+      "char_span": [
+        203,
+        207
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Sardar Chauhan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सरदार चौहान",
+      "surface": "सरदार चौहान",
+      "start": 219,
+      "end": 230,
+      "char_span": [
+        219,
+        230
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Sardar Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "8414586850",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-8414586850",
+      "surface": "+91-8414586850",
+      "start": 319,
+      "end": 333,
+      "char_span": [
+        319,
+        333
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8414586850",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "6647468723",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6647468723",
+      "surface": "6647468723",
+      "start": 349,
+      "end": 359,
+      "char_span": [
+        349,
+        359
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6647468723",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_A_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "संजय मेहरा",
+      "surface": "संजय मेहरा",
+      "start": 407,
+      "end": 417,
+      "char_span": [
+        407,
+        417
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_LT_02",
+      "value": "Sanjay Mehra",
+      "aliases": [
+        "संजू"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "PER_A_LT_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "संजू",
+      "surface": "संजू",
+      "start": 423,
+      "end": 427,
+      "char_span": [
+        423,
+        427
+      ],
+      "role": null,
+      "truth_id": "PER_A_LT_02",
+      "value": "Sanjay Mehra",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "FATHER:Prem Mehra",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "प्रेम मेहरा",
+      "surface": "प्रेम मेहरा",
+      "start": 439,
+      "end": 450,
+      "char_span": [
+        439,
+        450
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Prem Mehra",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "AMOUNT:15000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "15,000",
+      "surface": "15,000",
+      "start": 527,
+      "end": 533,
+      "char_span": [
+        527,
+        533
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 15000.0,
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "दीपक चौहान",
+      "surface": "दीपक चौहान",
+      "start": 618,
+      "end": 628,
+      "char_span": [
+        618,
+        628
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "दीपू"
+      ]
+    },
+    {
+      "id": "E11",
+      "entity_key": "8414586850",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-8414586850",
+      "surface": "+91-8414586850",
+      "start": 654,
+      "end": 668,
+      "char_span": [
+        654,
+        668
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8414586850",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "8414586850",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-8414586850",
+      "surface": "+91-8414586850",
+      "start": 715,
+      "end": 729,
+      "char_span": [
+        715,
+        729
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8414586850",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "242940196556984",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "242940196556984",
+      "surface": "242940196556984",
+      "start": 745,
+      "end": 760,
+      "char_span": [
+        745,
+        760
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "242940196556984",
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "दीपक चौहान",
+      "surface": "दीपक चौहान",
+      "start": 820,
+      "end": 830,
+      "char_span": [
+        820,
+        830
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "दीपू"
+      ]
+    },
+    {
+      "id": "E15",
+      "entity_key": "AMOUNT:79500.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "79,500",
+      "surface": "79,500",
+      "start": 855,
+      "end": 861,
+      "char_span": [
+        855,
+        861
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 79500.0,
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "693103413164",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "693103413164",
+      "surface": "693103413164",
+      "start": 867,
+      "end": 879,
+      "char_span": [
+        867,
+        879
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "693103413164",
+      "aliases": []
+    },
+    {
+      "id": "E17",
+      "entity_key": "693103413164",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "693103413164",
+      "surface": "693103413164",
+      "start": 919,
+      "end": 931,
+      "char_span": [
+        919,
+        931
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "693103413164",
+      "aliases": []
+    },
+    {
+      "id": "E18",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "राजेंद्र सिंह",
+      "surface": "राजेंद्र सिंह",
+      "start": 948,
+      "end": 961,
+      "char_span": [
+        948,
+        961
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "राजू भाई"
+      ]
+    },
+    {
+      "id": "E19",
+      "entity_key": "WITNESS:Kishore Sen",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "किशोर सेन",
+      "surface": "किशोर सेन",
+      "start": 1005,
+      "end": 1014,
+      "char_span": [
+        1005,
+        1014
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Kishore Sen",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "8414586850",
+      "target_key": "6647468723",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        272,
+        382
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_05",
+      "target_key": "8414586850",
+      "source_mention": "E10",
+      "target_mention": "E11",
+      "source": "E10",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        589,
+        778
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8414586850",
+      "target_key": "242940196556984",
+      "source_mention": "E12",
+      "target_mention": "E13",
+      "source": "E12",
+      "target": "E13",
+      "amount": null,
+      "evidence_char_span": [
+        589,
+        778
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_A_OP_05",
+      "target_key": "693103413164",
+      "source_mention": "E14",
+      "target_mention": "E16",
+      "source": "E14",
+      "target": "E16",
+      "amount": 79500.0,
+      "evidence_char_span": [
+        779,
+        990
+      ],
+      "txn_id": "TXN000011"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "693103413164",
+      "source_mention": "E18",
+      "target_mention": "E17",
+      "source": "E18",
+      "target": "E17",
+      "amount": null,
+      "evidence_char_span": [
+        779,
+        990
+      ]
+    }
+  ]
+}

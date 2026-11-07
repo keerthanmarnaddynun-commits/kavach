@@ -1,0 +1,445 @@
+{
+  "source_doc_id": "FIR_17",
+  "split": "train",
+  "fir_type": "MULTI_SUSPECT",
+  "template_ids": [
+    "T_OWNS_HG_02",
+    "T_IMEI_HG_04",
+    "T_CALL_HG_04",
+    "T_TXN_HG_02",
+    "T_CTRL_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 214,
+      "end": 226,
+      "char_span": [
+        214,
+        226
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Biku",
+      "surface": "Biku",
+      "start": 231,
+      "end": 235,
+      "char_span": [
+        231,
+        235
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Girish Sharma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Girish Sharma",
+      "surface": "Girish Sharma",
+      "start": 245,
+      "end": 258,
+      "char_span": [
+        245,
+        258
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Girish Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 322,
+      "end": 334,
+      "char_span": [
+        322,
+        334
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_B_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Biku",
+      "surface": "Biku",
+      "start": 339,
+      "end": 343,
+      "char_span": [
+        339,
+        343
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "FATHER:Girish Sharma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Girish Sharma",
+      "surface": "Girish Sharma",
+      "start": 353,
+      "end": 366,
+      "char_span": [
+        353,
+        366
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Girish Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "AMOUNT:15000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 15,000.00",
+      "surface": "INR 15,000.00",
+      "start": 468,
+      "end": 481,
+      "char_span": [
+        468,
+        481
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 15000.0,
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 551,
+      "end": 563,
+      "char_span": [
+        551,
+        563
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "9014363495",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "90143 63495",
+      "surface": "90143 63495",
+      "start": 605,
+      "end": 616,
+      "char_span": [
+        605,
+        616
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9014363495",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "9014363495",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "90143 63495",
+      "surface": "90143 63495",
+      "start": 673,
+      "end": 684,
+      "char_span": [
+        673,
+        684
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9014363495",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "888568557444315",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "888568557444315",
+      "surface": "888568557444315",
+      "start": 700,
+      "end": 715,
+      "char_span": [
+        700,
+        715
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "888568557444315",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "9014363495",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "90143 63495",
+      "surface": "90143 63495",
+      "start": 780,
+      "end": 791,
+      "char_span": [
+        780,
+        791
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9014363495",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "6679740344",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6679740344",
+      "surface": "6679740344",
+      "start": 801,
+      "end": 811,
+      "char_span": [
+        801,
+        811
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6679740344",
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 880,
+      "end": 892,
+      "char_span": [
+        880,
+        892
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E15",
+      "entity_key": "AMOUNT:10860.94",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 10,860.94/-",
+      "surface": "Rs. 10,860.94/-",
+      "start": 908,
+      "end": 923,
+      "char_span": [
+        908,
+        923
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 10860.94,
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "917130329284",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "917130329284",
+      "surface": "917130329284",
+      "start": 937,
+      "end": 949,
+      "char_span": [
+        937,
+        949
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "917130329284",
+      "aliases": []
+    },
+    {
+      "id": "E17",
+      "entity_key": "917130329284",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "917130329284",
+      "surface": "917130329284",
+      "start": 992,
+      "end": 1004,
+      "char_span": [
+        992,
+        1004
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "917130329284",
+      "aliases": []
+    },
+    {
+      "id": "E18",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 1022,
+      "end": 1036,
+      "char_span": [
+        1022,
+        1036
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    },
+    {
+      "id": "E19",
+      "entity_key": "OFFICER:Kuldeep Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Kuldeep Yadav",
+      "surface": "Kuldeep Yadav",
+      "start": 1079,
+      "end": 1092,
+      "char_span": [
+        1079,
+        1092
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Kuldeep Yadav",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_01",
+      "target_key": "9014363495",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        543,
+        732
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9014363495",
+      "target_key": "888568557444315",
+      "source_mention": "E10",
+      "target_mention": "E11",
+      "source": "E10",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        543,
+        732
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9014363495",
+      "target_key": "6679740344",
+      "source_mention": "E12",
+      "target_mention": "E13",
+      "source": "E12",
+      "target": "E13",
+      "amount": null,
+      "evidence_char_span": [
+        733,
+        846
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_B_OP_01",
+      "target_key": "917130329284",
+      "source_mention": "E14",
+      "target_mention": "E16",
+      "source": "E14",
+      "target": "E16",
+      "amount": 10860.94,
+      "evidence_char_span": [
+        847,
+        1065
+      ],
+      "txn_id": "TXN001035"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_KP_01",
+      "target_key": "917130329284",
+      "source_mention": "E18",
+      "target_mention": "E17",
+      "source": "E18",
+      "target": "E17",
+      "amount": null,
+      "evidence_char_span": [
+        847,
+        1065
+      ]
+    }
+  ]
+}

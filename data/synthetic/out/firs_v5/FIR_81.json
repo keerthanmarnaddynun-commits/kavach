@@ -1,0 +1,389 @@
+{
+  "source_doc_id": "FIR_81",
+  "split": "test",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_06",
+    "T_IMEI_HG_02",
+    "T_CALL_HG_06",
+    "T_TXN_HG_01",
+    "T_CTRL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Wasim Akram",
+      "surface": "Wasim Akram",
+      "start": 214,
+      "end": 225,
+      "char_span": [
+        214,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_04",
+      "value": "Wasim Akram",
+      "aliases": [
+        "Vicky"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_04",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Vicky",
+      "surface": "Vicky",
+      "start": 230,
+      "end": 235,
+      "char_span": [
+        230,
+        235
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_04",
+      "value": "Wasim Akram",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Shabir Akram",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Shabir Akram",
+      "surface": "Shabir Akram",
+      "start": 245,
+      "end": 257,
+      "char_span": [
+        245,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Shabir Akram",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Wasim Akram",
+      "surface": "Wasim Akram",
+      "start": 349,
+      "end": 360,
+      "char_span": [
+        349,
+        360
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_04",
+      "value": "Wasim Akram",
+      "aliases": [
+        "Vicky"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:26479.48",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 26,479.48/-",
+      "surface": "Rs. 26,479.48/-",
+      "start": 368,
+      "end": 383,
+      "char_span": [
+        368,
+        383
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 26479.48,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "9184147623802670",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "9184147623802670",
+      "surface": "9184147623802670",
+      "start": 404,
+      "end": 420,
+      "char_span": [
+        404,
+        420
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9184147623802670",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "9184147623802670",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "9184147623802670",
+      "surface": "9184147623802670",
+      "start": 452,
+      "end": 468,
+      "char_span": [
+        452,
+        468
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9184147623802670",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 482,
+      "end": 496,
+      "char_span": [
+        482,
+        496
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "8674680715",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8674680715",
+      "surface": "8674680715",
+      "start": 574,
+      "end": 584,
+      "char_span": [
+        574,
+        584
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8674680715",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "6531003309",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6531003309",
+      "surface": "6531003309",
+      "start": 597,
+      "end": 607,
+      "char_span": [
+        597,
+        607
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6531003309",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "WITNESS:Dinesh Joshi",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Dinesh Joshi",
+      "surface": "Dinesh Joshi",
+      "start": 668,
+      "end": 680,
+      "char_span": [
+        668,
+        680
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Dinesh Joshi",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "AMOUNT:15000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 15,000.00",
+      "surface": "INR 15,000.00",
+      "start": 805,
+      "end": 818,
+      "char_span": [
+        805,
+        818
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 15000.0,
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "PER_B_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Wasim Akram",
+      "surface": "Wasim Akram",
+      "start": 910,
+      "end": 921,
+      "char_span": [
+        910,
+        921
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_04",
+      "value": "Wasim Akram",
+      "aliases": [
+        "Vicky"
+      ]
+    },
+    {
+      "id": "E14",
+      "entity_key": "8674680715",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8674680715",
+      "surface": "8674680715",
+      "start": 954,
+      "end": 964,
+      "char_span": [
+        954,
+        964
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8674680715",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "8674680715",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8674680715",
+      "surface": "8674680715",
+      "start": 998,
+      "end": 1008,
+      "char_span": [
+        998,
+        1008
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8674680715",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "551680876038599",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "551680876038599",
+      "surface": "551680876038599",
+      "start": 1022,
+      "end": 1037,
+      "char_span": [
+        1022,
+        1037
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "551680876038599",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_B_OP_04",
+      "target_key": "9184147623802670",
+      "source_mention": "E4",
+      "target_mention": "E6",
+      "source": "E4",
+      "target": "E6",
+      "amount": 26479.48,
+      "evidence_char_span": [
+        300,
+        528
+      ],
+      "txn_id": "TXN000983"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_KP_01",
+      "target_key": "9184147623802670",
+      "source_mention": "E8",
+      "target_mention": "E7",
+      "source": "E8",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        300,
+        528
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "8674680715",
+      "target_key": "6531003309",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        529,
+        652
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_04",
+      "target_key": "8674680715",
+      "source_mention": "E13",
+      "target_mention": "E14",
+      "source": "E13",
+      "target": "E14",
+      "amount": null,
+      "evidence_char_span": [
+        880,
+        1067
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8674680715",
+      "target_key": "551680876038599",
+      "source_mention": "E15",
+      "target_mention": "E16",
+      "source": "E15",
+      "target": "E16",
+      "amount": null,
+      "evidence_char_span": [
+        880,
+        1067
+      ]
+    }
+  ]
+}

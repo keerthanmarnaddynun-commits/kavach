@@ -1,0 +1,387 @@
+{
+  "source_doc_id": "FIR_31",
+  "split": "train",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_03",
+    "T_IMEI_HG_02",
+    "T_CALL_HG_02",
+    "T_TXNA_HG_01",
+    "T_CTRL_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 213,
+      "end": 225,
+      "char_span": [
+        213,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Biku",
+      "surface": "Biku",
+      "start": 230,
+      "end": 234,
+      "char_span": [
+        230,
+        234
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Girish Sharma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Girish Sharma",
+      "surface": "Girish Sharma",
+      "start": 244,
+      "end": 257,
+      "char_span": [
+        244,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Girish Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "25,000",
+      "surface": "25,000",
+      "start": 351,
+      "end": 357,
+      "char_span": [
+        351,
+        357
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "35833036132",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "35833036132",
+      "surface": "35833036132",
+      "start": 477,
+      "end": 488,
+      "char_span": [
+        477,
+        488
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "35833036132",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "AMOUNT:24288.97",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "24,288.97",
+      "surface": "24,288.97",
+      "start": 496,
+      "end": 505,
+      "char_span": [
+        496,
+        505
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 24288.97,
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "564743671369",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "564743671369",
+      "surface": "564743671369",
+      "start": 526,
+      "end": 538,
+      "char_span": [
+        526,
+        538
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "564743671369",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "564743671369",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "564743671369",
+      "surface": "564743671369",
+      "start": 600,
+      "end": 612,
+      "char_span": [
+        600,
+        612
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "564743671369",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "PER_CR_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ramesh Chand",
+      "surface": "Ramesh Chand",
+      "start": 634,
+      "end": 646,
+      "char_span": [
+        634,
+        646
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_01",
+      "value": "Ramesh Chand",
+      "aliases": [
+        "Postman"
+      ]
+    },
+    {
+      "id": "E10",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 697,
+      "end": 709,
+      "char_span": [
+        697,
+        709
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E11",
+      "entity_key": "9014363495",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "90143 63495",
+      "surface": "90143 63495",
+      "start": 737,
+      "end": 748,
+      "char_span": [
+        737,
+        748
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9014363495",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "9014363495",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "90143 63495",
+      "surface": "90143 63495",
+      "start": 780,
+      "end": 791,
+      "char_span": [
+        780,
+        791
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9014363495",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "888568557444315",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "888568557444315",
+      "surface": "888568557444315",
+      "start": 805,
+      "end": 820,
+      "char_span": [
+        805,
+        820
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "888568557444315",
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "9014363495",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "90143 63495",
+      "surface": "90143 63495",
+      "start": 896,
+      "end": 907,
+      "char_span": [
+        896,
+        907
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9014363495",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "6531003309",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6531003309",
+      "surface": "6531003309",
+      "start": 925,
+      "end": 935,
+      "char_span": [
+        925,
+        935
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6531003309",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "COMPLAINANT:Suresh Bansal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Bansal",
+      "surface": "Suresh Bansal",
+      "start": 993,
+      "end": 1006,
+      "char_span": [
+        993,
+        1006
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Suresh Bansal",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "35833036132",
+      "target_key": "564743671369",
+      "source_mention": "E5",
+      "target_mention": "E7",
+      "source": "E5",
+      "target": "E7",
+      "amount": 24288.97,
+      "evidence_char_span": [
+        419,
+        661
+      ],
+      "txn_id": "TXN000555"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_CR_01",
+      "target_key": "564743671369",
+      "source_mention": "E9",
+      "target_mention": "E8",
+      "source": "E9",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        419,
+        661
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_01",
+      "target_key": "9014363495",
+      "source_mention": "E10",
+      "target_mention": "E11",
+      "source": "E10",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        662,
+        850
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9014363495",
+      "target_key": "888568557444315",
+      "source_mention": "E12",
+      "target_mention": "E13",
+      "source": "E12",
+      "target": "E13",
+      "amount": null,
+      "evidence_char_span": [
+        662,
+        850
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9014363495",
+      "target_key": "6531003309",
+      "source_mention": "E14",
+      "target_mention": "E15",
+      "source": "E14",
+      "target": "E15",
+      "amount": null,
+      "evidence_char_span": [
+        851,
+        975
+      ]
+    }
+  ]
+}

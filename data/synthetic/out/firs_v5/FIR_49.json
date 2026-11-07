@@ -1,0 +1,387 @@
+{
+  "source_doc_id": "FIR_49",
+  "split": "train",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HI_01",
+    "T_IMEI_HI_04",
+    "T_CALL_HI_01",
+    "T_TXNA_HI_01",
+    "T_CTRL_HI_03"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "मनोज रावत",
+      "surface": "मनोज रावत",
+      "start": 197,
+      "end": 206,
+      "char_span": [
+        197,
+        206
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "मुन्ना"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_04",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "मुन्ना",
+      "surface": "मुन्ना",
+      "start": 212,
+      "end": 218,
+      "char_span": [
+        212,
+        218
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Kishori Rawat",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "किशोरी रावत",
+      "surface": "किशोरी रावत",
+      "start": 230,
+      "end": 241,
+      "char_span": [
+        230,
+        241
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Kishori Rawat",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6112805982",
+      "surface": "6112805982",
+      "start": 331,
+      "end": 341,
+      "char_span": [
+        331,
+        341
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "7081219136",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7081219136",
+      "surface": "7081219136",
+      "start": 357,
+      "end": 367,
+      "char_span": [
+        357,
+        367
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7081219136",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "95217729622",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "95217729622",
+      "surface": "95217729622",
+      "start": 433,
+      "end": 444,
+      "char_span": [
+        433,
+        444
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "95217729622",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "AMOUNT:49200.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 49,200/-",
+      "surface": "Rs. 49,200/-",
+      "start": 455,
+      "end": 467,
+      "char_span": [
+        455,
+        467
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 49200.0,
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "15329318393",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "15329318393",
+      "surface": "15329318393",
+      "start": 478,
+      "end": 489,
+      "char_span": [
+        478,
+        489
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "15329318393",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "15329318393",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "15329318393",
+      "surface": "15329318393",
+      "start": 547,
+      "end": 558,
+      "char_span": [
+        547,
+        558
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "15329318393",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सलमान मिर्ज़ा",
+      "surface": "सलमान मिर्ज़ा",
+      "start": 577,
+      "end": 590,
+      "char_span": [
+        577,
+        590
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "सल्लू"
+      ]
+    },
+    {
+      "id": "E11",
+      "entity_key": "AMOUNT:18500.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 18,500.00",
+      "surface": "INR 18,500.00",
+      "start": 647,
+      "end": 660,
+      "char_span": [
+        647,
+        660
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 18500.0,
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "OFFICER:Arvind Swaminathan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "अरविंद स्वामीनाथन",
+      "surface": "अरविंद स्वामीनाथन",
+      "start": 729,
+      "end": 746,
+      "char_span": [
+        729,
+        746
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Arvind Swaminathan",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "मनोज रावत",
+      "surface": "मनोज रावत",
+      "start": 823,
+      "end": 832,
+      "char_span": [
+        823,
+        832
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "मुन्ना"
+      ]
+    },
+    {
+      "id": "E14",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6112805982",
+      "surface": "6112805982",
+      "start": 866,
+      "end": 876,
+      "char_span": [
+        866,
+        876
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6112805982",
+      "surface": "6112805982",
+      "start": 924,
+      "end": 934,
+      "char_span": [
+        924,
+        934
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "720450533158693",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "720450533158693",
+      "surface": "720450533158693",
+      "start": 962,
+      "end": 977,
+      "char_span": [
+        962,
+        977
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "720450533158693",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "6112805982",
+      "target_key": "7081219136",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        284,
+        390
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "95217729622",
+      "target_key": "15329318393",
+      "source_mention": "E6",
+      "target_mention": "E8",
+      "source": "E6",
+      "target": "E8",
+      "amount": 49200.0,
+      "evidence_char_span": [
+        391,
+        597
+      ],
+      "txn_id": "TXN000148"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_OP_05",
+      "target_key": "15329318393",
+      "source_mention": "E10",
+      "target_mention": "E9",
+      "source": "E10",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        391,
+        597
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_04",
+      "target_key": "6112805982",
+      "source_mention": "E13",
+      "target_mention": "E14",
+      "source": "E13",
+      "target": "E14",
+      "amount": null,
+      "evidence_char_span": [
+        799,
+        992
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "6112805982",
+      "target_key": "720450533158693",
+      "source_mention": "E15",
+      "target_mention": "E16",
+      "source": "E15",
+      "target": "E16",
+      "amount": null,
+      "evidence_char_span": [
+        799,
+        992
+      ]
+    }
+  ]
+}

@@ -1,0 +1,445 @@
+{
+  "source_doc_id": "FIR_41",
+  "split": "train",
+  "fir_type": "MULTI_SUSPECT",
+  "template_ids": [
+    "T_OWNS_HI_04",
+    "T_IMEI_HI_01",
+    "T_CALL_HI_04",
+    "T_TXN_HI_04",
+    "T_CTRL_HI_02"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सुनील कुमार",
+      "surface": "सुनील कुमार",
+      "start": 196,
+      "end": 207,
+      "char_span": [
+        196,
+        207
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "सनी"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_06",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "सनी",
+      "surface": "सनी",
+      "start": 213,
+      "end": 216,
+      "char_span": [
+        213,
+        216
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Bhagwan Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "भगवान कुमार",
+      "surface": "भगवान कुमार",
+      "start": 228,
+      "end": 239,
+      "char_span": [
+        228,
+        239
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Bhagwan Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR २५,०००.००",
+      "surface": "INR २५,०००.००",
+      "start": 330,
+      "end": 343,
+      "char_span": [
+        330,
+        343
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "७१४८९५१३४३",
+      "surface": "७१४८९५१३४३",
+      "start": 436,
+      "end": 446,
+      "char_span": [
+        436,
+        446
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "६११२८०५९८२",
+      "surface": "६११२८०५९८२",
+      "start": 464,
+      "end": 474,
+      "char_span": [
+        464,
+        474
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "PER_A_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "आनंद वर्मा",
+      "surface": "आनंद वर्मा",
+      "start": 530,
+      "end": 540,
+      "char_span": [
+        530,
+        540
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": [
+        "एंडी"
+      ]
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_A_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "एंडी",
+      "surface": "एंडी",
+      "start": 546,
+      "end": 550,
+      "char_span": [
+        546,
+        550
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "FATHER:Shyam Verma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "श्याम वर्मा",
+      "surface": "श्याम वर्मा",
+      "start": 562,
+      "end": 573,
+      "char_span": [
+        562,
+        573
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Shyam Verma",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सुनील कुमार",
+      "surface": "सुनील कुमार",
+      "start": 630,
+      "end": 641,
+      "char_span": [
+        630,
+        641
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "सनी"
+      ]
+    },
+    {
+      "id": "E11",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "७१४८९५१३४३",
+      "surface": "७१४८९५१३४३",
+      "start": 667,
+      "end": 677,
+      "char_span": [
+        667,
+        677
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "७१४८९५१३४३",
+      "surface": "७१४८९५१३४३",
+      "start": 714,
+      "end": 724,
+      "char_span": [
+        714,
+        724
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "420037917693677",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "४२००३७९१७६९३६७७",
+      "surface": "४२००३७९१७६९३६७७",
+      "start": 744,
+      "end": 759,
+      "char_span": [
+        744,
+        759
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "420037917693677",
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "OFFICER:Kuldeep Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "कुलदीप यादव",
+      "surface": "कुलदीप यादव",
+      "start": 789,
+      "end": 800,
+      "char_span": [
+        789,
+        800
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Kuldeep Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सुनील कुमार",
+      "surface": "सुनील कुमार",
+      "start": 894,
+      "end": 905,
+      "char_span": [
+        894,
+        905
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "सनी"
+      ]
+    },
+    {
+      "id": "E16",
+      "entity_key": "AMOUNT:19765.62",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 19,765.62/-",
+      "surface": "Rs. 19,765.62/-",
+      "start": 930,
+      "end": 945,
+      "char_span": [
+        930,
+        945
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 19765.62,
+      "aliases": []
+    },
+    {
+      "id": "E17",
+      "entity_key": "7520562247180388",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "७५२०५६२२४७१८०३८८",
+      "surface": "७५२०५६२२४७१८०३८८",
+      "start": 951,
+      "end": 967,
+      "char_span": [
+        951,
+        967
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7520562247180388",
+      "aliases": []
+    },
+    {
+      "id": "E18",
+      "entity_key": "7520562247180388",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "७५२०५६२२४७१८०३८८",
+      "surface": "७५२०५६२२४७१८०३८८",
+      "start": 1023,
+      "end": 1039,
+      "char_span": [
+        1023,
+        1039
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7520562247180388",
+      "aliases": []
+    },
+    {
+      "id": "E19",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "राजेंद्र सिंह",
+      "surface": "राजेंद्र सिंह",
+      "start": 1070,
+      "end": 1083,
+      "char_span": [
+        1070,
+        1083
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "राजू भाई"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "7148951343",
+      "target_key": "6112805982",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        399,
+        505
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_06",
+      "target_key": "7148951343",
+      "source_mention": "E10",
+      "target_mention": "E11",
+      "source": "E10",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        601,
+        775
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7148951343",
+      "target_key": "420037917693677",
+      "source_mention": "E12",
+      "target_mention": "E13",
+      "source": "E12",
+      "target": "E13",
+      "amount": null,
+      "evidence_char_span": [
+        601,
+        775
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_A_OP_06",
+      "target_key": "7520562247180388",
+      "source_mention": "E15",
+      "target_mention": "E17",
+      "source": "E15",
+      "target": "E17",
+      "amount": 19765.62,
+      "evidence_char_span": [
+        853,
+        1090
+      ],
+      "txn_id": "TXN000475"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "7520562247180388",
+      "source_mention": "E19",
+      "target_mention": "E18",
+      "source": "E19",
+      "target": "E18",
+      "amount": null,
+      "evidence_char_span": [
+        853,
+        1090
+      ]
+    }
+  ]
+}

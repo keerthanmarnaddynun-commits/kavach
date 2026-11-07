@@ -1,0 +1,213 @@
+{
+  "source_doc_id": "FIR_64",
+  "split": "dev",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXN_HG_02",
+    "T_CTRL_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Devendra Yadav",
+      "surface": "Devendra Yadav",
+      "start": 214,
+      "end": 228,
+      "char_span": [
+        214,
+        228
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": [
+        "Chhota Raju"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_LT_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Chhota Raju",
+      "surface": "Chhota Raju",
+      "start": 233,
+      "end": 244,
+      "char_span": [
+        233,
+        244
+      ],
+      "role": null,
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Ramakant Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ramakant Yadav",
+      "surface": "Ramakant Yadav",
+      "start": 254,
+      "end": 268,
+      "char_span": [
+        254,
+        268
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Ramakant Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Amit Tomar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Amit Tomar",
+      "surface": "Amit Tomar",
+      "start": 325,
+      "end": 335,
+      "char_span": [
+        325,
+        335
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Amit Tomar",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_A_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Devendra Yadav",
+      "surface": "Devendra Yadav",
+      "start": 442,
+      "end": 456,
+      "char_span": [
+        442,
+        456
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": [
+        "Chhota Raju"
+      ]
+    },
+    {
+      "id": "E6",
+      "entity_key": "AMOUNT:25590.22",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "25,590.22",
+      "surface": "25,590.22",
+      "start": 472,
+      "end": 481,
+      "char_span": [
+        472,
+        481
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25590.22,
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "70733754330",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "70733754330",
+      "surface": "70733754330",
+      "start": 495,
+      "end": 506,
+      "char_span": [
+        495,
+        506
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "70733754330",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "70733754330",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "70733754330",
+      "surface": "70733754330",
+      "start": 562,
+      "end": 573,
+      "char_span": [
+        562,
+        573
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "70733754330",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Manoj Rawat",
+      "surface": "Manoj Rawat",
+      "start": 595,
+      "end": 606,
+      "char_span": [
+        595,
+        606
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "Munna"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_A_LT_01",
+      "target_key": "70733754330",
+      "source_mention": "E5",
+      "target_mention": "E7",
+      "source": "E5",
+      "target": "E7",
+      "amount": 25590.22,
+      "evidence_char_span": [
+        409,
+        621
+      ],
+      "txn_id": "TXN000477"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_OP_04",
+      "target_key": "70733754330",
+      "source_mention": "E9",
+      "target_mention": "E8",
+      "source": "E9",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        409,
+        621
+      ]
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "source_doc_id": "FIR_90",
+  "split": "test",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXN_HG_05",
+    "T_CTRL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Vikas Sharma",
+      "surface": "Vikas Sharma",
+      "start": 220,
+      "end": 232,
+      "char_span": [
+        220,
+        232
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": [
+        "Bicky",
+        "Viku",
+        "Kallu"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Bicky",
+      "surface": "Bicky",
+      "start": 237,
+      "end": 242,
+      "char_span": [
+        237,
+        242
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Viku",
+      "surface": "Viku",
+      "start": 245,
+      "end": 249,
+      "char_span": [
+        245,
+        249
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Kallu",
+      "surface": "Kallu",
+      "start": 252,
+      "end": 257,
+      "char_span": [
+        252,
+        257
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "FATHER:Harish Sharma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Harish Sharma",
+      "surface": "Harish Sharma",
+      "start": 267,
+      "end": 280,
+      "char_span": [
+        267,
+        280
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Harish Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_A_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Vikas Sharma",
+      "surface": "Vikas Sharma",
+      "start": 369,
+      "end": 381,
+      "char_span": [
+        369,
+        381
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": [
+        "Bicky",
+        "Viku",
+        "Kallu"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "AMOUNT:10925.38",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 10,925.38",
+      "surface": "INR 10,925.38",
+      "start": 399,
+      "end": 412,
+      "char_span": [
+        399,
+        412
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 10925.38,
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "82788957986",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "82788957986",
+      "surface": "82788957986",
+      "start": 432,
+      "end": 443,
+      "char_span": [
+        432,
+        443
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "82788957986",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "82788957986",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "82788957986",
+      "surface": "82788957986",
+      "start": 476,
+      "end": 487,
+      "char_span": [
+        476,
+        487
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "82788957986",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sunil Kumar",
+      "surface": "Sunil Kumar",
+      "start": 501,
+      "end": 512,
+      "char_span": [
+        501,
+        512
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "Sunny"
+      ]
+    },
+    {
+      "id": "E11",
+      "entity_key": "COMPLAINANT:Ram Avatar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ram Avatar",
+      "surface": "Ram Avatar",
+      "start": 562,
+      "end": 572,
+      "char_span": [
+        562,
+        572
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Ram Avatar",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_A_OP_01",
+      "target_key": "82788957986",
+      "source_mention": "E6",
+      "target_mention": "E8",
+      "source": "E6",
+      "target": "E8",
+      "amount": 10925.38,
+      "evidence_char_span": [
+        324,
+        544
+      ],
+      "txn_id": "TXN001292"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_OP_06",
+      "target_key": "82788957986",
+      "source_mention": "E10",
+      "target_mention": "E9",
+      "source": "E10",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        324,
+        544
+      ]
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_44",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HI_02",
+    "T_IMEI_HI_02",
+    "T_CALL_HI_02"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "राशिद खान",
+      "surface": "राशिद खान",
+      "start": 197,
+      "end": 206,
+      "char_span": [
+        197,
+        206
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": [
+        "शूटर"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_LT_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "शूटर",
+      "surface": "शूटर",
+      "start": 212,
+      "end": 216,
+      "char_span": [
+        212,
+        216
+      ],
+      "role": null,
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Asif Khan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "आसिफ खान",
+      "surface": "आसिफ खान",
+      "start": 228,
+      "end": 236,
+      "char_span": [
+        228,
+        236
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Asif Khan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "COMPLAINANT:Pawan Verma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "पवन वर्मा",
+      "surface": "पवन वर्मा",
+      "start": 296,
+      "end": 305,
+      "char_span": [
+        296,
+        305
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Pawan Verma",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_B_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "राशिद खान",
+      "surface": "राशिद खान",
+      "start": 374,
+      "end": 383,
+      "char_span": [
+        374,
+        383
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": [
+        "शूटर"
+      ]
+    },
+    {
+      "id": "E6",
+      "entity_key": "9165726284",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9165726284",
+      "surface": "9165726284",
+      "start": 413,
+      "end": 423,
+      "char_span": [
+        413,
+        423
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9165726284",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "9165726284",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9165726284",
+      "surface": "9165726284",
+      "start": 464,
+      "end": 474,
+      "char_span": [
+        464,
+        474
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9165726284",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "977694531473790",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "977694531473790",
+      "surface": "977694531473790",
+      "start": 490,
+      "end": 505,
+      "char_span": [
+        490,
+        505
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "977694531473790",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "9165726284",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9165726284",
+      "surface": "9165726284",
+      "start": 561,
+      "end": 571,
+      "char_span": [
+        561,
+        571
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9165726284",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7963605766",
+      "surface": "7963605766",
+      "start": 588,
+      "end": 598,
+      "char_span": [
+        588,
+        598
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_LT_02",
+      "target_key": "9165726284",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        358,
+        523
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9165726284",
+      "target_key": "977694531473790",
+      "source_mention": "E7",
+      "target_mention": "E8",
+      "source": "E7",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        358,
+        523
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9165726284",
+      "target_key": "7963605766",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        524,
+        625
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_58",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_EN_04",
+    "T_IMEI_EN_03"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 210,
+      "end": 222,
+      "char_span": [
+        210,
+        222
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Kabira",
+      "surface": "Kabira",
+      "start": 229,
+      "end": 235,
+      "char_span": [
+        229,
+        235
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mustaq Sheikh",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mustaq Sheikh",
+      "surface": "Mustaq Sheikh",
+      "start": 245,
+      "end": 258,
+      "char_span": [
+        245,
+        258
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mustaq Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 331,
+      "end": 343,
+      "char_span": [
+        331,
+        343
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "7710947775",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7710947775",
+      "surface": "7710947775",
+      "start": 369,
+      "end": 379,
+      "char_span": [
+        369,
+        379
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7710947775",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7710947775",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7710947775",
+      "surface": "7710947775",
+      "start": 424,
+      "end": 434,
+      "char_span": [
+        424,
+        434
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7710947775",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "304711671902299",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "304711671902299",
+      "surface": "304711671902299",
+      "start": 457,
+      "end": 472,
+      "char_span": [
+        457,
+        472
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "304711671902299",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "AMOUNT:500000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "5 lakh",
+      "surface": "5 lakh",
+      "start": 524,
+      "end": 530,
+      "char_span": [
+        524,
+        530
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 500000.0,
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "WITNESS:Mohan Lal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Lal",
+      "surface": "Mohan Lal",
+      "start": 581,
+      "end": 590,
+      "char_span": [
+        581,
+        590
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Mohan Lal",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_02",
+      "target_key": "7710947775",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        280,
+        473
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7710947775",
+      "target_key": "304711671902299",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        280,
+        473
+      ]
+    }
+  ]
+}

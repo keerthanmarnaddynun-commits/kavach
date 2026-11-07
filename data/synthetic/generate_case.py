@@ -36,11 +36,25 @@ DELHI_TOWERS = [
     {"tower_id": "TWR_DEL_10", "name": "Shahdara East", "lat": 28.6739, "lon": 77.2917},
 ]
 
+BANK_ACCOUNT_LENGTHS = {
+    "SBI": 11,
+    "ICICI": 12,
+    "HDFC": 14,
+    "PNB": 16,
+}
+
+BANK_IFSC_PREFIX = {
+    "SBI": "SBIN",
+    "ICICI": "ICIC",
+    "HDFC": "HDFC",
+    "PNB": "PUNB",
+}
+
 BANK_IFSC_MAP = {
-    "SBI": "SBIN00",
-    "HDFC": "HDFC00",
-    "ICICI": "ICIC00",
-    "PNB": "PUNB00",
+    "SBI": "SBIN0",
+    "ICICI": "ICIC0",
+    "HDFC": "HDFC0",
+    "PNB": "PUNB0",
 }
 
 
@@ -93,15 +107,16 @@ def generate_imsi(rng: random.Random) -> str:
 
 
 def generate_bank_account(rng: random.Random, used_accounts: Set[str], bank: str = None) -> Tuple[str, str, str]:
-    """Generates a 9-18 digit bank account, bank name, and matching IFSC."""
+    """Generates an account number (length by bank), bank name, and matching 11-char IFSC."""
     if not bank:
         bank = rng.choice(["SBI", "HDFC", "ICICI", "PNB"])
+    length = BANK_ACCOUNT_LENGTHS[bank]
     while True:
-        length = rng.randint(11, 16)
         acct = "".join(str(rng.randint(1, 9) if i == 0 else rng.randint(0, 9)) for i in range(length))
         if acct not in used_accounts:
             used_accounts.add(acct)
-            ifsc = BANK_IFSC_MAP[bank] + f"{rng.randint(1000, 9999)}"
+            branch_code = f"{rng.randint(100000, 999999)}"
+            ifsc = f"{BANK_IFSC_PREFIX[bank]}0{branch_code}"
             return acct, bank, ifsc
 
 
@@ -365,6 +380,7 @@ def build_crime_ring_entities(rng: random.Random) -> Dict[str, Any]:
         "decoy_customers": decoy_customers,
         "customer_hardware": customer_hardware,
         "shared_handset_imei": shared_handset_imei,
+        "used_accounts": used_accounts,
     }
 
 
@@ -643,14 +659,23 @@ def generate_bank_records(
     # Non-mule accounts for general routine transactions so mule patterns remain pure
     general_accounts = [a["account_number"] for a in entities_data["truth"]["accounts"] if not a["is_mule"]]
 
+    # Map each account number to its fixed IFSC
+    account_ifsc_map = {a["account_number"]: a["ifsc"] for a in entities_data["truth"]["accounts"]}
+
     # Pre-generate external client accounts for deposits
-    external_accounts = [f"9900{rng.randint(10000000, 99999999)}" for _ in range(50)]
+    used_accounts = entities_data.get("used_accounts", set(account_ifsc_map.keys()))
+    external_accounts = []
+    for _ in range(50):
+        ext_acct, ext_bank, ext_ifsc = generate_bank_account(rng, used_accounts)
+        external_accounts.append(ext_acct)
+        account_ifsc_map[ext_acct] = ext_ifsc
 
     bank_rows = []
     txn_counter = 1
 
-    def make_txn(dt: datetime.datetime, from_acc: str, to_acc: str, amt: float, mode: str, ifsc: str, narr: str):
+    def make_txn(dt: datetime.datetime, from_acc: str, to_acc: str, amt: float, mode: str, narr: str):
         nonlocal txn_counter
+        rec_ifsc = account_ifsc_map[to_acc]
         bank_rows.append({
             "txn_id": f"TXN{txn_counter:06d}",
             "datetime": dt.isoformat(),
@@ -658,7 +683,7 @@ def generate_bank_records(
             "to_acct": to_acc,
             "amount": f"{amt:.2f}",
             "mode": mode,
-            "ifsc": ifsc,
+            "ifsc": rec_ifsc,
             "narration": narr,
             "_sort_dt": dt,
         })
@@ -702,7 +727,7 @@ def generate_bank_records(
                 from_client = rng.choice(external_accounts)
                 mode = rng.choice(["CASH", "UPI", "IMPS"])
                 narr = "Cash Deposit CDM" if mode == "CASH" else "UPI / P2P Settlement"
-                make_txn(dt_dep, from_client, m_acc, amt, mode, "SBIN0004521", narr)
+                make_txn(dt_dep, from_client, m_acc, amt, mode, narr)
 
             # Onward transfer within hours (1 to 3 hours later) to the Kingpin
             hours_later = rng.randint(1, 3)
@@ -713,7 +738,7 @@ def generate_bank_records(
             # Leaves near-zero balance (retains exactly 0.00 or nominal fee)
             onward_amt = batch_total  # 100% transfer leaves zero balance
             mode = "IMPS" if onward_amt <= 200000 else "NEFT"
-            make_txn(dt_onward, m_acc, kp_target, onward_amt, mode, "HDFC0001020", "Immediate Onward Settlement / Hawala")
+            make_txn(dt_onward, m_acc, kp_target, onward_amt, mode, "Immediate Onward Settlement / Hawala")
 
     # 2. General Syndicate & Petty Cash Transactions (~1250 transactions across 30 days)
     # ~41-43 transactions per day
@@ -735,7 +760,7 @@ def generate_bank_records(
             amt = round(rng.uniform(500.0, 35000.0), 2)
             mode = rng.choice(["UPI", "IMPS", "NEFT"])
             narr = rng.choice(["Operational Payout", "Travel Expense", "Logistics Fuel", "Mobile Recharge Bill", "Vendor Settlement"])
-            make_txn(dt, f_acc, t_acc, amt, mode, "ICIC0003040", narr)
+            make_txn(dt, f_acc, t_acc, amt, mode, narr)
 
     # Sort deterministically
     bank_rows.sort(key=lambda r: (r["_sort_dt"], r["txn_id"]))

@@ -13,6 +13,7 @@ Execution workflow:
 
 import argparse
 import ast
+from collections import Counter
 import csv
 import datetime
 import hashlib
@@ -210,6 +211,67 @@ def compute_metrics(run1_dir: Path, run2_dir: Path, gen_script: Path, test_file:
         ),
     }
 
+    # Bank accounts by bank in truth.json
+    bank_data: Dict[str, Dict[str, Any]] = {}
+    for a in truth.get("accounts", []):
+        b = a.get("bank", "UNKNOWN")
+        if b not in bank_data:
+            bank_data[b] = {"lengths": set(), "prefixes": set(), "count": 0}
+        bank_data[b]["lengths"].add(len(a.get("account_number", "")))
+        bank_data[b]["prefixes"].add(a.get("ifsc", "")[:4])
+        bank_data[b]["count"] += 1
+
+    bank_accounts_by_bank = []
+    preferred_order = ["SBI", "ICICI", "HDFC", "PNB"]
+    sorted_banks = sorted(bank_data.keys(), key=lambda b: preferred_order.index(b) if b in preferred_order else 999)
+    for b in sorted_banks:
+        d = bank_data[b]
+        bank_accounts_by_bank.append({
+            "bank": b,
+            "account_lengths": sorted(list(d["lengths"])),
+            "ifsc_prefixes": sorted(list(d["prefixes"])),
+            "account_count": d["count"],
+        })
+
+    # Bank transaction metrics from run1/bank.csv
+    from_acct_lens = Counter(len(r.get("from_acct", "")) for r in bank_rows)
+    to_acct_lens = Counter(len(r.get("to_acct", "")) for r in bank_rows)
+
+    ifsc_pattern = re.compile(r"^[A-Z]{4}0[A-Z0-9]{6}$")
+    invalid_ifsc_count = sum(1 for r in bank_rows if not ifsc_pattern.match(r.get("ifsc", "")))
+
+    truth_ifsc_map = {a["account_number"]: a["ifsc"] for a in truth.get("accounts", [])}
+    to_acct_truth_ifsc_mismatch_count = sum(
+        1 for r in bank_rows
+        if r.get("to_acct") in truth_ifsc_map and r.get("ifsc") != truth_ifsc_map[r.get("to_acct")]
+    )
+    to_acct_not_in_truth_count = sum(
+        1 for r in bank_rows
+        if r.get("to_acct") not in truth_ifsc_map
+    )
+
+    # Collision check: accounts equaling any phone number or IMEI
+    all_truth_accounts = {a["account_number"] for a in truth.get("accounts", [])}
+    for p in truth.get("people", []):
+        for a in p.get("accounts", []):
+            all_truth_accounts.add(a["account_number"])
+    all_bank_accounts = {r["from_acct"] for r in bank_rows} | {r["to_acct"] for r in bank_rows}
+    all_account_numbers = all_truth_accounts | all_bank_accounts
+
+    all_phones = {p["phone"] for p in truth.get("phones", [])}
+    for p in truth.get("people", []):
+        for ph in p.get("phones", []):
+            all_phones.add(ph["phone"])
+    for r in cdr_rows:
+        all_phones.add(r["a_party"])
+        all_phones.add(r["b_party"])
+
+    all_imeis = set(truth.get("imeis", []))
+    for r in cdr_rows:
+        all_imeis.add(r["imei_a"])
+
+    account_collisions_with_phone_or_imei = len(all_account_numbers.intersection(all_phones | all_imeis))
+
     metrics = {
         "row_counts": {
             "cdr_csv": len(cdr_rows),
@@ -221,6 +283,15 @@ def compute_metrics(run1_dir: Path, run2_dir: Path, gen_script: Path, test_file:
             "accounts": accounts_count,
             "imeis": imeis_count,
         },
+        "bank_accounts_by_bank": bank_accounts_by_bank,
+        "bank_csv_metrics": {
+            "from_acct_digit_lengths": {str(k): v for k, v in sorted(from_acct_lens.items())},
+            "to_acct_digit_lengths": {str(k): v for k, v in sorted(to_acct_lens.items())},
+            "invalid_ifsc_rows_count": invalid_ifsc_count,
+            "to_acct_in_truth_ifsc_mismatch_count": to_acct_truth_ifsc_mismatch_count,
+            "to_acct_not_in_truth_count": to_acct_not_in_truth_count,
+        },
+        "account_phone_imei_collisions_count": account_collisions_with_phone_or_imei,
         "top_5_phones": top_5,
         "kingpins": kingpins,
         "pizza_shop": pizza_shop_metrics,
@@ -290,6 +361,25 @@ def build_markdown_section(
         )
     hierarchy_table_body = "\n".join(hierarchy_rows_md)
 
+    # Build Bank Accounts table rows from metrics.json
+    bank_rows_md = []
+    for item in metrics["bank_accounts_by_bank"]:
+        b = item["bank"]
+        lens_str = ", ".join(str(l) for l in item["account_lengths"])
+        pref_str = ", ".join(item["ifsc_prefixes"])
+        cnt = item["account_count"]
+        bank_rows_md.append(f"| {b} | {lens_str} | {pref_str} | {cnt} |")
+    bank_table_body = "\n".join(bank_rows_md)
+
+    # Bank CSV metric strings
+    b_metrics = metrics["bank_csv_metrics"]
+    from_lens_str = ", ".join(f"{k} digits: {v}" for k, v in b_metrics["from_acct_digit_lengths"].items())
+    to_lens_str = ", ".join(f"{k} digits: {v}" for k, v in b_metrics["to_acct_digit_lengths"].items())
+    invalid_ifsc_cnt = b_metrics["invalid_ifsc_rows_count"]
+    ifsc_diff_cnt = b_metrics["to_acct_in_truth_ifsc_mismatch_count"]
+    to_not_in_truth_cnt = b_metrics["to_acct_not_in_truth_count"]
+    collisions_cnt = metrics["account_phone_imei_collisions_count"]
+
     # Build Test List rows from pytest output
     test_rows_md = []
     for t in pytest_tests:
@@ -308,16 +398,21 @@ def build_markdown_section(
 - **Exact Command**: `python data/synthetic/generate_case.py --seed 42 --days 30 --out {results_rel_path}/run1`
 - **Exact Pytest Command**: `{pytest_cmd}`
 - **Input Files**:
-  - `data/synthetic/generate_case.py` (SHA-256: `{gen_hash}`)
-  - `tests/test_generate_case.py` (SHA-256: `{test_hash}`)
+- `data/synthetic/generate_case.py` (SHA-256: `{gen_hash}`)
+- `tests/test_generate_case.py` (SHA-256: `{test_hash}`)
 - **Output Files (Run 1)**:
-  - `run1/truth.json` (SHA-256: `{run1_h['truth_json']}`)
-  - `run1/cdr.csv` (SHA-256: `{run1_h['cdr_csv']}`)
-  - `run1/bank.csv` (SHA-256: `{run1_h['bank_csv']}`)
+- `run1/truth.json` (SHA-256: `{run1_h['truth_json']}`)
+- `run1/cdr.csv` (SHA-256: `{run1_h['cdr_csv']}`)
+- `run1/bank.csv` (SHA-256: `{run1_h['bank_csv']}`)
 - **Key Numbers**:
-  - `run1/cdr.csv`: {metrics['row_counts']['cdr_csv']} rows (columns: `a_party`, `b_party`, `imei_a`, `imsi_a`, `start_time`, `duration_sec`, `call_type`, `tower_id`, `lat`, `lon`)
-  - `run1/bank.csv`: {metrics['row_counts']['bank_csv']} rows (columns: `txn_id`, `datetime`, `from_acct`, `to_acct`, `amount`, `mode`, `ifsc`, `narration`)
-  - `run1/truth.json`: {metrics['entity_counts']['people']} people (key: `people`), {metrics['entity_counts']['phones']} phones (key: `phones`), {metrics['entity_counts']['accounts']} accounts (key: `accounts`), {metrics['entity_counts']['imeis']} IMEIs (key: `imeis`)
+- `run1/cdr.csv`: {metrics['row_counts']['cdr_csv']} rows (columns: `a_party`, `b_party`, `imei_a`, `imsi_a`, `start_time`, `duration_sec`, `call_type`, `tower_id`, `lat`, `lon`)
+- `run1/bank.csv`: {metrics['row_counts']['bank_csv']} rows (columns: `txn_id`, `datetime`, `from_acct`, `to_acct`, `amount`, `mode`, `ifsc`, `narration`)
+- `run1/truth.json`: {metrics['entity_counts']['people']} people (key: `people`), {metrics['entity_counts']['phones']} phones (key: `phones`), {metrics['entity_counts']['accounts']} accounts (key: `accounts`), {metrics['entity_counts']['imeis']} IMEIs (key: `imeis`)
+- `run1/bank.csv` account lengths: `from_acct` counts by digit length: {from_lens_str}; `to_acct` counts by digit length: {to_lens_str}
+- `run1/bank.csv` rows whose ifsc does not match `^[A-Z]{{4}}0[A-Z0-9]{{6}}$`: {invalid_ifsc_cnt}
+- `run1/bank.csv` rows whose to_acct is in truth.json and whose ifsc differs from that account's ifsc: {ifsc_diff_cnt}
+- `run1/bank.csv` rows whose to_acct is not in truth.json: {to_not_in_truth_cnt}
+- Account numbers (truth.json and bank.csv) that equal any phone number or IMEI value: {collisions_cnt}
 
 ### Tables
 
@@ -348,6 +443,21 @@ def build_markdown_section(
 | :--- | :--- | :--- | :--- | :--- | :--- |
 {hierarchy_table_body}
 
+#### Table 5: Bank Accounts by Bank (truth.json)
+| Bank | Account Length(s) | IFSC Prefix(es) | Number of Accounts |
+| :--- | :--- | :--- | :--- |
+{bank_table_body}
+
+#### Table 6: Bank Transaction Ledger Properties (run1/bank.csv)
+| Metric | Value |
+| :--- | :--- |
+| `from_acct` counts by digit length | {from_lens_str} |
+| `to_acct` counts by digit length | {to_lens_str} |
+| Rows whose IFSC does not match `^[A-Z]{{4}}0[A-Z0-9]{{6}}$` | {invalid_ifsc_cnt} |
+| Rows whose `to_acct` is in `truth.json` and whose IFSC differs | {ifsc_diff_cnt} |
+| Rows whose `to_acct` is not in `truth.json` | {to_not_in_truth_cnt} |
+| Account numbers that equal any phone number or IMEI value | {collisions_cnt} |
+
 ### Test List
 | Test Function | Description | Test Outcome |
 | :--- | :--- | :--- |
@@ -362,16 +472,17 @@ def build_markdown_section(
 - Kingpin call restraint: Kingpins make very few calls and have very few distinct contacts, so their call count ranks near the bottom (see the hierarchy table).
 - Innocent civilian hub: A pizza shop has many distinct contacts: outside civilian customers and a small number of operatives from one syndicate only. It has no contact with members of both syndicates, so it is not an extra link between them.
 - Bridge courier routing: Dedicated bridge couriers form the exclusive telephonic connection between the separate syndicates, preventing direct inter-syndicate operative or lieutenant calls.
--  Financial layering: Some deposits to mule accounts are placed just below a configurable threshold constant defined in the generator, and one mule account stays dormant before becoming active.
+- Financial layering: Some deposits to mule accounts are placed just below a configurable threshold constant defined in the generator, and one mule account stays dormant before becoming active.
+- Bank account numbers have a fixed length per bank, each account has one fixed IFSC, and the ifsc column of the bank file holds the receiving account's IFSC.
 
 ### Caveats
 - data is synthetic
 - fixed 2-gang structure
--The call-count ranks of the pizza shop and the kingpins are set by the generator's design, not discovered from the data.
+- The call-count ranks of the pizza shop and the kingpins are set by the generator's design, not discovered from the data.
 - runs used Python {py_ver_short}
 
 ### What This Does Not Show
--Detection performance: These results show only that the generator produces the designed structure. They do not show that any extraction or analysis method works on it.
+- Detection performance: These results show only that the generator produces the designed structure. They do not show that any extraction or analysis method works on it.
 - Carrier-level transport anomalies: The dataset does not model packet loss, tower handover latencies, or network drops.
 - Multi-modal surveillance: Excludes physical location tracking, vehicular tailing, and room audio intercepts.
 - Alternative communication channels: Excludes encrypted application messaging, secure webmail, and in-person meetings.
@@ -386,6 +497,12 @@ def build_markdown_section(
     banned_hits = banned_regex.findall(section)
     if banned_hits:
         raise ValueError(f"Banned words detected in generated section: {set(banned_hits)}")
+
+    # Check that every bullet line starts with "- " (dash plus exactly one space)
+    for line in section.splitlines():
+        if line.strip().startswith("-"):
+            if not line.startswith("- "):
+                raise ValueError(f"Bullet line does not start with '- ': {line!r}")
 
     return section
 

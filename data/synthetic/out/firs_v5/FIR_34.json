@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_34",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_03",
+    "T_IMEI_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Devendra Yadav",
+      "surface": "Devendra Yadav",
+      "start": 214,
+      "end": 228,
+      "char_span": [
+        214,
+        228
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": [
+        "Chhota Raju"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_LT_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Chhota Raju",
+      "surface": "Chhota Raju",
+      "start": 233,
+      "end": 244,
+      "char_span": [
+        233,
+        244
+      ],
+      "role": null,
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Ramakant Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ramakant Yadav",
+      "surface": "Ramakant Yadav",
+      "start": 254,
+      "end": 268,
+      "char_span": [
+        254,
+        268
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Ramakant Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Devendra Yadav",
+      "surface": "Devendra Yadav",
+      "start": 347,
+      "end": 361,
+      "char_span": [
+        347,
+        361
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": [
+        "Chhota Raju"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "8255341928",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8255341928",
+      "surface": "8255341928",
+      "start": 389,
+      "end": 399,
+      "char_span": [
+        389,
+        399
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8255341928",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "8255341928",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8255341928",
+      "surface": "8255341928",
+      "start": 434,
+      "end": 444,
+      "char_span": [
+        434,
+        444
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8255341928",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "427648350305646",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "427648350305646",
+      "surface": "427648350305646",
+      "start": 462,
+      "end": 477,
+      "char_span": [
+        462,
+        477
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "427648350305646",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "WITNESS:Mohan Lal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Lal",
+      "surface": "Mohan Lal",
+      "start": 509,
+      "end": 518,
+      "char_span": [
+        509,
+        518
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Mohan Lal",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "AMOUNT:250000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "2.5 lakh",
+      "surface": "2.5 lakh",
+      "start": 643,
+      "end": 651,
+      "char_span": [
+        643,
+        651
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 250000.0,
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_LT_01",
+      "target_key": "8255341928",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        312,
+        493
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8255341928",
+      "target_key": "427648350305646",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        312,
+        493
+      ]
+    }
+  ]
+}

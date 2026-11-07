@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_89",
+  "split": "test",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_06",
+    "T_IMEI_HG_01",
+    "T_CALL_HG_02"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Manoj Rawat",
+      "surface": "Manoj Rawat",
+      "start": 214,
+      "end": 225,
+      "char_span": [
+        214,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "Munna"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_04",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Munna",
+      "surface": "Munna",
+      "start": 230,
+      "end": 235,
+      "char_span": [
+        230,
+        235
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Kishori Rawat",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Kishori Rawat",
+      "surface": "Kishori Rawat",
+      "start": 245,
+      "end": 258,
+      "char_span": [
+        245,
+        258
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Kishori Rawat",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Kuldeep Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Kuldeep Yadav",
+      "surface": "Kuldeep Yadav",
+      "start": 315,
+      "end": 328,
+      "char_span": [
+        315,
+        328
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Kuldeep Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-6112805982",
+      "surface": "+91-6112805982",
+      "start": 447,
+      "end": 461,
+      "char_span": [
+        447,
+        461
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7081219136",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7081219136",
+      "surface": "7081219136",
+      "start": 479,
+      "end": 489,
+      "char_span": [
+        479,
+        489
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7081219136",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Manoj Rawat",
+      "surface": "Manoj Rawat",
+      "start": 560,
+      "end": 571,
+      "char_span": [
+        560,
+        571
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "Munna"
+      ]
+    },
+    {
+      "id": "E8",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-6112805982",
+      "surface": "+91-6112805982",
+      "start": 604,
+      "end": 618,
+      "char_span": [
+        604,
+        618
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-6112805982",
+      "surface": "+91-6112805982",
+      "start": 655,
+      "end": 669,
+      "char_span": [
+        655,
+        669
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "720450533158693",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "720450533158693",
+      "surface": "720450533158693",
+      "start": 687,
+      "end": 702,
+      "char_span": [
+        687,
+        702
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "720450533158693",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "6112805982",
+      "target_key": "7081219136",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        402,
+        529
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_04",
+      "target_key": "6112805982",
+      "source_mention": "E7",
+      "target_mention": "E8",
+      "source": "E7",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        530,
+        718
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "6112805982",
+      "target_key": "720450533158693",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        530,
+        718
+      ]
+    }
+  ]
+}

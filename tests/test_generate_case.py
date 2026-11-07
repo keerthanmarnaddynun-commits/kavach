@@ -359,3 +359,145 @@ def test_pizza_shop_no_contact_with_both_gangs(generated_case):
         assert len(contacts.intersection(gang_b_phones)) <= 3
 
 
+def test_ifsc_format_in_truth_and_bank(generated_case):
+    """Every IFSC in truth.json and bank.csv matches ^[A-Z]{4}0[A-Z0-9]{6}$."""
+    pattern = re.compile(r"^[A-Z]{4}0[A-Z0-9]{6}$")
+    truth = generated_case["truth"]
+    bank_rows = generated_case["bank_rows"]
+
+    for acct in truth["accounts"]:
+        ifsc = acct["ifsc"]
+        assert pattern.match(ifsc), f"Invalid IFSC in truth.json accounts: {ifsc}"
+
+    for person in truth["people"]:
+        for acct in person.get("accounts", []):
+            ifsc = acct["ifsc"]
+            assert pattern.match(ifsc), f"Invalid IFSC in truth.json person {person['person_id']}: {ifsc}"
+
+    assert len(bank_rows) > 0
+    for row in bank_rows:
+        ifsc = row["ifsc"]
+        assert pattern.match(ifsc), f"Invalid IFSC in bank.csv row {row['txn_id']}: {ifsc}"
+
+
+def test_ifsc_prefix_matches_bank(generated_case):
+    """IFSC prefix matches the bank (SBIN for SBI, ICIC for ICICI, HDFC for HDFC, PUNB for PNB)."""
+    expected_prefixes = {
+        "SBI": "SBIN",
+        "ICICI": "ICIC",
+        "HDFC": "HDFC",
+        "PNB": "PUNB",
+    }
+    truth = generated_case["truth"]
+
+    for acct in truth["accounts"]:
+        bank = acct["bank"]
+        ifsc = acct["ifsc"]
+        assert bank in expected_prefixes, f"Unknown bank: {bank}"
+        prefix = expected_prefixes[bank]
+        assert ifsc.startswith(prefix), f"IFSC {ifsc} does not start with {prefix} for bank {bank}"
+        assert ifsc[4] == "0", f"IFSC {ifsc} does not have '0' at 5th character"
+
+    for person in truth["people"]:
+        for acct in person.get("accounts", []):
+            bank = acct["bank"]
+            ifsc = acct["ifsc"]
+            prefix = expected_prefixes[bank]
+            assert ifsc.startswith(prefix), f"Person {person['person_id']} IFSC {ifsc} does not start with {prefix} for bank {bank}"
+
+
+def test_account_length_matches_bank(generated_case):
+    """Account length matches the bank: SBI 11 digits, ICICI 12, HDFC 14, PNB 16. Digits only."""
+    expected_lengths = {
+        "SBI": 11,
+        "ICICI": 12,
+        "HDFC": 14,
+        "PNB": 16,
+    }
+    truth = generated_case["truth"]
+
+    for acct in truth["accounts"]:
+        bank = acct["bank"]
+        num = acct["account_number"]
+        assert bank in expected_lengths, f"Unknown bank: {bank}"
+        assert len(num) == expected_lengths[bank], (
+            f"Account {num} length {len(num)} does not match bank {bank} expected length {expected_lengths[bank]}"
+        )
+        assert num.isdigit(), f"Account {num} contains non-digits"
+
+    for person in truth["people"]:
+        for acct in person.get("accounts", []):
+            bank = acct["bank"]
+            num = acct["account_number"]
+            assert len(num) == expected_lengths[bank], (
+                f"Person {person['person_id']} account {num} length {len(num)} != {expected_lengths[bank]}"
+            )
+            assert num.isdigit(), f"Person {person['person_id']} account {num} contains non-digits"
+
+
+def test_no_account_has_10_or_15_digits(generated_case):
+    """No account may have 10 or 15 digits (to prevent confusion with phone number or IMEI)."""
+    truth = generated_case["truth"]
+    bank_rows = generated_case["bank_rows"]
+
+    for acct in truth["accounts"]:
+        num = acct["account_number"]
+        assert len(num) != 10, f"Account {num} has 10 digits"
+        assert len(num) != 15, f"Account {num} has 15 digits"
+
+    for row in bank_rows:
+        for field in ["from_acct", "to_acct"]:
+            num = row[field]
+            assert len(num) != 10, f"Bank row {row['txn_id']} {field} {num} has 10 digits"
+            assert len(num) != 15, f"Bank row {row['txn_id']} {field} {num} has 15 digits"
+
+
+def test_bank_csv_ifsc_equals_receiving_account_ifsc(generated_case):
+    """In bank.csv the ifsc column is the IFSC of the RECEIVING account (to_acct)."""
+    truth = generated_case["truth"]
+    bank_rows = generated_case["bank_rows"]
+
+    truth_accts = {a["account_number"]: a for a in truth["accounts"]}
+
+    for row in bank_rows:
+        to_acct = row["to_acct"]
+        if to_acct in truth_accts:
+            expected_ifsc = truth_accts[to_acct]["ifsc"]
+            assert row["ifsc"] == expected_ifsc, (
+                f"Txn {row['txn_id']}: bank.csv ifsc {row['ifsc']} != receiving account truth IFSC {expected_ifsc}"
+            )
+            bank = truth_accts[to_acct]["bank"]
+            prefix = {"SBI": "SBIN", "ICICI": "ICIC", "HDFC": "HDFC", "PNB": "PUNB"}[bank]
+            assert row["ifsc"].startswith(prefix)
+
+
+def test_no_account_number_equals_any_phone_or_imei(generated_case):
+    """No account number equals any phone number or IMEI value."""
+    truth = generated_case["truth"]
+    cdr_rows = generated_case["cdr_rows"]
+    bank_rows = generated_case["bank_rows"]
+
+    all_phones = {p["phone"] for p in truth["phones"]}
+    for row in cdr_rows:
+        all_phones.add(row["a_party"])
+        all_phones.add(row["b_party"])
+
+    all_imeis = set(truth["imeis"])
+    for row in cdr_rows:
+        all_imeis.add(row["imei_a"])
+
+    # Check truth accounts
+    for acct in truth["accounts"]:
+        num = acct["account_number"]
+        assert num not in all_phones, f"Account number {num} matches a phone number!"
+        assert num not in all_imeis, f"Account number {num} matches an IMEI!"
+
+    # Check bank accounts
+    for row in bank_rows:
+        for field in ["from_acct", "to_acct"]:
+            num = row[field]
+            assert num not in all_phones, f"Bank row {row['txn_id']} {field} {num} matches a phone number!"
+            assert num not in all_imeis, f"Bank row {row['txn_id']} {field} {num} matches an IMEI!"
+
+
+

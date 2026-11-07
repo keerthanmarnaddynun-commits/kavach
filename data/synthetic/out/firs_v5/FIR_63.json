@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_63",
+  "split": "dev",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_04",
+    "T_IMEI_HG_04",
+    "T_CALL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sunil Kumar",
+      "surface": "Sunil Kumar",
+      "start": 220,
+      "end": 231,
+      "char_span": [
+        220,
+        231
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "Sunny"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_06",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Sunny",
+      "surface": "Sunny",
+      "start": 236,
+      "end": 241,
+      "char_span": [
+        236,
+        241
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Bhagwan Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bhagwan Kumar",
+      "surface": "Bhagwan Kumar",
+      "start": 251,
+      "end": 264,
+      "char_span": [
+        251,
+        264
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Bhagwan Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sunil Kumar",
+      "surface": "Sunil Kumar",
+      "start": 333,
+      "end": 344,
+      "char_span": [
+        333,
+        344
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "Sunny"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7148951343",
+      "surface": "7148951343",
+      "start": 382,
+      "end": 392,
+      "char_span": [
+        382,
+        392
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7148951343",
+      "surface": "7148951343",
+      "start": 440,
+      "end": 450,
+      "char_span": [
+        440,
+        450
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "420037917693677",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "420037917693677",
+      "surface": "420037917693677",
+      "start": 466,
+      "end": 481,
+      "char_span": [
+        466,
+        481
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "420037917693677",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "OFFICER:Vikram Rathore",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Vikram Rathore",
+      "surface": "Vikram Rathore",
+      "start": 512,
+      "end": 526,
+      "char_span": [
+        512,
+        526
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Vikram Rathore",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7148951343",
+      "surface": "7148951343",
+      "start": 647,
+      "end": 657,
+      "char_span": [
+        647,
+        657
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "6834738299",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6834738299",
+      "surface": "6834738299",
+      "start": 667,
+      "end": 677,
+      "char_span": [
+        667,
+        677
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6834738299",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_06",
+      "target_key": "7148951343",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        307,
+        498
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7148951343",
+      "target_key": "420037917693677",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        307,
+        498
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "7148951343",
+      "target_key": "6834738299",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        600,
+        712
+      ]
+    }
+  ]
+}

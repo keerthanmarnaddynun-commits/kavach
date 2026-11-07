@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_100",
+  "split": "test",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_EN_06"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_CR_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Pal",
+      "surface": "Suresh Pal",
+      "start": 208,
+      "end": 218,
+      "char_span": [
+        208,
+        218
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_CR_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Hawai",
+      "surface": "Hawai",
+      "start": 225,
+      "end": 230,
+      "char_span": [
+        225,
+        230
+      ],
+      "role": null,
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mohan Pal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Pal",
+      "surface": "Mohan Pal",
+      "start": 240,
+      "end": 249,
+      "char_span": [
+        240,
+        249
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mohan Pal",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Amit Tomar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Amit Tomar",
+      "surface": "Amit Tomar",
+      "start": 294,
+      "end": 304,
+      "char_span": [
+        294,
+        304
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Amit Tomar",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}

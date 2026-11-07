@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_83",
+  "split": "test",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_05",
+    "T_IMEI_HG_02",
+    "T_CALL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sunil Kumar",
+      "surface": "Sunil Kumar",
+      "start": 213,
+      "end": 224,
+      "char_span": [
+        213,
+        224
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "Sunny"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_06",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Sunny",
+      "surface": "Sunny",
+      "start": 229,
+      "end": 234,
+      "char_span": [
+        229,
+        234
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Bhagwan Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bhagwan Kumar",
+      "surface": "Bhagwan Kumar",
+      "start": 244,
+      "end": 257,
+      "char_span": [
+        244,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Bhagwan Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sunil Kumar",
+      "surface": "Sunil Kumar",
+      "start": 332,
+      "end": 343,
+      "char_span": [
+        332,
+        343
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "Sunny"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7148951343",
+      "surface": "7148951343",
+      "start": 377,
+      "end": 387,
+      "char_span": [
+        377,
+        387
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7148951343",
+      "surface": "7148951343",
+      "start": 433,
+      "end": 443,
+      "char_span": [
+        433,
+        443
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "420037917693677",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "420037917693677",
+      "surface": "420037917693677",
+      "start": 457,
+      "end": 472,
+      "char_span": [
+        457,
+        472
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "420037917693677",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "7148951343",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7148951343",
+      "surface": "7148951343",
+      "start": 550,
+      "end": 560,
+      "char_span": [
+        550,
+        560
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7148951343",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "6834738299",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6834738299",
+      "surface": "6834738299",
+      "start": 570,
+      "end": 580,
+      "char_span": [
+        570,
+        580
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6834738299",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "WITNESS:Kishore Sen",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Kishore Sen",
+      "surface": "Kishore Sen",
+      "start": 631,
+      "end": 642,
+      "char_span": [
+        631,
+        642
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Kishore Sen",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_06",
+      "target_key": "7148951343",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        300,
+        502
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7148951343",
+      "target_key": "420037917693677",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        300,
+        502
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "7148951343",
+      "target_key": "6834738299",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        503,
+        615
+      ]
+    }
+  ]
+}

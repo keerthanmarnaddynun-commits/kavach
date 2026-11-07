@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_20",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_04",
+    "T_IMEI_HG_04",
+    "T_CALL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_CR_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Pal",
+      "surface": "Suresh Pal",
+      "start": 203,
+      "end": 213,
+      "char_span": [
+        203,
+        213
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_CR_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Hawai",
+      "surface": "Hawai",
+      "start": 218,
+      "end": 223,
+      "char_span": [
+        218,
+        223
+      ],
+      "role": null,
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mohan Pal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Pal",
+      "surface": "Mohan Pal",
+      "start": 233,
+      "end": 242,
+      "char_span": [
+        233,
+        242
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mohan Pal",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "COMPLAINANT:Pawan Verma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pawan Verma",
+      "surface": "Pawan Verma",
+      "start": 303,
+      "end": 314,
+      "char_span": [
+        303,
+        314
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Pawan Verma",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "8406409097",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8406409097",
+      "surface": "8406409097",
+      "start": 435,
+      "end": 445,
+      "char_span": [
+        435,
+        445
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8406409097",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7691669784",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7691669784",
+      "surface": "7691669784",
+      "start": 455,
+      "end": 465,
+      "char_span": [
+        455,
+        465
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7691669784",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "PER_CR_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Pal",
+      "surface": "Suresh Pal",
+      "start": 527,
+      "end": 537,
+      "char_span": [
+        527,
+        537
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ]
+    },
+    {
+      "id": "E8",
+      "entity_key": "8406409097",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8406409097",
+      "surface": "8406409097",
+      "start": 575,
+      "end": 585,
+      "char_span": [
+        575,
+        585
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8406409097",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "8406409097",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8406409097",
+      "surface": "8406409097",
+      "start": 633,
+      "end": 643,
+      "char_span": [
+        633,
+        643
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8406409097",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "539533942104704",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "539533942104704",
+      "surface": "539533942104704",
+      "start": 659,
+      "end": 674,
+      "char_span": [
+        659,
+        674
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "539533942104704",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "8406409097",
+      "target_key": "7691669784",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        388,
+        500
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_CR_02",
+      "target_key": "8406409097",
+      "source_mention": "E7",
+      "target_mention": "E8",
+      "source": "E7",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        501,
+        691
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8406409097",
+      "target_key": "539533942104704",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        501,
+        691
+      ]
+    }
+  ]
+}
