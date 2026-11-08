@@ -1,0 +1,1369 @@
+{
+  "meta": {
+    "run_id": "step5a_baseline",
+    "created_at": "2026-11-08T05:06:15.802239+00:00",
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "python_version_short": "3.11.9",
+    "command": "python scripts/report/step5_baseline.py --run-id step5a_baseline",
+    "pytest_command": "C:\\Users\\Kirthan\\Desktop\\crimi-nex\\.venv311\\Scripts\\python.exe -m pytest -v tests/test_scoring.py"
+  },
+  "input_hashes": {
+    "scoring_py": "f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b",
+    "identifiers_py": "3dc5b861b5f048ae675608915853b78fa745ded9c9f900604930ac7abdf01d99",
+    "validators_py": "e1413ab1e636514c74041490eed35ebaebaa17d6d2c8e4891e890e612c3a2c99",
+    "normalizer_py": "d1cfa0fa1c8480c9d55f7b0ccb6dbc31f0305deb73b7343a2c039d6a7d3a4123",
+    "test_scoring_py": "68198b177b1cf6d3e335d43028e27a3c91dedc9f7835447ea94eeabd0f84c8e8",
+    "firs_v5_index_json": "a21ef522c2a21a8f098ae317742ecb2bb99d4f17b27ffeb6854a4b86e5c38f85",
+    "firs_v5_combined": "4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949",
+    "firs_v5_contract_combined": "98cd05e846ee59c9be4bde1877f84fde630dc3c2c232f8b8ed347b81d46e90c6"
+  },
+  "dataset_counts": {
+    "total_firs": 100,
+    "total_gold_mentions": 1235,
+    "gold_mentions_by_type": {
+      "PERSON": 383,
+      "ALIAS": 155,
+      "FATHER": 127,
+      "AMOUNT": 107,
+      "ACCOUNT": 134,
+      "PHONE": 255,
+      "IMEI": 74
+    },
+    "total_gold_relations": 312,
+    "total_gold_entities": 550
+  },
+  "harness_checks": {
+    "gold_mentions": {
+      "tp": 1235,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "empty_mentions": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1235,
+      "precision": null,
+      "recall": 0.0,
+      "f1": null
+    },
+    "gold_relations": {
+      "tp": 312,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "empty_relations": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 312,
+      "precision": null,
+      "recall": 0.0,
+      "f1": null
+    }
+  },
+  "rules_evaluation": {
+    "overall": {
+      "micro": {
+        "strict": {
+          "tp": 570,
+          "fp": 0,
+          "fn": 665,
+          "precision": 1.0,
+          "recall": 0.46153846153846156,
+          "f1": 0.631578947368421
+        },
+        "lenient": {
+          "tp": 570,
+          "fp": 0,
+          "fn": 665,
+          "precision": 1.0,
+          "recall": 0.46153846153846156,
+          "f1": 0.631578947368421
+        }
+      },
+      "ACCOUNT": {
+        "strict": {
+          "tp": 134,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 134,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "AMOUNT": {
+        "strict": {
+          "tp": 107,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 107,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "IMEI": {
+        "strict": {
+          "tp": 74,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 74,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "PHONE": {
+        "strict": {
+          "tp": 255,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 255,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      }
+    },
+    "by_split": {
+      "dev": {
+        "micro": {
+          "strict": {
+            "tp": 111,
+            "fp": 0,
+            "fn": 130,
+            "precision": 1.0,
+            "recall": 0.4605809128630705,
+            "f1": 0.6306818181818182
+          },
+          "lenient": {
+            "tp": 111,
+            "fp": 0,
+            "fn": 130,
+            "precision": 1.0,
+            "recall": 0.4605809128630705,
+            "f1": 0.6306818181818182
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 27,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 27,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 21,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 21,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 49,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 49,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "test": {
+        "micro": {
+          "strict": {
+            "tp": 111,
+            "fp": 0,
+            "fn": 132,
+            "precision": 1.0,
+            "recall": 0.4567901234567901,
+            "f1": 0.6271186440677966
+          },
+          "lenient": {
+            "tp": 111,
+            "fp": 0,
+            "fn": 132,
+            "precision": 1.0,
+            "recall": 0.4567901234567901,
+            "f1": 0.6271186440677966
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 27,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 27,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 21,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 21,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 49,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 49,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "train": {
+        "micro": {
+          "strict": {
+            "tp": 348,
+            "fp": 0,
+            "fn": 403,
+            "precision": 1.0,
+            "recall": 0.4633821571238349,
+            "f1": 0.6333030027297543
+          },
+          "lenient": {
+            "tp": 348,
+            "fp": 0,
+            "fn": 403,
+            "precision": 1.0,
+            "recall": 0.4633821571238349,
+            "f1": 0.6333030027297543
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 80,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 80,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 65,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 65,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 46,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 46,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 157,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 157,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      }
+    },
+    "by_language": {
+      "english": {
+        "micro": {
+          "strict": {
+            "tp": 78,
+            "fp": 0,
+            "fn": 111,
+            "precision": 1.0,
+            "recall": 0.4126984126984127,
+            "f1": 0.5842696629213483
+          },
+          "lenient": {
+            "tp": 78,
+            "fp": 0,
+            "fn": 111,
+            "precision": 1.0,
+            "recall": 0.4126984126984127,
+            "f1": 0.5842696629213483
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 19,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 19,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 16,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 16,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 33,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 33,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "hindi": {
+        "micro": {
+          "strict": {
+            "tp": 113,
+            "fp": 0,
+            "fn": 124,
+            "precision": 1.0,
+            "recall": 0.4767932489451477,
+            "f1": 0.6457142857142858
+          },
+          "lenient": {
+            "tp": 113,
+            "fp": 0,
+            "fn": 124,
+            "precision": 1.0,
+            "recall": 0.4767932489451477,
+            "f1": 0.6457142857142858
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 25,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 25,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 53,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 53,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      },
+      "hinglish": {
+        "micro": {
+          "strict": {
+            "tp": 379,
+            "fp": 0,
+            "fn": 430,
+            "precision": 1.0,
+            "recall": 0.4684796044499382,
+            "f1": 0.6380471380471381
+          },
+          "lenient": {
+            "tp": 379,
+            "fp": 0,
+            "fn": 430,
+            "precision": 1.0,
+            "recall": 0.4684796044499382,
+            "f1": 0.6380471380471381
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 90,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 90,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 71,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 71,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 49,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 49,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 169,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 169,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        }
+      }
+    }
+  },
+  "naive_evaluation": {
+    "overall": {
+      "micro": {
+        "strict": {
+          "tp": 405,
+          "fp": 383,
+          "fn": 830,
+          "precision": 0.5139593908629442,
+          "recall": 0.32793522267206476,
+          "f1": 0.40039545229856643
+        },
+        "lenient": {
+          "tp": 488,
+          "fp": 300,
+          "fn": 747,
+          "precision": 0.6192893401015228,
+          "recall": 0.3951417004048583,
+          "f1": 0.4824518042511123
+        }
+      },
+      "ACCOUNT": {
+        "strict": {
+          "tp": 134,
+          "fp": 300,
+          "fn": 0,
+          "precision": 0.3087557603686636,
+          "recall": 1.0,
+          "f1": 0.47183098591549294
+        },
+        "lenient": {
+          "tp": 134,
+          "fp": 300,
+          "fn": 0,
+          "precision": 0.3087557603686636,
+          "recall": 1.0,
+          "f1": 0.47183098591549294
+        }
+      },
+      "AMOUNT": {
+        "strict": {
+          "tp": 0,
+          "fp": 54,
+          "fn": 107,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lenient": {
+          "tp": 54,
+          "fp": 0,
+          "fn": 53,
+          "precision": 1.0,
+          "recall": 0.5046728971962616,
+          "f1": 0.6708074534161491
+        }
+      },
+      "IMEI": {
+        "strict": {
+          "tp": 74,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 74,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "PHONE": {
+        "strict": {
+          "tp": 197,
+          "fp": 29,
+          "fn": 58,
+          "precision": 0.8716814159292036,
+          "recall": 0.7725490196078432,
+          "f1": 0.8191268191268192
+        },
+        "lenient": {
+          "tp": 226,
+          "fp": 0,
+          "fn": 29,
+          "precision": 1.0,
+          "recall": 0.8862745098039215,
+          "f1": 0.9397089397089397
+        }
+      }
+    },
+    "by_split": {
+      "dev": {
+        "micro": {
+          "strict": {
+            "tp": 78,
+            "fp": 80,
+            "fn": 163,
+            "precision": 0.4936708860759494,
+            "recall": 0.3236514522821577,
+            "f1": 0.39097744360902253
+          },
+          "lenient": {
+            "tp": 98,
+            "fp": 60,
+            "fn": 143,
+            "precision": 0.620253164556962,
+            "recall": 0.4066390041493776,
+            "f1": 0.49122807017543857
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 27,
+            "fp": 60,
+            "fn": 0,
+            "precision": 0.3103448275862069,
+            "recall": 1.0,
+            "f1": 0.4736842105263158
+          },
+          "lenient": {
+            "tp": 27,
+            "fp": 60,
+            "fn": 0,
+            "precision": 0.3103448275862069,
+            "recall": 1.0,
+            "f1": 0.4736842105263158
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 0,
+            "fp": 11,
+            "fn": 21,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "tp": 11,
+            "fp": 0,
+            "fn": 10,
+            "precision": 1.0,
+            "recall": 0.5238095238095238,
+            "f1": 0.6875000000000001
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 37,
+            "fp": 9,
+            "fn": 12,
+            "precision": 0.8043478260869565,
+            "recall": 0.7551020408163265,
+            "f1": 0.7789473684210526
+          },
+          "lenient": {
+            "tp": 46,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.9387755102040817,
+            "f1": 0.968421052631579
+          }
+        }
+      },
+      "test": {
+        "micro": {
+          "strict": {
+            "tp": 78,
+            "fp": 74,
+            "fn": 165,
+            "precision": 0.5131578947368421,
+            "recall": 0.32098765432098764,
+            "f1": 0.39493670886075943
+          },
+          "lenient": {
+            "tp": 95,
+            "fp": 57,
+            "fn": 148,
+            "precision": 0.625,
+            "recall": 0.39094650205761317,
+            "f1": 0.48101265822784806
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 27,
+            "fp": 57,
+            "fn": 0,
+            "precision": 0.32142857142857145,
+            "recall": 1.0,
+            "f1": 0.4864864864864865
+          },
+          "lenient": {
+            "tp": 27,
+            "fp": 57,
+            "fn": 0,
+            "precision": 0.32142857142857145,
+            "recall": 1.0,
+            "f1": 0.4864864864864865
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 0,
+            "fp": 11,
+            "fn": 21,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "tp": 11,
+            "fp": 0,
+            "fn": 10,
+            "precision": 1.0,
+            "recall": 0.5238095238095238,
+            "f1": 0.6875000000000001
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 37,
+            "fp": 6,
+            "fn": 12,
+            "precision": 0.8604651162790697,
+            "recall": 0.7551020408163265,
+            "f1": 0.8043478260869564
+          },
+          "lenient": {
+            "tp": 43,
+            "fp": 0,
+            "fn": 6,
+            "precision": 1.0,
+            "recall": 0.8775510204081632,
+            "f1": 0.9347826086956522
+          }
+        }
+      },
+      "train": {
+        "micro": {
+          "strict": {
+            "tp": 249,
+            "fp": 229,
+            "fn": 502,
+            "precision": 0.5209205020920502,
+            "recall": 0.33155792276964047,
+            "f1": 0.4052074857607811
+          },
+          "lenient": {
+            "tp": 295,
+            "fp": 183,
+            "fn": 456,
+            "precision": 0.6171548117154811,
+            "recall": 0.39280958721704395,
+            "f1": 0.48006509357200977
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 80,
+            "fp": 183,
+            "fn": 0,
+            "precision": 0.3041825095057034,
+            "recall": 1.0,
+            "f1": 0.4664723032069971
+          },
+          "lenient": {
+            "tp": 80,
+            "fp": 183,
+            "fn": 0,
+            "precision": 0.3041825095057034,
+            "recall": 1.0,
+            "f1": 0.4664723032069971
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 0,
+            "fp": 32,
+            "fn": 65,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "tp": 32,
+            "fp": 0,
+            "fn": 33,
+            "precision": 1.0,
+            "recall": 0.49230769230769234,
+            "f1": 0.6597938144329897
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 46,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 46,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 123,
+            "fp": 14,
+            "fn": 34,
+            "precision": 0.8978102189781022,
+            "recall": 0.7834394904458599,
+            "f1": 0.8367346938775512
+          },
+          "lenient": {
+            "tp": 137,
+            "fp": 0,
+            "fn": 20,
+            "precision": 1.0,
+            "recall": 0.8726114649681529,
+            "f1": 0.9319727891156463
+          }
+        }
+      }
+    },
+    "by_language": {
+      "english": {
+        "micro": {
+          "strict": {
+            "tp": 56,
+            "fp": 42,
+            "fn": 133,
+            "precision": 0.5714285714285714,
+            "recall": 0.2962962962962963,
+            "f1": 0.3902439024390244
+          },
+          "lenient": {
+            "tp": 61,
+            "fp": 37,
+            "fn": 128,
+            "precision": 0.6224489795918368,
+            "recall": 0.32275132275132273,
+            "f1": 0.4250871080139373
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 19,
+            "fp": 37,
+            "fn": 0,
+            "precision": 0.3392857142857143,
+            "recall": 1.0,
+            "f1": 0.5066666666666666
+          },
+          "lenient": {
+            "tp": 19,
+            "fp": 37,
+            "fn": 0,
+            "precision": 0.3392857142857143,
+            "recall": 1.0,
+            "f1": 0.5066666666666666
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 0,
+            "fp": 5,
+            "fn": 16,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 11,
+            "precision": 1.0,
+            "recall": 0.3125,
+            "f1": 0.47619047619047616
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 27,
+            "fp": 0,
+            "fn": 6,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          },
+          "lenient": {
+            "tp": 27,
+            "fp": 0,
+            "fn": 6,
+            "precision": 1.0,
+            "recall": 0.8181818181818182,
+            "f1": 0.9
+          }
+        }
+      },
+      "hindi": {
+        "micro": {
+          "strict": {
+            "tp": 81,
+            "fp": 78,
+            "fn": 156,
+            "precision": 0.5094339622641509,
+            "recall": 0.34177215189873417,
+            "f1": 0.40909090909090906
+          },
+          "lenient": {
+            "tp": 97,
+            "fp": 62,
+            "fn": 140,
+            "precision": 0.610062893081761,
+            "recall": 0.4092827004219409,
+            "f1": 0.4898989898989899
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 25,
+            "fp": 62,
+            "fn": 0,
+            "precision": 0.28735632183908044,
+            "recall": 1.0,
+            "f1": 0.4464285714285714
+          },
+          "lenient": {
+            "tp": 25,
+            "fp": 62,
+            "fn": 0,
+            "precision": 0.28735632183908044,
+            "recall": 1.0,
+            "f1": 0.4464285714285714
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 0,
+            "fp": 10,
+            "fn": 20,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 10,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 41,
+            "fp": 6,
+            "fn": 12,
+            "precision": 0.8723404255319149,
+            "recall": 0.7735849056603774,
+            "f1": 0.8200000000000001
+          },
+          "lenient": {
+            "tp": 47,
+            "fp": 0,
+            "fn": 6,
+            "precision": 1.0,
+            "recall": 0.8867924528301887,
+            "f1": 0.9400000000000001
+          }
+        }
+      },
+      "hinglish": {
+        "micro": {
+          "strict": {
+            "tp": 268,
+            "fp": 263,
+            "fn": 541,
+            "precision": 0.504708097928437,
+            "recall": 0.33127317676143386,
+            "f1": 0.39999999999999997
+          },
+          "lenient": {
+            "tp": 330,
+            "fp": 201,
+            "fn": 479,
+            "precision": 0.6214689265536724,
+            "recall": 0.4079110012360939,
+            "f1": 0.4925373134328358
+          }
+        },
+        "ACCOUNT": {
+          "strict": {
+            "tp": 90,
+            "fp": 201,
+            "fn": 0,
+            "precision": 0.30927835051546393,
+            "recall": 1.0,
+            "f1": 0.47244094488188976
+          },
+          "lenient": {
+            "tp": 90,
+            "fp": 201,
+            "fn": 0,
+            "precision": 0.30927835051546393,
+            "recall": 1.0,
+            "f1": 0.47244094488188976
+          }
+        },
+        "AMOUNT": {
+          "strict": {
+            "tp": 0,
+            "fp": 39,
+            "fn": 71,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "lenient": {
+            "tp": 39,
+            "fp": 0,
+            "fn": 32,
+            "precision": 1.0,
+            "recall": 0.5492957746478874,
+            "f1": 0.7090909090909091
+          }
+        },
+        "IMEI": {
+          "strict": {
+            "tp": 49,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "lenient": {
+            "tp": 49,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "PHONE": {
+          "strict": {
+            "tp": 129,
+            "fp": 23,
+            "fn": 40,
+            "precision": 0.8486842105263158,
+            "recall": 0.7633136094674556,
+            "f1": 0.8037383177570094
+          },
+          "lenient": {
+            "tp": 152,
+            "fp": 0,
+            "fn": 17,
+            "precision": 1.0,
+            "recall": 0.8994082840236687,
+            "f1": 0.9470404984423676
+          }
+        }
+      }
+    }
+  }
+}

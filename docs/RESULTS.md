@@ -315,4 +315,143 @@
 - Forensic audio or image ground truth: Document packages provide textual narrative annotations without corresponding scanned document images or audio recordings.
 <!-- STEP2:END -->
 
+<!-- STEP5A:BEGIN -->
+## Step 5a: Identifier Baseline and Scoring Evaluation
 
+### Results Card
+- **Purpose**: Baseline evaluation of Indian identifier extraction against synthetic First Information Report narrative texts and relational ground truth using strict and lenient scoring metrics.
+- **Exact Command**: `python scripts/report/step5_baseline.py --run-id step5a_baseline_r2`
+- **Exact Pytest Command**: `C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe -m pytest -v tests/test_scoring.py`
+- **Input Files**:
+  - `ai_pipeline/scoring.py` (SHA-256: `f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b`)
+  - `ai_pipeline/identifiers.py` (SHA-256: `3dc5b861b5f048ae675608915853b78fa745ded9c9f900604930ac7abdf01d99`)
+  - `ai_pipeline/validators.py` (SHA-256: `e1413ab1e636514c74041490eed35ebaebaa17d6d2c8e4891e890e612c3a2c99`)
+  - `ai_pipeline/normalizer.py` (SHA-256: `d1cfa0fa1c8480c9d55f7b0ccb6dbc31f0305deb73b7343a2c039d6a7d3a4123`)
+  - `tests/test_scoring.py` (SHA-256: `68198b177b1cf6d3e335d43028e27a3c91dedc9f7835447ea94eeabd0f84c8e8`)
+  - `data/synthetic/out/firs_v5/index.json` (SHA-256: `a21ef522c2a21a8f098ae317742ecb2bb99d4f17b27ffeb6854a4b86e5c38f85`)
+  - Combined `firs_v5` texts and answer keys (SHA-256: `4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949`)
+  - Combined `firs_v5_contract` documents (SHA-256: `98cd05e846ee59c9be4bde1877f84fde630dc3c2c232f8b8ed347b81d46e90c6`)
+- **Output Files**:
+  - `metrics.json` (SHA-256: `def9e3ee53d6ddd8eb678281012a1df5012149ab58b146e191d1eebfb8582ca7`)
+  - `pytest_raw.txt` (SHA-256: `0546b36cf70db0fe43fd6a9a89a1428430543560b252fe8ad8cea28e8a20bf3b`)
+  - `SHA256SUMS.txt` (SHA-256: `d929002832a961e257ca4835c7c9b6a0ec101eebdbf006e81a10fcb6aa1e99b2`)
+- **Key Numbers**:
+  - `metrics.json` (`dataset_counts.total_firs`): 100 total documents
+  - `metrics.json` (`dataset_counts.total_gold_mentions`): 1235 total ground truth mentions
+  - `metrics.json` (`dataset_counts.total_gold_relations`): 312 total ground truth relations
+  - `metrics.json` (`harness_checks.gold_mentions.f1`): 1.0000 reference mention F1
+  - `metrics.json` (`harness_checks.empty_mentions.recall`): 0.0000 empty mention recall
+  - `metrics.json` (`harness_checks.gold_relations.f1`): 1.0000 reference relation F1
+  - `metrics.json` (`rules_evaluation.overall.PHONE.strict.f1`): 1.0000 RULES PHONE strict F1
+  - `metrics.json` (`rules_evaluation.overall.ACCOUNT.strict.f1`): 1.0000 RULES ACCOUNT strict F1
+  - `metrics.json` (`naive_evaluation.overall.ACCOUNT.strict.f1`): 0.4718 NAIVE ACCOUNT strict F1
+  - `metrics.json` (`naive_evaluation.overall.AMOUNT.lenient.f1`): 0.6708 NAIVE AMOUNT lenient F1
+- **Environment**: Python 3.11.9
+
+### Tables
+
+#### Table A: Overall Performance by Extractor and Type
+| Extractor | Entity Type | Strict P | Strict R | Strict F1 | Lenient P | Lenient R | Lenient F1 | Strict TP | Strict FP | Strict FN |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| RULES | PHONE | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 255 | 0 | 0 |
+| RULES | IMEI | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 74 | 0 | 0 |
+| RULES | ACCOUNT | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 134 | 0 | 0 |
+| RULES | AMOUNT | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 107 | 0 | 0 |
+| NAIVE | PHONE | 0.8717 | 0.7725 | 0.8191 | 1.0000 | 0.8863 | 0.9397 | 197 | 29 | 58 |
+| NAIVE | IMEI | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 74 | 0 | 0 |
+| NAIVE | ACCOUNT | 0.3088 | 1.0000 | 0.4718 | 0.3088 | 1.0000 | 0.4718 | 134 | 300 | 0 |
+| NAIVE | AMOUNT | 0.0000 | 0.0000 | 0.0000 | 1.0000 | 0.5047 | 0.6708 | 0 | 54 | 107 |
+
+#### Table B: Strict F1 by Entity Type Across Dataset Partition Splits
+| Extractor | Entity Type | Train Split Strict F1 | Dev Split Strict F1 | Test Split Strict F1 | Overall Strict F1 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| RULES | PHONE | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| RULES | IMEI | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| RULES | ACCOUNT | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| RULES | AMOUNT | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| NAIVE | PHONE | 0.8367 | 0.7789 | 0.8043 | 0.8191 |
+| NAIVE | IMEI | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| NAIVE | ACCOUNT | 0.4665 | 0.4737 | 0.4865 | 0.4718 |
+| NAIVE | AMOUNT | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+
+#### Table C: Strict F1 by Entity Type Across Narrative Languages
+| Extractor | Entity Type | Hinglish Strict F1 | Hindi Strict F1 | English Strict F1 | Overall Strict F1 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| RULES | PHONE | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| RULES | IMEI | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| RULES | ACCOUNT | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| RULES | AMOUNT | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| NAIVE | PHONE | 0.8037 | 0.8200 | 0.9000 | 0.8191 |
+| NAIVE | IMEI | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| NAIVE | ACCOUNT | 0.4724 | 0.4464 | 0.5067 | 0.4718 |
+| NAIVE | AMOUNT | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+
+#### Table D: Evaluation Harness Checks
+| Evaluation Suite | Condition Tested | Strict TP | Strict FP | Strict FN | Precision | Recall | F1 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Reference Mentions | Gold Predictions | 1235 | 0 | 0 | 1.0000 | 1.0000 | 1.0000 |
+| Reference Mentions | Empty Predictions | 0 | 0 | 1235 | — | 0.0000 | — |
+| Contract Relations | Gold Predictions | 312 | 0 | 0 | 1.0000 | 1.0000 | 1.0000 |
+| Contract Relations | Empty Predictions | 0 | 0 | 312 | — | 0.0000 | — |
+
+#### Table E: Input Hashes
+| Component File | SHA-256 Digest | Evaluation Role |
+| :--- | :--- | :--- |
+| `ai_pipeline/scoring.py` | `f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b` | Mention and relational scoring harness |
+| `ai_pipeline/identifiers.py` | `3dc5b861b5f048ae675608915853b78fa745ded9c9f900604930ac7abdf01d99` | Precedence-based identifier extraction |
+| `ai_pipeline/validators.py` | `e1413ab1e636514c74041490eed35ebaebaa17d6d2c8e4891e890e612c3a2c99` | Pattern finders and checksum validators |
+| `ai_pipeline/normalizer.py` | `d1cfa0fa1c8480c9d55f7b0ccb6dbc31f0305deb73b7343a2c039d6a7d3a4123` | Length-preserving Unicode normalization |
+| `tests/test_scoring.py` | `68198b177b1cf6d3e335d43028e27a3c91dedc9f7835447ea94eeabd0f84c8e8` | Scoring test suite |
+| `data/synthetic/out/firs_v5/index.json` | `a21ef522c2a21a8f098ae317742ecb2bb99d4f17b27ffeb6854a4b86e5c38f85` | Corpus split and language index |
+| `firs_v5 (narratives & keys)` | `4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949` | Combined hash across all FIR text and JSON files |
+| `firs_v5_contract (contracts)` | `98cd05e846ee59c9be4bde1877f84fde630dc3c2c232f8b8ed347b81d46e90c6` | Combined hash across all contract files |
+
+### Test List
+| Test Function | Description | Test Outcome |
+| :--- | :--- | :--- |
+| `test_perfect_predictions_give_one` | Perfect predictions give 1.0 everywhere (precision, recall, f1). | **PASSED** |
+| `test_empty_predictions_give_recall_zero_and_precision_none` | Empty predictions give recall 0 and precision None. | **PASSED** |
+| `test_span_shifted_by_one_character_strict_miss_lenient_hit` | A span shifted by one character is a strict miss but a lenient hit. | **PASSED** |
+| `test_wrong_type_is_fp_and_fn` | Wrong type is both an FP and an FN. | **PASSED** |
+| `test_duplicate_prediction_is_one_tp_plus_one_fp` | Duplicate prediction is one TP plus one FP. | **PASSED** |
+| `test_three_gold_two_correct_one_extra_precision_and_recall_two_thirds` | A 3-gold 2-correct 1-extra example gives exact precision 2/3 and recall 2/3. | **PASSED** |
+| `test_group_by_split_and_language_add_up_to_overall` | group_by split and language add up to the overall totals. | **PASSED** |
+| `test_relations_gold_used_as_predictions_gives_one` | Relations: gold used as predictions gives 1.0 everywhere. | **PASSED** |
+| `test_relations_dropping_one_relation_lowers_recall` | Dropping one relation lowers recall. | **PASSED** |
+| `test_relations_wrong_label_gives_fp_and_fn` | Wrong label gives FP and FN. | **PASSED** |
+| `test_relations_swapped_source_and_target_is_wrong` | Swapped source and target is wrong. | **PASSED** |
+| `test_relations_wrong_amount_is_wrong` | Wrong amount on TRANSFERRED_FUNDS is wrong. | **PASSED** |
+| `test_entity_alignment_one_to_one` | Entity alignment is strictly one-to-one. | **PASSED** |
+| `test_load_gold_mentions_total_and_counts` | load_gold_mentions on firs_v5 returns 1235 mentions in total minus nothing silently dropped. | **PASSED** |
+
+### Glossary
+- strict = evaluation matching criterion requiring exact identity of entity category and character boundary offsets
+- lenient = evaluation matching criterion requiring matching entity category and character overlap resolved greedily by shared span length
+- precision = ratio of true positive extractions to total predicted extractions
+- recall = ratio of true positive extractions to total reference ground truth extractions
+- F1 = harmonic mean of precision and recall providing a balanced performance metric
+- TP = true positive extraction matching reference ground truth under the active criterion
+- FP = false positive extraction predicted by the extractor without corresponding ground truth match
+- FN = false negative extraction present in ground truth that was omitted by the extractor
+- RULES = rule-based disambiguation pipeline applying length-preserving normalization, pattern finders, checksum validation, and precedence resolution
+- NAIVE = baseline regex patterns evaluated without boundary resolution or precedence: PHONE `(?<!\d)\d{10}(?!\d)`, IMEI `(?<!\d)\d{15}(?!\d)`, ACCOUNT `(?<!\d)\d{9,18}(?!\d)`, AMOUNT `(?:Rs\.?|INR|₹)\s*[\d,]+`
+
+### Design Decisions
+- Disambiguation precedence hierarchy: Extraction conflicts between overlapping entity patterns are resolved via fixed precedence ordering to favor specialized identifiers over ambiguous digit sequences.
+- Length-preserving normalization: Multilingual and script variations are converted using one-to-one character substitutions to maintain character span offsets against raw document text.
+- Dual-mode evaluation harness: Performance is assessed under strict boundary requirements alongside lenient span overlap to isolate boundary clipping from complete extraction omissions.
+- Negative baseline comparison: Unfiltered naive regular expressions are evaluated alongside prioritized extraction to demonstrate penalty handling on conflicting matches.
+
+### Caveats
+- RULES patterns were tuned while reading these same FIR texts, so its scores are development scores
+- the generated FIRs come from templates
+- NAIVE exists to show that the scorer reacts to errors
+- the gold has no vehicle labels
+- person names are not scored here because no model has run
+
+### What This Does Not Show
+- Machine learning generalization: These evaluations assess rule-based pattern matching and do not reflect the statistical generalization of neural language models.
+- Complex linguistic ambiguity: Template narratives do not encompass the syntactical irregularities, handwriting transcriptions, or informal shorthand typical of raw station entries.
+- Unstructured relationship inference: Relational benchmarks evaluate schema consistency but do not test open-domain relation extraction across unconstrained prose.
+- Operational runtime latency: Evaluation focuses exclusively on extraction accuracy without profiling real-time stream throughput or memory scaling.
+<!-- STEP5A:END -->
