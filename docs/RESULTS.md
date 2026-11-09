@@ -455,3 +455,190 @@
 - Unstructured relationship inference: Relational benchmarks evaluate schema consistency but do not test open-domain relation extraction across unconstrained prose.
 - Operational runtime latency: Evaluation focuses exclusively on extraction accuracy without profiling real-time stream throughput or memory scaling.
 <!-- STEP5A:END -->
+
+<!-- STEP5B:BEGIN -->
+## Step 5b: Off-the-Shelf NER Baseline Evaluation
+
+### Results Card
+- **Purpose**: Baseline evaluation of pre-trained multilingual and Indic Named Entity Recognition models against synthetic First Information Report narratives and ground truth name entities.
+- **Exact Command**: `python scripts/report/step5b_ner_baseline.py --run-id step5b_ner_baseline`
+- **Exact Pytest Command**: `C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe -m pytest -v tests/test_ner_baseline.py`
+- **Input Files**:
+  - `ai_pipeline/ner_baseline.py` (SHA-256: `fce2f5061807bf99e4ac69a0f121c609dc7783b1ee023ec86be6bd436c73465b`)
+  - `ai_pipeline/scoring.py` (SHA-256: `f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b`)
+  - `tests/test_ner_baseline.py` (SHA-256: `fed7cc9b594cc45cea122bd44c41d0cbb29d084dab03236afa45346598e570f8`)
+  - `data/synthetic/out/firs_v5/index.json` (SHA-256: `a21ef522c2a21a8f098ae317742ecb2bb99d4f17b27ffeb6854a4b86e5c38f85`)
+  - Combined `firs_v5` texts and answer keys (SHA-256: `4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949`)
+- **Output Files**:
+  - `metrics.json` (SHA-256: `c02e32ee18c59574ee22722513b35c8e4da9012735d00aa842d9d4ae1883d053`)
+  - `pytest_raw.txt` (SHA-256: `dff513f93439c92719cf5dbce52a7db1f9aed742dae77af1178af4e7c314b05c`)
+  - `raw_davlan_xlm_roberta_base_ner_hrl_run1.json` (SHA-256: `bcd2d21bd44cf8dd9f5d8421ccae0bc2303ad2945b11250af63abdcb2cdac2ea`)
+  - `raw_davlan_xlm_roberta_base_ner_hrl_run2.json` (SHA-256: `bcd2d21bd44cf8dd9f5d8421ccae0bc2303ad2945b11250af63abdcb2cdac2ea`)
+  - `raw_ai4bharat_indicner_run1.json` (SHA-256: `5b53a73634412b11cbe7c73299bba9d346f4c94e1f259302d4b6886d71637b96`)
+  - `raw_ai4bharat_indicner_run2.json` (SHA-256: `5b53a73634412b11cbe7c73299bba9d346f4c94e1f259302d4b6886d71637b96`)
+  - `SHA256SUMS.txt` (SHA-256: `e8aa8c1b9e369f86278d6149cf340c248d40f253d52601428e59d7d51244ac49`)
+- **Key Numbers**:
+  - `metrics.json` (`determinism.davlan_xlm_roberta_base_ner_hrl.match`): True XLM-R determinism match between runs
+  - `metrics.json` (`determinism.ai4bharat_indicner.match`): True IndicNER determinism match between runs
+  - `metrics.json` (`stride_and_runtime.ai4bharat_indicner.texts_needing_stride`): 2 IndicNER texts requiring fast tokenizer stride
+  - `metrics.json` (`models.davlan_xlm_roberta_base_ner_hrl.overall.POSTPROCESSED.ALL_NAMES.strict.f1`): 0.8995 XLM-R postprocessed ALL_NAMES strict F1
+  - `metrics.json` (`models.davlan_xlm_roberta_base_ner_hrl.overall.POSTPROCESSED.ALL_NAMES.lenient.f1`): 0.9685 XLM-R postprocessed ALL_NAMES lenient F1
+  - `metrics.json` (`models.ai4bharat_indicner.overall.POSTPROCESSED.ALL_NAMES.strict.f1`): 0.1182 IndicNER postprocessed ALL_NAMES strict F1
+  - `metrics.json` (`models.ai4bharat_indicner.overall.POSTPROCESSED.ALL_NAMES.lenient.f1`): 0.6186 IndicNER postprocessed ALL_NAMES lenient F1
+  - `metrics.json` (`models.davlan_xlm_roberta_base_ner_hrl.gold_classification.ALIAS.missed`): 33 XLM-R missed alias count
+  - `metrics.json` (`models.ai4bharat_indicner.decoded_word_check.by_language.hindi.mismatches`): 98 IndicNER Hindi decoded word vowel mismatches
+  - `metrics.json` (`models.davlan_xlm_roberta_base_ner_hrl.decoded_word_check.by_language.hindi.mismatches`): 0 XLM-R Hindi decoded word vowel mismatches
+- **Environment**: Python 3.11.9, PyTorch 2.1.0+cpu, Transformers 4.35.2
+
+### Tables
+
+#### Table A: Overall Performance by Extractor and Type
+| Model | Form | Mode | Strict P | Strict R | Strict F1 | Strict TP | Strict FP | Strict FN | Lenient P | Lenient R | Lenient F1 | Len TP | Len FP | Len FN |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Davlan/xlm-roberta-base-ner-hrl | RAW | PERSON_ONLY | 0.0043 | 0.0078 | 0.0056 | 3 | 693 | 380 | 0.5503 | 1.0000 | 0.7099 | 383 | 313 | 0 |
+| Davlan/xlm-roberta-base-ner-hrl | RAW | ALL_NAMES | 0.0101 | 0.0105 | 0.0103 | 7 | 689 | 658 | 0.9066 | 0.9489 | 0.9273 | 631 | 65 | 34 |
+| Davlan/xlm-roberta-base-ner-hrl | POSTPROCESSED | PERSON_ONLY | 0.5893 | 0.9817 | 0.7365 | 376 | 262 | 7 | 0.6003 | 1.0000 | 0.7502 | 383 | 255 | 0 |
+| Davlan/xlm-roberta-base-ner-hrl | POSTPROCESSED | ALL_NAMES | 0.9185 | 0.8812 | 0.8995 | 586 | 52 | 79 | 0.9890 | 0.9489 | 0.9685 | 631 | 7 | 34 |
+| ai4bharat/IndicNER | RAW | PERSON_ONLY | 0.0472 | 0.1097 | 0.0660 | 42 | 848 | 341 | 0.3180 | 0.7389 | 0.4446 | 283 | 607 | 100 |
+| ai4bharat/IndicNER | RAW | ALL_NAMES | 0.0562 | 0.0752 | 0.0643 | 50 | 840 | 615 | 0.5056 | 0.6767 | 0.5788 | 450 | 440 | 215 |
+| ai4bharat/IndicNER | POSTPROCESSED | PERSON_ONLY | 0.0911 | 0.1880 | 0.1228 | 72 | 718 | 311 | 0.3582 | 0.7389 | 0.4825 | 283 | 507 | 100 |
+| ai4bharat/IndicNER | POSTPROCESSED | ALL_NAMES | 0.1089 | 0.1293 | 0.1182 | 86 | 704 | 579 | 0.5696 | 0.6767 | 0.6186 | 450 | 340 | 215 |
+
+#### Table B: Strict and Lenient F1 by Language and Split
+| Model | Group Type | Category | Strict F1 | Lenient F1 |
+| :--- | :--- | :--- | :--- | :--- |
+| Davlan/xlm-roberta-base-ner-hrl | Language | hinglish | 0.9125 | 0.9872 |
+| Davlan/xlm-roberta-base-ner-hrl | Language | hindi | 0.8622 | 0.8711 |
+| Davlan/xlm-roberta-base-ner-hrl | Language | english | 0.8869 | 0.9955 |
+| Davlan/xlm-roberta-base-ner-hrl | Split | train | 0.9010 | 0.9670 |
+| Davlan/xlm-roberta-base-ner-hrl | Split | dev | 0.8933 | 0.9644 |
+| Davlan/xlm-roberta-base-ner-hrl | Split | test | 0.9008 | 0.9771 |
+| ai4bharat/IndicNER | Language | hinglish | 0.0336 | 0.5184 |
+| ai4bharat/IndicNER | Language | hindi | 0.1971 | 0.7883 |
+| ai4bharat/IndicNER | Language | english | 0.3772 | 0.8333 |
+| ai4bharat/IndicNER | Split | train | 0.1112 | 0.6251 |
+| ai4bharat/IndicNER | Split | dev | 0.1131 | 0.6219 |
+| ai4bharat/IndicNER | Split | test | 0.1465 | 0.5934 |
+
+#### Table C: Decoded Word Check with Examples
+| Model | Language | Total Spans | Mismatches | First Error Examples |
+| :--- | :--- | :--- | :--- | :--- |
+| Davlan/xlm-roberta-base-ner-hrl | hinglish | 463 | 0 | None |
+| Davlan/xlm-roberta-base-ner-hrl | hindi | 117 | 0 | None |
+| Davlan/xlm-roberta-base-ner-hrl | english | 116 | 0 | None |
+| ai4bharat/IndicNER | hinglish | 540 | 437 | `vik` vs `Vik` (213:216); `hari` vs `Hari` (260:264) |
+| ai4bharat/IndicNER | hindi | 202 | 98 | `सनील कमार` vs `सुनील कुमार` (196:207); `भगवान कमार` vs `भगवान कुमार` (228:239) |
+| ai4bharat/IndicNER | english | 148 | 147 | `sure` vs `Sure` (208:212); `pal` vs `Pal` (215:218) |
+
+#### Table D: Misses by Gold Type
+| Model | Gold Type | Total Mentions | Strict Hit (TP) | Lenient Only | Missed (FN) | Strict + Lenient | Lenient TP |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Davlan/xlm-roberta-base-ner-hrl | PERSON | 383 | 376 | 7 | 0 | 383 | — |
+| Davlan/xlm-roberta-base-ner-hrl | ALIAS | 155 | 95 | 27 | 33 | 122 | — |
+| Davlan/xlm-roberta-base-ner-hrl | FATHER | 127 | 115 | 12 | 0 | 127 | — |
+| Davlan/xlm-roberta-base-ner-hrl | TOTAL | 665 | 586 | 46 | 33 | 632 | 631 |
+| ai4bharat/IndicNER | PERSON | 383 | 72 | 211 | 100 | 283 | — |
+| ai4bharat/IndicNER | ALIAS | 155 | 6 | 53 | 96 | 59 | — |
+| ai4bharat/IndicNER | FATHER | 127 | 8 | 101 | 18 | 109 | — |
+| ai4bharat/IndicNER | TOTAL | 665 | 86 | 365 | 214 | 451 | 450 |
+
+#### Table E: Error Examples
+| Model | Error Category | Document ID | Gold Type | Gold Text | Predicted Text |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Davlan/xlm-roberta-base-ner-hrl | STRICT_MISS_LENIENT_HIT | `FIR_02` | NAME | `Pandit` | `Pand` |
+| Davlan/xlm-roberta-base-ner-hrl | STRICT_MISS_LENIENT_HIT | `FIR_02` | NAME | `Madan Tiwari` | `Shri Madan Tiwari` |
+| Davlan/xlm-roberta-base-ner-hrl | STRICT_MISS_LENIENT_HIT | `FIR_05` | NAME | `Shyam Verma` | `Shri Shyam Verma` |
+| Davlan/xlm-roberta-base-ner-hrl | STRICT_MISS_LENIENT_HIT | `FIR_05` | NAME | `Madan Tiwari` | `Shri Madan Tiwari` |
+| Davlan/xlm-roberta-base-ner-hrl | STRICT_MISS_LENIENT_HIT | `FIR_08` | NAME | `Kallu` | `lu` |
+| Davlan/xlm-roberta-base-ner-hrl | MISSED | `FIR_03` | ALIAS | `Sunny` | — |
+| Davlan/xlm-roberta-base-ner-hrl | MISSED | `FIR_04` | ALIAS | `Shooter` | — |
+| Davlan/xlm-roberta-base-ner-hrl | MISSED | `FIR_20` | ALIAS | `Hawai` | — |
+| Davlan/xlm-roberta-base-ner-hrl | MISSED | `FIR_24` | ALIAS | `Shooter` | — |
+| Davlan/xlm-roberta-base-ner-hrl | MISSED | `FIR_40` | ALIAS | `Hawai` | — |
+| Davlan/xlm-roberta-base-ner-hrl | FALSE_POSITIVE | `FIR_30` | — | — | `Shri` |
+| Davlan/xlm-roberta-base-ner-hrl | FALSE_POSITIVE | `FIR_31` | — | — | `Zabt` |
+| Davlan/xlm-roberta-base-ner-hrl | FALSE_POSITIVE | `FIR_31` | — | — | `Zabt` |
+| Davlan/xlm-roberta-base-ner-hrl | FALSE_POSITIVE | `FIR_45` | — | — | `श्री` |
+| Davlan/xlm-roberta-base-ner-hrl | FALSE_POSITIVE | `FIR_75` | — | — | `श्री` |
+| ai4bharat/IndicNER | STRICT_MISS_LENIENT_HIT | `FIR_01` | NAME | `Vikas Sharma` | `Vik` |
+| ai4bharat/IndicNER | STRICT_MISS_LENIENT_HIT | `FIR_01` | NAME | `Harish Sharma` | `Hari` |
+| ai4bharat/IndicNER | STRICT_MISS_LENIENT_HIT | `FIR_01` | NAME | `Vikas Sharma` | `Vik` |
+| ai4bharat/IndicNER | STRICT_MISS_LENIENT_HIT | `FIR_01` | NAME | `Vikas Sharma` | `Vik` |
+| ai4bharat/IndicNER | STRICT_MISS_LENIENT_HIT | `FIR_01` | NAME | `Arvind Swaminathan` | `Arv` |
+| ai4bharat/IndicNER | MISSED | `FIR_01` | ALIAS | `Bicky` | — |
+| ai4bharat/IndicNER | MISSED | `FIR_01` | ALIAS | `Viku` | — |
+| ai4bharat/IndicNER | MISSED | `FIR_01` | ALIAS | `Kallu` | — |
+| ai4bharat/IndicNER | MISSED | `FIR_01` | PERSON | `Rajendra Singh` | — |
+| ai4bharat/IndicNER | MISSED | `FIR_01` | ALIAS | `Biku` | — |
+| ai4bharat/IndicNER | FALSE_POSITIVE | `FIR_01` | — | — | `Za` |
+| ai4bharat/IndicNER | FALSE_POSITIVE | `FIR_01` | — | — | `kar` |
+| ai4bharat/IndicNER | FALSE_POSITIVE | `FIR_02` | — | — | `za` |
+| ai4bharat/IndicNER | FALSE_POSITIVE | `FIR_03` | — | — | `Mau` |
+| ai4bharat/IndicNER | FALSE_POSITIVE | `FIR_05` | — | — | `za` |
+
+#### Table F: Stride and Runtime Summary
+| Model | Texts Evaluated | Texts Needing Stride | Model Max Length | Stride Parameter | Runtime Seconds |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Davlan/xlm-roberta-base-ner-hrl | 100 | 0 | 512 | 64 | 52.56 |
+| ai4bharat/IndicNER | 100 | 2 | 512 | 64 | 97.79 |
+
+#### Table G: Input Hashes
+| Component File | SHA-256 Digest | Evaluation Role |
+| :--- | :--- | :--- |
+| `ai_pipeline/ner_baseline.py` | `fce2f5061807bf99e4ac69a0f121c609dc7783b1ee023ec86be6bd436c73465b` | NER pipeline, post-processing, and evaluation harness |
+| `ai_pipeline/scoring.py` | `f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b` | Mention and relational scoring functions |
+| `tests/test_ner_baseline.py` | `fed7cc9b594cc45cea122bd44c41d0cbb29d084dab03236afa45346598e570f8` | NER unit test suite |
+| `data/synthetic/out/firs_v5/index.json` | `a21ef522c2a21a8f098ae317742ecb2bb99d4f17b27ffeb6854a4b86e5c38f85` | Corpus partition and metadata index |
+| `firs_v5 (narratives & keys)` | `4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949` | Combined SHA-256 digest of corpus files |
+
+### Test List
+| Test Function | Description | Test Outcome |
+| :--- | :--- | :--- |
+| `test_trims_leading_space` | Verify postprocess trims leading and trailing whitespace on original text. | **PASSED** |
+| `test_merges_touching_word_pieces` | Verify postprocess merges ' B' + 'icky' into one span with right offsets. | **PASSED** |
+| `test_does_not_merge_names_separated_by_space` | Verify postprocess does not merge two names separated by one space. | **PASSED** |
+| `test_drops_all_whitespace_span` | Verify postprocess drops a span that contains only whitespace. | **PASSED** |
+| `test_output_sorted_and_non_overlapping` | Verify output spans are strictly sorted by start position and have no overlaps. | **PASSED** |
+| `test_person_only_removes_father_and_alias` | Verify PERSON_ONLY mode keeps PERSON gold and removes FATHER and ALIAS. | **PASSED** |
+| `test_all_names_maps_all_three_to_name` | Verify ALL_NAMES mode maps PERSON, ALIAS and FATHER to NAME and deduplicates positions. | **PASSED** |
+| `test_end_to_end_evaluate_with_fake_predictions` | Verify evaluate end-to-end yields hand-computed precision, recall, and F1. | **PASSED** |
+| `test_decoded_word_check_counts_deliberately_damaged_word` | Verify decoded_word_check identifies altered words against original text slices. | **PASSED** |
+
+### Glossary
+- strict = evaluation matching criterion requiring exact identity of entity category and character boundary offsets
+- lenient = evaluation matching criterion requiring matching entity category and character overlap resolved greedily by shared span length
+- precision = ratio of true positive extractions to total predicted extractions
+- recall = ratio of true positive extractions to total reference ground truth extractions
+- F1 = harmonic mean of precision and recall providing a balanced performance metric
+- TP = true positive extraction matching reference ground truth under the active criterion
+- FP = false positive extraction predicted by the extractor without corresponding ground truth match
+- FN = false negative extraction present in ground truth that was omitted by the extractor
+- RAW = direct predictions from Hugging Face token-classification pipeline prior to boundary adjustment
+- POSTPROCESSED = predictions refined by whitespace boundary trimming and zero-gap fragment merging
+- PERSON_ONLY = evaluation mode restricting reference and prediction entities to primary person names
+- ALL_NAMES = evaluation mode unifying person names, aliases, and paternal references under a common name category
+- STRICT_HIT = gold mention whose start and end character boundaries match a predicted mention exactly
+- LENIENT_ONLY = gold mention whose span overlaps a predicted mention but whose character boundaries differ
+- MISSED = gold mention having no character overlap with any predicted mention
+- One-to-one matching note: total of STRICT_HIT plus LENIENT_ONLY can differ from lenient TP because greedy bipartite matching pairs each prediction with at most one gold mention
+
+### Design Decisions
+- Two-stage evaluation: Evaluating both unadjusted pipeline outputs and postprocessed spans isolates tokenization boundary artifacts from underlying entity detection capability.
+- Offline execution boundary: Pipeline initialization enforces offline execution constraints using cached model weights to guarantee reproducible evaluation without external network dependencies.
+- Zero-gap token piece fusion: Boundary postprocessing joins touching subword fragments while preserving whitespace boundaries between distinct names.
+- Unified name category benchmark: Evaluating suspect names, aliases, and paternal references under a shared category tests open-domain name extraction where fine-grained legal roles cannot be distinguished by off-the-shelf NER models.
+
+### Caveats
+- the models are used off the shelf without any training on our data
+- the FIR texts come from templates
+- the post-processing steps were designed after seeing raw model output
+- runtime is a single measurement and varies between runs
+- the gold name labels come from the generator
+- the models cannot tell suspects, fathers and aliases apart
+
+### What This Does Not Show
+- Domain fine-tuning potential: Results reflect pre-trained performance rather than the ceiling achievable after task-specific fine-tuning on Indian police narratives.
+- Fine-grained role classification: Off-the-shelf NER extractors do not assign investigative roles such as suspect, complainant, or witness.
+- Cross-lingual coreference resolution: Benchmarks evaluate mention extraction within single documents and do not resolve aliases across multiple case narratives.
+- Production throughput under concurrency: Single-thread CPU latency measurements do not evaluate batch inference scaling across distributed serving workers.
+<!-- STEP5B:END -->
