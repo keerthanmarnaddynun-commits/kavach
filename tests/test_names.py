@@ -200,3 +200,115 @@ def test_spans_match_original_text():
     for sp in res:
         assert text[sp["start"]:sp["end"]] == sp["surface"]
 
+
+def test_cue_trim_trailing_alias():
+    """Trailing cue 'alias' (case-insensitive) is trimmed with exact offsets."""
+    text = "Suspect Arun Verma alias fled from the spot."
+    start = text.index("Arun Verma alias")
+    end = start + len("Arun Verma alias")
+    res = extract_names(text, [{"type": "PER", "start": start, "end": end, "word": "Arun Verma alias"}])
+    assert len(res) == 1
+    assert res[0]["type"] == "PERSON"
+    assert res[0]["surface"] == "Arun Verma"
+    assert text[res[0]["start"]:res[0]["end"]] == "Arun Verma"
+
+
+def test_cue_trim_leading_urf():
+    """Leading cue 'urf' is trimmed cleanly on the original text."""
+    text = "Suspect urf (Arun Singh) fled from the spot."
+    start = text.index("urf (Arun Singh)")
+    end = start + len("urf (Arun Singh)")
+    res = extract_names(text, [{"type": "PER", "start": start, "end": end, "word": "urf (Arun Singh)"}])
+    assert len(res) == 1
+    assert res[0]["type"] == "PERSON"
+    assert res[0]["surface"] == "Arun Singh"
+    assert text[res[0]["start"]:res[0]["end"]] == "Arun Singh"
+
+
+def test_cue_trim_devanagari_trailing_urf():
+    """Devanagari trailing उर्फ and उर्फ़ are trimmed with exact offsets."""
+    for cue in ("उर्फ", "उर्फ़"):
+        text = f"व्यक्ति मोहन शर्मा {cue} ने बताया"
+        raw = f"मोहन शर्मा {cue}"
+        start = text.index(raw)
+        end = start + len(raw)
+        res = extract_names(text, [{"type": "PER", "start": start, "end": end, "word": raw}])
+        assert len(res) == 1
+        assert res[0]["type"] == "PERSON"
+        assert res[0]["surface"] == "मोहन शर्मा"
+        assert text[res[0]["start"]:res[0]["end"]] == "मोहन शर्मा"
+
+
+def test_cue_trim_both_ends():
+    """Multiple cue tokens and edge symbols on both ends are trimmed repeatedly."""
+    text = "Accused @ (Arun Kumar) aka ran away; witness r/o (Meera Nair) s/o spoke."
+    s1 = text.index("@ (Arun Kumar) aka")
+    e1 = s1 + len("@ (Arun Kumar) aka")
+    s2 = text.index("r/o (Meera Nair) s/o")
+    e2 = s2 + len("r/o (Meera Nair) s/o")
+    res = extract_names(
+        text,
+        [
+            {"type": "PER", "start": s1, "end": e1, "word": text[s1:e1]},
+            {"type": "PER", "start": s2, "end": e2, "word": text[s2:e2]},
+        ],
+    )
+    assert [sp["surface"] for sp in res] == ["Arun Kumar", "Meera Nair"]
+    for sp in res:
+        assert sp["type"] == "PERSON"
+        assert text[sp["start"]:sp["end"]] == sp["surface"]
+
+
+def test_cue_only_span_dropped():
+    """Spans consisting solely of cue tokens (like 'alias' or 'son of') are dropped."""
+    text = "He was called alias and son of around the area."
+    s1 = text.index("alias")
+    s2 = text.index("son of")
+    res = extract_names(
+        text,
+        [
+            {"type": "PER", "start": s1, "end": s1 + 5, "word": "alias"},
+            {"type": "PER", "start": s2, "end": s2 + 6, "word": "son of"},
+        ],
+    )
+    assert res == []
+
+
+def test_whole_token_boundary_not_trimmed():
+    """Names containing 'son' or 'of' inside another word are NOT trimmed."""
+    text = "Complainant Robson and witness Sonia Offerman reported."
+    s1 = text.index("Robson")
+    s2 = text.index("Sonia Offerman")
+    res = extract_names(
+        text,
+        [
+            {"type": "PER", "start": s1, "end": s1 + len("Robson"), "word": "Robson"},
+            {"type": "PER", "start": s2, "end": s2 + len("Sonia Offerman"), "word": "Sonia Offerman"},
+        ],
+    )
+    assert [sp["surface"] for sp in res] == ["Robson", "Sonia Offerman"]
+    for sp in res:
+        assert text[sp["start"]:sp["end"]] == sp["surface"]
+
+
+def test_cue_trim_idempotent_and_valid_offsets():
+    """Trimmed extract_names output is idempotent and offsets always slice the original text."""
+    from ai_pipeline.names import CUE_TOKENS
+
+    assert isinstance(CUE_TOKENS, tuple)
+    text = "Witness @ Sonia Offerman a.k.a. and accused Robson alias ran away."
+    s1 = text.index("@ Sonia Offerman a.k.a.")
+    s2 = text.index("Robson alias")
+    res1 = extract_names(
+        text,
+        [
+            {"type": "PER", "start": s1, "end": s1 + len("@ Sonia Offerman a.k.a."), "word": text[s1:s1 + len("@ Sonia Offerman a.k.a.")]},
+            {"type": "PER", "start": s2, "end": s2 + len("Robson alias"), "word": text[s2:s2 + len("Robson alias")]},
+        ],
+    )
+    assert [sp["surface"] for sp in res1] == ["Sonia Offerman", "Robson"]
+    for sp in res1:
+        assert text[sp["start"]:sp["end"]] == sp["surface"]
+    assert extract_names(text, res1) == res1
+
+

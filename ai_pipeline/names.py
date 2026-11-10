@@ -17,6 +17,16 @@ HONORIFICS = (
 # Common FIR sentence-starter words derived strictly from train and dev false positives
 STOPWORDS = frozenset({"Zabt", "Zabti", "जब्त", "जब्ती"})
 
+# Cue tokens trimmed from both ends of PERSON spans
+CUE_TOKENS = (
+    "alias", "urf", "aka", "a.k.a.", "s/o", "d/o", "w/o", "c/o", "r/o",
+    "son", "of", "उर्फ", "उर्फ़", "@", "(", ")",
+)
+_CUE_EDGE_CHARS = frozenset(t for t in CUE_TOKENS if len(t) == 1)
+_CUE_WORD_TOKENS = tuple(
+    sorted((t for t in CUE_TOKENS if len(t) > 1), key=len, reverse=True)
+)
+
 _SORTED_HONORIFICS = sorted(HONORIFICS, key=len, reverse=True)
 _HONORIFICS_REGEX = re.compile(
     r"^(?:" + "|".join(re.escape(h) for h in _SORTED_HONORIFICS) + r")(?:\.?(?:\s+|$))",
@@ -98,6 +108,65 @@ def strip_honorific(text: str, start: int, end: int) -> tuple[int, int]:
             new_start += 1
         return new_start, end
     return start, end
+
+
+def _is_word_char(ch: str) -> bool:
+    """Return True if ch is an identifier/word character (including Devanagari signs)."""
+    return ch.isalnum() or "\u0900" <= ch <= "\u097f" or ch == "_"
+
+
+def _trim_cue_tokens(text: str, start: int, end: int) -> tuple[int, int]:
+    """
+    Repeatedly trim CUE_TOKENS from both ends of text[start:end] on original text.
+    Latin/Devanagari word tokens require whole-token boundaries; edge chars trim directly.
+    """
+    ns = max(0, start)
+    ne = min(len(text), end)
+    while ns < ne:
+        while ns < ne and text[ns].isspace():
+            ns += 1
+        while ne > ns and text[ne - 1].isspace():
+            ne -= 1
+        if ns >= ne:
+            break
+
+        if text[ns] in _CUE_EDGE_CHARS:
+            ns += 1
+            continue
+        if text[ne - 1] in _CUE_EDGE_CHARS:
+            ne -= 1
+            continue
+
+        sub = text[ns:ne]
+        sub_lower = sub.lower()
+        trimmed = False
+
+        for tok in _CUE_WORD_TOKENS:
+            t_len = len(tok)
+            if len(sub) < t_len:
+                continue
+            is_latin = tok.isascii()
+            haystack = sub_lower if is_latin else sub
+            needle = tok.lower() if is_latin else tok
+
+            if haystack.startswith(needle) and (
+                len(sub) == t_len or not _is_word_char(sub[t_len])
+            ):
+                ns += t_len
+                trimmed = True
+                break
+
+            if haystack.endswith(needle) and (
+                len(sub) == t_len or not _is_word_char(sub[-t_len - 1])
+            ):
+                ne -= t_len
+                trimmed = True
+                break
+
+        if not trimmed:
+            break
+
+    return ns, ne
 
 
 def find_aliases(text: str) -> list[dict[str, Any]]:
@@ -270,7 +339,8 @@ def extract_names(
     """
     Extract structured names from text and post-processed model spans:
     - strip honorifics
-    - drop spans that are only an honorific or that fall in STOPWORDS
+    - trim cue tokens from both ends repeatedly until none is left
+    - drop spans that are empty, honorific-only, cue-only, or in STOPWORDS
     - cue-based alias and father spans REPLACE any model span they overlap
     - remaining spans are assigned PERSON with role_for
     Output sorted, non-overlapping, text[start:end] == surface.
@@ -284,10 +354,11 @@ def extract_names(
         s = int(sp["start"])
         e = int(sp["end"])
         ns, ne = strip_honorific(text, s, e)
+        ns, ne = _trim_cue_tokens(text, ns, ne)
         if ns >= ne:
-            continue  # Drop honorific-only / empty
+            continue  # Drop honorific-only / cue-only / empty
 
-        surf = text[ns:ne].strip()
+        surf = text[ns:ne]
         if not surf:
             continue
         if surf in STOPWORDS or surf.lower() in {w.lower() for w in STOPWORDS} or surf in HONORIFICS:
