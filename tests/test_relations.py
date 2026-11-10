@@ -242,3 +242,192 @@ def test_deterministic_no_duplicates_and_valid():
     assert len(triples) == len(set(triples))
     assert len(rels1) == 2
 
+
+# ---------------------------------------------------------------------------
+# Step 6b-3: Hybrid Extractor Fallback Tests (no lexicon cue words)
+# ---------------------------------------------------------------------------
+
+from ai_pipeline.relations import extract_relations_hybrid
+
+
+def _build_hybrid(text: str, names: list[str], doc_id: str = "TEST_HYB"):
+    """Helper to run assemble_entities + extract_relations (cue) and extract_relations_hybrid."""
+    raw_spans = []
+    search_from = {}
+    for name in names:
+        start_pos = search_from.get(name, 0)
+        idx = text.find(name, start_pos)
+        assert idx != -1, f"Name {name!r} not found in text from offset {start_pos}"
+        raw_spans.append({
+            "type": "PERSON",
+            "start": idx,
+            "end": idx + len(name),
+            "score": 0.95,
+            "word": name,
+        })
+        search_from[name] = idx + len(name)
+
+    doc, aux = assemble_entities(text, doc_id, raw_spans)
+    cue_rels = extract_relations(text, doc, aux)
+    hyb_rels = extract_relations_hybrid(text, doc, aux)
+    doc["relationships"] = hyb_rels
+    validate_ai_output(doc)
+    return doc, aux, cue_rels, hyb_rels
+
+
+def test_hybrid_fallback_ownership_person_plus_phone():
+    """Structural fallback infers OWNS_DEVICE from one suspect + one phone with zero cue words."""
+    text = "Suspect Arun Kumar and mobile number 9811122233 appeared in the report."
+    doc, _, cue_rels, hyb_rels = _build_hybrid(text, ["Arun Kumar"], "HYB_OWN")
+    assert cue_rels == []
+    assert len(hyb_rels) == 1
+    rel = hyb_rels[0]
+    e_map = {e["id"]: e for e in doc["entities"]}
+    assert rel["relation"] == "OWNS_DEVICE"
+    assert e_map[rel["source"]]["canonical_name"] == "Arun Kumar"
+    assert e_map[rel["target"]]["value"] == "9811122233"
+    assert rel["confidence"] == 0.6
+    assert rel["trigger"] == "STRUCTURE"
+
+
+def test_hybrid_fallback_calls_between_two_phones():
+    """Structural fallback infers COMMUNICATED_WITH from two distinct phones without suspect or cue."""
+    text = "Logs listed phone 9811122233 together with phone 9822233344 yesterday."
+    doc, _, cue_rels, hyb_rels = _build_hybrid(text, [], "HYB_COMM")
+    assert cue_rels == []
+    assert len(hyb_rels) == 1
+    rel = hyb_rels[0]
+    e_map = {e["id"]: e for e in doc["entities"]}
+    assert rel["relation"] == "COMMUNICATED_WITH"
+    assert e_map[rel["source"]]["value"] == "9811122233"
+    assert e_map[rel["target"]]["value"] == "9822233344"
+    assert rel["confidence"] == 0.6
+    assert rel["trigger"] == "STRUCTURE"
+
+
+def test_hybrid_fallback_account_to_account_with_amount():
+    """Two distinct accounts and an amount without cue words trigger ACCOUNT->ACCOUNT TRANSFERRED_FUNDS."""
+    text = "Statement showed bank account 112233445566, bank account 998877665544, and sum ₹ 14,500."
+    doc, _, cue_rels, hyb_rels = _build_hybrid(text, [], "HYB_AA")
+    assert cue_rels == []
+    assert len(hyb_rels) == 1
+    rel = hyb_rels[0]
+    e_map = {e["id"]: e for e in doc["entities"]}
+    assert rel["relation"] == "TRANSFERRED_FUNDS"
+    assert e_map[rel["source"]]["value"] == "112233445566"
+    assert e_map[rel["target"]]["value"] == "998877665544"
+    assert rel["amount"] == 14500.0
+    assert rel["confidence"] == 0.6
+    assert rel["trigger"] == "STRUCTURE"
+
+
+def test_hybrid_fallback_person_account_with_and_without_amount():
+    """One suspect + one account yields TRANSFERRED_FUNDS when amount present, CONTROLS_ACCOUNT otherwise."""
+    text_with_amt = "Accused Arun Kumar with bank account 112233445566 for sum Rs. 9,500/- appeared in audit."
+    d1, _, c1, h1 = _build_hybrid(text_with_amt, ["Arun Kumar"], "HYB_PA_AMT")
+    assert c1 == []
+    assert len(h1) == 1
+    assert h1[0]["relation"] == "TRANSFERRED_FUNDS"
+    assert h1[0]["amount"] == 9500.0
+    assert h1[0]["confidence"] == 0.6
+    assert h1[0]["trigger"] == "STRUCTURE"
+
+    text_no_amt = "Suspect Mohit Sharma and account 112233445566 appeared in KYC sheet."
+    d2, _, c2, h2 = _build_hybrid(text_no_amt, ["Mohit Sharma"], "HYB_PA_NOAMT")
+    assert c2 == []
+    assert len(h2) == 1
+    assert h2[0]["relation"] == "CONTROLS_ACCOUNT"
+    assert "amount" not in h2[0]
+    assert h2[0]["confidence"] == 0.6
+    assert h2[0]["trigger"] == "STRUCTURE"
+
+
+def test_hybrid_cash_recovery_gives_no_relation():
+    """Cash recovery with an amount (and even suspect/account) produces no relation."""
+    t1 = "During search, cash Rs. 25,000/- was recovered from suspect Arun Kumar near bank account 112233445566."
+    _, _, _, h1 = _build_hybrid(t1, ["Arun Kumar"], "HYB_CASH1")
+    assert h1 == []
+
+    t2 = "तलाशी में नकद राशि ₹ 15,000 बरामद हुई आरोपी अरुण वर्मा से।"
+    _, _, _, h2 = _build_hybrid(t2, ["अरुण वर्मा"], "HYB_CASH2")
+    assert h2 == []
+
+
+def test_hybrid_two_suspects_ambiguous_no_fallback():
+    """Two distinct suspects in one sentence do not produce a fallback owner or controller."""
+    text = (
+        "Suspects Arun Kumar and Mohit Sharma stood beside mobile 9811122233. "
+        "Accused Arun Kumar and Mohit Sharma with bank account 112233445566 for sum Rs. 5,000/- appeared."
+    )
+    _, _, c_rels, h_rels = _build_hybrid(
+        text, ["Arun Kumar", "Mohit Sharma", "Arun Kumar", "Mohit Sharma"], "HYB_AMBIG"
+    )
+    assert c_rels == []
+    assert h_rels == []
+
+
+def test_hybrid_officer_never_owns_or_controls():
+    """Officers, complainants, and witnesses never act as fallback sources."""
+    text = "Sub-Inspector Vikram Joshi noted phone 9811122233 and bank account 112233445566 for Rs. 5,000/-."
+    _, _, _, h_rels = _build_hybrid(text, ["Vikram Joshi"], "HYB_OFF")
+    assert h_rels == []
+
+
+def test_cue_version_regression_three_texts():
+    """extract_relations produces identical deterministic output across three fixed English/Hinglish/Hindi texts."""
+    samples = [
+        (
+            "Suspect Arun Kumar was found in possession of mobile 9811122233. "
+            "Handset 9811122233 paired with IMEI 351234567890123. "
+            "CDR showed mobile 9811122233 called 9822233344.",
+            ["Arun Kumar"],
+            "REG_EN",
+            {("Arun Kumar", "9811122233", "OWNS_DEVICE"), ("9811122233", "351234567890123", "ASSOCIATED_IMEI"), ("9811122233", "9822233344", "COMMUNICATED_WITH")},
+        ),
+        (
+            "Accused Kiran Das ne sum Rs. 10,000/- bank account 112233445566 mein credit karwaya. "
+            "Ukt khata 112233445566 suspect Deepak Patel dwara operate kiya jata hai.",
+            ["Kiran Das", "Deepak Patel"],
+            "REG_HG",
+            {("Kiran Das", "112233445566", "TRANSFERRED_FUNDS"), ("Deepak Patel", "112233445566", "CONTROLS_ACCOUNT")},
+        ),
+        (
+            "आरोपी अरुण वर्मा के पास से मोबाइल ९८१११२२२३३ बरामद हुआ। "
+            "अभियुक्त अरुण वर्मा ने रकम ₹ 8,000 खाता 112233445566 में प्रेषित की।",
+            ["अरुण वर्मा", "अरुण वर्मा"],
+            "REG_HI",
+            {("अरुण वर्मा", "9811122233", "OWNS_DEVICE"), ("अरुण वर्मा", "112233445566", "TRANSFERRED_FUNDS")},
+        ),
+    ]
+    for text, names, doc_id, expected in samples:
+        doc, aux, cue1, _ = _build_hybrid(text, names, doc_id)
+        cue2 = extract_relations(text, doc, aux)
+        assert cue1 == cue2
+        e_map = {e["id"]: e.get("canonical_name") or e.get("value") for e in doc["entities"]}
+        got = {(e_map[r["source"]], e_map[r["target"]], r["relation"]) for r in cue1}
+        assert got == expected
+
+
+def test_hybrid_cue_wins_deterministic_and_no_duplicates():
+    """Cue-based relations win over fallback, output is deterministic, valid, and duplicate-free."""
+    text = (
+        "Accused Arun Kumar remitted Rs. 5,000/- to bank account 112233445566. "
+        "Later suspect Arun Kumar and bank account 112233445566 appeared in KYC sheet. "
+        "Suspect Arun Kumar and mobile number 9811122233 were noted. "
+        "Again suspect Arun Kumar and mobile number 9811122233 were listed."
+    )
+    doc, aux, _, h1 = _build_hybrid(
+        text, ["Arun Kumar", "Arun Kumar", "Arun Kumar", "Arun Kumar"], "HYB_DUP"
+    )
+    h2 = extract_relations_hybrid(text, doc, aux)
+    assert h1 == h2
+
+    pairs = [(r["source"], r["target"]) for r in h1]
+    assert len(pairs) == len(set(pairs))
+    by_rel = {r["relation"]: r for r in h1}
+    assert by_rel["TRANSFERRED_FUNDS"]["confidence"] == 0.9
+    assert by_rel["TRANSFERRED_FUNDS"]["trigger"] == "remitted"
+    assert by_rel["OWNS_DEVICE"]["confidence"] == 0.6
+    assert by_rel["OWNS_DEVICE"]["trigger"] == "STRUCTURE"
+
+

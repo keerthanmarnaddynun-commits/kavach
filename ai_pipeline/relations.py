@@ -612,3 +612,211 @@ def extract_relations(
             recent_suspects.append((sent_idx, sp))
 
     return relationships
+
+
+def extract_relations_hybrid(
+    text: str,
+    doc: dict[str, Any],
+    aux: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """
+    Hybrid relation extractor (Step 6b-3):
+    1. Runs cue-based extract_relations first.
+    2. Applies structural fallback per sentence only where cue matching produced
+       no relation for that (source, target) pair (confidence 0.6, trigger "STRUCTURE").
+    """
+    if not text or not doc.get("entities"):
+        return []
+
+    cue_rels = extract_relations(text, doc, aux)
+    relationships: list[dict[str, Any]] = list(cue_rels)
+    seen_pairs: set[tuple[str, str]] = {(r["source"], r["target"]) for r in cue_rels}
+    seen_triples: set[tuple[str, str, str]] = {
+        (r["source"], r["target"], r["relation"]) for r in cue_rels
+    }
+
+    # Track suspect-owned phones from cue pass ordered by sentence position
+    cue_owns: list[tuple[int, str]] = [
+        (int(r["evidence_char_span"][0]), r["target"])
+        for r in cue_rels
+        if r["relation"] == "OWNS_DEVICE" and r.get("evidence_char_span")
+    ]
+
+    sentences = split_sentences(text)
+    entities = doc.get("entities", [])
+    ent_role: dict[str, str | None] = {e["id"]: e.get("role") for e in entities}
+
+    all_mentions: list[dict[str, Any]] = []
+    for ent in entities:
+        eid = ent["id"]
+        etype = ent["type"]
+        valid_kind = "NAME" if etype == "PERSON" else "VALUE"
+        for m in ent.get("mentions", []):
+            if m.get("kind") != valid_kind:
+                continue
+            ms, me = int(m["char_span"][0]), int(m["char_span"][1])
+            all_mentions.append({
+                "id": eid,
+                "type": etype,
+                "role": ent_role.get(eid),
+                "start": ms,
+                "end": me,
+                "surface": m["surface"],
+            })
+
+    amounts = list(aux.get("amounts", []))
+    recent_suspects: list[tuple[int, dict[str, Any]]] = []
+    owned_phones: set[str] = set()
+
+    def _emit_fb(
+        src_id: str,
+        tgt_id: str,
+        rel_type: str,
+        ev_span: tuple[int, int],
+        amount_val: float | None = None,
+    ) -> bool:
+        if src_id == tgt_id or (src_id, tgt_id) in seen_pairs:
+            return False
+        if (src_id, tgt_id, rel_type) in seen_triples:
+            return False
+        seen_pairs.add((src_id, tgt_id))
+        seen_triples.add((src_id, tgt_id, rel_type))
+        rel_obj: dict[str, Any] = {
+            "source": src_id,
+            "target": tgt_id,
+            "relation": rel_type,
+            "trigger": "STRUCTURE",
+            "confidence": 0.6,
+            "evidence_char_span": [ev_span[0], ev_span[1]],
+        }
+        if rel_type == "TRANSFERRED_FUNDS" and amount_val is not None and amount_val > 0:
+            rel_obj["amount"] = float(amount_val)
+        relationships.append(rel_obj)
+        return True
+
+    def _distinct_by_id(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        out: list[dict[str, Any]] = []
+        seen_ids: set[str] = set()
+        for item in items:
+            if item["id"] not in seen_ids:
+                seen_ids.add(item["id"])
+                out.append(item)
+        return out
+
+    for sent_idx, (sent_start, sent_end, sent_text) in enumerate(sentences):
+        for ev_s, ph_id in cue_owns:
+            if ev_s <= sent_start:
+                owned_phones.add(ph_id)
+
+        ev_span = (sent_start, sent_end)
+        s_mentions = [
+            m for m in all_mentions
+            if sent_start <= m["start"] and m["end"] <= sent_end
+        ]
+        if not s_mentions:
+            continue
+
+        s_mentions.sort(key=lambda m: (m["start"], m["end"]))
+        curr_suspects = [m for m in s_mentions if m["type"] == "PERSON" and m["role"] == "SUSPECT"]
+        non_suspects = [m for m in s_mentions if m["type"] == "PERSON" and m["role"] != "SUSPECT"]
+        distinct_curr_suspect_ids = {m["id"] for m in curr_suspects}
+
+        phones = [m for m in s_mentions if m["type"] == "PHONE"]
+        distinct_phones = _distinct_by_id(phones)
+        imeis = [m for m in s_mentions if m["type"] == "IMEI"]
+        accounts = [m for m in s_mentions if m["type"] == "ACCOUNT"]
+        distinct_accs = _distinct_by_id(accounts)
+        s_amounts = [
+            a for a in amounts
+            if sent_start <= int(a["start"]) and int(a["end"]) <= sent_end
+        ]
+
+        # Resolve unambiguous suspect (1 distinct suspect in sentence, or carried forward <=2 sents)
+        fb_suspect: dict[str, Any] | None = None
+        if len(distinct_curr_suspect_ids) == 1:
+            fb_suspect = curr_suspects[-1]
+        elif len(distinct_curr_suspect_ids) == 0:
+            if not (non_suspects and not _PRONOUN_RE.search(sent_text)):
+                for prev_idx, prev_susp in reversed(recent_suspects):
+                    if 0 < sent_idx - prev_idx <= 2:
+                        fb_suspect = prev_susp
+                        break
+
+        suppress_transfer = (
+            _is_cash_recovery(sent_text)
+            or bool(_CASH_RE.search(sent_text))
+            or bool(_SEIZURE_RE.search(sent_text))
+        )
+
+        # Fallback 1: OWNS_DEVICE (1 suspect + 1 distinct phone; no IMEI-only sentence)
+        if fb_suspect is not None and len(distinct_phones) == 1:
+            is_imei_only = (len(curr_suspects) == 0 and len(imeis) > 0)
+            if not is_imei_only:
+                ph = distinct_phones[0]
+                if _emit_fb(fb_suspect["id"], ph["id"], "OWNS_DEVICE", ev_span):
+                    owned_phones.add(ph["id"])
+
+        # Fallback 2: COMMUNICATED_WITH (2 distinct phones, no suspect in sentence)
+        if len(distinct_phones) == 2 and not curr_suspects:
+            p1, p2 = distinct_phones[0], distinct_phones[1]
+            p1_owned = p1["id"] in owned_phones
+            p2_owned = p2["id"] in owned_phones
+            src_ph, tgt_ph = (p2, p1) if (p2_owned and not p1_owned) else (p1, p2)
+            if (tgt_ph["id"], src_ph["id"], "COMMUNICATED_WITH") not in seen_triples:
+                _emit_fb(src_ph["id"], tgt_ph["id"], "COMMUNICATED_WITH", ev_span)
+
+        # Fallback 3: ASSOCIATED_IMEI (nearest phone to each IMEI)
+        if imeis and phones:
+            for im in imeis:
+                im_span = (im["start"], im["end"])
+                nearest_ph = min(
+                    phones,
+                    key=lambda p: (
+                        _span_dist((p["start"], p["end"]), im_span),
+                        0 if p["start"] < im["start"] else 1,
+                        p["start"],
+                    ),
+                )
+                _emit_fb(nearest_ph["id"], im["id"], "ASSOCIATED_IMEI", ev_span)
+
+        # Fallback 4: Money & Accounts
+        if len(distinct_accs) == 2 and not suppress_transfer:
+            a1, a2 = distinct_accs[0], distinct_accs[1]
+            if (a2["id"], a1["id"], "TRANSFERRED_FUNDS") not in seen_triples:
+                amt_val = None
+                if s_amounts:
+                    a2_span = (a2["start"], a2["end"])
+                    a1_span = (a1["start"], a1["end"])
+                    nearest_amt = min(
+                        s_amounts,
+                        key=lambda am: _span_dist((int(am["start"]), int(am["end"])), a2_span)
+                        + _span_dist((int(am["start"]), int(am["end"])), a1_span),
+                    )
+                    amt_val = float(nearest_amt["value"])
+                _emit_fb(a1["id"], a2["id"], "TRANSFERRED_FUNDS", ev_span, amt_val)
+        elif len(distinct_accs) == 1 and fb_suspect is not None:
+            acc = distinct_accs[0]
+            if s_amounts:
+                if not suppress_transfer:
+                    acc_span = (acc["start"], acc["end"])
+                    nearest_amt = min(
+                        s_amounts,
+                        key=lambda am: _span_dist((int(am["start"]), int(am["end"])), acc_span),
+                    )
+                    _emit_fb(
+                        fb_suspect["id"],
+                        acc["id"],
+                        "TRANSFERRED_FUNDS",
+                        ev_span,
+                        float(nearest_amt["value"]),
+                    )
+            else:
+                if not _is_cash_recovery(sent_text) and not _CASH_RE.search(sent_text):
+                    _emit_fb(fb_suspect["id"], acc["id"], "CONTROLS_ACCOUNT", ev_span)
+
+        # Update suspect history only if sentence had unambiguous suspect(s)? Keep window matching extract_relations
+        for sp in curr_suspects:
+            recent_suspects.append((sent_idx, sp))
+
+    return relationships
+
