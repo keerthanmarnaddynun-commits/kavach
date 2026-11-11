@@ -251,3 +251,37 @@ def test_golden_demo_paragraph_with_two_person_spans():
     assert rel_map[("TRANSFERRED_FUNDS", "Vikas Kumar", "30291827465")]["amount"] == 500000.0
 
 
+def test_short_name_merge_three_sentence_pipeline_transfer():
+    """Step 6c-3: Full name + first-name mention merge into one PERSON entity receiving the transfer relation."""
+    text = (
+        "Police apprehended accused Mahesh Kulkarni near Sector 8 along with phone 9711002201. "
+        "Verification linked phone 9711002201 to device IMEI 861234567890123. "
+        "Records showed Mahesh transferred Rs. 35,000/- into SBI account 440011223344."
+    )
+    idx1 = text.index("Mahesh Kulkarni")
+    idx2 = text.rindex("Mahesh")
+    raw_spans = [
+        {"type": "PERSON", "start": idx1, "end": idx1 + len("Mahesh Kulkarni"), "score": 0.96, "word": "Mahesh Kulkarni"},
+        {"type": "PERSON", "start": idx2, "end": idx2 + len("Mahesh"), "score": 0.92, "word": "Mahesh"},
+    ]
+    res = analyze_text(text, doc_id="DOC_SHORT_PIPE", raw_spans=raw_spans)
+    doc = res["doc"]
+    validate_ai_output(doc)
+
+    persons = [e for e in doc["entities"] if e["type"] == "PERSON"]
+    assert len(persons) == 1
+    p = persons[0]
+    assert p["canonical_name"] == "Mahesh Kulkarni"
+    assert "SHORT_NAME_MERGE" in p["flags"]
+    assert res["aux"]["short_name_merges"] == 1
+    assert [m["surface"] for m in p["mentions"] if m["kind"] == "NAME"] == ["Mahesh Kulkarni", "Mahesh"]
+
+    acct = next(e for e in doc["entities"] if e["type"] == "ACCOUNT" and e["value"] == "440011223344")
+    transfers = [r for r in doc["relationships"] if r["relation"] == "TRANSFERRED_FUNDS"]
+    assert len(transfers) == 1
+    assert transfers[0]["source"] == p["id"]
+    assert transfers[0]["target"] == acct["id"]
+    assert transfers[0]["amount"] == 35000.0
+
+
+

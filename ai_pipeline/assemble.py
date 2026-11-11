@@ -98,6 +98,127 @@ def _dedup_flags(flags: list[str]) -> list[str]:
     return out
 
 
+def _preview_alias_and_father_attachments(
+    text: str,
+    name_spans: list[dict[str, Any]],
+    person_mentions_order: list[dict[str, Any]],
+) -> tuple[dict[str, set[str]], dict[str, set[str]], dict[str, set[str]]]:
+    """Resolve provisional ALIAS/FATHER owners prior to Pass 2 so merge checks remain side-effect free."""
+    alias_owners: dict[str, set[str]] = {}
+    prov_aliases: dict[str, set[str]] = {}
+    prov_fathers: dict[str, set[str]] = {}
+
+    for sp in name_spans:
+        sp_type = sp["type"]
+        if sp_type == "ALIAS":
+            owner_pm = None
+            for pm in person_mentions_order:
+                if pm["end"] <= sp["start"] and _same_sentence(text, pm["end"], sp["start"]):
+                    owner_pm = pm
+            norm_alias = _normalize_person_key(sp["surface"])
+            owner_key = owner_pm["entity_key"] if owner_pm is not None else "__ORPHAN__"
+            if norm_alias:
+                alias_owners.setdefault(norm_alias, set()).add(owner_key)
+            if owner_pm is not None and norm_alias:
+                prov_aliases.setdefault(owner_key, set()).add(norm_alias)
+
+        elif sp_type == "FATHER":
+            owner_pm = None
+            for pm in person_mentions_order:
+                if pm["end"] <= sp["start"] and pm["role"] == "SUSPECT":
+                    owner_pm = pm
+            if owner_pm is not None:
+                norm_father = _normalize_person_key(sp["surface"])
+                if norm_father:
+                    prov_fathers.setdefault(owner_pm["entity_key"], set()).add(norm_father)
+
+    return alias_owners, prov_aliases, prov_fathers
+
+
+def _merge_short_person_names(
+    text: str,
+    raw_spans: list[dict[str, Any]],
+    name_spans: list[dict[str, Any]],
+    person_groups: dict[str, dict[str, Any]],
+    person_mentions_order: list[dict[str, Any]],
+) -> tuple[int, list[dict[str, Any]]]:
+    """
+    Conservatively merge 1-token PERSON entities into a unique >=2-token PERSON entity
+    sharing the exact same first token, same role, and no alias/father conflicts.
+    """
+    alias_owners, prov_aliases, prov_fathers = _preview_alias_and_father_attachments(
+        text, name_spans, person_mentions_order
+    )
+
+    fuller_by_first: dict[str, list[str]] = {}
+    short_keys: list[str] = []
+    for key, grp in person_groups.items():
+        toks = _normalize_person_key(grp["canonical_name"]).split()
+        if len(toks) >= 2:
+            fuller_by_first.setdefault(toks[0], []).append(key)
+        elif len(toks) == 1:
+            short_keys.append(key)
+
+    merges = 0
+    ambiguous: list[dict[str, Any]] = []
+
+    for e_key in short_keys:
+        e_grp = person_groups[e_key]
+        tok = _normalize_person_key(e_grp["canonical_name"]).split()[0]
+
+        # Aliases of other people (or unowned aliases) are never merged as first names
+        if any(owner != e_key for owner in alias_owners.get(tok, ())):
+            continue
+
+        cands = fuller_by_first.get(tok, [])
+        if not cands:
+            continue
+
+        if len(cands) >= 2:
+            ambiguous.append({
+                "short_name": e_grp["canonical_name"],
+                "token": tok,
+                "candidates": [person_groups[k]["canonical_name"] for k in cands],
+            })
+            continue
+
+        f_key = cands[0]
+        f_grp = person_groups[f_key]
+
+        # Roles must match cleanly across entities and mentions (OFFICER/COMPLAINANT/WITNESS stay separate from SUSPECT)
+        if e_grp["role"] != f_grp["role"] or any(
+            pm["role"] != f_grp["role"] for pm in person_mentions_order if pm["entity_key"] == e_key
+        ):
+            continue
+
+        # Short entity must not introduce an alias or father that differs from fuller entity
+        if not prov_fathers.get(e_key, set()).issubset(prov_fathers.get(f_key, set())):
+            continue
+        if not prov_aliases.get(e_key, set()).issubset(prov_aliases.get(f_key, set())):
+            continue
+
+        f_grp["mentions"].extend(e_grp["mentions"])
+        f_grp["mentions"].sort(key=lambda m: (m["char_span"][0], m["char_span"][1]))
+        f_grp["scores"] = [
+            sc
+            for m in f_grp["mentions"]
+            if m["kind"] == "NAME"
+            for sc in (_raw_overlap_score(m["char_span"][0], m["char_span"][1], raw_spans),)
+            if sc is not None
+        ]
+        f_grp["flags"].append("SHORT_NAME_MERGE")
+
+        for pm in person_mentions_order:
+            if pm["entity_key"] == e_key:
+                pm["entity_key"] = f_key
+                pm["role"] = f_grp["role"]
+
+        del person_groups[e_key]
+        merges += 1
+
+    return merges, ambiguous
+
+
 def assemble_entities(
     text: str,
     doc_id: str,
@@ -108,6 +229,22 @@ def assemble_entities(
     document with entities sorted by first mention and relationships left empty.
     Returns (doc, aux).
     """
+    if text == "":
+        return (
+            {
+                "schema_version": "1.1",
+                "case_id": "CASE_DEMO_V2",
+                "source_doc_id": doc_id,
+                "entities": [],
+                "relationships": [],
+            },
+            {
+                "amounts": [],
+                "ifsc": [],
+                "dropped": {"alias_no_owner": 0, "father_no_owner": 0},
+            },
+        )
+
     post_spans = postprocess(text, raw_spans)
     name_spans = extract_names(text, post_spans)
     id_candidates = find_all_identifiers(text)
@@ -151,6 +288,11 @@ def assemble_entities(
             "end": sp["end"],
             "role": sp["role"],
         })
+
+    # Pass 1b: Conservative short-name merge before attaching aliases and fathers
+    short_name_merges, short_name_ambiguous = _merge_short_person_names(
+        text, raw_spans, name_spans, person_groups, person_mentions_order
+    )
 
     # Pass 2: Attach ALIAS and FATHER spans to nearest valid preceding person mention
     dropped_counts = {"alias_no_owner": 0, "father_no_owner": 0}
@@ -324,6 +466,8 @@ def assemble_entities(
         "amounts": amounts_aux,
         "ifsc": ifsc_aux,
         "dropped": dropped_counts,
+        "short_name_merges": short_name_merges,
+        "short_name_ambiguous": short_name_ambiguous,
     }
 
     if entities:
