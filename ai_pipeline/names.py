@@ -51,10 +51,14 @@ _FATHER_CUES_REGEX = re.compile(
 _STOP_ALIAS = frozenset({
     "s/o", "d/o", "w/o", "c/o", "r/o", "so", "do", "wo", "co", "ro",
     "son", "daughter", "wife", "resident",
-    "ko", "ne", "ke", "ki", "se", "mein", "par", "aur", "bhi", "and", "also",
+    "ko", "ne", "ke", "ki", "se", "mein", "par", "aur", "bhi", "and", "also", "dwara",
     "at", "was", "is", "were", "who", "has", "had",
-    "को", "ने", "के", "की", "से", "में", "पर", "और", "भी",
-    "आत्मज", "सुपुत्र", "पुत्र", "सुपुत्री", "पुत्री", "पत्नी", "पिता", "निवासी"
+    "sector", "colony", "nagar", "road", "gali", "lane", "block", "phase",
+    "chowk", "market", "mohalla", "village", "thana",
+    "को", "ने", "के", "की", "से", "में", "पर", "और", "भी", "द्वारा",
+    "आत्मज", "सुपुत्र", "पुत्र", "सुपुत्री", "पुत्री", "पत्नी", "पिता", "निवासी",
+    "सेक्टर", "कॉलोनी", "नगर", "रोड", "सड़क", "गली", "लेन", "ब्लॉक", "फेज", "फेज़",
+    "चौक", "बाजार", "बाज़ार", "मार्केट", "मोहल्ला", "मुहल्ला", "गांव", "गाँव", "ग्राम", "थाना",
 })
 
 _STOP_FATHER = frozenset({
@@ -212,8 +216,10 @@ def find_aliases(text: str) -> list[dict[str, Any]]:
             tok_str = tok_m.group(0)
             if tok_str.lower() in _STOP_ALIAS:
                 break
-            # Must be capitalized Latin or Devanagari word
-            if re.match(r"^[A-Z][a-zA-Z\'-]*$", tok_str) or re.match(r"^[\u0900-\u097F]+$", tok_str):
+            # Must be capitalized Latin or non-numeric Devanagari word
+            if tok_str.isdigit() or re.match(r"^[\u0966-\u096f]+$", tok_str):
+                break
+            if re.match(r"^[A-Z][a-zA-Z\'-]*$", tok_str) or re.match(r"^[\u0900-\u0963\u0970-\u097f]+$", tok_str):
                 tokens.append((cur, cur + len(tok_str), tok_str))
                 cur += len(tok_str)
             else:

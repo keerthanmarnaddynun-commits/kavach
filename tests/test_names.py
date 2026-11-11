@@ -312,3 +312,27 @@ def test_cue_trim_idempotent_and_valid_offsets():
     assert extract_names(text, res1) == res1
 
 
+def test_alias_stops_at_location_words_and_numbers():
+    """Step 6c-2: Aliases stop before location stopwords and standalone numbers in Roman/Devanagari."""
+    cases = [
+        ("Suspect Mahesh Kulkarni urf Minto Sector 12 dwara pakda gaya.", ["Minto"]),
+        ("Accused Prashant Tiwari alias Kobo 45 resides nearby.", ["Kobo"]),
+        ("Suspect Alok Bansal aka Tiko Colony 9 was questioned.", ["Tiko"]),
+        ("Suspect Harish Mehta urf Zorro Nagar went missing.", ["Zorro"]),
+        ("Suspect Nitin Verma alias Piko Road near Chowk.", ["Piko"]),
+        ("Accused Sanjay Kapoor urf Gopo Thana area case.", ["Gopo"]),
+        ("आरोपी प्रदीप मिश्रा उर्फ़ मिंटो सेक्टर १२ से पकड़ा गया।", ["मिंटो"]),
+        ("आरोपी विनोद गुप्ता उर्फ गोपू १२ बाजार के पास मिला।", ["गोपू"]),
+        ("अभियुक्त हरीश यादव उर्फ़ टोनी नगर और उर्फ़ मोंटी गांव निवासी।", ["टोनी", "मोंटी"]),
+    ]
+    for text, expected in cases:
+        aliases = find_aliases(text)
+        assert [a["surface"] for a in aliases] == expected, f"Failed for {text!r}: {aliases}"
+        for a in aliases:
+            assert text[a["start"]:a["end"]] == a["surface"]
+        extracted = extract_names(text, [])
+        ext_aliases = [sp["surface"] for sp in extracted if sp["type"] == "ALIAS"]
+        assert ext_aliases == expected, f"extract_names failed for {text!r}: {extracted}"
+
+
+

@@ -198,3 +198,56 @@ def test_heuristic_person_spans_examples_and_plain_text():
     assert heuristic_person_spans("यह एक सामान्य वाक्य है।") == []
     assert heuristic_person_spans("Accused ran away swiftly.") == []
 
+
+def test_golden_demo_paragraph_with_two_person_spans():
+    """Step 6c-2: Golden demo paragraph produces expected entities and all 6 explicit relations."""
+    from pathlib import Path
+
+    sample_path = Path(__file__).resolve().parents[1] / "contracts" / "sample_input.txt"
+    text = sample_path.read_text(encoding="utf-8")
+    raw_spans = _make_raw(text, ["Vikas Kumar", "Rajendra Singh"])
+
+    res = analyze_text(text, doc_id="GOLDEN_DEMO", raw_spans=raw_spans)
+    doc = res["doc"]
+    validate_ai_output(doc)
+
+    persons = [e for e in doc["entities"] if e["type"] == "PERSON"]
+    assert len(persons) == 2
+    by_name = {e["canonical_name"]: e for e in persons}
+    assert set(by_name.keys()) == {"Vikas Kumar", "Rajendra Singh"}
+    assert by_name["Vikas Kumar"].get("aliases") == ["Bicky"]
+    assert by_name["Vikas Kumar"].get("role") == "SUSPECT"
+    assert by_name["Rajendra Singh"].get("aliases") == ["Raju Bhai"]
+    assert by_name["Rajendra Singh"].get("role") == "SUSPECT"
+
+    id_pairs = {(e["type"], e["value"]) for e in doc["entities"] if e["type"] != "PERSON"}
+    assert ("PHONE", "9876543210") in id_pairs
+    assert ("PHONE", "9123456789") in id_pairs
+    assert ("IMEI", "864201948201948") in id_pairs
+    assert ("IMEI", "359876102938475") in id_pairs
+    assert ("ACCOUNT", "30291827465") in id_pairs
+
+    acct = next(e for e in doc["entities"] if e["type"] == "ACCOUNT")
+    assert acct.get("bank") == "SBI"
+
+    e_map = {e["id"]: e for e in doc["entities"]}
+    rel_map = {
+        (
+            r["relation"],
+            e_map[r["source"]].get("canonical_name") or e_map[r["source"]].get("value"),
+            e_map[r["target"]].get("canonical_name") or e_map[r["target"]].get("value"),
+        ): r
+        for r in doc["relationships"]
+    }
+    expected_rels = {
+        ("OWNS_DEVICE", "Vikas Kumar", "9876543210"),
+        ("ASSOCIATED_IMEI", "9876543210", "864201948201948"),
+        ("ASSOCIATED_IMEI", "9123456789", "359876102938475"),
+        ("COMMUNICATED_WITH", "9876543210", "9123456789"),
+        ("TRANSFERRED_FUNDS", "Vikas Kumar", "30291827465"),
+        ("CONTROLS_ACCOUNT", "Rajendra Singh", "30291827465"),
+    }
+    assert expected_rels.issubset(rel_map.keys())
+    assert rel_map[("TRANSFERRED_FUNDS", "Vikas Kumar", "30291827465")]["amount"] == 500000.0
+
+

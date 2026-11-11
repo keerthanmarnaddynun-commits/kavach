@@ -431,3 +431,210 @@ def test_hybrid_cue_wins_deterministic_and_no_duplicates():
     assert by_rel["OWNS_DEVICE"]["trigger"] == "STRUCTURE"
 
 
+def test_hybrid_anaphoric_owner_cross_sentence_and_guards():
+    """Step 6c-2: Rule 2(a) resolves prior suspect via anaphoric possession cues; officers never match."""
+    # Hinglish across single soft-wrapped newline and sentence boundary (no cue-lexicon trigger)
+    t_hg = (
+        "Police ne suspect Mahesh Kulkarni ko Sector 8 mein dekha.\n"
+        "Isi dauran mobile 9711002201 uske paas mila."
+    )
+    d_hg, _, c_hg, h_hg = _build_hybrid(t_hg, ["Mahesh Kulkarni"], "HYB_ANA_OWN_HG")
+    assert c_hg == []
+    assert len(h_hg) == 1
+    e_hg = {e["id"]: e for e in d_hg["entities"]}
+    assert h_hg[0]["relation"] == "OWNS_DEVICE"
+    assert e_hg[h_hg[0]["source"]]["canonical_name"] == "Mahesh Kulkarni"
+    assert e_hg[h_hg[0]["target"]]["value"] == "9711002201"
+    assert h_hg[0]["trigger"] == "ANAPHORA"
+    assert h_hg[0]["confidence"] == 0.6
+
+    # English cross-sentence anaphora ('from him') without CUE ownership verb
+    t_en = (
+        "Accused Prashant Tiwari waited outside the gate. "
+        "Phone 9711002202 came from him later."
+    )
+    d_en, _, c_en, h_en = _build_hybrid(t_en, ["Prashant Tiwari"], "HYB_ANA_OWN_EN")
+    assert c_en == []
+    assert len(h_en) == 1
+    e_en = {e["id"]: e for e in d_en["entities"]}
+    assert h_en[0]["relation"] == "OWNS_DEVICE"
+    assert e_en[h_en[0]["source"]]["canonical_name"] == "Prashant Tiwari"
+    assert e_en[h_en[0]["target"]]["value"] == "9711002202"
+    assert h_en[0]["trigger"] == "ANAPHORA"
+    assert h_en[0]["confidence"] == 0.6
+
+    # Devanagari cross-sentence anaphora ('उसके पास') without CUE ownership verb
+    t_hi = (
+        "आरोपी प्रदीप मिश्रा बाजार के पास खड़ा था। "
+        "मोबाइल ९७११००२२०३ उसके पास मिला।"
+    )
+    d_hi, _, c_hi, h_hi = _build_hybrid(t_hi, ["प्रदीप मिश्रा"], "HYB_ANA_OWN_HI")
+    assert c_hi == []
+    assert len(h_hi) == 1
+    e_hi = {e["id"]: e for e in d_hi["entities"]}
+    assert h_hi[0]["relation"] == "OWNS_DEVICE"
+    assert e_hi[h_hi[0]["source"]]["canonical_name"] == "प्रदीप मिश्रा"
+    assert e_hi[h_hi[0]["target"]]["value"] == "9711002203"
+    assert h_hi[0]["trigger"] == "ANAPHORA"
+    assert h_hi[0]["confidence"] == 0.6
+
+    # Officer guard & missing antecedent guard
+    t_off = (
+        "Inspector Deshmukh inspected the counter. "
+        "Mobile 9711002201 came from him."
+    )
+    _, _, _, h_off = _build_hybrid(t_off, ["Deshmukh"], "HYB_ANA_OFF")
+    assert h_off == []
+
+    t_none = "A sealed envelope lay inside. Mobile 9711002201 came from him."
+    _, _, _, h_none = _build_hybrid(t_none, [], "HYB_ANA_NONE")
+    assert h_none == []
+
+
+def test_hybrid_demonstrative_phone_and_ambiguity_guard():
+    """Step 6c-2: Rule 2(b) resolves demonstrative phone to unique prior phone, skipping when ambiguous."""
+    t_ok = (
+        "Handset 9711002201 was seized at the spot.\n"
+        "CDR records revealed ki this device se phone 9711002202 par contact hua."
+    )
+    doc, _, cue_rels, hyb_rels = _build_hybrid(t_ok, [], "HYB_DEM_OK")
+    assert cue_rels == []
+    assert len(hyb_rels) == 1
+    e_map = {e["id"]: e for e in doc["entities"]}
+    assert hyb_rels[0]["relation"] == "COMMUNICATED_WITH"
+    assert e_map[hyb_rels[0]["source"]]["value"] == "9711002201"
+    assert e_map[hyb_rels[0]["target"]]["value"] == "9711002202"
+    assert hyb_rels[0]["trigger"] == "ANAPHORA"
+    assert hyb_rels[0]["confidence"] == 0.6
+
+    # Ambiguous when two distinct phones appeared across previous two sentences
+    t_amb = (
+        "Police spotted phone 9711002201 near the gate. "
+        "Another officer logged mobile 9711002203 at the desk. "
+        "CDR analysis showed this device made contact with 9711002202."
+    )
+    _, _, c_amb, h_amb = _build_hybrid(t_amb, [], "HYB_DEM_AMB")
+    assert c_amb == []
+    assert h_amb == []
+
+    # Missing prior phone gives nothing
+    t_no_ant = "Analysis showed the said number contacted 9711002202 at night."
+    _, _, _, h_no_ant = _build_hybrid(t_no_ant, [], "HYB_DEM_NONE")
+    assert h_no_ant == []
+
+
+def test_hybrid_two_suspect_money_clauses_and_role_guards():
+    """Step 6c-2: Rule 2(c) assigns sender/controller in 2-suspect money sentences across EN/HG/HI."""
+    # English two-suspect money clause (both transfer and control roles)
+    t_en = (
+        "Victim deposed that suspect Mahesh Kulkarni remitted Rs. 45,000/- "
+        "into bank account 440011223344 under control of accused Prashant Tiwari."
+    )
+    d_en, _, _, h_en = _build_hybrid(
+        t_en, ["Mahesh Kulkarni", "Prashant Tiwari"], "HYB_2S_EN"
+    )
+    e_en = {e["id"]: e for e in d_en["entities"]}
+    rels_en = {
+        (r["relation"], e_en[r["source"]]["canonical_name"], e_en[r["target"]]["value"]): r
+        for r in h_en
+    }
+    assert ("TRANSFERRED_FUNDS", "Mahesh Kulkarni", "440011223344") in rels_en
+    assert rels_en[("TRANSFERRED_FUNDS", "Mahesh Kulkarni", "440011223344")]["amount"] == 45000.0
+    assert ("CONTROLS_ACCOUNT", "Prashant Tiwari", "440011223344") in rels_en
+    assert len(h_en) == len({(r["source"], r["target"], r["relation"]) for r in h_en})
+
+    # Hinglish with soft line wrap + prior-sentence full name shortened prefix
+    t_hg = (
+        "Accused Alok Bansal ne gang join kiya aur Mahesh Kulkarni ke sath kaam kiya.\n"
+        "Mahesh ne account\n"
+        "550011223344 mein Rs. 80,000/- transfer kiye jo mastermind Prashant Tiwari dwara operate hota hai."
+    )
+    d_hg, _, _, h_hg = _build_hybrid(
+        t_hg, ["Alok Bansal", "Mahesh Kulkarni", "Prashant Tiwari"], "HYB_2S_HG"
+    )
+    e_hg = {e["id"]: e for e in d_hg["entities"]}
+    rels_hg = {
+        (r["relation"], e_hg[r["source"]]["canonical_name"], e_hg[r["target"]]["value"]): r
+        for r in h_hg
+    }
+    assert ("TRANSFERRED_FUNDS", "Mahesh Kulkarni", "550011223344") in rels_hg
+    assert rels_hg[("TRANSFERRED_FUNDS", "Mahesh Kulkarni", "550011223344")]["amount"] == 80000.0
+    assert ("CONTROLS_ACCOUNT", "Prashant Tiwari", "550011223344") in rels_hg
+
+    # Devanagari SOV two-suspect sentence
+    t_hi = (
+        "आरोपी प्रदीप मिश्रा ने खाता 440011223344 में ₹ 25,000 ट्रांसफर किए "
+        "जिसका मुख्य संचालक आरोपी विनोद गुप्ता द्वारा संचालन किया जाता है।"
+    )
+    d_hi, _, _, h_hi = _build_hybrid(
+        t_hi, ["प्रदीप मिश्रा", "विनोद गुप्ता"], "HYB_2S_HI"
+    )
+    e_hi = {e["id"]: e for e in d_hi["entities"]}
+    rels_hi = {
+        (r["relation"], e_hi[r["source"]]["canonical_name"], e_hi[r["target"]]["value"]): r
+        for r in h_hi
+    }
+    assert ("TRANSFERRED_FUNDS", "प्रदीप मिश्रा", "440011223344") in rels_hi
+    assert rels_hi[("TRANSFERRED_FUNDS", "प्रदीप मिश्रा", "440011223344")]["amount"] == 25000.0
+    assert ("CONTROLS_ACCOUNT", "विनोद गुप्ता", "440011223344") in rels_hi
+
+    # Ambiguity preserved when neither role cue exists, and cash recovery stays empty
+    t_amb = "Accused Mahesh Kulkarni and Prashant Tiwari discussed bank account 440011223344 with Rs. 12,000/-."
+    _, _, _, h_amb = _build_hybrid(t_amb, ["Mahesh Kulkarni", "Prashant Tiwari"], "HYB_2S_AMB")
+    assert h_amb == []
+
+    t_cash = "Cash Rs. 30,000/- was recovered from Mahesh Kulkarni and Prashant Tiwari near account 440011223344."
+    _, _, _, h_cash = _build_hybrid(t_cash, ["Mahesh Kulkarni", "Prashant Tiwari"], "HYB_2S_CASH")
+    assert h_cash == []
+
+    # Officer guard: officer near control/transfer cue must not become controller/sender
+    t_off = (
+        "Suspect Mahesh Kulkarni transferred Rs. 15,000/- into account 440011223344 "
+        "operated by Inspector Deshmukh and suspect Prashant Tiwari."
+    )
+    d_off, _, _, h_off = _build_hybrid(
+        t_off, ["Mahesh Kulkarni", "Deshmukh", "Prashant Tiwari"], "HYB_2S_OFF"
+    )
+    e_off = {e["id"]: e for e in d_off["entities"]}
+    for r in h_off:
+        assert e_off[r["source"]]["role"] == "SUSPECT"
+        assert e_off[r["source"]]["canonical_name"] != "Deshmukh"
+
+
+def test_cue_only_extract_relations_unchanged_and_no_duplicates():
+    """Step 6c-2: Verify extract_relations (cue-only) behavior is unchanged across EN/HG/HI."""
+    fixed_cases = [
+        (
+            "Suspect Mahesh Kulkarni owned mobile 9711002201. "
+            "Accused Mahesh Kulkarni remitted Rs. 5,000/- to bank account 440011223344.",
+            ["Mahesh Kulkarni", "Mahesh Kulkarni"],
+            {("OWNS_DEVICE", "Mahesh Kulkarni", "9711002201"), ("TRANSFERRED_FUNDS", "Mahesh Kulkarni", "440011223344")},
+        ),
+        (
+            "Handset 9711002201 was paired with device IMEI 861234567890123. "
+            "Account 440011223344 was controlled by Prashant Tiwari.",
+            ["Prashant Tiwari"],
+            {("ASSOCIATED_IMEI", "9711002201", "861234567890123"), ("CONTROLS_ACCOUNT", "Prashant Tiwari", "440011223344")},
+        ),
+        (
+            "आरोपी प्रदीप मिश्रा ने रकम ₹ 10,000 खाता 440011223344 में प्रेषित की।",
+            ["प्रदीप मिश्रा"],
+            {("TRANSFERRED_FUNDS", "प्रदीप मिश्रा", "440011223344")},
+        ),
+    ]
+    for idx, (txt, names, expected_triples) in enumerate(fixed_cases):
+        doc, aux, cue_rels, hyb_rels = _build_hybrid(txt, names, f"CUE_FIXED_{idx}")
+        e_map = {e["id"]: e for e in doc["entities"]}
+        cue_triples = {
+            (
+                r["relation"],
+                e_map[r["source"]].get("canonical_name") or e_map[r["source"]].get("value"),
+                e_map[r["target"]].get("canonical_name") or e_map[r["target"]].get("value"),
+            )
+            for r in cue_rels
+        }
+        assert cue_triples == expected_triples
+        assert len({(r["source"], r["target"], r["relation"]) for r in hyb_rels}) == len(hyb_rels)
+
+
+
