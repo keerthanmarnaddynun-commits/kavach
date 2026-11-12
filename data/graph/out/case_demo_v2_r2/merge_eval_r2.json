@@ -1,0 +1,65 @@
+{
+  "by_split": {
+    "dev": {
+      "nodes": 24,
+      "nodes_per_real_person": {
+        "max": 5,
+        "median": 1,
+        "min": 1
+      },
+      "real_people": 17,
+      "same_as_candidate_different_people": 0,
+      "same_as_candidate_same_person": 2,
+      "same_person_node_pairs_not_merged": 13,
+      "same_person_pairs_merged": 13,
+      "same_person_pairs_not_merged": 14,
+      "wrong_merge_nodes": 0
+    },
+    "test": {
+      "nodes": 24,
+      "nodes_per_real_person": {
+        "max": 4,
+        "median": 1,
+        "min": 1
+      },
+      "real_people": 17,
+      "same_as_candidate_different_people": 0,
+      "same_as_candidate_same_person": 2,
+      "same_person_node_pairs_not_merged": 12,
+      "same_person_pairs_merged": 14,
+      "same_person_pairs_not_merged": 12,
+      "wrong_merge_nodes": 0
+    },
+    "train": {
+      "nodes": 39,
+      "nodes_per_real_person": {
+        "max": 9,
+        "median": 1.0,
+        "min": 1
+      },
+      "real_people": 20,
+      "same_as_candidate_different_people": 0,
+      "same_as_candidate_same_person": 19,
+      "same_person_node_pairs_not_merged": 68,
+      "same_person_pairs_merged": 161,
+      "same_person_pairs_not_merged": 152,
+      "wrong_merge_nodes": 0
+    }
+  },
+  "overall": {
+    "nodes": 52,
+    "nodes_per_real_person": {
+      "max": 15,
+      "median": 1.0,
+      "min": 1
+    },
+    "real_people": 20,
+    "same_as_candidate_different_people": 0,
+    "same_as_candidate_same_person": 32,
+    "same_person_node_pairs_not_merged": 179,
+    "same_person_pairs_merged": 497,
+    "same_person_pairs_not_merged": 414,
+    "wrong_merge_nodes": 0
+  },
+  "unmatched_name_mentions": 1
+}

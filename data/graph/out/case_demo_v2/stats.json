@@ -1,0 +1,48 @@
+{
+  "bank_rows_read": 1489,
+  "cdr_rows_read": 7483,
+  "cdr_rows_skipped": 0,
+  "edge_counts_by_source_kind": {
+    "CSV": 1408,
+    "FIR": 183
+  },
+  "edge_counts_by_type": {
+    "ASSOCIATED_IMEI": 68,
+    "COMMUNICATED_WITH": 172,
+    "CONTROLS_ACCOUNT": 45,
+    "OWNS_DEVICE": 31,
+    "TRANSFERRED_FUNDS": 1275
+  },
+  "edge_counts_by_type_and_source_kind": {
+    "ASSOCIATED_IMEI": {
+      "CSV": 50,
+      "FIR": 18
+    },
+    "COMMUNICATED_WITH": {
+      "CSV": 137,
+      "FIR": 35
+    },
+    "CONTROLS_ACCOUNT": {
+      "FIR": 45
+    },
+    "OWNS_DEVICE": {
+      "FIR": 31
+    },
+    "TRANSFERRED_FUNDS": {
+      "CSV": 1221,
+      "FIR": 54
+    }
+  },
+  "fir_files_read": 100,
+  "node_counts_by_type": {
+    "ACCOUNT": 71,
+    "IMEI": 49,
+    "PERSON": 222,
+    "PHONE": 50,
+    "VEHICLE": 100
+  },
+  "persons_after_merge": 222,
+  "persons_before_merge": 272,
+  "total_edges": 1591,
+  "total_nodes": 492
+}
