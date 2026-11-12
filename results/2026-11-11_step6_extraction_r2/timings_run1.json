@@ -1,0 +1,914 @@
+{
+  "golden_demo": {
+    "assemble": 2.495,
+    "model": 157.648,
+    "names_identifiers": 0.654,
+    "postprocess": 0.013,
+    "relations": 6.618,
+    "total": 169.36,
+    "validate": 1.929
+  },
+  "model_load_ms": 10230.038,
+  "per_doc": {
+    "FIR_01": {
+      "assemble": 9.591,
+      "model": 2257.401,
+      "names_identifiers": 4.442,
+      "postprocess": 0.085,
+      "relations": 25.846,
+      "total": 2302.971,
+      "validate": 5.595
+    },
+    "FIR_02": {
+      "assemble": 4.277,
+      "model": 581.929,
+      "names_identifiers": 1.478,
+      "postprocess": 0.032,
+      "relations": 13.724,
+      "total": 605.117,
+      "validate": 3.667
+    },
+    "FIR_03": {
+      "assemble": 4.391,
+      "model": 516.186,
+      "names_identifiers": 1.694,
+      "postprocess": 0.029,
+      "relations": 11.832,
+      "total": 537.429,
+      "validate": 3.287
+    },
+    "FIR_04": {
+      "assemble": 4.135,
+      "model": 528.768,
+      "names_identifiers": 1.437,
+      "postprocess": 0.027,
+      "relations": 11.165,
+      "total": 548.357,
+      "validate": 2.818
+    },
+    "FIR_05": {
+      "assemble": 8.051,
+      "model": 968.357,
+      "names_identifiers": 2.538,
+      "postprocess": 0.042,
+      "relations": 21.701,
+      "total": 1006.625,
+      "validate": 5.929
+    },
+    "FIR_06": {
+      "assemble": 2.954,
+      "model": 395.656,
+      "names_identifiers": 1.072,
+      "postprocess": 0.03,
+      "relations": 6.923,
+      "total": 407.979,
+      "validate": 1.337
+    },
+    "FIR_07": {
+      "assemble": 6.576,
+      "model": 769.302,
+      "names_identifiers": 1.949,
+      "postprocess": 0.041,
+      "relations": 19.99,
+      "total": 802.88,
+      "validate": 5.013
+    },
+    "FIR_08": {
+      "assemble": 4.115,
+      "model": 536.411,
+      "names_identifiers": 1.223,
+      "postprocess": 0.028,
+      "relations": 13.481,
+      "total": 559.541,
+      "validate": 4.276
+    },
+    "FIR_09": {
+      "assemble": 3.989,
+      "model": 442.382,
+      "names_identifiers": 1.633,
+      "postprocess": 0.027,
+      "relations": 7.758,
+      "total": 458.188,
+      "validate": 2.39
+    },
+    "FIR_10": {
+      "assemble": 4.224,
+      "model": 506.435,
+      "names_identifiers": 1.342,
+      "postprocess": 0.021,
+      "relations": 9.472,
+      "total": 524.306,
+      "validate": 2.805
+    },
+    "FIR_100": {
+      "assemble": 2.693,
+      "model": 323.923,
+      "names_identifiers": 1.331,
+      "postprocess": 0.027,
+      "relations": 5.142,
+      "total": 334.787,
+      "validate": 1.664
+    },
+    "FIR_11": {
+      "assemble": 8.95,
+      "model": 795.939,
+      "names_identifiers": 2.482,
+      "postprocess": 0.053,
+      "relations": 23.213,
+      "total": 837.347,
+      "validate": 6.701
+    },
+    "FIR_12": {
+      "assemble": 2.114,
+      "model": 411.294,
+      "names_identifiers": 0.927,
+      "postprocess": 0.026,
+      "relations": 5.427,
+      "total": 421.736,
+      "validate": 1.94
+    },
+    "FIR_13": {
+      "assemble": 6.355,
+      "model": 806.62,
+      "names_identifiers": 2.17,
+      "postprocess": 0.044,
+      "relations": 15.216,
+      "total": 833.484,
+      "validate": 3.07
+    },
+    "FIR_14": {
+      "assemble": 5.207,
+      "model": 520.948,
+      "names_identifiers": 1.021,
+      "postprocess": 0.044,
+      "relations": 13.629,
+      "total": 543.977,
+      "validate": 3.121
+    },
+    "FIR_15": {
+      "assemble": 7.395,
+      "model": 823.165,
+      "names_identifiers": 2.276,
+      "postprocess": 0.057,
+      "relations": 17.466,
+      "total": 856.222,
+      "validate": 5.855
+    },
+    "FIR_16": {
+      "assemble": 4.385,
+      "model": 507.932,
+      "names_identifiers": 1.482,
+      "postprocess": 0.029,
+      "relations": 11.135,
+      "total": 527.73,
+      "validate": 2.758
+    },
+    "FIR_17": {
+      "assemble": 6.966,
+      "model": 804.576,
+      "names_identifiers": 2.308,
+      "postprocess": 0.053,
+      "relations": 20.618,
+      "total": 839.46,
+      "validate": 4.93
+    },
+    "FIR_18": {
+      "assemble": 2.81,
+      "model": 394.18,
+      "names_identifiers": 1.059,
+      "postprocess": 0.026,
+      "relations": 7.07,
+      "total": 406.714,
+      "validate": 1.564
+    },
+    "FIR_19": {
+      "assemble": 6.571,
+      "model": 790.48,
+      "names_identifiers": 1.96,
+      "postprocess": 0.041,
+      "relations": 20.57,
+      "total": 825.571,
+      "validate": 5.942
+    },
+    "FIR_20": {
+      "assemble": 5.181,
+      "model": 547.985,
+      "names_identifiers": 1.573,
+      "postprocess": 0.032,
+      "relations": 14.854,
+      "total": 573.291,
+      "validate": 3.656
+    },
+    "FIR_21": {
+      "assemble": 4.058,
+      "model": 573.096,
+      "names_identifiers": 1.359,
+      "postprocess": 0.034,
+      "relations": 11.385,
+      "total": 592.714,
+      "validate": 2.773
+    },
+    "FIR_22": {
+      "assemble": 4.091,
+      "model": 564.196,
+      "names_identifiers": 1.409,
+      "postprocess": 0.03,
+      "relations": 10.132,
+      "total": 582.627,
+      "validate": 2.765
+    },
+    "FIR_23": {
+      "assemble": 5.74,
+      "model": 861.989,
+      "names_identifiers": 1.837,
+      "postprocess": 0.047,
+      "relations": 23.921,
+      "total": 899.971,
+      "validate": 6.429
+    },
+    "FIR_24": {
+      "assemble": 1.917,
+      "model": 409.681,
+      "names_identifiers": 0.672,
+      "postprocess": 0.025,
+      "relations": 7.884,
+      "total": 422.449,
+      "validate": 2.261
+    },
+    "FIR_25": {
+      "assemble": 7.547,
+      "model": 844.027,
+      "names_identifiers": 2.345,
+      "postprocess": 0.059,
+      "relations": 23.04,
+      "total": 882.496,
+      "validate": 5.471
+    },
+    "FIR_26": {
+      "assemble": 4.634,
+      "model": 575.844,
+      "names_identifiers": 1.291,
+      "postprocess": 0.031,
+      "relations": 13.791,
+      "total": 599.353,
+      "validate": 3.755
+    },
+    "FIR_27": {
+      "assemble": 5.368,
+      "model": 541.265,
+      "names_identifiers": 1.473,
+      "postprocess": 0.036,
+      "relations": 13.03,
+      "total": 570.574,
+      "validate": 9.391
+    },
+    "FIR_28": {
+      "assemble": 4.592,
+      "model": 556.853,
+      "names_identifiers": 1.564,
+      "postprocess": 0.043,
+      "relations": 10.052,
+      "total": 576.15,
+      "validate": 3.038
+    },
+    "FIR_29": {
+      "assemble": 6.482,
+      "model": 834.108,
+      "names_identifiers": 1.95,
+      "postprocess": 0.051,
+      "relations": 19.627,
+      "total": 867.665,
+      "validate": 5.439
+    },
+    "FIR_30": {
+      "assemble": 2.548,
+      "model": 406.079,
+      "names_identifiers": 1.015,
+      "postprocess": 0.028,
+      "relations": 6.476,
+      "total": 417.683,
+      "validate": 1.531
+    },
+    "FIR_31": {
+      "assemble": 6.427,
+      "model": 780.169,
+      "names_identifiers": 2.008,
+      "postprocess": 0.036,
+      "relations": 19.548,
+      "total": 813.046,
+      "validate": 4.851
+    },
+    "FIR_32": {
+      "assemble": 4.431,
+      "model": 545.244,
+      "names_identifiers": 1.059,
+      "postprocess": 0.023,
+      "relations": 11.648,
+      "total": 564.301,
+      "validate": 1.89
+    },
+    "FIR_33": {
+      "assemble": 5.117,
+      "model": 519.031,
+      "names_identifiers": 1.594,
+      "postprocess": 0.052,
+      "relations": 12.335,
+      "total": 541.47,
+      "validate": 3.334
+    },
+    "FIR_34": {
+      "assemble": 4.403,
+      "model": 533.744,
+      "names_identifiers": 1.765,
+      "postprocess": 0.028,
+      "relations": 11.916,
+      "total": 554.789,
+      "validate": 2.926
+    },
+    "FIR_35": {
+      "assemble": 8.485,
+      "model": 844.914,
+      "names_identifiers": 1.96,
+      "postprocess": 0.041,
+      "relations": 22.855,
+      "total": 883.8,
+      "validate": 5.538
+    },
+    "FIR_36": {
+      "assemble": 2.868,
+      "model": 418.525,
+      "names_identifiers": 1.069,
+      "postprocess": 0.029,
+      "relations": 6.947,
+      "total": 431.085,
+      "validate": 1.637
+    },
+    "FIR_37": {
+      "assemble": 6.4,
+      "model": 759.738,
+      "names_identifiers": 1.982,
+      "postprocess": 0.044,
+      "relations": 21.543,
+      "total": 793.983,
+      "validate": 4.268
+    },
+    "FIR_38": {
+      "assemble": 4.571,
+      "model": 538.812,
+      "names_identifiers": 1.397,
+      "postprocess": 0.029,
+      "relations": 14.311,
+      "total": 561.353,
+      "validate": 2.226
+    },
+    "FIR_39": {
+      "assemble": 4.069,
+      "model": 503.519,
+      "names_identifiers": 1.574,
+      "postprocess": 0.038,
+      "relations": 11.872,
+      "total": 524.057,
+      "validate": 2.976
+    },
+    "FIR_40": {
+      "assemble": 4.382,
+      "model": 575.254,
+      "names_identifiers": 1.371,
+      "postprocess": 0.028,
+      "relations": 12.533,
+      "total": 596.537,
+      "validate": 2.961
+    },
+    "FIR_41": {
+      "assemble": 8.371,
+      "model": 817.396,
+      "names_identifiers": 6.17,
+      "postprocess": 0.047,
+      "relations": 21.429,
+      "total": 856.739,
+      "validate": 3.316
+    },
+    "FIR_42": {
+      "assemble": 9.966,
+      "model": 911.116,
+      "names_identifiers": 4.247,
+      "postprocess": 0.042,
+      "relations": 20.69,
+      "total": 953.143,
+      "validate": 7.072
+    },
+    "FIR_43": {
+      "assemble": 7.969,
+      "model": 750.412,
+      "names_identifiers": 3.493,
+      "postprocess": 0.037,
+      "relations": 16.711,
+      "total": 783.231,
+      "validate": 4.602
+    },
+    "FIR_44": {
+      "assemble": 5.611,
+      "model": 528.067,
+      "names_identifiers": 2.436,
+      "postprocess": 0.053,
+      "relations": 12.139,
+      "total": 551.643,
+      "validate": 3.333
+    },
+    "FIR_45": {
+      "assemble": 9.5,
+      "model": 893.517,
+      "names_identifiers": 4.516,
+      "postprocess": 0.04,
+      "relations": 19.152,
+      "total": 932.284,
+      "validate": 5.55
+    },
+    "FIR_46": {
+      "assemble": 5.163,
+      "model": 506.256,
+      "names_identifiers": 2.513,
+      "postprocess": 0.035,
+      "relations": 10.33,
+      "total": 527.142,
+      "validate": 2.838
+    },
+    "FIR_47": {
+      "assemble": 4.448,
+      "model": 818.938,
+      "names_identifiers": 2.055,
+      "postprocess": 0.02,
+      "relations": 12.839,
+      "total": 841.787,
+      "validate": 3.48
+    },
+    "FIR_48": {
+      "assemble": 1.923,
+      "model": 185.667,
+      "names_identifiers": 0.907,
+      "postprocess": 0.014,
+      "relations": 3.562,
+      "total": 192.885,
+      "validate": 0.808
+    },
+    "FIR_49": {
+      "assemble": 3.958,
+      "model": 289.882,
+      "names_identifiers": 1.853,
+      "postprocess": 0.018,
+      "relations": 10.234,
+      "total": 308.267,
+      "validate": 2.318
+    },
+    "FIR_50": {
+      "assemble": 2.825,
+      "model": 232.126,
+      "names_identifiers": 1.475,
+      "postprocess": 0.019,
+      "relations": 7.093,
+      "total": 245.13,
+      "validate": 1.587
+    },
+    "FIR_51": {
+      "assemble": 1.83,
+      "model": 175.245,
+      "names_identifiers": 0.701,
+      "postprocess": 0.018,
+      "relations": 5.151,
+      "total": 184.095,
+      "validate": 1.147
+    },
+    "FIR_52": {
+      "assemble": 3.717,
+      "model": 276.643,
+      "names_identifiers": 1.111,
+      "postprocess": 0.028,
+      "relations": 9.786,
+      "total": 294.527,
+      "validate": 3.238
+    },
+    "FIR_53": {
+      "assemble": 3.315,
+      "model": 266.455,
+      "names_identifiers": 1.203,
+      "postprocess": 0.022,
+      "relations": 9.288,
+      "total": 282.603,
+      "validate": 2.317
+    },
+    "FIR_54": {
+      "assemble": 1.313,
+      "model": 147.467,
+      "names_identifiers": 0.522,
+      "postprocess": 0.017,
+      "relations": 2.676,
+      "total": 152.706,
+      "validate": 0.707
+    },
+    "FIR_55": {
+      "assemble": 4.003,
+      "model": 270.621,
+      "names_identifiers": 1.202,
+      "postprocess": 0.021,
+      "relations": 10.206,
+      "total": 288.894,
+      "validate": 2.838
+    },
+    "FIR_56": {
+      "assemble": 2.176,
+      "model": 172.196,
+      "names_identifiers": 0.703,
+      "postprocess": 0.019,
+      "relations": 5.602,
+      "total": 182.247,
+      "validate": 1.548
+    },
+    "FIR_57": {
+      "assemble": 6.36,
+      "model": 256.548,
+      "names_identifiers": 1.536,
+      "postprocess": 0.042,
+      "relations": 8.863,
+      "total": 276.268,
+      "validate": 2.914
+    },
+    "FIR_58": {
+      "assemble": 4.216,
+      "model": 487.832,
+      "names_identifiers": 1.126,
+      "postprocess": 0.02,
+      "relations": 10.729,
+      "total": 507.289,
+      "validate": 3.356
+    },
+    "FIR_59": {
+      "assemble": 8.083,
+      "model": 778.871,
+      "names_identifiers": 2.188,
+      "postprocess": 0.026,
+      "relations": 19.084,
+      "total": 814.082,
+      "validate": 5.822
+    },
+    "FIR_60": {
+      "assemble": 2.41,
+      "model": 403.059,
+      "names_identifiers": 1.183,
+      "postprocess": 0.041,
+      "relations": 5.774,
+      "total": 413.942,
+      "validate": 1.463
+    },
+    "FIR_61": {
+      "assemble": 5.841,
+      "model": 820.387,
+      "names_identifiers": 1.222,
+      "postprocess": 0.021,
+      "relations": 15.304,
+      "total": 846.208,
+      "validate": 3.424
+    },
+    "FIR_62": {
+      "assemble": 7.239,
+      "model": 898.64,
+      "names_identifiers": 2.398,
+      "postprocess": 0.043,
+      "relations": 19.653,
+      "total": 933.159,
+      "validate": 5.177
+    },
+    "FIR_63": {
+      "assemble": 4.534,
+      "model": 531.282,
+      "names_identifiers": 1.457,
+      "postprocess": 0.031,
+      "relations": 11.791,
+      "total": 552.555,
+      "validate": 3.453
+    },
+    "FIR_64": {
+      "assemble": 4.321,
+      "model": 485.346,
+      "names_identifiers": 1.439,
+      "postprocess": 0.053,
+      "relations": 11.945,
+      "total": 506.423,
+      "validate": 3.312
+    },
+    "FIR_65": {
+      "assemble": 6.148,
+      "model": 1017.717,
+      "names_identifiers": 2.097,
+      "postprocess": 0.037,
+      "relations": 25.166,
+      "total": 1058.131,
+      "validate": 6.957
+    },
+    "FIR_66": {
+      "assemble": 3.1,
+      "model": 431.073,
+      "names_identifiers": 1.147,
+      "postprocess": 0.033,
+      "relations": 7.591,
+      "total": 444.909,
+      "validate": 1.955
+    },
+    "FIR_67": {
+      "assemble": 12.437,
+      "model": 947.771,
+      "names_identifiers": 3.428,
+      "postprocess": 0.04,
+      "relations": 22.962,
+      "total": 994.168,
+      "validate": 7.52
+    },
+    "FIR_68": {
+      "assemble": 11.346,
+      "model": 999.929,
+      "names_identifiers": 3.165,
+      "postprocess": 0.074,
+      "relations": 27.997,
+      "total": 1049.682,
+      "validate": 7.161
+    },
+    "FIR_69": {
+      "assemble": 5.143,
+      "model": 509.69,
+      "names_identifiers": 1.455,
+      "postprocess": 0.029,
+      "relations": 14.11,
+      "total": 533.724,
+      "validate": 3.289
+    },
+    "FIR_70": {
+      "assemble": 3.596,
+      "model": 492.381,
+      "names_identifiers": 1.435,
+      "postprocess": 0.045,
+      "relations": 11.586,
+      "total": 512.028,
+      "validate": 2.977
+    },
+    "FIR_71": {
+      "assemble": 4.233,
+      "model": 566.008,
+      "names_identifiers": 1.365,
+      "postprocess": 0.032,
+      "relations": 10.845,
+      "total": 585.45,
+      "validate": 2.958
+    },
+    "FIR_72": {
+      "assemble": 3.953,
+      "model": 421.782,
+      "names_identifiers": 1.018,
+      "postprocess": 0.042,
+      "relations": 6.278,
+      "total": 434.665,
+      "validate": 1.585
+    },
+    "FIR_73": {
+      "assemble": 6.573,
+      "model": 804.992,
+      "names_identifiers": 1.531,
+      "postprocess": 0.025,
+      "relations": 19.968,
+      "total": 839.531,
+      "validate": 6.434
+    },
+    "FIR_74": {
+      "assemble": 10.2,
+      "model": 876.698,
+      "names_identifiers": 3.72,
+      "postprocess": 0.136,
+      "relations": 20.244,
+      "total": 917.013,
+      "validate": 6.006
+    },
+    "FIR_75": {
+      "assemble": 6.154,
+      "model": 587.949,
+      "names_identifiers": 2.444,
+      "postprocess": 0.034,
+      "relations": 12.011,
+      "total": 610.805,
+      "validate": 2.205
+    },
+    "FIR_76": {
+      "assemble": 5.307,
+      "model": 535.248,
+      "names_identifiers": 2.276,
+      "postprocess": 0.029,
+      "relations": 10.938,
+      "total": 556.964,
+      "validate": 3.16
+    },
+    "FIR_77": {
+      "assemble": 5.809,
+      "model": 445.186,
+      "names_identifiers": 1.735,
+      "postprocess": 0.031,
+      "relations": 8.177,
+      "total": 463.041,
+      "validate": 2.094
+    },
+    "FIR_78": {
+      "assemble": 2.727,
+      "model": 377.06,
+      "names_identifiers": 0.976,
+      "postprocess": 0.027,
+      "relations": 7.123,
+      "total": 389.664,
+      "validate": 1.743
+    },
+    "FIR_79": {
+      "assemble": 7.805,
+      "model": 754.514,
+      "names_identifiers": 2.281,
+      "postprocess": 0.033,
+      "relations": 22.672,
+      "total": 792.083,
+      "validate": 4.769
+    },
+    "FIR_80": {
+      "assemble": 2.812,
+      "model": 359.232,
+      "names_identifiers": 1.008,
+      "postprocess": 0.027,
+      "relations": 5.253,
+      "total": 370.092,
+      "validate": 1.754
+    },
+    "FIR_81": {
+      "assemble": 6.291,
+      "model": 811.185,
+      "names_identifiers": 1.375,
+      "postprocess": 0.046,
+      "relations": 18.9,
+      "total": 844.084,
+      "validate": 6.279
+    },
+    "FIR_82": {
+      "assemble": 7.255,
+      "model": 972.436,
+      "names_identifiers": 1.858,
+      "postprocess": 0.026,
+      "relations": 24.172,
+      "total": 1012.111,
+      "validate": 6.356
+    },
+    "FIR_83": {
+      "assemble": 6.147,
+      "model": 620.212,
+      "names_identifiers": 1.892,
+      "postprocess": 0.035,
+      "relations": 15.883,
+      "total": 647.831,
+      "validate": 3.653
+    },
+    "FIR_84": {
+      "assemble": 4.263,
+      "model": 508.301,
+      "names_identifiers": 1.465,
+      "postprocess": 0.035,
+      "relations": 12.49,
+      "total": 529.516,
+      "validate": 2.954
+    },
+    "FIR_85": {
+      "assemble": 8.41,
+      "model": 978.056,
+      "names_identifiers": 2.529,
+      "postprocess": 0.065,
+      "relations": 27.758,
+      "total": 1021.888,
+      "validate": 5.061
+    },
+    "FIR_86": {
+      "assemble": 2.802,
+      "model": 475.879,
+      "names_identifiers": 1.046,
+      "postprocess": 0.027,
+      "relations": 6.99,
+      "total": 488.243,
+      "validate": 1.492
+    },
+    "FIR_87": {
+      "assemble": 7.131,
+      "model": 848.816,
+      "names_identifiers": 2.092,
+      "postprocess": 0.036,
+      "relations": 19.038,
+      "total": 881.854,
+      "validate": 4.733
+    },
+    "FIR_88": {
+      "assemble": 12.654,
+      "model": 1110.997,
+      "names_identifiers": 2.52,
+      "postprocess": 0.047,
+      "relations": 23.974,
+      "total": 1159.13,
+      "validate": 8.929
+    },
+    "FIR_89": {
+      "assemble": 5.638,
+      "model": 620.071,
+      "names_identifiers": 1.634,
+      "postprocess": 0.029,
+      "relations": 13.327,
+      "total": 644.838,
+      "validate": 4.129
+    },
+    "FIR_90": {
+      "assemble": 4.953,
+      "model": 592.203,
+      "names_identifiers": 1.514,
+      "postprocess": 0.048,
+      "relations": 11.706,
+      "total": 614.045,
+      "validate": 3.613
+    },
+    "FIR_91": {
+      "assemble": 4.569,
+      "model": 563.298,
+      "names_identifiers": 1.638,
+      "postprocess": 0.033,
+      "relations": 12.896,
+      "total": 585.728,
+      "validate": 3.286
+    },
+    "FIR_92": {
+      "assemble": 2.875,
+      "model": 396.067,
+      "names_identifiers": 1.009,
+      "postprocess": 0.037,
+      "relations": 6.419,
+      "total": 408.129,
+      "validate": 1.715
+    },
+    "FIR_93": {
+      "assemble": 6.374,
+      "model": 765.051,
+      "names_identifiers": 1.965,
+      "postprocess": 0.033,
+      "relations": 19.902,
+      "total": 798.846,
+      "validate": 5.513
+    },
+    "FIR_94": {
+      "assemble": 11.65,
+      "model": 888.788,
+      "names_identifiers": 3.983,
+      "postprocess": 0.058,
+      "relations": 20.721,
+      "total": 930.687,
+      "validate": 5.481
+    },
+    "FIR_95": {
+      "assemble": 5.666,
+      "model": 509.41,
+      "names_identifiers": 2.609,
+      "postprocess": 0.086,
+      "relations": 11.574,
+      "total": 532.932,
+      "validate": 3.578
+    },
+    "FIR_96": {
+      "assemble": 4.885,
+      "model": 480.484,
+      "names_identifiers": 2.303,
+      "postprocess": 0.029,
+      "relations": 11.339,
+      "total": 501.815,
+      "validate": 2.768
+    },
+    "FIR_97": {
+      "assemble": 4.055,
+      "model": 469.216,
+      "names_identifiers": 1.477,
+      "postprocess": 0.033,
+      "relations": 10.505,
+      "total": 488.044,
+      "validate": 2.749
+    },
+    "FIR_98": {
+      "assemble": 2.745,
+      "model": 372.743,
+      "names_identifiers": 0.982,
+      "postprocess": 0.027,
+      "relations": 6.167,
+      "total": 384.221,
+      "validate": 1.55
+    },
+    "FIR_99": {
+      "assemble": 7.837,
+      "model": 697.062,
+      "names_identifiers": 2.21,
+      "postprocess": 0.05,
+      "relations": 19.081,
+      "total": 731.377,
+      "validate": 5.13
+    }
+  }
+}

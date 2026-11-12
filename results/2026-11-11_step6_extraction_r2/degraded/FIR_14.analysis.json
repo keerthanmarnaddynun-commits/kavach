@@ -1,0 +1,284 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-3060"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB3060"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Chhota Raju"
+        ],
+        "canonical_name": "Devendra Yadav",
+        "char_span": [
+          214,
+          228
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Ramakant Yadav",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              228
+            ],
+            "kind": "NAME",
+            "surface": "Devendra Yadav"
+          },
+          {
+            "char_span": [
+              233,
+              244
+            ],
+            "kind": "ALIAS",
+            "surface": "Chhota Raju"
+          },
+          {
+            "char_span": [
+              254,
+              268
+            ],
+            "kind": "FATHER",
+            "surface": "Ramakant Yadav"
+          },
+          {
+            "char_span": [
+              320,
+              334
+            ],
+            "kind": "NAME",
+            "surface": "Devendra Yadav"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          376,
+          386
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              376,
+              386
+            ],
+            "kind": "VALUE",
+            "surface": "8255341928"
+          },
+          {
+            "char_span": [
+              443,
+              453
+            ],
+            "kind": "VALUE",
+            "surface": "8255341928"
+          },
+          {
+            "char_span": [
+              646,
+              656
+            ],
+            "kind": "VALUE",
+            "surface": "8255341928"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8255341928"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          469,
+          484
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              469,
+              484
+            ],
+            "kind": "VALUE",
+            "surface": "427648350305646"
+          }
+        ],
+        "type": "IMEI",
+        "value": "427648350305646"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Rajesh Kumar",
+        "char_span": [
+          515,
+          527
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              515,
+              527
+            ],
+            "kind": "NAME",
+            "surface": "Rajesh Kumar"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          674,
+          684
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              674,
+              684
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          312,
+          408
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "calling connection"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          409,
+          501
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "apparatus IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          601,
+          724
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "ke beech"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_14"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 820,
+    "document_hash": "056507279ecd14ac5a18804868844a8e9e86c191c198189fa4d824a43fa71a9c",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

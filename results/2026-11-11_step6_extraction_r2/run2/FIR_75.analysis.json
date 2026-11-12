@@ -1,0 +1,282 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          155,
+          168
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              155,
+              168
+            ],
+            "kind": "VALUE",
+            "surface": "DL-2C-AB-5526"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL2CAB5526"
+      },
+      {
+        "ai_confidence": 0.999772,
+        "aliases": [
+          "एंडी"
+        ],
+        "canonical_name": "आनंद वर्मा",
+        "char_span": [
+          187,
+          197
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999772,
+          "validator": null
+        },
+        "father_name": "श्याम वर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              187,
+              197
+            ],
+            "kind": "NAME",
+            "surface": "आनंद वर्मा"
+          },
+          {
+            "char_span": [
+              203,
+              207
+            ],
+            "kind": "ALIAS",
+            "surface": "एंडी"
+          },
+          {
+            "char_span": [
+              219,
+              230
+            ],
+            "kind": "FATHER",
+            "surface": "श्याम वर्मा"
+          },
+          {
+            "char_span": [
+              469,
+              479
+            ],
+            "kind": "NAME",
+            "surface": "आनंद वर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999767,
+        "canonical_name": "विक्रम राठौड़",
+        "char_span": [
+          286,
+          299
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999767,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              286,
+              299
+            ],
+            "kind": "NAME",
+            "surface": "विक्रम राठौड़"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          382,
+          396
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              382,
+              396
+            ],
+            "kind": "VALUE",
+            "surface": "+91-6647468723"
+          },
+          {
+            "char_span": [
+              505,
+              519
+            ],
+            "kind": "VALUE",
+            "surface": "+91-6647468723"
+          },
+          {
+            "char_span": [
+              572,
+              586
+            ],
+            "kind": "VALUE",
+            "surface": "+91-6647468723"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6647468723"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          411,
+          421
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              411,
+              421
+            ],
+            "kind": "VALUE",
+            "surface": "7081219136"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7081219136"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          604,
+          619
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              604,
+              619
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          }
+        ],
+        "type": "IMEI",
+        "value": "204332181960015"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          352,
+          439
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "कॉल किए"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          440,
+          540
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "अपना प्रयुक्त"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          541,
+          629
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_06",
+        "trigger": "आईएमईआई"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_75"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 718,
+    "document_hash": "09a5ffc8d48d162c6dda67b8055a6eacc126d9590b892b9bc807684493733d32",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

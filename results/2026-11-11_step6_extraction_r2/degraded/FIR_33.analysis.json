@@ -1,0 +1,190 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 503,
+        "start": 488,
+        "surface": "Rs. 10,925.38/-",
+        "value": 10925.38
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-8541"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB8541"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Bicky",
+          "Viku",
+          "Kallu"
+        ],
+        "canonical_name": "Vikas Sharma",
+        "char_span": [
+          220,
+          232
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Harish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              232
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          },
+          {
+            "char_span": [
+              237,
+              242
+            ],
+            "kind": "ALIAS",
+            "surface": "Bicky"
+          },
+          {
+            "char_span": [
+              245,
+              249
+            ],
+            "kind": "ALIAS",
+            "surface": "Viku"
+          },
+          {
+            "char_span": [
+              252,
+              257
+            ],
+            "kind": "ALIAS",
+            "surface": "Kallu"
+          },
+          {
+            "char_span": [
+              267,
+              280
+            ],
+            "kind": "FATHER",
+            "surface": "Harish Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          522,
+          533
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              522,
+              533
+            ],
+            "kind": "VALUE",
+            "surface": "82788957986"
+          },
+          {
+            "char_span": [
+              601,
+              612
+            ],
+            "kind": "VALUE",
+            "surface": "82788957986"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "82788957986"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 10925.38,
+        "confidence": 0.5,
+        "evidence_char_span": [
+          424,
+          564
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "bhej diya"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_33"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 755,
+    "document_hash": "f55de656a8763e511507da7f05119e9be25640b2006238fbccd574b8a068e9ca",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 1
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

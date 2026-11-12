@@ -1,0 +1,243 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 421,
+        "start": 415,
+        "surface": "48,500",
+        "value": 48500.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          155,
+          168
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              155,
+              168
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-3063"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB3063"
+      },
+      {
+        "ai_confidence": 0.999813,
+        "aliases": [
+          "दीपू"
+        ],
+        "canonical_name": "दीपक चौहान",
+        "char_span": [
+          187,
+          197
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999813,
+          "validator": null
+        },
+        "father_name": "सरदार चौहान",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              187,
+              197
+            ],
+            "kind": "NAME",
+            "surface": "दीपक चौहान"
+          },
+          {
+            "char_span": [
+              203,
+              207
+            ],
+            "kind": "ALIAS",
+            "surface": "दीपू"
+          },
+          {
+            "char_span": [
+              219,
+              230
+            ],
+            "kind": "FATHER",
+            "surface": "सरदार चौहान"
+          },
+          {
+            "char_span": [
+              530,
+              540
+            ],
+            "kind": "NAME",
+            "surface": "दीपक चौहान"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999842,
+        "canonical_name": "रामेश्वर दयाल",
+        "char_span": [
+          286,
+          299
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999842,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              286,
+              299
+            ],
+            "kind": "NAME",
+            "surface": "रामेश्वर दयाल"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          396,
+          407
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              396,
+              407
+            ],
+            "kind": "VALUE",
+            "surface": "97667845334"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "97667845334"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          434,
+          450
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              434,
+              450
+            ],
+            "kind": "VALUE",
+            "surface": "6869261796405377"
+          },
+          {
+            "char_span": [
+              497,
+              513
+            ],
+            "kind": "VALUE",
+            "surface": "6869261796405377"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "6869261796405377"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 48500.0,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          352,
+          473
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "क्रेडिट"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          474,
+          569
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_05",
+        "trigger": "संचालित"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_96"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 658,
+    "document_hash": "603be9d156cf0588bb62fef2ead264425c274f3a332efac6efa3160a0bca0777",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

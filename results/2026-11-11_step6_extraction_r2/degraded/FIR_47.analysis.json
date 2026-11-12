@@ -1,0 +1,347 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 533,
+        "start": 527,
+        "surface": "15,000",
+        "value": 15000.0
+      },
+      {
+        "end": 861,
+        "start": 855,
+        "surface": "79,500",
+        "value": 79500.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          155,
+          168
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              155,
+              168
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-3704"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB3704"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "दीपू"
+        ],
+        "canonical_name": "दीपक चौहान",
+        "char_span": [
+          187,
+          197
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "सरदार चौहान",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              187,
+              197
+            ],
+            "kind": "NAME",
+            "surface": "दीपक चौहान"
+          },
+          {
+            "char_span": [
+              203,
+              207
+            ],
+            "kind": "ALIAS",
+            "surface": "दीपू"
+          },
+          {
+            "char_span": [
+              219,
+              230
+            ],
+            "kind": "FATHER",
+            "surface": "सरदार चौहान"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          319,
+          333
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              319,
+              333
+            ],
+            "kind": "VALUE",
+            "surface": "+91-8414586850"
+          },
+          {
+            "char_span": [
+              654,
+              668
+            ],
+            "kind": "VALUE",
+            "surface": "+91-8414586850"
+          },
+          {
+            "char_span": [
+              715,
+              729
+            ],
+            "kind": "VALUE",
+            "surface": "+91-8414586850"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8414586850"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          349,
+          359
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              349,
+              359
+            ],
+            "kind": "VALUE",
+            "surface": "6647468723"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6647468723"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "संजू"
+        ],
+        "canonical_name": "संजय मेहरा",
+        "char_span": [
+          407,
+          417
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "प्रेम मेहरा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              407,
+              417
+            ],
+            "kind": "NAME",
+            "surface": "संजय मेहरा"
+          },
+          {
+            "char_span": [
+              423,
+              427
+            ],
+            "kind": "ALIAS",
+            "surface": "संजू"
+          },
+          {
+            "char_span": [
+              439,
+              450
+            ],
+            "kind": "FATHER",
+            "surface": "प्रेम मेहरा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          745,
+          760
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              745,
+              760
+            ],
+            "kind": "VALUE",
+            "surface": "242940196556984"
+          }
+        ],
+        "type": "IMEI",
+        "value": "242940196556984"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          867,
+          879
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              867,
+              879
+            ],
+            "kind": "VALUE",
+            "surface": "693103413164"
+          },
+          {
+            "char_span": [
+              919,
+              931
+            ],
+            "kind": "VALUE",
+            "surface": "693103413164"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "693103413164"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          272,
+          382
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "संपर्क"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          589,
+          689
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_05",
+        "target": "ent_03",
+        "trigger": "अपना प्रयुक्त"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          690,
+          778
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "डिवाइस आईएमईआई"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_47"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1155,
+    "document_hash": "93414fac14fe918fe8df1b437abf363fb16aed056c0d9cff570d511bd094fb20",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

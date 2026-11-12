@@ -1,0 +1,390 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 374,
+        "start": 359,
+        "surface": "INR 1,45,300.00",
+        "value": 145300.0
+      },
+      {
+        "end": 655,
+        "start": 650,
+        "surface": "5 लाख",
+        "value": 500000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          168,
+          181
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              168,
+              181
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-5583"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB5583"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "सल्लू"
+        ],
+        "canonical_name": "सलमान मिर्ज़ा",
+        "char_span": [
+          200,
+          213
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "फिरोज़ मिर्ज़ा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              200,
+              213
+            ],
+            "kind": "NAME",
+            "surface": "सलमान मिर्ज़ा"
+          },
+          {
+            "char_span": [
+              219,
+              224
+            ],
+            "kind": "ALIAS",
+            "surface": "सल्लू"
+          },
+          {
+            "char_span": [
+              236,
+              250
+            ],
+            "kind": "FATHER",
+            "surface": "फिरोज़ मिर्ज़ा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          388,
+          404
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              388,
+              404
+            ],
+            "kind": "VALUE",
+            "surface": "7909670546688937"
+          },
+          {
+            "char_span": [
+              459,
+              475
+            ],
+            "kind": "VALUE",
+            "surface": "7909670546688937"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "7909670546688937"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "विक्की",
+          "विकू",
+          "कल्लू"
+        ],
+        "canonical_name": "विकास शर्मा",
+        "char_span": [
+          735,
+          746
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "हरीश शर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              735,
+              746
+            ],
+            "kind": "NAME",
+            "surface": "विकास शर्मा"
+          },
+          {
+            "char_span": [
+              752,
+              758
+            ],
+            "kind": "ALIAS",
+            "surface": "विक्की"
+          },
+          {
+            "char_span": [
+              764,
+              768
+            ],
+            "kind": "ALIAS",
+            "surface": "विकू"
+          },
+          {
+            "char_span": [
+              774,
+              779
+            ],
+            "kind": "ALIAS",
+            "surface": "कल्लू"
+          },
+          {
+            "char_span": [
+              791,
+              801
+            ],
+            "kind": "FATHER",
+            "surface": "हरीश शर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          859,
+          870
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              859,
+              870
+            ],
+            "kind": "VALUE",
+            "surface": "97737 82639"
+          },
+          {
+            "char_span": [
+              998,
+              1009
+            ],
+            "kind": "VALUE",
+            "surface": "97737 82639"
+          },
+          {
+            "char_span": [
+              1044,
+              1055
+            ],
+            "kind": "VALUE",
+            "surface": "97737 82639"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9773782639"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          885,
+          895
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              885,
+              895
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7963605766"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1070,
+          1085
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              1070,
+              1085
+            ],
+            "kind": "VALUE",
+            "surface": "921465840449970"
+          }
+        ],
+        "type": "IMEI",
+        "value": "921465840449970"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 145300.0,
+        "confidence": 0.5,
+        "evidence_char_span": [
+          293,
+          421
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "जमा कराई"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          422,
+          525
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "देखरेख"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          829,
+          913
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "कॉल किए"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1016,
+          1107
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_07",
+        "trigger": "आईएमईआई"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          914,
+          1015
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "STRUCTURE"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_94"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1199,
+    "document_hash": "2526049ded37123b76ab3b8553ec020c75a55c2e56903fafcd9173cce785406e",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 1,
+      "cue": 4
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

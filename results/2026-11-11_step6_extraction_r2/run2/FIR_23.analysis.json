@@ -1,0 +1,458 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 364,
+        "start": 358,
+        "surface": "15,000",
+        "value": 15000.0
+      },
+      {
+        "end": 733,
+        "start": 725,
+        "surface": "4,966.05",
+        "value": 4966.05
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-9238"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB9238"
+      },
+      {
+        "ai_confidence": 0.999544,
+        "aliases": [
+          "Sunny"
+        ],
+        "canonical_name": "Sunil Kumar",
+        "char_span": [
+          220,
+          231
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999544,
+          "validator": null
+        },
+        "father_name": "Bhagwan Kumar",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              231
+            ],
+            "kind": "NAME",
+            "surface": "Sunil Kumar"
+          },
+          {
+            "char_span": [
+              236,
+              241
+            ],
+            "kind": "ALIAS",
+            "surface": "Sunny"
+          },
+          {
+            "char_span": [
+              251,
+              264
+            ],
+            "kind": "FATHER",
+            "surface": "Bhagwan Kumar"
+          },
+          {
+            "char_span": [
+              886,
+              897
+            ],
+            "kind": "NAME",
+            "surface": "Sunil Kumar"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          462,
+          472
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              462,
+              472
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          },
+          {
+            "char_span": [
+              939,
+              949
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          },
+          {
+            "char_span": [
+              990,
+              1000
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7148951343"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          490,
+          500
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              490,
+              500
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      },
+      {
+        "ai_confidence": 0.999725,
+        "aliases": [
+          "Tiger"
+        ],
+        "canonical_name": "Farooq Ahmed",
+        "char_span": [
+          553,
+          565
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999725,
+          "validator": null
+        },
+        "father_name": "Zahid Ahmed",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              553,
+              565
+            ],
+            "kind": "NAME",
+            "surface": "Farooq Ahmed"
+          },
+          {
+            "char_span": [
+              570,
+              575
+            ],
+            "kind": "ALIAS",
+            "surface": "Tiger"
+          },
+          {
+            "char_span": [
+              585,
+              596
+            ],
+            "kind": "FATHER",
+            "surface": "Zahid Ahmed"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          695,
+          709
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              695,
+              709
+            ],
+            "kind": "VALUE",
+            "surface": "24919058651850"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "24919058651850"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          747,
+          761
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              747,
+              761
+            ],
+            "kind": "VALUE",
+            "surface": "17667400184766"
+          },
+          {
+            "char_span": [
+              802,
+              816
+            ],
+            "kind": "VALUE",
+            "surface": "17667400184766"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "17667400184766"
+      },
+      {
+        "ai_confidence": 0.999403,
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          834,
+          848
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999403,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              834,
+              848
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1018,
+          1033
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              1018,
+              1033
+            ],
+            "kind": "VALUE",
+            "surface": "420037917693677"
+          }
+        ],
+        "type": "IMEI",
+        "value": "420037917693677"
+      },
+      {
+        "ai_confidence": 0.998748,
+        "canonical_name": "Kishore Sen",
+        "char_span": [
+          1065,
+          1076
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998748,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_10",
+        "mentions": [
+          {
+            "char_span": [
+              1065,
+              1076
+            ],
+            "kind": "NAME",
+            "surface": "Kishore Sen"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          426,
+          531
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "voice calls"
+      },
+      {
+        "amount": 4966.05,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          647,
+          778
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_06",
+        "target": "ent_07",
+        "trigger": "credit hui"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          779,
+          877
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_08",
+        "target": "ent_07",
+        "trigger": "operate kiya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          878,
+          971
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "calling connection"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          972,
+          1049
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_09",
+        "trigger": "hardware IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_23"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1244,
+    "document_hash": "b71c60d3e5a802bedc07f6ade248909b528d0cd19f32dd1aee858dea1b8694d3",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 4,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

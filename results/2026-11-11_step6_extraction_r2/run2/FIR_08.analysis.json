@@ -1,0 +1,300 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-3340"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB3340"
+      },
+      {
+        "ai_confidence": 0.971141,
+        "aliases": [
+          "Bicky",
+          "Viku",
+          "Kallu"
+        ],
+        "canonical_name": "Vikas Sharma",
+        "char_span": [
+          220,
+          232
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.971141,
+          "validator": null
+        },
+        "father_name": "Harish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              232
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          },
+          {
+            "char_span": [
+              237,
+              242
+            ],
+            "kind": "ALIAS",
+            "surface": "Bicky"
+          },
+          {
+            "char_span": [
+              245,
+              249
+            ],
+            "kind": "ALIAS",
+            "surface": "Viku"
+          },
+          {
+            "char_span": [
+              252,
+              257
+            ],
+            "kind": "ALIAS",
+            "surface": "Kallu"
+          },
+          {
+            "char_span": [
+              267,
+              280
+            ],
+            "kind": "FATHER",
+            "surface": "Harish Sharma"
+          },
+          {
+            "char_span": [
+              358,
+              370
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          398,
+          408
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              398,
+              408
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          },
+          {
+            "char_span": [
+              440,
+              450
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          },
+          {
+            "char_span": [
+              555,
+              565
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          464,
+          479
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              464,
+              479
+            ],
+            "kind": "VALUE",
+            "surface": "837631165667016"
+          }
+        ],
+        "type": "IMEI",
+        "value": "837631165667016"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          583,
+          593
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              583,
+              593
+            ],
+            "kind": "VALUE",
+            "surface": "6647468723"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6647468723"
+      },
+      {
+        "ai_confidence": 0.989546,
+        "canonical_name": "Pawan Verma",
+        "char_span": [
+          651,
+          662
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.989546,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              651,
+              662
+            ],
+            "kind": "NAME",
+            "surface": "Pawan Verma"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          323,
+          424
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "personal mobile"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          425,
+          509
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "handset IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          510,
+          633
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_05",
+        "trigger": "ke beech"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_08"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 830,
+    "document_hash": "92ef937a22ba1c9826f9d4b2390513e2213e02ea754e4c93a4378041ebe77c19",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

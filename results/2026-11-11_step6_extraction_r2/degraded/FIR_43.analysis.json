@@ -1,0 +1,312 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 525,
+        "start": 517,
+        "surface": "6,842.38",
+        "value": 6842.38
+      },
+      {
+        "end": 891,
+        "start": 885,
+        "surface": "22,000",
+        "value": 22000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          160,
+          173
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              160,
+              173
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-8373"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB8373"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "विक्की"
+        ],
+        "canonical_name": "वसीम अकरम",
+        "char_span": [
+          192,
+          201
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "शब्बीर अकरम",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              192,
+              201
+            ],
+            "kind": "NAME",
+            "surface": "वसीम अकरम"
+          },
+          {
+            "char_span": [
+              207,
+              213
+            ],
+            "kind": "ALIAS",
+            "surface": "विक्की"
+          },
+          {
+            "char_span": [
+              225,
+              236
+            ],
+            "kind": "FATHER",
+            "surface": "शब्बीर अकरम"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "सुरेश बंसल",
+        "char_span": [
+          295,
+          305
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              295,
+              305
+            ],
+            "kind": "NAME",
+            "surface": "सुरेश बंसल"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          388,
+          398
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              388,
+              398
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          },
+          {
+            "char_span": [
+              729,
+              739
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          },
+          {
+            "char_span": [
+              776,
+              786
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8674680715"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          413,
+          423
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              413,
+              423
+            ],
+            "kind": "VALUE",
+            "surface": "7710947775"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7710947775"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          531,
+          545
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              531,
+              545
+            ],
+            "kind": "VALUE",
+            "surface": "15359627630097"
+          },
+          {
+            "char_span": [
+              601,
+              615
+            ],
+            "kind": "VALUE",
+            "surface": "15359627630097"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "15359627630097"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          802,
+          817
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              802,
+              817
+            ],
+            "kind": "VALUE",
+            "surface": "551680876038599"
+          }
+        ],
+        "type": "IMEI",
+        "value": "551680876038599"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          358,
+          441
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "कॉल किए"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          751,
+          835
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_07",
+        "trigger": "डिवाइस आईएमईआई"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_43"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1038,
+    "document_hash": "539d5b8de18b1ec32d352e34fbe307845cb475b4452d23e7265db503287dbd19",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

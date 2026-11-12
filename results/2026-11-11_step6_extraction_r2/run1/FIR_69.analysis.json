@@ -1,0 +1,282 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-2494"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB2494"
+      },
+      {
+        "ai_confidence": 0.998272,
+        "aliases": [
+          "Munna"
+        ],
+        "canonical_name": "Manoj Rawat",
+        "char_span": [
+          214,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998272,
+          "validator": null
+        },
+        "father_name": "Kishori Rawat",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Manoj Rawat"
+          },
+          {
+            "char_span": [
+              230,
+              235
+            ],
+            "kind": "ALIAS",
+            "surface": "Munna"
+          },
+          {
+            "char_span": [
+              245,
+              258
+            ],
+            "kind": "FATHER",
+            "surface": "Kishori Rawat"
+          },
+          {
+            "char_span": [
+              328,
+              339
+            ],
+            "kind": "NAME",
+            "surface": "Manoj Rawat"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          377,
+          387
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              377,
+              387
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          },
+          {
+            "char_span": [
+              433,
+              443
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          },
+          {
+            "char_span": [
+              643,
+              653
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6112805982"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          465,
+          480
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              465,
+              480
+            ],
+            "kind": "VALUE",
+            "surface": "720450533158693"
+          }
+        ],
+        "type": "IMEI",
+        "value": "720450533158693"
+      },
+      {
+        "ai_confidence": 0.998868,
+        "canonical_name": "Dinesh Joshi",
+        "char_span": [
+          510,
+          522
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998868,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              510,
+              522
+            ],
+            "kind": "NAME",
+            "surface": "Dinesh Joshi"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          663,
+          673
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              663,
+              673
+            ],
+            "kind": "VALUE",
+            "surface": "7081219136"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7081219136"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          302,
+          400
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "baramad"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          401,
+          494
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          596,
+          708
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "calling traffic"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_69"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 804,
+    "document_hash": "f46bc9757fabe3df9b88dd1c9c05eb0d9c9c85ed79be7c8e8377e43552e59623",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

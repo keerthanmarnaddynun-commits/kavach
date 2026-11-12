@@ -1,0 +1,243 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 513,
+        "start": 500,
+        "surface": "INR 18,500.00",
+        "value": 18500.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          165,
+          178
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              165,
+              178
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-8460"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB8460"
+      },
+      {
+        "ai_confidence": 0.998545,
+        "aliases": [
+          "टाइगर"
+        ],
+        "canonical_name": "फारूक अहमद",
+        "char_span": [
+          197,
+          207
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998545,
+          "validator": null
+        },
+        "father_name": "जाहिद अहमद",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              197,
+              207
+            ],
+            "kind": "NAME",
+            "surface": "फारूक अहमद"
+          },
+          {
+            "char_span": [
+              213,
+              218
+            ],
+            "kind": "ALIAS",
+            "surface": "टाइगर"
+          },
+          {
+            "char_span": [
+              230,
+              240
+            ],
+            "kind": "FATHER",
+            "surface": "जाहिद अहमद"
+          },
+          {
+            "char_span": [
+              305,
+              315
+            ],
+            "kind": "NAME",
+            "surface": "फारूक अहमद"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          344,
+          354
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              344,
+              354
+            ],
+            "kind": "VALUE",
+            "surface": "9065627298"
+          },
+          {
+            "char_span": [
+              391,
+              401
+            ],
+            "kind": "VALUE",
+            "surface": "9065627298"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9065627298"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          417,
+          432
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              417,
+              432
+            ],
+            "kind": "VALUE",
+            "surface": "169901627204650"
+          }
+        ],
+        "type": "IMEI",
+        "value": "169901627204650"
+      },
+      {
+        "ai_confidence": 0.999824,
+        "canonical_name": "कुलदीप यादव",
+        "char_span": [
+          582,
+          593
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999824,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              582,
+              593
+            ],
+            "kind": "NAME",
+            "surface": "कुलदीप यादव"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          282,
+          365
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "बरामद"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          366,
+          450
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "डिवाइस आईएमईआई"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_77"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 736,
+    "document_hash": "52e9e300076da5087f4748520e8ef5acbe986f131e7afbcce0c9bdda563f516a",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 1,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 613,
+        "start": 604,
+        "surface": "14,593.60",
+        "value": 14593.6
+      },
+      {
+        "end": 825,
+        "start": 819,
+        "surface": "18,500",
+        "value": 18500.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-8350"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB8350"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Sallu"
+        ],
+        "canonical_name": "Salman Mirza",
+        "char_span": [
+          214,
+          226
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Feroz Mirza",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              226
+            ],
+            "kind": "NAME",
+            "surface": "Salman Mirza"
+          },
+          {
+            "char_span": [
+              231,
+              236
+            ],
+            "kind": "ALIAS",
+            "surface": "Sallu"
+          },
+          {
+            "char_span": [
+              246,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Feroz Mirza"
+          },
+          {
+            "char_span": [
+              895,
+              907
+            ],
+            "kind": "NAME",
+            "surface": "Salman Mirza"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          346,
+          360
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              346,
+              360
+            ],
+            "kind": "VALUE",
+            "surface": "+91-9773782639"
+          },
+          {
+            "char_span": [
+              949,
+              963
+            ],
+            "kind": "VALUE",
+            "surface": "+91-9773782639"
+          },
+          {
+            "char_span": [
+              1020,
+              1034
+            ],
+            "kind": "VALUE",
+            "surface": "+91-9773782639"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9773782639"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          378,
+          388
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              378,
+              388
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7963605766"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Suresh Bansal",
+        "char_span": [
+          446,
+          459
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              446,
+              459
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Bansal"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          582,
+          593
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              582,
+              593
+            ],
+            "kind": "VALUE",
+            "surface": "53839750530"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "53839750530"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          632,
+          646
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              632,
+              646
+            ],
+            "kind": "VALUE",
+            "surface": "35273976748813"
+          },
+          {
+            "char_span": [
+              693,
+              707
+            ],
+            "kind": "VALUE",
+            "surface": "35273976748813"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "35273976748813"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1050,
+          1065
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              1050,
+              1065
+            ],
+            "kind": "VALUE",
+            "surface": "921465840449970"
+          }
+        ],
+        "type": "IMEI",
+        "value": "921465840449970"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          301,
+          428
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "ke beech"
+      },
+      {
+        "amount": 14593.6,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          533,
+          682
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_06",
+        "target": "ent_07",
+        "trigger": "bhej diya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          887,
+          985
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "calling connection"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          986,
+          1082
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_08",
+        "trigger": "apparatus IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_19"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1178,
+    "document_hash": "7c2f2c1f2f8886b6ce8411af0a779e430a0696ab632be18950e3c53365542c20",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 4
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

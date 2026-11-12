@@ -1,0 +1,245 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 367,
+        "start": 355,
+        "surface": "Rs. 22,000/-",
+        "value": 22000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-1C-AB-4750"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL1CAB4750"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Deepu"
+        ],
+        "canonical_name": "Deepak Chauhan",
+        "char_span": [
+          213,
+          227
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Sardar Chauhan",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              227
+            ],
+            "kind": "NAME",
+            "surface": "Deepak Chauhan"
+          },
+          {
+            "char_span": [
+              232,
+              237
+            ],
+            "kind": "ALIAS",
+            "surface": "Deepu"
+          },
+          {
+            "char_span": [
+              247,
+              261
+            ],
+            "kind": "FATHER",
+            "surface": "Sardar Chauhan"
+          },
+          {
+            "char_span": [
+              561,
+              575
+            ],
+            "kind": "NAME",
+            "surface": "Deepak Chauhan"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Amit Tomar",
+        "char_span": [
+          442,
+          452
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              442,
+              452
+            ],
+            "kind": "NAME",
+            "surface": "Amit Tomar"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          608,
+          618
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              608,
+              618
+            ],
+            "kind": "VALUE",
+            "surface": "8414586850"
+          },
+          {
+            "char_span": [
+              657,
+              667
+            ],
+            "kind": "VALUE",
+            "surface": "8414586850"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8414586850"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          685,
+          700
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              685,
+              700
+            ],
+            "kind": "VALUE",
+            "surface": "242940196556984"
+          }
+        ],
+        "type": "IMEI",
+        "value": "242940196556984"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          526,
+          638
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "recovred"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          639,
+          716
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "hardware IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_16"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 816,
+    "document_hash": "0534997df9fc6d4622d4dcc86d8ed98273acf4ecbe2e8b051994779f836225c8",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

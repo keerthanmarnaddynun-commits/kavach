@@ -1,0 +1,140 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-7965"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB7965"
+      },
+      {
+        "ai_confidence": 0.9986,
+        "aliases": [
+          "Chacha"
+        ],
+        "canonical_name": "Aslam Parvez",
+        "char_span": [
+          213,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.9986,
+          "validator": null
+        },
+        "father_name": "Latif Parvez",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Aslam Parvez"
+          },
+          {
+            "char_span": [
+              230,
+              236
+            ],
+            "kind": "ALIAS",
+            "surface": "Chacha"
+          },
+          {
+            "char_span": [
+              246,
+              258
+            ],
+            "kind": "FATHER",
+            "surface": "Latif Parvez"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.959289,
+        "canonical_name": "Ram Avatar",
+        "char_span": [
+          380,
+          390
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.959289,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              380,
+              390
+            ],
+            "kind": "NAME",
+            "surface": "Ram Avatar"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_66"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 563,
+    "document_hash": "06e21262efd05a891de84ac5985013a6f0c875b3ce0aed7752eaf400e22ca525",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

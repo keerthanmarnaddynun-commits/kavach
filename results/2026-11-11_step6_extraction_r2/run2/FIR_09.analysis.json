@@ -1,0 +1,244 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 381,
+        "start": 369,
+        "surface": "Rs. 74,200/-",
+        "value": 74200.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-6930"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB6930"
+      },
+      {
+        "ai_confidence": 0.950295,
+        "aliases": [
+          "Deepu"
+        ],
+        "canonical_name": "Deepak Chauhan",
+        "char_span": [
+          214,
+          228
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.950295,
+          "validator": null
+        },
+        "father_name": "Sardar Chauhan",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              228
+            ],
+            "kind": "NAME",
+            "surface": "Deepak Chauhan"
+          },
+          {
+            "char_span": [
+              233,
+              238
+            ],
+            "kind": "ALIAS",
+            "surface": "Deepu"
+          },
+          {
+            "char_span": [
+              248,
+              262
+            ],
+            "kind": "FATHER",
+            "surface": "Sardar Chauhan"
+          },
+          {
+            "char_span": [
+              339,
+              353
+            ],
+            "kind": "NAME",
+            "surface": "Deepak Chauhan"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          395,
+          407
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              395,
+              407
+            ],
+            "kind": "VALUE",
+            "surface": "693103413164"
+          },
+          {
+            "char_span": [
+              447,
+              459
+            ],
+            "kind": "VALUE",
+            "surface": "693103413164"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "693103413164"
+      },
+      {
+        "ai_confidence": 0.991344,
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          488,
+          502
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.991344,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              488,
+              502
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.995737,
+        "canonical_name": "Dinesh Joshi",
+        "char_span": [
+          532,
+          544
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.995737,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              532,
+              544
+            ],
+            "kind": "NAME",
+            "surface": "Dinesh Joshi"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 74200.0,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          306,
+          426
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "jama karwayi"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          427,
+          516
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_04",
+        "target": "ent_03",
+        "trigger": "control"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_09"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 713,
+    "document_hash": "63902c32d85ad85059bccaf1111325503f9d381aafacee727785f6d4740cd7e4",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

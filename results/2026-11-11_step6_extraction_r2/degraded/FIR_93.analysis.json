@@ -1,0 +1,336 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 807,
+        "start": 794,
+        "surface": "INR 25,000.00",
+        "value": 25000.0
+      },
+      {
+        "end": 956,
+        "start": 944,
+        "surface": "Rs. 608.15/-",
+        "value": 608.15
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-2902"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB2902"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Postman"
+        ],
+        "canonical_name": "Ramesh Chand",
+        "char_span": [
+          213,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Kishan Chand",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Ramesh Chand"
+          },
+          {
+            "char_span": [
+              230,
+              237
+            ],
+            "kind": "ALIAS",
+            "surface": "Postman"
+          },
+          {
+            "char_span": [
+              247,
+              259
+            ],
+            "kind": "FATHER",
+            "surface": "Kishan Chand"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          353,
+          363
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              353,
+              363
+            ],
+            "kind": "VALUE",
+            "surface": "7400504556"
+          },
+          {
+            "char_span": [
+              516,
+              526
+            ],
+            "kind": "VALUE",
+            "surface": "7400504556"
+          },
+          {
+            "char_span": [
+              572,
+              582
+            ],
+            "kind": "VALUE",
+            "surface": "7400504556"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7400504556"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          378,
+          388
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              378,
+              388
+            ],
+            "kind": "VALUE",
+            "surface": "8255341928"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8255341928"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          596,
+          611
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              596,
+              611
+            ],
+            "kind": "VALUE",
+            "surface": "338692221969378"
+          }
+        ],
+        "type": "IMEI",
+        "value": "338692221969378"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          917,
+          928
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              917,
+              928
+            ],
+            "kind": "VALUE",
+            "surface": "72314387443"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "72314387443"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          970,
+          986
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              970,
+              986
+            ],
+            "kind": "VALUE",
+            "surface": "6066011655865115"
+          },
+          {
+            "char_span": [
+              1014,
+              1030
+            ],
+            "kind": "VALUE",
+            "surface": "6066011655865115"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "6066011655865115"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          302,
+          437
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "telephonic"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          438,
+          556
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "istemal"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          557,
+          641
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_05",
+        "trigger": "handset IMEI"
+      },
+      {
+        "amount": 608.15,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          869,
+          1003
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_06",
+        "target": "ent_07",
+        "trigger": "credit hui"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_93"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1190,
+    "document_hash": "6d6fe508c3b79d651176e47118dcf4f68ead73dd67d1978f38fed77184bf051d",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 1,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 4
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 809,
+        "start": 804,
+        "surface": "2 लाख",
+        "value": 200000.0
+      },
+      {
+        "end": 955,
+        "start": 942,
+        "surface": "INR 34,270.08",
+        "value": 34270.08
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          164,
+          177
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              164,
+              177
+            ],
+            "kind": "VALUE",
+            "surface": "DL-3C-AB-9165"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL3CAB9165"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "बीकू"
+        ],
+        "canonical_name": "बिकास शर्मा",
+        "char_span": [
+          196,
+          207
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "गिरीश शर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              196,
+              207
+            ],
+            "kind": "NAME",
+            "surface": "बिकास शर्मा"
+          },
+          {
+            "char_span": [
+              213,
+              217
+            ],
+            "kind": "ALIAS",
+            "surface": "बीकू"
+          },
+          {
+            "char_span": [
+              229,
+              240
+            ],
+            "kind": "FATHER",
+            "surface": "गिरीश शर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          320,
+          330
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              320,
+              330
+            ],
+            "kind": "VALUE",
+            "surface": "9014363495"
+          },
+          {
+            "char_span": [
+              648,
+              658
+            ],
+            "kind": "VALUE",
+            "surface": "9014363495"
+          },
+          {
+            "char_span": [
+              701,
+              711
+            ],
+            "kind": "VALUE",
+            "surface": "9014363495"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9014363495"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          348,
+          358
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              348,
+              358
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7963605766"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "विक्की",
+          "विकू",
+          "कल्लू"
+        ],
+        "canonical_name": "विकास शर्मा",
+        "char_span": [
+          414,
+          425
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "हरीश शर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              414,
+              425
+            ],
+            "kind": "NAME",
+            "surface": "विकास शर्मा"
+          },
+          {
+            "char_span": [
+              431,
+              437
+            ],
+            "kind": "ALIAS",
+            "surface": "विक्की"
+          },
+          {
+            "char_span": [
+              443,
+              447
+            ],
+            "kind": "ALIAS",
+            "surface": "विकू"
+          },
+          {
+            "char_span": [
+              453,
+              458
+            ],
+            "kind": "ALIAS",
+            "surface": "कल्लू"
+          },
+          {
+            "char_span": [
+              470,
+              480
+            ],
+            "kind": "FATHER",
+            "surface": "हरीश शर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          729,
+          744
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              729,
+              744
+            ],
+            "kind": "VALUE",
+            "surface": "888568557444315"
+          }
+        ],
+        "type": "IMEI",
+        "value": "888568557444315"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          961,
+          977
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              961,
+              977
+            ],
+            "kind": "VALUE",
+            "surface": "1273226992728702"
+          },
+          {
+            "char_span": [
+              1031,
+              1047
+            ],
+            "kind": "VALUE",
+            "surface": "1273226992728702"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "1273226992728702"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          283,
+          389
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "वार्तालाप"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          670,
+          754
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "आईएमईआई"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          585,
+          669
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_05",
+        "target": "ent_03",
+        "trigger": "STRUCTURE"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_74"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1177,
+    "document_hash": "1fa9a439f0c67a94762cec5b4694f2f406601613d6f8fe91b2043f655e5a35c4",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 1,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

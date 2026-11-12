@@ -1,0 +1,140 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          171,
+          184
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              171,
+              184
+            ],
+            "kind": "VALUE",
+            "surface": "DL-5C-AB-6280"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL5CAB6280"
+      },
+      {
+        "ai_confidence": 0.968534,
+        "aliases": [
+          "Chhota Raju"
+        ],
+        "canonical_name": "Devendra Yadav",
+        "char_span": [
+          209,
+          223
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.968534,
+          "validator": null
+        },
+        "father_name": "Ramakant Yadav",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              209,
+              223
+            ],
+            "kind": "NAME",
+            "surface": "Devendra Yadav"
+          },
+          {
+            "char_span": [
+              230,
+              241
+            ],
+            "kind": "ALIAS",
+            "surface": "Chhota Raju"
+          },
+          {
+            "char_span": [
+              251,
+              265
+            ],
+            "kind": "FATHER",
+            "surface": "Ramakant Yadav"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.860785,
+        "canonical_name": "Ram Avatar",
+        "char_span": [
+          379,
+          389
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.860785,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              379,
+              389
+            ],
+            "kind": "NAME",
+            "surface": "Ram Avatar"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_54"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 565,
+    "document_hash": "8e597311d7b99c9eb61d119ceeface2869d1a2a0eb4995f05dfaa842c8bd660a",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

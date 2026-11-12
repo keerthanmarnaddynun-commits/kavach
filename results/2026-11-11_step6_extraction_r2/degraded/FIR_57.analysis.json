@@ -1,0 +1,192 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 364,
+        "start": 350,
+        "surface": "Rs. 4,314.08/-",
+        "value": 4314.08
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          170,
+          183
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              170,
+              183
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-8342"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB8342"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Hawai"
+        ],
+        "canonical_name": "Suresh Pal",
+        "char_span": [
+          208,
+          218
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Mohan Pal",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              208,
+              218
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Pal"
+          },
+          {
+            "char_span": [
+              225,
+              230
+            ],
+            "kind": "ALIAS",
+            "surface": "Hawai"
+          },
+          {
+            "char_span": [
+              240,
+              249
+            ],
+            "kind": "FATHER",
+            "surface": "Mohan Pal"
+          },
+          {
+            "char_span": [
+              319,
+              329
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Pal"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          378,
+          390
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              378,
+              390
+            ],
+            "kind": "VALUE",
+            "surface": "880913431611"
+          },
+          {
+            "char_span": [
+              414,
+              426
+            ],
+            "kind": "VALUE",
+            "surface": "880913431611"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "880913431611"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 4314.08,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          271,
+          391
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "credited"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          392,
+          489
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "stewardship"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_57"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 669,
+    "document_hash": "3313033a99a1b9d2bec7a0221c895d7fb042f18fc9cbb52008ca40c3f48c6edc",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

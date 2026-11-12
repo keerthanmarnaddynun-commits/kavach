@@ -1,0 +1,244 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 481,
+        "start": 472,
+        "surface": "25,590.22",
+        "value": 25590.22
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-2C-AB-4404"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL2CAB4404"
+      },
+      {
+        "ai_confidence": 0.996237,
+        "aliases": [
+          "Chhota Raju"
+        ],
+        "canonical_name": "Devendra Yadav",
+        "char_span": [
+          214,
+          228
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.996237,
+          "validator": null
+        },
+        "father_name": "Ramakant Yadav",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              228
+            ],
+            "kind": "NAME",
+            "surface": "Devendra Yadav"
+          },
+          {
+            "char_span": [
+              233,
+              244
+            ],
+            "kind": "ALIAS",
+            "surface": "Chhota Raju"
+          },
+          {
+            "char_span": [
+              254,
+              268
+            ],
+            "kind": "FATHER",
+            "surface": "Ramakant Yadav"
+          },
+          {
+            "char_span": [
+              442,
+              456
+            ],
+            "kind": "NAME",
+            "surface": "Devendra Yadav"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999616,
+        "canonical_name": "Amit Tomar",
+        "char_span": [
+          325,
+          335
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999616,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              325,
+              335
+            ],
+            "kind": "NAME",
+            "surface": "Amit Tomar"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          495,
+          506
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              495,
+              506
+            ],
+            "kind": "VALUE",
+            "surface": "70733754330"
+          },
+          {
+            "char_span": [
+              562,
+              573
+            ],
+            "kind": "VALUE",
+            "surface": "70733754330"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "70733754330"
+      },
+      {
+        "ai_confidence": 0.991351,
+        "canonical_name": "Manoj Rawat",
+        "char_span": [
+          595,
+          606
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.991351,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              595,
+              606
+            ],
+            "kind": "NAME",
+            "surface": "Manoj Rawat"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 25590.22,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          409,
+          525
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "jama karwayi"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          526,
+          621
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_05",
+        "target": "ent_04",
+        "trigger": "authorized signatory"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_64"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 717,
+    "document_hash": "052992c9074f59d5f9f661c03d39330d0b6e90c91a8bc9c6be3a9faafb8545c9",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 758,
+        "start": 752,
+        "surface": "25,000",
+        "value": 25000.0
+      },
+      {
+        "end": 903,
+        "start": 894,
+        "surface": "28,817.94",
+        "value": 28817.94
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-2C-AB-1977"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL2CAB1977"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Tiger"
+        ],
+        "canonical_name": "Farooq Ahmed",
+        "char_span": [
+          214,
+          226
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Zahid Ahmed",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              226
+            ],
+            "kind": "NAME",
+            "surface": "Farooq Ahmed"
+          },
+          {
+            "char_span": [
+              231,
+              236
+            ],
+            "kind": "ALIAS",
+            "surface": "Tiger"
+          },
+          {
+            "char_span": [
+              246,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Zahid Ahmed"
+          },
+          {
+            "char_span": [
+              308,
+              320
+            ],
+            "kind": "NAME",
+            "surface": "Farooq Ahmed"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          362,
+          372
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              362,
+              372
+            ],
+            "kind": "VALUE",
+            "surface": "9065627298"
+          },
+          {
+            "char_span": [
+              427,
+              437
+            ],
+            "kind": "VALUE",
+            "surface": "9065627298"
+          },
+          {
+            "char_span": [
+              629,
+              639
+            ],
+            "kind": "VALUE",
+            "surface": "9065627298"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9065627298"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          459,
+          474
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              459,
+              474
+            ],
+            "kind": "VALUE",
+            "surface": "169901627204650"
+          }
+        ],
+        "type": "IMEI",
+        "value": "169901627204650"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Suresh Bansal",
+        "char_span": [
+          506,
+          519
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              506,
+              519
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Bansal"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          675,
+          685
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              675,
+              685
+            ],
+            "kind": "VALUE",
+            "surface": "6679740344"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6679740344"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          919,
+          933
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              919,
+              933
+            ],
+            "kind": "VALUE",
+            "surface": "34808613171274"
+          },
+          {
+            "char_span": [
+              969,
+              983
+            ],
+            "kind": "VALUE",
+            "surface": "34808613171274"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "34808613171274"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          300,
+          394
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "calling connection"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          395,
+          488
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          593,
+          700
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "seedha"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_67"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1139,
+    "document_hash": "6e7f01ca4270f79b4bce0c5704d7f43eb595cc7995aa5cc4cea757865ca1ec96",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

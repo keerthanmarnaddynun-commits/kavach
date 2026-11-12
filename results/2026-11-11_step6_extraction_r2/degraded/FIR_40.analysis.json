@@ -1,0 +1,225 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 446,
+        "start": 434,
+        "surface": "Rs. 15,000/-",
+        "value": 15000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-3C-AB-2389"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL3CAB2389"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Hawai"
+        ],
+        "canonical_name": "Suresh Pal",
+        "char_span": [
+          203,
+          213
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Mohan Pal",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              213
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Pal"
+          },
+          {
+            "char_span": [
+              218,
+              223
+            ],
+            "kind": "ALIAS",
+            "surface": "Hawai"
+          },
+          {
+            "char_span": [
+              233,
+              242
+            ],
+            "kind": "FATHER",
+            "surface": "Mohan Pal"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Amit Tomar",
+        "char_span": [
+          299,
+          309
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              299,
+              309
+            ],
+            "kind": "NAME",
+            "surface": "Amit Tomar"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          581,
+          595
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              581,
+              595
+            ],
+            "kind": "VALUE",
+            "surface": "+91-8406409097"
+          },
+          {
+            "char_span": [
+              644,
+              658
+            ],
+            "kind": "VALUE",
+            "surface": "+91-8406409097"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8406409097"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          680,
+          695
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              680,
+              695
+            ],
+            "kind": "VALUE",
+            "surface": "539533942104704"
+          }
+        ],
+        "type": "IMEI",
+        "value": "539533942104704"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          612,
+          709
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_40"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 812,
+    "document_hash": "3868c6fdf6a3a56f510840b9398b2bd77d6694b806b65f68e3ed99a583de4bad",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 1
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

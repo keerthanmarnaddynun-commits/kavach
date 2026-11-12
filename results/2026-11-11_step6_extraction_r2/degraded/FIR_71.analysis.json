@@ -1,0 +1,210 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 635,
+        "start": 629,
+        "surface": "25,000",
+        "value": 25000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-6C-AB-2899"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL6CAB2899"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Biku"
+        ],
+        "canonical_name": "Bikas Sharma",
+        "char_span": [
+          213,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Girish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Bikas Sharma"
+          },
+          {
+            "char_span": [
+              230,
+              234
+            ],
+            "kind": "ALIAS",
+            "surface": "Biku"
+          },
+          {
+            "char_span": [
+              244,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Girish Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          476,
+          486
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              476,
+              486
+            ],
+            "kind": "VALUE",
+            "surface": "9014363495"
+          },
+          {
+            "char_span": [
+              518,
+              528
+            ],
+            "kind": "VALUE",
+            "surface": "9014363495"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9014363495"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          546,
+          561
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              546,
+              561
+            ],
+            "kind": "VALUE",
+            "surface": "888568557444315"
+          }
+        ],
+        "type": "IMEI",
+        "value": "888568557444315"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          400,
+          499
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "baramad"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          500,
+          577
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "hardware IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_71"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 796,
+    "document_hash": "abb144cddb9913829f6a5fe083c39a176c4d4f81642393ab778fcb687d368093",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 1,
+      "PHONE": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

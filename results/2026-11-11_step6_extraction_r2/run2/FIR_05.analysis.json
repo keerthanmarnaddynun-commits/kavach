@@ -1,0 +1,504 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 352,
+        "start": 339,
+        "surface": "INR 25,000.00",
+        "value": 25000.0
+      },
+      {
+        "end": 1034,
+        "start": 1020,
+        "surface": "Rs. 3,212.50/-",
+        "value": 3212.5
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-2C-AB-1750"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL2CAB1750"
+      },
+      {
+        "ai_confidence": 0.999515,
+        "aliases": [
+          "Andy"
+        ],
+        "canonical_name": "Anand Verma",
+        "char_span": [
+          203,
+          214
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999515,
+          "validator": null
+        },
+        "father_name": "Shyam Verma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              214
+            ],
+            "kind": "NAME",
+            "surface": "Anand Verma"
+          },
+          {
+            "char_span": [
+              219,
+              223
+            ],
+            "kind": "ALIAS",
+            "surface": "Andy"
+          },
+          {
+            "char_span": [
+              233,
+              244
+            ],
+            "kind": "FATHER",
+            "surface": "Shyam Verma"
+          },
+          {
+            "char_span": [
+              422,
+              433
+            ],
+            "kind": "NAME",
+            "surface": "Anand Verma"
+          },
+          {
+            "char_span": [
+              993,
+              1004
+            ],
+            "kind": "NAME",
+            "surface": "Anand Verma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          475,
+          489
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              475,
+              489
+            ],
+            "kind": "VALUE",
+            "surface": "+91-6647468723"
+          },
+          {
+            "char_span": [
+              544,
+              558
+            ],
+            "kind": "VALUE",
+            "surface": "+91-6647468723"
+          },
+          {
+            "char_span": [
+              1217,
+              1231
+            ],
+            "kind": "VALUE",
+            "surface": "+91-6647468723"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6647468723"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          580,
+          595
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              580,
+              595
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          },
+          {
+            "char_span": [
+              708,
+              723
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          }
+        ],
+        "type": "IMEI",
+        "value": "204332181960015"
+      },
+      {
+        "ai_confidence": 0.999189,
+        "aliases": [
+          "Pandit"
+        ],
+        "canonical_name": "Pankaj Tiwari",
+        "char_span": [
+          621,
+          634
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999189,
+          "validator": null
+        },
+        "father_name": "Madan Tiwari",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              621,
+              634
+            ],
+            "kind": "NAME",
+            "surface": "Pankaj Tiwari"
+          },
+          {
+            "char_span": [
+              763,
+              776
+            ],
+            "kind": "NAME",
+            "surface": "Pankaj Tiwari"
+          },
+          {
+            "char_span": [
+              781,
+              787
+            ],
+            "kind": "ALIAS",
+            "surface": "Pandit"
+          },
+          {
+            "char_span": [
+              797,
+              809
+            ],
+            "kind": "FATHER",
+            "surface": "Madan Tiwari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          665,
+          675
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              665,
+              675
+            ],
+            "kind": "VALUE",
+            "surface": "8980841241"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8980841241"
+      },
+      {
+        "ai_confidence": 0.999571,
+        "canonical_name": "Kuldeep Yadav",
+        "char_span": [
+          873,
+          886
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999571,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              873,
+              886
+            ],
+            "kind": "NAME",
+            "surface": "Kuldeep Yadav"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1048,
+          1062
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              1048,
+              1062
+            ],
+            "kind": "VALUE",
+            "surface": "45784370118033"
+          },
+          {
+            "char_span": [
+              1105,
+              1119
+            ],
+            "kind": "VALUE",
+            "surface": "45784370118033"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "45784370118033"
+      },
+      {
+        "ai_confidence": 0.999348,
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          1137,
+          1151
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999348,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              1137,
+              1151
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1249,
+          1259
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_10",
+        "mentions": [
+          {
+            "char_span": [
+              1249,
+              1259
+            ],
+            "kind": "VALUE",
+            "surface": "7081219136"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7081219136"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          414,
+          511
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "calling connection"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          512,
+          609
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          610,
+          741
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "possession"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          610,
+          741
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_06",
+        "target": "ent_04",
+        "trigger": "hardware IMEI"
+      },
+      {
+        "amount": 3212.5,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          960,
+          1081
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_08",
+        "trigger": "jama karwayi"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1082,
+          1180
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_09",
+        "target": "ent_08",
+        "trigger": "operate kiya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1181,
+          1290
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_10",
+        "trigger": "voice calls"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_05"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1393,
+    "document_hash": "4f9e64e39c0ba947e3681114328eea062979692e945a061f2dacc85f088335cf",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 4,
+      "PHONE": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 2,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 2,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 7
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          168,
+          181
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              168,
+              181
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-3068"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB3068"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "बड़े मियां"
+        ],
+        "canonical_name": "मुख्तार अंसारी",
+        "char_span": [
+          200,
+          214
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "इकबाल अंसारी",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              200,
+              214
+            ],
+            "kind": "NAME",
+            "surface": "मुख्तार अंसारी"
+          },
+          {
+            "char_span": [
+              220,
+              230
+            ],
+            "kind": "ALIAS",
+            "surface": "बड़े मियां"
+          },
+          {
+            "char_span": [
+              242,
+              254
+            ],
+            "kind": "FATHER",
+            "surface": "इकबाल अंसारी"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          366,
+          376
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              366,
+              376
+            ],
+            "kind": "VALUE",
+            "surface": "9277434873"
+          },
+          {
+            "char_span": [
+              413,
+              423
+            ],
+            "kind": "VALUE",
+            "surface": "9277434873"
+          },
+          {
+            "char_span": [
+              589,
+              599
+            ],
+            "kind": "VALUE",
+            "surface": "9277434873"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9277434873"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          443,
+          458
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              443,
+              458
+            ],
+            "kind": "VALUE",
+            "surface": "571434558122362"
+          }
+        ],
+        "type": "IMEI",
+        "value": "571434558122362"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          616,
+          626
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              616,
+              626
+            ],
+            "kind": "VALUE",
+            "surface": "9065627298"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9065627298"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          297,
+          397
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "अपना प्रयुक्त"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          398,
+          474
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "हैंडसेट आईएमईआई"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          552,
+          653
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_05",
+        "trigger": "के मध्य"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_50"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 745,
+    "document_hash": "b8077e0c0497e263333ac556038a3ed231988612ba511b62d519e27bb90b6400",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 1,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

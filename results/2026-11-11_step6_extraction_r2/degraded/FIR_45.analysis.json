@@ -1,0 +1,419 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 869,
+        "start": 854,
+        "surface": "Rs. 27,229.69/-",
+        "value": 27229.69
+      },
+      {
+        "end": 1165,
+        "start": 1152,
+        "surface": "INR 25,000.00",
+        "value": 25000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          168,
+          181
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              168,
+              181
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-6421"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB6421"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "एंडी"
+        ],
+        "canonical_name": "आनंद वर्मा",
+        "char_span": [
+          200,
+          210
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "श्याम वर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              200,
+              210
+            ],
+            "kind": "NAME",
+            "surface": "आनंद वर्मा"
+          },
+          {
+            "char_span": [
+              216,
+              220
+            ],
+            "kind": "ALIAS",
+            "surface": "एंडी"
+          },
+          {
+            "char_span": [
+              232,
+              243
+            ],
+            "kind": "FATHER",
+            "surface": "श्याम वर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          333,
+          344
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              333,
+              344
+            ],
+            "kind": "VALUE",
+            "surface": "66474 68723"
+          },
+          {
+            "char_span": [
+              536,
+              547
+            ],
+            "kind": "VALUE",
+            "surface": "66474 68723"
+          },
+          {
+            "char_span": [
+              605,
+              616
+            ],
+            "kind": "VALUE",
+            "surface": "66474 68723"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6647468723"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          360,
+          370
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              360,
+              370
+            ],
+            "kind": "VALUE",
+            "surface": "7081219136"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7081219136"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          644,
+          659
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              644,
+              659
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          },
+          {
+            "char_span": [
+              759,
+              774
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          }
+        ],
+        "type": "IMEI",
+        "value": "204332181960015"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          718,
+          728
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              718,
+              728
+            ],
+            "kind": "VALUE",
+            "surface": "8980841241"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8980841241"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          826,
+          838
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              826,
+              838
+            ],
+            "kind": "VALUE",
+            "surface": "109751102939"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "109751102939"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          883,
+          894
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              883,
+              894
+            ],
+            "kind": "VALUE",
+            "surface": "28384251354"
+          },
+          {
+            "char_span": [
+              949,
+              960
+            ],
+            "kind": "VALUE",
+            "surface": "28384251354"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "28384251354"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "पंडित"
+        ],
+        "canonical_name": "पंकज तिवारी",
+        "char_span": [
+          1031,
+          1042
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "मदन तिवारी",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              1031,
+              1042
+            ],
+            "kind": "NAME",
+            "surface": "पंकज तिवारी"
+          },
+          {
+            "char_span": [
+              1048,
+              1053
+            ],
+            "kind": "ALIAS",
+            "surface": "पंडित"
+          },
+          {
+            "char_span": [
+              1065,
+              1075
+            ],
+            "kind": "FATHER",
+            "surface": "मदन तिवारी"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          286,
+          393
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "संपर्क"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          569,
+          674
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_05",
+        "trigger": "दर्ज किया"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          675,
+          786
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_06",
+        "target": "ent_05",
+        "trigger": "आईएमईआई"
+      },
+      {
+        "amount": 27229.69,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          787,
+          911
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_07",
+        "target": "ent_08",
+        "trigger": "जमा कराई"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_45"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1312,
+    "document_hash": "e843892cc6543cf3c1e16c46ff85b232b6f35e829d5af226d3be0809b54e6237",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 3,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 2,
+      "COMMUNICATED_WITH": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 4
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

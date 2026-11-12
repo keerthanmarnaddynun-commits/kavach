@@ -1,0 +1,282 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-6C-AB-7745"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL6CAB7745"
+      },
+      {
+        "ai_confidence": 0.997625,
+        "aliases": [
+          "Vicky"
+        ],
+        "canonical_name": "Wasim Akram",
+        "char_span": [
+          214,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.997625,
+          "validator": null
+        },
+        "father_name": "Shabir Akram",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Wasim Akram"
+          },
+          {
+            "char_span": [
+              230,
+              235
+            ],
+            "kind": "ALIAS",
+            "surface": "Vicky"
+          },
+          {
+            "char_span": [
+              245,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Shabir Akram"
+          },
+          {
+            "char_span": [
+              432,
+              443
+            ],
+            "kind": "NAME",
+            "surface": "Wasim Akram"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          345,
+          355
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              345,
+              355
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          },
+          {
+            "char_span": [
+              485,
+              495
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          },
+          {
+            "char_span": [
+              550,
+              560
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8674680715"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          373,
+          383
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              373,
+              383
+            ],
+            "kind": "VALUE",
+            "surface": "6679740344"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6679740344"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          582,
+          597
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              582,
+              597
+            ],
+            "kind": "VALUE",
+            "surface": "551680876038599"
+          }
+        ],
+        "type": "IMEI",
+        "value": "551680876038599"
+      },
+      {
+        "ai_confidence": 0.990354,
+        "canonical_name": "Pawan Verma",
+        "char_span": [
+          629,
+          640
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.990354,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              629,
+              640
+            ],
+            "kind": "NAME",
+            "surface": "Pawan Verma"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          300,
+          423
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "ke beech"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          424,
+          517
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "calling connection"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          518,
+          611
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_05",
+        "trigger": "IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_32"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 811,
+    "document_hash": "f70da68077961be27d41483d2438a5cc2044d8b8d7ac9861755d52ba569179c0",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

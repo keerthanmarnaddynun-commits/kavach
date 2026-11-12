@@ -1,0 +1,232 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 364,
+        "start": 350,
+        "surface": "Rs. 4,314.08/-",
+        "value": 4314.08
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          170,
+          183
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              170,
+              183
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-8342"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB8342"
+      },
+      {
+        "ai_confidence": 0.99956,
+        "aliases": [
+          "Hawai"
+        ],
+        "canonical_name": "Suresh Pal",
+        "char_span": [
+          208,
+          218
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.99956,
+          "validator": null
+        },
+        "father_name": "Mohan Pal",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              208,
+              218
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Pal"
+          },
+          {
+            "char_span": [
+              225,
+              230
+            ],
+            "kind": "ALIAS",
+            "surface": "Hawai"
+          },
+          {
+            "char_span": [
+              240,
+              249
+            ],
+            "kind": "FATHER",
+            "surface": "Mohan Pal"
+          },
+          {
+            "char_span": [
+              319,
+              329
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Pal"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          378,
+          390
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              378,
+              390
+            ],
+            "kind": "VALUE",
+            "surface": "880913431611"
+          },
+          {
+            "char_span": [
+              414,
+              426
+            ],
+            "kind": "VALUE",
+            "surface": "880913431611"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "880913431611"
+      },
+      {
+        "ai_confidence": 0.999714,
+        "canonical_name": "Aslam Parvez",
+        "char_span": [
+          476,
+          488
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999714,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              476,
+              488
+            ],
+            "kind": "NAME",
+            "surface": "Aslam Parvez"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999885,
+        "canonical_name": "Dinesh Joshi",
+        "char_span": [
+          498,
+          510
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999885,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              498,
+              510
+            ],
+            "kind": "NAME",
+            "surface": "Dinesh Joshi"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 4314.08,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          271,
+          391
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "credited"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_57"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 669,
+    "document_hash": "3313033a99a1b9d2bec7a0221c895d7fb042f18fc9cbb52008ca40c3f48c6edc",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 1
+    },
+    "warnings": []
+  }
+}

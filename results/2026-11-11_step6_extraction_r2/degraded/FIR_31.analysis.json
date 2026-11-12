@@ -1,0 +1,351 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 357,
+        "start": 351,
+        "surface": "25,000",
+        "value": 25000.0
+      },
+      {
+        "end": 505,
+        "start": 496,
+        "surface": "24,288.97",
+        "value": 24288.97
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-6C-AB-1653"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL6CAB1653"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Biku"
+        ],
+        "canonical_name": "Bikas Sharma",
+        "char_span": [
+          213,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Girish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Bikas Sharma"
+          },
+          {
+            "char_span": [
+              230,
+              234
+            ],
+            "kind": "ALIAS",
+            "surface": "Biku"
+          },
+          {
+            "char_span": [
+              244,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Girish Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          477,
+          488
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              477,
+              488
+            ],
+            "kind": "VALUE",
+            "surface": "35833036132"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "35833036132"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          526,
+          538
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              526,
+              538
+            ],
+            "kind": "VALUE",
+            "surface": "564743671369"
+          },
+          {
+            "char_span": [
+              600,
+              612
+            ],
+            "kind": "VALUE",
+            "surface": "564743671369"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "564743671369"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          737,
+          748
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              737,
+              748
+            ],
+            "kind": "VALUE",
+            "surface": "90143 63495"
+          },
+          {
+            "char_span": [
+              780,
+              791
+            ],
+            "kind": "VALUE",
+            "surface": "90143 63495"
+          },
+          {
+            "char_span": [
+              896,
+              907
+            ],
+            "kind": "VALUE",
+            "surface": "90143 63495"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9014363495"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          805,
+          820
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              805,
+              820
+            ],
+            "kind": "VALUE",
+            "surface": "888568557444315"
+          }
+        ],
+        "type": "IMEI",
+        "value": "888568557444315"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          925,
+          935
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              925,
+              935
+            ],
+            "kind": "VALUE",
+            "surface": "6531003309"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6531003309"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Suresh Bansal",
+        "char_span": [
+          993,
+          1006
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              993,
+              1006
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Bansal"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 24288.97,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          419,
+          563
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "transfer kiya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          765,
+          850
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "handset IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          851,
+          975
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_07",
+        "trigger": "ke beech"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_31"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1179,
+    "document_hash": "48809e0a88522f1d971d01b374088fc7ad2219f6b625c68a3f2c8989fa448b55",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}
