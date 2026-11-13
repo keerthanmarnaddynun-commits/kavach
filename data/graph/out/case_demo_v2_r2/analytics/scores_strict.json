@@ -1,0 +1,1435 @@
+{
+  "composite_weights": {
+    "betweenness": 0.3,
+    "degree": 0.4,
+    "eigenvector": 0.3
+  },
+  "edges_used": 1363,
+  "eigenvector_converged": true,
+  "eigenvector_method": "networkx",
+  "mode": "strict",
+  "nodes_used": 220,
+  "person_nodes_ranked": 50,
+  "ranking": [
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_05:ent_09"
+      ],
+      "components": {
+        "betweenness": 1.0,
+        "degree": 1.0,
+        "eigenvector": 0.127408
+      },
+      "composite": 0.738222,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:1273226992728702",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        },
+        {
+          "neighbour": "ACCOUNT:26309165168",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        },
+        {
+          "neighbour": "ACCOUNT:45784370118033",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 6,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_05:ent_09",
+      "rank": 1
+    },
+    {
+      "canonical_name": "Anand Verma",
+      "collapsed_node_ids": [
+        "PERSON:FIR_05:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.387167,
+        "degree": 0.288889,
+        "eigenvector": 0.911682
+      },
+      "composite": 0.50521,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:28384251354",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        },
+        {
+          "neighbour": "PHONE:6647468723",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:44352408240",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 3,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_05:ent_02",
+      "rank": 2
+    },
+    {
+      "canonical_name": "Deepak Chauhan",
+      "collapsed_node_ids": [
+        "PERSON:FIR_09:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.476053,
+        "degree": 0.244444,
+        "eigenvector": 0.85483
+      },
+      "composite": 0.497043,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:6869261796405377",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        },
+        {
+          "neighbour": "PHONE:8414586850",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:693103413164",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 2,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_09:ent_02",
+      "rank": 3
+    },
+    {
+      "canonical_name": "Vikas Sharma",
+      "collapsed_node_ids": [
+        "PERSON:FIR_01:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.002481,
+        "degree": 0.2,
+        "eigenvector": 0.959295
+      },
+      "composite": 0.368533,
+      "explanation": [
+        {
+          "neighbour": "PHONE:6834738299",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:44352408240",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        },
+        {
+          "neighbour": "ACCOUNT:82788957986",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 3,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_01:ent_02",
+      "rank": 4
+    },
+    {
+      "canonical_name": "Devendra Yadav",
+      "collapsed_node_ids": [
+        "PERSON:FIR_14:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.111111,
+        "eigenvector": 1.0
+      },
+      "composite": 0.344444,
+      "explanation": [
+        {
+          "neighbour": "PHONE:8255341928",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:70733754330",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_14:ent_02",
+      "rank": 5
+    },
+    {
+      "canonical_name": "Sunil Kumar",
+      "collapsed_node_ids": [
+        "PERSON:FIR_03:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.002067,
+        "degree": 0.155556,
+        "eigenvector": 0.866595
+      },
+      "composite": 0.322821,
+      "explanation": [
+        {
+          "neighbour": "PHONE:7148951343",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:44671844617327",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        },
+        {
+          "neighbour": "ACCOUNT:7520562247180388",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 2,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_03:ent_02",
+      "rank": 6
+    },
+    {
+      "canonical_name": "Pankaj Tiwari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_02:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.041342,
+        "degree": 0.111111,
+        "eigenvector": 0.868171
+      },
+      "composite": 0.317298,
+      "explanation": [
+        {
+          "neighbour": "PHONE:8980841241",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:35543349232124",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_02:ent_02",
+      "rank": 7
+    },
+    {
+      "canonical_name": "Manoj Rawat",
+      "collapsed_node_ids": [
+        "PERSON:FIR_35:ent_05"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.111111,
+        "eigenvector": 0.908593
+      },
+      "composite": 0.317022,
+      "explanation": [
+        {
+          "neighbour": "PHONE:6112805982",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:53839750530",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_35:ent_05",
+      "rank": 8
+    },
+    {
+      "canonical_name": "Bikas Sharma",
+      "collapsed_node_ids": [
+        "PERSON:FIR_01:ent_09"
+      ],
+      "components": {
+        "betweenness": 0.194101,
+        "degree": 0.288889,
+        "eigenvector": 0.034475
+      },
+      "composite": 0.184128,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:44352408240",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        },
+        {
+          "neighbour": "PHONE:9014363495",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:1273226992728702",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 3,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_01:ent_09",
+      "rank": 9
+    },
+    {
+      "canonical_name": "Wasim Akram",
+      "collapsed_node_ids": [
+        "PERSON:FIR_12:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.041135,
+        "degree": 0.155556,
+        "eigenvector": 0.033379
+      },
+      "composite": 0.084576,
+      "explanation": [
+        {
+          "neighbour": "PHONE:8674680715",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:15359627630097",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        },
+        {
+          "neighbour": "ACCOUNT:9184147623802670",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 2,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_12:ent_02",
+      "rank": 10
+    },
+    {
+      "canonical_name": "Farooq Ahmed",
+      "collapsed_node_ids": [
+        "PERSON:FIR_23:ent_05"
+      ],
+      "components": {
+        "betweenness": 0.013229,
+        "degree": 0.155556,
+        "eigenvector": 0.044625
+      },
+      "composite": 0.079579,
+      "explanation": [
+        {
+          "neighbour": "PHONE:9065627298",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:34808613171274",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        },
+        {
+          "neighbour": "ACCOUNT:917130329284",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 2,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_23:ent_05",
+      "rank": 11
+    },
+    {
+      "canonical_name": "Rashid Khan",
+      "collapsed_node_ids": [
+        "PERSON:FIR_04:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.013436,
+        "degree": 0.155556,
+        "eigenvector": 0.044196
+      },
+      "composite": 0.079512,
+      "explanation": [
+        {
+          "neighbour": "PHONE:9165726284",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:693103413164",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        },
+        {
+          "neighbour": "ACCOUNT:71891355965727",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 2,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_04:ent_02",
+      "rank": 12
+    },
+    {
+      "canonical_name": "Suresh Pal",
+      "collapsed_node_ids": [
+        "PERSON:FIR_100:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.017777,
+        "degree": 0.111111,
+        "eigenvector": 0.094689
+      },
+      "composite": 0.078184,
+      "explanation": [
+        {
+          "neighbour": "PHONE:8406409097",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:880913431611",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_100:ent_02",
+      "rank": 13
+    },
+    {
+      "canonical_name": "Salman Mirza",
+      "collapsed_node_ids": [
+        "PERSON:FIR_19:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.021705,
+        "degree": 0.111111,
+        "eigenvector": 0.033133
+      },
+      "composite": 0.060896,
+      "explanation": [
+        {
+          "neighbour": "PHONE:9773782639",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:7909670546688937",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_19:ent_02",
+      "rank": 14
+    },
+    {
+      "canonical_name": "Imran Sheikh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_18:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.011576,
+        "degree": 0.111111,
+        "eigenvector": 0.034928
+      },
+      "composite": 0.058396,
+      "explanation": [
+        {
+          "neighbour": "PHONE:7710947775",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        },
+        {
+          "neighbour": "ACCOUNT:17520025569318",
+          "relation": "TRANSFERRED_FUNDS",
+          "weight": 1.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_18:ent_02",
+      "rank": 15
+    },
+    {
+      "canonical_name": "Ramesh Chand",
+      "collapsed_node_ids": [
+        "PERSON:FIR_59:ent_03"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.066667,
+        "eigenvector": 0.096312
+      },
+      "composite": 0.05556,
+      "explanation": [
+        {
+          "neighbour": "PHONE:7400504556",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        }
+      ],
+      "linked": {
+        "accounts": 0,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_59:ent_03",
+      "rank": 16
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_39:ent_06"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.00057
+      },
+      "composite": 0.053504,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:53839750530",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_39:ent_06",
+      "rank": 17
+    },
+    {
+      "canonical_name": "Manoj Rawat",
+      "collapsed_node_ids": [
+        "PERSON:FIR_64:ent_05"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000487
+      },
+      "composite": 0.05348,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:70733754330",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_64:ent_05",
+      "rank": 18
+    },
+    {
+      "canonical_name": "Sunil Kumar",
+      "collapsed_node_ids": [
+        "PERSON:FIR_33:ent_05"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000479
+      },
+      "composite": 0.053477,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:82788957986",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_33:ent_05",
+      "rank": 19
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_09:ent_04"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000452
+      },
+      "composite": 0.053469,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:693103413164",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_09:ent_04",
+      "rank": 20
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_01:ent_04"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000448
+      },
+      "composite": 0.053468,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:95217729622",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_01:ent_04",
+      "rank": 21
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_59:ent_09"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000448
+      },
+      "composite": 0.053468,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:95217729622",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_59:ent_09",
+      "rank": 22
+    },
+    {
+      "canonical_name": "राजेंद्र सिंह",
+      "collapsed_node_ids": [
+        "PERSON:FIR_41:ent_09"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000422
+      },
+      "composite": 0.05346,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:7520562247180388",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_41:ent_09",
+      "rank": 23
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_79:ent_04"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000418
+      },
+      "composite": 0.053459,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:44671844617327",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_79:ent_04",
+      "rank": 24
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_21:ent_04"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000373
+      },
+      "composite": 0.053445,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:35543349232124",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_21:ent_04",
+      "rank": 25
+    },
+    {
+      "canonical_name": "मुख्तार अंसारी",
+      "collapsed_node_ids": [
+        "PERSON:FIR_74:ent_09"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000256
+      },
+      "composite": 0.05341,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:1273226992728702",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_74:ent_09",
+      "rank": 26
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_17:ent_07"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000124
+      },
+      "composite": 0.053371,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:917130329284",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_17:ent_07",
+      "rank": 27
+    },
+    {
+      "canonical_name": "Aslam Parvez",
+      "collapsed_node_ids": [
+        "PERSON:FIR_03:ent_06"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000124
+      },
+      "composite": 0.05337,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:880913431611",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_03:ent_06",
+      "rank": 28
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_87:ent_05"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000109
+      },
+      "composite": 0.053366,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:17520025569318",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_87:ent_05",
+      "rank": 29
+    },
+    {
+      "canonical_name": "Wasim Akram",
+      "collapsed_node_ids": [
+        "PERSON:FIR_67:ent_08"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000107
+      },
+      "composite": 0.053365,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:34808613171274",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_67:ent_08",
+      "rank": 30
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_15:ent_06"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 0.000103
+      },
+      "composite": 0.053364,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:56759579633711",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_15:ent_06",
+      "rank": 31
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_23:ent_08"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 9.9e-05
+      },
+      "composite": 0.053363,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:17667400184766",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_23:ent_08",
+      "rank": 32
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_81:ent_04"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 9.5e-05
+      },
+      "composite": 0.053362,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:9184147623802670",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_81:ent_04",
+      "rank": 33
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_88:ent_07"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 9.5e-05
+      },
+      "composite": 0.053362,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:9184147623802670",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_88:ent_07",
+      "rank": 34
+    },
+    {
+      "canonical_name": "मुख्तार अंसारी",
+      "collapsed_node_ids": [
+        "PERSON:FIR_43:ent_07"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 9.4e-05
+      },
+      "composite": 0.053362,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:15359627630097",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_43:ent_07",
+      "rank": 35
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_19:ent_08"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 9.3e-05
+      },
+      "composite": 0.053361,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:35273976748813",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_19:ent_08",
+      "rank": 36
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_37:ent_08"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 9e-05
+      },
+      "composite": 0.05336,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:7909670546688937",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_37:ent_08",
+      "rank": 37
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_52:ent_09"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 8.8e-05
+      },
+      "composite": 0.05336,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:199656789564",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_52:ent_09",
+      "rank": 38
+    },
+    {
+      "canonical_name": "सलमान मिर्ज़ा",
+      "collapsed_node_ids": [
+        "PERSON:FIR_49:ent_07"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 8.8e-05
+      },
+      "composite": 0.05336,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:15329318393",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_49:ent_07",
+      "rank": 39
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_62:ent_08"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 7.8e-05
+      },
+      "composite": 0.053357,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:23472096738",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_62:ent_08",
+      "rank": 40
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_68:ent_08"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 7.7e-05
+      },
+      "composite": 0.053356,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:65581800660567",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_68:ent_08",
+      "rank": 41
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_11:ent_10"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 7.1e-05
+      },
+      "composite": 0.053355,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:1075079752217806",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_11:ent_10",
+      "rank": 42
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_65:ent_07"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 7.1e-05
+      },
+      "composite": 0.053355,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:1075079752217806",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_65:ent_07",
+      "rank": 43
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_61:ent_06"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 6.9e-05
+      },
+      "composite": 0.053354,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:71891355965727",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_61:ent_06",
+      "rank": 44
+    },
+    {
+      "canonical_name": "Ramesh Chand",
+      "collapsed_node_ids": [
+        "PERSON:FIR_31:ent_05"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 6.9e-05
+      },
+      "composite": 0.053354,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:564743671369",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_31:ent_05",
+      "rank": 45
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_35:ent_08"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 6.5e-05
+      },
+      "composite": 0.053353,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:57215357009",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_35:ent_08",
+      "rank": 46
+    },
+    {
+      "canonical_name": "Sunil Kumar",
+      "collapsed_node_ids": [
+        "PERSON:FIR_85:ent_09"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 6.5e-05
+      },
+      "composite": 0.053353,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:258506431713",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_85:ent_09",
+      "rank": 47
+    },
+    {
+      "canonical_name": "Rajendra Singh",
+      "collapsed_node_ids": [
+        "PERSON:FIR_93:ent_09"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.133333,
+        "eigenvector": 5.5e-05
+      },
+      "composite": 0.05335,
+      "explanation": [
+        {
+          "neighbour": "ACCOUNT:6066011655865115",
+          "relation": "CONTROLS_ACCOUNT",
+          "weight": 3.0
+        }
+      ],
+      "linked": {
+        "accounts": 1,
+        "imeis": 0,
+        "phones": 0
+      },
+      "node_id": "PERSON:FIR_93:ent_09",
+      "rank": 48
+    },
+    {
+      "canonical_name": "Aslam Parvez",
+      "collapsed_node_ids": [
+        "PERSON:FIR_06:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.066667,
+        "eigenvector": 0.034818
+      },
+      "composite": 0.037112,
+      "explanation": [
+        {
+          "neighbour": "PHONE:7963605766",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        }
+      ],
+      "linked": {
+        "accounts": 0,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_06:ent_02",
+      "rank": 49
+    },
+    {
+      "canonical_name": "Mukhtar Ansari",
+      "collapsed_node_ids": [
+        "PERSON:FIR_10:ent_02"
+      ],
+      "components": {
+        "betweenness": 0.0,
+        "degree": 0.066667,
+        "eigenvector": 0.004915
+      },
+      "composite": 0.028141,
+      "explanation": [
+        {
+          "neighbour": "PHONE:9277434873",
+          "relation": "OWNS_DEVICE",
+          "weight": 1.5
+        }
+      ],
+      "linked": {
+        "accounts": 0,
+        "imeis": 1,
+        "phones": 1
+      },
+      "node_id": "PERSON:FIR_10:ent_02",
+      "rank": 50
+    }
+  ]
+}

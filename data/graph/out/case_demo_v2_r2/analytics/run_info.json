@@ -1,0 +1,32 @@
+{
+  "base_weights": {
+    "ASSOCIATED_IMEI": 0.5,
+    "COMMUNICATED_WITH": 1.5,
+    "CONTROLS_ACCOUNT": 3.0,
+    "OWNS_DEVICE": 1.5,
+    "TRANSFERRED_FUNDS": 1.0
+  },
+  "composite_weights": {
+    "betweenness": 0.3,
+    "degree": 0.4,
+    "eigenvector": 0.3
+  },
+  "modes": {
+    "resolved": {
+      "edges_used": 1363,
+      "eigenvector_converged": true,
+      "eigenvector_method": "networkx",
+      "nodes_used": 188,
+      "person_nodes_ranked": 18
+    },
+    "strict": {
+      "edges_used": 1363,
+      "eigenvector_converged": true,
+      "eigenvector_method": "networkx",
+      "nodes_used": 220,
+      "person_nodes_ranked": 50
+    }
+  },
+  "robustness_n_samples": 200,
+  "robustness_seed": 20261112
+}

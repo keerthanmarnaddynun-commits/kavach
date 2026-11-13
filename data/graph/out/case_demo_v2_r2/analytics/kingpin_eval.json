@@ -1,0 +1,229 @@
+{
+  "decoy_person_ids": [
+    "DEC_PIZZA_01"
+  ],
+  "kingpin_ids": [
+    "PER_A_KP_01",
+    "PER_B_KP_01"
+  ],
+  "modes": {
+    "resolved": {
+      "rankers": {
+        "call_count": {
+          "all_kingpins_top_5": false,
+          "any_kingpin_rank_1": false,
+          "any_kingpin_top_3": false,
+          "any_kingpin_top_5": false,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 17,
+            "PER_B_KP_01": 18
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 1
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 5,
+          "top_5_non_kingpin_real_people": 5
+        },
+        "composite": {
+          "all_kingpins_top_5": true,
+          "any_kingpin_rank_1": true,
+          "any_kingpin_top_3": true,
+          "any_kingpin_top_5": true,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 5
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 1
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 3,
+          "top_5_non_kingpin_real_people": 3
+        },
+        "transfer_amount_paise": {
+          "all_kingpins_top_5": true,
+          "any_kingpin_rank_1": true,
+          "any_kingpin_top_3": true,
+          "any_kingpin_top_5": true,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 2
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 1
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 3,
+          "top_5_non_kingpin_real_people": 3
+        },
+        "unweighted_degree": {
+          "all_kingpins_top_5": true,
+          "any_kingpin_rank_1": true,
+          "any_kingpin_top_3": true,
+          "any_kingpin_top_5": true,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 2
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 1
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 3,
+          "top_5_non_kingpin_real_people": 3
+        },
+        "weighted_pagerank": {
+          "all_kingpins_top_5": true,
+          "any_kingpin_rank_1": true,
+          "any_kingpin_top_3": true,
+          "any_kingpin_top_5": true,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 2
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 1
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 3,
+          "top_5_non_kingpin_real_people": 3
+        }
+      },
+      "robustness": {
+        "any_kingpin_rank_1_fraction": 1.0,
+        "any_kingpin_top_3_fraction": 1.0,
+        "n_samples": 200,
+        "per_kingpin": {
+          "PER_A_KP_01": {
+            "rank_1_fraction": 1.0,
+            "top_3_fraction": 1.0
+          },
+          "PER_B_KP_01": {
+            "rank_1_fraction": 0.0,
+            "top_3_fraction": 0.0
+          }
+        }
+      }
+    },
+    "strict": {
+      "rankers": {
+        "call_count": {
+          "all_kingpins_top_5": false,
+          "any_kingpin_rank_1": false,
+          "any_kingpin_top_3": false,
+          "any_kingpin_top_5": false,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 17,
+            "PER_B_KP_01": 18
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 15,
+            "PER_B_KP_01": 12
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 5,
+          "top_5_non_kingpin_real_people": 5
+        },
+        "composite": {
+          "all_kingpins_top_5": false,
+          "any_kingpin_rank_1": true,
+          "any_kingpin_top_3": true,
+          "any_kingpin_top_5": true,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 17
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 15,
+            "PER_B_KP_01": 12
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 4,
+          "top_5_non_kingpin_real_people": 4
+        },
+        "transfer_amount_paise": {
+          "all_kingpins_top_5": true,
+          "any_kingpin_rank_1": true,
+          "any_kingpin_top_3": true,
+          "any_kingpin_top_5": true,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 5
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 15,
+            "PER_B_KP_01": 12
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 2,
+          "top_5_non_kingpin_real_people": 2
+        },
+        "unweighted_degree": {
+          "all_kingpins_top_5": false,
+          "any_kingpin_rank_1": true,
+          "any_kingpin_top_3": true,
+          "any_kingpin_top_5": true,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 20
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 15,
+            "PER_B_KP_01": 12
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 4,
+          "top_5_non_kingpin_real_people": 4
+        },
+        "weighted_pagerank": {
+          "all_kingpins_top_5": false,
+          "any_kingpin_rank_1": true,
+          "any_kingpin_top_3": true,
+          "any_kingpin_top_5": true,
+          "kingpin_best_rank": {
+            "PER_A_KP_01": 1,
+            "PER_B_KP_01": 7
+          },
+          "kingpin_node_counts": {
+            "PER_A_KP_01": 15,
+            "PER_B_KP_01": 12
+          },
+          "top_5_decoy_nodes": 0,
+          "top_5_decoy_people": 0,
+          "top_5_non_kingpin_nodes": 4,
+          "top_5_non_kingpin_real_people": 4
+        }
+      },
+      "robustness": {
+        "any_kingpin_rank_1_fraction": 1.0,
+        "any_kingpin_top_3_fraction": 1.0,
+        "n_samples": 200,
+        "per_kingpin": {
+          "PER_A_KP_01": {
+            "rank_1_fraction": 1.0,
+            "top_3_fraction": 1.0
+          },
+          "PER_B_KP_01": {
+            "rank_1_fraction": 0.0,
+            "top_3_fraction": 0.0
+          }
+        }
+      }
+    }
+  }
+}

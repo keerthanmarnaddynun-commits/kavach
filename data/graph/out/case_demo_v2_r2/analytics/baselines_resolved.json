@@ -1,0 +1,790 @@
+{
+  "baselines": {
+    "call_count": [
+      {
+        "canonical_name": "Farooq Ahmed",
+        "collapsed_node_ids": [
+          "PERSON:FIR_23:ent_05"
+        ],
+        "node_id": "PERSON:FIR_23:ent_05",
+        "rank": 1,
+        "score": 914
+      },
+      {
+        "canonical_name": "Rashid Khan",
+        "collapsed_node_ids": [
+          "PERSON:FIR_04:ent_02"
+        ],
+        "node_id": "PERSON:FIR_04:ent_02",
+        "rank": 2,
+        "score": 864
+      },
+      {
+        "canonical_name": "Devendra Yadav",
+        "collapsed_node_ids": [
+          "PERSON:FIR_14:ent_02"
+        ],
+        "node_id": "PERSON:FIR_14:ent_02",
+        "rank": 3,
+        "score": 858
+      },
+      {
+        "canonical_name": "Imran Sheikh",
+        "collapsed_node_ids": [
+          "PERSON:FIR_18:ent_02"
+        ],
+        "node_id": "PERSON:FIR_18:ent_02",
+        "rank": 4,
+        "score": 526
+      },
+      {
+        "canonical_name": "Vikas Sharma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_02"
+        ],
+        "node_id": "PERSON:FIR_01:ent_02",
+        "rank": 5,
+        "score": 500
+      },
+      {
+        "canonical_name": "Aslam Parvez",
+        "collapsed_node_ids": [
+          "PERSON:FIR_03:ent_06",
+          "PERSON:FIR_06:ent_02"
+        ],
+        "node_id": "PERSON:FIR_03:ent_06",
+        "rank": 6,
+        "score": 490
+      },
+      {
+        "canonical_name": "Salman Mirza",
+        "collapsed_node_ids": [
+          "PERSON:FIR_19:ent_02",
+          "PERSON:FIR_49:ent_07"
+        ],
+        "node_id": "PERSON:FIR_19:ent_02",
+        "rank": 7,
+        "score": 480
+      },
+      {
+        "canonical_name": "Pankaj Tiwari",
+        "collapsed_node_ids": [
+          "PERSON:FIR_02:ent_02"
+        ],
+        "node_id": "PERSON:FIR_02:ent_02",
+        "rank": 8,
+        "score": 478
+      },
+      {
+        "canonical_name": "Bikas Sharma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_09"
+        ],
+        "node_id": "PERSON:FIR_01:ent_09",
+        "rank": 9,
+        "score": 476
+      },
+      {
+        "canonical_name": "Anand Verma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_05:ent_02"
+        ],
+        "node_id": "PERSON:FIR_05:ent_02",
+        "rank": 10,
+        "score": 470
+      },
+      {
+        "canonical_name": "Wasim Akram",
+        "collapsed_node_ids": [
+          "PERSON:FIR_12:ent_02",
+          "PERSON:FIR_67:ent_08"
+        ],
+        "node_id": "PERSON:FIR_12:ent_02",
+        "rank": 11,
+        "score": 461
+      },
+      {
+        "canonical_name": "Manoj Rawat",
+        "collapsed_node_ids": [
+          "PERSON:FIR_35:ent_05",
+          "PERSON:FIR_64:ent_05"
+        ],
+        "node_id": "PERSON:FIR_35:ent_05",
+        "rank": 12,
+        "score": 434
+      },
+      {
+        "canonical_name": "Deepak Chauhan",
+        "collapsed_node_ids": [
+          "PERSON:FIR_09:ent_02"
+        ],
+        "node_id": "PERSON:FIR_09:ent_02",
+        "rank": 13,
+        "score": 430
+      },
+      {
+        "canonical_name": "Sunil Kumar",
+        "collapsed_node_ids": [
+          "PERSON:FIR_03:ent_02",
+          "PERSON:FIR_33:ent_05",
+          "PERSON:FIR_85:ent_09"
+        ],
+        "node_id": "PERSON:FIR_03:ent_02",
+        "rank": 14,
+        "score": 417
+      },
+      {
+        "canonical_name": "Suresh Pal",
+        "collapsed_node_ids": [
+          "PERSON:FIR_100:ent_02"
+        ],
+        "node_id": "PERSON:FIR_100:ent_02",
+        "rank": 15,
+        "score": 44
+      },
+      {
+        "canonical_name": "Ramesh Chand",
+        "collapsed_node_ids": [
+          "PERSON:FIR_31:ent_05",
+          "PERSON:FIR_59:ent_03"
+        ],
+        "node_id": "PERSON:FIR_31:ent_05",
+        "rank": 16,
+        "score": 44
+      },
+      {
+        "canonical_name": "Rajendra Singh",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_04",
+          "PERSON:FIR_05:ent_09",
+          "PERSON:FIR_09:ent_04",
+          "PERSON:FIR_15:ent_06",
+          "PERSON:FIR_21:ent_04",
+          "PERSON:FIR_23:ent_08",
+          "PERSON:FIR_35:ent_08",
+          "PERSON:FIR_41:ent_09",
+          "PERSON:FIR_52:ent_09",
+          "PERSON:FIR_62:ent_08",
+          "PERSON:FIR_65:ent_07",
+          "PERSON:FIR_68:ent_08",
+          "PERSON:FIR_79:ent_04",
+          "PERSON:FIR_88:ent_07",
+          "PERSON:FIR_93:ent_09"
+        ],
+        "node_id": "PERSON:FIR_01:ent_04",
+        "rank": 17,
+        "score": 12
+      },
+      {
+        "canonical_name": "Mukhtar Ansari",
+        "collapsed_node_ids": [
+          "PERSON:FIR_10:ent_02",
+          "PERSON:FIR_11:ent_10",
+          "PERSON:FIR_17:ent_07",
+          "PERSON:FIR_19:ent_08",
+          "PERSON:FIR_37:ent_08",
+          "PERSON:FIR_39:ent_06",
+          "PERSON:FIR_43:ent_07",
+          "PERSON:FIR_59:ent_09",
+          "PERSON:FIR_61:ent_06",
+          "PERSON:FIR_74:ent_09",
+          "PERSON:FIR_81:ent_04",
+          "PERSON:FIR_87:ent_05"
+        ],
+        "node_id": "PERSON:FIR_10:ent_02",
+        "rank": 18,
+        "score": 12
+      }
+    ],
+    "transfer_amount_paise": [
+      {
+        "canonical_name": "Rajendra Singh",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_04",
+          "PERSON:FIR_05:ent_09",
+          "PERSON:FIR_09:ent_04",
+          "PERSON:FIR_15:ent_06",
+          "PERSON:FIR_21:ent_04",
+          "PERSON:FIR_23:ent_08",
+          "PERSON:FIR_35:ent_08",
+          "PERSON:FIR_41:ent_09",
+          "PERSON:FIR_52:ent_09",
+          "PERSON:FIR_62:ent_08",
+          "PERSON:FIR_65:ent_07",
+          "PERSON:FIR_68:ent_08",
+          "PERSON:FIR_79:ent_04",
+          "PERSON:FIR_88:ent_07",
+          "PERSON:FIR_93:ent_09"
+        ],
+        "node_id": "PERSON:FIR_01:ent_04",
+        "rank": 1,
+        "score": 1741025810
+      },
+      {
+        "canonical_name": "Mukhtar Ansari",
+        "collapsed_node_ids": [
+          "PERSON:FIR_10:ent_02",
+          "PERSON:FIR_11:ent_10",
+          "PERSON:FIR_17:ent_07",
+          "PERSON:FIR_19:ent_08",
+          "PERSON:FIR_37:ent_08",
+          "PERSON:FIR_39:ent_06",
+          "PERSON:FIR_43:ent_07",
+          "PERSON:FIR_59:ent_09",
+          "PERSON:FIR_61:ent_06",
+          "PERSON:FIR_74:ent_09",
+          "PERSON:FIR_81:ent_04",
+          "PERSON:FIR_87:ent_05"
+        ],
+        "node_id": "PERSON:FIR_10:ent_02",
+        "rank": 2,
+        "score": 1110456445
+      },
+      {
+        "canonical_name": "Sunil Kumar",
+        "collapsed_node_ids": [
+          "PERSON:FIR_03:ent_02",
+          "PERSON:FIR_33:ent_05",
+          "PERSON:FIR_85:ent_09"
+        ],
+        "node_id": "PERSON:FIR_03:ent_02",
+        "rank": 3,
+        "score": 451175713
+      },
+      {
+        "canonical_name": "Salman Mirza",
+        "collapsed_node_ids": [
+          "PERSON:FIR_19:ent_02",
+          "PERSON:FIR_49:ent_07"
+        ],
+        "node_id": "PERSON:FIR_19:ent_02",
+        "rank": 4,
+        "score": 419260000
+      },
+      {
+        "canonical_name": "Deepak Chauhan",
+        "collapsed_node_ids": [
+          "PERSON:FIR_09:ent_02"
+        ],
+        "node_id": "PERSON:FIR_09:ent_02",
+        "rank": 5,
+        "score": 301880000
+      },
+      {
+        "canonical_name": "Wasim Akram",
+        "collapsed_node_ids": [
+          "PERSON:FIR_12:ent_02",
+          "PERSON:FIR_67:ent_08"
+        ],
+        "node_id": "PERSON:FIR_12:ent_02",
+        "rank": 6,
+        "score": 77449540
+      },
+      {
+        "canonical_name": "Manoj Rawat",
+        "collapsed_node_ids": [
+          "PERSON:FIR_35:ent_05",
+          "PERSON:FIR_64:ent_05"
+        ],
+        "node_id": "PERSON:FIR_35:ent_05",
+        "rank": 7,
+        "score": 74290924
+      },
+      {
+        "canonical_name": "Aslam Parvez",
+        "collapsed_node_ids": [
+          "PERSON:FIR_03:ent_06",
+          "PERSON:FIR_06:ent_02"
+        ],
+        "node_id": "PERSON:FIR_03:ent_06",
+        "rank": 8,
+        "score": 69550950
+      },
+      {
+        "canonical_name": "Anand Verma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_05:ent_02"
+        ],
+        "node_id": "PERSON:FIR_05:ent_02",
+        "rank": 9,
+        "score": 67911210
+      },
+      {
+        "canonical_name": "Ramesh Chand",
+        "collapsed_node_ids": [
+          "PERSON:FIR_31:ent_05",
+          "PERSON:FIR_59:ent_03"
+        ],
+        "node_id": "PERSON:FIR_31:ent_05",
+        "rank": 10,
+        "score": 65028877
+      },
+      {
+        "canonical_name": "Bikas Sharma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_09"
+        ],
+        "node_id": "PERSON:FIR_01:ent_09",
+        "rank": 11,
+        "score": 60837737
+      },
+      {
+        "canonical_name": "Vikas Sharma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_02"
+        ],
+        "node_id": "PERSON:FIR_01:ent_02",
+        "rank": 12,
+        "score": 0
+      },
+      {
+        "canonical_name": "Pankaj Tiwari",
+        "collapsed_node_ids": [
+          "PERSON:FIR_02:ent_02"
+        ],
+        "node_id": "PERSON:FIR_02:ent_02",
+        "rank": 13,
+        "score": 0
+      },
+      {
+        "canonical_name": "Rashid Khan",
+        "collapsed_node_ids": [
+          "PERSON:FIR_04:ent_02"
+        ],
+        "node_id": "PERSON:FIR_04:ent_02",
+        "rank": 14,
+        "score": 0
+      },
+      {
+        "canonical_name": "Suresh Pal",
+        "collapsed_node_ids": [
+          "PERSON:FIR_100:ent_02"
+        ],
+        "node_id": "PERSON:FIR_100:ent_02",
+        "rank": 15,
+        "score": 0
+      },
+      {
+        "canonical_name": "Devendra Yadav",
+        "collapsed_node_ids": [
+          "PERSON:FIR_14:ent_02"
+        ],
+        "node_id": "PERSON:FIR_14:ent_02",
+        "rank": 16,
+        "score": 0
+      },
+      {
+        "canonical_name": "Imran Sheikh",
+        "collapsed_node_ids": [
+          "PERSON:FIR_18:ent_02"
+        ],
+        "node_id": "PERSON:FIR_18:ent_02",
+        "rank": 17,
+        "score": 0
+      },
+      {
+        "canonical_name": "Farooq Ahmed",
+        "collapsed_node_ids": [
+          "PERSON:FIR_23:ent_05"
+        ],
+        "node_id": "PERSON:FIR_23:ent_05",
+        "rank": 18,
+        "score": 0
+      }
+    ],
+    "unweighted_degree": [
+      {
+        "canonical_name": "Rajendra Singh",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_04",
+          "PERSON:FIR_05:ent_09",
+          "PERSON:FIR_09:ent_04",
+          "PERSON:FIR_15:ent_06",
+          "PERSON:FIR_21:ent_04",
+          "PERSON:FIR_23:ent_08",
+          "PERSON:FIR_35:ent_08",
+          "PERSON:FIR_41:ent_09",
+          "PERSON:FIR_52:ent_09",
+          "PERSON:FIR_62:ent_08",
+          "PERSON:FIR_65:ent_07",
+          "PERSON:FIR_68:ent_08",
+          "PERSON:FIR_79:ent_04",
+          "PERSON:FIR_88:ent_07",
+          "PERSON:FIR_93:ent_09"
+        ],
+        "node_id": "PERSON:FIR_01:ent_04",
+        "rank": 1,
+        "score": 21
+      },
+      {
+        "canonical_name": "Mukhtar Ansari",
+        "collapsed_node_ids": [
+          "PERSON:FIR_10:ent_02",
+          "PERSON:FIR_11:ent_10",
+          "PERSON:FIR_17:ent_07",
+          "PERSON:FIR_19:ent_08",
+          "PERSON:FIR_37:ent_08",
+          "PERSON:FIR_39:ent_06",
+          "PERSON:FIR_43:ent_07",
+          "PERSON:FIR_59:ent_09",
+          "PERSON:FIR_61:ent_06",
+          "PERSON:FIR_74:ent_09",
+          "PERSON:FIR_81:ent_04",
+          "PERSON:FIR_87:ent_05"
+        ],
+        "node_id": "PERSON:FIR_10:ent_02",
+        "rank": 2,
+        "score": 12
+      },
+      {
+        "canonical_name": "Sunil Kumar",
+        "collapsed_node_ids": [
+          "PERSON:FIR_03:ent_02",
+          "PERSON:FIR_33:ent_05",
+          "PERSON:FIR_85:ent_09"
+        ],
+        "node_id": "PERSON:FIR_03:ent_02",
+        "rank": 3,
+        "score": 5
+      },
+      {
+        "canonical_name": "Vikas Sharma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_02"
+        ],
+        "node_id": "PERSON:FIR_01:ent_02",
+        "rank": 4,
+        "score": 4
+      },
+      {
+        "canonical_name": "Bikas Sharma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_09"
+        ],
+        "node_id": "PERSON:FIR_01:ent_09",
+        "rank": 5,
+        "score": 4
+      },
+      {
+        "canonical_name": "Anand Verma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_05:ent_02"
+        ],
+        "node_id": "PERSON:FIR_05:ent_02",
+        "rank": 6,
+        "score": 4
+      },
+      {
+        "canonical_name": "Wasim Akram",
+        "collapsed_node_ids": [
+          "PERSON:FIR_12:ent_02",
+          "PERSON:FIR_67:ent_08"
+        ],
+        "node_id": "PERSON:FIR_12:ent_02",
+        "rank": 7,
+        "score": 4
+      },
+      {
+        "canonical_name": "Rashid Khan",
+        "collapsed_node_ids": [
+          "PERSON:FIR_04:ent_02"
+        ],
+        "node_id": "PERSON:FIR_04:ent_02",
+        "rank": 8,
+        "score": 3
+      },
+      {
+        "canonical_name": "Deepak Chauhan",
+        "collapsed_node_ids": [
+          "PERSON:FIR_09:ent_02"
+        ],
+        "node_id": "PERSON:FIR_09:ent_02",
+        "rank": 9,
+        "score": 3
+      },
+      {
+        "canonical_name": "Salman Mirza",
+        "collapsed_node_ids": [
+          "PERSON:FIR_19:ent_02",
+          "PERSON:FIR_49:ent_07"
+        ],
+        "node_id": "PERSON:FIR_19:ent_02",
+        "rank": 10,
+        "score": 3
+      },
+      {
+        "canonical_name": "Farooq Ahmed",
+        "collapsed_node_ids": [
+          "PERSON:FIR_23:ent_05"
+        ],
+        "node_id": "PERSON:FIR_23:ent_05",
+        "rank": 11,
+        "score": 3
+      },
+      {
+        "canonical_name": "Manoj Rawat",
+        "collapsed_node_ids": [
+          "PERSON:FIR_35:ent_05",
+          "PERSON:FIR_64:ent_05"
+        ],
+        "node_id": "PERSON:FIR_35:ent_05",
+        "rank": 12,
+        "score": 3
+      },
+      {
+        "canonical_name": "Pankaj Tiwari",
+        "collapsed_node_ids": [
+          "PERSON:FIR_02:ent_02"
+        ],
+        "node_id": "PERSON:FIR_02:ent_02",
+        "rank": 13,
+        "score": 2
+      },
+      {
+        "canonical_name": "Aslam Parvez",
+        "collapsed_node_ids": [
+          "PERSON:FIR_03:ent_06",
+          "PERSON:FIR_06:ent_02"
+        ],
+        "node_id": "PERSON:FIR_03:ent_06",
+        "rank": 14,
+        "score": 2
+      },
+      {
+        "canonical_name": "Suresh Pal",
+        "collapsed_node_ids": [
+          "PERSON:FIR_100:ent_02"
+        ],
+        "node_id": "PERSON:FIR_100:ent_02",
+        "rank": 15,
+        "score": 2
+      },
+      {
+        "canonical_name": "Devendra Yadav",
+        "collapsed_node_ids": [
+          "PERSON:FIR_14:ent_02"
+        ],
+        "node_id": "PERSON:FIR_14:ent_02",
+        "rank": 16,
+        "score": 2
+      },
+      {
+        "canonical_name": "Imran Sheikh",
+        "collapsed_node_ids": [
+          "PERSON:FIR_18:ent_02"
+        ],
+        "node_id": "PERSON:FIR_18:ent_02",
+        "rank": 17,
+        "score": 2
+      },
+      {
+        "canonical_name": "Ramesh Chand",
+        "collapsed_node_ids": [
+          "PERSON:FIR_31:ent_05",
+          "PERSON:FIR_59:ent_03"
+        ],
+        "node_id": "PERSON:FIR_31:ent_05",
+        "rank": 18,
+        "score": 2
+      }
+    ],
+    "weighted_pagerank": [
+      {
+        "canonical_name": "Rajendra Singh",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_04",
+          "PERSON:FIR_05:ent_09",
+          "PERSON:FIR_09:ent_04",
+          "PERSON:FIR_15:ent_06",
+          "PERSON:FIR_21:ent_04",
+          "PERSON:FIR_23:ent_08",
+          "PERSON:FIR_35:ent_08",
+          "PERSON:FIR_41:ent_09",
+          "PERSON:FIR_52:ent_09",
+          "PERSON:FIR_62:ent_08",
+          "PERSON:FIR_65:ent_07",
+          "PERSON:FIR_68:ent_08",
+          "PERSON:FIR_79:ent_04",
+          "PERSON:FIR_88:ent_07",
+          "PERSON:FIR_93:ent_09"
+        ],
+        "node_id": "PERSON:FIR_01:ent_04",
+        "rank": 1,
+        "score": 0.008632
+      },
+      {
+        "canonical_name": "Mukhtar Ansari",
+        "collapsed_node_ids": [
+          "PERSON:FIR_10:ent_02",
+          "PERSON:FIR_11:ent_10",
+          "PERSON:FIR_17:ent_07",
+          "PERSON:FIR_19:ent_08",
+          "PERSON:FIR_37:ent_08",
+          "PERSON:FIR_39:ent_06",
+          "PERSON:FIR_43:ent_07",
+          "PERSON:FIR_59:ent_09",
+          "PERSON:FIR_61:ent_06",
+          "PERSON:FIR_74:ent_09",
+          "PERSON:FIR_81:ent_04",
+          "PERSON:FIR_87:ent_05"
+        ],
+        "node_id": "PERSON:FIR_10:ent_02",
+        "rank": 2,
+        "score": 0.005073
+      },
+      {
+        "canonical_name": "Sunil Kumar",
+        "collapsed_node_ids": [
+          "PERSON:FIR_03:ent_02",
+          "PERSON:FIR_33:ent_05",
+          "PERSON:FIR_85:ent_09"
+        ],
+        "node_id": "PERSON:FIR_03:ent_02",
+        "rank": 3,
+        "score": 0.001936
+      },
+      {
+        "canonical_name": "Anand Verma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_05:ent_02"
+        ],
+        "node_id": "PERSON:FIR_05:ent_02",
+        "rank": 4,
+        "score": 0.001611
+      },
+      {
+        "canonical_name": "Bikas Sharma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_09"
+        ],
+        "node_id": "PERSON:FIR_01:ent_09",
+        "rank": 5,
+        "score": 0.001594
+      },
+      {
+        "canonical_name": "Wasim Akram",
+        "collapsed_node_ids": [
+          "PERSON:FIR_12:ent_02",
+          "PERSON:FIR_67:ent_08"
+        ],
+        "node_id": "PERSON:FIR_12:ent_02",
+        "rank": 6,
+        "score": 0.001588
+      },
+      {
+        "canonical_name": "Manoj Rawat",
+        "collapsed_node_ids": [
+          "PERSON:FIR_35:ent_05",
+          "PERSON:FIR_64:ent_05"
+        ],
+        "node_id": "PERSON:FIR_35:ent_05",
+        "rank": 7,
+        "score": 0.001485
+      },
+      {
+        "canonical_name": "Deepak Chauhan",
+        "collapsed_node_ids": [
+          "PERSON:FIR_09:ent_02"
+        ],
+        "node_id": "PERSON:FIR_09:ent_02",
+        "rank": 8,
+        "score": 0.001474
+      },
+      {
+        "canonical_name": "Ramesh Chand",
+        "collapsed_node_ids": [
+          "PERSON:FIR_31:ent_05",
+          "PERSON:FIR_59:ent_03"
+        ],
+        "node_id": "PERSON:FIR_31:ent_05",
+        "rank": 9,
+        "score": 0.001473
+      },
+      {
+        "canonical_name": "Salman Mirza",
+        "collapsed_node_ids": [
+          "PERSON:FIR_19:ent_02",
+          "PERSON:FIR_49:ent_07"
+        ],
+        "node_id": "PERSON:FIR_19:ent_02",
+        "rank": 10,
+        "score": 0.001452
+      },
+      {
+        "canonical_name": "Aslam Parvez",
+        "collapsed_node_ids": [
+          "PERSON:FIR_03:ent_06",
+          "PERSON:FIR_06:ent_02"
+        ],
+        "node_id": "PERSON:FIR_03:ent_06",
+        "rank": 11,
+        "score": 0.001364
+      },
+      {
+        "canonical_name": "Vikas Sharma",
+        "collapsed_node_ids": [
+          "PERSON:FIR_01:ent_02"
+        ],
+        "node_id": "PERSON:FIR_01:ent_02",
+        "rank": 12,
+        "score": 0.001363
+      },
+      {
+        "canonical_name": "Farooq Ahmed",
+        "collapsed_node_ids": [
+          "PERSON:FIR_23:ent_05"
+        ],
+        "node_id": "PERSON:FIR_23:ent_05",
+        "rank": 13,
+        "score": 0.001235
+      },
+      {
+        "canonical_name": "Rashid Khan",
+        "collapsed_node_ids": [
+          "PERSON:FIR_04:ent_02"
+        ],
+        "node_id": "PERSON:FIR_04:ent_02",
+        "rank": 14,
+        "score": 0.001225
+      },
+      {
+        "canonical_name": "Suresh Pal",
+        "collapsed_node_ids": [
+          "PERSON:FIR_100:ent_02"
+        ],
+        "node_id": "PERSON:FIR_100:ent_02",
+        "rank": 15,
+        "score": 0.001219
+      },
+      {
+        "canonical_name": "Pankaj Tiwari",
+        "collapsed_node_ids": [
+          "PERSON:FIR_02:ent_02"
+        ],
+        "node_id": "PERSON:FIR_02:ent_02",
+        "rank": 16,
+        "score": 0.001128
+      },
+      {
+        "canonical_name": "Devendra Yadav",
+        "collapsed_node_ids": [
+          "PERSON:FIR_14:ent_02"
+        ],
+        "node_id": "PERSON:FIR_14:ent_02",
+        "rank": 17,
+        "score": 0.001122
+      },
+      {
+        "canonical_name": "Imran Sheikh",
+        "collapsed_node_ids": [
+          "PERSON:FIR_18:ent_02"
+        ],
+        "node_id": "PERSON:FIR_18:ent_02",
+        "rank": 18,
+        "score": 0.001097
+      }
+    ]
+  },
+  "mode": "resolved",
+  "person_nodes_ranked": 18
+}
