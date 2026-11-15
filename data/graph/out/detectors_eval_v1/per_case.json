@@ -1,0 +1,5306 @@
+{
+  "case_demo_v2": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.945652,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.848881,
+        "mean_rank": 12.625,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.981343,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_151": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.074074
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.75,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.893657,
+        "mean_rank": 9.625,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.981343,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_152": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.947917,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.076923
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.951923,
+        "mean_rank": 5.625,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.980769,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_153": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.946809,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.078431
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.875,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.836538,
+        "mean_rank": 13.125,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.976923,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_154": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.947917,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.076923
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.875,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.93097,
+        "mean_rank": 7.125,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.977612,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_155": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.933333,
+        "mean_rank": 5.5,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.7143,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.821429,
+        "mean_rank": 13.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.059701
+      },
+      "volume": {
+        "auroc": 0.97619,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_156": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.945652,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.875,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.820312,
+        "mean_rank": 14.0,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996094,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.980469,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_157": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.944444,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.8571,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.912313,
+        "mean_rank": 8.375,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.973881,
+        "mean_rank": 4.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_158": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.946809,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.078431
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.5556,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.851562,
+        "mean_rank": 12.0,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.976562,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_159": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.945652,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.625,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.943548,
+        "mean_rank": 6.0,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.060606
+      },
+      "volume": {
+        "auroc": 0.975806,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_160": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.94898,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.075472
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.8889,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.933712,
+        "mean_rank": 6.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057143
+      },
+      "volume": {
+        "auroc": 0.977273,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_161": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.952128,
+        "mean_rank": 4.75,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.078431
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.5,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.918561,
+        "mean_rank": 7.875,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057143
+      },
+      "volume": {
+        "auroc": 0.973485,
+        "mean_rank": 4.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_162": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.947917,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.076923
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.5714,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.90873,
+        "mean_rank": 8.25,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.059701
+      },
+      "volume": {
+        "auroc": 0.97619,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_163": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.945652,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.961538,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.976923,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_164": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.944444,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.900391,
+        "mean_rank": 8.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.976562,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_165": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.942935,
+        "mean_rank": 5.125,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.875,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.953125,
+        "mean_rank": 5.5,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.976562,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_166": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.943182,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.083333
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.826923,
+        "mean_rank": 13.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996154,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.980769,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_167": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.945652,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.5,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.8125,
+        "mean_rank": 14.125,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.060606
+      },
+      "volume": {
+        "auroc": 0.979839,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_168": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.074074
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.875,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.837302,
+        "mean_rank": 12.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996032,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.059701
+      },
+      "volume": {
+        "auroc": 0.980159,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_169": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.944149,
+        "mean_rank": 5.125,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.078431
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.908582,
+        "mean_rank": 8.625,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.981343,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_170": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.946429,
+        "mean_rank": 5.125,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.075472
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.844697,
+        "mean_rank": 12.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057143
+      },
+      "volume": {
+        "auroc": 0.981061,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_171": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.946429,
+        "mean_rank": 5.125,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.075472
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.75,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.821154,
+        "mean_rank": 14.125,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996154,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.973077,
+        "mean_rank": 4.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_172": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.941489,
+        "mean_rank": 5.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.078431
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.5,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.944231,
+        "mean_rank": 6.125,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.973077,
+        "mean_rank": 4.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_173": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95098,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.072727
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.625,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.938462,
+        "mean_rank": 6.5,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996154,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.976923,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_174": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.074074
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.790323,
+        "mean_rank": 15.5,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.987903,
+        "mean_rank": 3.25,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.060606
+      },
+      "volume": {
+        "auroc": 0.979839,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_175": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.074074
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.8889,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.936567,
+        "mean_rank": 6.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.981343,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_176": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.9475,
+        "mean_rank": 5.125,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.074074
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.840385,
+        "mean_rank": 12.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996154,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.980769,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_177": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.943878,
+        "mean_rank": 5.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.075472
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.5556,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.805769,
+        "mean_rank": 15.125,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996154,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.980769,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_178": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.94898,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.075472
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.842803,
+        "mean_rank": 12.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057143
+      },
+      "volume": {
+        "auroc": 0.981061,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_179": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.942935,
+        "mean_rank": 5.125,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.875,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.977612,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.970149,
+        "mean_rank": 4.5,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_180": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.94898,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.075472
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.970149,
+        "mean_rank": 4.5,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.977612,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_181": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95,
+        "mean_rank": 4.75,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.75,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.843254,
+        "mean_rank": 12.375,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996032,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.059701
+      },
+      "volume": {
+        "auroc": 0.980159,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_182": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.942708,
+        "mean_rank": 5.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.076923
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.6667,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.825,
+        "mean_rank": 13.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.976923,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_183": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.933333,
+        "mean_rank": 5.5,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.923507,
+        "mean_rank": 7.625,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.981343,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_184": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.933333,
+        "mean_rank": 5.5,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.898897,
+        "mean_rank": 9.375,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.055556
+      },
+      "volume": {
+        "auroc": 0.977941,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_185": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.946809,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.078431
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.8571,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.957031,
+        "mean_rank": 5.25,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.972656,
+        "mean_rank": 4.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_186": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.936111,
+        "mean_rank": 5.375,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.810547,
+        "mean_rank": 14.625,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.980469,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_187": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.951923,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.071429
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.808594,
+        "mean_rank": 14.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.972656,
+        "mean_rank": 4.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_188": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.944444,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.6667,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.918561,
+        "mean_rank": 7.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057143
+      },
+      "volume": {
+        "auroc": 0.977273,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_189": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.945652,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.6667,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.921875,
+        "mean_rank": 7.5,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.976562,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_190": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.944444,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.865234,
+        "mean_rank": 11.125,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.976562,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_191": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.074074
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.8889,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.904297,
+        "mean_rank": 8.625,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.972656,
+        "mean_rank": 4.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_192": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.074074
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.859127,
+        "mean_rank": 11.375,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.059701
+      },
+      "volume": {
+        "auroc": 0.97619,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_193": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.95,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.074074
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.859848,
+        "mean_rank": 11.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057143
+      },
+      "volume": {
+        "auroc": 0.981061,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_194": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.947917,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.076923
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.625,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.962121,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057143
+      },
+      "volume": {
+        "auroc": 0.981061,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_195": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.944444,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.875,
+        "mean_rank": 10.25,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.060606
+      },
+      "volume": {
+        "auroc": 0.979839,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_196": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.938725,
+        "mean_rank": 5.625,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.072727
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.935606,
+        "mean_rank": 6.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057143
+      },
+      "volume": {
+        "auroc": 0.977273,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_197": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.946809,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.078431
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.917308,
+        "mean_rank": 7.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.057971
+      },
+      "volume": {
+        "auroc": 0.980769,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_198": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.9375,
+        "mean_rank": 5.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.083333
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.875,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.867063,
+        "mean_rank": 10.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.996032,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.059701
+      },
+      "volume": {
+        "auroc": 0.97619,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_199": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.941489,
+        "mean_rank": 5.25,
+        "precision_at_4": 0.5,
+        "recall_at_8": 0.75
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.078431
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 0.6667,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.960938,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.058824
+      },
+      "volume": {
+        "auroc": 0.976562,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "seed_200": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.944444,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.081633
+      }
+    },
+    "cut": {
+      "articulation_couriers_share": 0.0,
+      "cov_0.6": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      },
+      "cov_1.0": {
+        "communities_variant": {
+          "adjusted_agreement_gang_a": 1.0,
+          "avg_non_courier_persons": 0,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        },
+        "true_gangs": {
+          "avg_non_courier_persons": 0,
+          "baseline_betweenness_exact": false,
+          "cut_size": null,
+          "exact_couriers": false,
+          "finite": false,
+          "has_cr1": false,
+          "has_cr2": false,
+          "has_decoy": false,
+          "skipped": false
+        }
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.832661,
+        "mean_rank": 12.875,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 0.995968,
+        "mean_rank": 2.75,
+        "precision_at_4": 0.75,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.060606
+      },
+      "volume": {
+        "auroc": 0.975806,
+        "mean_rank": 4.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  }
+}

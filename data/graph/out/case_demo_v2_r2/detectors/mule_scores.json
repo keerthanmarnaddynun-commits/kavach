@@ -1,0 +1,2318 @@
+[
+  {
+    "evidence_rows": [
+      57,
+      59,
+      62,
+      69,
+      148,
+      150,
+      151,
+      162,
+      174,
+      256
+    ],
+    "features": {
+      "dwell_score": 0.862129,
+      "fan_in": 31,
+      "fan_in_norm": 1.0,
+      "fan_out": 1,
+      "median_dwell_hours": 3.8381,
+      "passthrough": 1.0,
+      "score_no_threshold": 0.956915,
+      "structuring_share": 0.72549,
+      "total_in_paise": 209630000,
+      "total_out_paise": 209630000,
+      "volume_paise": 419260000
+    },
+    "id": "15329318393",
+    "reasons": [
+      "High fan-in: 31 distinct senders",
+      "High pass-through ratio: 100.0% turnover",
+      "Rapid onward movement: median dwell 3.8 hours",
+      "Structuring pattern: 72.5% deposits just below reporting threshold"
+    ],
+    "score": 0.91063
+  },
+  {
+    "evidence_rows": [
+      7,
+      12,
+      17,
+      21,
+      27,
+      101,
+      105,
+      110,
+      121,
+      126
+    ],
+    "features": {
+      "dwell_score": 0.871359,
+      "fan_in": 29,
+      "fan_in_norm": 0.935484,
+      "fan_out": 1,
+      "median_dwell_hours": 3.5432,
+      "passthrough": 1.0,
+      "score_no_threshold": 0.935606,
+      "structuring_share": 0.652174,
+      "total_in_paise": 183020000,
+      "total_out_paise": 183020000,
+      "volume_paise": 366040000
+    },
+    "id": "258506431713",
+    "reasons": [
+      "High fan-in: 29 distinct senders",
+      "High pass-through ratio: 100.0% turnover",
+      "Rapid onward movement: median dwell 3.5 hours",
+      "Structuring pattern: 65.2% deposits just below reporting threshold"
+    ],
+    "score": 0.87892
+  },
+  {
+    "evidence_rows": [
+      61,
+      70,
+      81,
+      160,
+      168,
+      169,
+      170,
+      172,
+      246,
+      263
+    ],
+    "features": {
+      "dwell_score": 0.876037,
+      "fan_in": 25,
+      "fan_in_norm": 0.806452,
+      "fan_out": 1,
+      "median_dwell_hours": 3.3961,
+      "passthrough": 1.0,
+      "score_no_threshold": 0.888681,
+      "structuring_share": 0.65,
+      "total_in_paise": 150940000,
+      "total_out_paise": 150940000,
+      "volume_paise": 301880000
+    },
+    "id": "6869261796405377",
+    "reasons": [
+      "High fan-in: 25 distinct senders",
+      "High pass-through ratio: 100.0% turnover",
+      "Rapid onward movement: median dwell 3.4 hours",
+      "Structuring pattern: 65.0% deposits just below reporting threshold"
+    ],
+    "score": 0.840945
+  },
+  {
+    "evidence_rows": [
+      790,
+      800,
+      801,
+      806,
+      821,
+      889,
+      891,
+      897,
+      997,
+      1006
+    ],
+    "features": {
+      "dwell_score": 0.863309,
+      "fan_in": 16,
+      "fan_in_norm": 0.516129,
+      "fan_out": 1,
+      "median_dwell_hours": 3.8,
+      "passthrough": 1.0,
+      "score_no_threshold": 0.775833,
+      "structuring_share": 0.578947,
+      "total_in_paise": 67250000,
+      "total_out_paise": 67250000,
+      "volume_paise": 134500000
+    },
+    "id": "62904228421020",
+    "reasons": [
+      "High fan-in: 16 distinct senders",
+      "High pass-through ratio: 100.0% turnover",
+      "Rapid onward movement: median dwell 3.8 hours",
+      "Structuring pattern: 57.9% deposits just below reporting threshold"
+    ],
+    "score": 0.736456
+  },
+  {
+    "evidence_rows": [
+      2,
+      133,
+      248,
+      258,
+      273,
+      327,
+      328,
+      329,
+      391,
+      395
+    ],
+    "features": {
+      "dwell_score": 0.639526,
+      "fan_in": 22,
+      "fan_in_norm": 0.709677,
+      "fan_out": 23,
+      "median_dwell_hours": 13.5278,
+      "passthrough": 0.867428,
+      "score_no_threshold": 0.737052,
+      "structuring_share": 0.0,
+      "total_in_paise": 45589832,
+      "total_out_paise": 39545881,
+      "volume_paise": 85135713
+    },
+    "id": "82788957986",
+    "reasons": [
+      "High fan-in: 22 distinct senders",
+      "High pass-through ratio: 86.7% turnover"
+    ],
+    "score": 0.589642
+  },
+  {
+    "evidence_rows": [
+      54,
+      96,
+      110,
+      115,
+      130,
+      136,
+      158,
+      223,
+      289,
+      348
+    ],
+    "features": {
+      "dwell_score": 0.524617,
+      "fan_in": 23,
+      "fan_in_norm": 0.741935,
+      "fan_out": 20,
+      "median_dwell_hours": 21.7476,
+      "passthrough": 0.860669,
+      "score_no_threshold": 0.711128,
+      "structuring_share": 0.0,
+      "total_in_paise": 52451410,
+      "total_out_paise": 45143326,
+      "volume_paise": 97594736
+    },
+    "id": "15359627630097",
+    "reasons": [
+      "High fan-in: 23 distinct senders",
+      "High pass-through ratio: 86.1% turnover"
+    ],
+    "score": 0.568902
+  },
+  {
+    "evidence_rows": [
+      94,
+      97,
+      122,
+      160,
+      193,
+      202,
+      249,
+      287,
+      304,
+      305
+    ],
+    "features": {
+      "dwell_score": 0.536295,
+      "fan_in": 19,
+      "fan_in_norm": 0.612903,
+      "fan_out": 19,
+      "median_dwell_hours": 20.7515,
+      "passthrough": 0.98555,
+      "score_no_threshold": 0.705415,
+      "structuring_share": 0.0,
+      "total_in_paise": 47960784,
+      "total_out_paise": 47267752,
+      "volume_paise": 95228536
+    },
+    "id": "35273976748813",
+    "reasons": [
+      "High fan-in: 19 distinct senders",
+      "High pass-through ratio: 98.6% turnover"
+    ],
+    "score": 0.564332
+  },
+  {
+    "evidence_rows": [
+      5,
+      23,
+      159,
+      183,
+      185,
+      190,
+      211,
+      218,
+      231,
+      239
+    ],
+    "features": {
+      "dwell_score": 0.56146,
+      "fan_in": 22,
+      "fan_in_norm": 0.709677,
+      "fan_out": 20,
+      "median_dwell_hours": 18.7457,
+      "passthrough": 0.826944,
+      "score_no_threshold": 0.700005,
+      "structuring_share": 0.0,
+      "total_in_paise": 36406246,
+      "total_out_paise": 44025070,
+      "volume_paise": 80431316
+    },
+    "id": "53839750530",
+    "reasons": [
+      "High fan-in: 22 distinct senders",
+      "High pass-through ratio: 82.7% turnover"
+    ],
+    "score": 0.560004
+  },
+  {
+    "evidence_rows": [
+      113,
+      142,
+      146,
+      167,
+      196,
+      214,
+      221,
+      237,
+      255,
+      292
+    ],
+    "features": {
+      "dwell_score": 0.541554,
+      "fan_in": 21,
+      "fan_in_norm": 0.677419,
+      "fan_out": 16,
+      "median_dwell_hours": 20.3169,
+      "passthrough": 0.87386,
+      "score_no_threshold": 0.696349,
+      "structuring_share": 0.0,
+      "total_in_paise": 34919175,
+      "total_out_paise": 39959701,
+      "volume_paise": 74878876
+    },
+    "id": "45784370118033",
+    "reasons": [
+      "High fan-in: 21 distinct senders",
+      "High pass-through ratio: 87.4% turnover"
+    ],
+    "score": 0.557079
+  },
+  {
+    "evidence_rows": [
+      6,
+      46,
+      123,
+      132,
+      157,
+      226,
+      236,
+      294,
+      297,
+      320
+    ],
+    "features": {
+      "dwell_score": 0.528185,
+      "fan_in": 20,
+      "fan_in_norm": 0.645161,
+      "fan_out": 20,
+      "median_dwell_hours": 21.4386,
+      "passthrough": 0.874789,
+      "score_no_threshold": 0.680365,
+      "structuring_share": 0.0,
+      "total_in_paise": 34545914,
+      "total_out_paise": 39490573,
+      "volume_paise": 74036487
+    },
+    "id": "41509839301031",
+    "reasons": [
+      "High fan-in: 20 distinct senders",
+      "High pass-through ratio: 87.5% turnover"
+    ],
+    "score": 0.544292
+  },
+  {
+    "evidence_rows": [
+      40,
+      49,
+      56,
+      108,
+      123,
+      230,
+      253,
+      283,
+      292,
+      328
+    ],
+    "features": {
+      "dwell_score": 0.49026,
+      "fan_in": 22,
+      "fan_in_norm": 0.709677,
+      "fan_out": 19,
+      "median_dwell_hours": 24.9536,
+      "passthrough": 0.811755,
+      "score_no_threshold": 0.673009,
+      "structuring_share": 0.0,
+      "total_in_paise": 51726644,
+      "total_out_paise": 41989386,
+      "volume_paise": 93716030
+    },
+    "id": "61708716508170",
+    "reasons": [
+      "High fan-in: 22 distinct senders",
+      "High pass-through ratio: 81.2% turnover"
+    ],
+    "score": 0.538407
+  },
+  {
+    "evidence_rows": [
+      16,
+      36,
+      57,
+      58,
+      125,
+      159,
+      219,
+      270,
+      278,
+      282
+    ],
+    "features": {
+      "dwell_score": 0.535704,
+      "fan_in": 19,
+      "fan_in_norm": 0.612903,
+      "fan_out": 15,
+      "median_dwell_hours": 20.8008,
+      "passthrough": 0.880982,
+      "score_no_threshold": 0.672553,
+      "structuring_share": 0.0,
+      "total_in_paise": 30650948,
+      "total_out_paise": 34791816,
+      "volume_paise": 65442764
+    },
+    "id": "109751102939",
+    "reasons": [
+      "High fan-in: 19 distinct senders",
+      "High pass-through ratio: 88.1% turnover"
+    ],
+    "score": 0.538042
+  },
+  {
+    "evidence_rows": [
+      76,
+      93,
+      119,
+      183,
+      234,
+      297,
+      336,
+      348,
+      363,
+      412
+    ],
+    "features": {
+      "dwell_score": 0.532115,
+      "fan_in": 16,
+      "fan_in_norm": 0.516129,
+      "fan_out": 16,
+      "median_dwell_hours": 21.1031,
+      "passthrough": 0.971451,
+      "score_no_threshold": 0.663413,
+      "structuring_share": 0.0,
+      "total_in_paise": 36021447,
+      "total_out_paise": 34993059,
+      "volume_paise": 71014506
+    },
+    "id": "2363750605033511",
+    "reasons": [
+      "High fan-in: 16 distinct senders",
+      "High pass-through ratio: 97.1% turnover"
+    ],
+    "score": 0.53073
+  },
+  {
+    "evidence_rows": [
+      11,
+      129,
+      315,
+      367,
+      462,
+      478,
+      486,
+      523,
+      526,
+      558
+    ],
+    "features": {
+      "dwell_score": 0.543978,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 16,
+      "median_dwell_hours": 20.1194,
+      "passthrough": 0.91124,
+      "score_no_threshold": 0.660401,
+      "structuring_share": 0.0,
+      "total_in_paise": 36007011,
+      "total_out_paise": 39514298,
+      "volume_paise": 75521309
+    },
+    "id": "4178108013267736",
+    "reasons": [
+      "High fan-in: 17 distinct senders",
+      "High pass-through ratio: 91.1% turnover"
+    ],
+    "score": 0.528321
+  },
+  {
+    "evidence_rows": [
+      77,
+      88,
+      92,
+      97,
+      112,
+      133,
+      154,
+      224,
+      337,
+      359
+    ],
+    "features": {
+      "dwell_score": 0.52031,
+      "fan_in": 16,
+      "fan_in_norm": 0.516129,
+      "fan_out": 17,
+      "median_dwell_hours": 22.1264,
+      "passthrough": 0.969494,
+      "score_no_threshold": 0.659112,
+      "structuring_share": 0.0,
+      "total_in_paise": 34966935,
+      "total_out_paise": 33900236,
+      "volume_paise": 68867171
+    },
+    "id": "580831367837",
+    "reasons": [
+      "High fan-in: 16 distinct senders",
+      "High pass-through ratio: 96.9% turnover"
+    ],
+    "score": 0.52729
+  },
+  {
+    "evidence_rows": [
+      65,
+      137,
+      175,
+      232,
+      233,
+      271,
+      277,
+      396,
+      437,
+      474
+    ],
+    "features": {
+      "dwell_score": 0.604291,
+      "fan_in": 13,
+      "fan_in_norm": 0.419355,
+      "fan_out": 16,
+      "median_dwell_hours": 15.716,
+      "passthrough": 0.999692,
+      "score_no_threshold": 0.658503,
+      "structuring_share": 0.0,
+      "total_in_paise": 28147663,
+      "total_out_paise": 28156331,
+      "volume_paise": 56303994
+    },
+    "id": "347451712368",
+    "reasons": [
+      "High fan-in: 13 distinct senders",
+      "High pass-through ratio: 100.0% turnover"
+    ],
+    "score": 0.526802
+  },
+  {
+    "evidence_rows": [
+      68,
+      91,
+      106,
+      149,
+      169,
+      212,
+      266,
+      281,
+      286,
+      307
+    ],
+    "features": {
+      "dwell_score": 0.503508,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 20,
+      "median_dwell_hours": 23.6656,
+      "passthrough": 0.915944,
+      "score_no_threshold": 0.649224,
+      "structuring_share": 0.0,
+      "total_in_paise": 38490416,
+      "total_out_paise": 42022669,
+      "volume_paise": 80513085
+    },
+    "id": "66030293095872",
+    "reasons": [
+      "High fan-in: 17 distinct senders",
+      "High pass-through ratio: 91.6% turnover"
+    ],
+    "score": 0.519379
+  },
+  {
+    "evidence_rows": [
+      77,
+      89,
+      98,
+      117,
+      152,
+      195,
+      238,
+      340,
+      355,
+      375
+    ],
+    "features": {
+      "dwell_score": 0.494551,
+      "fan_in": 18,
+      "fan_in_norm": 0.580645,
+      "fan_out": 19,
+      "median_dwell_hours": 24.5289,
+      "passthrough": 0.871673,
+      "score_no_threshold": 0.644687,
+      "structuring_share": 0.0,
+      "total_in_paise": 36846038,
+      "total_out_paise": 42270482,
+      "volume_paise": 79116520
+    },
+    "id": "917130329284",
+    "reasons": [
+      "High fan-in: 18 distinct senders",
+      "High pass-through ratio: 87.2% turnover"
+    ],
+    "score": 0.515749
+  },
+  {
+    "evidence_rows": [
+      84,
+      104,
+      134,
+      161,
+      179,
+      182,
+      187,
+      199,
+      227,
+      239
+    ],
+    "features": {
+      "dwell_score": 0.559868,
+      "fan_in": 23,
+      "fan_in_norm": 0.741935,
+      "fan_out": 19,
+      "median_dwell_hours": 18.8672,
+      "passthrough": 0.595806,
+      "score_no_threshold": 0.639374,
+      "structuring_share": 0.0,
+      "total_in_paise": 61380813,
+      "total_out_paise": 36571064,
+      "volume_paise": 97951877
+    },
+    "id": "23472096738",
+    "reasons": [
+      "High fan-in: 23 distinct senders"
+    ],
+    "score": 0.511499
+  },
+  {
+    "evidence_rows": [
+      35,
+      79,
+      90,
+      107,
+      109,
+      114,
+      132,
+      191,
+      208,
+      331
+    ],
+    "features": {
+      "dwell_score": 0.436357,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 14,
+      "median_dwell_hours": 31.0008,
+      "passthrough": 0.951571,
+      "score_no_threshold": 0.639373,
+      "structuring_share": 0.0,
+      "total_in_paise": 33950750,
+      "total_out_paise": 32306563,
+      "volume_paise": 66257313
+    },
+    "id": "52037569414",
+    "reasons": [
+      "High fan-in: 17 distinct senders",
+      "High pass-through ratio: 95.2% turnover"
+    ],
+    "score": 0.511498
+  },
+  {
+    "evidence_rows": [
+      4,
+      9,
+      34,
+      36,
+      138,
+      227,
+      243,
+      284,
+      299,
+      318
+    ],
+    "features": {
+      "dwell_score": 0.51155,
+      "fan_in": 23,
+      "fan_in_norm": 0.741935,
+      "fan_out": 16,
+      "median_dwell_hours": 22.9162,
+      "passthrough": 0.636934,
+      "score_no_threshold": 0.637127,
+      "structuring_share": 0.0,
+      "total_in_paise": 50796474,
+      "total_out_paise": 32353983,
+      "volume_paise": 83150457
+    },
+    "id": "98496965328710",
+    "reasons": [
+      "High fan-in: 23 distinct senders"
+    ],
+    "score": 0.509702
+  },
+  {
+    "evidence_rows": [
+      47,
+      178,
+      193,
+      235,
+      341,
+      371,
+      380,
+      524,
+      531,
+      563
+    ],
+    "features": {
+      "dwell_score": 0.494792,
+      "fan_in": 16,
+      "fan_in_norm": 0.516129,
+      "fan_out": 20,
+      "median_dwell_hours": 24.5053,
+      "passthrough": 0.923961,
+      "score_no_threshold": 0.636908,
+      "structuring_share": 0.0,
+      "total_in_paise": 37194280,
+      "total_out_paise": 40255260,
+      "volume_paise": 77449540
+    },
+    "id": "34808613171274",
+    "reasons": [
+      "High fan-in: 16 distinct senders",
+      "High pass-through ratio: 92.4% turnover"
+    ],
+    "score": 0.509527
+  },
+  {
+    "evidence_rows": [
+      37,
+      73,
+      84,
+      155,
+      240,
+      376,
+      387,
+      428,
+      449,
+      473
+    ],
+    "features": {
+      "dwell_score": 0.569819,
+      "fan_in": 14,
+      "fan_in_norm": 0.451613,
+      "fan_out": 13,
+      "median_dwell_hours": 18.1186,
+      "passthrough": 0.915923,
+      "score_no_threshold": 0.633649,
+      "structuring_share": 0.0,
+      "total_in_paise": 32519167,
+      "total_out_paise": 29785059,
+      "volume_paise": 62304226
+    },
+    "id": "5964990913341232",
+    "reasons": [
+      "High fan-in: 14 distinct senders",
+      "High pass-through ratio: 91.6% turnover"
+    ],
+    "score": 0.50692
+  },
+  {
+    "evidence_rows": [
+      106,
+      113,
+      145,
+      165,
+      181,
+      196,
+      342,
+      355,
+      401,
+      402
+    ],
+    "features": {
+      "dwell_score": 0.483703,
+      "fan_in": 19,
+      "fan_in_norm": 0.612903,
+      "fan_out": 21,
+      "median_dwell_hours": 25.6172,
+      "passthrough": 0.797775,
+      "score_no_threshold": 0.630301,
+      "structuring_share": 0.0,
+      "total_in_paise": 41794540,
+      "total_out_paise": 52388897,
+      "volume_paise": 94183437
+    },
+    "id": "23600843800639",
+    "reasons": [
+      "High fan-in: 19 distinct senders",
+      "High pass-through ratio: 79.8% turnover"
+    ],
+    "score": 0.50424
+  },
+  {
+    "evidence_rows": [
+      8,
+      29,
+      39,
+      76,
+      166,
+      175,
+      263,
+      339,
+      386,
+      417
+    ],
+    "features": {
+      "dwell_score": 0.428453,
+      "fan_in": 18,
+      "fan_in_norm": 0.580645,
+      "fan_out": 22,
+      "median_dwell_hours": 32.0154,
+      "passthrough": 0.889142,
+      "score_no_threshold": 0.629491,
+      "structuring_share": 0.0,
+      "total_in_paise": 38284222,
+      "total_out_paise": 43057479,
+      "volume_paise": 81341701
+    },
+    "id": "53710458260",
+    "reasons": [
+      "High fan-in: 18 distinct senders",
+      "High pass-through ratio: 88.9% turnover"
+    ],
+    "score": 0.503592
+  },
+  {
+    "evidence_rows": [
+      43,
+      72,
+      99,
+      105,
+      140,
+      141,
+      189,
+      215,
+      245,
+      256
+    ],
+    "features": {
+      "dwell_score": 0.400254,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 14,
+      "median_dwell_hours": 35.9619,
+      "passthrough": 0.941855,
+      "score_no_threshold": 0.625054,
+      "structuring_share": 0.0,
+      "total_in_paise": 42861584,
+      "total_out_paise": 40369410,
+      "volume_paise": 83230994
+    },
+    "id": "88457362530342",
+    "reasons": [
+      "High fan-in: 17 distinct senders",
+      "High pass-through ratio: 94.2% turnover"
+    ],
+    "score": 0.500043
+  },
+  {
+    "evidence_rows": [
+      37,
+      50,
+      158,
+      171,
+      182,
+      200,
+      264,
+      308,
+      309,
+      323
+    ],
+    "features": {
+      "dwell_score": 0.61963,
+      "fan_in": 15,
+      "fan_in_norm": 0.483871,
+      "fan_out": 19,
+      "median_dwell_hours": 14.7328,
+      "passthrough": 0.787987,
+      "score_no_threshold": 0.621332,
+      "structuring_share": 0.0,
+      "total_in_paise": 39568119,
+      "total_out_paise": 50214184,
+      "volume_paise": 89782303
+    },
+    "id": "97890052994",
+    "reasons": [
+      "High fan-in: 15 distinct senders",
+      "High pass-through ratio: 78.8% turnover"
+    ],
+    "score": 0.497066
+  },
+  {
+    "evidence_rows": [
+      40,
+      144,
+      153,
+      388,
+      390,
+      404,
+      410,
+      434,
+      438,
+      536
+    ],
+    "features": {
+      "dwell_score": 0.565786,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 18,
+      "median_dwell_hours": 18.4189,
+      "passthrough": 0.762568,
+      "score_no_threshold": 0.620756,
+      "structuring_share": 0.0,
+      "total_in_paise": 39050021,
+      "total_out_paise": 51208588,
+      "volume_paise": 90258609
+    },
+    "id": "199656789564",
+    "reasons": [
+      "High fan-in: 17 distinct senders",
+      "High pass-through ratio: 76.3% turnover"
+    ],
+    "score": 0.496605
+  },
+  {
+    "evidence_rows": [
+      13,
+      32,
+      206,
+      207,
+      298,
+      308,
+      481,
+      494,
+      509,
+      585
+    ],
+    "features": {
+      "dwell_score": 0.568251,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 17,
+      "median_dwell_hours": 18.2349,
+      "passthrough": 0.759651,
+      "score_no_threshold": 0.620614,
+      "structuring_share": 0.0,
+      "total_in_paise": 27567772,
+      "total_out_paise": 36290062,
+      "volume_paise": 63857834
+    },
+    "id": "459607124084",
+    "reasons": [
+      "High fan-in: 17 distinct senders",
+      "High pass-through ratio: 76.0% turnover"
+    ],
+    "score": 0.496492
+  },
+  {
+    "evidence_rows": [
+      22,
+      67,
+      75,
+      87,
+      101,
+      218,
+      271,
+      279,
+      302,
+      326
+    ],
+    "features": {
+      "dwell_score": 0.511377,
+      "fan_in": 16,
+      "fan_in_norm": 0.516129,
+      "fan_out": 19,
+      "median_dwell_hours": 22.9321,
+      "passthrough": 0.851696,
+      "score_no_threshold": 0.619509,
+      "structuring_share": 0.0,
+      "total_in_paise": 36765566,
+      "total_out_paise": 43167453,
+      "volume_paise": 79933019
+    },
+    "id": "6848277594792270",
+    "reasons": [
+      "High fan-in: 16 distinct senders",
+      "High pass-through ratio: 85.2% turnover"
+    ],
+    "score": 0.495607
+  },
+  {
+    "evidence_rows": [
+      22,
+      98,
+      139,
+      176,
+      189,
+      204,
+      241,
+      242,
+      378,
+      443
+    ],
+    "features": {
+      "dwell_score": 0.487516,
+      "fan_in": 20,
+      "fan_in_norm": 0.645161,
+      "fan_out": 13,
+      "median_dwell_hours": 25.2292,
+      "passthrough": 0.720328,
+      "score_no_threshold": 0.619387,
+      "structuring_share": 0.0,
+      "total_in_paise": 40318478,
+      "total_out_paise": 29042538,
+      "volume_paise": 69361016
+    },
+    "id": "527244753987",
+    "reasons": [
+      "High fan-in: 20 distinct senders",
+      "High pass-through ratio: 72.0% turnover"
+    ],
+    "score": 0.495509
+  },
+  {
+    "evidence_rows": [
+      24,
+      52,
+      73,
+      83,
+      92,
+      103,
+      111,
+      141,
+      145,
+      153
+    ],
+    "features": {
+      "dwell_score": 0.603651,
+      "fan_in": 18,
+      "fan_in_norm": 0.580645,
+      "fan_out": 18,
+      "median_dwell_hours": 15.7581,
+      "passthrough": 0.679301,
+      "score_no_threshold": 0.618664,
+      "structuring_share": 0.0,
+      "total_in_paise": 37984309,
+      "total_out_paise": 25802771,
+      "volume_paise": 63787080
+    },
+    "id": "1075079752217806",
+    "reasons": [
+      "High fan-in: 18 distinct senders"
+    ],
+    "score": 0.494932
+  },
+  {
+    "evidence_rows": [
+      19,
+      39,
+      51,
+      55,
+      58,
+      111,
+      164,
+      166,
+      255,
+      258
+    ],
+    "features": {
+      "dwell_score": 0.476581,
+      "fan_in": 18,
+      "fan_in_norm": 0.580645,
+      "fan_out": 17,
+      "median_dwell_hours": 26.3588,
+      "passthrough": 0.797537,
+      "score_no_threshold": 0.615904,
+      "structuring_share": 0.0,
+      "total_in_paise": 37780137,
+      "total_out_paise": 30131073,
+      "volume_paise": 67911210
+    },
+    "id": "28384251354",
+    "reasons": [
+      "High fan-in: 18 distinct senders",
+      "High pass-through ratio: 79.8% turnover"
+    ],
+    "score": 0.492723
+  },
+  {
+    "evidence_rows": [
+      8,
+      23,
+      33,
+      50,
+      74,
+      82,
+      127,
+      147,
+      217,
+      301
+    ],
+    "features": {
+      "dwell_score": 0.490179,
+      "fan_in": 15,
+      "fan_in_norm": 0.483871,
+      "fan_out": 17,
+      "median_dwell_hours": 24.9617,
+      "passthrough": 0.899679,
+      "score_no_threshold": 0.615782,
+      "structuring_share": 0.0,
+      "total_in_paise": 26217895,
+      "total_out_paise": 29141382,
+      "volume_paise": 55359277
+    },
+    "id": "24919058651850",
+    "reasons": [
+      "High fan-in: 15 distinct senders",
+      "High pass-through ratio: 90.0% turnover"
+    ],
+    "score": 0.492626
+  },
+  {
+    "evidence_rows": [
+      14,
+      19,
+      103,
+      116,
+      253,
+      312,
+      346,
+      415,
+      441,
+      448
+    ],
+    "features": {
+      "dwell_score": 0.489452,
+      "fan_in": 15,
+      "fan_in_norm": 0.483871,
+      "fan_out": 16,
+      "median_dwell_hours": 25.0344,
+      "passthrough": 0.87461,
+      "score_no_threshold": 0.607721,
+      "structuring_share": 0.0,
+      "total_in_paise": 37747952,
+      "total_out_paise": 33014719,
+      "volume_paise": 70762671
+    },
+    "id": "9184147623802670",
+    "reasons": [
+      "High fan-in: 15 distinct senders",
+      "High pass-through ratio: 87.5% turnover"
+    ],
+    "score": 0.486177
+  },
+  {
+    "evidence_rows": [
+      15,
+      16,
+      24,
+      26,
+      28,
+      66,
+      70,
+      75,
+      108,
+      118
+    ],
+    "features": {
+      "dwell_score": 0.55325,
+      "fan_in": 20,
+      "fan_in_norm": 0.645161,
+      "fan_out": 20,
+      "median_dwell_hours": 19.38,
+      "passthrough": 0.61267,
+      "score_no_threshold": 0.606286,
+      "structuring_share": 0.0,
+      "total_in_paise": 36839876,
+      "total_out_paise": 60130044,
+      "volume_paise": 96969920
+    },
+    "id": "11482923792599",
+    "reasons": [
+      "High fan-in: 20 distinct senders"
+    ],
+    "score": 0.485028
+  },
+  {
+    "evidence_rows": [
+      188,
+      216,
+      262,
+      264,
+      336,
+      373,
+      397,
+      518,
+      571,
+      575
+    ],
+    "features": {
+      "dwell_score": 0.376465,
+      "fan_in": 16,
+      "fan_in_norm": 0.516129,
+      "fan_out": 15,
+      "median_dwell_hours": 39.751,
+      "passthrough": 0.917029,
+      "score_no_threshold": 0.597765,
+      "structuring_share": 0.0,
+      "total_in_paise": 31185942,
+      "total_out_paise": 28598422,
+      "volume_paise": 59784364
+    },
+    "id": "26400524278",
+    "reasons": [
+      "High fan-in: 16 distinct senders",
+      "High pass-through ratio: 91.7% turnover"
+    ],
+    "score": 0.478212
+  },
+  {
+    "evidence_rows": [
+      9,
+      14,
+      25,
+      41,
+      48,
+      99,
+      128,
+      142,
+      147,
+      167
+    ],
+    "features": {
+      "dwell_score": 0.511297,
+      "fan_in": 22,
+      "fan_in_norm": 0.709677,
+      "fan_out": 13,
+      "median_dwell_hours": 22.9394,
+      "passthrough": 0.541706,
+      "score_no_threshold": 0.595193,
+      "structuring_share": 0.0,
+      "total_in_paise": 45112974,
+      "total_out_paise": 24437976,
+      "volume_paise": 69550950
+    },
+    "id": "880913431611",
+    "reasons": [
+      "High fan-in: 22 distinct senders"
+    ],
+    "score": 0.476154
+  },
+  {
+    "evidence_rows": [
+      100,
+      102,
+      135,
+      210,
+      252,
+      299,
+      313,
+      323,
+      358,
+      372
+    ],
+    "features": {
+      "dwell_score": 0.561831,
+      "fan_in": 20,
+      "fan_in_norm": 0.645161,
+      "fan_out": 16,
+      "median_dwell_hours": 18.7175,
+      "passthrough": 0.55856,
+      "score_no_threshold": 0.592057,
+      "structuring_share": 0.0,
+      "total_in_paise": 47666402,
+      "total_out_paise": 26624522,
+      "volume_paise": 74290924
+    },
+    "id": "70733754330",
+    "reasons": [
+      "High fan-in: 20 distinct senders"
+    ],
+    "score": 0.473646
+  },
+  {
+    "evidence_rows": [
+      10,
+      44,
+      60,
+      83,
+      144,
+      163,
+      229,
+      251,
+      300,
+      387
+    ],
+    "features": {
+      "dwell_score": 0.615714,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 22,
+      "median_dwell_hours": 14.9792,
+      "passthrough": 0.594178,
+      "score_no_threshold": 0.583736,
+      "structuring_share": 0.0,
+      "total_in_paise": 39421314,
+      "total_out_paise": 66345962,
+      "volume_paise": 105767276
+    },
+    "id": "17520025569318",
+    "reasons": [
+      "High fan-in: 17 distinct senders"
+    ],
+    "score": 0.466989
+  },
+  {
+    "evidence_rows": [
+      47,
+      64,
+      87,
+      148,
+      190,
+      228,
+      274,
+      296,
+      353,
+      358
+    ],
+    "features": {
+      "dwell_score": 0.468564,
+      "fan_in": 19,
+      "fan_in_norm": 0.612903,
+      "fan_out": 15,
+      "median_dwell_hours": 27.2203,
+      "passthrough": 0.608268,
+      "score_no_threshold": 0.566349,
+      "structuring_share": 0.0,
+      "total_in_paise": 47840031,
+      "total_out_paise": 29099559,
+      "volume_paise": 76939590
+    },
+    "id": "1273226992728702",
+    "reasons": [
+      "High fan-in: 19 distinct senders"
+    ],
+    "score": 0.453079
+  },
+  {
+    "evidence_rows": [
+      4,
+      31,
+      42,
+      43,
+      67,
+      78,
+      149,
+      176,
+      177,
+      295
+    ],
+    "features": {
+      "dwell_score": 0.539872,
+      "fan_in": 19,
+      "fan_in_norm": 0.612903,
+      "fan_out": 19,
+      "median_dwell_hours": 20.455,
+      "passthrough": 0.535733,
+      "score_no_threshold": 0.565965,
+      "structuring_share": 0.0,
+      "total_in_paise": 29794411,
+      "total_out_paise": 55614337,
+      "volume_paise": 85408748
+    },
+    "id": "6066011655865115",
+    "reasons": [
+      "High fan-in: 19 distinct senders"
+    ],
+    "score": 0.452772
+  },
+  {
+    "evidence_rows": [
+      12,
+      71,
+      131,
+      139,
+      143,
+      197,
+      209,
+      244,
+      311,
+      430
+    ],
+    "features": {
+      "dwell_score": 0.476829,
+      "fan_in": 16,
+      "fan_in_norm": 0.516129,
+      "fan_out": 16,
+      "median_dwell_hours": 26.3325,
+      "passthrough": 0.707824,
+      "score_no_threshold": 0.563753,
+      "structuring_share": 0.0,
+      "total_in_paise": 42447785,
+      "total_out_paise": 30045566,
+      "volume_paise": 72493351
+    },
+    "id": "56759579633711",
+    "reasons": [
+      "High fan-in: 16 distinct senders",
+      "High pass-through ratio: 70.8% turnover"
+    ],
+    "score": 0.451002
+  },
+  {
+    "evidence_rows": [
+      6,
+      7,
+      17,
+      31,
+      78,
+      140,
+      152,
+      203,
+      211,
+      222
+    ],
+    "features": {
+      "dwell_score": 0.487091,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 15,
+      "median_dwell_hours": 25.2721,
+      "passthrough": 0.653888,
+      "score_no_threshold": 0.562201,
+      "structuring_share": 0.0,
+      "total_in_paise": 29515781,
+      "total_out_paise": 45138897,
+      "volume_paise": 74654678
+    },
+    "id": "1499129363228029",
+    "reasons": [
+      "High fan-in: 17 distinct senders"
+    ],
+    "score": 0.449761
+  },
+  {
+    "evidence_rows": [
+      80,
+      112,
+      164,
+      217,
+      290,
+      317,
+      330,
+      343,
+      386,
+      423
+    ],
+    "features": {
+      "dwell_score": 0.561937,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 21,
+      "median_dwell_hours": 18.7094,
+      "passthrough": 0.561554,
+      "score_no_threshold": 0.556736,
+      "structuring_share": 0.0,
+      "total_in_paise": 21878006,
+      "total_out_paise": 38959731,
+      "volume_paise": 60837737
+    },
+    "id": "44352408240",
+    "reasons": [
+      "High fan-in: 17 distinct senders"
+    ],
+    "score": 0.445389
+  },
+  {
+    "evidence_rows": [
+      30,
+      72,
+      80,
+      130,
+      156,
+      178,
+      335,
+      405,
+      477,
+      494
+    ],
+    "features": {
+      "dwell_score": 0.520222,
+      "fan_in": 15,
+      "fan_in_norm": 0.483871,
+      "fan_out": 17,
+      "median_dwell_hours": 22.1342,
+      "passthrough": 0.679907,
+      "score_no_threshold": 0.556492,
+      "structuring_share": 0.0,
+      "total_in_paise": 26319061,
+      "total_out_paise": 38709816,
+      "volume_paise": 65028877
+    },
+    "id": "564743671369",
+    "reasons": [
+      "High fan-in: 15 distinct senders"
+    ],
+    "score": 0.445193
+  },
+  {
+    "evidence_rows": [
+      54,
+      68,
+      74,
+      109,
+      161,
+      180,
+      213,
+      325,
+      384,
+      403
+    ],
+    "features": {
+      "dwell_score": 0.593264,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 24,
+      "median_dwell_hours": 16.4542,
+      "passthrough": 0.529205,
+      "score_no_threshold": 0.556417,
+      "structuring_share": 0.0,
+      "total_in_paise": 24769434,
+      "total_out_paise": 46804968,
+      "volume_paise": 71574402
+    },
+    "id": "718677164181",
+    "reasons": [
+      "High fan-in: 17 distinct senders"
+    ],
+    "score": 0.445133
+  },
+  {
+    "evidence_rows": [
+      96,
+      115,
+      118,
+      186,
+      200,
+      216,
+      244,
+      266,
+      279,
+      280
+    ],
+    "features": {
+      "dwell_score": 0.513306,
+      "fan_in": 19,
+      "fan_in_norm": 0.612903,
+      "fan_out": 20,
+      "median_dwell_hours": 22.7557,
+      "passthrough": 0.515373,
+      "score_no_threshold": 0.551301,
+      "structuring_share": 0.0,
+      "total_in_paise": 25277554,
+      "total_out_paise": 49047092,
+      "volume_paise": 74324646
+    },
+    "id": "657663940819",
+    "reasons": [
+      "High fan-in: 19 distinct senders"
+    ],
+    "score": 0.441041
+  },
+  {
+    "evidence_rows": [
+      18,
+      64,
+      95,
+      202,
+      205,
+      212,
+      213,
+      248,
+      281,
+      287
+    ],
+    "features": {
+      "dwell_score": 0.541028,
+      "fan_in": 15,
+      "fan_in_norm": 0.483871,
+      "fan_out": 21,
+      "median_dwell_hours": 20.36,
+      "passthrough": 0.638788,
+      "score_no_threshold": 0.550144,
+      "structuring_share": 0.0,
+      "total_in_paise": 31553954,
+      "total_out_paise": 49396627,
+      "volume_paise": 80950581
+    },
+    "id": "44671844617327",
+    "reasons": [
+      "High fan-in: 15 distinct senders"
+    ],
+    "score": 0.440115
+  },
+  {
+    "evidence_rows": [
+      114,
+      116,
+      120,
+      121,
+      124,
+      157,
+      185,
+      238,
+      291,
+      294
+    ],
+    "features": {
+      "dwell_score": 0.538036,
+      "fan_in": 18,
+      "fan_in_norm": 0.580645,
+      "fan_out": 24,
+      "median_dwell_hours": 20.6067,
+      "passthrough": 0.51929,
+      "score_no_threshold": 0.548156,
+      "structuring_share": 0.0,
+      "total_in_paise": 29302508,
+      "total_out_paise": 56428059,
+      "volume_paise": 85730567
+    },
+    "id": "35833036132",
+    "reasons": [
+      "High fan-in: 18 distinct senders"
+    ],
+    "score": 0.438525
+  },
+  {
+    "evidence_rows": [
+      13,
+      34,
+      86,
+      107,
+      135,
+      163,
+      177,
+      192,
+      205,
+      295
+    ],
+    "features": {
+      "dwell_score": 0.325639,
+      "fan_in": 18,
+      "fan_in_norm": 0.580645,
+      "fan_out": 12,
+      "median_dwell_hours": 49.7013,
+      "passthrough": 0.726916,
+      "score_no_threshold": 0.546665,
+      "structuring_share": 0.0,
+      "total_in_paise": 42613168,
+      "total_out_paise": 30976202,
+      "volume_paise": 73589370
+    },
+    "id": "46014671511888",
+    "reasons": [
+      "High fan-in: 18 distinct senders",
+      "High pass-through ratio: 72.7% turnover"
+    ],
+    "score": 0.437332
+  },
+  {
+    "evidence_rows": [
+      29,
+      94,
+      127,
+      225,
+      243,
+      362,
+      369,
+      399,
+      409,
+      430
+    ],
+    "features": {
+      "dwell_score": 0.319906,
+      "fan_in": 18,
+      "fan_in_norm": 0.580645,
+      "fan_out": 16,
+      "median_dwell_hours": 51.0219,
+      "passthrough": 0.680116,
+      "score_no_threshold": 0.530249,
+      "structuring_share": 0.0,
+      "total_in_paise": 32443957,
+      "total_out_paise": 47703574,
+      "volume_paise": 80147531
+    },
+    "id": "7135242816945384",
+    "reasons": [
+      "High fan-in: 18 distinct senders"
+    ],
+    "score": 0.424199
+  },
+  {
+    "evidence_rows": [
+      33,
+      51,
+      60,
+      86,
+      162,
+      191,
+      219,
+      224,
+      318,
+      322
+    ],
+    "features": {
+      "dwell_score": 0.311405,
+      "fan_in": 16,
+      "fan_in_norm": 0.516129,
+      "fan_out": 14,
+      "median_dwell_hours": 53.07,
+      "passthrough": 0.752461,
+      "score_no_threshold": 0.526007,
+      "structuring_share": 0.0,
+      "total_in_paise": 34562104,
+      "total_out_paise": 45932065,
+      "volume_paise": 80494169
+    },
+    "id": "88236910997872",
+    "reasons": [
+      "High fan-in: 16 distinct senders",
+      "High pass-through ratio: 75.2% turnover"
+    ],
+    "score": 0.420805
+  },
+  {
+    "evidence_rows": [
+      21,
+      28,
+      120,
+      129,
+      198,
+      226,
+      242,
+      254,
+      276,
+      285
+    ],
+    "features": {
+      "dwell_score": 0.485572,
+      "fan_in": 14,
+      "fan_in_norm": 0.451613,
+      "fan_out": 20,
+      "median_dwell_hours": 25.4262,
+      "passthrough": 0.633479,
+      "score_no_threshold": 0.519058,
+      "structuring_share": 0.0,
+      "total_in_paise": 28961134,
+      "total_out_paise": 45717615,
+      "volume_paise": 74678749
+    },
+    "id": "971702005550",
+    "reasons": [
+      "High fan-in: 14 distinct senders"
+    ],
+    "score": 0.415247
+  },
+  {
+    "evidence_rows": [
+      5,
+      62,
+      71,
+      180,
+      184,
+      188,
+      230,
+      237,
+      284,
+      303
+    ],
+    "features": {
+      "dwell_score": 0.511386,
+      "fan_in": 14,
+      "fan_in_norm": 0.451613,
+      "fan_out": 20,
+      "median_dwell_hours": 22.9312,
+      "passthrough": 0.600802,
+      "score_no_threshold": 0.516914,
+      "structuring_share": 0.0,
+      "total_in_paise": 27170123,
+      "total_out_paise": 45223075,
+      "volume_paise": 72393198
+    },
+    "id": "80322489136043",
+    "reasons": [
+      "High fan-in: 14 distinct senders"
+    ],
+    "score": 0.413531
+  },
+  {
+    "evidence_rows": [
+      38,
+      45,
+      48,
+      204,
+      225,
+      245,
+      246,
+      302,
+      349,
+      411
+    ],
+    "features": {
+      "dwell_score": 0.472029,
+      "fan_in": 15,
+      "fan_in_norm": 0.483871,
+      "fan_out": 20,
+      "median_dwell_hours": 26.8443,
+      "passthrough": 0.590071,
+      "score_no_threshold": 0.513358,
+      "structuring_share": 0.0,
+      "total_in_paise": 32830962,
+      "total_out_paise": 55639026,
+      "volume_paise": 88469988
+    },
+    "id": "65581800660567",
+    "reasons": [
+      "High fan-in: 15 distinct senders"
+    ],
+    "score": 0.410686
+  },
+  {
+    "evidence_rows": [
+      3,
+      56,
+      85,
+      131,
+      134,
+      137,
+      138,
+      192,
+      222,
+      247
+    ],
+    "features": {
+      "dwell_score": 0.513968,
+      "fan_in": 17,
+      "fan_in_norm": 0.548387,
+      "fan_out": 20,
+      "median_dwell_hours": 22.6956,
+      "passthrough": 0.397147,
+      "score_no_threshold": 0.490369,
+      "structuring_share": 0.0,
+      "total_in_paise": 24581329,
+      "total_out_paise": 61894738,
+      "volume_paise": 86476067
+    },
+    "id": "31384332133000",
+    "reasons": [
+      "High fan-in: 17 distinct senders"
+    ],
+    "score": 0.392295
+  },
+  {
+    "evidence_rows": [
+      88,
+      150,
+      187,
+      228,
+      229,
+      349,
+      453,
+      461,
+      472,
+      502
+    ],
+    "features": {
+      "dwell_score": 0.505923,
+      "fan_in": 13,
+      "fan_in_norm": 0.419355,
+      "fan_out": 15,
+      "median_dwell_hours": 23.4381,
+      "passthrough": 0.558491,
+      "score_no_threshold": 0.489887,
+      "structuring_share": 0.0,
+      "total_in_paise": 23137621,
+      "total_out_paise": 41428852,
+      "volume_paise": 64566473
+    },
+    "id": "71891355965727",
+    "reasons": [
+      "High fan-in: 13 distinct senders"
+    ],
+    "score": 0.39191
+  },
+  {
+    "evidence_rows": [
+      10,
+      18,
+      20,
+      38,
+      45,
+      46,
+      49,
+      79,
+      95,
+      124
+    ],
+    "features": {
+      "dwell_score": 0.582705,
+      "fan_in": 14,
+      "fan_in_norm": 0.451613,
+      "fan_out": 21,
+      "median_dwell_hours": 17.1872,
+      "passthrough": 0.423433,
+      "score_no_threshold": 0.483773,
+      "structuring_share": 0.0,
+      "total_in_paise": 25827237,
+      "total_out_paise": 60994790,
+      "volume_paise": 86822027
+    },
+    "id": "72314387443",
+    "reasons": [
+      "High fan-in: 14 distinct senders"
+    ],
+    "score": 0.387018
+  },
+  {
+    "evidence_rows": [
+      201,
+      210,
+      223,
+      234,
+      273,
+      289,
+      311,
+      324,
+      327,
+      379
+    ],
+    "features": {
+      "dwell_score": 0.634995,
+      "fan_in": 14,
+      "fan_in_norm": 0.451613,
+      "fan_out": 23,
+      "median_dwell_hours": 13.7956,
+      "passthrough": 0.358193,
+      "score_no_threshold": 0.479726,
+      "structuring_share": 0.0,
+      "total_in_paise": 27805891,
+      "total_out_paise": 77628141,
+      "volume_paise": 105434032
+    },
+    "id": "7520562247180388",
+    "reasons": [
+      "High fan-in: 14 distinct senders"
+    ],
+    "score": 0.383781
+  },
+  {
+    "evidence_rows": [
+      52,
+      197,
+      251,
+      350,
+      366,
+      400,
+      479,
+      604,
+      670,
+      685
+    ],
+    "features": {
+      "dwell_score": 0.485001,
+      "fan_in": 11,
+      "fan_in_norm": 0.354839,
+      "fan_out": 14,
+      "median_dwell_hours": 25.4844,
+      "passthrough": 0.617735,
+      "score_no_threshold": 0.477669,
+      "structuring_share": 0.0,
+      "total_in_paise": 25570933,
+      "total_out_paise": 41394687,
+      "volume_paise": 66965620
+    },
+    "id": "7751965376703927",
+    "reasons": [
+      "High fan-in: 11 distinct senders"
+    ],
+    "score": 0.382136
+  },
+  {
+    "evidence_rows": [
+      25,
+      125,
+      194,
+      208,
+      257,
+      260,
+      269,
+      301,
+      372,
+      379
+    ],
+    "features": {
+      "dwell_score": 0.514541,
+      "fan_in": 13,
+      "fan_in_norm": 0.419355,
+      "fan_out": 22,
+      "median_dwell_hours": 22.6435,
+      "passthrough": 0.49699,
+      "score_no_threshold": 0.473361,
+      "structuring_share": 0.0,
+      "total_in_paise": 31782886,
+      "total_out_paise": 63950816,
+      "volume_paise": 95733702
+    },
+    "id": "17667400184766",
+    "reasons": [
+      "High fan-in: 13 distinct senders"
+    ],
+    "score": 0.378689
+  },
+  {
+    "evidence_rows": [
+      35,
+      66,
+      100,
+      173,
+      280,
+      310,
+      455,
+      517,
+      538,
+      571
+    ],
+    "features": {
+      "dwell_score": 0.579879,
+      "fan_in": 9,
+      "fan_in_norm": 0.290323,
+      "fan_out": 14,
+      "median_dwell_hours": 17.3879,
+      "passthrough": 0.571581,
+      "score_no_threshold": 0.468702,
+      "structuring_share": 0.0,
+      "total_in_paise": 23887117,
+      "total_out_paise": 41791332,
+      "volume_paise": 65678449
+    },
+    "id": "35543349232124",
+    "reasons": [
+      "High fan-in: 9 distinct senders"
+    ],
+    "score": 0.374962
+  },
+  {
+    "evidence_rows": [
+      2,
+      20,
+      44,
+      53,
+      85,
+      93,
+      179,
+      201,
+      360,
+      376
+    ],
+    "features": {
+      "dwell_score": 0.370404,
+      "fan_in": 11,
+      "fan_in_norm": 0.354839,
+      "fan_out": 18,
+      "median_dwell_hours": 40.7942,
+      "passthrough": 0.682132,
+      "score_no_threshold": 0.461982,
+      "structuring_share": 0.0,
+      "total_in_paise": 23588538,
+      "total_out_paise": 34580597,
+      "volume_paise": 58169135
+    },
+    "id": "26309165168",
+    "reasons": [
+      "High fan-in: 11 distinct senders"
+    ],
+    "score": 0.369586
+  },
+  {
+    "evidence_rows": [
+      3,
+      41,
+      89,
+      104,
+      119,
+      136,
+      184,
+      313,
+      316,
+      390
+    ],
+    "features": {
+      "dwell_score": 0.604149,
+      "fan_in": 11,
+      "fan_in_norm": 0.354839,
+      "fan_out": 21,
+      "median_dwell_hours": 15.7253,
+      "passthrough": 0.444736,
+      "score_no_threshold": 0.460841,
+      "structuring_share": 0.0,
+      "total_in_paise": 20825322,
+      "total_out_paise": 46826288,
+      "volume_paise": 67651610
+    },
+    "id": "8481893016368426",
+    "reasons": [
+      "High fan-in: 11 distinct senders"
+    ],
+    "score": 0.368673
+  },
+  {
+    "evidence_rows": [
+      53,
+      65,
+      90,
+      170,
+      231,
+      250,
+      277,
+      340,
+      470,
+      514
+    ],
+    "features": {
+      "dwell_score": 0.506956,
+      "fan_in": 14,
+      "fan_in_norm": 0.451613,
+      "fan_out": 21,
+      "median_dwell_hours": 23.3414,
+      "passthrough": 0.424418,
+      "score_no_threshold": 0.460409,
+      "structuring_share": 0.0,
+      "total_in_paise": 26483024,
+      "total_out_paise": 62398502,
+      "volume_paise": 88881526
+    },
+    "id": "7904744730981107",
+    "reasons": [
+      "High fan-in: 14 distinct senders"
+    ],
+    "score": 0.368327
+  },
+  {
+    "evidence_rows": [
+      32,
+      42,
+      55,
+      59,
+      91,
+      154,
+      209,
+      221,
+      250,
+      261
+    ],
+    "features": {
+      "dwell_score": 0.518849,
+      "fan_in": 11,
+      "fan_in_norm": 0.354839,
+      "fan_out": 20,
+      "median_dwell_hours": 22.2563,
+      "passthrough": 0.45309,
+      "score_no_threshold": 0.436795,
+      "structuring_share": 0.0,
+      "total_in_paise": 26925135,
+      "total_out_paise": 59425555,
+      "volume_paise": 86350690
+    },
+    "id": "95217729622",
+    "reasons": [
+      "High fan-in: 11 distinct senders"
+    ],
+    "score": 0.349436
+  },
+  {
+    "evidence_rows": [
+      11,
+      61,
+      63,
+      151,
+      181,
+      285,
+      305,
+      321,
+      335,
+      347
+    ],
+    "features": {
+      "dwell_score": 0.622205,
+      "fan_in": 11,
+      "fan_in_norm": 0.354839,
+      "fan_out": 23,
+      "median_dwell_hours": 14.5725,
+      "passthrough": 0.314601,
+      "score_no_threshold": 0.425817,
+      "structuring_share": 0.0,
+      "total_in_paise": 18801333,
+      "total_out_paise": 59762383,
+      "volume_paise": 78563716
+    },
+    "id": "97667845334",
+    "reasons": [
+      "High fan-in: 11 distinct senders"
+    ],
+    "score": 0.340653
+  },
+  {
+    "evidence_rows": [
+      15,
+      69,
+      82,
+      102,
+      174,
+      214,
+      265,
+      275,
+      286,
+      332
+    ],
+    "features": {
+      "dwell_score": 0.493706,
+      "fan_in": 19,
+      "fan_in_norm": 0.612903,
+      "fan_out": 17,
+      "median_dwell_hours": 24.6119,
+      "passthrough": 0.104814,
+      "score_no_threshold": 0.416876,
+      "structuring_share": 0.0,
+      "total_in_paise": 308005038,
+      "total_out_paise": 32283126,
+      "volume_paise": 340288164
+    },
+    "id": "7909670546688937",
+    "reasons": [
+      "High fan-in: 19 distinct senders"
+    ],
+    "score": 0.333501
+  },
+  {
+    "evidence_rows": [
+      30,
+      63,
+      173,
+      186,
+      267,
+      270,
+      282,
+      300,
+      332,
+      351
+    ],
+    "features": {
+      "dwell_score": 0.465942,
+      "fan_in": 12,
+      "fan_in_norm": 0.387097,
+      "fan_out": 22,
+      "median_dwell_hours": 27.5086,
+      "passthrough": 0.285923,
+      "score_no_threshold": 0.380119,
+      "structuring_share": 0.0,
+      "total_in_paise": 17384571,
+      "total_out_paise": 60801620,
+      "volume_paise": 78186191
+    },
+    "id": "57215357009",
+    "reasons": [
+      "High fan-in: 12 distinct senders"
+    ],
+    "score": 0.304095
+  },
+  {
+    "evidence_rows": [
+      26,
+      27,
+      81,
+      117,
+      126,
+      128,
+      143,
+      155,
+      172,
+      195
+    ],
+    "features": {
+      "dwell_score": 0.480932,
+      "fan_in": 15,
+      "fan_in_norm": 0.483871,
+      "fan_out": 17,
+      "median_dwell_hours": 25.9031,
+      "passthrough": 0.127443,
+      "score_no_threshold": 0.371569,
+      "structuring_share": 0.021739,
+      "total_in_paise": 356745307,
+      "total_out_paise": 45464678,
+      "volume_paise": 402209985
+    },
+    "id": "693103413164",
+    "reasons": [
+      "High fan-in: 15 distinct senders"
+    ],
+    "score": 0.301603
+  }
+]

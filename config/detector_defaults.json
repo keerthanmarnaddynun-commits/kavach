@@ -1,0 +1,23 @@
+{
+  "burner_weights": {
+    "late_activation": 0.25,
+    "low_contacts": 0.20,
+    "short_lifespan": 0.30,
+    "top2_share": 0.25
+  },
+  "comment": "Analyst-entered reporting threshold for the synthetic cases, copied from case_demo_v2 parameters. Verify against current FIU-IND/RBI guidance.",
+  "guidance_note": "verify against current FIU-IND/RBI guidance",
+  "mule_weights": {
+    "dwell_score": 0.25,
+    "fan_in_norm": 0.30,
+    "passthrough": 0.25,
+    "structuring_share": 0.20
+  },
+  "mule_weights_no_threshold": {
+    "dwell_score": 0.3125,
+    "fan_in_norm": 0.375,
+    "passthrough": 0.3125
+  },
+  "structuring_band": 0.10,
+  "structuring_threshold": 50000
+}

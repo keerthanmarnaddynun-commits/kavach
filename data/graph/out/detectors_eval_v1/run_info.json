@@ -1,0 +1,87 @@
+{
+  "bootstrap": {
+    "n_resamples": 2000,
+    "seed": 20261115
+  },
+  "config": {
+    "burner_weights": {
+      "late_activation": 0.25,
+      "low_contacts": 0.2,
+      "short_lifespan": 0.3,
+      "top2_share": 0.25
+    },
+    "comment": "Analyst-entered reporting threshold for the synthetic cases, copied from case_demo_v2 parameters. Verify against current FIU-IND/RBI guidance.",
+    "guidance_note": "verify against current FIU-IND/RBI guidance",
+    "mule_weights": {
+      "dwell_score": 0.25,
+      "fan_in_norm": 0.3,
+      "passthrough": 0.25,
+      "structuring_share": 0.2
+    },
+    "mule_weights_no_threshold": {
+      "dwell_score": 0.3125,
+      "fan_in_norm": 0.375,
+      "passthrough": 0.3125
+    },
+    "structuring_band": 0.1,
+    "structuring_threshold": 50000
+  },
+  "library_versions": {
+    "networkx": "3.2.1",
+    "numpy": "1.26.4",
+    "python": "3.11.9"
+  },
+  "number_of_cases_evaluated": 50,
+  "seeds": [
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200
+  ]
+}

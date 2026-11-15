@@ -1,0 +1,1638 @@
+[
+  {
+    "evidence_rows": [
+      5692,
+      5799,
+      5813,
+      5817,
+      5825,
+      5855,
+      5907,
+      5928,
+      6081,
+      6082
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 23.0611,
+      "imei_hop": 0,
+      "last_seen_day": 25.5948,
+      "late_activation": 0.776328,
+      "lifespan_days": 2.5337,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.914706,
+      "top2_share": 1.0,
+      "total_calls": 23
+    },
+    "id": "8149368998",
+    "reasons": [
+      "Short active lifespan: 2.5 days",
+      "Late network activation: Day 23.1",
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.909798
+  },
+  {
+    "evidence_rows": [
+      5448,
+      5455,
+      5475,
+      5485,
+      5581,
+      5584,
+      5587,
+      5600,
+      5693,
+      5725
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 22.0688,
+      "imei_hop": 0,
+      "last_seen_day": 25.6544,
+      "late_activation": 0.742924,
+      "lifespan_days": 3.5856,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.879295,
+      "top2_share": 1.0,
+      "total_calls": 31
+    },
+    "id": "6592124998",
+    "reasons": [
+      "Short active lifespan: 3.6 days",
+      "Late network activation: Day 22.1",
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.890824
+  },
+  {
+    "evidence_rows": [
+      4931,
+      4960,
+      4975,
+      5029,
+      5033,
+      5054,
+      5090,
+      5096,
+      5180,
+      5221
+    ],
+    "features": {
+      "distinct_contacts": 2,
+      "first_seen_day": 20.1127,
+      "imei_hop": 0,
+      "last_seen_day": 24.5481,
+      "late_activation": 0.677072,
+      "lifespan_days": 4.4354,
+      "low_contacts": 0.913043,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.850687,
+      "top2_share": 1.0,
+      "total_calls": 35
+    },
+    "id": "7950240268",
+    "reasons": [
+      "Short active lifespan: 4.4 days",
+      "Late network activation: Day 20.1",
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 2 peers"
+    ],
+    "score": 0.857083
+  },
+  {
+    "evidence_rows": [
+      5188,
+      5229,
+      5286,
+      5296,
+      5361,
+      5395,
+      5402,
+      5403,
+      5442,
+      5503
+    ],
+    "features": {
+      "distinct_contacts": 2,
+      "first_seen_day": 21.1238,
+      "imei_hop": 0,
+      "last_seen_day": 27.5384,
+      "late_activation": 0.71111,
+      "lifespan_days": 6.4146,
+      "low_contacts": 0.913043,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.784059,
+      "top2_share": 1.0,
+      "total_calls": 51
+    },
+    "id": "8527111161",
+    "reasons": [
+      "Short active lifespan: 6.4 days",
+      "Late network activation: Day 21.1",
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 2 peers"
+    ],
+    "score": 0.845604
+  },
+  {
+    "evidence_rows": [
+      1208,
+      1455,
+      2434,
+      2683,
+      3134,
+      4159,
+      4646,
+      4895,
+      5911,
+      6738
+    ],
+    "features": {
+      "distinct_contacts": 2,
+      "first_seen_day": 4.6858,
+      "imei_hop": 0,
+      "last_seen_day": 28.6001,
+      "late_activation": 0.157742,
+      "lifespan_days": 23.9143,
+      "low_contacts": 0.913043,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.19495,
+      "top2_share": 1.0,
+      "total_calls": 12
+    },
+    "id": "7389083863",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 2 peers"
+    ],
+    "score": 0.530529
+  },
+  {
+    "evidence_rows": [
+      436,
+      1414,
+      1659,
+      2418,
+      2681,
+      3362,
+      3896,
+      4349,
+      5138,
+      5360
+    ],
+    "features": {
+      "distinct_contacts": 2,
+      "first_seen_day": 1.5876,
+      "imei_hop": 0,
+      "last_seen_day": 26.6973,
+      "late_activation": 0.053444,
+      "lifespan_days": 25.1097,
+      "low_contacts": 0.913043,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.154709,
+      "top2_share": 1.0,
+      "total_calls": 12
+    },
+    "id": "9277434873",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 2 peers"
+    ],
+    "score": 0.492382
+  },
+  {
+    "evidence_rows": [
+      222,
+      297,
+      389,
+      397,
+      681,
+      709,
+      712,
+      928,
+      943,
+      957
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.6466,
+      "imei_hop": 0,
+      "last_seen_day": 29.2681,
+      "late_activation": 0.021767,
+      "lifespan_days": 28.6215,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.036486,
+      "top2_share": 1.0,
+      "total_calls": 58
+    },
+    "id": "9383473597",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.457692
+  },
+  {
+    "evidence_rows": [
+      211,
+      310,
+      402,
+      589,
+      682,
+      801,
+      959,
+      1069,
+      1271,
+      1400
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.6262,
+      "imei_hop": 0,
+      "last_seen_day": 29.2921,
+      "late_activation": 0.021081,
+      "lifespan_days": 28.6659,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.034993,
+      "top2_share": 1.0,
+      "total_calls": 55
+    },
+    "id": "7292127799",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.457073
+  },
+  {
+    "evidence_rows": [
+      226,
+      300,
+      348,
+      443,
+      596,
+      780,
+      902,
+      1176,
+      1303,
+      1435
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.6557,
+      "imei_hop": 0,
+      "last_seen_day": 29.5255,
+      "late_activation": 0.022072,
+      "lifespan_days": 28.8698,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.028129,
+      "top2_share": 1.0,
+      "total_calls": 52
+    },
+    "id": "9155188442",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.455261
+  },
+  {
+    "evidence_rows": [
+      172,
+      180,
+      298,
+      338,
+      552,
+      601,
+      710,
+      819,
+      913,
+      1177
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.5258,
+      "imei_hop": 0,
+      "last_seen_day": 29.2913,
+      "late_activation": 0.017699,
+      "lifespan_days": 28.7655,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.031639,
+      "top2_share": 1.0,
+      "total_calls": 59
+    },
+    "id": "7584168784",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.455221
+  },
+  {
+    "evidence_rows": [
+      191,
+      409,
+      449,
+      547,
+      926,
+      947,
+      1065,
+      1170,
+      1276,
+      1439
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.573,
+      "imei_hop": 0,
+      "last_seen_day": 29.4715,
+      "late_activation": 0.019289,
+      "lifespan_days": 28.8985,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.027163,
+      "top2_share": 1.0,
+      "total_calls": 69
+    },
+    "id": "8981829922",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.454276
+  },
+  {
+    "evidence_rows": [
+      131,
+      145,
+      320,
+      342,
+      535,
+      579,
+      846,
+      867,
+      1032,
+      1087
+    ],
+    "features": {
+      "distinct_contacts": 2,
+      "first_seen_day": 0.3887,
+      "imei_hop": 0,
+      "last_seen_day": 28.3339,
+      "late_activation": 0.013086,
+      "lifespan_days": 27.9451,
+      "low_contacts": 0.913043,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.059256,
+      "top2_share": 1.0,
+      "total_calls": 44
+    },
+    "id": "8406409097",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 2 peers"
+    ],
+    "score": 0.453657
+  },
+  {
+    "evidence_rows": [
+      190,
+      224,
+      417,
+      423,
+      563,
+      567,
+      886,
+      917,
+      1169,
+      1286
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.5651,
+      "imei_hop": 0,
+      "last_seen_day": 29.5582,
+      "late_activation": 0.019024,
+      "lifespan_days": 28.9931,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.023978,
+      "top2_share": 1.0,
+      "total_calls": 53
+    },
+    "id": "7755719285",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.453254
+  },
+  {
+    "evidence_rows": [
+      179,
+      206,
+      388,
+      431,
+      678,
+      800,
+      805,
+      893,
+      1021,
+      1131
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.5393,
+      "imei_hop": 0,
+      "last_seen_day": 29.6052,
+      "late_activation": 0.018155,
+      "lifespan_days": 29.0659,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.021529,
+      "top2_share": 1.0,
+      "total_calls": 66
+    },
+    "id": "9773592555",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.452302
+  },
+  {
+    "evidence_rows": [
+      104,
+      155,
+      410,
+      609,
+      667,
+      882,
+      1057,
+      1386,
+      1394,
+      1436
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.3069,
+      "imei_hop": 0,
+      "last_seen_day": 29.1876,
+      "late_activation": 0.010332,
+      "lifespan_days": 28.8807,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.027763,
+      "top2_share": 1.0,
+      "total_calls": 58
+    },
+    "id": "8423573322",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.452216
+  },
+  {
+    "evidence_rows": [
+      188,
+      326,
+      438,
+      446,
+      573,
+      673,
+      829,
+      880,
+      1039,
+      1152
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.5619,
+      "imei_hop": 0,
+      "last_seen_day": 29.6574,
+      "late_activation": 0.018915,
+      "lifespan_days": 29.0955,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.020531,
+      "top2_share": 1.0,
+      "total_calls": 57
+    },
+    "id": "9143410369",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.452192
+  },
+  {
+    "evidence_rows": [
+      88,
+      158,
+      204,
+      314,
+      329,
+      391,
+      699,
+      798,
+      907,
+      961
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.2663,
+      "imei_hop": 0,
+      "last_seen_day": 29.1879,
+      "late_activation": 0.008965,
+      "lifespan_days": 28.9216,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.026386,
+      "top2_share": 1.0,
+      "total_calls": 65
+    },
+    "id": "6670654051",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.451462
+  },
+  {
+    "evidence_rows": [
+      148,
+      293,
+      295,
+      656,
+      835,
+      875,
+      935,
+      1076,
+      1186,
+      1395
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.4611,
+      "imei_hop": 0,
+      "last_seen_day": 29.617,
+      "late_activation": 0.015523,
+      "lifespan_days": 29.1559,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.018497,
+      "top2_share": 1.0,
+      "total_calls": 59
+    },
+    "id": "9590515186",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.450734
+  },
+  {
+    "evidence_rows": [
+      72,
+      117,
+      317,
+      353,
+      777,
+      791,
+      994,
+      1041,
+      2001,
+      2049
+    ],
+    "features": {
+      "distinct_contacts": 2,
+      "first_seen_day": 0.2207,
+      "imei_hop": 0,
+      "last_seen_day": 28.3748,
+      "late_activation": 0.007429,
+      "lifespan_days": 28.1542,
+      "low_contacts": 0.913043,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.05222,
+      "top2_share": 1.0,
+      "total_calls": 44
+    },
+    "id": "7400504556",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 2 peers"
+    ],
+    "score": 0.450132
+  },
+  {
+    "evidence_rows": [
+      107,
+      347,
+      349,
+      412,
+      594,
+      606,
+      790,
+      821,
+      1162,
+      1278
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.3116,
+      "imei_hop": 0,
+      "last_seen_day": 29.5261,
+      "late_activation": 0.010488,
+      "lifespan_days": 29.2146,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.016523,
+      "top2_share": 1.0,
+      "total_calls": 60
+    },
+    "id": "6375060685",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.448883
+  },
+  {
+    "evidence_rows": [
+      101,
+      114,
+      182,
+      323,
+      574,
+      644,
+      818,
+      891,
+      949,
+      1030
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.2931,
+      "imei_hop": 0,
+      "last_seen_day": 29.5496,
+      "late_activation": 0.009867,
+      "lifespan_days": 29.2564,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.015113,
+      "top2_share": 1.0,
+      "total_calls": 63
+    },
+    "id": "9874034505",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.448305
+  },
+  {
+    "evidence_rows": [
+      106,
+      164,
+      210,
+      289,
+      393,
+      460,
+      572,
+      642,
+      659,
+      946
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.3108,
+      "imei_hop": 0,
+      "last_seen_day": 29.6142,
+      "late_activation": 0.010463,
+      "lifespan_days": 29.3034,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.013533,
+      "top2_share": 1.0,
+      "total_calls": 66
+    },
+    "id": "6034324451",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.44798
+  },
+  {
+    "evidence_rows": [
+      95,
+      186,
+      216,
+      305,
+      445,
+      665,
+      960,
+      1020,
+      1190,
+      1304
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.2805,
+      "imei_hop": 0,
+      "last_seen_day": 29.6416,
+      "late_activation": 0.009443,
+      "lifespan_days": 29.3611,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.011591,
+      "top2_share": 1.0,
+      "total_calls": 61
+    },
+    "id": "6605297516",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.447142
+  },
+  {
+    "evidence_rows": [
+      78,
+      102,
+      177,
+      408,
+      456,
+      598,
+      654,
+      706,
+      922,
+      936
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.2329,
+      "imei_hop": 0,
+      "last_seen_day": 29.5759,
+      "late_activation": 0.007842,
+      "lifespan_days": 29.3429,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.012201,
+      "top2_share": 1.0,
+      "total_calls": 64
+    },
+    "id": "9912517785",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.446925
+  },
+  {
+    "evidence_rows": [
+      67,
+      214,
+      447,
+      679,
+      807,
+      1033,
+      1164,
+      1310,
+      1673,
+      1683
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.1913,
+      "imei_hop": 0,
+      "last_seen_day": 29.5936,
+      "late_activation": 0.006441,
+      "lifespan_days": 29.4023,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.010204,
+      "top2_share": 1.0,
+      "total_calls": 57
+    },
+    "id": "8447962757",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.445976
+  },
+  {
+    "evidence_rows": [
+      71,
+      171,
+      174,
+      386,
+      649,
+      781,
+      816,
+      895,
+      1153,
+      1279
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.2132,
+      "imei_hop": 0,
+      "last_seen_day": 29.6457,
+      "late_activation": 0.007176,
+      "lifespan_days": 29.4325,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.009186,
+      "top2_share": 1.0,
+      "total_calls": 67
+    },
+    "id": "8459910229",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.445854
+  },
+  {
+    "evidence_rows": [
+      64,
+      162,
+      167,
+      345,
+      693,
+      797,
+      813,
+      932,
+      1173,
+      1314
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.1817,
+      "imei_hop": 0,
+      "last_seen_day": 29.6001,
+      "late_activation": 0.006117,
+      "lifespan_days": 29.4184,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.00966,
+      "top2_share": 1.0,
+      "total_calls": 68
+    },
+    "id": "7278774701",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.445731
+  },
+  {
+    "evidence_rows": [
+      62,
+      149,
+      213,
+      294,
+      559,
+      581,
+      832,
+      1019,
+      1075,
+      1175
+    ],
+    "features": {
+      "distinct_contacts": 1,
+      "first_seen_day": 0.1694,
+      "imei_hop": 0,
+      "last_seen_day": 29.6532,
+      "late_activation": 0.005701,
+      "lifespan_days": 29.4838,
+      "low_contacts": 0.956522,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.007458,
+      "top2_share": 1.0,
+      "total_calls": 63
+    },
+    "id": "6998679807",
+    "reasons": [
+      "High contact concentration: 100.0% with top 2 contacts",
+      "Limited distinct contacts: 1 peers"
+    ],
+    "score": 0.444967
+  },
+  {
+    "evidence_rows": [
+      7,
+      23,
+      24,
+      33,
+      51,
+      73,
+      108,
+      110,
+      122,
+      124
+    ],
+    "features": {
+      "distinct_contacts": 9,
+      "first_seen_day": 0.0164,
+      "imei_hop": 0,
+      "last_seen_day": 29.6854,
+      "late_activation": 0.000551,
+      "lifespan_days": 29.6691,
+      "low_contacts": 0.608696,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.001222,
+      "top2_share": 0.377551,
+      "total_calls": 490
+    },
+    "id": "7963605766",
+    "reasons": [
+      "Regular subscriber pattern (490 calls, 9 contacts)"
+    ],
+    "score": 0.216631
+  },
+  {
+    "evidence_rows": [
+      2,
+      8,
+      20,
+      21,
+      29,
+      31,
+      35,
+      36,
+      51,
+      76
+    ],
+    "features": {
+      "distinct_contacts": 9,
+      "first_seen_day": 0.0,
+      "imei_hop": 0,
+      "last_seen_day": 29.6661,
+      "late_activation": 0.0,
+      "lifespan_days": 29.6661,
+      "low_contacts": 0.608696,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.001321,
+      "top2_share": 0.37605,
+      "total_calls": 476
+    },
+    "id": "9014363495",
+    "reasons": [
+      "Regular subscriber pattern (476 calls, 9 contacts)"
+    ],
+    "score": 0.216148
+  },
+  {
+    "evidence_rows": [
+      4,
+      20,
+      70,
+      77,
+      80,
+      175,
+      209,
+      218,
+      228,
+      234
+    ],
+    "features": {
+      "distinct_contacts": 9,
+      "first_seen_day": 0.0117,
+      "imei_hop": 0,
+      "last_seen_day": 29.6713,
+      "late_activation": 0.000392,
+      "lifespan_days": 29.6597,
+      "low_contacts": 0.608696,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.001539,
+      "top2_share": 0.373102,
+      "total_calls": 461
+    },
+    "id": "8674680715",
+    "reasons": [
+      "Regular subscriber pattern (461 calls, 9 contacts)"
+    ],
+    "score": 0.215574
+  },
+  {
+    "evidence_rows": [
+      5,
+      12,
+      25,
+      37,
+      43,
+      44,
+      59,
+      74,
+      89,
+      98
+    ],
+    "features": {
+      "distinct_contacts": 9,
+      "first_seen_day": 0.0133,
+      "imei_hop": 0,
+      "last_seen_day": 29.7053,
+      "late_activation": 0.000448,
+      "lifespan_days": 29.692,
+      "low_contacts": 0.608696,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.000451,
+      "top2_share": 0.364425,
+      "total_calls": 461
+    },
+    "id": "8887719065",
+    "reasons": [
+      "Regular subscriber pattern (461 calls, 9 contacts)"
+    ],
+    "score": 0.213093
+  },
+  {
+    "evidence_rows": [
+      6,
+      11,
+      109,
+      118,
+      140,
+      154,
+      219,
+      221,
+      233,
+      258
+    ],
+    "features": {
+      "distinct_contacts": 10,
+      "first_seen_day": 0.0141,
+      "imei_hop": 0,
+      "last_seen_day": 29.5461,
+      "late_activation": 0.000476,
+      "lifespan_days": 29.532,
+      "low_contacts": 0.565217,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.005838,
+      "top2_share": 0.37046,
+      "total_calls": 413
+    },
+    "id": "7081219136",
+    "reasons": [
+      "Regular subscriber pattern (413 calls, 10 contacts)"
+    ],
+    "score": 0.207529
+  },
+  {
+    "evidence_rows": [
+      21,
+      29,
+      33,
+      43,
+      66,
+      97,
+      116,
+      119,
+      126,
+      146
+    ],
+    "features": {
+      "distinct_contacts": 9,
+      "first_seen_day": 0.0732,
+      "imei_hop": 0,
+      "last_seen_day": 29.6854,
+      "late_activation": 0.002464,
+      "lifespan_days": 29.6122,
+      "low_contacts": 0.608696,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.003135,
+      "top2_share": 0.333333,
+      "total_calls": 480
+    },
+    "id": "9773782639",
+    "reasons": [
+      "Regular subscriber pattern (480 calls, 9 contacts)"
+    ],
+    "score": 0.206629
+  },
+  {
+    "evidence_rows": [
+      58,
+      60,
+      82,
+      99,
+      100,
+      113,
+      133,
+      138,
+      225,
+      232
+    ],
+    "features": {
+      "distinct_contacts": 10,
+      "first_seen_day": 0.1573,
+      "imei_hop": 0,
+      "last_seen_day": 29.5755,
+      "late_activation": 0.005295,
+      "lifespan_days": 29.4182,
+      "low_contacts": 0.565217,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.009666,
+      "top2_share": 0.352518,
+      "total_calls": 417
+    },
+    "id": "7148951343",
+    "reasons": [
+      "Regular subscriber pattern (417 calls, 10 contacts)"
+    ],
+    "score": 0.205397
+  },
+  {
+    "evidence_rows": [
+      10,
+      17,
+      18,
+      45,
+      105,
+      113,
+      125,
+      128,
+      136,
+      138
+    ],
+    "features": {
+      "distinct_contacts": 10,
+      "first_seen_day": 0.0316,
+      "imei_hop": 0,
+      "last_seen_day": 29.6538,
+      "late_activation": 0.001062,
+      "lifespan_days": 29.6223,
+      "low_contacts": 0.565217,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.002798,
+      "top2_share": 0.360465,
+      "total_calls": 430
+    },
+    "id": "8414586850",
+    "reasons": [
+      "Regular subscriber pattern (430 calls, 10 contacts)"
+    ],
+    "score": 0.204265
+  },
+  {
+    "evidence_rows": [
+      19,
+      38,
+      42,
+      49,
+      50,
+      83,
+      87,
+      142,
+      156,
+      193
+    ],
+    "features": {
+      "distinct_contacts": 10,
+      "first_seen_day": 0.0669,
+      "imei_hop": 0,
+      "last_seen_day": 29.586,
+      "late_activation": 0.002251,
+      "lifespan_days": 29.5191,
+      "low_contacts": 0.565217,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.00627,
+      "top2_share": 0.34633,
+      "total_calls": 436
+    },
+    "id": "8615951484",
+    "reasons": [
+      "Regular subscriber pattern (436 calls, 10 contacts)"
+    ],
+    "score": 0.20207
+  },
+  {
+    "evidence_rows": [
+      3,
+      23,
+      27,
+      32,
+      34,
+      44,
+      52,
+      56,
+      68,
+      76
+    ],
+    "features": {
+      "distinct_contacts": 10,
+      "first_seen_day": 0.0015,
+      "imei_hop": 0,
+      "last_seen_day": 29.6708,
+      "late_activation": 5.1e-05,
+      "lifespan_days": 29.6693,
+      "low_contacts": 0.565217,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.001214,
+      "top2_share": 0.354251,
+      "total_calls": 494
+    },
+    "id": "6679740344",
+    "reasons": [
+      "Regular subscriber pattern (494 calls, 10 contacts)"
+    ],
+    "score": 0.201983
+  },
+  {
+    "evidence_rows": [
+      4,
+      5,
+      36,
+      68,
+      80,
+      86,
+      111,
+      122,
+      127,
+      129
+    ],
+    "features": {
+      "distinct_contacts": 9,
+      "first_seen_day": 0.0117,
+      "imei_hop": 0,
+      "last_seen_day": 29.6901,
+      "late_activation": 0.000392,
+      "lifespan_days": 29.6784,
+      "low_contacts": 0.608696,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.000907,
+      "top2_share": 0.315242,
+      "total_calls": 866
+    },
+    "id": "6531003309",
+    "reasons": [
+      "Regular subscriber pattern (866 calls, 9 contacts)"
+    ],
+    "score": 0.20092
+  },
+  {
+    "evidence_rows": [
+      2,
+      22,
+      25,
+      32,
+      35,
+      55,
+      57,
+      66,
+      70,
+      85
+    ],
+    "features": {
+      "distinct_contacts": 10,
+      "first_seen_day": 0.0,
+      "imei_hop": 0,
+      "last_seen_day": 29.6312,
+      "late_activation": 0.0,
+      "lifespan_days": 29.6312,
+      "low_contacts": 0.565217,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.002498,
+      "top2_share": 0.338403,
+      "total_calls": 526
+    },
+    "id": "7710947775",
+    "reasons": [
+      "Regular subscriber pattern (526 calls, 10 contacts)"
+    ],
+    "score": 0.198393
+  },
+  {
+    "evidence_rows": [
+      48,
+      84,
+      94,
+      165,
+      183,
+      195,
+      221,
+      229,
+      238,
+      246
+    ],
+    "features": {
+      "distinct_contacts": 11,
+      "first_seen_day": 0.1327,
+      "imei_hop": 0,
+      "last_seen_day": 29.6914,
+      "late_activation": 0.004467,
+      "lifespan_days": 29.5587,
+      "low_contacts": 0.521739,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.004938,
+      "top2_share": 0.327189,
+      "total_calls": 434
+    },
+    "id": "6112805982",
+    "reasons": [
+      "Regular subscriber pattern (434 calls, 11 contacts)"
+    ],
+    "score": 0.188743
+  },
+  {
+    "evidence_rows": [
+      10,
+      15,
+      16,
+      17,
+      26,
+      38,
+      39,
+      40,
+      46,
+      53
+    ],
+    "features": {
+      "distinct_contacts": 10,
+      "first_seen_day": 0.0316,
+      "imei_hop": 0,
+      "last_seen_day": 29.7054,
+      "late_activation": 0.001062,
+      "lifespan_days": 29.6738,
+      "low_contacts": 0.565217,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.001062,
+      "top2_share": 0.284635,
+      "total_calls": 794
+    },
+    "id": "6957015430",
+    "reasons": [
+      "Regular subscriber pattern (794 calls, 10 contacts)"
+    ],
+    "score": 0.184786
+  },
+  {
+    "evidence_rows": [
+      45,
+      46,
+      47,
+      60,
+      112,
+      120,
+      139,
+      140,
+      154,
+      176
+    ],
+    "features": {
+      "distinct_contacts": 11,
+      "first_seen_day": 0.129,
+      "imei_hop": 1,
+      "last_seen_day": 29.7049,
+      "late_activation": 0.004342,
+      "lifespan_days": 29.5759,
+      "low_contacts": 0.521739,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.004359,
+      "top2_share": 0.309623,
+      "total_calls": 478
+    },
+    "id": "8980841241",
+    "reasons": [
+      "Device hopping observed across multiple numbers on IMEI"
+    ],
+    "score": 0.184147
+  },
+  {
+    "evidence_rows": [
+      6,
+      11,
+      14,
+      26,
+      28,
+      30,
+      39,
+      49,
+      50,
+      92
+    ],
+    "features": {
+      "distinct_contacts": 11,
+      "first_seen_day": 0.0141,
+      "imei_hop": 0,
+      "last_seen_day": 29.6914,
+      "late_activation": 0.000476,
+      "lifespan_days": 29.6773,
+      "low_contacts": 0.521739,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.000946,
+      "top2_share": 0.316,
+      "total_calls": 500
+    },
+    "id": "6834738299",
+    "reasons": [
+      "Regular subscriber pattern (500 calls, 11 contacts)"
+    ],
+    "score": 0.183751
+  },
+  {
+    "evidence_rows": [
+      7,
+      8,
+      9,
+      24,
+      37,
+      75,
+      97,
+      116,
+      121,
+      124
+    ],
+    "features": {
+      "distinct_contacts": 11,
+      "first_seen_day": 0.0164,
+      "imei_hop": 0,
+      "last_seen_day": 29.6966,
+      "late_activation": 0.000551,
+      "lifespan_days": 29.6803,
+      "low_contacts": 0.521739,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.000845,
+      "top2_share": 0.300926,
+      "total_calls": 864
+    },
+    "id": "9165726284",
+    "reasons": [
+      "Regular subscriber pattern (864 calls, 11 contacts)"
+    ],
+    "score": 0.179971
+  },
+  {
+    "evidence_rows": [
+      3,
+      9,
+      12,
+      22,
+      27,
+      31,
+      34,
+      52,
+      55,
+      56
+    ],
+    "features": {
+      "distinct_contacts": 12,
+      "first_seen_day": 0.0015,
+      "imei_hop": 0,
+      "last_seen_day": 29.7053,
+      "late_activation": 5.1e-05,
+      "lifespan_days": 29.7038,
+      "low_contacts": 0.478261,
+      "observation_days": 29.7054,
+      "short_lifespan": 5.3e-05,
+      "top2_share": 0.30744,
+      "total_calls": 914
+    },
+    "id": "9065627298",
+    "reasons": [
+      "Regular subscriber pattern (914 calls, 12 contacts)"
+    ],
+    "score": 0.172541
+  },
+  {
+    "evidence_rows": [
+      13,
+      28,
+      41,
+      53,
+      54,
+      65,
+      69,
+      79,
+      90,
+      91
+    ],
+    "features": {
+      "distinct_contacts": 12,
+      "first_seen_day": 0.034,
+      "imei_hop": 1,
+      "last_seen_day": 29.6423,
+      "late_activation": 0.001144,
+      "lifespan_days": 29.6083,
+      "low_contacts": 0.478261,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.003267,
+      "top2_share": 0.282979,
+      "total_calls": 470
+    },
+    "id": "6647468723",
+    "reasons": [
+      "Device hopping observed across multiple numbers on IMEI"
+    ],
+    "score": 0.167663
+  },
+  {
+    "evidence_rows": [
+      15,
+      40,
+      42,
+      58,
+      61,
+      63,
+      65,
+      82,
+      90,
+      112
+    ],
+    "features": {
+      "distinct_contacts": 12,
+      "first_seen_day": 0.0434,
+      "imei_hop": 0,
+      "last_seen_day": 29.7049,
+      "late_activation": 0.001461,
+      "lifespan_days": 29.6615,
+      "low_contacts": 0.478261,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.001478,
+      "top2_share": 0.270433,
+      "total_calls": 832
+    },
+    "id": "7691669784",
+    "reasons": [
+      "Regular subscriber pattern (832 calls, 12 contacts)"
+    ],
+    "score": 0.164069
+  },
+  {
+    "evidence_rows": [
+      13,
+      14,
+      16,
+      18,
+      19,
+      30,
+      41,
+      47,
+      48,
+      54
+    ],
+    "features": {
+      "distinct_contacts": 13,
+      "first_seen_day": 0.034,
+      "imei_hop": 0,
+      "last_seen_day": 29.7054,
+      "late_activation": 0.001144,
+      "lifespan_days": 29.6714,
+      "low_contacts": 0.434783,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.001144,
+      "top2_share": 0.2669,
+      "total_calls": 858
+    },
+    "id": "8255341928",
+    "reasons": [
+      "Regular subscriber pattern (858 calls, 13 contacts)"
+    ],
+    "score": 0.154311
+  },
+  {
+    "evidence_rows": [
+      62,
+      64,
+      67,
+      71,
+      78,
+      79,
+      88,
+      92,
+      93,
+      95
+    ],
+    "features": {
+      "distinct_contacts": 23,
+      "first_seen_day": 0.1694,
+      "imei_hop": 0,
+      "last_seen_day": 29.6574,
+      "late_activation": 0.005701,
+      "lifespan_days": 29.488,
+      "low_contacts": 0.0,
+      "observation_days": 29.7054,
+      "short_lifespan": 0.007317,
+      "top2_share": 0.097857,
+      "total_calls": 1400
+    },
+    "id": "6604817549",
+    "reasons": [
+      "Regular subscriber pattern (1400 calls, 23 contacts)"
+    ],
+    "score": 0.028085
+  }
+]

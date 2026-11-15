@@ -1,0 +1,470 @@
+{
+  "burners": {
+    "metrics": {
+      "burner_score": {
+        "auroc": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            2.5,
+            2.5
+          ],
+          "mean": 2.5,
+          "median": 2.5
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        }
+      },
+      "fewest_calls": {
+        "auroc": {
+          "bootstrap_95": [
+            0.944126,
+            0.946637
+          ],
+          "mean": 0.945425,
+          "median": 0.946041
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            5.037437,
+            5.13
+          ],
+          "mean": 5.08,
+          "median": 5.0
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            0.5,
+            0.5
+          ],
+          "mean": 0.5,
+          "median": 0.5
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            0.905,
+            0.965
+          ],
+          "mean": 0.935,
+          "median": 1.0
+        }
+      },
+      "latest_first_appearance": {
+        "auroc": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            2.5,
+            2.5
+          ],
+          "mean": 2.5,
+          "median": 2.5
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        }
+      },
+      "random": {
+        "auroc": {
+          "bootstrap_95": [
+            0.5,
+            0.5
+          ],
+          "mean": 0.5,
+          "median": 0.5
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            25.91,
+            26.47
+          ],
+          "mean": 26.19,
+          "median": 26.0
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            0.077131,
+            0.078812
+          ],
+          "mean": 0.07798,
+          "median": 0.078431
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            0.154261,
+            0.157624
+          ],
+          "mean": 0.15596,
+          "median": 0.156863
+        }
+      }
+    },
+    "paired_bootstrap_precision_at_4": {
+      "fewest_calls": {
+        "ci_95": [
+          0.5,
+          0.5
+        ],
+        "mean_diff": 0.5
+      },
+      "latest_first_appearance": {
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "mean_diff": 0.0
+      },
+      "random": {
+        "ci_95": [
+          0.921188,
+          0.922869
+        ],
+        "mean_diff": 0.92202
+      }
+    }
+  },
+  "case_demo_v2": {
+    "burners": {
+      "burner_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "fewest_calls": {
+        "auroc": 0.945652,
+        "mean_rank": 5.0,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      },
+      "latest_first_appearance": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.08
+      }
+    },
+    "mules": {
+      "fan_in": {
+        "auroc": 0.848881,
+        "mean_rank": 12.625,
+        "precision_at_4": 0.75,
+        "recall_at_8": 0.75
+      },
+      "mule_score": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "no_threshold": {
+        "auroc": 1.0,
+        "mean_rank": 2.5,
+        "precision_at_4": 1.0,
+        "recall_at_8": 1.0
+      },
+      "random": {
+        "precision_at_4": 0.056338
+      },
+      "volume": {
+        "auroc": 0.981343,
+        "mean_rank": 3.75,
+        "precision_at_4": 0.5,
+        "recall_at_8": 1.0
+      }
+    }
+  },
+  "cut": {
+    "0.6": {
+      "communities_variant": {
+        "adjusted_agreement_gang_a": 0.8439,
+        "avg_non_courier_persons": 0,
+        "share_containing_cr1": 0.0,
+        "share_containing_cr2": 0.0,
+        "share_containing_decoy": 0.0,
+        "share_exact_couriers": 0.0,
+        "share_finite_cut": 0.0
+      },
+      "true_gangs": {
+        "avg_non_courier_persons": 0,
+        "baseline_betweenness_exact_share": 0.0,
+        "cases_skipped": 0,
+        "distribution_cut_size": {},
+        "share_containing_cr1": 0.0,
+        "share_containing_cr2": 0.0,
+        "share_containing_decoy": 0.0,
+        "share_exact_couriers": 0.0,
+        "share_finite_cut": 0.0
+      }
+    },
+    "1.0": {
+      "communities_variant": {
+        "adjusted_agreement_gang_a": 1.0,
+        "avg_non_courier_persons": 0,
+        "share_containing_cr1": 0.0,
+        "share_containing_cr2": 0.0,
+        "share_containing_decoy": 0.0,
+        "share_exact_couriers": 0.0,
+        "share_finite_cut": 0.0
+      },
+      "true_gangs": {
+        "avg_non_courier_persons": 0,
+        "baseline_betweenness_exact_share": 0.0,
+        "cases_skipped": 0,
+        "distribution_cut_size": {},
+        "share_containing_cr1": 0.0,
+        "share_containing_cr2": 0.0,
+        "share_containing_decoy": 0.0,
+        "share_exact_couriers": 0.0,
+        "share_finite_cut": 0.0
+      }
+    },
+    "coverage_1_0_articulation_couriers_share": 0.0
+  },
+  "mules": {
+    "metrics": {
+      "fan_in": {
+        "auroc": {
+          "bootstrap_95": [
+            0.872864,
+            0.901315
+          ],
+          "mean": 0.887645,
+          "median": 0.899644
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            8.877375,
+            10.687563
+          ],
+          "mean": 9.7425,
+          "median": 9.125
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            0.735,
+            0.75
+          ],
+          "mean": 0.745,
+          "median": 0.75
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            0.75,
+            0.75
+          ],
+          "mean": 0.75,
+          "median": 0.75
+        }
+      },
+      "mule_score": {
+        "auroc": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            2.5,
+            2.5
+          ],
+          "mean": 2.5,
+          "median": 2.5
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        }
+      },
+      "no_threshold": {
+        "auroc": {
+          "bootstrap_95": [
+            0.998333,
+            0.999462
+          ],
+          "mean": 0.998977,
+          "median": 1.0
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            2.534875,
+            2.605
+          ],
+          "mean": 2.565,
+          "median": 2.5
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            0.915,
+            0.97
+          ],
+          "mean": 0.945,
+          "median": 1.0
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        }
+      },
+      "random": {
+        "auroc": {
+          "bootstrap_95": [
+            0.5,
+            0.5
+          ],
+          "mean": 0.5,
+          "median": 0.5
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            34.67,
+            35.09
+          ],
+          "mean": 34.89,
+          "median": 35.0
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            0.057843,
+            0.058556
+          ],
+          "mean": 0.058188,
+          "median": 0.057971
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            0.115686,
+            0.117112
+          ],
+          "mean": 0.116375,
+          "median": 0.115942
+        }
+      },
+      "volume": {
+        "auroc": {
+          "bootstrap_95": [
+            0.976886,
+            0.978491
+          ],
+          "mean": 0.977686,
+          "median": 0.977273
+        },
+        "mean_rank": {
+          "bootstrap_95": [
+            3.894875,
+            3.995
+          ],
+          "mean": 3.945,
+          "median": 4.0
+        },
+        "precision_at_4": {
+          "bootstrap_95": [
+            0.56,
+            0.625
+          ],
+          "mean": 0.59,
+          "median": 0.5
+        },
+        "recall_at_8": {
+          "bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0
+        }
+      }
+    },
+    "paired_bootstrap_precision_at_4": {
+      "fan_in": {
+        "ci_95": [
+          0.25,
+          0.265
+        ],
+        "mean_diff": 0.255
+      },
+      "no_threshold": {
+        "ci_95": [
+          0.03,
+          0.085
+        ],
+        "mean_diff": 0.055
+      },
+      "random": {
+        "ci_95": [
+          0.941444,
+          0.942157
+        ],
+        "mean_diff": 0.941812
+      },
+      "volume": {
+        "ci_95": [
+          0.375,
+          0.44
+        ],
+        "mean_diff": 0.41
+      }
+    }
+  }
+}
