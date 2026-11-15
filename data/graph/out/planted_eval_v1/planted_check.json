@@ -1,0 +1,2309 @@
+{
+  "cases": [
+    {
+      "accounts_count": 20,
+      "bank_rows": 1478,
+      "burner_phones_count": 4,
+      "case_name": "seed_101",
+      "cdr_rows": 7440,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6432178537"
+          ],
+          "ranks": [
+            51
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8025906026"
+          ],
+          "ranks": [
+            52
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        51,
+        52
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "8607265884",
+      "pizza_shop_rank": 1,
+      "seed": 101,
+      "sha256": {
+        "bank_csv": "bfd0c752c149cb616ee2d77e2b76650dda385bf4399fb344cc16dd63c5b701d9",
+        "cdr_csv": "f052fa7b7c769810208c310343ad8292c571bf2103adf830ba46724384ea12e6",
+        "truth_json": "11fa9f6495d993811bc7207bb2b12330a9f92ea0da4acab9b719ce2618407c03"
+      }
+    },
+    {
+      "accounts_count": 17,
+      "bank_rows": 1480,
+      "burner_phones_count": 4,
+      "case_name": "seed_102",
+      "cdr_rows": 7431,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7673821029"
+          ],
+          "ranks": [
+            48
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8437752349"
+          ],
+          "ranks": [
+            49
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        48,
+        49
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 49,
+      "pizza_shop_phone": "6472240734",
+      "pizza_shop_rank": 1,
+      "seed": 102,
+      "sha256": {
+        "bank_csv": "f53c0ad67a29c913ac05e590f939d90cd53e7ea68cb363d50eb76100ac51a48d",
+        "cdr_csv": "3e32f1823b4cd3f52ecde9082abc3c5fde506d0d2725ab6a44f23b489e0815ec",
+        "truth_json": "5b9401b9a87e53e0320b6d7bb377b68f40db4cd5be81bd8203fbcd57d5a4d3d1"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1493,
+      "burner_phones_count": 4,
+      "case_name": "seed_103",
+      "cdr_rows": 7449,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6031298426"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8496489005"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "8325990126",
+      "pizza_shop_rank": 1,
+      "seed": 103,
+      "sha256": {
+        "bank_csv": "b8551dc2bf7d917af88de33b3f8a92cb0598ea400628a1f4ba76212a333f6dd5",
+        "cdr_csv": "0735ad643435eb675d3f0cb2391b93acf60cf732bae65fb32bf2c3e4c7e68594",
+        "truth_json": "34de968c7d65f239846fb72d54c90b95c7703105001083c1e285e95cdc426b36"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1481,
+      "burner_phones_count": 4,
+      "case_name": "seed_104",
+      "cdr_rows": 7470,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8039465924"
+          ],
+          "ranks": [
+            52
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7793851965"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        52,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "7424812511",
+      "pizza_shop_rank": 1,
+      "seed": 104,
+      "sha256": {
+        "bank_csv": "b038bc3303590181968df6f014a9a2f1005f3f4b765123d8018ee57ba925981c",
+        "cdr_csv": "7edff25b5cc6f3044de8c839d81f290769602750da24738da31f6c7d75954b39",
+        "truth_json": "04db371525eeac5581bbc3d7deb7ce3812de7df0eea40a7570a6ea01f2357984"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1486,
+      "burner_phones_count": 4,
+      "case_name": "seed_105",
+      "cdr_rows": 7437,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9526967732"
+          ],
+          "ranks": [
+            54
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9941737619"
+          ],
+          "ranks": [
+            55
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        54,
+        55
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 55,
+      "pizza_shop_phone": "7578102878",
+      "pizza_shop_rank": 1,
+      "seed": 105,
+      "sha256": {
+        "bank_csv": "9775345afd16aa31f53632d0da1c6f619e2e268128781e6c11f440d366dba156",
+        "cdr_csv": "bc1e07dcdd2ddf3f2509aa0d34739f87f02199cf3cb44a637998fd9728ef8d65",
+        "truth_json": "7be88886fd8a7a424d900df15e516db6a7975cae94505ef0c4779f407b68ce3f"
+      }
+    },
+    {
+      "accounts_count": 16,
+      "bank_rows": 1487,
+      "burner_phones_count": 4,
+      "case_name": "seed_106",
+      "cdr_rows": 7460,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7747224575"
+          ],
+          "ranks": [
+            53
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8354557463"
+          ],
+          "ranks": [
+            54
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        53,
+        54
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 54,
+      "pizza_shop_phone": "7333281953",
+      "pizza_shop_rank": 1,
+      "seed": 106,
+      "sha256": {
+        "bank_csv": "91c1c60475d862f338ed64aa26ffeed499bb298b66b1559483ac2a45322fcbe2",
+        "cdr_csv": "2ab88a2572a12e063b68390a2f5a85414fceff95338ea4ab885a812cd979d821",
+        "truth_json": "ebe876c4205b85807f8784b75c88f13ec48abc4e8db12dafb0c147a4f2ea915c"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1469,
+      "burner_phones_count": 4,
+      "case_name": "seed_107",
+      "cdr_rows": 7448,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8532932823"
+          ],
+          "ranks": [
+            51
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9892777017"
+          ],
+          "ranks": [
+            52
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        51,
+        52
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "7308810714",
+      "pizza_shop_rank": 1,
+      "seed": 107,
+      "sha256": {
+        "bank_csv": "2e8052048e3229286b1ef66ed40a3e6c66e0d055031b74a0ca0bbbf892fb1b22",
+        "cdr_csv": "f22d723940f4c26ea60ada887b065dfe96736350930983002d9456bb0ac0c633",
+        "truth_json": "a192a1faed9957370aaebea3dce53bd8db12c6f349864212317406870255dacf"
+      }
+    },
+    {
+      "accounts_count": 20,
+      "bank_rows": 1498,
+      "burner_phones_count": 4,
+      "case_name": "seed_108",
+      "cdr_rows": 7414,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7186185639"
+          ],
+          "ranks": [
+            50
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7077465984"
+          ],
+          "ranks": [
+            49
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        50,
+        49
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "7786807979",
+      "pizza_shop_rank": 1,
+      "seed": 108,
+      "sha256": {
+        "bank_csv": "2a9ec0395d7ff0b7cbbec71f1fb2ba525a242a57876e379a39eb277937f0040c",
+        "cdr_csv": "ddad82817d642b4b63422acb15bdd39437d2797978b5d11c06bc4532d31aa533",
+        "truth_json": "ae2fc74275b782e1a4f6b8e531a26eb077e764ec3fd03f14c8a0850e60eff730"
+      }
+    },
+    {
+      "accounts_count": 17,
+      "bank_rows": 1490,
+      "burner_phones_count": 4,
+      "case_name": "seed_109",
+      "cdr_rows": 7424,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7784624885"
+          ],
+          "ranks": [
+            50
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8410057270"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        50,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "9124653690",
+      "pizza_shop_rank": 1,
+      "seed": 109,
+      "sha256": {
+        "bank_csv": "6c3f6f46945c1b1b9e97601bb5adf46e69a59b134634a359b3ccce9a0ae2ab17",
+        "cdr_csv": "95a188a90332dee7e90c4a76db64c9aabab3e76f198da05176ffd7c6de47ac8a",
+        "truth_json": "ba1ce32a91c8ae5666dcfec9ee8cc4f9d2ecd82a2d99551f37afc8b3122d2c49"
+      }
+    },
+    {
+      "accounts_count": 17,
+      "bank_rows": 1466,
+      "burner_phones_count": 4,
+      "case_name": "seed_110",
+      "cdr_rows": 7431,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6270869344"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7855941866"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "7065844882",
+      "pizza_shop_rank": 1,
+      "seed": 110,
+      "sha256": {
+        "bank_csv": "0464ca9540c875e3757747f1d9a46a8cc2790e4bf504a373dc58fd432a11f5ce",
+        "cdr_csv": "3475045c7a9a699508b300a3ea1ff0af5f290adaf528486c536e681bd59c637f",
+        "truth_json": "2a1c29f2557b98f2286318c1309b80c5fd781eaa78758703f7428ed617a73dff"
+      }
+    },
+    {
+      "accounts_count": 21,
+      "bank_rows": 1468,
+      "burner_phones_count": 4,
+      "case_name": "seed_111",
+      "cdr_rows": 7441,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9646357053"
+          ],
+          "ranks": [
+            52
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8575908574"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        52,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "9037585478",
+      "pizza_shop_rank": 1,
+      "seed": 111,
+      "sha256": {
+        "bank_csv": "251b2f5a69f3bc49f5c3578b304606a611774ba2008e8e6d9d3170b518682940",
+        "cdr_csv": "d4dc0672343554b2d57cf93029ffa299491aef85a3f02901a13c69a402d87ceb",
+        "truth_json": "a2cab0e7bc4f71a120496986c07cc770022fa550ac4dc17b41dfd30caa9b82c0"
+      }
+    },
+    {
+      "accounts_count": 22,
+      "bank_rows": 1481,
+      "burner_phones_count": 4,
+      "case_name": "seed_112",
+      "cdr_rows": 7439,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7774533927"
+          ],
+          "ranks": [
+            47
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8327388903"
+          ],
+          "ranks": [
+            48
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        47,
+        48
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 48,
+      "pizza_shop_phone": "9713731401",
+      "pizza_shop_rank": 1,
+      "seed": 112,
+      "sha256": {
+        "bank_csv": "5c14978fe37e25d258b0574a8ab518a203b149077ad9fb6a4bf28a55709586c6",
+        "cdr_csv": "7658a60b2f67fb3f056adf5af47eb52bdfe22c606eadfa54681183cebef2129f",
+        "truth_json": "8c8f6d4c450a58294e4fd1ce684d116873b49ba970b1996f2ac5afcb78345b0c"
+      }
+    },
+    {
+      "accounts_count": 14,
+      "bank_rows": 1484,
+      "burner_phones_count": 4,
+      "case_name": "seed_113",
+      "cdr_rows": 7463,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9446563764"
+          ],
+          "ranks": [
+            48
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9565630094"
+          ],
+          "ranks": [
+            49
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        48,
+        49
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 49,
+      "pizza_shop_phone": "6907240207",
+      "pizza_shop_rank": 1,
+      "seed": 113,
+      "sha256": {
+        "bank_csv": "9435e0078e57f881d5c7fdcf4cdcd825ebb214a2588f25f3ab93d05d3de7778e",
+        "cdr_csv": "7c2be24d3ce9211e44a892367554d6271706690636db9c59f5c05a9244d1c5d7",
+        "truth_json": "f0269ae57d85fbec3ffba63cdb123c17a8c49e01d76ace7fa864919610acd265"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1486,
+      "burner_phones_count": 4,
+      "case_name": "seed_114",
+      "cdr_rows": 7459,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8511761984"
+          ],
+          "ranks": [
+            56
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8401610790"
+          ],
+          "ranks": [
+            55
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        56,
+        55
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 56,
+      "pizza_shop_phone": "6878343364",
+      "pizza_shop_rank": 1,
+      "seed": 114,
+      "sha256": {
+        "bank_csv": "317c6e702a7b7f867983a4c060656d1c14631d6e6f49a292824624d422462767",
+        "cdr_csv": "99e9fb422bb9e4203036bdea35f47aa50b9d89d82eb8b77165b0520c2a6588cf",
+        "truth_json": "15cc24857e51518d056e4969b2139c60a7d9e3df66573351cd72194717a15d78"
+      }
+    },
+    {
+      "accounts_count": 21,
+      "bank_rows": 1471,
+      "burner_phones_count": 4,
+      "case_name": "seed_115",
+      "cdr_rows": 7446,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7204279322"
+          ],
+          "ranks": [
+            53
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7801074848"
+          ],
+          "ranks": [
+            54
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        53,
+        54
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 54,
+      "pizza_shop_phone": "8478014488",
+      "pizza_shop_rank": 1,
+      "seed": 115,
+      "sha256": {
+        "bank_csv": "421419bb339ea3b81e37ba95e63a1c4597b999d9247d17eee2e759e570b545ae",
+        "cdr_csv": "a8609974e8f05576137c21a700d0db46fab600e631c38437ef6dfee7ceb59983",
+        "truth_json": "80375ca5be70d1433bc61766d1dacb6c0434af776f99f676a825197d61d2aee9"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1491,
+      "burner_phones_count": 4,
+      "case_name": "seed_116",
+      "cdr_rows": 7399,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9158570881"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9194451164"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "9052967299",
+      "pizza_shop_rank": 1,
+      "seed": 116,
+      "sha256": {
+        "bank_csv": "4dabf37898f189792cfa1d4254781371ac36405da8c84ab6a918bb811c1ee958",
+        "cdr_csv": "206b0a296bb1b34d90eef489a90186690897349db497775680dbc83354693061",
+        "truth_json": "71fe058e4a1f6b986259cd5c4ede5a8266b0bfdf1d569caabffbfdb763324e53"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1476,
+      "burner_phones_count": 4,
+      "case_name": "seed_117",
+      "cdr_rows": 7444,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6256126666"
+          ],
+          "ranks": [
+            47
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7334036162"
+          ],
+          "ranks": [
+            48
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        47,
+        48
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 48,
+      "pizza_shop_phone": "6824190439",
+      "pizza_shop_rank": 1,
+      "seed": 117,
+      "sha256": {
+        "bank_csv": "00bb387ee144062cdb7d227e7301ae31775ab6829018ad56b9e065392ec66ef6",
+        "cdr_csv": "873fe962a95f801bfdb9aa6e7179fe1da57cf6b6ef49248fd3a6212e4c70ce03",
+        "truth_json": "37f6007b1fd1c60379b5ed78ac6c5c4bc2b065ac6fcc6bec2e0dd555ad190d94"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1476,
+      "burner_phones_count": 4,
+      "case_name": "seed_118",
+      "cdr_rows": 7469,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7980392641"
+          ],
+          "ranks": [
+            52
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "6958972523"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        52,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "8859356645",
+      "pizza_shop_rank": 1,
+      "seed": 118,
+      "sha256": {
+        "bank_csv": "72b52ec50b6d6ed4fbda79d84959b888c71da0b01d3835be2669bbd6ef404b5d",
+        "cdr_csv": "c496a3ccca9ab9217c1829d1b527834022c434f993b6222a069f7b4aca289d1f",
+        "truth_json": "ed269be17ba7f711ab19ee5e9ec837f03ea825bb88550f878d823e69a0b39abb"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1483,
+      "burner_phones_count": 4,
+      "case_name": "seed_119",
+      "cdr_rows": 7424,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6646053270"
+          ],
+          "ranks": [
+            50
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7021789227"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        50,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "9023154076",
+      "pizza_shop_rank": 1,
+      "seed": 119,
+      "sha256": {
+        "bank_csv": "8ef037801e94e7d6e84f959af42d5af4acce80270b9d19102261f78f2f9463d5",
+        "cdr_csv": "86ca987a4c4c04ee092f870c9e66cbf5b75beb527c1aab3d6a5e861e6d6fa828",
+        "truth_json": "0d0d14ad19f3b00f2e9f77e4ad610b9bae80f449e9de918c6f4138022e9eeae2"
+      }
+    },
+    {
+      "accounts_count": 23,
+      "bank_rows": 1477,
+      "burner_phones_count": 4,
+      "case_name": "seed_120",
+      "cdr_rows": 7473,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8424443388"
+          ],
+          "ranks": [
+            52
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8214220539"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        52,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "9287213967",
+      "pizza_shop_rank": 1,
+      "seed": 120,
+      "sha256": {
+        "bank_csv": "b01ee10bbf08972562929d2027509a8eebff6c5c9826e1fb815459d784c9fe27",
+        "cdr_csv": "522b08d6dc640667fcf50949fd112120f5fcbca1eb6234d04407e26d79039e87",
+        "truth_json": "dd251631d9440c71118e37321438222863e62d9f0d645b20f4c0ffdd0a2d689f"
+      }
+    },
+    {
+      "accounts_count": 16,
+      "bank_rows": 1490,
+      "burner_phones_count": 4,
+      "case_name": "seed_121",
+      "cdr_rows": 7458,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9207657932"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8986251222"
+          ],
+          "ranks": [
+            48
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        48
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 49,
+      "pizza_shop_phone": "9284019057",
+      "pizza_shop_rank": 1,
+      "seed": 121,
+      "sha256": {
+        "bank_csv": "1293c11ed02c74b327fdc8f937ab9466f8e31e1c86c9b1001b83be8a7d3d0921",
+        "cdr_csv": "6b95fca588085d6df55072ce7140e6697e86894e3ea3ea41fce99c54512ea343",
+        "truth_json": "2a0e4c5c08093a27d52bf4d886ab9668c76340ed20abd6561248e338bc48ce5c"
+      }
+    },
+    {
+      "accounts_count": 20,
+      "bank_rows": 1472,
+      "burner_phones_count": 4,
+      "case_name": "seed_122",
+      "cdr_rows": 7455,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9625471618"
+          ],
+          "ranks": [
+            47
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9703027389"
+          ],
+          "ranks": [
+            48
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        47,
+        48
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 48,
+      "pizza_shop_phone": "8500220815",
+      "pizza_shop_rank": 1,
+      "seed": 122,
+      "sha256": {
+        "bank_csv": "b49757571385fd194b00c95dff551b88cf3242b9c76375d722822a218ee88f9d",
+        "cdr_csv": "fd7c52bd63c4fbefd10acde724742a8724d937569a95e98b1a86ab0a5d099f45",
+        "truth_json": "ced6ef46cfe8c4e78ecadd2cc6b4e08b1da00d208b39f4f0abe79697bfff06b6"
+      }
+    },
+    {
+      "accounts_count": 21,
+      "bank_rows": 1496,
+      "burner_phones_count": 4,
+      "case_name": "seed_123",
+      "cdr_rows": 7455,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7585320619"
+          ],
+          "ranks": [
+            50
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7260633062"
+          ],
+          "ranks": [
+            49
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        50,
+        49
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "9874356389",
+      "pizza_shop_rank": 1,
+      "seed": 123,
+      "sha256": {
+        "bank_csv": "a6d6f201b766d1f7d1ee5587feda4d38c30f8e892e4ff44cdac19248871dae0c",
+        "cdr_csv": "460c392711371c606ccd97a876ee6d7a884e380f3bb7b7180175af054b10f6bd",
+        "truth_json": "ae9445213f0b708da0ad2b553e98e436dfa91b09a718d4712347cf9d11bef890"
+      }
+    },
+    {
+      "accounts_count": 17,
+      "bank_rows": 1482,
+      "burner_phones_count": 4,
+      "case_name": "seed_124",
+      "cdr_rows": 7421,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6879603316"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9445518479"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "6602749753",
+      "pizza_shop_rank": 1,
+      "seed": 124,
+      "sha256": {
+        "bank_csv": "abc33196dd14e94e10963f813bbfb55d3a829645ff4db7ac9e6231ce857a72db",
+        "cdr_csv": "82c3030e78502573498bd30621c7a30f04629a2bd1fdd288685a5caa57d22498",
+        "truth_json": "a8fab1e8c85a8201a64d8277da70d073c0c3ee9be01ce88a5d4b30433f2d7bcc"
+      }
+    },
+    {
+      "accounts_count": 16,
+      "bank_rows": 1479,
+      "burner_phones_count": 4,
+      "case_name": "seed_125",
+      "cdr_rows": 7458,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9861442727"
+          ],
+          "ranks": [
+            48
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9086313272"
+          ],
+          "ranks": [
+            47
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        48,
+        47
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 48,
+      "pizza_shop_phone": "8778896869",
+      "pizza_shop_rank": 1,
+      "seed": 125,
+      "sha256": {
+        "bank_csv": "2331956da383c6e471606ea9c50de26e2d2b30056107e7829803f2e1eb9ba885",
+        "cdr_csv": "2f2f6ed5eb02a991582afbc532561ca6d15b5ec0a30d36037639226187a3cb52",
+        "truth_json": "07a811bf0c608fdafd430cd1cbe1bc4ec313109ca82db1921b8e4984cfd3da33"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1477,
+      "burner_phones_count": 4,
+      "case_name": "seed_126",
+      "cdr_rows": 7464,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7537606647"
+          ],
+          "ranks": [
+            50
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9483525959"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        50,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "8915662372",
+      "pizza_shop_rank": 1,
+      "seed": 126,
+      "sha256": {
+        "bank_csv": "fbc6d850fe5cacb35de09bee6efad85c53957a74e008f4b2717929c68d604682",
+        "cdr_csv": "38b78a775cee4990c975b4a50c27a09cff884c1a7040fc6356e32c74048037c7",
+        "truth_json": "d26f7f900db0c85bb12ca9de8016da7214c07d928e875c4431f7cf2a17f35098"
+      }
+    },
+    {
+      "accounts_count": 21,
+      "bank_rows": 1487,
+      "burner_phones_count": 4,
+      "case_name": "seed_127",
+      "cdr_rows": 7430,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6548161195"
+          ],
+          "ranks": [
+            51
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "6711429809"
+          ],
+          "ranks": [
+            52
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        51,
+        52
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "6222720449",
+      "pizza_shop_rank": 1,
+      "seed": 127,
+      "sha256": {
+        "bank_csv": "11c8704029ad2b388258aaade298595dc99c6ec5af90cd21012b70338862144b",
+        "cdr_csv": "eef557dc15653788a1658359a17108a5a7698b7a522b7ed46ce8184b7ba251c4",
+        "truth_json": "e31154e61af5ea1c8ff364689363ab122d7d5a8df99bf4aaf48c0cfb77b2c521"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1486,
+      "burner_phones_count": 4,
+      "case_name": "seed_128",
+      "cdr_rows": 7476,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6104517268"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7997190296"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "9976918471",
+      "pizza_shop_rank": 1,
+      "seed": 128,
+      "sha256": {
+        "bank_csv": "65ccd135899f1591e246183c396ee0bcece8027a886872f0661485f2bbc783cc",
+        "cdr_csv": "9ef1e79a608981b889aea2863d4bdfe2d8f2b95a4a4572b8fb3481ae949f82a1",
+        "truth_json": "0946af8ba7b6490cf21ca804abce2a10be0fdc2aad0289bcd11cad70db4a5635"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1476,
+      "burner_phones_count": 4,
+      "case_name": "seed_129",
+      "cdr_rows": 7443,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7797214141"
+          ],
+          "ranks": [
+            53
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8634194651"
+          ],
+          "ranks": [
+            54
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        53,
+        54
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 54,
+      "pizza_shop_phone": "8464843137",
+      "pizza_shop_rank": 1,
+      "seed": 129,
+      "sha256": {
+        "bank_csv": "e939493f473693d230beb2e620e427e94e5a6701237c1bbfe2e13fa1a3b57638",
+        "cdr_csv": "fea693ad12b3619d8acf27aaa09792a7a2bf72f67cdfbc267190aaca3dc6bc6c",
+        "truth_json": "ef63b591e7548e93c7790402a36f104d5f6ec9c34d471a1968bf664e37ba44c6"
+      }
+    },
+    {
+      "accounts_count": 21,
+      "bank_rows": 1488,
+      "burner_phones_count": 4,
+      "case_name": "seed_130",
+      "cdr_rows": 7398,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7506052076"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8492456401"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "6772176955",
+      "pizza_shop_rank": 1,
+      "seed": 130,
+      "sha256": {
+        "bank_csv": "478df5088dd149198a569aad177e23120e3a28b87685aba3b25707646cd6b69d",
+        "cdr_csv": "654a6d8d4858711594439b364dc672b785a58fe70cc5832e2f51ff0ff810c7b9",
+        "truth_json": "80abff8ca82b4c65d8ede90ea60b30724d064c065f889e854673a3f10e341d40"
+      }
+    },
+    {
+      "accounts_count": 22,
+      "bank_rows": 1476,
+      "burner_phones_count": 4,
+      "case_name": "seed_131",
+      "cdr_rows": 7481,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7877338027"
+          ],
+          "ranks": [
+            54
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7228699994"
+          ],
+          "ranks": [
+            53
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        54,
+        53
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 54,
+      "pizza_shop_phone": "6246909177",
+      "pizza_shop_rank": 1,
+      "seed": 131,
+      "sha256": {
+        "bank_csv": "1804872703611d06d606e2b5b42bc2c7f40eeb747b2a6fd69d77919471ed5d7d",
+        "cdr_csv": "914444a83de7280e4726ac4ee695a5f20488d3c5249e252346585489614dbe67",
+        "truth_json": "88b36d100d41305f9be8d322ae3fd2261cc33f1471fcf53810ea07e2c8195bb0"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1474,
+      "burner_phones_count": 4,
+      "case_name": "seed_132",
+      "cdr_rows": 7450,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9296379898"
+          ],
+          "ranks": [
+            53
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7056887324"
+          ],
+          "ranks": [
+            52
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        53,
+        52
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 53,
+      "pizza_shop_phone": "9043163895",
+      "pizza_shop_rank": 1,
+      "seed": 132,
+      "sha256": {
+        "bank_csv": "e9e4ca1da116815f934097feaf8d6d5550373a9f8be3f413fd8719730db0157a",
+        "cdr_csv": "056733688489fe3846715af4933eac593a90b518b87d7f39bf6bc7dbbe83d159",
+        "truth_json": "543e18f006bfeeedbcb70b7316d3aca7be9dfb0a8a61f3a7c61c8e4b3836db29"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1495,
+      "burner_phones_count": 4,
+      "case_name": "seed_133",
+      "cdr_rows": 7451,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6686214206"
+          ],
+          "ranks": [
+            51
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "6536695145"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        51,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "6594676464",
+      "pizza_shop_rank": 1,
+      "seed": 133,
+      "sha256": {
+        "bank_csv": "9ae7e130c911f2e509709ab2f767ab3ed8bcf2ec77220b90bbb2f6d75a9b48ba",
+        "cdr_csv": "57910c9a48ecfc368e43cd7fb4211906012e761a1a63412a0311aee0409cfc9e",
+        "truth_json": "23bcc15560acbf5d973deab704a04d262ec9de35a33a7fe6317560986e8572e4"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1494,
+      "burner_phones_count": 4,
+      "case_name": "seed_134",
+      "cdr_rows": 7433,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9014844194"
+          ],
+          "ranks": [
+            50
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9729297834"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        50,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "7257086632",
+      "pizza_shop_rank": 1,
+      "seed": 134,
+      "sha256": {
+        "bank_csv": "5e103e2b6e46010cba470beefa02db3f92307fd6c1cd9fd4e0defb8027a29f47",
+        "cdr_csv": "a1d804136119ae4bd0126ce3ac144e40995e25674d6b44fa33dc4c83fcc51982",
+        "truth_json": "19fac3b63a2a53ee4e0cd91711f32a63514fe118b9c0c479c71af75bd4fcb4de"
+      }
+    },
+    {
+      "accounts_count": 20,
+      "bank_rows": 1480,
+      "burner_phones_count": 4,
+      "case_name": "seed_135",
+      "cdr_rows": 7448,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8449444034"
+          ],
+          "ranks": [
+            51
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "6286669794"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        51,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "9041415212",
+      "pizza_shop_rank": 1,
+      "seed": 135,
+      "sha256": {
+        "bank_csv": "92cfcfd4d2ba355bd41aa9db19a617d8c50e4f66dd74a3b9c7edbcaa813d5fc2",
+        "cdr_csv": "a08e44c3ee413d16e926083792ffbe564d2d635b34a6c4df37ab27b08d86ff7d",
+        "truth_json": "cbdf2900186e7c5ae493637775fb5ff5fdb4003af18570db9ea0dc40ebb8ca59"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1477,
+      "burner_phones_count": 4,
+      "case_name": "seed_136",
+      "cdr_rows": 7448,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6339495670"
+          ],
+          "ranks": [
+            52
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7662439304"
+          ],
+          "ranks": [
+            53
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        52,
+        53
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 53,
+      "pizza_shop_phone": "9142593207",
+      "pizza_shop_rank": 1,
+      "seed": 136,
+      "sha256": {
+        "bank_csv": "2404b64abfd1836463b94ea5d286c0345e5e0bd313a9982df703083f84d63256",
+        "cdr_csv": "5446cb40105e003a0b6c3065634b025743f3097fa367e4f28c15cff50062f035",
+        "truth_json": "5762a6698fe687825855a5dc4e244bbf5629829de705c6d472cbeaebdedc9a86"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1487,
+      "burner_phones_count": 4,
+      "case_name": "seed_137",
+      "cdr_rows": 7438,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9268850902"
+          ],
+          "ranks": [
+            52
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9233555163"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        52,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "9583368057",
+      "pizza_shop_rank": 1,
+      "seed": 137,
+      "sha256": {
+        "bank_csv": "0355b822910dad095d8ebe56c29f533269dd272dd3135a467dfa5b02a876e956",
+        "cdr_csv": "24f1373035bbeb1debd3bc1ae54ef5916fe0852beb78a489aae623c90556f352",
+        "truth_json": "649c7f57ede8a00c7e6de27db16fad294004bd3e9ce392412f8eb88be2e08346"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1503,
+      "burner_phones_count": 4,
+      "case_name": "seed_138",
+      "cdr_rows": 7444,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6781232505"
+          ],
+          "ranks": [
+            48
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "6425376662"
+          ],
+          "ranks": [
+            47
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        48,
+        47
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 48,
+      "pizza_shop_phone": "7553523175",
+      "pizza_shop_rank": 1,
+      "seed": 138,
+      "sha256": {
+        "bank_csv": "9af143ff7e9810eb16a882b3d82f6f605d681c86b379dbe6923d67590b3dbb8b",
+        "cdr_csv": "f623cdd2fed6e78d978480cbe8f44e1a76f510d8321ca750e303a33eb8f48ea4",
+        "truth_json": "846b69c4bbe034a5a02262a544585ee8abed0fb99d7087b0aeecf78e510c11f3"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1486,
+      "burner_phones_count": 4,
+      "case_name": "seed_139",
+      "cdr_rows": 7495,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8394725808"
+          ],
+          "ranks": [
+            50
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9204841451"
+          ],
+          "ranks": [
+            51
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        50,
+        51
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "6132554830",
+      "pizza_shop_rank": 1,
+      "seed": 139,
+      "sha256": {
+        "bank_csv": "5a9c718aeb9ee6dc88ba62a38315279699ac70eb93b553c738cd5e20416595e5",
+        "cdr_csv": "7cac90dcafea123593b3a350aa4648b2e23c97876585580f1608fac4c06c1c8d",
+        "truth_json": "8aeb4c440a29aae18759c7aaf16ecfb9f04bd162a88aeee42c9d22726c8e95c4"
+      }
+    },
+    {
+      "accounts_count": 21,
+      "bank_rows": 1483,
+      "burner_phones_count": 4,
+      "case_name": "seed_140",
+      "cdr_rows": 7421,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "7393674088"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7238898978"
+          ],
+          "ranks": [
+            48
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        48
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 49,
+      "pizza_shop_phone": "6366729719",
+      "pizza_shop_rank": 1,
+      "seed": 140,
+      "sha256": {
+        "bank_csv": "cb3070d951aab2fc7ee5e6fd6dc3ee2c6da81daa0506601f23c83c02b219c03b",
+        "cdr_csv": "e713c6f731b4ec669b13a62ccea172205b3ed5b91bf88070c6f420dcea1fab6d",
+        "truth_json": "a8c10887b9df3b85d9e21a60303def01d4520dcc69019411d9fb1905c93ba061"
+      }
+    },
+    {
+      "accounts_count": 17,
+      "bank_rows": 1472,
+      "burner_phones_count": 4,
+      "case_name": "seed_141",
+      "cdr_rows": 7440,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8859782255"
+          ],
+          "ranks": [
+            48
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8417532394"
+          ],
+          "ranks": [
+            47
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        48,
+        47
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 48,
+      "pizza_shop_phone": "9563837811",
+      "pizza_shop_rank": 1,
+      "seed": 141,
+      "sha256": {
+        "bank_csv": "3bae813680907f9830372e76910198ef22bfa4200de817d8307e25ea5eee3bdf",
+        "cdr_csv": "84b2de9c731d728e76be1df4f8b12c0a6fbbca617fa43d5a7d843c5cc4345904",
+        "truth_json": "607893f02641994a8338cc226905394ed8a274a11e4dc8e9ac14590739538ff8"
+      }
+    },
+    {
+      "accounts_count": 22,
+      "bank_rows": 1476,
+      "burner_phones_count": 4,
+      "case_name": "seed_142",
+      "cdr_rows": 7455,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "6731585117"
+          ],
+          "ranks": [
+            54
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7425639106"
+          ],
+          "ranks": [
+            55
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        54,
+        55
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 55,
+      "pizza_shop_phone": "6532281255",
+      "pizza_shop_rank": 1,
+      "seed": 142,
+      "sha256": {
+        "bank_csv": "17cb455f790fa45f679d4ba11a18cef37d6f1df6da79161a65972aa5b90d026b",
+        "cdr_csv": "78d42728f1150d51927f84d4f37d5dd1fb7ef4b7a8e249e3de1d7e397e1dd4a8",
+        "truth_json": "e38fafd221847e605f159347b6c9aeb31691bf0fa719d20eddb6fd121e2385e1"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1492,
+      "burner_phones_count": 4,
+      "case_name": "seed_143",
+      "cdr_rows": 7445,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8614976914"
+          ],
+          "ranks": [
+            50
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7837438125"
+          ],
+          "ranks": [
+            49
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        50,
+        49
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 50,
+      "pizza_shop_phone": "7949206269",
+      "pizza_shop_rank": 1,
+      "seed": 143,
+      "sha256": {
+        "bank_csv": "0b8096d95a6debd70ff5b5951ff2cc45009d7203dfd4ace033f9fed914c27b1b",
+        "cdr_csv": "fd449c13848e17ecd6fe26f8eb1a27d1a9c3cd8bd34277ef17f234326576e870",
+        "truth_json": "9c6cd20fe103d66c2fcbcfbb978f7913668405aa39570731534d41b1a20c64f0"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1490,
+      "burner_phones_count": 4,
+      "case_name": "seed_144",
+      "cdr_rows": 7432,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9071384340"
+          ],
+          "ranks": [
+            51
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "6694930702"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        51,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "6377026318",
+      "pizza_shop_rank": 1,
+      "seed": 144,
+      "sha256": {
+        "bank_csv": "5db0de8516b49090fc405f8688a2e67fda48a3886e4bf1e651e98be12fd4294f",
+        "cdr_csv": "d04720f64521d5cb8fa06c20a1163ceee64309e58f23d5bf1412e2dfa3f8a1b6",
+        "truth_json": "c47dfb2b9aadffc94beaada7f7ee142115f805f20bee722228cdc018a63b90b6"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1482,
+      "burner_phones_count": 4,
+      "case_name": "seed_145",
+      "cdr_rows": 7475,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8709444625"
+          ],
+          "ranks": [
+            55
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8569026585"
+          ],
+          "ranks": [
+            54
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        55,
+        54
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 55,
+      "pizza_shop_phone": "9399961252",
+      "pizza_shop_rank": 1,
+      "seed": 145,
+      "sha256": {
+        "bank_csv": "96cda972f366294434d7ef0ee14d044b5b11ab1a11792c3a6cd65f0cadd8ba8b",
+        "cdr_csv": "467b9bdc1d59ddd19d78e7daacff6854cb60770d83fa2163529a150840dae6cb",
+        "truth_json": "22640bc538a2dd12c5bd552ebf9cf53a3e9ce68fb2ab45d10c3ef0ac340eb9a8"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1480,
+      "burner_phones_count": 4,
+      "case_name": "seed_146",
+      "cdr_rows": 7449,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9245100706"
+          ],
+          "ranks": [
+            51
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "9857678665"
+          ],
+          "ranks": [
+            52
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        51,
+        52
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 52,
+      "pizza_shop_phone": "6221443048",
+      "pizza_shop_rank": 1,
+      "seed": 146,
+      "sha256": {
+        "bank_csv": "df59260049da2b8df59fab3cba38d07a5c74da866bbe696d1c7432232aa72500",
+        "cdr_csv": "619df10ce2c6b0eec8b0d3f9f151af28ec2df93e2586babaceaf7ab553382f7d",
+        "truth_json": "283efdce0e5bc35a5405415ca56d6cd4992dededcb297f698acb40a3274b4720"
+      }
+    },
+    {
+      "accounts_count": 19,
+      "bank_rows": 1505,
+      "burner_phones_count": 4,
+      "case_name": "seed_147",
+      "cdr_rows": 7450,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8559333072"
+          ],
+          "ranks": [
+            51
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "6901077473"
+          ],
+          "ranks": [
+            50
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        51,
+        50
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 51,
+      "pizza_shop_phone": "6466893365",
+      "pizza_shop_rank": 1,
+      "seed": 147,
+      "sha256": {
+        "bank_csv": "aa78fa50984009d3bbd55a83ec0913fbde2f396897d8341c1be89d13a51e4daa",
+        "cdr_csv": "214cf6fec6bdddbd7f2a34ae3b012c1af6e2aac8d46bcdab9f0e3d211f5042b4",
+        "truth_json": "7f32a125ce4762d3b28430141b8e73d24b785203094a93311c379e56bc63f9d1"
+      }
+    },
+    {
+      "accounts_count": 16,
+      "bank_rows": 1484,
+      "burner_phones_count": 4,
+      "case_name": "seed_148",
+      "cdr_rows": 7460,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9569065404"
+          ],
+          "ranks": [
+            55
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "7110583872"
+          ],
+          "ranks": [
+            54
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        55,
+        54
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 55,
+      "pizza_shop_phone": "7243322068",
+      "pizza_shop_rank": 1,
+      "seed": 148,
+      "sha256": {
+        "bank_csv": "389aa3526fe41c6bb86f8216858226cfcb277b21c6ad7106a1176371bd968a50",
+        "cdr_csv": "78c3d02c2a62d4c0cf205b3dd4e42ef6fe7475df69bbba81f144830e668ece59",
+        "truth_json": "70a030836dc7b62273b50bec49e0a033c5b50a4b1fe620b8cbeb5f0cfa695999"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1481,
+      "burner_phones_count": 4,
+      "case_name": "seed_149",
+      "cdr_rows": 7468,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "8137216120"
+          ],
+          "ranks": [
+            48
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "6531309020"
+          ],
+          "ranks": [
+            47
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        48,
+        47
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 48,
+      "pizza_shop_phone": "7763697696",
+      "pizza_shop_rank": 1,
+      "seed": 149,
+      "sha256": {
+        "bank_csv": "d9982985aafe50049467f298d060651b06f180a45e41818144f2697adc8c2196",
+        "cdr_csv": "edffd7f5d694a88c43a39f58b3096f61feeb513b6116072ce863d3e2cf788a1b",
+        "truth_json": "6f9a543f1e149667c42590da883ead1ac3012aee9271002b41010fd3a3756e9d"
+      }
+    },
+    {
+      "accounts_count": 18,
+      "bank_rows": 1477,
+      "burner_phones_count": 4,
+      "case_name": "seed_150",
+      "cdr_rows": 7438,
+      "flags": {
+        "kingpins_in_bottom_10_percent_by_calls": true,
+        "pizza_shop_is_rank_1": true
+      },
+      "kingpin_phones": {
+        "PER_A_KP_01": {
+          "name": "Rajendra Singh",
+          "phones": [
+            "9022751475"
+          ],
+          "ranks": [
+            49
+          ]
+        },
+        "PER_B_KP_01": {
+          "name": "Mukhtar Ansari",
+          "phones": [
+            "8332804365"
+          ],
+          "ranks": [
+            48
+          ]
+        }
+      },
+      "kingpin_ranks": [
+        49,
+        48
+      ],
+      "mule_accounts_count": 4,
+      "people_count": 21,
+      "phones_count": 49,
+      "pizza_shop_phone": "9702865546",
+      "pizza_shop_rank": 1,
+      "seed": 150,
+      "sha256": {
+        "bank_csv": "5ed77a547b088a5979a19fda3117e2c29d2a0206ef5bd23391a18c5f22d14d57",
+        "cdr_csv": "18a07a1ed5c22f1dfc269eaf8ae5b89e8425ff32aaaeab30f12bb46c729634ea",
+        "truth_json": "726209fe9babcb0215504487539151d18935936d492108c25cb0c2714106bbf0"
+      }
+    }
+  ],
+  "summary": {
+    "cases_checked": 50,
+    "kingpins_in_bottom_10_percent_by_calls_count": 50,
+    "pizza_shop_is_rank_1_count": 50
+  }
+}

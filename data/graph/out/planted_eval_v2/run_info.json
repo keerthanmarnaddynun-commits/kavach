@@ -1,0 +1,92 @@
+{
+  "bootstrap": {
+    "n_resamples": 2000,
+    "seed": 20261114
+  },
+  "coverages": [
+    0.3,
+    0.6,
+    1.0
+  ],
+  "days": 30,
+  "formulas_and_weights": {
+    "composite_v2": "0.70 * structural + 0.30 * financial_control",
+    "financial_control": "sum over person's controlled accounts of (paise sent + paise received on bank TRANSFERRED_FUNDS edges), normalised by max over ranked persons",
+    "pessimistic_rank": "1 + count of other persons with score >= person score (rounded to 9 decimals)",
+    "projection_weights": {
+      "phone_communication": "1.5 * log2(1 + voice_count + sms_count)",
+      "shared_controlled_account": 3.0,
+      "shared_owned_phone": 1.5,
+      "transfer_funds": "1.0 * log2(1 + txn_count)"
+    },
+    "structural": "0.40 * norm_degree + 0.30 * norm_betweenness + 0.30 * norm_eigenvector"
+  },
+  "library_versions": {
+    "networkx": "3.2.1",
+    "numpy": "1.26.4",
+    "python": "3.11.9"
+  },
+  "number_of_cases_ok": 50,
+  "rankers": [
+    "composite_v2",
+    "projection_only",
+    "financial_only",
+    "v1_composite",
+    "call_count",
+    "unweighted_degree",
+    "weighted_pagerank",
+    "transfer_amount_paise"
+  ],
+  "seeds": [
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200
+  ]
+}

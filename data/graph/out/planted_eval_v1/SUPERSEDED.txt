@@ -1,0 +1,1 @@
+Superseded by planted_eval_v2. v1 broke ties by node id and the planted graph ids contained answer-key ids, so rows with tied scores (notably fragmented-mode unweighted degree and call count) are contaminated. Kept as a record of the first version. Do not cite its fragmented-mode numbers.
