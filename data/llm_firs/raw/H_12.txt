@@ -1,0 +1,11 @@
+LANG: hinglish
+Mamla kaafi lamba hai isliye poori baat likh raha hoon. Complainant [[PERSON:P4:C|Vinod Malhotra]], jo Gurgaon me ek firm chalate hain, ne bataya ki teen log, yaani [[PERSON:P1:S|Harpreet Singh Gill]] urf [[ALIAS:P1|Happy]], [[PERSON:P2:S|Jaspal Brar]] @ [[ALIAS:P2|Jassi]] aur [[PERSON:P3:S|Manjeet Kaur]] w/o [[FATHER:P3|Balwinder Singh]], ne unhe share market me 3 crore ke munafe ka sapna dikhaya. Is jhanse me aakar Vinod ne SBI account [[ACCOUNT:AC1|33456789012]] me [[AMOUNT:A1|INR 1,20,00,000]] jama kar diye. Yeh khata Harpreet chalata hai, uska mobile [[PHONE:PH1|+91 98765 11223]] hai jiska IMEI [[IMEI:IM1|358240051111110]] nikla. Is khate se [[AMOUNT:A2|Rs. 1,00,00,000/-]] aage PNB account [[ACCOUNT:AC2|4120001002345678]] me transfer hue, jise Manjeet control karti hai. Jaspal ka number [[PHONE:PH2|78140 09988]] hai, aur CDR me [[PHONE:PH1|+91 98765 11223]] aur [[PHONE:PH2|78140 09988]] ke beech 60 se zyada baar baat dikhti hai. Faida dene ka vaada [[AMOUNT:A3|3 crore]] ka tha. IO Dy.SP [[PERSON:P5:O|Ajay Dhull]] ne case u/s 318(4), 61(2) BNS me jaanch shuru ki, dt 03.03.2026.
+---
+REL: OWNS_DEVICE P1 PH1
+REL: ASSOCIATED_IMEI PH1 IM1
+REL: OWNS_DEVICE P2 PH2
+REL: COMMUNICATED_WITH PH1 PH2
+REL: CONTROLS_ACCOUNT P1 AC1
+REL: CONTROLS_ACCOUNT P3 AC2
+REL: TRANSFERRED_FUNDS P4 AC1 12000000
+REL: TRANSFERRED_FUNDS AC1 AC2 10000000

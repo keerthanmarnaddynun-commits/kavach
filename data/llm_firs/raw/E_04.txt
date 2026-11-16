@@ -1,0 +1,4 @@
+LANG: english
+Info received 0215 hrs. Shopkeeper [[PERSON:P2:C|Dilip Khanna]] says [[PERSON:P1:S|Bablu Ansari]] known as [[ALIAS:P1|Bablu Pehalwan]] came to his shop at Lajpat Nagar market, showed a country-made pistol and demanded [[AMOUNT:A1|₹1,25,000]] "protection money" by Sunday. Fled on motorcycle [[VEHICLE:V1|DL 8C AB 1234]]. Eyewitness [[PERSON:P3:W|Rakesh Tandon]] noted the number. Threat message also came from his number [[PHONE:PH1|+91 63001 55220]] on Dilip's phone [[PHONE:PH2|9810456789]]. Total demand is thus 1.25 lakh. HC [[PERSON:P4:O|Jagdish Prasad]] reached spot, FIR 77/26 u/s 308(2), 351(3) BNS.
+---
+REL: OWNS_DEVICE P1 PH1

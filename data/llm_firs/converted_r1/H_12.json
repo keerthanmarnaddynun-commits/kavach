@@ -1,0 +1,428 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        68,
+        82
+      ],
+      "end": 82,
+      "entity_key": "P4",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 68,
+      "surface": "Vinod Malhotra",
+      "text": "Vinod Malhotra",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Vinod Malhotra"
+    },
+    {
+      "aliases": [
+        "Happy"
+      ],
+      "char_span": [
+        149,
+        168
+      ],
+      "end": 168,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 149,
+      "surface": "Harpreet Singh Gill",
+      "text": "Harpreet Singh Gill",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Harpreet Singh Gill"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        173,
+        178
+      ],
+      "end": 178,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 173,
+      "surface": "Happy",
+      "text": "Happy",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Happy"
+    },
+    {
+      "aliases": [
+        "Jassi"
+      ],
+      "char_span": [
+        180,
+        191
+      ],
+      "end": 191,
+      "entity_key": "P2",
+      "id": "E4",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 180,
+      "surface": "Jaspal Brar",
+      "text": "Jaspal Brar",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Jaspal Brar"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        194,
+        199
+      ],
+      "end": 199,
+      "entity_key": "P2",
+      "id": "E5",
+      "label": "ALIAS",
+      "role": null,
+      "start": 194,
+      "surface": "Jassi",
+      "text": "Jassi",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Jassi"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        204,
+        216
+      ],
+      "end": 216,
+      "entity_key": "P3",
+      "id": "E6",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 204,
+      "surface": "Manjeet Kaur",
+      "text": "Manjeet Kaur",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Manjeet Kaur"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        221,
+        236
+      ],
+      "end": 236,
+      "entity_key": "FATHER:P3",
+      "id": "E7",
+      "label": "PERSON",
+      "person_key": "P3",
+      "role": "FATHER",
+      "start": 221,
+      "surface": "Balwinder Singh",
+      "suspect_key": "P3",
+      "text": "Balwinder Singh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Balwinder Singh"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        338,
+        349
+      ],
+      "end": 349,
+      "entity_key": "AC1",
+      "id": "E8",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 338,
+      "surface": "33456789012",
+      "text": "33456789012",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "33456789012"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        353,
+        368
+      ],
+      "end": 368,
+      "entity_key": "A1",
+      "id": "E9",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 353,
+      "surface": "INR 1,20,00,000",
+      "text": "INR 1,20,00,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 12000000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        428,
+        443
+      ],
+      "end": 443,
+      "entity_key": "PH1",
+      "id": "E10",
+      "label": "PHONE",
+      "role": null,
+      "start": 428,
+      "surface": "+91 98765 11223",
+      "text": "+91 98765 11223",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9876511223"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        459,
+        474
+      ],
+      "end": 474,
+      "entity_key": "IM1",
+      "id": "E11",
+      "label": "IMEI",
+      "role": null,
+      "start": 459,
+      "surface": "358240051111110",
+      "text": "358240051111110",
+      "truth_id": null,
+      "type": "IMEI",
+      "value": "358240051111110"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        494,
+        511
+      ],
+      "end": 511,
+      "entity_key": "A2",
+      "id": "E12",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 494,
+      "surface": "Rs. 1,00,00,000/-",
+      "text": "Rs. 1,00,00,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 10000000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        529,
+        545
+      ],
+      "end": 545,
+      "entity_key": "AC2",
+      "id": "E13",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 529,
+      "surface": "4120001002345678",
+      "text": "4120001002345678",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "4120001002345678"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        612,
+        623
+      ],
+      "end": 623,
+      "entity_key": "PH2",
+      "id": "E14",
+      "label": "PHONE",
+      "role": null,
+      "start": 612,
+      "surface": "78140 09988",
+      "text": "78140 09988",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "7814009988"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        640,
+        655
+      ],
+      "end": 655,
+      "entity_key": "PH1",
+      "id": "E15",
+      "label": "PHONE",
+      "role": null,
+      "start": 640,
+      "surface": "+91 98765 11223",
+      "text": "+91 98765 11223",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9876511223"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        660,
+        671
+      ],
+      "end": 671,
+      "entity_key": "PH2",
+      "id": "E16",
+      "label": "PHONE",
+      "role": null,
+      "start": 660,
+      "surface": "78140 09988",
+      "text": "78140 09988",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "7814009988"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        735,
+        742
+      ],
+      "end": 742,
+      "entity_key": "A3",
+      "id": "E17",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 735,
+      "surface": "3 crore",
+      "text": "3 crore",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 30000000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        760,
+        770
+      ],
+      "end": 770,
+      "entity_key": "P5",
+      "id": "E18",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 760,
+      "surface": "Ajay Dhull",
+      "text": "Ajay Dhull",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Ajay Dhull"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E10",
+      "target_key": "PH1",
+      "target_mention": "E10",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "ASSOCIATED_IMEI",
+      "source": "E10",
+      "source_key": "PH1",
+      "source_mention": "E10",
+      "target": "E11",
+      "target_key": "IM1",
+      "target_mention": "E11",
+      "type": "ASSOCIATED_IMEI"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E4",
+      "source_key": "P2",
+      "source_mention": "E4",
+      "target": "E14",
+      "target_key": "PH2",
+      "target_mention": "E14",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E10",
+      "source_key": "PH1",
+      "source_mention": "E10",
+      "target": "E14",
+      "target_key": "PH2",
+      "target_mention": "E14",
+      "type": "COMMUNICATED_WITH"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E8",
+      "target_key": "AC1",
+      "target_mention": "E8",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E6",
+      "source_key": "P3",
+      "source_mention": "E6",
+      "target": "E13",
+      "target_key": "AC2",
+      "target_mention": "E13",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 12000000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E1",
+      "source_key": "P4",
+      "source_mention": "E1",
+      "target": "E8",
+      "target_key": "AC1",
+      "target_mention": "E8",
+      "type": "TRANSFERRED_FUNDS"
+    },
+    {
+      "amount": 10000000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E8",
+      "source_key": "AC1",
+      "source_mention": "E8",
+      "target": "E13",
+      "target_key": "AC2",
+      "target_mention": "E13",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "H_12",
+  "split": "llm_heldout"
+}

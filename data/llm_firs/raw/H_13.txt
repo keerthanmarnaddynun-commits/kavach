@@ -1,0 +1,6 @@
+LANG: hinglish
+Sahab ko ittila di ki Moti Nagar me ek ladka [[PERSON:P1:S|Sonu Pathak]] urf [[ALIAS:P1|Sonu Bhaiya]] logon se nakli jewellery ke naam par paise le raha hai. Uski bike [[VEHICLE:V1|DL 7S AF 6612]] aur PAN [[PAN:PN1|DMZPP8821K]] ki jaankari mili. Shikayatkarta [[PERSON:P2:C|Lalita Sharma]], ph [[PHONE:PH2|8527341290]], ne Kotak khata [[ACCOUNT:AC1|8845120937]] (IFSC [[IFSC:IF1|KKBK0000631]]) me [[AMOUNT:A1|2.5 lakh]] aur uske baad [[AMOUNT:A2|Rs. 90,000/-]] bheje. Khata Sonu hi sambhalta hai. FIR 160/26, u/s 318(4) BNS, PS Moti Nagar, [[PERSON:P3:O|Constable Rakesh]] ne likha.
+---
+REL: CONTROLS_ACCOUNT P1 AC1
+REL: TRANSFERRED_FUNDS P2 AC1 250000
+REL: TRANSFERRED_FUNDS P2 AC1 90000

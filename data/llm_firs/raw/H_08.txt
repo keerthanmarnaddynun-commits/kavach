@@ -1,0 +1,3 @@
+LANG: hinglish
+Complainant [[PERSON:P3:C|Mukesh Kumar]] s/o Late Ramphal r/o village Barwala aaj thane aaye aur apni baat vistaar se batayi ki unke padosi ki zameen ke jhagde ko lekar [[PERSON:P1:S|Kamlesh Devi]] w/o [[FATHER:P1|Hira Lal]] known as [[ALIAS:P1|Kammo]] ne aur uske bete [[PERSON:P2:S|Rohit]] ne raste me rokkar khule aam dhamki di ki "tumhari tang tod denge, gaon me rehna mushkil kar denge". Dono ek Eicher truck [[VEHICLE:V1|HR 55 AB 7766]] me the jo Kamlesh Devi ke naam hai. Unka PAN [[PAN:PN1|CKMPD5521R]] aur Aadhaar [[AADHAAR:AD1|6012 3456 7890]] ka zikr gaon ke sarpanch ne kiya. Dy.SP [[PERSON:P4:O|Rajbir Dahiya]] ne mauka mulahiza kiya, FIR 55/26 u/s 351(2) BNS.
+---

@@ -1,0 +1,476 @@
+{
+  "files": {
+    "D_01.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "key": "IM1",
+          "surface": "358912076543210",
+          "type": "imei_luhn_warning"
+        },
+        {
+          "keys": [
+            "A1",
+            "P3"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "D_02.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "P4"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "D_03.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "AD1",
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "PN1",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "D_04.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "P3",
+            "P4",
+            "UP1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "D_05.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "key": "IM1",
+          "surface": "869912034567891",
+          "type": "imei_luhn_warning"
+        },
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "IF1",
+            "P4"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "E_01.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "P1",
+            "P2",
+            "P3",
+            "PN1",
+            "UP1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "E_02.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "key": "IM1",
+          "surface": "354678091234567",
+          "type": "imei_luhn_warning"
+        },
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "AD1",
+            "P2",
+            "P4",
+            "PH3",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "E_03.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "IF1",
+            "P4"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "E_04.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "P2",
+            "P3",
+            "P4",
+            "PH2",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "E_05.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "key": "IM1",
+          "surface": "867123045678901",
+          "type": "imei_luhn_warning"
+        },
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "P5"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_01.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "P3"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_02.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "P4"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_03.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "P3",
+            "P4",
+            "UP1",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_04.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "AD1",
+            "IF1",
+            "P3"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_05.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "key": "IM1",
+          "surface": "867530049812345",
+          "type": "imei_luhn_warning"
+        },
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "P3",
+            "PH2",
+            "PN1",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_06.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "P4"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_07.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "AD1",
+            "P1",
+            "P2",
+            "P3",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_08.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "AD1",
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "PN1",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_09.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "P4"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_10.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "key": "IM1",
+          "surface": "35693803\n5643811",
+          "type": "imei_luhn_warning"
+        },
+        {
+          "keys": [
+            "A1",
+            "P3",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_11.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "P2",
+            "P3",
+            "UP1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_12.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "A3",
+            "P5"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_13.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "IF1",
+            "P3",
+            "PH2",
+            "PN1",
+            "V1"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_14.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "keys": [
+            "A1",
+            "P4",
+            "P5"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    },
+    "H_15.txt": {
+      "errors": [],
+      "valid": true,
+      "warnings": [
+        {
+          "key": "IM1",
+          "surface": "862345067891234",
+          "type": "imei_luhn_warning"
+        },
+        {
+          "keys": [
+            "A1",
+            "A2",
+            "AC1",
+            "AD1",
+            "P2",
+            "P3"
+          ],
+          "type": "unused_key"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "invalid_files": 0,
+    "total_files": 25,
+    "valid_files": 25
+  },
+  "warnings_summary": {
+    "counts_by_type": {
+      "imei_luhn_warning": 7,
+      "unused_key": 25
+    },
+    "files_affected": {
+      "imei_luhn_warning": [
+        "D_01.txt",
+        "D_05.txt",
+        "E_02.txt",
+        "E_05.txt",
+        "H_05.txt",
+        "H_10.txt",
+        "H_15.txt"
+      ],
+      "unused_key": [
+        "D_01.txt",
+        "D_02.txt",
+        "D_03.txt",
+        "D_04.txt",
+        "D_05.txt",
+        "E_01.txt",
+        "E_02.txt",
+        "E_03.txt",
+        "E_04.txt",
+        "E_05.txt",
+        "H_01.txt",
+        "H_02.txt",
+        "H_03.txt",
+        "H_04.txt",
+        "H_05.txt",
+        "H_06.txt",
+        "H_07.txt",
+        "H_08.txt",
+        "H_09.txt",
+        "H_10.txt",
+        "H_11.txt",
+        "H_12.txt",
+        "H_13.txt",
+        "H_14.txt",
+        "H_15.txt"
+      ]
+    }
+  }
+}

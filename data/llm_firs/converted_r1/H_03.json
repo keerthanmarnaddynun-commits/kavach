@@ -1,0 +1,259 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        44,
+        58
+      ],
+      "end": 58,
+      "entity_key": "P4",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 44,
+      "surface": "Ravinder Malik",
+      "text": "Ravinder Malik",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Ravinder Malik"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        127,
+        142
+      ],
+      "end": 142,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 127,
+      "surface": "Sandeep Chauhan",
+      "text": "Sandeep Chauhan",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sandeep Chauhan"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        147,
+        161
+      ],
+      "end": 161,
+      "entity_key": "P2",
+      "id": "E3",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 147,
+      "surface": "Sandip Chouhan",
+      "text": "Sandip Chouhan",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sandip Chouhan"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        259,
+        274
+      ],
+      "end": 274,
+      "entity_key": "PH1",
+      "id": "E4",
+      "label": "PHONE",
+      "role": null,
+      "start": 259,
+      "surface": "+91 99001 22334",
+      "text": "+91 99001 22334",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9900122334"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        306,
+        316
+      ],
+      "end": 316,
+      "entity_key": "PH2",
+      "id": "E5",
+      "label": "PHONE",
+      "role": null,
+      "start": 306,
+      "surface": "8800556677",
+      "text": "8800556677",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "8800556677"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        399,
+        414
+      ],
+      "end": 414,
+      "entity_key": "PH1",
+      "id": "E6",
+      "label": "PHONE",
+      "role": null,
+      "start": 399,
+      "surface": "+91 99001 22334",
+      "text": "+91 99001 22334",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9900122334"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        418,
+        428
+      ],
+      "end": 428,
+      "entity_key": "PH2",
+      "id": "E7",
+      "label": "PHONE",
+      "role": null,
+      "start": 418,
+      "surface": "8800556677",
+      "text": "8800556677",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "8800556677"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        466,
+        477
+      ],
+      "end": 477,
+      "entity_key": "P3",
+      "id": "E8",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 466,
+      "surface": "Kavita Rani",
+      "text": "Kavita Rani",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Kavita Rani"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        524,
+        532
+      ],
+      "end": 532,
+      "entity_key": "A1",
+      "id": "E9",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 524,
+      "surface": "2.5 lakh",
+      "text": "2.5 lakh",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 250000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        540,
+        562
+      ],
+      "end": 562,
+      "entity_key": "UP1",
+      "id": "E10",
+      "label": "UPI",
+      "role": null,
+      "start": 540,
+      "surface": "sandip.chouhan@okicici",
+      "text": "sandip.chouhan@okicici",
+      "truth_id": null,
+      "type": "UPI",
+      "value": "sandip.chouhan@okicici"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        579,
+        591
+      ],
+      "end": 591,
+      "entity_key": "A2",
+      "id": "E11",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 579,
+      "surface": "Rs. 40,000/-",
+      "text": "Rs. 40,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 40000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        615,
+        628
+      ],
+      "end": 628,
+      "entity_key": "V1",
+      "id": "E12",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 615,
+      "surface": "DL 3C BN 4521",
+      "text": "DL 3C BN 4521",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "DL 3C BN 4521"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E4",
+      "target_key": "PH1",
+      "target_mention": "E4",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E3",
+      "source_key": "P2",
+      "source_mention": "E3",
+      "target": "E5",
+      "target_key": "PH2",
+      "target_mention": "E5",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E4",
+      "source_key": "PH1",
+      "source_mention": "E4",
+      "target": "E5",
+      "target_key": "PH2",
+      "target_mention": "E5",
+      "type": "COMMUNICATED_WITH"
+    }
+  ],
+  "source_doc_id": "H_03",
+  "split": "llm_heldout"
+}

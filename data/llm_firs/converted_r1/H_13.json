@@ -1,0 +1,243 @@
+{
+  "entities": [
+    {
+      "aliases": [
+        "Sonu Bhaiya"
+      ],
+      "char_span": [
+        45,
+        56
+      ],
+      "end": 56,
+      "entity_key": "P1",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 45,
+      "surface": "Sonu Pathak",
+      "text": "Sonu Pathak",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sonu Pathak"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        61,
+        72
+      ],
+      "end": 72,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "ALIAS",
+      "role": null,
+      "start": 61,
+      "surface": "Sonu Bhaiya",
+      "text": "Sonu Bhaiya",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Sonu Bhaiya"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        139,
+        152
+      ],
+      "end": 152,
+      "entity_key": "V1",
+      "id": "E3",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 139,
+      "surface": "DL 7S AF 6612",
+      "text": "DL 7S AF 6612",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "DL 7S AF 6612"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        161,
+        171
+      ],
+      "end": 171,
+      "entity_key": "PN1",
+      "id": "E4",
+      "label": "PAN",
+      "role": null,
+      "start": 161,
+      "surface": "DMZPP8821K",
+      "text": "DMZPP8821K",
+      "truth_id": null,
+      "type": "PAN",
+      "value": "DMZPP8821K"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        204,
+        217
+      ],
+      "end": 217,
+      "entity_key": "P2",
+      "id": "E5",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 204,
+      "surface": "Lalita Sharma",
+      "text": "Lalita Sharma",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Lalita Sharma"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        222,
+        232
+      ],
+      "end": 232,
+      "entity_key": "PH2",
+      "id": "E6",
+      "label": "PHONE",
+      "role": null,
+      "start": 222,
+      "surface": "8527341290",
+      "text": "8527341290",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "8527341290"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        249,
+        259
+      ],
+      "end": 259,
+      "entity_key": "AC1",
+      "id": "E7",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 249,
+      "surface": "8845120937",
+      "text": "8845120937",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "8845120937"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        266,
+        277
+      ],
+      "end": 277,
+      "entity_key": "IF1",
+      "id": "E8",
+      "label": "IFSC",
+      "role": null,
+      "start": 266,
+      "surface": "KKBK0000631",
+      "text": "KKBK0000631",
+      "truth_id": null,
+      "type": "IFSC",
+      "value": "KKBK0000631"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        282,
+        290
+      ],
+      "end": 290,
+      "entity_key": "A1",
+      "id": "E9",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 282,
+      "surface": "2.5 lakh",
+      "text": "2.5 lakh",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 250000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        305,
+        317
+      ],
+      "end": 317,
+      "entity_key": "A2",
+      "id": "E10",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 305,
+      "surface": "Rs. 90,000/-",
+      "text": "Rs. 90,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 90000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        397,
+        413
+      ],
+      "end": 413,
+      "entity_key": "P3",
+      "id": "E11",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 397,
+      "surface": "Constable Rakesh",
+      "text": "Constable Rakesh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Constable Rakesh"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E1",
+      "source_key": "P1",
+      "source_mention": "E1",
+      "target": "E7",
+      "target_key": "AC1",
+      "target_mention": "E7",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 250000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E5",
+      "source_key": "P2",
+      "source_mention": "E5",
+      "target": "E7",
+      "target_key": "AC1",
+      "target_mention": "E7",
+      "type": "TRANSFERRED_FUNDS"
+    },
+    {
+      "amount": 90000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E5",
+      "source_key": "P2",
+      "source_mention": "E5",
+      "target": "E7",
+      "target_key": "AC1",
+      "target_mention": "E7",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "H_13",
+  "split": "llm_heldout"
+}

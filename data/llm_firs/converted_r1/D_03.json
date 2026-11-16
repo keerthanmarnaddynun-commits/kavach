@@ -1,0 +1,155 @@
+{
+  "entities": [
+    {
+      "aliases": [
+        "\u091c\u0917\u094d\u0917\u093e"
+      ],
+      "char_span": [
+        41,
+        51
+      ],
+      "end": 51,
+      "entity_key": "P1",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 41,
+      "surface": "\u091c\u0917\u0926\u0940\u0936 \u092f\u093e\u0926\u0935",
+      "text": "\u091c\u0917\u0926\u0940\u0936 \u092f\u093e\u0926\u0935",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u091c\u0917\u0926\u0940\u0936 \u092f\u093e\u0926\u0935"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        57,
+        62
+      ],
+      "end": 62,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "ALIAS",
+      "role": null,
+      "start": 57,
+      "surface": "\u091c\u0917\u094d\u0917\u093e",
+      "text": "\u091c\u0917\u094d\u0917\u093e",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "\u091c\u0917\u094d\u0917\u093e"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        99,
+        112
+      ],
+      "end": 112,
+      "entity_key": "P2",
+      "id": "E3",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 99,
+      "surface": "\u0939\u0930\u093f\u0913\u092e \u0905\u0917\u094d\u0930\u0935\u093e\u0932",
+      "text": "\u0939\u0930\u093f\u0913\u092e \u0905\u0917\u094d\u0930\u0935\u093e\u0932",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0939\u0930\u093f\u0913\u092e \u0905\u0917\u094d\u0930\u0935\u093e\u0932"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        144,
+        157
+      ],
+      "end": 157,
+      "entity_key": "V1",
+      "id": "E4",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 144,
+      "surface": "UP 14 BH 2209",
+      "text": "UP 14 BH 2209",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "UP 14 BH 2209"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        225,
+        239
+      ],
+      "end": 239,
+      "entity_key": "AD1",
+      "id": "E5",
+      "label": "AADHAAR",
+      "role": null,
+      "start": 225,
+      "surface": "8123 4567 8901",
+      "text": "8123 4567 8901",
+      "truth_id": null,
+      "type": "AADHAAR",
+      "value": "812345678901"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        247,
+        257
+      ],
+      "end": 257,
+      "entity_key": "PN1",
+      "id": "E6",
+      "label": "PAN",
+      "role": null,
+      "start": 247,
+      "surface": "BQRPY3345M",
+      "text": "BQRPY3345M",
+      "truth_id": null,
+      "type": "PAN",
+      "value": "BQRPY3345M"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        279,
+        288
+      ],
+      "end": 288,
+      "entity_key": "P3",
+      "id": "E7",
+      "label": "PERSON",
+      "role": "WITNESS",
+      "start": 279,
+      "surface": "\u0907\u0930\u092b\u093e\u0928 \u0905\u0932\u0940",
+      "text": "\u0907\u0930\u092b\u093e\u0928 \u0905\u0932\u0940",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0907\u0930\u092b\u093e\u0928 \u0905\u0932\u0940"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        334,
+        350
+      ],
+      "end": 350,
+      "entity_key": "P4",
+      "id": "E8",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 334,
+      "surface": "\u0939\u0935\u0932\u0926\u093e\u0930 \u0930\u093e\u092e\u092a\u094d\u0930\u0924\u093e\u092a",
+      "text": "\u0939\u0935\u0932\u0926\u093e\u0930 \u0930\u093e\u092e\u092a\u094d\u0930\u0924\u093e\u092a",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0939\u0935\u0932\u0926\u093e\u0930 \u0930\u093e\u092e\u092a\u094d\u0930\u0924\u093e\u092a"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hindi",
+  "relationships": [],
+  "source_doc_id": "D_03",
+  "split": "llm_heldout"
+}

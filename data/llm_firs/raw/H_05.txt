@@ -1,0 +1,8 @@
+LANG: hinglish
+Dinank 19/05/26 raat 11 bje naka checking me Activa [[VEHICLE:V1|UP 32 KR 8812]] roki. Chalak [[PERSON:P1:S|Irfan Qureshi]] ulf [[ALIAS:P1|Lamba]], known as [[ALIAS:P1|Irfu]] aur @ [[ALIAS:P1|Doctor]] s/o [[FATHER:P1|Salim Qureshi]] nikla. Uske paas PAN [[PAN:PN1|BKQPQ4412L]], mobile [[PHONE:PH1|70071 23456]] IMEI [[IMEI:IM1|867530049812345]] mile, talashi me nagad Rs. 18,500 bhi mile. Complainant [[PERSON:P2:C|Anwar Ali]] (ph [[PHONE:PH2|9415098765]]) ne bataya ki Axis bank khata [[ACCOUNT:AC1|917020045512345]] me usne [[AMOUNT:A1|1.2 lakh]] daale, baad me [[AMOUNT:A2|₹30,000]] aur, aur yeh khata Irfan hi chalata hai. IO SI [[PERSON:P3:O|Deepak Rawat]].
+---
+REL: OWNS_DEVICE P1 PH1
+REL: ASSOCIATED_IMEI PH1 IM1
+REL: CONTROLS_ACCOUNT P1 AC1
+REL: TRANSFERRED_FUNDS P2 AC1 120000
+REL: TRANSFERRED_FUNDS P2 AC1 30000

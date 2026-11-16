@@ -1,0 +1,298 @@
+{
+  "entities": [
+    {
+      "aliases": [
+        "Tinku"
+      ],
+      "char_span": [
+        67,
+        79
+      ],
+      "end": 79,
+      "entity_key": "P1",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 67,
+      "surface": "Tarun Bhatia",
+      "text": "Tarun Bhatia",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Tarun Bhatia"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        87,
+        92
+      ],
+      "end": 92,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "ALIAS",
+      "role": null,
+      "start": 87,
+      "surface": "Tinku",
+      "text": "Tinku",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Tinku"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        101,
+        119
+      ],
+      "end": 119,
+      "entity_key": "FATHER:P1",
+      "id": "E3",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 101,
+      "surface": "Hukam Chand Bhatia",
+      "suspect_key": "P1",
+      "text": "Hukam Chand Bhatia",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Hukam Chand Bhatia"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        149,
+        162
+      ],
+      "end": 162,
+      "entity_key": "V1",
+      "id": "E4",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 149,
+      "surface": "DL 5S CK 0912",
+      "text": "DL 5S CK 0912",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "DL 5S CK 0912"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        197,
+        212
+      ],
+      "end": 212,
+      "entity_key": "PH1",
+      "id": "E5",
+      "label": "PHONE",
+      "role": null,
+      "start": 197,
+      "surface": "+91-96543-21098",
+      "text": "+91-96543-21098",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9654321098"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        218,
+        234
+      ],
+      "end": 234,
+      "entity_key": "IM1",
+      "id": "E6",
+      "label": "IMEI",
+      "role": null,
+      "start": 218,
+      "surface": "35693803\n5643811",
+      "text": "35693803\n5643811",
+      "truth_id": null,
+      "type": "IMEI",
+      "value": "356938035643811"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        264,
+        276
+      ],
+      "end": 276,
+      "entity_key": "AC1",
+      "id": "E7",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 264,
+      "surface": "602301098765",
+      "text": "602301098765",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "602301098765"
+    },
+    {
+      "aliases": [
+        "Bhura"
+      ],
+      "char_span": [
+        297,
+        307
+      ],
+      "end": 307,
+      "entity_key": "P2",
+      "id": "E8",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 297,
+      "surface": "Imran Khan",
+      "text": "Imran Khan",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Imran Khan"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        317,
+        322
+      ],
+      "end": 322,
+      "entity_key": "P2",
+      "id": "E9",
+      "label": "ALIAS",
+      "role": null,
+      "start": 317,
+      "surface": "Bhura",
+      "text": "Bhura",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Bhura"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        326,
+        338
+      ],
+      "end": 338,
+      "entity_key": "A1",
+      "id": "E10",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 326,
+      "surface": "INR 3,25,000",
+      "text": "INR 3,25,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 325000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        359,
+        370
+      ],
+      "end": 370,
+      "entity_key": "PH2",
+      "id": "E11",
+      "label": "PHONE",
+      "role": null,
+      "start": 359,
+      "surface": "88600\n99887",
+      "text": "88600\n99887",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "8860099887"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        415,
+        424
+      ],
+      "end": 424,
+      "entity_key": "P3",
+      "id": "E12",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 415,
+      "surface": "Sohan Lal",
+      "text": "Sohan Lal",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sohan Lal"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E1",
+      "source_key": "P1",
+      "source_mention": "E1",
+      "target": "E5",
+      "target_key": "PH1",
+      "target_mention": "E5",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "ASSOCIATED_IMEI",
+      "source": "E5",
+      "source_key": "PH1",
+      "source_mention": "E5",
+      "target": "E6",
+      "target_key": "IM1",
+      "target_mention": "E6",
+      "type": "ASSOCIATED_IMEI"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E8",
+      "source_key": "P2",
+      "source_mention": "E8",
+      "target": "E11",
+      "target_key": "PH2",
+      "target_mention": "E11",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E5",
+      "source_key": "PH1",
+      "source_mention": "E5",
+      "target": "E11",
+      "target_key": "PH2",
+      "target_mention": "E11",
+      "type": "COMMUNICATED_WITH"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E1",
+      "source_key": "P1",
+      "source_mention": "E1",
+      "target": "E7",
+      "target_key": "AC1",
+      "target_mention": "E7",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 325000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E8",
+      "source_key": "P2",
+      "source_mention": "E8",
+      "target": "E7",
+      "target_key": "AC1",
+      "target_mention": "E7",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "H_10",
+  "split": "llm_heldout"
+}

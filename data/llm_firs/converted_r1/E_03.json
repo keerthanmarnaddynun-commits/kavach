@@ -1,0 +1,276 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        17,
+        30
+      ],
+      "end": 30,
+      "entity_key": "P3",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 17,
+      "surface": "Prakash Joshi",
+      "text": "Prakash Joshi",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Prakash Joshi"
+    },
+    {
+      "aliases": [
+        "Sanju"
+      ],
+      "char_span": [
+        84,
+        96
+      ],
+      "end": 96,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 84,
+      "surface": "Sanjay Mehta",
+      "text": "Sanjay Mehta",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sanjay Mehta"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        99,
+        104
+      ],
+      "end": 104,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 99,
+      "surface": "Sanju",
+      "text": "Sanju",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Sanju"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        143,
+        155
+      ],
+      "end": 155,
+      "entity_key": "A1",
+      "id": "E4",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 143,
+      "surface": "INR 5,00,000",
+      "text": "INR 5,00,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 500000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        174,
+        188
+      ],
+      "end": 188,
+      "entity_key": "AC1",
+      "id": "E5",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 174,
+      "surface": "50100987654321",
+      "text": "50100987654321",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "50100987654321"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        195,
+        206
+      ],
+      "end": 206,
+      "entity_key": "IF1",
+      "id": "E6",
+      "label": "IFSC",
+      "role": null,
+      "start": 195,
+      "surface": "HDFC0002345",
+      "text": "HDFC0002345",
+      "truth_id": null,
+      "type": "IFSC",
+      "value": "HDFC0002345"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        279,
+        293
+      ],
+      "end": 293,
+      "entity_key": "A2",
+      "id": "E7",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 279,
+      "surface": "Rs. 4,50,000/-",
+      "text": "Rs. 4,50,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 450000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        339,
+        351
+      ],
+      "end": 351,
+      "entity_key": "AC2",
+      "id": "E8",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 339,
+      "surface": "038901567890",
+      "text": "038901567890",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "038901567890"
+    },
+    {
+      "aliases": [
+        "Pooja Madam"
+      ],
+      "char_span": [
+        367,
+        381
+      ],
+      "end": 381,
+      "entity_key": "P2",
+      "id": "E9",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 367,
+      "surface": "Pooja Deshmukh",
+      "text": "Pooja Deshmukh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Pooja Deshmukh"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        386,
+        401
+      ],
+      "end": 401,
+      "entity_key": "FATHER:P2",
+      "id": "E10",
+      "label": "PERSON",
+      "person_key": "P2",
+      "role": "FATHER",
+      "start": 386,
+      "surface": "Rakesh Deshmukh",
+      "suspect_key": "P2",
+      "text": "Rakesh Deshmukh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Rakesh Deshmukh"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        419,
+        430
+      ],
+      "end": 430,
+      "entity_key": "P2",
+      "id": "E11",
+      "label": "ALIAS",
+      "role": null,
+      "start": 419,
+      "surface": "Pooja Madam",
+      "text": "Pooja Madam",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Pooja Madam"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        509,
+        521
+      ],
+      "end": 521,
+      "entity_key": "P4",
+      "id": "E12",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 509,
+      "surface": "Sunil Kamble",
+      "text": "Sunil Kamble",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sunil Kamble"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "english",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E5",
+      "target_key": "AC1",
+      "target_mention": "E5",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E9",
+      "source_key": "P2",
+      "source_mention": "E9",
+      "target": "E8",
+      "target_key": "AC2",
+      "target_mention": "E8",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 500000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E1",
+      "source_key": "P3",
+      "source_mention": "E1",
+      "target": "E5",
+      "target_key": "AC1",
+      "target_mention": "E5",
+      "type": "TRANSFERRED_FUNDS"
+    },
+    {
+      "amount": 450000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E5",
+      "source_key": "AC1",
+      "source_mention": "E5",
+      "target": "E8",
+      "target_key": "AC2",
+      "target_mention": "E8",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "E_03",
+  "split": "llm_heldout"
+}

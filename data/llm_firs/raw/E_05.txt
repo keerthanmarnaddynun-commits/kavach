@@ -1,0 +1,11 @@
+LANG: english
+This FIR concerns a multi-state investment fraud that has come to light after a written complaint from [[PERSON:P4:C|Arvind Kulkarni]], director of a textile firm in Surat. According to him, three persons, namely [[PERSON:P1:S|Tarlok Bansal]] urf [[ALIAS:P1|Lala]], [[PERSON:P2:S|Deepa Nair]] and [[PERSON:P3:S|Farhan Sheikh]] s/o [[FATHER:P3|Iqbal Sheikh]], promised him assured returns on a commodities scheme and collected [[AMOUNT:A1|₹2,50,00,000]] from him in two instalments. The money was received in Kotak account [[ACCOUNT:AC1|6412345678]], which is controlled by Bansal. From there, [[AMOUNT:A2|INR 1,75,00,000]] was forwarded to PNB account [[ACCOUNT:AC2|3987001234567890]] controlled by Nair. Bansal used mobile [[PHONE:PH1|+91 98211 44556]] to speak with Sheikh on [[PHONE:PH2|83690 11223]], the handset of which carries IMEI [[IMEI:IM1|867123045678901]]. The complainant says the total loss is about 2.5 crore. Registered on 25.10.2026 as FIR 301/2026 u/s 318(4), 61(2) BNS. [[PERSON:P5:O|Dy.SP Nitin Desai]] has taken up the probe.
+---
+REL: CONTROLS_ACCOUNT P1 AC1
+REL: CONTROLS_ACCOUNT P2 AC2
+REL: OWNS_DEVICE P1 PH1
+REL: OWNS_DEVICE P3 PH2
+REL: ASSOCIATED_IMEI PH2 IM1
+REL: COMMUNICATED_WITH PH1 PH2
+REL: TRANSFERRED_FUNDS P4 AC1 25000000
+REL: TRANSFERRED_FUNDS AC1 AC2 17500000

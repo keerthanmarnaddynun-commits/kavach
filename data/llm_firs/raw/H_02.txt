@@ -1,0 +1,8 @@
+LANG: hinglish
+FIR 98/26 PS Laxmi Nagar. Do aaropi hain, [[PERSON:P1:S|Vikas Tiwari]] aur [[PERSON:P2:S|Bikas Tiwary]], dono alag alag aadmi. Vikas ke paas [[PHONE:PH1|98765 43210]] hai, Bikas ka number [[PHONE:PH2|+91-70123-45678]]. CDR me [[PHONE:PH1|98765 43210]] se [[PHONE:PH2|+91-70123-45678]] par 12 baar call dikhi. Complainant [[PERSON:P3:C|Ramesh Gupta]] se inhone [[AMOUNT:A1|₹75,000]] liye, paisa HDFC a/c [[ACCOUNT:AC1|50100234567890]] me gaya jo Bikas chalata hai. IO ASI [[PERSON:P4:O|Hari Om]], dt 12/03/2026.
+---
+REL: OWNS_DEVICE P1 PH1
+REL: OWNS_DEVICE P2 PH2
+REL: COMMUNICATED_WITH PH1 PH2
+REL: TRANSFERRED_FUNDS P3 AC1 75000
+REL: CONTROLS_ACCOUNT P2 AC1

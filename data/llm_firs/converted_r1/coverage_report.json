@@ -1,0 +1,905 @@
+{
+  "aggregate": {
+    "counts_by_language": {
+      "english": {
+        "invalid": 0,
+        "total": 5,
+        "valid": 5
+      },
+      "hindi": {
+        "invalid": 0,
+        "total": 5,
+        "valid": 5
+      },
+      "hinglish": {
+        "invalid": 0,
+        "total": 15,
+        "valid": 15
+      }
+    },
+    "entities_by_type": {
+      "AADHAAR": 6,
+      "ACCOUNT": 21,
+      "ALIAS": 27,
+      "AMOUNT": 38,
+      "IFSC": 4,
+      "IMEI": 9,
+      "PAN": 5,
+      "PERSON": 111,
+      "PHONE": 40,
+      "UPI": 4,
+      "VEHICLE": 9
+    },
+    "files_invalid_total": 0,
+    "files_valid_total": 25,
+    "mentions_total": 274,
+    "relations_by_type": {
+      "ASSOCIATED_IMEI": 9,
+      "COMMUNICATED_WITH": 11,
+      "CONTROLS_ACCOUNT": 20,
+      "OWNS_DEVICE": 27,
+      "TRANSFERRED_FUNDS": 21
+    }
+  },
+  "per_file": {
+    "D_01": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 1,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 1,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 1,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "CONTROLS_ACCOUNT": 1,
+          "OWNS_DEVICE": 1,
+          "TRANSFERRED_FUNDS": 1
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 1.1712,
+      "language": "hindi",
+      "mentions_count": 9,
+      "relations_count": 4
+    },
+    "D_02": {
+      "brief_requirements": [
+        "D_account_to_account_transfer"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 2,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 0,
+        "relations_by_type": {
+          "CONTROLS_ACCOUNT": 2,
+          "TRANSFERRED_FUNDS": 2
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 1.2198,
+      "language": "hindi",
+      "mentions_count": 10,
+      "relations_count": 4
+    },
+    "D_03": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 1,
+        "accounts": 0,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 0,
+        "father_names": 0,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 1,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 1
+        },
+        "phones": 0,
+        "relations_by_type": {},
+        "upi": 0,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 1.1939,
+      "language": "hindi",
+      "mentions_count": 8,
+      "relations_count": 0
+    },
+    "D_04": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 0,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 1,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 2,
+        "relations_by_type": {
+          "COMMUNICATED_WITH": 1,
+          "OWNS_DEVICE": 2
+        },
+        "upi": 1,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 1.1048,
+      "language": "hindi",
+      "mentions_count": 10,
+      "relations_count": 3
+    },
+    "D_05": {
+      "brief_requirements": [
+        "D_account_to_account_transfer"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 2,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 1,
+        "imeis": 1,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 3,
+          "WITNESS": 0
+        },
+        "phones": 2,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "COMMUNICATED_WITH": 1,
+          "CONTROLS_ACCOUNT": 2,
+          "OWNS_DEVICE": 2,
+          "TRANSFERRED_FUNDS": 2
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 1.1146,
+      "language": "hindi",
+      "mentions_count": 15,
+      "relations_count": 8
+    },
+    "E_01": {
+      "brief_requirements": [
+        "E_contains_special_identifier"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 0,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 2,
+        "father_names": 0,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 1,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 0,
+        "relations_by_type": {},
+        "upi": 1,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "english",
+      "mentions_count": 8,
+      "relations_count": 0
+    },
+    "E_02": {
+      "brief_requirements": [
+        "E_contains_special_identifier"
+      ],
+      "counts": {
+        "aadhaar": 1,
+        "accounts": 0,
+        "aliases": 0,
+        "aliases_per_person": {},
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 1,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 4,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "COMMUNICATED_WITH": 1,
+          "OWNS_DEVICE": 1
+        },
+        "upi": 0,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 0.0,
+      "language": "english",
+      "mentions_count": 13,
+      "relations_count": 3
+    },
+    "E_03": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 2,
+        "aliases": 2,
+        "aliases_per_person": {
+          "P1": 1,
+          "P2": 1
+        },
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 1,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 0,
+        "relations_by_type": {
+          "CONTROLS_ACCOUNT": 2,
+          "TRANSFERRED_FUNDS": 2
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "english",
+      "mentions_count": 12,
+      "relations_count": 4
+    },
+    "E_04": {
+      "brief_requirements": [
+        "E_contains_special_identifier"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 0,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 1,
+        "father_names": 0,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 1
+        },
+        "phones": 2,
+        "relations_by_type": {
+          "OWNS_DEVICE": 1
+        },
+        "upi": 0,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 0.0,
+      "language": "english",
+      "mentions_count": 9,
+      "relations_count": 1
+    },
+    "E_05": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 2,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 1,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 3,
+          "WITNESS": 0
+        },
+        "phones": 2,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "COMMUNICATED_WITH": 1,
+          "CONTROLS_ACCOUNT": 2,
+          "OWNS_DEVICE": 2,
+          "TRANSFERRED_FUNDS": 2
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "english",
+      "mentions_count": 14,
+      "relations_count": 8
+    },
+    "H_01": {
+      "brief_requirements": [
+        "H_01_baseline"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 0,
+        "aliases_per_person": {},
+        "amounts": 1,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 1,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 1,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "CONTROLS_ACCOUNT": 1,
+          "OWNS_DEVICE": 1,
+          "TRANSFERRED_FUNDS": 1
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 8,
+      "relations_count": 4
+    },
+    "H_02": {
+      "brief_requirements": [
+        "H_02_name_edit_dist_1"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 0,
+        "aliases_per_person": {},
+        "amounts": 1,
+        "father_names": 0,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 4,
+        "relations_by_type": {
+          "COMMUNICATED_WITH": 1,
+          "CONTROLS_ACCOUNT": 1,
+          "OWNS_DEVICE": 2,
+          "TRANSFERRED_FUNDS": 1
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 10,
+      "relations_count": 5
+    },
+    "H_03": {
+      "brief_requirements": [
+        "H_03_name_edit_dist_2"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 0,
+        "aliases": 0,
+        "aliases_per_person": {},
+        "amounts": 2,
+        "father_names": 0,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 4,
+        "relations_by_type": {
+          "COMMUNICATED_WITH": 1,
+          "OWNS_DEVICE": 2
+        },
+        "upi": 1,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 12,
+      "relations_count": 3
+    },
+    "H_04": {
+      "brief_requirements": [
+        "H_04_3_or_more_aliases"
+      ],
+      "counts": {
+        "aadhaar": 1,
+        "accounts": 1,
+        "aliases": 3,
+        "aliases_per_person": {
+          "P1": 3
+        },
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 1,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 0,
+        "relations_by_type": {
+          "CONTROLS_ACCOUNT": 1,
+          "TRANSFERRED_FUNDS": 1
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 12,
+      "relations_count": 2
+    },
+    "H_05": {
+      "brief_requirements": [
+        "H_05_3_or_more_aliases"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 3,
+        "aliases_per_person": {
+          "P1": 3
+        },
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 1,
+        "pan": 1,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 2,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "CONTROLS_ACCOUNT": 1,
+          "OWNS_DEVICE": 1,
+          "TRANSFERRED_FUNDS": 2
+        },
+        "upi": 0,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 15,
+      "relations_count": 5
+    },
+    "H_06": {
+      "brief_requirements": [
+        "H_06_shared_phone"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 0,
+        "aliases_per_person": {},
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 1,
+        "relations_by_type": {
+          "CONTROLS_ACCOUNT": 1,
+          "OWNS_DEVICE": 2,
+          "TRANSFERRED_FUNDS": 1
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 9,
+      "relations_count": 4
+    },
+    "H_07": {
+      "brief_requirements": [
+        "H_07_no_phone_no_account"
+      ],
+      "counts": {
+        "aadhaar": 1,
+        "accounts": 0,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 1,
+        "father_names": 0,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 0,
+        "relations_by_type": {},
+        "upi": 0,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 7,
+      "relations_count": 0
+    },
+    "H_08": {
+      "brief_requirements": [
+        "H_08_no_phone_no_account"
+      ],
+      "counts": {
+        "aadhaar": 1,
+        "accounts": 0,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 0,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 1,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 0,
+        "relations_by_type": {},
+        "upi": 0,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 9,
+      "relations_count": 0
+    },
+    "H_09": {
+      "brief_requirements": [
+        "H_09_broken_number_in_clean_text"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 2,
+        "aliases_per_person": {
+          "P1": 1,
+          "P2": 1
+        },
+        "amounts": 1,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 2,
+        "relations_by_type": {
+          "COMMUNICATED_WITH": 1,
+          "CONTROLS_ACCOUNT": 1,
+          "OWNS_DEVICE": 2,
+          "TRANSFERRED_FUNDS": 1
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 11,
+      "relations_count": 5
+    },
+    "H_10": {
+      "brief_requirements": [
+        "H_10_broken_number_in_clean_text"
+      ],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 2,
+        "aliases_per_person": {
+          "P1": 1,
+          "P2": 1
+        },
+        "amounts": 1,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 1,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 0,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 0
+        },
+        "phones": 2,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "COMMUNICATED_WITH": 1,
+          "CONTROLS_ACCOUNT": 1,
+          "OWNS_DEVICE": 2,
+          "TRANSFERRED_FUNDS": 1
+        },
+        "upi": 0,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 12,
+      "relations_count": 6
+    },
+    "H_11": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 0,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 1,
+        "relations_by_type": {
+          "OWNS_DEVICE": 1
+        },
+        "upi": 1,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 9,
+      "relations_count": 1
+    },
+    "H_12": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 2,
+        "aliases": 2,
+        "aliases_per_person": {
+          "P1": 1,
+          "P2": 1
+        },
+        "amounts": 3,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 1,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 3,
+          "WITNESS": 0
+        },
+        "phones": 4,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "COMMUNICATED_WITH": 1,
+          "CONTROLS_ACCOUNT": 2,
+          "OWNS_DEVICE": 2,
+          "TRANSFERRED_FUNDS": 2
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 18,
+      "relations_count": 8
+    },
+    "H_13": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 2,
+        "father_names": 0,
+        "ifsc": 1,
+        "imeis": 0,
+        "pan": 1,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 1,
+        "relations_by_type": {
+          "CONTROLS_ACCOUNT": 1,
+          "TRANSFERRED_FUNDS": 2
+        },
+        "upi": 0,
+        "vehicle": 1
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 11,
+      "relations_count": 3
+    },
+    "H_14": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 0,
+        "accounts": 1,
+        "aliases": 0,
+        "aliases_per_person": {},
+        "amounts": 1,
+        "father_names": 2,
+        "ifsc": 0,
+        "imeis": 0,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 0,
+          "OFFICER": 1,
+          "SUSPECT": 2,
+          "WITNESS": 1
+        },
+        "phones": 3,
+        "relations_by_type": {
+          "COMMUNICATED_WITH": 1,
+          "CONTROLS_ACCOUNT": 1,
+          "OWNS_DEVICE": 2
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 11,
+      "relations_count": 4
+    },
+    "H_15": {
+      "brief_requirements": [],
+      "counts": {
+        "aadhaar": 1,
+        "accounts": 1,
+        "aliases": 1,
+        "aliases_per_person": {
+          "P1": 1
+        },
+        "amounts": 2,
+        "father_names": 1,
+        "ifsc": 0,
+        "imeis": 1,
+        "pan": 0,
+        "persons_by_role": {
+          "COMPLAINANT": 1,
+          "OFFICER": 1,
+          "SUSPECT": 1,
+          "WITNESS": 0
+        },
+        "phones": 2,
+        "relations_by_type": {
+          "ASSOCIATED_IMEI": 1,
+          "COMMUNICATED_WITH": 1,
+          "OWNS_DEVICE": 1
+        },
+        "upi": 0,
+        "vehicle": 0
+      },
+      "devanagari_ratio": 0.0,
+      "language": "hinglish",
+      "mentions_count": 12,
+      "relations_count": 3
+    }
+  }
+}

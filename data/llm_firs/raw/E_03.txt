@@ -1,0 +1,7 @@
+LANG: english
+The complainant, [[PERSON:P3:C|Prakash Joshi]], a retired bank clerk of Kothrud, Pune, alleges that [[PERSON:P1:S|Sanjay Mehta]] @ [[ALIAS:P1|Sanju]] sold him a non-existent plot and took [[AMOUNT:A1|INR 5,00,000]] into HDFC account [[ACCOUNT:AC1|50100987654321]] (IFSC [[IFSC:IF1|HDFC0002345]]), which is operated by Mehta. Bank statements show that within two days [[AMOUNT:A2|Rs. 4,50,000/-]] was moved from this account to ICICI account [[ACCOUNT:AC2|038901567890]], controlled by [[PERSON:P2:S|Pooja Deshmukh]] w/o [[FATHER:P2|Rakesh Deshmukh]], who is known as [[ALIAS:P2|Pooja Madam]] in the local property market. FIR 119/2026, PS Kothrud, u/s 318(4) BNS. Dy.SP [[PERSON:P4:O|Sunil Kamble]] is the IO.
+---
+REL: CONTROLS_ACCOUNT P1 AC1
+REL: CONTROLS_ACCOUNT P2 AC2
+REL: TRANSFERRED_FUNDS P3 AC1 500000
+REL: TRANSFERRED_FUNDS AC1 AC2 450000

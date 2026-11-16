@@ -1,0 +1,354 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        103,
+        118
+      ],
+      "end": 118,
+      "entity_key": "P4",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 103,
+      "surface": "Arvind Kulkarni",
+      "text": "Arvind Kulkarni",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Arvind Kulkarni"
+    },
+    {
+      "aliases": [
+        "Lala"
+      ],
+      "char_span": [
+        197,
+        210
+      ],
+      "end": 210,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 197,
+      "surface": "Tarlok Bansal",
+      "text": "Tarlok Bansal",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Tarlok Bansal"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        215,
+        219
+      ],
+      "end": 219,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 215,
+      "surface": "Lala",
+      "text": "Lala",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Lala"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        221,
+        231
+      ],
+      "end": 231,
+      "entity_key": "P2",
+      "id": "E4",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 221,
+      "surface": "Deepa Nair",
+      "text": "Deepa Nair",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Deepa Nair"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        236,
+        249
+      ],
+      "end": 249,
+      "entity_key": "P3",
+      "id": "E5",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 236,
+      "surface": "Farhan Sheikh",
+      "text": "Farhan Sheikh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Farhan Sheikh"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        254,
+        266
+      ],
+      "end": 266,
+      "entity_key": "FATHER:P3",
+      "id": "E6",
+      "label": "PERSON",
+      "person_key": "P3",
+      "role": "FATHER",
+      "start": 254,
+      "surface": "Iqbal Sheikh",
+      "suspect_key": "P3",
+      "text": "Iqbal Sheikh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Iqbal Sheikh"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        335,
+        347
+      ],
+      "end": 347,
+      "entity_key": "A1",
+      "id": "E7",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 335,
+      "surface": "\u20b92,50,00,000",
+      "text": "\u20b92,50,00,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 25000000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        417,
+        427
+      ],
+      "end": 427,
+      "entity_key": "AC1",
+      "id": "E8",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 417,
+      "surface": "6412345678",
+      "text": "6412345678",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "6412345678"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        472,
+        487
+      ],
+      "end": 487,
+      "entity_key": "A2",
+      "id": "E9",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 472,
+      "surface": "INR 1,75,00,000",
+      "text": "INR 1,75,00,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 17500000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        517,
+        533
+      ],
+      "end": 533,
+      "entity_key": "AC2",
+      "id": "E10",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 517,
+      "surface": "3987001234567890",
+      "text": "3987001234567890",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "3987001234567890"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        573,
+        588
+      ],
+      "end": 588,
+      "entity_key": "PH1",
+      "id": "E11",
+      "label": "PHONE",
+      "role": null,
+      "start": 573,
+      "surface": "+91 98211 44556",
+      "text": "+91 98211 44556",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9821144556"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        613,
+        624
+      ],
+      "end": 624,
+      "entity_key": "PH2",
+      "id": "E12",
+      "label": "PHONE",
+      "role": null,
+      "start": 613,
+      "surface": "83690 11223",
+      "text": "83690 11223",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "8369011223"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        660,
+        675
+      ],
+      "end": 675,
+      "entity_key": "IM1",
+      "id": "E13",
+      "label": "IMEI",
+      "role": null,
+      "start": 660,
+      "surface": "867123045678901",
+      "text": "867123045678901",
+      "truth_id": null,
+      "type": "IMEI",
+      "value": "867123045678901"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        797,
+        814
+      ],
+      "end": 814,
+      "entity_key": "P5",
+      "id": "E14",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 797,
+      "surface": "Dy.SP Nitin Desai",
+      "text": "Dy.SP Nitin Desai",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Dy.SP Nitin Desai"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "english",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E8",
+      "target_key": "AC1",
+      "target_mention": "E8",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E4",
+      "source_key": "P2",
+      "source_mention": "E4",
+      "target": "E10",
+      "target_key": "AC2",
+      "target_mention": "E10",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E11",
+      "target_key": "PH1",
+      "target_mention": "E11",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E5",
+      "source_key": "P3",
+      "source_mention": "E5",
+      "target": "E12",
+      "target_key": "PH2",
+      "target_mention": "E12",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "ASSOCIATED_IMEI",
+      "source": "E12",
+      "source_key": "PH2",
+      "source_mention": "E12",
+      "target": "E13",
+      "target_key": "IM1",
+      "target_mention": "E13",
+      "type": "ASSOCIATED_IMEI"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E11",
+      "source_key": "PH1",
+      "source_mention": "E11",
+      "target": "E12",
+      "target_key": "PH2",
+      "target_mention": "E12",
+      "type": "COMMUNICATED_WITH"
+    },
+    {
+      "amount": 25000000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E1",
+      "source_key": "P4",
+      "source_mention": "E1",
+      "target": "E8",
+      "target_key": "AC1",
+      "target_mention": "E8",
+      "type": "TRANSFERRED_FUNDS"
+    },
+    {
+      "amount": 17500000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E8",
+      "source_key": "AC1",
+      "source_mention": "E8",
+      "target": "E10",
+      "target_key": "AC2",
+      "target_mention": "E10",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "E_05",
+  "split": "llm_heldout"
+}

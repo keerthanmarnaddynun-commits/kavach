@@ -1,0 +1,341 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        52,
+        65
+      ],
+      "end": 65,
+      "entity_key": "V1",
+      "id": "E1",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 52,
+      "surface": "UP 32 KR 8812",
+      "text": "UP 32 KR 8812",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "UP 32 KR 8812"
+    },
+    {
+      "aliases": [
+        "Lamba",
+        "Irfu",
+        "Doctor"
+      ],
+      "char_span": [
+        79,
+        92
+      ],
+      "end": 92,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 79,
+      "surface": "Irfan Qureshi",
+      "text": "Irfan Qureshi",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Irfan Qureshi"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        97,
+        102
+      ],
+      "end": 102,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 97,
+      "surface": "Lamba",
+      "text": "Lamba",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Lamba"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        113,
+        117
+      ],
+      "end": 117,
+      "entity_key": "P1",
+      "id": "E4",
+      "label": "ALIAS",
+      "role": null,
+      "start": 113,
+      "surface": "Irfu",
+      "text": "Irfu",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Irfu"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        124,
+        130
+      ],
+      "end": 130,
+      "entity_key": "P1",
+      "id": "E5",
+      "label": "ALIAS",
+      "role": null,
+      "start": 124,
+      "surface": "Doctor",
+      "text": "Doctor",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Doctor"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        135,
+        148
+      ],
+      "end": 148,
+      "entity_key": "FATHER:P1",
+      "id": "E6",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 135,
+      "surface": "Salim Qureshi",
+      "suspect_key": "P1",
+      "text": "Salim Qureshi",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Salim Qureshi"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        170,
+        180
+      ],
+      "end": 180,
+      "entity_key": "PN1",
+      "id": "E7",
+      "label": "PAN",
+      "role": null,
+      "start": 170,
+      "surface": "BKQPQ4412L",
+      "text": "BKQPQ4412L",
+      "truth_id": null,
+      "type": "PAN",
+      "value": "BKQPQ4412L"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        189,
+        200
+      ],
+      "end": 200,
+      "entity_key": "PH1",
+      "id": "E8",
+      "label": "PHONE",
+      "role": null,
+      "start": 189,
+      "surface": "70071 23456",
+      "text": "70071 23456",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "7007123456"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        206,
+        221
+      ],
+      "end": 221,
+      "entity_key": "IM1",
+      "id": "E9",
+      "label": "IMEI",
+      "role": null,
+      "start": 206,
+      "surface": "867530049812345",
+      "text": "867530049812345",
+      "truth_id": null,
+      "type": "IMEI",
+      "value": "867530049812345"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        278,
+        287
+      ],
+      "end": 287,
+      "entity_key": "P2",
+      "id": "E10",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 278,
+      "surface": "Anwar Ali",
+      "text": "Anwar Ali",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Anwar Ali"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        292,
+        302
+      ],
+      "end": 302,
+      "entity_key": "PH2",
+      "id": "E11",
+      "label": "PHONE",
+      "role": null,
+      "start": 292,
+      "surface": "9415098765",
+      "text": "9415098765",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9415098765"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        333,
+        348
+      ],
+      "end": 348,
+      "entity_key": "AC1",
+      "id": "E12",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 333,
+      "surface": "917020045512345",
+      "text": "917020045512345",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "917020045512345"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        357,
+        365
+      ],
+      "end": 365,
+      "entity_key": "A1",
+      "id": "E13",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 357,
+      "surface": "1.2 lakh",
+      "text": "1.2 lakh",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 120000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        381,
+        388
+      ],
+      "end": 388,
+      "entity_key": "A2",
+      "id": "E14",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 381,
+      "surface": "\u20b930,000",
+      "text": "\u20b930,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 30000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        436,
+        448
+      ],
+      "end": 448,
+      "entity_key": "P3",
+      "id": "E15",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 436,
+      "surface": "Deepak Rawat",
+      "text": "Deepak Rawat",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Deepak Rawat"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E8",
+      "target_key": "PH1",
+      "target_mention": "E8",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "ASSOCIATED_IMEI",
+      "source": "E8",
+      "source_key": "PH1",
+      "source_mention": "E8",
+      "target": "E9",
+      "target_key": "IM1",
+      "target_mention": "E9",
+      "type": "ASSOCIATED_IMEI"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E12",
+      "target_key": "AC1",
+      "target_mention": "E12",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 120000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E10",
+      "source_key": "P2",
+      "source_mention": "E10",
+      "target": "E12",
+      "target_key": "AC1",
+      "target_mention": "E12",
+      "type": "TRANSFERRED_FUNDS"
+    },
+    {
+      "amount": 30000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E10",
+      "source_key": "P2",
+      "source_mention": "E10",
+      "target": "E12",
+      "target_key": "AC1",
+      "target_mention": "E12",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "H_05",
+  "split": "llm_heldout"
+}

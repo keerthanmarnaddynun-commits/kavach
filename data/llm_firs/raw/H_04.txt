@@ -1,0 +1,6 @@
+LANG: hinglish
+Jaipur Rural ke is mulzim ko gaon wale teen naamo se jaante hain: [[PERSON:P1:S|Pappu Lal Meena]] urf [[ALIAS:P1|Tiger]] @ [[ALIAS:P1|Seth Ji]] (alias [[ALIAS:P1|Munna Bhai]]), s/o [[FATHER:P1|Gopal Meena]]. Uska Aadhaar [[AADHAAR:AD1|4321 8765 0912]] hai. Isne kisaan [[PERSON:P2:C|Bhanwar Singh]] se zameen ke sauda ke naam par [[AMOUNT:A1|Rs. 1,50,000/-]] liye aur baaki [[AMOUNT:A2|INR 5,00,000]] ka vaada kiya. Rakam ICICI account [[ACCOUNT:AC1|123405009876]], IFSC [[IFSC:IF1|ICIC0001234]] me jama hui, yeh khata usi ka hai. FIR 77/2026 PS Chomu, IO Dy.SP [[PERSON:P3:O|Mahesh Chand]].
+---
+REL: CONTROLS_ACCOUNT P1 AC1
+REL: TRANSFERRED_FUNDS P2 AC1 150000
+

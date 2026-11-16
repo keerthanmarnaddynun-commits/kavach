@@ -1,0 +1,137 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        17,
+        29
+      ],
+      "end": 29,
+      "entity_key": "P2",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 17,
+      "surface": "Suresh Patil",
+      "text": "Suresh Patil",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Suresh Patil"
+    },
+    {
+      "aliases": [
+        "Gana"
+      ],
+      "char_span": [
+        56,
+        69
+      ],
+      "end": 69,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 56,
+      "surface": "Ganesh Jadhav",
+      "text": "Ganesh Jadhav",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Ganesh Jadhav"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        74,
+        78
+      ],
+      "end": 78,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 74,
+      "surface": "Gana",
+      "text": "Gana",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Gana"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        169,
+        176
+      ],
+      "end": 176,
+      "entity_key": "A1",
+      "id": "E4",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 169,
+      "surface": "\u20b910,000",
+      "text": "\u20b910,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 10000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        198,
+        211
+      ],
+      "end": 211,
+      "entity_key": "V1",
+      "id": "E5",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 198,
+      "surface": "MH 12 QT 3345",
+      "text": "MH 12 QT 3345",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "MH 12 QT 3345"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        284,
+        298
+      ],
+      "end": 298,
+      "entity_key": "AD1",
+      "id": "E6",
+      "label": "AADHAAR",
+      "role": null,
+      "start": 284,
+      "surface": "5521 0987 6543",
+      "text": "5521 0987 6543",
+      "truth_id": null,
+      "type": "AADHAAR",
+      "value": "552109876543"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        360,
+        372
+      ],
+      "end": 372,
+      "entity_key": "P3",
+      "id": "E7",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 360,
+      "surface": "Baban Shinde",
+      "text": "Baban Shinde",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Baban Shinde"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [],
+  "source_doc_id": "H_07",
+  "split": "llm_heldout"
+}

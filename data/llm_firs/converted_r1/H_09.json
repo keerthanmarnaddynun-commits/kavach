@@ -1,0 +1,269 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        63,
+        73
+      ],
+      "end": 73,
+      "entity_key": "P3",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 63,
+      "surface": "Neha Arora",
+      "text": "Neha Arora",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Neha Arora"
+    },
+    {
+      "aliases": [
+        "Rocky"
+      ],
+      "char_span": [
+        86,
+        98
+      ],
+      "end": 98,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 86,
+      "surface": "Rahul Kapoor",
+      "text": "Rahul Kapoor",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Rahul Kapoor"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        103,
+        108
+      ],
+      "end": 108,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 103,
+      "surface": "Rocky",
+      "text": "Rocky",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Rocky"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        113,
+        125
+      ],
+      "end": 125,
+      "entity_key": "FATHER:P1",
+      "id": "E4",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 113,
+      "surface": "Vijay Kapoor",
+      "suspect_key": "P1",
+      "text": "Vijay Kapoor",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Vijay Kapoor"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        160,
+        172
+      ],
+      "end": 172,
+      "entity_key": "A1",
+      "id": "E5",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 160,
+      "surface": "Rs.60,000 /-",
+      "text": "Rs.60,000 /-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 60000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        189,
+        204
+      ],
+      "end": 204,
+      "entity_key": "PH1",
+      "id": "E6",
+      "label": "PHONE",
+      "role": null,
+      "start": 189,
+      "surface": "+91 98123\n45678",
+      "text": "+91 98123\n45678",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9812345678"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        223,
+        234
+      ],
+      "end": 234,
+      "entity_key": "PH2",
+      "id": "E7",
+      "label": "PHONE",
+      "role": null,
+      "start": 223,
+      "surface": "7011 223344",
+      "text": "7011 223344",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "7011223344"
+    },
+    {
+      "aliases": [
+        "Mono"
+      ],
+      "char_span": [
+        277,
+        287
+      ],
+      "end": 287,
+      "entity_key": "P2",
+      "id": "E8",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 277,
+      "surface": "Monu Sethi",
+      "text": "Monu Sethi",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Monu Sethi"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        290,
+        294
+      ],
+      "end": 294,
+      "entity_key": "P2",
+      "id": "E9",
+      "label": "ALIAS",
+      "role": null,
+      "start": 290,
+      "surface": "Mono",
+      "text": "Mono",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Mono"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        323,
+        339
+      ],
+      "end": 339,
+      "entity_key": "AC1",
+      "id": "E10",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 323,
+      "surface": "91702\n0045512399",
+      "text": "91702\n0045512399",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "917020045512399"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        390,
+        400
+      ],
+      "end": 400,
+      "entity_key": "P4",
+      "id": "E11",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 390,
+      "surface": "Dharam Pal",
+      "text": "Dharam Pal",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Dharam Pal"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E6",
+      "target_key": "PH1",
+      "target_mention": "E6",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E8",
+      "source_key": "P2",
+      "source_mention": "E8",
+      "target": "E7",
+      "target_key": "PH2",
+      "target_mention": "E7",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E6",
+      "source_key": "PH1",
+      "source_mention": "E6",
+      "target": "E7",
+      "target_key": "PH2",
+      "target_mention": "E7",
+      "type": "COMMUNICATED_WITH"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E10",
+      "target_key": "AC1",
+      "target_mention": "E10",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 60000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E1",
+      "source_key": "P3",
+      "source_mention": "E1",
+      "target": "E10",
+      "target_key": "AC1",
+      "target_mention": "E10",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "H_09",
+  "split": "llm_heldout"
+}

@@ -1,0 +1,11 @@
+LANG: hinglish
+ARREST   MEMO jaisa  -  PS Dwarka sec 23 . aaj  tarikh 22-6-26 ko  [[PERSON:P1:S|Tarun Bhatia]] (alias [[ALIAS:P1|Tinku]]) son of [[FATHER:P1|Hukam Chand Bhatia]] r/o  Dabri ko  pkda , scooty [[VEHICLE:V1|DL 5S CK 0912]] par tha . uske pas se vivo mobile [[PHONE:PH1|+91-96543-21098]] IMEI [[IMEI:IM1|35693803
+5643811]] mila . Usne bataya ICICI a/c [[ACCOUNT:AC1|602301098765]] uska apna hai jisme [[PERSON:P2:S|Imran Khan]] known as [[ALIAS:P2|Bhura]] ne [[AMOUNT:A1|INR 3,25,000]] bheje . Imran ka no [[PHONE:PH2|88600
+99887]] hai , isse Tarun ki baat hoti thi . IO  ASI [[PERSON:P3:O|Sohan Lal]] .
+---
+REL: OWNS_DEVICE P1 PH1
+REL: ASSOCIATED_IMEI PH1 IM1
+REL: OWNS_DEVICE P2 PH2
+REL: COMMUNICATED_WITH PH1 PH2
+REL: CONTROLS_ACCOUNT P1 AC1
+REL: TRANSFERRED_FUNDS P2 AC1 325000

@@ -1,0 +1,263 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        54,
+        66
+      ],
+      "end": 66,
+      "entity_key": "P2",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 54,
+      "surface": "Prakash Nair",
+      "text": "Prakash Nair",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Prakash Nair"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        104,
+        115
+      ],
+      "end": 115,
+      "entity_key": "A1",
+      "id": "E2",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 104,
+      "surface": "Rs. 8,000/-",
+      "text": "Rs. 8,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 8000.0
+    },
+    {
+      "aliases": [
+        "AJ"
+      ],
+      "char_span": [
+        143,
+        154
+      ],
+      "end": 154,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 143,
+      "surface": "Arjun Menon",
+      "text": "Arjun Menon",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Arjun Menon"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        159,
+        161
+      ],
+      "end": 161,
+      "entity_key": "P1",
+      "id": "E4",
+      "label": "ALIAS",
+      "role": null,
+      "start": 159,
+      "surface": "AJ",
+      "text": "AJ",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "AJ"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        166,
+        182
+      ],
+      "end": 182,
+      "entity_key": "FATHER:P1",
+      "id": "E5",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 166,
+      "surface": "Sudhakaran Menon",
+      "suspect_key": "P1",
+      "text": "Sudhakaran Menon",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sudhakaran Menon"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        223,
+        235
+      ],
+      "end": 235,
+      "entity_key": "A2",
+      "id": "E6",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 223,
+      "surface": "INR 1,50,000",
+      "text": "INR 1,50,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 150000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        263,
+        273
+      ],
+      "end": 273,
+      "entity_key": "PH1",
+      "id": "E7",
+      "label": "PHONE",
+      "role": null,
+      "start": 263,
+      "surface": "7907654321",
+      "text": "7907654321",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "7907654321"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        282,
+        297
+      ],
+      "end": 297,
+      "entity_key": "IM1",
+      "id": "E8",
+      "label": "IMEI",
+      "role": null,
+      "start": 282,
+      "surface": "862345067891234",
+      "text": "862345067891234",
+      "truth_id": null,
+      "type": "IMEI",
+      "value": "862345067891234"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        321,
+        335
+      ],
+      "end": 335,
+      "entity_key": "AD1",
+      "id": "E9",
+      "label": "AADHAAR",
+      "role": null,
+      "start": 321,
+      "surface": "7890 1234 5678",
+      "text": "7890 1234 5678",
+      "truth_id": null,
+      "type": "AADHAAR",
+      "value": "789012345678"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        366,
+        376
+      ],
+      "end": 376,
+      "entity_key": "PH3",
+      "id": "E10",
+      "label": "PHONE",
+      "role": null,
+      "start": 366,
+      "surface": "9847012345",
+      "text": "9847012345",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9847012345"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        452,
+        466
+      ],
+      "end": 466,
+      "entity_key": "AC1",
+      "id": "E11",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 452,
+      "surface": "50200012345678",
+      "text": "50200012345678",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "50200012345678"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        535,
+        546
+      ],
+      "end": 546,
+      "entity_key": "P3",
+      "id": "E12",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 535,
+      "surface": "Ajith Kumar",
+      "text": "Ajith Kumar",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Ajith Kumar"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E3",
+      "source_key": "P1",
+      "source_mention": "E3",
+      "target": "E7",
+      "target_key": "PH1",
+      "target_mention": "E7",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "ASSOCIATED_IMEI",
+      "source": "E7",
+      "source_key": "PH1",
+      "source_mention": "E7",
+      "target": "E8",
+      "target_key": "IM1",
+      "target_mention": "E8",
+      "type": "ASSOCIATED_IMEI"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E7",
+      "source_key": "PH1",
+      "source_mention": "E7",
+      "target": "E10",
+      "target_key": "PH3",
+      "target_mention": "E10",
+      "type": "COMMUNICATED_WITH"
+    }
+  ],
+  "source_doc_id": "H_15",
+  "split": "llm_heldout"
+}

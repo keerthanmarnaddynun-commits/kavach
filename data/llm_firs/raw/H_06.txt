@@ -1,0 +1,7 @@
+LANG: hinglish
+Shikayat ki jaanch me khula ki [[PERSON:P1:S|Naveen Yadav]] s/o [[FATHER:P1|Ram Avtar Yadav]] aur [[PERSON:P2:S|Pawan Kumar]] dono ek hi SIM [[PHONE:PH1|98100 55667]] se kaam karte the, yaani number ek aur aadmi do. Naveen ne ye SIM apne naam par liya tha, Pawan bhi isi se customers ko phone karta tha. Pidit [[PERSON:P3:C|Geeta Verma]] ne Kotak khata [[ACCOUNT:AC1|7712034598]] me [[AMOUNT:A1|Rs. 2,20,000/-]] jama kiye, yaani kul [[AMOUNT:A1|2.2 lakh]] ki thagi hui. Ye khata Pawan sambhalta hai. Case u/s 318(4) BNS, IO SI [[PERSON:P4:O|Kuldeep Singh]].
+---
+REL: OWNS_DEVICE P1 PH1
+REL: OWNS_DEVICE P2 PH1
+REL: CONTROLS_ACCOUNT P2 AC1
+REL: TRANSFERRED_FUNDS P3 AC1 220000

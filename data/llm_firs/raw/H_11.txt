@@ -1,0 +1,4 @@
+LANG: hinglish
+Naam [[PERSON:P1:S|Dinesh Rathore]] ulf [[ALIAS:P1|Dinu]], umar 31, s/o [[FATHER:P1|Bhoop Singh Rathore]]. Kashmere Gate bus adde se pakda gaya. Jeb se phone [[PHONE:PH1|9650871234]] mila aur talashi me cash Rs. 6,200 bhi nikla. Pidit [[PERSON:P2:C|Archana Joshi]] ne bataya ki usne UPI [[UPI:UP1|dinu.rathore91@okhdfcbank]] par pehle [[AMOUNT:A1|₹45,000]] bheje, phir [[AMOUNT:A2|Rs. 1,05,000/-]] aur. FIR 233/26 u/s 318(4) BNS, IO [[PERSON:P3:O|Satbir Singh]] HC.
+---
+REL: OWNS_DEVICE P1 PH1

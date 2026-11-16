@@ -1,0 +1,187 @@
+{
+  "entities": [
+    {
+      "aliases": [
+        "Dinu"
+      ],
+      "char_span": [
+        5,
+        19
+      ],
+      "end": 19,
+      "entity_key": "P1",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 5,
+      "surface": "Dinesh Rathore",
+      "text": "Dinesh Rathore",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Dinesh Rathore"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        24,
+        28
+      ],
+      "end": 28,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "ALIAS",
+      "role": null,
+      "start": 24,
+      "surface": "Dinu",
+      "text": "Dinu",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Dinu"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        43,
+        62
+      ],
+      "end": 62,
+      "entity_key": "FATHER:P1",
+      "id": "E3",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 43,
+      "surface": "Bhoop Singh Rathore",
+      "suspect_key": "P1",
+      "text": "Bhoop Singh Rathore",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Bhoop Singh Rathore"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        115,
+        125
+      ],
+      "end": 125,
+      "entity_key": "PH1",
+      "id": "E4",
+      "label": "PHONE",
+      "role": null,
+      "start": 115,
+      "surface": "9650871234",
+      "text": "9650871234",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9650871234"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        178,
+        191
+      ],
+      "end": 191,
+      "entity_key": "P2",
+      "id": "E5",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 178,
+      "surface": "Archana Joshi",
+      "text": "Archana Joshi",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Archana Joshi"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        214,
+        239
+      ],
+      "end": 239,
+      "entity_key": "UP1",
+      "id": "E6",
+      "label": "UPI",
+      "role": null,
+      "start": 214,
+      "surface": "dinu.rathore91@okhdfcbank",
+      "text": "dinu.rathore91@okhdfcbank",
+      "truth_id": null,
+      "type": "UPI",
+      "value": "dinu.rathore91@okhdfcbank"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        250,
+        257
+      ],
+      "end": 257,
+      "entity_key": "A1",
+      "id": "E7",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 250,
+      "surface": "\u20b945,000",
+      "text": "\u20b945,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 45000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        270,
+        284
+      ],
+      "end": 284,
+      "entity_key": "A2",
+      "id": "E8",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 270,
+      "surface": "Rs. 1,05,000/-",
+      "text": "Rs. 1,05,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 105000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        320,
+        332
+      ],
+      "end": 332,
+      "entity_key": "P3",
+      "id": "E9",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 320,
+      "surface": "Satbir Singh",
+      "text": "Satbir Singh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Satbir Singh"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E1",
+      "source_key": "P1",
+      "source_mention": "E1",
+      "target": "E4",
+      "target_key": "PH1",
+      "target_mention": "E4",
+      "type": "OWNS_DEVICE"
+    }
+  ],
+  "source_doc_id": "H_11",
+  "split": "llm_heldout"
+}

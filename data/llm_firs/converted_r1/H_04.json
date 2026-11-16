@@ -1,0 +1,254 @@
+{
+  "entities": [
+    {
+      "aliases": [
+        "Tiger",
+        "Seth Ji",
+        "Munna Bhai"
+      ],
+      "char_span": [
+        66,
+        81
+      ],
+      "end": 81,
+      "entity_key": "P1",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 66,
+      "surface": "Pappu Lal Meena",
+      "text": "Pappu Lal Meena",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Pappu Lal Meena"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        86,
+        91
+      ],
+      "end": 91,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "ALIAS",
+      "role": null,
+      "start": 86,
+      "surface": "Tiger",
+      "text": "Tiger",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Tiger"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        94,
+        101
+      ],
+      "end": 101,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 94,
+      "surface": "Seth Ji",
+      "text": "Seth Ji",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Seth Ji"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        109,
+        119
+      ],
+      "end": 119,
+      "entity_key": "P1",
+      "id": "E4",
+      "label": "ALIAS",
+      "role": null,
+      "start": 109,
+      "surface": "Munna Bhai",
+      "text": "Munna Bhai",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Munna Bhai"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        126,
+        137
+      ],
+      "end": 137,
+      "entity_key": "FATHER:P1",
+      "id": "E5",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 126,
+      "surface": "Gopal Meena",
+      "suspect_key": "P1",
+      "text": "Gopal Meena",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Gopal Meena"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        152,
+        166
+      ],
+      "end": 166,
+      "entity_key": "AD1",
+      "id": "E6",
+      "label": "AADHAAR",
+      "role": null,
+      "start": 152,
+      "surface": "4321 8765 0912",
+      "text": "4321 8765 0912",
+      "truth_id": null,
+      "type": "AADHAAR",
+      "value": "432187650912"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        184,
+        197
+      ],
+      "end": 197,
+      "entity_key": "P2",
+      "id": "E7",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 184,
+      "surface": "Bhanwar Singh",
+      "text": "Bhanwar Singh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Bhanwar Singh"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        229,
+        243
+      ],
+      "end": 243,
+      "entity_key": "A1",
+      "id": "E8",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 229,
+      "surface": "Rs. 1,50,000/-",
+      "text": "Rs. 1,50,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 150000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        259,
+        271
+      ],
+      "end": 271,
+      "entity_key": "A2",
+      "id": "E9",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 259,
+      "surface": "INR 5,00,000",
+      "text": "INR 5,00,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 500000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        307,
+        319
+      ],
+      "end": 319,
+      "entity_key": "AC1",
+      "id": "E10",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 307,
+      "surface": "123405009876",
+      "text": "123405009876",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "123405009876"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        326,
+        337
+      ],
+      "end": 337,
+      "entity_key": "IF1",
+      "id": "E11",
+      "label": "IFSC",
+      "role": null,
+      "start": 326,
+      "surface": "ICIC0001234",
+      "text": "ICIC0001234",
+      "truth_id": null,
+      "type": "IFSC",
+      "value": "ICIC0001234"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        404,
+        416
+      ],
+      "end": 416,
+      "entity_key": "P3",
+      "id": "E12",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 404,
+      "surface": "Mahesh Chand",
+      "text": "Mahesh Chand",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Mahesh Chand"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E1",
+      "source_key": "P1",
+      "source_mention": "E1",
+      "target": "E10",
+      "target_key": "AC1",
+      "target_mention": "E10",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 150000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E7",
+      "source_key": "P2",
+      "source_mention": "E7",
+      "target": "E10",
+      "target_key": "AC1",
+      "target_mention": "E10",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "H_04",
+  "split": "llm_heldout"
+}

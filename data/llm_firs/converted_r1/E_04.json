@@ -1,0 +1,185 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        35,
+        47
+      ],
+      "end": 47,
+      "entity_key": "P2",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 35,
+      "surface": "Dilip Khanna",
+      "text": "Dilip Khanna",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Dilip Khanna"
+    },
+    {
+      "aliases": [
+        "Bablu Pehalwan"
+      ],
+      "char_span": [
+        53,
+        65
+      ],
+      "end": 65,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 53,
+      "surface": "Bablu Ansari",
+      "text": "Bablu Ansari",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Bablu Ansari"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        75,
+        89
+      ],
+      "end": 89,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 75,
+      "surface": "Bablu Pehalwan",
+      "text": "Bablu Pehalwan",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Bablu Pehalwan"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        173,
+        182
+      ],
+      "end": 182,
+      "entity_key": "A1",
+      "id": "E4",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 173,
+      "surface": "\u20b91,25,000",
+      "text": "\u20b91,25,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 125000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        232,
+        245
+      ],
+      "end": 245,
+      "entity_key": "V1",
+      "id": "E5",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 232,
+      "surface": "DL 8C AB 1234",
+      "text": "DL 8C AB 1234",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "DL 8C AB 1234"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        258,
+        271
+      ],
+      "end": 271,
+      "entity_key": "P3",
+      "id": "E6",
+      "label": "PERSON",
+      "role": "WITNESS",
+      "start": 258,
+      "surface": "Rakesh Tandon",
+      "text": "Rakesh Tandon",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Rakesh Tandon"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        331,
+        346
+      ],
+      "end": 346,
+      "entity_key": "PH1",
+      "id": "E7",
+      "label": "PHONE",
+      "role": null,
+      "start": 331,
+      "surface": "+91 63001 55220",
+      "text": "+91 63001 55220",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "6300155220"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        364,
+        374
+      ],
+      "end": 374,
+      "entity_key": "PH2",
+      "id": "E8",
+      "label": "PHONE",
+      "role": null,
+      "start": 364,
+      "surface": "9810456789",
+      "text": "9810456789",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9810456789"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        411,
+        425
+      ],
+      "end": 425,
+      "entity_key": "P4",
+      "id": "E9",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 411,
+      "surface": "Jagdish Prasad",
+      "text": "Jagdish Prasad",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Jagdish Prasad"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "english",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E7",
+      "target_key": "PH1",
+      "target_mention": "E7",
+      "type": "OWNS_DEVICE"
+    }
+  ],
+  "source_doc_id": "E_04",
+  "split": "llm_heldout"
+}

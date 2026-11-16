@@ -1,0 +1,279 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        136,
+        149
+      ],
+      "end": 149,
+      "entity_key": "V1",
+      "id": "E1",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 136,
+      "surface": "KA-01-MH-4567",
+      "text": "KA-01-MH-4567",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "KA-01-MH-4567"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        184,
+        195
+      ],
+      "end": 195,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 184,
+      "surface": "Mahesh Iyer",
+      "text": "Mahesh Iyer",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Mahesh Iyer"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        200,
+        214
+      ],
+      "end": 214,
+      "entity_key": "FATHER:P1",
+      "id": "E3",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 200,
+      "surface": "Venkatesh Iyer",
+      "suspect_key": "P1",
+      "text": "Venkatesh Iyer",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Venkatesh Iyer"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        276,
+        290
+      ],
+      "end": 290,
+      "entity_key": "AD1",
+      "id": "E4",
+      "label": "AADHAAR",
+      "role": null,
+      "start": 276,
+      "surface": "3456 7890 1234",
+      "text": "3456 7890 1234",
+      "truth_id": null,
+      "type": "AADHAAR",
+      "value": "345678901234"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        320,
+        335
+      ],
+      "end": 335,
+      "entity_key": "PH1",
+      "id": "E5",
+      "label": "PHONE",
+      "role": null,
+      "start": 320,
+      "surface": "+91 98450 12345",
+      "text": "+91 98450 12345",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9845012345"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        345,
+        360
+      ],
+      "end": 360,
+      "entity_key": "IM1",
+      "id": "E6",
+      "label": "IMEI",
+      "role": null,
+      "start": 345,
+      "surface": "354678091234567",
+      "text": "354678091234567",
+      "truth_id": null,
+      "type": "IMEI",
+      "value": "354678091234567"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        491,
+        506
+      ],
+      "end": 506,
+      "entity_key": "PH1",
+      "id": "E7",
+      "label": "PHONE",
+      "role": null,
+      "start": 491,
+      "surface": "+91 98450 12345",
+      "text": "+91 98450 12345",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9845012345"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        518,
+        528
+      ],
+      "end": 528,
+      "entity_key": "PH2",
+      "id": "E8",
+      "label": "PHONE",
+      "role": null,
+      "start": 518,
+      "surface": "9900112233",
+      "text": "9900112233",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9900112233"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        567,
+        581
+      ],
+      "end": 581,
+      "entity_key": "P2",
+      "id": "E9",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 567,
+      "surface": "Sheela Narayan",
+      "text": "Sheela Narayan",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sheela Narayan"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        590,
+        600
+      ],
+      "end": 600,
+      "entity_key": "PH3",
+      "id": "E10",
+      "label": "PHONE",
+      "role": null,
+      "start": 590,
+      "surface": "9448099887",
+      "text": "9448099887",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9448099887"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        617,
+        625
+      ],
+      "end": 625,
+      "entity_key": "A1",
+      "id": "E11",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 617,
+      "surface": "2.5 lakh",
+      "text": "2.5 lakh",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 250000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        635,
+        649
+      ],
+      "end": 649,
+      "entity_key": "A2",
+      "id": "E12",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 635,
+      "surface": "Rs. 1,00,000/-",
+      "text": "Rs. 1,00,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 100000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        728,
+        744
+      ],
+      "end": 744,
+      "entity_key": "P4",
+      "id": "E13",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 728,
+      "surface": "SI Prakash Hegde",
+      "text": "SI Prakash Hegde",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "SI Prakash Hegde"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "english",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E5",
+      "target_key": "PH1",
+      "target_mention": "E5",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "ASSOCIATED_IMEI",
+      "source": "E5",
+      "source_key": "PH1",
+      "source_mention": "E5",
+      "target": "E6",
+      "target_key": "IM1",
+      "target_mention": "E6",
+      "type": "ASSOCIATED_IMEI"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E5",
+      "source_key": "PH1",
+      "source_mention": "E5",
+      "target": "E8",
+      "target_key": "PH2",
+      "target_mention": "E8",
+      "type": "COMMUNICATED_WITH"
+    }
+  ],
+  "source_doc_id": "E_02",
+  "split": "llm_heldout"
+}

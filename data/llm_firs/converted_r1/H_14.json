@@ -1,0 +1,256 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        46,
+        57
+      ],
+      "end": 57,
+      "entity_key": "P5",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 46,
+      "surface": "Bhagwan Das",
+      "text": "Bhagwan Das",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Bhagwan Das"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        74,
+        86
+      ],
+      "end": 86,
+      "entity_key": "P4",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "WITNESS",
+      "start": 74,
+      "surface": "Mohd. Salman",
+      "text": "Mohd. Salman",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Mohd. Salman"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        124,
+        134
+      ],
+      "end": 134,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 124,
+      "surface": "Kiran Bala",
+      "text": "Kiran Bala",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Kiran Bala"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        139,
+        152
+      ],
+      "end": 152,
+      "entity_key": "FATHER:P1",
+      "id": "E4",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 139,
+      "surface": "Santosh Yadav",
+      "suspect_key": "P1",
+      "text": "Santosh Yadav",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Santosh Yadav"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        157,
+        173
+      ],
+      "end": 173,
+      "entity_key": "P2",
+      "id": "E5",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 157,
+      "surface": "Rajesh Chaudhary",
+      "text": "Rajesh Chaudhary",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Rajesh Chaudhary"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        181,
+        198
+      ],
+      "end": 198,
+      "entity_key": "FATHER:P2",
+      "id": "E6",
+      "label": "PERSON",
+      "person_key": "P2",
+      "role": "FATHER",
+      "start": 181,
+      "surface": "Mahipal Chaudhary",
+      "suspect_key": "P2",
+      "text": "Mahipal Chaudhary",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Mahipal Chaudhary"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        287,
+        302
+      ],
+      "end": 302,
+      "entity_key": "PH1",
+      "id": "E7",
+      "label": "PHONE",
+      "role": null,
+      "start": 287,
+      "surface": "+91 62012 34567",
+      "text": "+91 62012 34567",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "6201234567"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        323,
+        338
+      ],
+      "end": 338,
+      "entity_key": "PH2",
+      "id": "E8",
+      "label": "PHONE",
+      "role": null,
+      "start": 323,
+      "surface": "+91-93101-55443",
+      "text": "+91-93101-55443",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9310155443"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        372,
+        378
+      ],
+      "end": 378,
+      "entity_key": "A1",
+      "id": "E9",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 372,
+      "surface": "\u20b95,000",
+      "text": "\u20b95,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 5000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        419,
+        434
+      ],
+      "end": 434,
+      "entity_key": "AC1",
+      "id": "E10",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 419,
+      "surface": "918010023456789",
+      "text": "918010023456789",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "918010023456789"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        492,
+        507
+      ],
+      "end": 507,
+      "entity_key": "PH1",
+      "id": "E11",
+      "label": "PHONE",
+      "role": null,
+      "start": 492,
+      "surface": "+91 62012 34567",
+      "text": "+91 62012 34567",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "6201234567"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E3",
+      "source_key": "P1",
+      "source_mention": "E3",
+      "target": "E7",
+      "target_key": "PH1",
+      "target_mention": "E7",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E5",
+      "source_key": "P2",
+      "source_mention": "E5",
+      "target": "E8",
+      "target_key": "PH2",
+      "target_mention": "E8",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E7",
+      "source_key": "PH1",
+      "source_mention": "E7",
+      "target": "E8",
+      "target_key": "PH2",
+      "target_mention": "E8",
+      "type": "COMMUNICATED_WITH"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E5",
+      "source_key": "P2",
+      "source_mention": "E5",
+      "target": "E10",
+      "target_key": "AC1",
+      "target_mention": "E10",
+      "type": "CONTROLS_ACCOUNT"
+    }
+  ],
+  "source_doc_id": "H_14",
+  "split": "llm_heldout"
+}

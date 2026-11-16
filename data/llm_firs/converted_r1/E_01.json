@@ -1,0 +1,155 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        58,
+        67
+      ],
+      "end": 67,
+      "entity_key": "P2",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 58,
+      "surface": "Anita Rao",
+      "text": "Anita Rao",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Anita Rao"
+    },
+    {
+      "aliases": [
+        "KK"
+      ],
+      "char_span": [
+        118,
+        130
+      ],
+      "end": 130,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 118,
+      "surface": "Kiran Shetty",
+      "text": "Kiran Shetty",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Kiran Shetty"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        137,
+        139
+      ],
+      "end": 139,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 137,
+      "surface": "KK",
+      "text": "KK",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "KK"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        181,
+        193
+      ],
+      "end": 193,
+      "entity_key": "A1",
+      "id": "E4",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 181,
+      "surface": "Rs. 12,500/-",
+      "text": "Rs. 12,500/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 12500.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        204,
+        225
+      ],
+      "end": 225,
+      "entity_key": "UP1",
+      "id": "E5",
+      "label": "UPI",
+      "role": null,
+      "start": 204,
+      "surface": "kiran.shetty88@okaxis",
+      "text": "kiran.shetty88@okaxis",
+      "truth_id": null,
+      "type": "UPI",
+      "value": "kiran.shetty88@okaxis"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        262,
+        269
+      ],
+      "end": 269,
+      "entity_key": "A2",
+      "id": "E6",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 262,
+      "surface": "\u20b940,000",
+      "text": "\u20b940,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 40000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        361,
+        371
+      ],
+      "end": 371,
+      "entity_key": "PN1",
+      "id": "E7",
+      "label": "PAN",
+      "role": null,
+      "start": 361,
+      "surface": "AGHPS4417Q",
+      "text": "AGHPS4417Q",
+      "truth_id": null,
+      "type": "PAN",
+      "value": "AGHPS4417Q"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        420,
+        442
+      ],
+      "end": 442,
+      "entity_key": "P3",
+      "id": "E8",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 420,
+      "surface": "Inspector Ramesh Gowda",
+      "text": "Inspector Ramesh Gowda",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Inspector Ramesh Gowda"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "english",
+  "relationships": [],
+  "source_doc_id": "E_01",
+  "split": "llm_heldout"
+}

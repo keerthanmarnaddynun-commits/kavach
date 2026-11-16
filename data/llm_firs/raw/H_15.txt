@@ -1,0 +1,6 @@
+LANG: hinglish
+Loan app ke naam par blackmail ki complaint aayi hai. [[PERSON:P2:C|Prakash Nair]] ne bataya ki usne mobile app se sirf [[AMOUNT:A1|Rs. 8,000/-]] ka loan liya tha par agent [[PERSON:P1:S|Arjun Menon]] ulf [[ALIAS:P1|AJ]] s/o [[FATHER:P1|Sudhakaran Menon]] ne uski photos edit karke dhamki di aur [[AMOUNT:A2|INR 1,50,000]] maange. Dhamki wale number [[PHONE:PH1|7907654321]] ka IMEI [[IMEI:IM1|862345067891234]] mila. Arjun ka Aadhaar [[AADHAAR:AD1|7890 1234 5678]] bhi verify hua. Isi number se [[PHONE:PH3|9847012345]] par bhi call kiye gaye, jo Arjun ke saathi ka hai. Prakash ne HDFC account [[ACCOUNT:AC1|50200012345678]] se paise bheje the jo Arjun ke kehne par kisi aur khate me gaye. IO [[PERSON:P3:O|Ajith Kumar]], FIR 88/26.
+---
+REL: OWNS_DEVICE P1 PH1
+REL: ASSOCIATED_IMEI PH1 IM1
+REL: COMMUNICATED_WITH PH1 PH3

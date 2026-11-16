@@ -1,0 +1,6 @@
+LANG: hinglish
+Aaj dinank 04.02.2026 ko main Sub-Inspector [[PERSON:P4:O|Ravinder Malik]] gasht par tha ki mukhbir se soochna mili ki Sultanpuri me do ladke, [[PERSON:P1:S|Sandeep Chauhan]] aur [[PERSON:P2:S|Sandip Chouhan]], logon ko sasta loan dilane ka jhansa dekar thag rahe hain. Pooch-tach me Sandeep ne apna mobile [[PHONE:PH1|+91 99001 22334]] bataya, jabki Sandip ka number [[PHONE:PH2|8800556677]] nikla. Dono ke phone ke beech roz 20-25 baar baat hoti thi, yeh bhi pata chala ki [[PHONE:PH1|+91 99001 22334]] se [[PHONE:PH2|8800556677]] par hi zyada calls gayi. Complainant [[PERSON:P3:C|Kavita Rani]] ne bataya ki usne processing fees ke naam par [[AMOUNT:A1|2.5 lakh]] UPI id [[UPI:UP1|sandip.chouhan@okicici]] par bheje, phir [[AMOUNT:A2|Rs. 40,000/-]] aur maange gaye. Gaadi [[VEHICLE:V1|DL 3C BN 4521]] Sandeep ke naam registered hai. Mamla u/s 318(4), 319(2) BNS me darj kiya gaya.
+---
+REL: OWNS_DEVICE P1 PH1
+REL: OWNS_DEVICE P2 PH2
+REL: COMMUNICATED_WITH PH1 PH2

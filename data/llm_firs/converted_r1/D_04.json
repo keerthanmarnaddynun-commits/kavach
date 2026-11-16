@@ -1,0 +1,227 @@
+{
+  "entities": [
+    {
+      "aliases": [
+        "\u091a\u093f\u0902\u091f\u0942"
+      ],
+      "char_span": [
+        37,
+        47
+      ],
+      "end": 47,
+      "entity_key": "P1",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 37,
+      "surface": "\u0905\u092e\u093f\u0924 \u091a\u094c\u0939\u093e\u0928",
+      "text": "\u0905\u092e\u093f\u0924 \u091a\u094c\u0939\u093e\u0928",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0905\u092e\u093f\u0924 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        51,
+        56
+      ],
+      "end": 56,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "ALIAS",
+      "role": null,
+      "start": 51,
+      "surface": "\u091a\u093f\u0902\u091f\u0942",
+      "text": "\u091a\u093f\u0902\u091f\u0942",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "\u091a\u093f\u0902\u091f\u0942"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        84,
+        93
+      ],
+      "end": 93,
+      "entity_key": "P2",
+      "id": "E3",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 84,
+      "surface": "\u0938\u094b\u0928\u0942 \u092c\u0918\u0947\u0932",
+      "text": "\u0938\u094b\u0928\u0942 \u092c\u0918\u0947\u0932",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0938\u094b\u0928\u0942 \u092c\u0918\u0947\u0932"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        100,
+        109
+      ],
+      "end": 109,
+      "entity_key": "FATHER:P2",
+      "id": "E4",
+      "label": "PERSON",
+      "person_key": "P2",
+      "role": "FATHER",
+      "start": 100,
+      "surface": "\u092e\u094b\u0939\u0928 \u092c\u0918\u0947\u0932",
+      "suspect_key": "P2",
+      "text": "\u092e\u094b\u0939\u0928 \u092c\u0918\u0947\u0932",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u092e\u094b\u0939\u0928 \u092c\u0918\u0947\u0932"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        130,
+        145
+      ],
+      "end": 145,
+      "entity_key": "PH1",
+      "id": "E5",
+      "label": "PHONE",
+      "role": null,
+      "start": 130,
+      "surface": "+91 70001 23456",
+      "text": "+91 70001 23456",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "7000123456"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        161,
+        172
+      ],
+      "end": 172,
+      "entity_key": "PH2",
+      "id": "E6",
+      "label": "PHONE",
+      "role": null,
+      "start": 161,
+      "surface": "8319 876543",
+      "text": "8319 876543",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "8319876543"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        243,
+        252
+      ],
+      "end": 252,
+      "entity_key": "P3",
+      "id": "E7",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 243,
+      "surface": "\u0930\u0940\u0928\u093e \u0938\u094b\u0928\u0940",
+      "text": "\u0930\u0940\u0928\u093e \u0938\u094b\u0928\u0940",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0930\u0940\u0928\u093e \u0938\u094b\u0928\u0940"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        270,
+        282
+      ],
+      "end": 282,
+      "entity_key": "A1",
+      "id": "E8",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 270,
+      "surface": "Rs. 35,000/-",
+      "text": "Rs. 35,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 35000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        292,
+        317
+      ],
+      "end": 317,
+      "entity_key": "UP1",
+      "id": "E9",
+      "label": "UPI",
+      "role": null,
+      "start": 292,
+      "surface": "chintu.chauhan@okhdfcbank",
+      "text": "chintu.chauhan@okhdfcbank",
+      "truth_id": null,
+      "type": "UPI",
+      "value": "chintu.chauhan@okhdfcbank"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        393,
+        415
+      ],
+      "end": 415,
+      "entity_key": "P4",
+      "id": "E10",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 393,
+      "surface": "\u0909\u092a\u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0915 \u0938\u0902\u091c\u092f \u092e\u093f\u0936\u094d\u0930\u093e",
+      "text": "\u0909\u092a\u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0915 \u0938\u0902\u091c\u092f \u092e\u093f\u0936\u094d\u0930\u093e",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0909\u092a\u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0915 \u0938\u0902\u091c\u092f \u092e\u093f\u0936\u094d\u0930\u093e"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hindi",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E1",
+      "source_key": "P1",
+      "source_mention": "E1",
+      "target": "E5",
+      "target_key": "PH1",
+      "target_mention": "E5",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E3",
+      "source_key": "P2",
+      "source_mention": "E3",
+      "target": "E6",
+      "target_key": "PH2",
+      "target_mention": "E6",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E5",
+      "source_key": "PH1",
+      "source_mention": "E5",
+      "target": "E6",
+      "target_key": "PH2",
+      "target_mention": "E6",
+      "type": "COMMUNICATED_WITH"
+    }
+  ],
+  "source_doc_id": "D_04",
+  "split": "llm_heldout"
+}

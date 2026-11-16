@@ -1,0 +1,200 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        32,
+        43
+      ],
+      "end": 43,
+      "entity_key": "P2",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 32,
+      "surface": "Sunita Devi",
+      "text": "Sunita Devi",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Sunita Devi"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        109,
+        121
+      ],
+      "end": 121,
+      "entity_key": "A1",
+      "id": "E2",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 109,
+      "surface": "Rs. 85,000/-",
+      "text": "Rs. 85,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 85000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        134,
+        147
+      ],
+      "end": 147,
+      "entity_key": "AC1",
+      "id": "E3",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 134,
+      "surface": "4521003298761",
+      "text": "4521003298761",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "4521003298761"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        175,
+        187
+      ],
+      "end": 187,
+      "entity_key": "P1",
+      "id": "E4",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 175,
+      "surface": "Mohit Sharma",
+      "text": "Mohit Sharma",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Mohit Sharma"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        192,
+        205
+      ],
+      "end": 205,
+      "entity_key": "FATHER:P1",
+      "id": "E5",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 192,
+      "surface": "Dinesh Sharma",
+      "suspect_key": "P1",
+      "text": "Dinesh Sharma",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Dinesh Sharma"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        288,
+        298
+      ],
+      "end": 298,
+      "entity_key": "PH1",
+      "id": "E6",
+      "label": "PHONE",
+      "role": null,
+      "start": 288,
+      "surface": "9811234567",
+      "text": "9811234567",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9811234567"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        310,
+        325
+      ],
+      "end": 325,
+      "entity_key": "IM1",
+      "id": "E7",
+      "label": "IMEI",
+      "role": null,
+      "start": 310,
+      "surface": "356938035643809",
+      "text": "356938035643809",
+      "truth_id": null,
+      "type": "IMEI",
+      "value": "356938035643809"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        375,
+        385
+      ],
+      "end": 385,
+      "entity_key": "P3",
+      "id": "E8",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 375,
+      "surface": "Anil Yadav",
+      "text": "Anil Yadav",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Anil Yadav"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E4",
+      "source_key": "P1",
+      "source_mention": "E4",
+      "target": "E6",
+      "target_key": "PH1",
+      "target_mention": "E6",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "ASSOCIATED_IMEI",
+      "source": "E6",
+      "source_key": "PH1",
+      "source_mention": "E6",
+      "target": "E7",
+      "target_key": "IM1",
+      "target_mention": "E7",
+      "type": "ASSOCIATED_IMEI"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E4",
+      "source_key": "P1",
+      "source_mention": "E4",
+      "target": "E3",
+      "target_key": "AC1",
+      "target_mention": "E3",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 85000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E1",
+      "source_key": "P2",
+      "source_mention": "E1",
+      "target": "E3",
+      "target_key": "AC1",
+      "target_mention": "E3",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "H_01",
+  "split": "llm_heldout"
+}

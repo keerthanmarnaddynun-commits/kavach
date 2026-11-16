@@ -1,0 +1,238 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        12,
+        23
+      ],
+      "end": 23,
+      "entity_key": "P3",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 12,
+      "surface": "\u092e\u0939\u0947\u0936 \u0917\u0941\u092a\u094d\u0924\u093e",
+      "text": "\u092e\u0939\u0947\u0936 \u0917\u0941\u092a\u094d\u0924\u093e",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u092e\u0939\u0947\u0936 \u0917\u0941\u092a\u094d\u0924\u093e"
+    },
+    {
+      "aliases": [
+        "\u0926\u0940\u092a\u0942 \u0920\u093e\u0915\u0941\u0930"
+      ],
+      "char_span": [
+        59,
+        68
+      ],
+      "end": 68,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 59,
+      "surface": "\u0926\u0940\u092a\u0915 \u0938\u093f\u0902\u0939",
+      "text": "\u0926\u0940\u092a\u0915 \u0938\u093f\u0902\u0939",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0926\u0940\u092a\u0915 \u0938\u093f\u0902\u0939"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        71,
+        81
+      ],
+      "end": 81,
+      "entity_key": "P1",
+      "id": "E3",
+      "label": "ALIAS",
+      "role": null,
+      "start": 71,
+      "surface": "\u0926\u0940\u092a\u0942 \u0920\u093e\u0915\u0941\u0930",
+      "text": "\u0926\u0940\u092a\u0942 \u0920\u093e\u0915\u0941\u0930",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "\u0926\u0940\u092a\u0942 \u0920\u093e\u0915\u0941\u0930"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        120,
+        129
+      ],
+      "end": 129,
+      "entity_key": "A1",
+      "id": "E4",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 120,
+      "surface": "\u20b92,00,000",
+      "text": "\u20b92,00,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 200000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        151,
+        167
+      ],
+      "end": 167,
+      "entity_key": "AC1",
+      "id": "E5",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 151,
+      "surface": "1234000100567890",
+      "text": "1234000100567890",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "1234000100567890"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        252,
+        259
+      ],
+      "end": 259,
+      "entity_key": "A2",
+      "id": "E6",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 252,
+      "surface": "1.5 \u0932\u093e\u0916",
+      "text": "1.5 \u0932\u093e\u0916",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 150000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        270,
+        284
+      ],
+      "end": 284,
+      "entity_key": "AC2",
+      "id": "E7",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 270,
+      "surface": "50100456789012",
+      "text": "50100456789012",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "50100456789012"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        306,
+        315
+      ],
+      "end": 315,
+      "entity_key": "P2",
+      "id": "E8",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 306,
+      "surface": "\u0928\u0940\u0932\u092e \u0938\u093f\u0902\u0939",
+      "text": "\u0928\u0940\u0932\u092e \u0938\u093f\u0902\u0939",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0928\u0940\u0932\u092e \u0938\u093f\u0902\u0939"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        322,
+        331
+      ],
+      "end": 331,
+      "entity_key": "FATHER:P2",
+      "id": "E9",
+      "label": "PERSON",
+      "person_key": "P2",
+      "role": "FATHER",
+      "start": 322,
+      "surface": "\u0930\u092e\u0947\u0936 \u0938\u093f\u0902\u0939",
+      "suspect_key": "P2",
+      "text": "\u0930\u092e\u0947\u0936 \u0938\u093f\u0902\u0939",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0930\u092e\u0947\u0936 \u0938\u093f\u0902\u0939"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        402,
+        422
+      ],
+      "end": 422,
+      "entity_key": "P4",
+      "id": "E10",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 402,
+      "surface": "\u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0915 \u0935\u093f\u091c\u092f \u0936\u0941\u0915\u094d\u0932\u093e",
+      "text": "\u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0915 \u0935\u093f\u091c\u092f \u0936\u0941\u0915\u094d\u0932\u093e",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "\u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0915 \u0935\u093f\u091c\u092f \u0936\u0941\u0915\u094d\u0932\u093e"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hindi",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E2",
+      "source_key": "P1",
+      "source_mention": "E2",
+      "target": "E5",
+      "target_key": "AC1",
+      "target_mention": "E5",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E8",
+      "source_key": "P2",
+      "source_mention": "E8",
+      "target": "E7",
+      "target_key": "AC2",
+      "target_mention": "E7",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 200000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E1",
+      "source_key": "P3",
+      "source_mention": "E1",
+      "target": "E5",
+      "target_key": "AC1",
+      "target_mention": "E5",
+      "type": "TRANSFERRED_FUNDS"
+    },
+    {
+      "amount": 150000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E5",
+      "source_key": "AC1",
+      "source_mention": "E5",
+      "target": "E7",
+      "target_key": "AC2",
+      "target_mention": "E7",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "D_02",
+  "split": "llm_heldout"
+}

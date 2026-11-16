@@ -1,0 +1,175 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        12,
+        24
+      ],
+      "end": 24,
+      "entity_key": "P3",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 12,
+      "surface": "Mukesh Kumar",
+      "text": "Mukesh Kumar",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Mukesh Kumar"
+    },
+    {
+      "aliases": [
+        "Kammo"
+      ],
+      "char_span": [
+        153,
+        165
+      ],
+      "end": 165,
+      "entity_key": "P1",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 153,
+      "surface": "Kamlesh Devi",
+      "text": "Kamlesh Devi",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Kamlesh Devi"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        170,
+        178
+      ],
+      "end": 178,
+      "entity_key": "FATHER:P1",
+      "id": "E3",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 170,
+      "surface": "Hira Lal",
+      "suspect_key": "P1",
+      "text": "Hira Lal",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Hira Lal"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        188,
+        193
+      ],
+      "end": 193,
+      "entity_key": "P1",
+      "id": "E4",
+      "label": "ALIAS",
+      "role": null,
+      "start": 188,
+      "surface": "Kammo",
+      "text": "Kammo",
+      "truth_id": null,
+      "type": "ALIAS",
+      "value": "Kammo"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        211,
+        216
+      ],
+      "end": 216,
+      "entity_key": "P2",
+      "id": "E5",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 211,
+      "surface": "Rohit",
+      "text": "Rohit",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Rohit"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        339,
+        352
+      ],
+      "end": 352,
+      "entity_key": "V1",
+      "id": "E6",
+      "label": "VEHICLE",
+      "role": null,
+      "start": 339,
+      "surface": "HR 55 AB 7766",
+      "text": "HR 55 AB 7766",
+      "truth_id": null,
+      "type": "VEHICLE",
+      "value": "HR 55 AB 7766"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        398,
+        408
+      ],
+      "end": 408,
+      "entity_key": "PN1",
+      "id": "E7",
+      "label": "PAN",
+      "role": null,
+      "start": 398,
+      "surface": "CKMPD5521R",
+      "text": "CKMPD5521R",
+      "truth_id": null,
+      "type": "PAN",
+      "value": "CKMPD5521R"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        421,
+        435
+      ],
+      "end": 435,
+      "entity_key": "AD1",
+      "id": "E8",
+      "label": "AADHAAR",
+      "role": null,
+      "start": 421,
+      "surface": "6012 3456 7890",
+      "text": "6012 3456 7890",
+      "truth_id": null,
+      "type": "AADHAAR",
+      "value": "601234567890"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        476,
+        489
+      ],
+      "end": 489,
+      "entity_key": "P4",
+      "id": "E9",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 476,
+      "surface": "Rajbir Dahiya",
+      "text": "Rajbir Dahiya",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Rajbir Dahiya"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [],
+  "source_doc_id": "H_08",
+  "split": "llm_heldout"
+}

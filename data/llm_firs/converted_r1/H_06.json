@@ -1,0 +1,218 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        31,
+        43
+      ],
+      "end": 43,
+      "entity_key": "P1",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 31,
+      "surface": "Naveen Yadav",
+      "text": "Naveen Yadav",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Naveen Yadav"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        48,
+        63
+      ],
+      "end": 63,
+      "entity_key": "FATHER:P1",
+      "id": "E2",
+      "label": "PERSON",
+      "person_key": "P1",
+      "role": "FATHER",
+      "start": 48,
+      "surface": "Ram Avtar Yadav",
+      "suspect_key": "P1",
+      "text": "Ram Avtar Yadav",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Ram Avtar Yadav"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        68,
+        79
+      ],
+      "end": 79,
+      "entity_key": "P2",
+      "id": "E3",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 68,
+      "surface": "Pawan Kumar",
+      "text": "Pawan Kumar",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Pawan Kumar"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        95,
+        106
+      ],
+      "end": 106,
+      "entity_key": "PH1",
+      "id": "E4",
+      "label": "PHONE",
+      "role": null,
+      "start": 95,
+      "surface": "98100 55667",
+      "text": "98100 55667",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9810055667"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        250,
+        261
+      ],
+      "end": 261,
+      "entity_key": "P3",
+      "id": "E5",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 250,
+      "surface": "Geeta Verma",
+      "text": "Geeta Verma",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Geeta Verma"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        277,
+        287
+      ],
+      "end": 287,
+      "entity_key": "AC1",
+      "id": "E6",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 277,
+      "surface": "7712034598",
+      "text": "7712034598",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "7712034598"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        291,
+        305
+      ],
+      "end": 305,
+      "entity_key": "A1",
+      "id": "E7",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 291,
+      "surface": "Rs. 2,20,000/-",
+      "text": "Rs. 2,20,000/-",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 220000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        327,
+        335
+      ],
+      "end": 335,
+      "entity_key": "A1",
+      "id": "E8",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 327,
+      "surface": "2.2 lakh",
+      "text": "2.2 lakh",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 220000.00000000003
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        407,
+        420
+      ],
+      "end": 420,
+      "entity_key": "P4",
+      "id": "E9",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 407,
+      "surface": "Kuldeep Singh",
+      "text": "Kuldeep Singh",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Kuldeep Singh"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E1",
+      "source_key": "P1",
+      "source_mention": "E1",
+      "target": "E4",
+      "target_key": "PH1",
+      "target_mention": "E4",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E3",
+      "source_key": "P2",
+      "source_mention": "E3",
+      "target": "E4",
+      "target_key": "PH1",
+      "target_mention": "E4",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E3",
+      "source_key": "P2",
+      "source_mention": "E3",
+      "target": "E6",
+      "target_key": "AC1",
+      "target_mention": "E6",
+      "type": "CONTROLS_ACCOUNT"
+    },
+    {
+      "amount": 220000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E5",
+      "source_key": "P3",
+      "source_mention": "E5",
+      "target": "E6",
+      "target_key": "AC1",
+      "target_mention": "E6",
+      "type": "TRANSFERRED_FUNDS"
+    }
+  ],
+  "source_doc_id": "H_06",
+  "split": "llm_heldout"
+}

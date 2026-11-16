@@ -1,0 +1,245 @@
+{
+  "entities": [
+    {
+      "aliases": [],
+      "char_span": [
+        42,
+        54
+      ],
+      "end": 54,
+      "entity_key": "P1",
+      "id": "E1",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 42,
+      "surface": "Vikas Tiwari",
+      "text": "Vikas Tiwari",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Vikas Tiwari"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        59,
+        71
+      ],
+      "end": 71,
+      "entity_key": "P2",
+      "id": "E2",
+      "label": "PERSON",
+      "role": "SUSPECT",
+      "start": 59,
+      "surface": "Bikas Tiwary",
+      "text": "Bikas Tiwary",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Bikas Tiwary"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        109,
+        120
+      ],
+      "end": 120,
+      "entity_key": "PH1",
+      "id": "E3",
+      "label": "PHONE",
+      "role": null,
+      "start": 109,
+      "surface": "98765 43210",
+      "text": "98765 43210",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9876543210"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        142,
+        157
+      ],
+      "end": 157,
+      "entity_key": "PH2",
+      "id": "E4",
+      "label": "PHONE",
+      "role": null,
+      "start": 142,
+      "surface": "+91-70123-45678",
+      "text": "+91-70123-45678",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "7012345678"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        166,
+        177
+      ],
+      "end": 177,
+      "entity_key": "PH1",
+      "id": "E5",
+      "label": "PHONE",
+      "role": null,
+      "start": 166,
+      "surface": "98765 43210",
+      "text": "98765 43210",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "9876543210"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        181,
+        196
+      ],
+      "end": 196,
+      "entity_key": "PH2",
+      "id": "E6",
+      "label": "PHONE",
+      "role": null,
+      "start": 181,
+      "surface": "+91-70123-45678",
+      "text": "+91-70123-45678",
+      "truth_id": null,
+      "type": "PHONE",
+      "value": "7012345678"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        233,
+        245
+      ],
+      "end": 245,
+      "entity_key": "P3",
+      "id": "E7",
+      "label": "PERSON",
+      "role": "COMPLAINANT",
+      "start": 233,
+      "surface": "Ramesh Gupta",
+      "text": "Ramesh Gupta",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Ramesh Gupta"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        256,
+        263
+      ],
+      "end": 263,
+      "entity_key": "A1",
+      "id": "E8",
+      "label": "AMOUNT",
+      "role": null,
+      "start": 256,
+      "surface": "\u20b975,000",
+      "text": "\u20b975,000",
+      "truth_id": null,
+      "type": "AMOUNT",
+      "value": 75000.0
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        285,
+        299
+      ],
+      "end": 299,
+      "entity_key": "AC1",
+      "id": "E9",
+      "label": "ACCOUNT",
+      "role": null,
+      "start": 285,
+      "surface": "50100234567890",
+      "text": "50100234567890",
+      "truth_id": null,
+      "type": "ACCOUNT",
+      "value": "50100234567890"
+    },
+    {
+      "aliases": [],
+      "char_span": [
+        337,
+        344
+      ],
+      "end": 344,
+      "entity_key": "P4",
+      "id": "E10",
+      "label": "PERSON",
+      "role": "OFFICER",
+      "start": 337,
+      "surface": "Hari Om",
+      "text": "Hari Om",
+      "truth_id": null,
+      "type": "PERSON",
+      "value": "Hari Om"
+    }
+  ],
+  "fir_type": "LLM_AUTHORED",
+  "language": "hinglish",
+  "relationships": [
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E1",
+      "source_key": "P1",
+      "source_mention": "E1",
+      "target": "E3",
+      "target_key": "PH1",
+      "target_mention": "E3",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "OWNS_DEVICE",
+      "source": "E2",
+      "source_key": "P2",
+      "source_mention": "E2",
+      "target": "E4",
+      "target_key": "PH2",
+      "target_mention": "E4",
+      "type": "OWNS_DEVICE"
+    },
+    {
+      "amount": null,
+      "relation": "COMMUNICATED_WITH",
+      "source": "E3",
+      "source_key": "PH1",
+      "source_mention": "E3",
+      "target": "E4",
+      "target_key": "PH2",
+      "target_mention": "E4",
+      "type": "COMMUNICATED_WITH"
+    },
+    {
+      "amount": 75000.0,
+      "relation": "TRANSFERRED_FUNDS",
+      "source": "E7",
+      "source_key": "P3",
+      "source_mention": "E7",
+      "target": "E9",
+      "target_key": "AC1",
+      "target_mention": "E9",
+      "type": "TRANSFERRED_FUNDS"
+    },
+    {
+      "amount": null,
+      "relation": "CONTROLS_ACCOUNT",
+      "source": "E2",
+      "source_key": "P2",
+      "source_mention": "E2",
+      "target": "E9",
+      "target_key": "AC1",
+      "target_mention": "E9",
+      "type": "CONTROLS_ACCOUNT"
+    }
+  ],
+  "source_doc_id": "H_02",
+  "split": "llm_heldout"
+}

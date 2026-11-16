@@ -1,0 +1,11 @@
+LANG: hindi
+यह मामला फर्जी निवेश योजना का है जिसकी शिकायत [[PERSON:P5:C|अशोक मेहरा]] निवासी इंदौर ने की। उन्होंने बताया कि [[PERSON:P1:S|विनोद पाटीदार]] उर्फ [[ALIAS:P1|वीनू सेठ]], [[PERSON:P2:S|कमलेश जैन]] पुत्र [[FATHER:P2|सुरेश जैन]] और [[PERSON:P3:S|रेखा पाटीदार]] ने तीन महीने में पैसा दोगुना करने का लालच दिया। अशोक ने [[AMOUNT:A1|INR 3,00,00,000]] ICICI खाता [[ACCOUNT:AC1|012301987654]] में जमा किए, जिसका आईएफएससी [[IFSC:IF1|ICIC0000123]] है और जिसे विनोद संचालित करता है। इसमें से [[AMOUNT:A2|1.8 करोड़]] उसी हफ्ते Axis खाता [[ACCOUNT:AC2|915010087654321]] में गए, जिसे रेखा चलाती है। विनोद का मोबाइल [[PHONE:PH1|98270 55443]] है और कमलेश का [[PHONE:PH2|+91-62601-88776]], दोनों के बीच दिन में कई बार बात होती थी। कमलेश के फोन का IMEI [[IMEI:IM1|869912034567891]] निकला। मामला FIR 97/26 धारा 318(4), 61(2) BNS, जाँच [[PERSON:P4:O|डीएसपी राजीव सक्सेना]] कर रहे हैं।
+---
+REL: OWNS_DEVICE P1 PH1
+REL: OWNS_DEVICE P2 PH2
+REL: ASSOCIATED_IMEI PH2 IM1
+REL: COMMUNICATED_WITH PH1 PH2
+REL: CONTROLS_ACCOUNT P1 AC1
+REL: CONTROLS_ACCOUNT P3 AC2
+REL: TRANSFERRED_FUNDS P5 AC1 30000000
+REL: TRANSFERRED_FUNDS AC1 AC2 18000000

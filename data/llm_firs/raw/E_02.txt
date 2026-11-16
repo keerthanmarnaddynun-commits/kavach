@@ -1,0 +1,6 @@
+LANG: english
+On 17.07.2026 at about 9 pm, while checking vehicles at the Silk Board junction, my team stopped a grey Honda City bearing registration [[VEHICLE:V1|KA-01-MH-4567]]. The driver identified himself as [[PERSON:P1:S|Mahesh Iyer]] s/o [[FATHER:P1|Venkatesh Iyer]], resident of HSR Layout, and produced an Aadhaar card number [[AADHAAR:AD1|3456 7890 1234]]. A Redmi handset with number [[PHONE:PH1|+91 98450 12345]] and IMEI [[IMEI:IM1|354678091234567]] was seized from him, along with cash of Rs. 20,000 found in the dashboard. On examination of the call details it was noticed that [[PHONE:PH1|+91 98450 12345]] had called [[PHONE:PH2|9900112233]] many times on the day the complainant [[PERSON:P2:C|Sheela Narayan]] (mobile [[PHONE:PH3|9448099887]]) was cheated of [[AMOUNT:A1|2.5 lakh]] and then [[AMOUNT:A2|Rs. 1,00,000/-]] on a false promise of a flat booking. FIR 640/2026 u/s 318(4) and 316(2) BNS. [[PERSON:P4:O|SI Prakash Hegde]], IO.
+---
+REL: OWNS_DEVICE P1 PH1
+REL: ASSOCIATED_IMEI PH1 IM1
+REL: COMMUNICATED_WITH PH1 PH2
