@@ -1,0 +1,4395 @@
+{
+  "seed_201": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5714285714285714,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P007"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_202": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P011"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_203": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_204": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.6666666666666666,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P002",
+          "PERSON:P004"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_205": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.625,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P018"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_206": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_207": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.8888888888888888,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_208": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.4444444444444444,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P012",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_209": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010",
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_210": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P014",
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_211": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8571428571428571,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P014"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_212": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P012"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.8571428571428571,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P012",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_213": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5714285714285714,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015",
+          "PERSON:P018"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_214": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P016",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_215": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.42857142857142855,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_216": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P011",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_217": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.7142857142857143,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_218": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P012"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.5714285714285714,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P012"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_219": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P001",
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_220": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.3333333333333333,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_221": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_222": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8333333333333334,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P002",
+          "PERSON:P007"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_223": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P002"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.8571428571428571,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P002",
+          "PERSON:P004"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_224": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8888888888888888,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P002",
+          "PERSON:P009"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_225": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010",
+          "PERSON:P014"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_226": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8888888888888888,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P010"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_227": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.7142857142857143,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P005"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_228": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.6666666666666666,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_229": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8888888888888888,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P011"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_230": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_231": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5714285714285714,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P018",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_232": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008",
+          "PERSON:P014"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_233": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_234": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P014",
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_235": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010",
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_236": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.5555555555555556,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_237": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.625,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_238": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008",
+          "PERSON:P018"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_239": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P014"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_240": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_241": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P003",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_242": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P002",
+          "PERSON:P009"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_243": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.7142857142857143,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P011",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_244": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.6666666666666666,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_245": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P012"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_246": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8571428571428571,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_247": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 2
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P012",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_248": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.8333333333333334,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_249": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.625,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P011"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "seed_250": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P005"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_151": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_152": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_153": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.625,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P010"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_154": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P011"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P011"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_155": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P003"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.7142857142857143,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_156": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P003"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_157": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5714285714285714,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_158": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.6666666666666666,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_159": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.625,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P013",
+          "PERSON:P014"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_160": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P016"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8888888888888888,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P016",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_161": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.375,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P016"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_162": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5714285714285714,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_163": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009",
+          "PERSON:P014"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_164": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008",
+          "PERSON:P011"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_165": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P016"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P016"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_166": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P003",
+          "PERSON:P004"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_167": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P009"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.5,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P009"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_168": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P007"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_169": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_170": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P001",
+          "PERSON:P005"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_171": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P018"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_172": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P016",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_173": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_174": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_175": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P001"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.7777777777777778,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P001",
+          "PERSON:P004"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_176": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P009"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_177": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.4444444444444444,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P001",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_178": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_179": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.625,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P001",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_180": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8333333333333334,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P012",
+          "PERSON:P018"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_181": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P003"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015",
+          "PERSON:P019"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_182": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.6666666666666666,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_183": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8571428571428571,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P014",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_184": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.8571428571428571,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P001",
+          "PERSON:P006"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_185": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8571428571428571,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_186": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.5,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P013"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_187": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P002"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P018"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_188": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P003",
+          "PERSON:P008"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.7777777777777778,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P003",
+          "PERSON:P008"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_189": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.6666666666666666,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P004",
+          "PERSON:P011"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_190": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P006",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_191": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.7777777777777778,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P012",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_192": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P015"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P019",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_193": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_194": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": true,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.75,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P010",
+          "PERSON:P017"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_195": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 2
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P011",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_196": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.8571428571428571,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P008",
+          "PERSON:P021"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_197": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.42857142857142855,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P005",
+          "PERSON:P010"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_198": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 1.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.875,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 1
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P020"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_199": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 0
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": false,
+      "has_pizza": false,
+      "louvain_agreement": 0.6666666666666666,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P002",
+          "PERSON:P010"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  },
+  "v2_seed_200": {
+    "cov_0.6": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.5,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 1
+      },
+      "exact_match": false,
+      "has_cr1": false,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 0.8333333333333334,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    },
+    "cov_1.0": {
+      "baseline_betweenness_exact": false,
+      "baseline_degree_exact": false,
+      "courier_art_share": 0.0,
+      "cut_result": {
+        "cut": [
+          "PERSON:P007",
+          "PERSON:P008"
+        ],
+        "direct_links_count": 0,
+        "finite": true,
+        "size": 2
+      },
+      "exact_match": true,
+      "has_cr1": true,
+      "has_cr2": true,
+      "has_pizza": false,
+      "louvain_agreement": 1.0,
+      "louvain_exact": false,
+      "non_couriers": 0,
+      "unowned_bridging_phones_count": 0
+    }
+  }
+}

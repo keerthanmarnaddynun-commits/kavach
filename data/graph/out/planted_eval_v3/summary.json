@@ -1,0 +1,188 @@
+{
+  "0.6": {
+    "avg_non_courier_persons": 0.0,
+    "baseline_top2_betweenness_exact_share": 0.0,
+    "baseline_top2_degree_exact_share": 0.0,
+    "cases_evaluated": 50,
+    "cases_skipped": 0,
+    "courier_articulation_share": 0.25,
+    "distribution_cut_size": {
+      "0": 31,
+      "1": 18,
+      "2": 1
+    },
+    "louvain_variant": {
+      "adjusted_agreement_gang_a": 0.7578,
+      "avg_non_courier_persons": 0.0,
+      "share_containing_cr1": 0.0,
+      "share_containing_cr2": 0.0,
+      "share_containing_pizza_owner": 0.0,
+      "share_exact_couriers": 0.0,
+      "share_finite": 0.62
+    },
+    "paired_bootstrap_cut_minus_top2_betweenness": {
+      "ci_95": [
+        0.0,
+        0.06
+      ],
+      "mean_diff": 0.02
+    },
+    "share_containing_cr1": 0.2,
+    "share_containing_cr2": 0.2,
+    "share_containing_pizza_owner": 0.0,
+    "share_exact_couriers": 0.02,
+    "share_finite": 1.0,
+    "unowned_bridging_phones": {
+      "breakdown": {
+        "burner_phones": 0,
+        "decoy_customers": 0,
+        "none_of_these": 17,
+        "pizza_shop_number": 0
+      },
+      "number_per_case": {
+        "max": 2,
+        "mean": 0.34,
+        "median": 0.0
+      }
+    }
+  },
+  "1.0": {
+    "avg_non_courier_persons": 0.0,
+    "baseline_top2_betweenness_exact_share": 0.0,
+    "baseline_top2_degree_exact_share": 0.0,
+    "cases_evaluated": 50,
+    "cases_skipped": 0,
+    "courier_articulation_share": 0.0,
+    "distribution_cut_size": {
+      "2": 50
+    },
+    "louvain_variant": {
+      "adjusted_agreement_gang_a": 1.0,
+      "avg_non_courier_persons": 0.0,
+      "share_containing_cr1": 0.0,
+      "share_containing_cr2": 0.0,
+      "share_containing_pizza_owner": 0.0,
+      "share_exact_couriers": 0.0,
+      "share_finite": 0.0
+    },
+    "paired_bootstrap_cut_minus_top2_betweenness": {
+      "ci_95": [
+        1.0,
+        1.0
+      ],
+      "mean_diff": 1.0
+    },
+    "share_containing_cr1": 1.0,
+    "share_containing_cr2": 1.0,
+    "share_containing_pizza_owner": 0.0,
+    "share_exact_couriers": 1.0,
+    "share_finite": 1.0,
+    "unowned_bridging_phones": {
+      "breakdown": {
+        "burner_phones": 0,
+        "decoy_customers": 0,
+        "none_of_these": 0,
+        "pizza_shop_number": 0
+      },
+      "number_per_case": {
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0
+      }
+    }
+  },
+  "exploratory_seen_seeds_151_200": {
+    "0.6": {
+      "avg_non_courier_persons": 0.0,
+      "baseline_top2_betweenness_exact_share": 0.0,
+      "baseline_top2_degree_exact_share": 0.0,
+      "cases_evaluated": 50,
+      "cases_skipped": 0,
+      "courier_articulation_share": 0.29,
+      "distribution_cut_size": {
+        "0": 25,
+        "1": 21,
+        "2": 4
+      },
+      "louvain_variant": {
+        "adjusted_agreement_gang_a": 0.7843,
+        "avg_non_courier_persons": 0.0,
+        "share_containing_cr1": 0.0,
+        "share_containing_cr2": 0.0,
+        "share_containing_pizza_owner": 0.0,
+        "share_exact_couriers": 0.0,
+        "share_finite": 0.5
+      },
+      "paired_bootstrap_cut_minus_top2_betweenness": {
+        "ci_95": [
+          0.02,
+          0.16
+        ],
+        "mean_diff": 0.08
+      },
+      "share_containing_cr1": 0.3,
+      "share_containing_cr2": 0.28,
+      "share_containing_pizza_owner": 0.0,
+      "share_exact_couriers": 0.08,
+      "share_finite": 1.0,
+      "unowned_bridging_phones": {
+        "breakdown": {
+          "burner_phones": 0,
+          "decoy_customers": 0,
+          "none_of_these": 15,
+          "pizza_shop_number": 0
+        },
+        "number_per_case": {
+          "max": 2,
+          "mean": 0.3,
+          "median": 0.0
+        }
+      }
+    },
+    "1.0": {
+      "avg_non_courier_persons": 0.0,
+      "baseline_top2_betweenness_exact_share": 0.0,
+      "baseline_top2_degree_exact_share": 0.0,
+      "cases_evaluated": 50,
+      "cases_skipped": 0,
+      "courier_articulation_share": 0.0,
+      "distribution_cut_size": {
+        "2": 50
+      },
+      "louvain_variant": {
+        "adjusted_agreement_gang_a": 1.0,
+        "avg_non_courier_persons": 0.0,
+        "share_containing_cr1": 0.0,
+        "share_containing_cr2": 0.0,
+        "share_containing_pizza_owner": 0.0,
+        "share_exact_couriers": 0.0,
+        "share_finite": 0.0
+      },
+      "paired_bootstrap_cut_minus_top2_betweenness": {
+        "ci_95": [
+          1.0,
+          1.0
+        ],
+        "mean_diff": 1.0
+      },
+      "share_containing_cr1": 1.0,
+      "share_containing_cr2": 1.0,
+      "share_containing_pizza_owner": 0.0,
+      "share_exact_couriers": 1.0,
+      "share_finite": 1.0,
+      "unowned_bridging_phones": {
+        "breakdown": {
+          "burner_phones": 0,
+          "decoy_customers": 0,
+          "none_of_these": 0,
+          "pizza_shop_number": 0
+        },
+        "number_per_case": {
+          "max": 0,
+          "mean": 0.0,
+          "median": 0.0
+        }
+      }
+    }
+  }
+}

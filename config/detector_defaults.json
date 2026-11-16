@@ -1,9 +1,14 @@
 {
   "burner_weights": {
     "late_activation": 0.25,
-    "low_contacts": 0.20,
-    "short_lifespan": 0.30,
+    "low_contacts": 0.2,
+    "short_lifespan": 0.3,
     "top2_share": 0.25
+  },
+  "chip_comment": "0.70 was chosen after viewing the score gaps in case_demo_v2; not evaluated.",
+  "chip_min_score": {
+    "burner": 0.70,
+    "mule": 0.70
   },
   "comment": "Analyst-entered reporting threshold for the synthetic cases, copied from case_demo_v2 parameters. Verify against current FIU-IND/RBI guidance.",
   "guidance_note": "verify against current FIU-IND/RBI guidance",

@@ -303,15 +303,22 @@ def test_articulation_persons_agrees_with_networkx():
 
 def test_role_chips_rules():
     """role chips follow the rules and use strictly lead/chip wording."""
-    persons = ["PERSON:P1", "PERSON:P2", "PERSON:P3", "PERSON:P4"]
-    financial_rank = {"PERSON:P1": 1, "PERSON:P2": 4, "PERSON:P3": 5}
+    persons = ["PERSON:P1", "PERSON:P2", "PERSON:P3", "PERSON:P4", "PERSON:P5"]
+    financial_rank = {"PERSON:P1": 1, "PERSON:P2": 4, "PERSON:P3": 5, "PERSON:P5": 10}
     cut_members = {"PERSON:P2"}
-    mule_accounts = {"ACC_MULE_1"}
-    burner_phones = {"PH_BURNER_1"}
+    # 0.70 is flagged, 0.69 is not flagged
+    mule_accounts = {"ACC_MULE_1": 0.70, "ACC_MULE_LOW": 0.69}
+    burner_phones = {"PH_BURNER_1": 0.70, "PH_BURNER_LOW": 0.69}
 
     owner_maps = {
-        "controlled_accounts": {"PERSON:P3": ["ACC_MULE_1"]},
-        "owned_phones": {"PERSON:P4": ["PH_BURNER_1"]},
+        "controlled_accounts": {
+            "PERSON:P3": ["ACC_MULE_1"],
+            "PERSON:P5": ["ACC_MULE_LOW"],
+        },
+        "owned_phones": {
+            "PERSON:P4": ["PH_BURNER_1"],
+            "PERSON:P5": ["PH_BURNER_LOW"],
+        },
     }
 
     chips = assign_role_chips(
@@ -321,6 +328,8 @@ def test_role_chips_rules():
         mule_accounts_flagged=mule_accounts,
         burner_phones_flagged=burner_phones,
         owner_maps=owner_maps,
+        mule_min_score=0.70,
+        burner_min_score=0.70,
     )
 
     # P1 has financial rank 1 <= 3 -> PRIORITY_LEAD_MONEY
@@ -329,11 +338,15 @@ def test_role_chips_rules():
     # P2 is cut member -> CUT_MEMBER
     assert any(c["chip"] == "CUT_MEMBER" for c in chips["PERSON:P2"])
 
-    # P3 controls flagged mule -> MULE_OWNER
+    # P3 controls flagged mule (score 0.70) -> MULE_OWNER
     assert any(c["chip"] == "MULE_OWNER" for c in chips["PERSON:P3"])
 
-    # P4 owns flagged burner -> BURNER_USER
+    # P4 owns flagged burner (score 0.70) -> BURNER_USER
     assert any(c["chip"] == "BURNER_USER" for c in chips["PERSON:P4"])
+
+    # P5 controls 0.69 mule and 0.69 burner -> NOT flagged
+    assert not any(c["chip"] == "MULE_OWNER" for c in chips["PERSON:P5"])
+    assert not any(c["chip"] == "BURNER_USER" for c in chips["PERSON:P5"])
 
     # Check forbidden words: guilty, arrest
     for pid, chip_list in chips.items():

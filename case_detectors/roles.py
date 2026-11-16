@@ -9,17 +9,19 @@ def assign_role_chips(
     person_nodes: Sequence[dict[str, Any] | str],
     financial_rank: Mapping[str, int],
     cut_members: Sequence[str] | set[str],
-    mule_accounts_flagged: Sequence[str] | set[str],
-    burner_phones_flagged: Sequence[str] | set[str],
+    mule_accounts_flagged: Sequence[dict[str, Any]] | Mapping[str, float] | Sequence[str] | set[str],
+    burner_phones_flagged: Sequence[dict[str, Any]] | Mapping[str, float] | Sequence[str] | set[str],
     owner_maps: Mapping[str, Any],
+    mule_min_score: float = 0.70,
+    burner_min_score: float = 0.70,
 ) -> dict[str, list[dict[str, str]]]:
     """Assign investigative role chips to individuals based on network and financial leads.
 
     Chips assigned:
       - PRIORITY_LEAD_MONEY: Financial rank <= 3.
       - CUT_MEMBER: Critical network intermediary in cut set or articulation point lead.
-      - MULE_OWNER: Controls a flagged mule lead account (top 8).
-      - BURNER_USER: Owns a flagged burner lead phone (top 8).
+      - MULE_OWNER: Controls a flagged mule lead account (score >= chip_min_score).
+      - BURNER_USER: Owns a flagged burner lead phone (score >= chip_min_score).
 
     Wording strictly uses investigative terminology ('lead', 'chip').
 
@@ -27,15 +29,38 @@ def assign_role_chips(
         person_nodes: List of person node dicts or person node ID strings.
         financial_rank: Map of person ID to rank integer.
         cut_members: Collection of person IDs in the cut set or articulation set.
-        mule_accounts_flagged: Accounts flagged within top 8 mule ranking.
-        burner_phones_flagged: Phones flagged within top 8 burner ranking.
+        mule_accounts_flagged: Mule leads (score >= mule_min_score) or list/dict of leads.
+        burner_phones_flagged: Burner leads (score >= burner_min_score) or list/dict of leads.
         owner_maps: Dict with controlled account and owned phone associations.
+        mule_min_score: Score threshold for mule lead chip (default 0.70).
+        burner_min_score: Score threshold for burner lead chip (default 0.70).
 
     Returns:
         Dict mapping person ID to list of chip dicts with 'chip' and 'reason'.
     """
-    flagged_mules = set(str(a) for a in mule_accounts_flagged)
-    flagged_burners = set(str(p) for p in burner_phones_flagged)
+    def _extract_flagged(leads_or_items: Any, min_score: float) -> set[str]:
+        flagged: set[str] = set()
+        if isinstance(leads_or_items, Mapping):
+            for k, v in leads_or_items.items():
+                if isinstance(v, (int, float)):
+                    if float(v) >= min_score:
+                        flagged.add(str(k))
+                elif isinstance(v, dict) and "score" in v:
+                    if float(v["score"]) >= min_score:
+                        flagged.add(str(k))
+                else:
+                    flagged.add(str(k))
+        elif isinstance(leads_or_items, (list, tuple, set)):
+            for item in leads_or_items:
+                if isinstance(item, dict) and "id" in item and "score" in item:
+                    if float(item["score"]) >= min_score:
+                        flagged.add(str(item["id"]))
+                else:
+                    flagged.add(str(item))
+        return flagged
+
+    flagged_mules = _extract_flagged(mule_accounts_flagged, mule_min_score)
+    flagged_burners = _extract_flagged(burner_phones_flagged, burner_min_score)
     cut_set = set(str(c) for c in cut_members)
 
     person_ids: list[str] = []
