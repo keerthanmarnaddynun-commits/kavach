@@ -1,0 +1,242 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_11",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          5,
+          19
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              5,
+              19
+            ],
+            "surface": "Dinesh Rathore",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Dinesh Rathore",
+        "role": "SUSPECT",
+        "ai_confidence": 0.968286,
+        "confidence_breakdown": {
+          "model": 0.968286,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          24,
+          27
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              24,
+              27
+            ],
+            "surface": "Din",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              43,
+              62
+            ],
+            "surface": "Bhoop Singh Rathore",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "Din",
+        "role": "SUSPECT",
+        "ai_confidence": 0.644464,
+        "confidence_breakdown": {
+          "model": 0.644464,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "Bhoop Singh Rathore"
+      },
+      {
+        "id": "ent_03",
+        "type": "PHONE",
+        "char_span": [
+          115,
+          125
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              115,
+              125
+            ],
+            "surface": "9650871234",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9650871234",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          172,
+          191
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              191
+            ],
+            "surface": "Pidit Archana Joshi",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Pidit Archana Joshi",
+        "role": "SUSPECT",
+        "ai_confidence": 0.995323,
+        "confidence_breakdown": {
+          "model": 0.995323,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "UPI",
+        "char_span": [
+          214,
+          239
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              239
+            ],
+            "surface": "dinu.rathore91@okhdfcbank",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "dinu.rathore91@okhdfcbank",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          320,
+          332
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              320,
+              332
+            ],
+            "surface": "Satbir Singh",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Satbir Singh",
+        "role": "OFFICER",
+        "ai_confidence": 0.994974,
+        "confidence_breakdown": {
+          "model": 0.994974,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_02",
+        "target": "ent_03",
+        "relation": "OWNS_DEVICE",
+        "trigger": "Jeb se",
+        "confidence": 0.5,
+        "evidence_char_span": [
+          102,
+          171
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 6200.0,
+        "start": 151,
+        "end": 160,
+        "surface": "Rs. 6,200"
+      },
+      {
+        "value": 45000.0,
+        "start": 250,
+        "end": 257,
+        "surface": "₹45,000"
+      },
+      {
+        "value": 105000.0,
+        "start": 270,
+        "end": 284,
+        "surface": "Rs. 1,05,000/-"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "870628cbdf7fab634171b9415cc5a16d7b79bb3c9a007072791a12e52ea2b78f",
+    "char_count": 336,
+    "entities_by_type": {
+      "PERSON": 4,
+      "PHONE": 1,
+      "UPI": 1
+    },
+    "relations_by_label": {
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 3,
+    "warnings": []
+  }
+}

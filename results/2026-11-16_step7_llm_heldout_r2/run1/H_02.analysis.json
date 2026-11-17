@@ -1,0 +1,348 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_02",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          42,
+          54
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              42,
+              54
+            ],
+            "surface": "Vikas Tiwari",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              95,
+              100
+            ],
+            "surface": "Vikas",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Vikas Tiwari",
+        "role": "SUSPECT",
+        "ai_confidence": 0.997157,
+        "confidence_breakdown": {
+          "model": 0.997157,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE"
+        ]
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          59,
+          71
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              59,
+              71
+            ],
+            "surface": "Bikas Tiwary",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Bikas Tiwary",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999491,
+        "confidence_breakdown": {
+          "model": 0.999491,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PHONE",
+        "char_span": [
+          109,
+          120
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              109,
+              120
+            ],
+            "surface": "98765 43210",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              166,
+              177
+            ],
+            "surface": "98765 43210",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9876543210",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          126,
+          131
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              126,
+              131
+            ],
+            "surface": "Bikas",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              311,
+              316
+            ],
+            "surface": "Bikas",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Bikas",
+        "role": "SUSPECT",
+        "ai_confidence": 0.972498,
+        "confidence_breakdown": {
+          "model": 0.972498,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "PHONE",
+        "char_span": [
+          142,
+          157
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              142,
+              157
+            ],
+            "surface": "+91-70123-45678",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              181,
+              196
+            ],
+            "surface": "+91-70123-45678",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7012345678",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          233,
+          245
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              233,
+              245
+            ],
+            "surface": "Ramesh Gupta",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Ramesh Gupta",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.996194,
+        "confidence_breakdown": {
+          "model": 0.996194,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "ACCOUNT",
+        "char_span": [
+          285,
+          299
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              285,
+              299
+            ],
+            "surface": "50100234567890",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "50100234567890",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "HDFC"
+      },
+      {
+        "id": "ent_08",
+        "type": "PERSON",
+        "char_span": [
+          333,
+          336
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              333,
+              336
+            ],
+            "surface": "ASI",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "ASI",
+        "role": "OFFICER",
+        "ai_confidence": 0.5719,
+        "confidence_breakdown": {
+          "model": 0.5719,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_09",
+        "type": "PERSON",
+        "char_span": [
+          337,
+          344
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              337,
+              344
+            ],
+            "surface": "Hari Om",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Hari Om",
+        "role": "OFFICER",
+        "ai_confidence": 0.833787,
+        "confidence_breakdown": {
+          "model": 0.833787,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_03",
+        "target": "ent_05",
+        "relation": "COMMUNICATED_WITH",
+        "trigger": "CDR",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          159,
+          220
+        ]
+      },
+      {
+        "source": "ent_04",
+        "target": "ent_07",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "chalata",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          221,
+          329
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 75000.0,
+        "start": 256,
+        "end": 263,
+        "surface": "₹75,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 1,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "2c268bce3b33030dee2773fd1c24bdc095e1b251f79c00f55a7eb50f72c31a8a",
+    "char_count": 360,
+    "entities_by_type": {
+      "PERSON": 6,
+      "PHONE": 2,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1
+    },
+    "relations_by_origin": {
+      "cue": 2,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 1,
+    "warnings": []
+  }
+}

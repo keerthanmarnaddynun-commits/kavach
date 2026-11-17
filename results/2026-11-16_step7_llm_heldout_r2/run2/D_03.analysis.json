@@ -1,0 +1,227 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "D_03",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          41,
+          51
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              41,
+              51
+            ],
+            "surface": "जगदीश यादव",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "जगदीश यादव",
+        "role": "SUSPECT",
+        "ai_confidence": 0.994748,
+        "confidence_breakdown": {
+          "model": 0.994748,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          99,
+          112
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              99,
+              112
+            ],
+            "surface": "हरिओम अग्रवाल",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "हरिओम अग्रवाल",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999602,
+        "confidence_breakdown": {
+          "model": 0.999602,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "VEHICLE",
+        "char_span": [
+          144,
+          157
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              144,
+              157
+            ],
+            "surface": "UP 14 BH 2209",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "UP14BH2209",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "AADHAAR",
+        "char_span": [
+          225,
+          239
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              225,
+              239
+            ],
+            "surface": "8123 4567 8901",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "812345678901",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_05",
+        "type": "PAN",
+        "char_span": [
+          247,
+          257
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              247,
+              257
+            ],
+            "surface": "BQRPY3345M",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "BQRPY3345M",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          279,
+          288
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              279,
+              288
+            ],
+            "surface": "इरफान अली",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "इरफान अली",
+        "role": "WITNESS",
+        "ai_confidence": 0.999679,
+        "confidence_breakdown": {
+          "model": 0.999679,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          341,
+          350
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              341,
+              350
+            ],
+            "surface": "रामप्रताप",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "रामप्रताप",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999767,
+        "confidence_breakdown": {
+          "model": 0.999767,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "30237850b35e1dce1864652aaaf0f775317743a38df220b31f07d0a700927b6c",
+    "char_count": 359,
+    "entities_by_type": {
+      "PERSON": 4,
+      "VEHICLE": 1,
+      "AADHAAR": 1,
+      "PAN": 1
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 0,
+    "warnings": []
+  }
+}

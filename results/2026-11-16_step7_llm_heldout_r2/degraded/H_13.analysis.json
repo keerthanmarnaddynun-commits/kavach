@@ -1,0 +1,237 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_13",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          45,
+          56
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              45,
+              56
+            ],
+            "surface": "Sonu Pathak",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              61,
+              72
+            ],
+            "surface": "Sonu Bhaiya",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "Sonu Pathak",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Sonu Bhaiya"
+        ]
+      },
+      {
+        "id": "ent_02",
+        "type": "VEHICLE",
+        "char_span": [
+          139,
+          152
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              139,
+              152
+            ],
+            "surface": "DL 7S AF 6612",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "DL7SAF6612",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PAN",
+        "char_span": [
+          161,
+          171
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              161,
+              171
+            ],
+            "surface": "DMZPP8821K",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "DMZPP8821K",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PHONE",
+        "char_span": [
+          222,
+          232
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              222,
+              232
+            ],
+            "surface": "8527341290",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "8527341290",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          249,
+          259
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              249,
+              259
+            ],
+            "surface": "8845120937",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "8845120937",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "DROPPED_OVERLAP:PHONE",
+          "BANK_CONTEXT"
+        ],
+        "bank": "Kotak"
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_04",
+        "relation": "OWNS_DEVICE",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          190,
+          324
+        ]
+      },
+      {
+        "source": "ent_01",
+        "target": "ent_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          190,
+          324
+        ],
+        "amount": 250000.0
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 250000.0,
+        "start": 282,
+        "end": 290,
+        "surface": "2.5 lakh"
+      },
+      {
+        "value": 90000.0,
+        "start": 305,
+        "end": 317,
+        "surface": "Rs. 90,000/-"
+      }
+    ],
+    "ifsc": [
+      {
+        "value": "KKBK0000631",
+        "start": 266,
+        "end": 277,
+        "surface": "KKBK0000631"
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "19aaa23ad20d1c475265bcd82403d795cd350626b0c56195864d7f69a49df75c",
+    "char_count": 423,
+    "entities_by_type": {
+      "PERSON": 1,
+      "VEHICLE": 1,
+      "PAN": 1,
+      "PHONE": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 2
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_10",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          67,
+          79
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              67,
+              79
+            ],
+            "surface": "Tarun Bhatia",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              87,
+              92
+            ],
+            "surface": "Tinku",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              101,
+              119
+            ],
+            "surface": "Hukam Chand Bhatia",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "Tarun Bhatia",
+        "role": "SUSPECT",
+        "ai_confidence": 0.992219,
+        "confidence_breakdown": {
+          "model": 0.992219,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "aliases": [
+          "Tinku"
+        ],
+        "father_name": "Hukam Chand Bhatia"
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          125,
+          130
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              125,
+              130
+            ],
+            "surface": "Dabri",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Dabri",
+        "role": "SUSPECT",
+        "ai_confidence": 0.996658,
+        "confidence_breakdown": {
+          "model": 0.996658,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "VEHICLE",
+        "char_span": [
+          149,
+          162
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              149,
+              162
+            ],
+            "surface": "DL 5S CK 0912",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "DL5SCK0912",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PHONE",
+        "char_span": [
+          197,
+          212
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              197,
+              212
+            ],
+            "surface": "+91-96543-21098",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9654321098",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          264,
+          276
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              264,
+              276
+            ],
+            "surface": "602301098765",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "602301098765",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "ICICI"
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          297,
+          307
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              297,
+              307
+            ],
+            "surface": "Imran Khan",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              317,
+              322
+            ],
+            "surface": "Bhura",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              347,
+              352
+            ],
+            "surface": "Imran",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Imran Khan",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999674,
+        "confidence_breakdown": {
+          "model": 0.999674,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Bhura"
+        ]
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          382,
+          387
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              382,
+              387
+            ],
+            "surface": "Tarun",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Tarun",
+        "role": "OFFICER",
+        "ai_confidence": 0.86112,
+        "confidence_breakdown": {
+          "model": 0.86112,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_08",
+        "type": "PERSON",
+        "char_span": [
+          415,
+          424
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              415,
+              424
+            ],
+            "surface": "Sohan Lal",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Sohan Lal",
+        "role": "OFFICER",
+        "ai_confidence": 0.978813,
+        "confidence_breakdown": {
+          "model": 0.978813,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_02",
+        "target": "ent_04",
+        "relation": "OWNS_DEVICE",
+        "trigger": "pas se",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          0,
+          241
+        ]
+      },
+      {
+        "source": "ent_06",
+        "target": "ent_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          242,
+          346
+        ],
+        "amount": 325000.0
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 325000.0,
+        "start": 326,
+        "end": 338,
+        "surface": "INR 3,25,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 1,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "91a08962b0ad7c24106b57aca367d4dc37b7499d6446c9b7630dae3845ec4858",
+    "char_count": 426,
+    "entities_by_type": {
+      "PERSON": 5,
+      "VEHICLE": 1,
+      "PHONE": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 1,
+    "warnings": []
+  }
+}

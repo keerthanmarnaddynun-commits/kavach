@@ -1,0 +1,437 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "D_05",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          46,
+          56
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              46,
+              56
+            ],
+            "surface": "अशोक मेहरा",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              214,
+              218
+            ],
+            "surface": "अशोक",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "अशोक मेहरा",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999773,
+        "confidence_breakdown": {
+          "model": 0.999773,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE"
+        ]
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          95,
+          108
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              95,
+              108
+            ],
+            "surface": "विनोद पाटीदार",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              114,
+              122
+            ],
+            "surface": "वीनू सेठ",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              313,
+              318
+            ],
+            "surface": "विनोद",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              419,
+              424
+            ],
+            "surface": "विनोद",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "विनोद पाटीदार",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999773,
+        "confidence_breakdown": {
+          "model": 0.999773,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "वीनू सेठ"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          124,
+          133
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              124,
+              133
+            ],
+            "surface": "कमलेश जैन",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              140,
+              149
+            ],
+            "surface": "सुरेश जैन",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              453,
+              458
+            ],
+            "surface": "कमलेश",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              520,
+              525
+            ],
+            "surface": "कमलेश",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "कमलेश जैन",
+        "role": "SUSPECT",
+        "ai_confidence": 0.993725,
+        "confidence_breakdown": {
+          "model": 0.993725,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_FATHER"
+        ],
+        "father_name": "सुरेश जैन"
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          153,
+          165
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              153,
+              165
+            ],
+            "surface": "रेखा पाटीदार",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              404,
+              408
+            ],
+            "surface": "रेखा",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "रेखा पाटीदार",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999712,
+        "confidence_breakdown": {
+          "model": 0.999712,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE"
+        ]
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          249,
+          261
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              249,
+              261
+            ],
+            "surface": "012301987654",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "012301987654",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "ICICI"
+      },
+      {
+        "id": "ent_06",
+        "type": "IMEI",
+        "char_span": [
+          375,
+          390
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              375,
+              390
+            ],
+            "surface": "915010087654321",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "915010087654321",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID",
+          "DROPPED_OVERLAP:ACCOUNT"
+        ]
+      },
+      {
+        "id": "ent_07",
+        "type": "PHONE",
+        "char_span": [
+          435,
+          446
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              435,
+              446
+            ],
+            "surface": "98270 55443",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9827055443",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_08",
+        "type": "PHONE",
+        "char_span": [
+          462,
+          477
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              462,
+              477
+            ],
+            "surface": "+91-62601-88776",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "6260188776",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_09",
+        "type": "IMEI",
+        "char_span": [
+          541,
+          556
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              541,
+              556
+            ],
+            "surface": "869912034567891",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "869912034567891",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_10",
+        "type": "PERSON",
+        "char_span": [
+          616,
+          629
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              616,
+              629
+            ],
+            "surface": "राजीव सक्सेना",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "राजीव सक्सेना",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999672,
+        "confidence_breakdown": {
+          "model": 0.999672,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "ROLE_CUE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          214,
+          335
+        ],
+        "amount": 30000000.0
+      },
+      {
+        "source": "ent_02",
+        "target": "ent_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "ROLE_CUE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          214,
+          335
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 30000000.0,
+        "start": 222,
+        "end": 237,
+        "surface": "INR 3,00,00,000"
+      },
+      {
+        "value": 18000000.0,
+        "start": 345,
+        "end": 353,
+        "surface": "1.8 करोड"
+      }
+    ],
+    "ifsc": [
+      {
+        "value": "ICIC0000123",
+        "start": 290,
+        "end": 301,
+        "surface": "ICIC0000123"
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 4,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "f615c790d54d6eb4046b20c021f9df32aa9114a74a0a22d0e70340b2c043df64",
+    "char_count": 641,
+    "entities_by_type": {
+      "PERSON": 5,
+      "ACCOUNT": 1,
+      "IMEI": 2,
+      "PHONE": 2
+    },
+    "relations_by_label": {
+      "TRANSFERRED_FUNDS": 1,
+      "CONTROLS_ACCOUNT": 1
+    },
+    "relations_by_origin": {
+      "cue": 2,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": []
+  }
+}

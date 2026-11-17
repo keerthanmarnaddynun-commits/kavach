@@ -1,0 +1,274 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_05",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "VEHICLE",
+        "char_span": [
+          52,
+          65
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              52,
+              65
+            ],
+            "surface": "UP 32 KR 8812",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "UP32KR8812",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PAN",
+        "char_span": [
+          170,
+          180
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              170,
+              180
+            ],
+            "surface": "BKQPQ4412L",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "BKQPQ4412L",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PHONE",
+        "char_span": [
+          189,
+          200
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              189,
+              200
+            ],
+            "surface": "70071 23456",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7007123456",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "IMEI",
+        "char_span": [
+          206,
+          221
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              206,
+              221
+            ],
+            "surface": "867530049812345",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "867530049812345",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_05",
+        "type": "PERSON",
+        "char_span": [
+          278,
+          287
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              278,
+              287
+            ],
+            "surface": "Anwar Ali",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Anwar Ali",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PHONE",
+        "char_span": [
+          292,
+          302
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              292,
+              302
+            ],
+            "surface": "9415098765",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9415098765",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "IMEI",
+        "char_span": [
+          333,
+          348
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              333,
+              348
+            ],
+            "surface": "917020045512345",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "917020045512345",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID",
+          "DROPPED_OVERLAP:ACCOUNT"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_03",
+        "target": "ent_04",
+        "relation": "ASSOCIATED_IMEI",
+        "trigger": "IMEI",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          156,
+          265
+        ]
+      },
+      {
+        "source": "ent_06",
+        "target": "ent_07",
+        "relation": "ASSOCIATED_IMEI",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          266,
+          429
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 18500.0,
+        "start": 245,
+        "end": 255,
+        "surface": "Rs. 18,500"
+      },
+      {
+        "value": 120000.0,
+        "start": 357,
+        "end": 365,
+        "surface": "1.2 lakh"
+      },
+      {
+        "value": 30000.0,
+        "start": 381,
+        "end": 388,
+        "surface": "₹30,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 2,
+      "father_no_owner": 1
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "21d97722d2cf13b87e48b56b3b7c511ba4b14cc0a2a809aec73fa2c94c779977",
+    "char_count": 449,
+    "entities_by_type": {
+      "VEHICLE": 1,
+      "PAN": 1,
+      "PHONE": 2,
+      "IMEI": 2,
+      "PERSON": 1
+    },
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 2
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 3,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

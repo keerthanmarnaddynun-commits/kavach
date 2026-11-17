@@ -1,0 +1,505 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "E_05",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          103,
+          118
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              103,
+              118
+            ],
+            "surface": "Arvind Kulkarni",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Arvind Kulkarni",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998176,
+        "confidence_breakdown": {
+          "model": 0.998176,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          197,
+          210
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              197,
+              210
+            ],
+            "surface": "Tarlok Bansal",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              215,
+              219
+            ],
+            "surface": "Lala",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "Tarlok Bansal",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999633,
+        "confidence_breakdown": {
+          "model": 0.999633,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Lala"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          221,
+          231
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              221,
+              231
+            ],
+            "surface": "Deepa Nair",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Deepa Nair",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999785,
+        "confidence_breakdown": {
+          "model": 0.999785,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          236,
+          249
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              236,
+              249
+            ],
+            "surface": "Farhan Sheikh",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              254,
+              266
+            ],
+            "surface": "Iqbal Sheikh",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "Farhan Sheikh",
+        "role": "SUSPECT",
+        "ai_confidence": 0.997993,
+        "confidence_breakdown": {
+          "model": 0.997993,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "Iqbal Sheikh"
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          417,
+          427
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              417,
+              427
+            ],
+            "surface": "6412345678",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "6412345678",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "DROPPED_OVERLAP:PHONE",
+          "BANK_CONTEXT"
+        ],
+        "bank": "Kotak"
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          452,
+          458
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              452,
+              458
+            ],
+            "surface": "Bansal",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              554,
+              560
+            ],
+            "surface": "Bansal",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Bansal",
+        "role": "SUSPECT",
+        "ai_confidence": 0.995316,
+        "confidence_breakdown": {
+          "model": 0.995316,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "ACCOUNT",
+        "char_span": [
+          517,
+          533
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              517,
+              533
+            ],
+            "surface": "3987001234567890",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "3987001234567890",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "PNB"
+      },
+      {
+        "id": "ent_08",
+        "type": "PERSON",
+        "char_span": [
+          548,
+          552
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              548,
+              552
+            ],
+            "surface": "Nair",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Nair",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998008,
+        "confidence_breakdown": {
+          "model": 0.998008,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_09",
+        "type": "PHONE",
+        "char_span": [
+          573,
+          588
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              573,
+              588
+            ],
+            "surface": "+91 98211 44556",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9821144556",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_10",
+        "type": "PERSON",
+        "char_span": [
+          603,
+          609
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              603,
+              609
+            ],
+            "surface": "Sheikh",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Sheikh",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999662,
+        "confidence_breakdown": {
+          "model": 0.999662,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_11",
+        "type": "PHONE",
+        "char_span": [
+          613,
+          624
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              613,
+              624
+            ],
+            "surface": "83690 11223",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "8369011223",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_12",
+        "type": "IMEI",
+        "char_span": [
+          660,
+          675
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              660,
+              675
+            ],
+            "surface": "867123045678901",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "867123045678901",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_13",
+        "type": "PERSON",
+        "char_span": [
+          803,
+          814
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              803,
+              814
+            ],
+            "surface": "Nitin Desai",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Nitin Desai",
+        "role": "OFFICER",
+        "ai_confidence": 0.944833,
+        "confidence_breakdown": {
+          "model": 0.944833,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_06",
+        "target": "ent_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "controlled",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          377,
+          459
+        ]
+      },
+      {
+        "source": "ent_08",
+        "target": "ent_07",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "controlled",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          460,
+          553
+        ]
+      },
+      {
+        "source": "ent_06",
+        "target": "ent_09",
+        "relation": "OWNS_DEVICE",
+        "trigger": "used mobile",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          554,
+          676
+        ]
+      },
+      {
+        "source": "ent_10",
+        "target": "ent_11",
+        "relation": "OWNS_DEVICE",
+        "trigger": "used mobile",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          554,
+          676
+        ]
+      },
+      {
+        "source": "ent_11",
+        "target": "ent_12",
+        "relation": "ASSOCIATED_IMEI",
+        "trigger": "IMEI",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          554,
+          676
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 25000000.0,
+        "start": 335,
+        "end": 347,
+        "surface": "₹2,50,00,000"
+      },
+      {
+        "value": 17500000.0,
+        "start": 472,
+        "end": 487,
+        "surface": "INR 1,75,00,000"
+      },
+      {
+        "value": 25000000.0,
+        "start": 722,
+        "end": 731,
+        "surface": "2.5 crore"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "05e7c9ad39c9ebaeec9cf22f9d20ace9f083b99895e877dc33a4b9dab213138d",
+    "char_count": 838,
+    "entities_by_type": {
+      "PERSON": 8,
+      "ACCOUNT": 2,
+      "PHONE": 2,
+      "IMEI": 1
+    },
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 2,
+      "OWNS_DEVICE": 2,
+      "ASSOCIATED_IMEI": 1
+    },
+    "relations_by_origin": {
+      "cue": 5,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 3,
+    "warnings": []
+  }
+}

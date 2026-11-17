@@ -1,0 +1,504 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_12",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          68,
+          82
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              68,
+              82
+            ],
+            "surface": "Vinod Malhotra",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Vinod Malhotra",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.999739,
+        "confidence_breakdown": {
+          "model": 0.999739,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          149,
+          168
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              149,
+              168
+            ],
+            "surface": "Harpreet Singh Gill",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              173,
+              178
+            ],
+            "surface": "Happy",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              194,
+              199
+            ],
+            "surface": "Jassi",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              394,
+              402
+            ],
+            "surface": "Harpreet",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Harpreet Singh Gill",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998898,
+        "confidence_breakdown": {
+          "model": 0.998898,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Happy",
+          "Jassi"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          204,
+          216
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              204,
+              216
+            ],
+            "surface": "Manjeet Kaur",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              221,
+              236
+            ],
+            "surface": "Balwinder Singh",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              568,
+              575
+            ],
+            "surface": "Manjeet",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Manjeet Kaur",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999537,
+        "confidence_breakdown": {
+          "model": 0.999537,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_FATHER"
+        ],
+        "father_name": "Balwinder Singh"
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          317,
+          322
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              317,
+              322
+            ],
+            "surface": "Vinod",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Vinod",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998835,
+        "confidence_breakdown": {
+          "model": 0.998835,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          338,
+          349
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              338,
+              349
+            ],
+            "surface": "33456789012",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "33456789012",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "SBI"
+      },
+      {
+        "id": "ent_06",
+        "type": "PHONE",
+        "char_span": [
+          428,
+          443
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              428,
+              443
+            ],
+            "surface": "+91 98765 11223",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              640,
+              655
+            ],
+            "surface": "+91 98765 11223",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9876511223",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "IMEI",
+        "char_span": [
+          459,
+          474
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              459,
+              474
+            ],
+            "surface": "358240051111110",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "358240051111110",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_08",
+        "type": "ACCOUNT",
+        "char_span": [
+          529,
+          545
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              529,
+              545
+            ],
+            "surface": "4120001002345678",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "4120001002345678",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "PNB"
+      },
+      {
+        "id": "ent_09",
+        "type": "PERSON",
+        "char_span": [
+          595,
+          601
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              595,
+              601
+            ],
+            "surface": "Jaspal",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Jaspal",
+        "role": "SUSPECT",
+        "ai_confidence": 0.994982,
+        "confidence_breakdown": {
+          "model": 0.994982,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_10",
+        "type": "PHONE",
+        "char_span": [
+          612,
+          623
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              612,
+              623
+            ],
+            "surface": "78140 09988",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              660,
+              671
+            ],
+            "surface": "78140 09988",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7814009988",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_11",
+        "type": "PERSON",
+        "char_span": [
+          760,
+          770
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              760,
+              770
+            ],
+            "surface": "Ajay Dhull",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Ajay Dhull",
+        "role": "OFFICER",
+        "ai_confidence": 0.942078,
+        "confidence_breakdown": {
+          "model": 0.942078,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_04",
+        "target": "ent_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "jama",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          298,
+          383
+        ],
+        "amount": 12000000.0
+      },
+      {
+        "source": "ent_02",
+        "target": "ent_06",
+        "relation": "OWNS_DEVICE",
+        "trigger": "chalata",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          384,
+          481
+        ]
+      },
+      {
+        "source": "ent_06",
+        "target": "ent_07",
+        "relation": "ASSOCIATED_IMEI",
+        "trigger": "IMEI",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          384,
+          481
+        ]
+      },
+      {
+        "source": "ent_03",
+        "target": "ent_08",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "control",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          482,
+          594
+        ]
+      },
+      {
+        "source": "ent_03",
+        "target": "ent_08",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "transfer",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          482,
+          594
+        ],
+        "amount": 10000000.0
+      },
+      {
+        "source": "ent_06",
+        "target": "ent_10",
+        "relation": "COMMUNICATED_WITH",
+        "trigger": "CDR",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          595,
+          714
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 30000000.0,
+        "start": 262,
+        "end": 269,
+        "surface": "3 crore"
+      },
+      {
+        "value": 12000000.0,
+        "start": 353,
+        "end": 368,
+        "surface": "INR 1,20,00,000"
+      },
+      {
+        "value": 10000000.0,
+        "start": 494,
+        "end": 511,
+        "surface": "Rs. 1,00,00,000/-"
+      },
+      {
+        "value": 30000000.0,
+        "start": 735,
+        "end": 742,
+        "surface": "3 crore"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 2,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "ee59ffe0d8417296d2aa7b747ae9ab949e1612a42f3880d3de7f96bd7cd8fac9",
+    "char_count": 835,
+    "entities_by_type": {
+      "PERSON": 6,
+      "ACCOUNT": 2,
+      "PHONE": 2,
+      "IMEI": 1
+    },
+    "relations_by_label": {
+      "TRANSFERRED_FUNDS": 2,
+      "OWNS_DEVICE": 1,
+      "ASSOCIATED_IMEI": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "COMMUNICATED_WITH": 1
+    },
+    "relations_by_origin": {
+      "cue": 6,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 4,
+    "warnings": []
+  }
+}

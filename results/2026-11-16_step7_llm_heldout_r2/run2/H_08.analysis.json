@@ -1,0 +1,285 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_08",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          12,
+          24
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              12,
+              24
+            ],
+            "surface": "Mukesh Kumar",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Mukesh Kumar",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.998715,
+        "confidence_breakdown": {
+          "model": 0.998715,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          54,
+          61
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              54,
+              61
+            ],
+            "surface": "Barwala",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Barwala",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.857822,
+        "confidence_breakdown": {
+          "model": 0.857822,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          153,
+          165
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              153,
+              165
+            ],
+            "surface": "Kamlesh Devi",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              170,
+              178
+            ],
+            "surface": "Hira Lal",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              188,
+              193
+            ],
+            "surface": "Kammo",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              363,
+              375
+            ],
+            "surface": "Kamlesh Devi",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Kamlesh Devi",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999354,
+        "confidence_breakdown": {
+          "model": 0.999354,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER",
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Kammo"
+        ],
+        "father_name": "Hira Lal"
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          211,
+          216
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              211,
+              216
+            ],
+            "surface": "Rohit",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Rohit",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999093,
+        "confidence_breakdown": {
+          "model": 0.999093,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "VEHICLE",
+        "char_span": [
+          339,
+          352
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              339,
+              352
+            ],
+            "surface": "HR 55 AB 7766",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "HR55AB7766",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PAN",
+        "char_span": [
+          398,
+          408
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              398,
+              408
+            ],
+            "surface": "CKMPD5521R",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "CKMPD5521R",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "AADHAAR",
+        "char_span": [
+          421,
+          435
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              421,
+              435
+            ],
+            "surface": "6012 3456 7890",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "601234567890",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_08",
+        "type": "PERSON",
+        "char_span": [
+          476,
+          489
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              476,
+              489
+            ],
+            "surface": "Rajbir Dahiya",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Rajbir Dahiya",
+        "role": "OFFICER",
+        "ai_confidence": 0.999143,
+        "confidence_breakdown": {
+          "model": 0.999143,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 1
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "238e3e84c2516194afc50976eccc292569d0ca0df01e302ecf8f074ae9faae11",
+    "char_count": 539,
+    "entities_by_type": {
+      "PERSON": 5,
+      "VEHICLE": 1,
+      "PAN": 1,
+      "AADHAAR": 1
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 0,
+    "warnings": []
+  }
+}

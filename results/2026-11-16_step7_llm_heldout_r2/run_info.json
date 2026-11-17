@@ -1,0 +1,11 @@
+{
+  "git_head": "9a26aa6370db8abd6715055b0ebecd5ad18de674",
+  "uncommitted_tracked_files": [],
+  "total_documents": 25,
+  "exact_byte_matches": 25,
+  "valid_contracts": {
+    "run1": 25,
+    "run2": 25,
+    "degraded": 25
+  }
+}

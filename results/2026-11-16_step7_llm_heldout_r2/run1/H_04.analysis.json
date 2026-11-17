@@ -1,0 +1,278 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_04",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          66,
+          81
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              66,
+              81
+            ],
+            "surface": "Pappu Lal Meena",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              86,
+              91
+            ],
+            "surface": "Tiger",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              94,
+              101
+            ],
+            "surface": "Seth Ji",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              109,
+              119
+            ],
+            "surface": "Munna Bhai",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              126,
+              137
+            ],
+            "surface": "Gopal Meena",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "Pappu Lal Meena",
+        "role": "SUSPECT",
+        "ai_confidence": 0.96461,
+        "confidence_breakdown": {
+          "model": 0.96461,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "aliases": [
+          "Tiger",
+          "Seth Ji",
+          "Munna Bhai"
+        ],
+        "father_name": "Gopal Meena"
+      },
+      {
+        "id": "ent_02",
+        "type": "AADHAAR",
+        "char_span": [
+          152,
+          166
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              152,
+              166
+            ],
+            "surface": "4321 8765 0912",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "432187650912",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          184,
+          197
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              184,
+              197
+            ],
+            "surface": "Bhanwar Singh",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Bhanwar Singh",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999571,
+        "confidence_breakdown": {
+          "model": 0.999571,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "ACCOUNT",
+        "char_span": [
+          307,
+          319
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              307,
+              319
+            ],
+            "surface": "123405009876",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "123405009876",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "ICICI"
+      },
+      {
+        "id": "ent_05",
+        "type": "PERSON",
+        "char_span": [
+          388,
+          393
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              388,
+              393
+            ],
+            "surface": "Chomu",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Chomu",
+        "role": "OFFICER",
+        "ai_confidence": 0.972105,
+        "confidence_breakdown": {
+          "model": 0.972105,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          404,
+          416
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              404,
+              416
+            ],
+            "surface": "Mahesh Chand",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Mahesh Chand",
+        "role": "OFFICER",
+        "ai_confidence": 0.993392,
+        "confidence_breakdown": {
+          "model": 0.993392,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_03",
+        "target": "ent_04",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "jama hui",
+        "confidence": 0.5,
+        "evidence_char_span": [
+          287,
+          372
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 150000.0,
+        "start": 229,
+        "end": 243,
+        "surface": "Rs. 1,50,000/-"
+      },
+      {
+        "value": 500000.0,
+        "start": 259,
+        "end": 271,
+        "surface": "INR 5,00,000"
+      }
+    ],
+    "ifsc": [
+      {
+        "value": "ICIC0001234",
+        "start": 326,
+        "end": 337,
+        "surface": "ICIC0001234"
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "e50aa981af5e09dd9210b2c1c376b9ab65b4afe4aa0523b432b24a6cdf259278",
+    "char_count": 417,
+    "entities_by_type": {
+      "PERSON": 4,
+      "AADHAAR": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": []
+  }
+}

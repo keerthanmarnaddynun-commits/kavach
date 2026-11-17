@@ -1,0 +1,343 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_15",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          54,
+          66
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              54,
+              66
+            ],
+            "surface": "Prakash Nair",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              428,
+              435
+            ],
+            "surface": "Prakash",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Prakash Nair",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999688,
+        "confidence_breakdown": {
+          "model": 0.999688,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE"
+        ]
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          143,
+          154
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              143,
+              154
+            ],
+            "surface": "Arjun Menon",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              166,
+              182
+            ],
+            "surface": "Sudhakaran Menon",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              304,
+              309
+            ],
+            "surface": "Arjun",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              404,
+              409
+            ],
+            "surface": "Arjun",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              489,
+              494
+            ],
+            "surface": "Arjun",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Arjun Menon",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999636,
+        "confidence_breakdown": {
+          "model": 0.999636,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_FATHER"
+        ],
+        "father_name": "Sudhakaran Menon"
+      },
+      {
+        "id": "ent_03",
+        "type": "PHONE",
+        "char_span": [
+          263,
+          273
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              263,
+              273
+            ],
+            "surface": "7907654321",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7907654321",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "IMEI",
+        "char_span": [
+          282,
+          297
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              282,
+              297
+            ],
+            "surface": "862345067891234",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "862345067891234",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_05",
+        "type": "AADHAAR",
+        "char_span": [
+          321,
+          335
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              321,
+              335
+            ],
+            "surface": "7890 1234 5678",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "789012345678",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_06",
+        "type": "PHONE",
+        "char_span": [
+          366,
+          376
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              366,
+              376
+            ],
+            "surface": "9847012345",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9847012345",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "ACCOUNT",
+        "char_span": [
+          452,
+          466
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              452,
+              466
+            ],
+            "surface": "50200012345678",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "50200012345678",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "HDFC"
+      },
+      {
+        "id": "ent_08",
+        "type": "PERSON",
+        "char_span": [
+          535,
+          546
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              535,
+              546
+            ],
+            "surface": "Ajith Kumar",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Ajith Kumar",
+        "role": "OFFICER",
+        "ai_confidence": 0.999441,
+        "confidence_breakdown": {
+          "model": 0.999441,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_03",
+        "target": "ent_04",
+        "relation": "ASSOCIATED_IMEI",
+        "trigger": "IMEI",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          244,
+          303
+        ]
+      },
+      {
+        "source": "ent_02",
+        "target": "ent_06",
+        "relation": "OWNS_DEVICE",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          352,
+          427
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 8000.0,
+        "start": 104,
+        "end": 115,
+        "surface": "Rs. 8,000/-"
+      },
+      {
+        "value": 150000.0,
+        "start": 223,
+        "end": 235,
+        "surface": "INR 1,50,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 2,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "43beecdff5ce9961aa16c73f5258c2a18ab182c37e9721f7fb6d745813e8e388",
+    "char_count": 558,
+    "entities_by_type": {
+      "PERSON": 3,
+      "PHONE": 2,
+      "IMEI": 1,
+      "AADHAAR": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 2,
+    "warnings": []
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_01",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          32,
+          43
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              32,
+              43
+            ],
+            "surface": "Sunita Devi",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Sunita Devi",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.999028,
+        "confidence_breakdown": {
+          "model": 0.999028,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "ACCOUNT",
+        "char_span": [
+          134,
+          147
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              134,
+              147
+            ],
+            "surface": "4521003298761",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "4521003298761",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "PNB"
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          175,
+          187
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              175,
+              187
+            ],
+            "surface": "Mohit Sharma",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              192,
+              205
+            ],
+            "surface": "Dinesh Sharma",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              245,
+              250
+            ],
+            "surface": "Mohit",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Mohit Sharma",
+        "role": "SUSPECT",
+        "ai_confidence": 0.994827,
+        "confidence_breakdown": {
+          "model": 0.994827,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_FATHER"
+        ],
+        "father_name": "Dinesh Sharma"
+      },
+      {
+        "id": "ent_04",
+        "type": "PHONE",
+        "char_span": [
+          288,
+          298
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              288,
+              298
+            ],
+            "surface": "9811234567",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9811234567",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "IMEI",
+        "char_span": [
+          310,
+          325
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              310,
+              325
+            ],
+            "surface": "356938035643809",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "356938035643809",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          375,
+          385
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              375,
+              385
+            ],
+            "surface": "Anil Yadav",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Anil Yadav",
+        "role": "OFFICER",
+        "ai_confidence": 0.999298,
+        "confidence_breakdown": {
+          "model": 0.999298,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_03",
+        "target": "ent_02",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "transfer",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          89,
+          229
+        ],
+        "amount": 85000.0
+      },
+      {
+        "source": "ent_03",
+        "target": "ent_04",
+        "relation": "OWNS_DEVICE",
+        "trigger": "paas se",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          230,
+          326
+        ]
+      },
+      {
+        "source": "ent_04",
+        "target": "ent_05",
+        "relation": "ASSOCIATED_IMEI",
+        "trigger": "IMEI",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          230,
+          326
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 85000.0,
+        "start": 109,
+        "end": 121,
+        "surface": "Rs. 85,000/-"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 1,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "6cfbdb5b01e64699dd3f8b5a996ea7bcc7fb43b56715d936770b7950fc7af53f",
+    "char_count": 401,
+    "entities_by_type": {
+      "PERSON": 3,
+      "ACCOUNT": 1,
+      "PHONE": 1,
+      "IMEI": 1
+    },
+    "relations_by_label": {
+      "TRANSFERRED_FUNDS": 1,
+      "OWNS_DEVICE": 1,
+      "ASSOCIATED_IMEI": 1
+    },
+    "relations_by_origin": {
+      "cue": 3,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 1,
+    "warnings": []
+  }
+}

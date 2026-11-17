@@ -1,0 +1,304 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "D_02",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          12,
+          23
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              12,
+              23
+            ],
+            "surface": "महेश गुप्ता",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "महेश गुप्ता",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.999807,
+        "confidence_breakdown": {
+          "model": 0.999807,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          59,
+          68
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              59,
+              68
+            ],
+            "surface": "दीपक सिंह",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              71,
+              81
+            ],
+            "surface": "दीपू ठाकुर",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "दीपक सिंह",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.999831,
+        "confidence_breakdown": {
+          "model": 0.999831,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "दीपू ठाकुर"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "ACCOUNT",
+        "char_span": [
+          151,
+          167
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              151,
+              167
+            ],
+            "surface": "1234000100567890",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "1234000100567890",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "PNB"
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          186,
+          190
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              186,
+              190
+            ],
+            "surface": "दीपक",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "दीपक",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999732,
+        "confidence_breakdown": {
+          "model": 0.999732,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          270,
+          284
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              270,
+              284
+            ],
+            "surface": "50100456789012",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "50100456789012",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "HDFC"
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          306,
+          315
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              306,
+              315
+            ],
+            "surface": "नीलम सिंह",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              322,
+              339
+            ],
+            "surface": "रमेश सिंह संचालित",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "नीलम सिंह",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998784,
+        "confidence_breakdown": {
+          "model": 0.998784,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "रमेश सिंह संचालित"
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          411,
+          422
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              411,
+              422
+            ],
+            "surface": "विजय शुक्ला",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "विजय शुक्ला",
+        "role": "OFFICER",
+        "ai_confidence": 0.997971,
+        "confidence_breakdown": {
+          "model": 0.997971,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_04",
+        "target": "ent_03",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "संचालित",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          138,
+          207
+        ]
+      },
+      {
+        "source": "ent_04",
+        "target": "ent_03",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "जमा",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          138,
+          207
+        ]
+      },
+      {
+        "source": "ent_06",
+        "target": "ent_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "संचालित",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          208,
+          348
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 200000.0,
+        "start": 120,
+        "end": 129,
+        "surface": "₹2,00,000"
+      },
+      {
+        "value": 150000.0,
+        "start": 252,
+        "end": 259,
+        "surface": "1.5 लाख"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "ed579b5a57025f3cd60e819cf957f2db863ac94888a5cebf95d731409ee6249f",
+    "char_count": 435,
+    "entities_by_type": {
+      "PERSON": 5,
+      "ACCOUNT": 2
+    },
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 2,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "cue": 3,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": []
+  }
+}

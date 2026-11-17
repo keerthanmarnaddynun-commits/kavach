@@ -1,0 +1,757 @@
+{
+  "D_01": {
+    "stem": "D_01",
+    "language": "hindi",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 8,
+      "predicted": 10,
+      "tp": 8,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.888888888888889
+    },
+    "relations": {
+      "gold": 4,
+      "predicted": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4
+    },
+    "latency_ms": {
+      "run1": 13352.43760002777,
+      "run2": 394.49059998150915
+    }
+  },
+  "D_02": {
+    "stem": "D_02",
+    "language": "hindi",
+    "brief_requirements": [
+      "D_account_to_account_transfer"
+    ],
+    "mentions": {
+      "gold": 8,
+      "predicted": 9,
+      "tp": 6,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.75,
+      "f1": 0.7058823529411765
+    },
+    "relations": {
+      "gold": 4,
+      "predicted": 3,
+      "tp": 1,
+      "fp": 2,
+      "fn": 3,
+      "precision": 0.3333333333333333,
+      "recall": 0.25,
+      "f1": 0.28571428571428575
+    },
+    "latency_ms": {
+      "run1": 503.78009997075424,
+      "run2": 386.0461000003852
+    }
+  },
+  "D_03": {
+    "stem": "D_03",
+    "language": "hindi",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 8,
+      "predicted": 7,
+      "tp": 6,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.8571428571428571,
+      "recall": 0.75,
+      "f1": 0.7999999999999999
+    },
+    "relations": {
+      "gold": 0,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "latency_ms": {
+      "run1": 404.74880003603175,
+      "run2": 422.0336999860592
+    }
+  },
+  "D_04": {
+    "stem": "D_04",
+    "language": "hindi",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 9,
+      "predicted": 9,
+      "tp": 5,
+      "fp": 4,
+      "fn": 4,
+      "precision": 0.5555555555555556,
+      "recall": 0.5555555555555556,
+      "f1": 0.5555555555555556
+    },
+    "relations": {
+      "gold": 3,
+      "predicted": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_ms": {
+      "run1": 443.40099999681115,
+      "run2": 433.0449999542907
+    }
+  },
+  "D_05": {
+    "stem": "D_05",
+    "language": "hindi",
+    "brief_requirements": [
+      "D_account_to_account_transfer"
+    ],
+    "mentions": {
+      "gold": 12,
+      "predicted": 18,
+      "tp": 10,
+      "fp": 8,
+      "fn": 2,
+      "precision": 0.5555555555555556,
+      "recall": 0.8333333333333334,
+      "f1": 0.6666666666666667
+    },
+    "relations": {
+      "gold": 8,
+      "predicted": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 6,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4
+    },
+    "latency_ms": {
+      "run1": 515.1654999936,
+      "run2": 512.2254999587312
+    }
+  },
+  "E_01": {
+    "stem": "E_01",
+    "language": "english",
+    "brief_requirements": [
+      "E_contains_special_identifier"
+    ],
+    "mentions": {
+      "gold": 6,
+      "predicted": 6,
+      "tp": 5,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334,
+      "f1": 0.8333333333333334
+    },
+    "relations": {
+      "gold": 0,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "latency_ms": {
+      "run1": 466.8709000106901,
+      "run2": 404.8432999989018
+    }
+  },
+  "E_02": {
+    "stem": "E_02",
+    "language": "english",
+    "brief_requirements": [
+      "E_contains_special_identifier"
+    ],
+    "mentions": {
+      "gold": 11,
+      "predicted": 11,
+      "tp": 10,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.9090909090909091,
+      "recall": 0.9090909090909091,
+      "f1": 0.9090909090909091
+    },
+    "relations": {
+      "gold": 3,
+      "predicted": 4,
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571
+    },
+    "latency_ms": {
+      "run1": 548.2928999699652,
+      "run2": 692.9749000119045
+    }
+  },
+  "E_03": {
+    "stem": "E_03",
+    "language": "english",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 9,
+      "predicted": 10,
+      "tp": 9,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.9,
+      "recall": 1.0,
+      "f1": 0.9473684210526316
+    },
+    "relations": {
+      "gold": 4,
+      "predicted": 2,
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_ms": {
+      "run1": 474.6121999924071,
+      "run2": 493.866800039541
+    }
+  },
+  "E_04": {
+    "stem": "E_04",
+    "language": "english",
+    "brief_requirements": [
+      "E_contains_special_identifier"
+    ],
+    "mentions": {
+      "gold": 8,
+      "predicted": 9,
+      "tp": 8,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.8888888888888888,
+      "recall": 1.0,
+      "f1": 0.9411764705882353
+    },
+    "relations": {
+      "gold": 1,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": null,
+      "recall": 0.0,
+      "f1": null
+    },
+    "latency_ms": {
+      "run1": 473.9642999484204,
+      "run2": 403.4807999851182
+    }
+  },
+  "E_05": {
+    "stem": "E_05",
+    "language": "english",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 12,
+      "predicted": 16,
+      "tp": 11,
+      "fp": 5,
+      "fn": 1,
+      "precision": 0.6875,
+      "recall": 0.9166666666666666,
+      "f1": 0.7857142857142857
+    },
+    "relations": {
+      "gold": 8,
+      "predicted": 5,
+      "tp": 1,
+      "fp": 4,
+      "fn": 7,
+      "precision": 0.2,
+      "recall": 0.125,
+      "f1": 0.15384615384615385
+    },
+    "latency_ms": {
+      "run1": 665.9400999778882,
+      "run2": 604.0790999541059
+    }
+  },
+  "H_01": {
+    "stem": "H_01",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_01_baseline"
+    ],
+    "mentions": {
+      "gold": 7,
+      "predicted": 8,
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333333333333333
+    },
+    "relations": {
+      "gold": 4,
+      "predicted": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.5,
+      "f1": 0.5714285714285715
+    },
+    "latency_ms": {
+      "run1": 395.28430002974346,
+      "run2": 459.204500017222
+    }
+  },
+  "H_02": {
+    "stem": "H_02",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_02_name_edit_dist_1"
+    ],
+    "mentions": {
+      "gold": 9,
+      "predicted": 13,
+      "tp": 9,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.6923076923076923,
+      "recall": 1.0,
+      "f1": 0.8181818181818181
+    },
+    "relations": {
+      "gold": 5,
+      "predicted": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 4,
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1": 0.28571428571428575
+    },
+    "latency_ms": {
+      "run1": 427.8339999727905,
+      "run2": 421.93170002428815
+    }
+  },
+  "H_03": {
+    "stem": "H_03",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_03_name_edit_dist_2"
+    ],
+    "mentions": {
+      "gold": 10,
+      "predicted": 13,
+      "tp": 10,
+      "fp": 3,
+      "fn": 0,
+      "precision": 0.7692307692307693,
+      "recall": 1.0,
+      "f1": 0.8695652173913044
+    },
+    "relations": {
+      "gold": 3,
+      "predicted": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_ms": {
+      "run1": 581.2882999889553,
+      "run2": 554.1360000497662
+    }
+  },
+  "H_04": {
+    "stem": "H_04",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_04_3_or_more_aliases"
+    ],
+    "mentions": {
+      "gold": 9,
+      "predicted": 10,
+      "tp": 9,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.9,
+      "recall": 1.0,
+      "f1": 0.9473684210526316
+    },
+    "relations": {
+      "gold": 2,
+      "predicted": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_ms": {
+      "run1": 381.4151000115089,
+      "run2": 428.1741000013426
+    }
+  },
+  "H_05": {
+    "stem": "H_05",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_05_3_or_more_aliases"
+    ],
+    "mentions": {
+      "gold": 13,
+      "predicted": 14,
+      "tp": 11,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.7857142857142857,
+      "recall": 0.8461538461538461,
+      "f1": 0.8148148148148148
+    },
+    "relations": {
+      "gold": 5,
+      "predicted": 3,
+      "tp": 1,
+      "fp": 2,
+      "fn": 4,
+      "precision": 0.3333333333333333,
+      "recall": 0.2,
+      "f1": 0.25
+    },
+    "latency_ms": {
+      "run1": 522.3440999980085,
+      "run2": 457.56780001102015
+    }
+  },
+  "H_06": {
+    "stem": "H_06",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_06_shared_phone"
+    ],
+    "mentions": {
+      "gold": 7,
+      "predicted": 10,
+      "tp": 6,
+      "fp": 4,
+      "fn": 1,
+      "precision": 0.6,
+      "recall": 0.8571428571428571,
+      "f1": 0.7058823529411764
+    },
+    "relations": {
+      "gold": 4,
+      "predicted": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_ms": {
+      "run1": 393.2370000402443,
+      "run2": 445.64180000452325
+    }
+  },
+  "H_07": {
+    "stem": "H_07",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_07_no_phone_no_account"
+    ],
+    "mentions": {
+      "gold": 6,
+      "predicted": 8,
+      "tp": 5,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.625,
+      "recall": 0.8333333333333334,
+      "f1": 0.7142857142857143
+    },
+    "relations": {
+      "gold": 0,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "latency_ms": {
+      "run1": 366.75390001619235,
+      "run2": 458.08469998883083
+    }
+  },
+  "H_08": {
+    "stem": "H_08",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_08_no_phone_no_account"
+    ],
+    "mentions": {
+      "gold": 9,
+      "predicted": 11,
+      "tp": 9,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.8181818181818182,
+      "recall": 1.0,
+      "f1": 0.9
+    },
+    "relations": {
+      "gold": 0,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "latency_ms": {
+      "run1": 533.5846000234596,
+      "run2": 525.363799999468
+    }
+  },
+  "H_09": {
+    "stem": "H_09",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_09_broken_number_in_clean_text"
+    ],
+    "mentions": {
+      "gold": 10,
+      "predicted": 9,
+      "tp": 5,
+      "fp": 4,
+      "fn": 5,
+      "precision": 0.5555555555555556,
+      "recall": 0.5,
+      "f1": 0.5263157894736842
+    },
+    "relations": {
+      "gold": 5,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 5,
+      "precision": null,
+      "recall": 0.0,
+      "f1": null
+    },
+    "latency_ms": {
+      "run1": 437.4962000292726,
+      "run2": 423.5026999958791
+    }
+  },
+  "H_10": {
+    "stem": "H_10",
+    "language": "hinglish",
+    "brief_requirements": [
+      "H_10_broken_number_in_clean_text"
+    ],
+    "mentions": {
+      "gold": 11,
+      "predicted": 12,
+      "tp": 9,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.75,
+      "recall": 0.8181818181818182,
+      "f1": 0.7826086956521738
+    },
+    "relations": {
+      "gold": 6,
+      "predicted": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 5,
+      "precision": 0.5,
+      "recall": 0.16666666666666666,
+      "f1": 0.25
+    },
+    "latency_ms": {
+      "run1": 466.28779999446124,
+      "run2": 450.4237999790348
+    }
+  },
+  "H_11": {
+    "stem": "H_11",
+    "language": "hinglish",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 7,
+      "predicted": 7,
+      "tp": 5,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.7142857142857143,
+      "recall": 0.7142857142857143,
+      "f1": 0.7142857142857143
+    },
+    "relations": {
+      "gold": 1,
+      "predicted": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_ms": {
+      "run1": 382.11549998959526,
+      "run2": 409.36340001644567
+    }
+  },
+  "H_12": {
+    "stem": "H_12",
+    "language": "hinglish",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 15,
+      "predicted": 18,
+      "tp": 14,
+      "fp": 4,
+      "fn": 1,
+      "precision": 0.7777777777777778,
+      "recall": 0.9333333333333333,
+      "f1": 0.8484848484848485
+    },
+    "relations": {
+      "gold": 8,
+      "predicted": 6,
+      "tp": 4,
+      "fp": 2,
+      "fn": 4,
+      "precision": 0.6666666666666666,
+      "recall": 0.5,
+      "f1": 0.5714285714285715
+    },
+    "latency_ms": {
+      "run1": 875.6028999923728,
+      "run2": 804.8469999921508
+    }
+  },
+  "H_13": {
+    "stem": "H_13",
+    "language": "hinglish",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 8,
+      "predicted": 9,
+      "tp": 7,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.7777777777777778,
+      "recall": 0.875,
+      "f1": 0.823529411764706
+    },
+    "relations": {
+      "gold": 3,
+      "predicted": 2,
+      "tp": 0,
+      "fp": 2,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_ms": {
+      "run1": 465.0928999762982,
+      "run2": 492.88669996894896
+    }
+  },
+  "H_14": {
+    "stem": "H_14",
+    "language": "hinglish",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 10,
+      "predicted": 20,
+      "tp": 9,
+      "fp": 11,
+      "fn": 1,
+      "precision": 0.45,
+      "recall": 0.9,
+      "f1": 0.6
+    },
+    "relations": {
+      "gold": 4,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "precision": null,
+      "recall": 0.0,
+      "f1": null
+    },
+    "latency_ms": {
+      "run1": 527.1481000236236,
+      "run2": 314.03509998926893
+    }
+  },
+  "H_15": {
+    "stem": "H_15",
+    "language": "hinglish",
+    "brief_requirements": [],
+    "mentions": {
+      "gold": 10,
+      "predicted": 13,
+      "tp": 9,
+      "fp": 4,
+      "fn": 1,
+      "precision": 0.6923076923076923,
+      "recall": 0.9,
+      "f1": 0.7826086956521738
+    },
+    "relations": {
+      "gold": 3,
+      "predicted": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1": 0.4
+    },
+    "latency_ms": {
+      "run1": 477.833200013265,
+      "run2": 198.092499980703
+    }
+  }
+}

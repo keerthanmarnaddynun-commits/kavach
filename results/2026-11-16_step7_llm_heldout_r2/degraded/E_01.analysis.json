@@ -1,0 +1,199 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "E_01",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          58,
+          67
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              58,
+              67
+            ],
+            "surface": "Anita Rao",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Anita Rao",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          118,
+          130
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              118,
+              130
+            ],
+            "surface": "Kiran Shetty",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              137,
+              139
+            ],
+            "surface": "KK",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "Kiran Shetty",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "KK"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "UPI",
+        "char_span": [
+          204,
+          225
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              204,
+              225
+            ],
+            "surface": "kiran.shetty88@okaxis",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "kiran.shetty88@okaxis",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PAN",
+        "char_span": [
+          361,
+          371
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              361,
+              371
+            ],
+            "surface": "AGHPS4417Q",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "AGHPS4417Q",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "PERSON",
+        "char_span": [
+          430,
+          442
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              430,
+              442
+            ],
+            "surface": "Ramesh Gowda",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Ramesh Gowda",
+        "role": "OFFICER",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 12500.0,
+        "start": 181,
+        "end": 193,
+        "surface": "Rs. 12,500/-"
+      },
+      {
+        "value": 40000.0,
+        "start": 262,
+        "end": 269,
+        "surface": "₹40,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "e5620b36cc810e9564f63cffa26a668b2188bdc5a26a139746c1095a8271c251",
+    "char_count": 458,
+    "entities_by_type": {
+      "PERSON": 3,
+      "UPI": 1,
+      "PAN": 1
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

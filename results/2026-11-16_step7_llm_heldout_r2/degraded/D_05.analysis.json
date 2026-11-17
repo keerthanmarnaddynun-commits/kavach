@@ -1,0 +1,316 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "D_05",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          92,
+          108
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              92,
+              108
+            ],
+            "surface": "कि विनोद पाटीदार",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              114,
+              122
+            ],
+            "surface": "वीनू सेठ",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "कि विनोद पाटीदार",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "वीनू सेठ"
+        ]
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          124,
+          133
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              124,
+              133
+            ],
+            "surface": "कमलेश जैन",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              140,
+              149
+            ],
+            "surface": "सुरेश जैन",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "कमलेश जैन",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "सुरेश जैन"
+      },
+      {
+        "id": "ent_03",
+        "type": "ACCOUNT",
+        "char_span": [
+          249,
+          261
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              249,
+              261
+            ],
+            "surface": "012301987654",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "012301987654",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "ICICI"
+      },
+      {
+        "id": "ent_04",
+        "type": "IMEI",
+        "char_span": [
+          375,
+          390
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              375,
+              390
+            ],
+            "surface": "915010087654321",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "915010087654321",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID",
+          "DROPPED_OVERLAP:ACCOUNT"
+        ]
+      },
+      {
+        "id": "ent_05",
+        "type": "PHONE",
+        "char_span": [
+          435,
+          446
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              435,
+              446
+            ],
+            "surface": "98270 55443",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9827055443",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PHONE",
+        "char_span": [
+          462,
+          477
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              462,
+              477
+            ],
+            "surface": "+91-62601-88776",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "6260188776",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "IMEI",
+        "char_span": [
+          541,
+          556
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              541,
+              556
+            ],
+            "surface": "869912034567891",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "869912034567891",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_02",
+        "target": "ent_03",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "संचालित",
+        "confidence": 0.5,
+        "evidence_char_span": [
+          214,
+          335
+        ]
+      },
+      {
+        "source": "ent_02",
+        "target": "ent_03",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "जमा",
+        "confidence": 0.5,
+        "evidence_char_span": [
+          214,
+          335
+        ],
+        "amount": 30000000.0
+      },
+      {
+        "source": "ent_05",
+        "target": "ent_06",
+        "relation": "COMMUNICATED_WITH",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          419,
+          519
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 30000000.0,
+        "start": 222,
+        "end": 237,
+        "surface": "INR 3,00,00,000"
+      },
+      {
+        "value": 18000000.0,
+        "start": 345,
+        "end": 353,
+        "surface": "1.8 करोड"
+      }
+    ],
+    "ifsc": [
+      {
+        "value": "ICIC0000123",
+        "start": 290,
+        "end": 301,
+        "surface": "ICIC0000123"
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "f615c790d54d6eb4046b20c021f9df32aa9114a74a0a22d0e70340b2c043df64",
+    "char_count": 641,
+    "entities_by_type": {
+      "PERSON": 2,
+      "ACCOUNT": 1,
+      "IMEI": 2,
+      "PHONE": 2
+    },
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1,
+      "COMMUNICATED_WITH": 1
+    },
+    "relations_by_origin": {
+      "cue": 2,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

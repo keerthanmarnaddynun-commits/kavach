@@ -1,0 +1,260 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "E_04",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          35,
+          47
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              35,
+              47
+            ],
+            "surface": "Dilip Khanna",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              350,
+              355
+            ],
+            "surface": "Dilip",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Dilip Khanna",
+        "role": "SUSPECT",
+        "ai_confidence": 0.994346,
+        "confidence_breakdown": {
+          "model": 0.994346,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE"
+        ]
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          53,
+          65
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              53,
+              65
+            ],
+            "surface": "Bablu Ansari",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              75,
+              89
+            ],
+            "surface": "Bablu Pehalwan",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "Bablu Ansari",
+        "role": "SUSPECT",
+        "ai_confidence": 0.997,
+        "confidence_breakdown": {
+          "model": 0.997,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Bablu Pehalwan"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "VEHICLE",
+        "char_span": [
+          232,
+          245
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              232,
+              245
+            ],
+            "surface": "DL 8C AB 1234",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "DL8CAB1234",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          258,
+          271
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              258,
+              271
+            ],
+            "surface": "Rakesh Tandon",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Rakesh Tandon",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998112,
+        "confidence_breakdown": {
+          "model": 0.998112,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "PHONE",
+        "char_span": [
+          331,
+          346
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              331,
+              346
+            ],
+            "surface": "+91 63001 55220",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "6300155220",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PHONE",
+        "char_span": [
+          364,
+          374
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              364,
+              374
+            ],
+            "surface": "9810456789",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9810456789",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          411,
+          425
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              411,
+              425
+            ],
+            "surface": "Jagdish Prasad",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Jagdish Prasad",
+        "role": "OFFICER",
+        "ai_confidence": 0.796038,
+        "confidence_breakdown": {
+          "model": 0.796038,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 125000.0,
+        "start": 173,
+        "end": 182,
+        "surface": "₹1,25,000"
+      },
+      {
+        "value": 125000.0,
+        "start": 397,
+        "end": 406,
+        "surface": "1.25 lakh"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 1,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "daf4e0d2535bcf98e3605c7f0ad59c90f9bb2005bf64bfc6f67a2bdc74d38e86",
+    "char_count": 473,
+    "entities_by_type": {
+      "PERSON": 4,
+      "VEHICLE": 1,
+      "PHONE": 2
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": []
+  }
+}

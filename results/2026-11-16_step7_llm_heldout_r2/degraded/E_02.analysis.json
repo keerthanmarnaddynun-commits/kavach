@@ -1,0 +1,343 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "E_02",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "VEHICLE",
+        "char_span": [
+          136,
+          149
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              136,
+              149
+            ],
+            "surface": "KA-01-MH-4567",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "KA01MH4567",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          184,
+          195
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              184,
+              195
+            ],
+            "surface": "Mahesh Iyer",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              200,
+              214
+            ],
+            "surface": "Venkatesh Iyer",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "Mahesh Iyer",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "Venkatesh Iyer"
+      },
+      {
+        "id": "ent_03",
+        "type": "AADHAAR",
+        "char_span": [
+          276,
+          290
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              276,
+              290
+            ],
+            "surface": "3456 7890 1234",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "345678901234",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_04",
+        "type": "PHONE",
+        "char_span": [
+          320,
+          335
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              320,
+              335
+            ],
+            "surface": "+91 98450 12345",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              491,
+              506
+            ],
+            "surface": "+91 98450 12345",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9845012345",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "IMEI",
+        "char_span": [
+          345,
+          360
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              345,
+              360
+            ],
+            "surface": "354678091234567",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "354678091234567",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_06",
+        "type": "PHONE",
+        "char_span": [
+          518,
+          528
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              518,
+              528
+            ],
+            "surface": "9900112233",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9900112233",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          567,
+          581
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              567,
+              581
+            ],
+            "surface": "Sheela Narayan",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Sheela Narayan",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_08",
+        "type": "PHONE",
+        "char_span": [
+          590,
+          600
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              590,
+              600
+            ],
+            "surface": "9448099887",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9448099887",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_04",
+        "target": "ent_05",
+        "relation": "ASSOCIATED_IMEI",
+        "trigger": "IMEI",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          292,
+          435
+        ]
+      },
+      {
+        "source": "ent_04",
+        "target": "ent_06",
+        "relation": "COMMUNICATED_WITH",
+        "trigger": "called",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          436,
+          687
+        ]
+      },
+      {
+        "source": "ent_06",
+        "target": "ent_08",
+        "relation": "COMMUNICATED_WITH",
+        "trigger": "called",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          436,
+          687
+        ]
+      },
+      {
+        "source": "ent_02",
+        "target": "ent_04",
+        "relation": "OWNS_DEVICE",
+        "trigger": "ANAPHORA",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          292,
+          435
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 20000.0,
+        "start": 401,
+        "end": 411,
+        "surface": "Rs. 20,000"
+      },
+      {
+        "value": 250000.0,
+        "start": 617,
+        "end": 625,
+        "surface": "2.5 lakh"
+      },
+      {
+        "value": 100000.0,
+        "start": 635,
+        "end": 649,
+        "surface": "Rs. 1,00,000/-"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "5a1a0872c9a29bcc3aa62f09049470a4e9022b7fa69389907db6637a3cf8fbac",
+    "char_count": 749,
+    "entities_by_type": {
+      "VEHICLE": 1,
+      "PERSON": 2,
+      "AADHAAR": 1,
+      "PHONE": 3,
+      "IMEI": 1
+    },
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 2,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "cue": 4,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 3,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

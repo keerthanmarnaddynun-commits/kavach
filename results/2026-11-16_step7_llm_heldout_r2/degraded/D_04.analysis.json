@@ -1,0 +1,157 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "D_04",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          84,
+          93
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              84,
+              93
+            ],
+            "surface": "सोनू बघेल",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              100,
+              115
+            ],
+            "surface": "मोहन बघेल। अमित",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "सोनू बघेल",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "मोहन बघेल। अमित"
+      },
+      {
+        "id": "ent_02",
+        "type": "PHONE",
+        "char_span": [
+          130,
+          145
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              130,
+              145
+            ],
+            "surface": "+91 70001 23456",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7000123456",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "UPI",
+        "char_span": [
+          292,
+          317
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              292,
+              317
+            ],
+            "surface": "chintu.chauhan@okhdfcbank",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "chintu.chauhan@okhdfcbank",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_02",
+        "relation": "OWNS_DEVICE",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          111,
+          178
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 35000.0,
+        "start": 270,
+        "end": 282,
+        "surface": "Rs. 35,000/-"
+      },
+      {
+        "value": 7400.0,
+        "start": 344,
+        "end": 353,
+        "surface": "Rs. 7,400"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "60d99d27a99bb76a4117d0fc00d44aff543567b25bf53ddc0890a8480ad8b6e9",
+    "char_count": 423,
+    "entities_by_type": {
+      "PERSON": 1,
+      "PHONE": 1,
+      "UPI": 1
+    },
+    "relations_by_label": {
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

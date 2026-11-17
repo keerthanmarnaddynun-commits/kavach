@@ -1,0 +1,440 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_14",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          42,
+          45
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              42,
+              45
+            ],
+            "surface": "ASI",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              139,
+              152
+            ],
+            "surface": "Santosh Yadav",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "ASI",
+        "role": "SUSPECT",
+        "ai_confidence": 0.8027,
+        "confidence_breakdown": {
+          "model": 0.8027,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "Santosh Yadav"
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          46,
+          57
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              46,
+              57
+            ],
+            "surface": "Bhagwan Das",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Bhagwan Das",
+        "role": "OFFICER",
+        "ai_confidence": 0.881305,
+        "confidence_breakdown": {
+          "model": 0.881305,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          74,
+          86
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              74,
+              86
+            ],
+            "surface": "Mohd. Salman",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Mohd. Salman",
+        "role": "WITNESS",
+        "ai_confidence": 0.989066,
+        "confidence_breakdown": {
+          "model": 0.989066,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          104,
+          112
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              104,
+              112
+            ],
+            "surface": "Mehrauli",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Mehrauli",
+        "role": "WITNESS",
+        "ai_confidence": 0.927239,
+        "confidence_breakdown": {
+          "model": 0.927239,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "PERSON",
+        "char_span": [
+          124,
+          134
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              124,
+              134
+            ],
+            "surface": "Kiran Bala",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Kiran Bala",
+        "role": "WITNESS",
+        "ai_confidence": 0.984906,
+        "confidence_breakdown": {
+          "model": 0.984906,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          157,
+          173
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              157,
+              173
+            ],
+            "surface": "Rajesh Chaudhary",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              181,
+              198
+            ],
+            "surface": "Mahipal Chaudhary",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              311,
+              317
+            ],
+            "surface": "Rajesh",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              398,
+              404
+            ],
+            "surface": "Rajesh",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              454,
+              460
+            ],
+            "surface": "Rajesh",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              511,
+              517
+            ],
+            "surface": "Rajesh",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Rajesh Chaudhary",
+        "role": "SUSPECT",
+        "ai_confidence": 0.98209,
+        "confidence_breakdown": {
+          "model": 0.98209,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_FATHER"
+        ],
+        "father_name": "Mahipal Chaudhary"
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          243,
+          250
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              243,
+              250
+            ],
+            "surface": "Aadhaar",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Aadhaar",
+        "role": "SUSPECT",
+        "ai_confidence": 0.997415,
+        "confidence_breakdown": {
+          "model": 0.997415,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_08",
+        "type": "PERSON",
+        "char_span": [
+          272,
+          277
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              272,
+              277
+            ],
+            "surface": "Kiran",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              483,
+              488
+            ],
+            "surface": "Kiran",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Kiran",
+        "role": "SUSPECT",
+        "ai_confidence": 0.987832,
+        "confidence_breakdown": {
+          "model": 0.987832,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_09",
+        "type": "PHONE",
+        "char_span": [
+          287,
+          302
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              287,
+              302
+            ],
+            "surface": "+91 62012 34567",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              492,
+              507
+            ],
+            "surface": "+91 62012 34567",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "6201234567",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_10",
+        "type": "PHONE",
+        "char_span": [
+          323,
+          338
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              323,
+              338
+            ],
+            "surface": "+91-93101-55443",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9310155443",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_11",
+        "type": "PERSON",
+        "char_span": [
+          340,
+          346
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              340,
+              346
+            ],
+            "surface": "Salman",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Salman",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999648,
+        "confidence_breakdown": {
+          "model": 0.999648,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_12",
+        "type": "IMEI",
+        "char_span": [
+          419,
+          434
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              419,
+              434
+            ],
+            "surface": "918010023456789",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "918010023456789",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID",
+          "DROPPED_OVERLAP:ACCOUNT"
+        ]
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 5000.0,
+        "start": 372,
+        "end": 378,
+        "surface": "₹5,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 1,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "7fb34c639a0b1a780c9d5f5d009f67ed6457650e821f85bd909186d288f803ad",
+    "char_count": 574,
+    "entities_by_type": {
+      "PERSON": 9,
+      "PHONE": 2,
+      "IMEI": 1
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 1,
+    "warnings": []
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_03",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          44,
+          58
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              44,
+              58
+            ],
+            "surface": "Ravinder Malik",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Ravinder Malik",
+        "role": "OFFICER",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PHONE",
+        "char_span": [
+          259,
+          274
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              259,
+              274
+            ],
+            "surface": "+91 99001 22334",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              399,
+              414
+            ],
+            "surface": "+91 99001 22334",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9900122334",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PHONE",
+        "char_span": [
+          306,
+          316
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              306,
+              316
+            ],
+            "surface": "8800556677",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              418,
+              428
+            ],
+            "surface": "8800556677",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "8800556677",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          466,
+          477
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              466,
+              477
+            ],
+            "surface": "Kavita Rani",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Kavita Rani",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "UPI",
+        "char_span": [
+          540,
+          562
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              540,
+              562
+            ],
+            "surface": "sandip.chouhan@okicici",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "sandip.chouhan@okicici",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "VEHICLE",
+        "char_span": [
+          615,
+          628
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              615,
+              628
+            ],
+            "surface": "DL 3C BN 4521",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "DL3CBN4521",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_02",
+        "target": "ent_03",
+        "relation": "COMMUNICATED_WITH",
+        "trigger": "calls",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          324,
+          453
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 250000.0,
+        "start": 524,
+        "end": 532,
+        "surface": "2.5 lakh"
+      },
+      {
+        "value": 40000.0,
+        "start": 579,
+        "end": 591,
+        "surface": "Rs. 40,000/-"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "6e4ffedea08c2ad26901500c13f6b5936b684f043d101df5a4ba796d48f8b1e1",
+    "char_count": 708,
+    "entities_by_type": {
+      "PERSON": 2,
+      "PHONE": 2,
+      "UPI": 1,
+      "VEHICLE": 1
+    },
+    "relations_by_label": {
+      "COMMUNICATED_WITH": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

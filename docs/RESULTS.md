@@ -988,4 +988,150 @@
 - Open-domain generalization: Performance outside the five fixed financial and telecommunication relationship schemas remains untested.
 <!-- STEP6:END -->
 
+<!-- STEP7:BEGIN -->
+## Step 7d: Held-Out LLM-Authored FIR Extraction Results
 
+### Results Card
+- **Evaluation Status**: Evaluated once on 25 held-out narratives with frozen pipeline architecture.
+- **Headline Mentions Micro F1**: 0.7891 (95% CI [0.7406, 0.8354], strict character span match across ten core types).
+- **Headline Mentions Lenient F1**: 0.8477 (non-zero character boundary overlap).
+- **Hybrid Relations Micro F1**: 0.3182 (95% CI [0.1951, 0.4444], contracted entity alignment matching).
+- **Degraded Mode Mentions F1**: 0.7421 (heuristic extraction without neural weights).
+- **Degraded Mode Relations F1**: 0.2720 (co-occurrence and rule relations without neural model).
+- **Non-Luhn Checksum Identifiers**: 6 of 7 invalid IMEI references detected and aligned.
+- **Corpus Dimension**: 25 narrative files across Hinglish (15), English (5), and Hindi (5).
+
+### Key Numbers
+  - `metrics.json` (`headline.mentions.strict.f1`): 0.7891 headline strict mention score
+  - `metrics.json` (`headline.mentions.lenient.f1`): 0.8477 headline lenient mention score
+  - `metrics.json` (`headline.relations.micro.f1`): 0.3182 relation micro score for shipped pipeline
+  - `metrics.json` (`headline.degraded.mentions.strict.f1`): 0.7421 degraded mode strict mention score without neural components
+  - `metrics.json` (`headline.degraded.relations.micro.f1`): 0.2720 degraded mode relation micro score without neural components
+  - `metrics.json` (`by_language.hinglish.mentions.f1`): 0.7848 strict mention score on Hinglish subset
+  - `metrics.json` (`by_language.english.mentions.f1`): 0.8776 strict mention score on English subset
+  - `metrics.json` (`by_language.hindi.mentions.f1`): 0.7143 strict mention score on Hindi subset
+  - `metrics.json` (`by_language.hinglish.relations.f1`): 0.3291 relation micro score on Hinglish subset
+  - `metrics.json` (`by_language.english.relations.f1`): 0.2963 relation micro score on English subset
+  - `metrics.json` (`by_language.hindi.relations.f1`): 0.3077 relation micro score on Hindi subset
+  - `metrics.json` (`relations.CUE.overall.micro.f1`): 0.2903 relation micro score for lexical cue extractor
+  - `metrics.json` (`relations.CONTRAST.overall.micro.f1`): 0.3665 relation micro score for co-occurrence baseline
+  - `metrics.json` (`non_luhn_imei.tp_count`): 6 device identifier mentions matching references despite failing checksum
+  - `metrics.json` (`error_counts.mentions.fp_total`): 78 total mention false positive count across corpus
+  - `metrics.json` (`error_counts.mentions.fn_total`): 30 total mention false negative count across corpus
+  - `metrics.json` (`error_counts.relations.fp_total`): 23 total relation false positive count across corpus
+  - `metrics.json` (`error_counts.relations.fn_total`): 67 total relation false negative count across corpus
+
+### Evaluation Tables
+
+#### Table A: Headline Evaluation Summary (LLM-Authored Held-Out vs Baselines)
+| Evaluation Dataset / Subset | Extractor Mode | Gold Mentions | Pred Mentions | Strict P | Strict R | Strict F1 | 95% CI | Lenient F1 | Benchmark / Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| LLM Held-Out Run One (Shipped) | Live Neural Model | 232 | 280 | 0.7214 | 0.8707 | 0.7891 | [0.7406, 0.8354] | 0.8477 | Primary evaluation on held-out narratives |
+| LLM Held-Out Degraded (No Model) | Heuristic Fallback | 232 | 148 | 0.9527 | 0.6078 | 0.7421 | — | 0.7632 | Rule-based fallback without neural weights |
+| Synthetic, all 100 FIRs (mention micro F1) | Live Neural Model | — | — | — | — | 0.9992 | — | — | synthetic, different generator and author; not directly comparable |
+| Synthetic dev (relations, shipped pipeline) | Live Neural Model | — | — | — | — | 1.0000 | — | — | synthetic, different generator and author; not directly comparable |
+| Synthetic test (relations, shipped pipeline; second look) | Live Neural Model | — | — | — | — | 0.9672 | — | — | synthetic, different generator and author; not directly comparable |
+
+#### Table B: Mention Extraction by Entity Category (LLM-Authored Held-Out, Run One)
+| Entity Category | Gold Mentions | Predicted Mentions | TP | FP | FN | Strict P | Strict R | Strict F1 | Lenient P | Lenient R | Lenient F1 | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| PERSON | 92 | 151 | 79 | 72 | 13 | 0.5232 | 0.8587 | 0.6502 | 0.6026 | 0.9891 | 0.7490 | scored |
+| ALIAS | 27 | 21 | 21 | 0 | 6 | 1.0000 | 0.7778 | 0.8750 | 1.0000 | 0.7778 | 0.8750 | scored |
+| FATHER | 19 | 19 | 17 | 2 | 2 | 0.8947 | 0.8947 | 0.8947 | 1.0000 | 1.0000 | 1.0000 | scored |
+| PHONE | 40 | 36 | 36 | 0 | 4 | 1.0000 | 0.9000 | 0.9474 | 1.0000 | 0.9000 | 0.9474 | scored |
+| IMEI | 9 | 11 | 8 | 3 | 1 | 0.7273 | 0.8889 | 0.8000 | 0.7273 | 0.8889 | 0.8000 | scored |
+| ACCOUNT | 21 | 18 | 17 | 1 | 4 | 0.9444 | 0.8095 | 0.8718 | 1.0000 | 0.8571 | 0.9231 | scored |
+| AADHAAR | 6 | 6 | 6 | 0 | 0 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | scored |
+| PAN | 5 | 5 | 5 | 0 | 0 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | scored |
+| UPI | 4 | 4 | 4 | 0 | 0 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | scored |
+| VEHICLE | 9 | 9 | 9 | 0 | 0 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | scored |
+| AMOUNT | 38 | 45 | 37 | 8 | 1 | 0.8222 | 0.9737 | 0.8916 | 0.8444 | 1.0000 | 0.9157 | scored |
+| IFSC | 4 | 0 | 0 | 0 | 4 | — | — | — | — | — | — | not scored: no matching contract type |
+| HEADLINE MICRO (Ten Types) | 232 | 280 | 202 | 78 | 30 | 0.7214 | 0.8707 | 0.7891 | 0.7750 | 0.9353 | 0.8477 | Combined headline micro |
+
+#### Table C: Relation Extraction by Extractor and Label (LLM-Authored Held-Out)
+| Extractor | Evaluation Role | Relation Type | Gold | Predicted | TP | FP | FN | Precision | Recall | F1 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| HYBRID | shipped pipeline | OWNS_DEVICE | 27 | 14 | 6 | 8 | 21 | 0.4286 | 0.2222 | 0.2927 |
+| HYBRID | shipped pipeline | ASSOCIATED_IMEI | 9 | 7 | 6 | 1 | 3 | 0.8571 | 0.6667 | 0.7500 |
+| HYBRID | shipped pipeline | COMMUNICATED_WITH | 11 | 5 | 4 | 1 | 7 | 0.8000 | 0.3636 | 0.5000 |
+| HYBRID | shipped pipeline | CONTROLS_ACCOUNT | 20 | 9 | 3 | 6 | 17 | 0.3333 | 0.1500 | 0.2069 |
+| HYBRID | shipped pipeline | TRANSFERRED_FUNDS | 21 | 9 | 2 | 7 | 19 | 0.2222 | 0.0952 | 0.1333 |
+| HYBRID | shipped pipeline | MICRO | 88 | 44 | 21 | 23 | 67 | 0.4773 | 0.2386 | 0.3182 |
+| CUE | lexical cue extractor | OWNS_DEVICE | 27 | 9 | 4 | 5 | 23 | 0.4444 | 0.1481 | 0.2222 |
+| CUE | lexical cue extractor | ASSOCIATED_IMEI | 9 | 6 | 6 | 0 | 3 | 1.0000 | 0.6667 | 0.8000 |
+| CUE | lexical cue extractor | COMMUNICATED_WITH | 11 | 5 | 4 | 1 | 7 | 0.8000 | 0.3636 | 0.5000 |
+| CUE | lexical cue extractor | CONTROLS_ACCOUNT | 20 | 9 | 3 | 6 | 17 | 0.3333 | 0.1500 | 0.2069 |
+| CUE | lexical cue extractor | TRANSFERRED_FUNDS | 21 | 7 | 1 | 6 | 20 | 0.1429 | 0.0476 | 0.0714 |
+| CUE | lexical cue extractor | MICRO | 88 | 36 | 18 | 18 | 70 | 0.5000 | 0.2045 | 0.2903 |
+| CONTRAST | co-occurrence baseline | OWNS_DEVICE | 27 | 39 | 12 | 27 | 15 | 0.3077 | 0.4444 | 0.3636 |
+| CONTRAST | co-occurrence baseline | ASSOCIATED_IMEI | 9 | 8 | 6 | 2 | 3 | 0.7500 | 0.6667 | 0.7059 |
+| CONTRAST | co-occurrence baseline | COMMUNICATED_WITH | 11 | 10 | 5 | 5 | 6 | 0.5000 | 0.4545 | 0.4762 |
+| CONTRAST | co-occurrence baseline | CONTROLS_ACCOUNT | 20 | 23 | 6 | 17 | 14 | 0.2609 | 0.3000 | 0.2791 |
+| CONTRAST | co-occurrence baseline | TRANSFERRED_FUNDS | 21 | 23 | 6 | 17 | 15 | 0.2609 | 0.2857 | 0.2727 |
+| CONTRAST | co-occurrence baseline | MICRO | 88 | 103 | 35 | 68 | 53 | 0.3398 | 0.3977 | 0.3665 |
+
+#### Table D: Mention and Relation Extraction by Language Subset
+| Language Subset | Files | Mention Gold | Mention Pred | Mention TP | Mention FP | Mention FN | Mention Strict F1 | Relation Gold | Relation Pred | Relation TP | Relation FP | Relation FN | Relation Micro F1 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Hinglish | 15 | 141 | 175 | 124 | 51 | 17 | 0.7848 | 53 | 26 | 13 | 13 | 40 | 0.3291 |
+| English | 5 | 46 | 52 | 43 | 9 | 3 | 0.8776 | 16 | 11 | 4 | 7 | 12 | 0.2963 |
+| Hindi | 5 | 45 | 53 | 35 | 18 | 10 | 0.7143 | 19 | 7 | 4 | 3 | 15 | 0.3077 |
+| Overall | 25 | 232 | 280 | 202 | 78 | 30 | 0.7891 | 88 | 44 | 21 | 23 | 67 | 0.3182 |
+
+#### Table E: Extraction Performance by Coverage Requirement Group
+| Coverage Requirement | Matching Files | File Count | Mention Gold | Mention Pred | Mention Strict F1 | Relation Gold | Relation Pred | Relation Micro F1 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| look-alike names | H_02, H_03 | 2 | 19 | 26 | 0.8444 | 8 | 5 | 0.6154 |
+| 3 aliases | H_04, H_05 | 2 | 22 | 24 | 0.8696 | 7 | 4 | 0.1818 |
+| shared phone | H_06 | 1 | 7 | 10 | 0.7059 | 4 | 1 | 0.0000 |
+| no phone/account | H_07, H_08 | 2 | 15 | 19 | 0.8235 | 0 | 0 | — |
+| messy | H_09, H_10 | 2 | 21 | 21 | 0.6667 | 11 | 2 | 0.1538 |
+| special identifiers | E_01, E_02, E_04 | 3 | 25 | 26 | 0.9020 | 4 | 4 | 0.7500 |
+| account-to-account | D_02, D_05 | 2 | 20 | 27 | 0.6809 | 12 | 5 | 0.3529 |
+| baseline | H_01 | 1 | 7 | 8 | 0.9333 | 4 | 3 | 0.5714 |
+
+#### Table F: Entity Alignment Exactness (Run One)
+| Entity Type | Reference Entities | Predicted Entities | Aligned TP | Unaligned Pred (FP) | Unaligned Ref (FN) | Precision | Recall | F1 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| PERSON | 111 | 116 | 83 | 33 | 28 | 0.7155 | 0.7477 | 0.7313 |
+| PHONE | 40 | 28 | 28 | 0 | 12 | 1.0000 | 0.7000 | 0.8235 |
+| IMEI | 9 | 11 | 8 | 3 | 1 | 0.7273 | 0.8889 | 0.8000 |
+| ACCOUNT | 21 | 18 | 17 | 1 | 4 | 0.9444 | 0.8095 | 0.8718 |
+| MICRO | 274 | 197 | 160 | 37 | 114 | 0.8122 | 0.5839 | 0.6794 |
+
+### Disclosed Evaluation Facts
+- **Corpus Dimension**: The held-out evaluation suite comprises 25 files totaling 232 annotated reference mentions (across ten core types) and 88 reference relationships across three languages (15 Hinglish, 5 English, 5 Hindi).
+- **Independent Generation**: FIR narratives were authored by an independent AI instance with zero access to the extraction repository, architecture, rules, or test fixtures.
+- **Evaluation Timing**: The conversion specification and converter pipeline were authored strictly after the extraction engine was frozen.
+- **Inspector Exposure**: The AI assistant authoring the converter inspected 8 of the 25 raw narrative files, and the project lead inspected 3 raw files; no pipeline parameters, rules, or models were altered following inspection or evaluation.
+- **Extractor Stability**: Zero modifications, hyperparameter tunings, or rule adjustments were introduced into the pipeline after observing held-out outputs.
+- **Invalid Checksum Annotations**: Exactly 7 IMEI mentions in the gold corpus fail standard Luhn checksum validation; of these, 6 were extracted by the pipeline and scored identically to valid identifiers.
+- Table A synthetic reference rows were corrected after generation; no metric changed.
+- **Sample Power Limitation**: Sample sizes (25 total narratives; 5 each for English and Hindi subsets) yield limited statistical inference power outside the reported bootstrap intervals.
+- **Subcorpus Dimensions**: English and Hindi subsets contain 5 files each, while Hinglish contains 15 files.
+
+### Glossary
+- strict = matching criterion requiring equal entity category and identical character start and end offsets
+- lenient = matching criterion requiring equal entity category and overlapping character boundaries paired greedily by shared length
+- micro = aggregate metric pooling true positives, false positives, and false negatives across all evaluated instances
+- TP/FP/FN = True Positives (correctly matched items), False Positives (predicted items without matching reference), and False Negatives (reference items omitted by prediction)
+- held-out = evaluation corpus authored independently without exposure to pipeline heuristics, rules, or supervised training iterations
+- CUE = cue-driven relation extractor requiring explicit multilingual lexical phrases within sentence boundaries
+- HYBRID = shipped combined extractor layering sentence splitting, cross-sentence anaphora, role disambiguation, and structural co-occurrence fallbacks atop cue matching
+- CONTRAST = baseline extractor emitting every schema-valid entity type pair co-occurring within the same sentence without lexical cues
+- degraded mode = heuristic pipeline path operating without neural transformer inference
+
+### Caveats
+- the FIR narratives were authored by an artificial intelligence model and may display different syntactic distributions from station-drafted police reports
+- real-world physical station documents exhibit optical character recognition artifacts, handwritten notes, and typographical anomalies absent from clean digital text
+- relationship extraction schemas are restricted to the five predefined telecommunication and financial categories
+- English and Hindi evaluation subsets comprise five documents each, constraining statistical power for low-frequency categories in those languages
+- runtime latency represents single-threaded CPU execution without batched inference optimizations
+
+### What This Does Not Show
+- Station noise resistance: Physical scan skew, smudges, OCR segmentation splits, and handwritten margin additions remain unmeasured.
+- Cross-document resolution: Pipeline scope resolves names and entities within single FIRs rather than linking suspects across jurisdictions.
+- High-concurrency server capacity: Sequential CPU latency benchmarks do not capture multi-threaded batch throughput under network loads.
+- Open-domain generalization: Behavioral characteristics on unseen relationship categories outside the five target schemas remain unmeasured.
+<!-- STEP7:END -->

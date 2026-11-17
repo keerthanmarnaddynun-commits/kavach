@@ -1,0 +1,229 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_07",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          17,
+          29
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              17,
+              29
+            ],
+            "surface": "Suresh Patil",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Suresh Patil",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998522,
+        "confidence_breakdown": {
+          "model": 0.998522,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          34,
+          42
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              34,
+              42
+            ],
+            "surface": "Hadapsar",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Hadapsar",
+        "role": "SUSPECT",
+        "ai_confidence": 0.963106,
+        "confidence_breakdown": {
+          "model": 0.963106,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          56,
+          69
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              56,
+              69
+            ],
+            "surface": "Ganesh Jadhav",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              74,
+              78
+            ],
+            "surface": "Gana",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              266,
+              272
+            ],
+            "surface": "Ganesh",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Ganesh Jadhav",
+        "role": "SUSPECT",
+        "ai_confidence": 0.984446,
+        "confidence_breakdown": {
+          "model": 0.984446,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Gana"
+        ]
+      },
+      {
+        "id": "ent_04",
+        "type": "VEHICLE",
+        "char_span": [
+          198,
+          211
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              198,
+              211
+            ],
+            "surface": "MH 12 QT 3345",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "MH12QT3345",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "AADHAAR",
+        "char_span": [
+          284,
+          298
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              284,
+              298
+            ],
+            "surface": "5521 0987 6543",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "552109876543",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          360,
+          370
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              360,
+              370
+            ],
+            "surface": "Baban Shin",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Baban Shin",
+        "role": "OFFICER",
+        "ai_confidence": 0.537036,
+        "confidence_breakdown": {
+          "model": 0.537036,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 10000.0,
+        "start": 169,
+        "end": 176,
+        "surface": "₹10,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 1,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "24183bbd38cf6d6426593d4ad4b2a7d6d2013aeefc58b9f9b7ffe0dae3da06c0",
+    "char_count": 373,
+    "entities_by_type": {
+      "PERSON": 4,
+      "VEHICLE": 1,
+      "AADHAAR": 1
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 1,
+    "warnings": []
+  }
+}

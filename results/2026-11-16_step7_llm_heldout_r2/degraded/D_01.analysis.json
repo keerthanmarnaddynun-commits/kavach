@@ -1,0 +1,208 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "D_01",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          86,
+          98
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              86,
+              98
+            ],
+            "surface": "राकेश पांडेय",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              104,
+              108
+            ],
+            "surface": "राका",
+            "kind": "ALIAS"
+          },
+          {
+            "char_span": [
+              115,
+              130
+            ],
+            "surface": "श्यामलाल पांडेय",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "राकेश पांडेय",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "aliases": [
+          "राका"
+        ],
+        "father_name": "श्यामलाल पांडेय"
+      },
+      {
+        "id": "ent_02",
+        "type": "PHONE",
+        "char_span": [
+          170,
+          180
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              170,
+              180
+            ],
+            "surface": "9936012345",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9936012345",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "ACCOUNT",
+        "char_span": [
+          240,
+          251
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              240,
+              251
+            ],
+            "surface": "31245098761",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "31245098761",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "SBI"
+      },
+      {
+        "id": "ent_04",
+        "type": "IMEI",
+        "char_span": [
+          317,
+          332
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              317,
+              332
+            ],
+            "surface": "358912076543210",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "358912076543210",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_02",
+        "relation": "OWNS_DEVICE",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          80,
+          196
+        ]
+      },
+      {
+        "source": "ent_01",
+        "target": "ent_03",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          197,
+          297
+        ],
+        "amount": 48000.0
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 48000.0,
+        "start": 218,
+        "end": 230,
+        "surface": "Rs. 48,000/-"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "9b07c5479b06cf116f2b6ed6fe7a0510879d1316550416c1d77b7d46477a440e",
+    "char_count": 406,
+    "entities_by_type": {
+      "PERSON": 1,
+      "PHONE": 1,
+      "ACCOUNT": 1,
+      "IMEI": 1
+    },
+    "relations_by_label": {
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 2
+    },
+    "amounts_count": 1,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

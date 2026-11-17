@@ -1,0 +1,144 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "E_04",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "VEHICLE",
+        "char_span": [
+          232,
+          245
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              232,
+              245
+            ],
+            "surface": "DL 8C AB 1234",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "DL8CAB1234",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PHONE",
+        "char_span": [
+          331,
+          346
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              331,
+              346
+            ],
+            "surface": "+91 63001 55220",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "6300155220",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PHONE",
+        "char_span": [
+          364,
+          374
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              364,
+              374
+            ],
+            "surface": "9810456789",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9810456789",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_02",
+        "target": "ent_03",
+        "relation": "COMMUNICATED_WITH",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          290,
+          375
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 125000.0,
+        "start": 173,
+        "end": 182,
+        "surface": "₹1,25,000"
+      },
+      {
+        "value": 125000.0,
+        "start": 397,
+        "end": 406,
+        "surface": "1.25 lakh"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 1,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "daf4e0d2535bcf98e3605c7f0ad59c90f9bb2005bf64bfc6f67a2bdc74d38e86",
+    "char_count": 473,
+    "entities_by_type": {
+      "VEHICLE": 1,
+      "PHONE": 2
+    },
+    "relations_by_label": {
+      "COMMUNICATED_WITH": 1
+    },
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

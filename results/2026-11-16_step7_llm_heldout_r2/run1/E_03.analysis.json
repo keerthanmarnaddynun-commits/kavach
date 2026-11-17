@@ -1,0 +1,311 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "E_03",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          17,
+          30
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              17,
+              30
+            ],
+            "surface": "Prakash Joshi",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Prakash Joshi",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.999754,
+        "confidence_breakdown": {
+          "model": 0.999754,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          84,
+          96
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              84,
+              96
+            ],
+            "surface": "Sanjay Mehta",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              99,
+              104
+            ],
+            "surface": "Sanju",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "Sanjay Mehta",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998799,
+        "confidence_breakdown": {
+          "model": 0.998799,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Sanju"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "ACCOUNT",
+        "char_span": [
+          174,
+          188
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              174,
+              188
+            ],
+            "surface": "50100987654321",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "50100987654321",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "HDFC"
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          230,
+          235
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              230,
+              235
+            ],
+            "surface": "Mehta",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Mehta",
+        "role": "SUSPECT",
+        "ai_confidence": 0.995785,
+        "confidence_breakdown": {
+          "model": 0.995785,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          339,
+          351
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              339,
+              351
+            ],
+            "surface": "038901567890",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "038901567890",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "ICICI"
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          367,
+          381
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              367,
+              381
+            ],
+            "surface": "Pooja Deshmukh",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              386,
+              401
+            ],
+            "surface": "Rakesh Deshmukh",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              419,
+              430
+            ],
+            "surface": "Pooja Madam",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "Pooja Deshmukh",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999456,
+        "confidence_breakdown": {
+          "model": 0.999456,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER",
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Pooja Madam"
+        ],
+        "father_name": "Rakesh Deshmukh"
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          509,
+          521
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              509,
+              521
+            ],
+            "surface": "Sunil Kamble",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Sunil Kamble",
+        "role": "OFFICER",
+        "ai_confidence": 0.995203,
+        "confidence_breakdown": {
+          "model": 0.995203,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_04",
+        "target": "ent_03",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "operated",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          0,
+          236
+        ]
+      },
+      {
+        "source": "ent_06",
+        "target": "ent_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "controlled",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          237,
+          460
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 500000.0,
+        "start": 143,
+        "end": 155,
+        "surface": "INR 5,00,000"
+      },
+      {
+        "value": 450000.0,
+        "start": 279,
+        "end": 293,
+        "surface": "Rs. 4,50,000/-"
+      }
+    ],
+    "ifsc": [
+      {
+        "value": "HDFC0002345",
+        "start": 195,
+        "end": 206,
+        "surface": "HDFC0002345"
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "a7c67a5b53ea7730cefeedb96120a28fbdf25c28c44de750f090c127cbfa0638",
+    "char_count": 532,
+    "entities_by_type": {
+      "PERSON": 5,
+      "ACCOUNT": 2
+    },
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 2
+    },
+    "relations_by_origin": {
+      "cue": 2,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": []
+  }
+}

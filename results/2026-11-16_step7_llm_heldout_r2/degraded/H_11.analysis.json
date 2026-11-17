@@ -1,0 +1,110 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_11",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PHONE",
+        "char_span": [
+          115,
+          125
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              115,
+              125
+            ],
+            "surface": "9650871234",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9650871234",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "UPI",
+        "char_span": [
+          214,
+          239
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              239
+            ],
+            "surface": "dinu.rathore91@okhdfcbank",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "dinu.rathore91@okhdfcbank",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 6200.0,
+        "start": 151,
+        "end": 160,
+        "surface": "Rs. 6,200"
+      },
+      {
+        "value": 45000.0,
+        "start": 250,
+        "end": 257,
+        "surface": "₹45,000"
+      },
+      {
+        "value": 105000.0,
+        "start": 270,
+        "end": 284,
+        "surface": "Rs. 1,05,000/-"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 1
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "870628cbdf7fab634171b9415cc5a16d7b79bb3c9a007072791a12e52ea2b78f",
+    "char_count": 336,
+    "entities_by_type": {
+      "PHONE": 1,
+      "UPI": 1
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 3,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

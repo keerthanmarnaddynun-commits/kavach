@@ -1,0 +1,174 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_06",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          31,
+          43
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              31,
+              43
+            ],
+            "surface": "Naveen Yadav",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              48,
+              63
+            ],
+            "surface": "Ram Avtar Yadav",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "Naveen Yadav",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "Ram Avtar Yadav"
+      },
+      {
+        "id": "ent_02",
+        "type": "PHONE",
+        "char_span": [
+          95,
+          106
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              95,
+              106
+            ],
+            "surface": "98100 55667",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9810055667",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "ACCOUNT",
+        "char_span": [
+          277,
+          287
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              277,
+              287
+            ],
+            "surface": "7712034598",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7712034598",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "DROPPED_OVERLAP:PHONE",
+          "BANK_CONTEXT"
+        ],
+        "bank": "Kotak"
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_03",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "jama",
+        "confidence": 0.5,
+        "evidence_char_span": [
+          244,
+          349
+        ],
+        "amount": 220000.0
+      },
+      {
+        "source": "ent_01",
+        "target": "ent_02",
+        "relation": "OWNS_DEVICE",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          0,
+          155
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 220000.0,
+        "start": 291,
+        "end": 305,
+        "surface": "Rs. 2,20,000/-"
+      },
+      {
+        "value": 220000.00000000003,
+        "start": 327,
+        "end": 335,
+        "surface": "2.2 lakh"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "4d74ec6c27baa30010be83ac544c2c8a698d9b5edf0ca1c04ddb9b6f664dac39",
+    "char_count": 421,
+    "entities_by_type": {
+      "PERSON": 1,
+      "PHONE": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "TRANSFERRED_FUNDS": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

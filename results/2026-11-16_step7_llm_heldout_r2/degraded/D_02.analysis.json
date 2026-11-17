@@ -1,0 +1,109 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "D_02",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "ACCOUNT",
+        "char_span": [
+          151,
+          167
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              151,
+              167
+            ],
+            "surface": "1234000100567890",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "1234000100567890",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "PNB"
+      },
+      {
+        "id": "ent_02",
+        "type": "ACCOUNT",
+        "char_span": [
+          270,
+          284
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              270,
+              284
+            ],
+            "surface": "50100456789012",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "50100456789012",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "HDFC"
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 200000.0,
+        "start": 120,
+        "end": 129,
+        "surface": "₹2,00,000"
+      },
+      {
+        "value": 150000.0,
+        "start": 252,
+        "end": 259,
+        "surface": "1.5 लाख"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 1,
+      "father_no_owner": 1
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "ed579b5a57025f3cd60e819cf957f2db863ac94888a5cebf95d731409ee6249f",
+    "char_count": 435,
+    "entities_by_type": {
+      "ACCOUNT": 2
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

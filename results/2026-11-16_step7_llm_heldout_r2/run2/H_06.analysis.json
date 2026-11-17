@@ -1,0 +1,268 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_06",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          31,
+          43
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              31,
+              43
+            ],
+            "surface": "Naveen Yadav",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              48,
+              63
+            ],
+            "surface": "Ram Avtar Yadav",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              156,
+              162
+            ],
+            "surface": "Naveen",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Naveen Yadav",
+        "role": "SUSPECT",
+        "ai_confidence": 0.996117,
+        "confidence_breakdown": {
+          "model": 0.996117,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_FATHER"
+        ],
+        "father_name": "Ram Avtar Yadav"
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          68,
+          79
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              68,
+              79
+            ],
+            "surface": "Pawan Kumar",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              197,
+              202
+            ],
+            "surface": "Pawan",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              359,
+              364
+            ],
+            "surface": "Pawan",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Pawan Kumar",
+        "role": "SUSPECT",
+        "ai_confidence": 0.987816,
+        "confidence_breakdown": {
+          "model": 0.987816,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "PHONE",
+        "char_span": [
+          95,
+          106
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              95,
+              106
+            ],
+            "surface": "98100 55667",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9810055667",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          244,
+          261
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              244,
+              261
+            ],
+            "surface": "Pidit Geeta Verma",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Pidit Geeta Verma",
+        "role": "SUSPECT",
+        "ai_confidence": 0.99757,
+        "confidence_breakdown": {
+          "model": 0.99757,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          277,
+          287
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              277,
+              287
+            ],
+            "surface": "7712034598",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7712034598",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "DROPPED_OVERLAP:PHONE",
+          "BANK_CONTEXT"
+        ],
+        "bank": "Kotak"
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          407,
+          420
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              407,
+              420
+            ],
+            "surface": "Kuldeep Singh",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Kuldeep Singh",
+        "role": "OFFICER",
+        "ai_confidence": 0.998512,
+        "confidence_breakdown": {
+          "model": 0.998512,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_04",
+        "target": "ent_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "trigger": "jama",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          244,
+          349
+        ],
+        "amount": 220000.0
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 220000.0,
+        "start": 291,
+        "end": 305,
+        "surface": "Rs. 2,20,000/-"
+      },
+      {
+        "value": 220000.00000000003,
+        "start": 327,
+        "end": 335,
+        "surface": "2.2 lakh"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 2,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "4d74ec6c27baa30010be83ac544c2c8a698d9b5edf0ca1c04ddb9b6f664dac39",
+    "char_count": 421,
+    "entities_by_type": {
+      "PERSON": 4,
+      "PHONE": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": []
+  }
+}

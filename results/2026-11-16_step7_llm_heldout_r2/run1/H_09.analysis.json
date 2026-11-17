@@ -1,0 +1,259 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_09",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          63,
+          73
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              63,
+              73
+            ],
+            "surface": "Neha Arora",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Neha Arora",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999481,
+        "confidence_breakdown": {
+          "model": 0.999481,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          86,
+          98
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              86,
+              98
+            ],
+            "surface": "Rahul Kapoor",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Rahul Kapoor",
+        "role": "SUSPECT",
+        "ai_confidence": 0.999671,
+        "confidence_breakdown": {
+          "model": 0.999671,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          103,
+          108
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              103,
+              108
+            ],
+            "surface": "Rocky",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              113,
+              125
+            ],
+            "surface": "Vijay Kapoor",
+            "kind": "FATHER"
+          }
+        ],
+        "canonical_name": "Rocky",
+        "role": "SUSPECT",
+        "ai_confidence": 0.94134,
+        "confidence_breakdown": {
+          "model": 0.94134,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_FATHER"
+        ],
+        "father_name": "Vijay Kapoor"
+      },
+      {
+        "id": "ent_04",
+        "type": "PERSON",
+        "char_span": [
+          277,
+          287
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              277,
+              287
+            ],
+            "surface": "Monu Sethi",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              290,
+              294
+            ],
+            "surface": "Mono",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "Monu Sethi",
+        "role": "SUSPECT",
+        "ai_confidence": 0.998849,
+        "confidence_breakdown": {
+          "model": 0.998849,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Mono"
+        ]
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          329,
+          339
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              329,
+              339
+            ],
+            "surface": "0045512399",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "0045512399",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "Axis"
+      },
+      {
+        "id": "ent_06",
+        "type": "PERSON",
+        "char_span": [
+          362,
+          367
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              362,
+              367
+            ],
+            "surface": "Rahul",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Rahul",
+        "role": "OFFICER",
+        "ai_confidence": 0.999537,
+        "confidence_breakdown": {
+          "model": 0.999537,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          390,
+          391
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              390,
+              391
+            ],
+            "surface": "D",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "D",
+        "role": "OFFICER",
+        "ai_confidence": 0.559102,
+        "confidence_breakdown": {
+          "model": 0.559102,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": []
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 60000.0,
+        "start": 160,
+        "end": 172,
+        "surface": "Rs.60,000 /-"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "706cc07fa66475acbf46a20f98eca852af6f86c99e12c7eaddd625c81a3c2a29",
+    "char_count": 402,
+    "entities_by_type": {
+      "PERSON": 6,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 1,
+    "warnings": []
+  }
+}

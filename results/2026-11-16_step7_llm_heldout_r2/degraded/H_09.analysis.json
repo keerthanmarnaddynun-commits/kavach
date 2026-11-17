@@ -1,0 +1,129 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_09",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          277,
+          287
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              277,
+              287
+            ],
+            "surface": "Monu Sethi",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              290,
+              294
+            ],
+            "surface": "Mono",
+            "kind": "ALIAS"
+          }
+        ],
+        "canonical_name": "Monu Sethi",
+        "role": "SUSPECT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "aliases": [
+          "Mono"
+        ]
+      },
+      {
+        "id": "ent_02",
+        "type": "ACCOUNT",
+        "char_span": [
+          329,
+          339
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              329,
+              339
+            ],
+            "surface": "0045512399",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "0045512399",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "Axis"
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_02",
+        "relation": "CONTROLS_ACCOUNT",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          304,
+          381
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 60000.0,
+        "start": 160,
+        "end": 172,
+        "surface": "Rs.60,000 /-"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 1
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "706cc07fa66475acbf46a20f98eca852af6f86c99e12c7eaddd625c81a3c2a29",
+    "char_count": 402,
+    "entities_by_type": {
+      "PERSON": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1
+    },
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 1,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

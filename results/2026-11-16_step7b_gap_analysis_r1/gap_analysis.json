@@ -1,0 +1,2166 @@
+{
+  "meta": {
+    "evaluation_set": "llm_heldout",
+    "source_results": "results/2026-11-16_step7_llm_heldout_r2",
+    "diagnostic_type": "structural_gap_analysis"
+  },
+  "mention_classes": {
+    "fp_counts": {
+      "REPEAT_SHORT_FORM": 48,
+      "INSIDE_GOLD_RIGHT": 8,
+      "INSIDE_GOLD_LEFT": 2,
+      "INSIDE_GOLD_MIDDLE": 0,
+      "EXTENDS_GOLD": 2,
+      "OTHER": 12
+    },
+    "fn_counts": {
+      "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)": 8,
+      "PAIRED_WITH_FP (INSIDE_GOLD_LEFT)": 2,
+      "PAIRED_WITH_FP (INSIDE_GOLD_MIDDLE)": 0,
+      "PAIRED_WITH_FP (EXTENDS_GOLD)": 2,
+      "UNPAIRED": 1
+    },
+    "classified_fps": [
+      {
+        "file": "D_01",
+        "surface": "सुमन",
+        "char_span": [
+          210,
+          214
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_01",
+        "surface": "राकेश",
+        "char_span": [
+          273,
+          278
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_02",
+        "surface": "दीपक",
+        "char_span": [
+          186,
+          190
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_02",
+        "surface": "विजय शुक्ला",
+        "char_span": [
+          411,
+          422
+        ],
+        "class": "INSIDE_GOLD_RIGHT",
+        "paired_gold_span": [
+          402,
+          422
+        ]
+      },
+      {
+        "file": "D_03",
+        "surface": "रामप्रताप",
+        "char_span": [
+          341,
+          350
+        ],
+        "class": "INSIDE_GOLD_RIGHT",
+        "paired_gold_span": [
+          334,
+          350
+        ]
+      },
+      {
+        "file": "D_04",
+        "surface": "चिंटू",
+        "char_span": [
+          51,
+          56
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_04",
+        "surface": "सोनू",
+        "char_span": [
+          149,
+          153
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_04",
+        "surface": "संजय मिश्रा",
+        "char_span": [
+          404,
+          415
+        ],
+        "class": "INSIDE_GOLD_RIGHT",
+        "paired_gold_span": [
+          393,
+          415
+        ]
+      },
+      {
+        "file": "D_05",
+        "surface": "अशोक",
+        "char_span": [
+          214,
+          218
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_05",
+        "surface": "विनोद",
+        "char_span": [
+          313,
+          318
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_05",
+        "surface": "विनोद",
+        "char_span": [
+          419,
+          424
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_05",
+        "surface": "कमलेश",
+        "char_span": [
+          453,
+          458
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_05",
+        "surface": "कमलेश",
+        "char_span": [
+          520,
+          525
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_05",
+        "surface": "रेखा",
+        "char_span": [
+          404,
+          408
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "D_05",
+        "surface": "राजीव सक्सेना",
+        "char_span": [
+          616,
+          629
+        ],
+        "class": "INSIDE_GOLD_RIGHT",
+        "paired_gold_span": [
+          609,
+          629
+        ]
+      },
+      {
+        "file": "E_01",
+        "surface": "Ramesh Gowda",
+        "char_span": [
+          430,
+          442
+        ],
+        "class": "INSIDE_GOLD_RIGHT",
+        "paired_gold_span": [
+          420,
+          442
+        ]
+      },
+      {
+        "file": "E_02",
+        "surface": "Prakash Hegde",
+        "char_span": [
+          731,
+          744
+        ],
+        "class": "INSIDE_GOLD_RIGHT",
+        "paired_gold_span": [
+          728,
+          744
+        ]
+      },
+      {
+        "file": "E_03",
+        "surface": "Mehta",
+        "char_span": [
+          230,
+          235
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "E_04",
+        "surface": "Dilip",
+        "char_span": [
+          350,
+          355
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "E_05",
+        "surface": "Bansal",
+        "char_span": [
+          452,
+          458
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "E_05",
+        "surface": "Bansal",
+        "char_span": [
+          554,
+          560
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "E_05",
+        "surface": "Nair",
+        "char_span": [
+          548,
+          552
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "E_05",
+        "surface": "Sheikh",
+        "char_span": [
+          603,
+          609
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "E_05",
+        "surface": "Nitin Desai",
+        "char_span": [
+          803,
+          814
+        ],
+        "class": "INSIDE_GOLD_RIGHT",
+        "paired_gold_span": [
+          797,
+          814
+        ]
+      },
+      {
+        "file": "H_01",
+        "surface": "Mohit",
+        "char_span": [
+          245,
+          250
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_02",
+        "surface": "Vikas",
+        "char_span": [
+          95,
+          100
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_02",
+        "surface": "Bikas",
+        "char_span": [
+          126,
+          131
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_02",
+        "surface": "Bikas",
+        "char_span": [
+          311,
+          316
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_02",
+        "surface": "ASI",
+        "char_span": [
+          333,
+          336
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_03",
+        "surface": "Sandeep",
+        "char_span": [
+          236,
+          243
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_03",
+        "surface": "Sandeep",
+        "char_span": [
+          629,
+          636
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_03",
+        "surface": "Sandip",
+        "char_span": [
+          289,
+          295
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_04",
+        "surface": "Chomu",
+        "char_span": [
+          388,
+          393
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_05",
+        "surface": "Lamba",
+        "char_span": [
+          97,
+          102
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_05",
+        "surface": "Irfan",
+        "char_span": [
+          408,
+          413
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_06",
+        "surface": "Naveen",
+        "char_span": [
+          156,
+          162
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_06",
+        "surface": "Pawan",
+        "char_span": [
+          197,
+          202
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_06",
+        "surface": "Pawan",
+        "char_span": [
+          359,
+          364
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_06",
+        "surface": "Pidit Geeta Verma",
+        "char_span": [
+          244,
+          261
+        ],
+        "class": "EXTENDS_GOLD",
+        "paired_gold_span": [
+          250,
+          261
+        ]
+      },
+      {
+        "file": "H_07",
+        "surface": "Hadapsar",
+        "char_span": [
+          34,
+          42
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_07",
+        "surface": "Ganesh",
+        "char_span": [
+          266,
+          272
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_07",
+        "surface": "Baban Shin",
+        "char_span": [
+          360,
+          370
+        ],
+        "class": "INSIDE_GOLD_LEFT",
+        "paired_gold_span": [
+          360,
+          372
+        ]
+      },
+      {
+        "file": "H_08",
+        "surface": "Barwala",
+        "char_span": [
+          54,
+          61
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_08",
+        "surface": "Kamlesh Devi",
+        "char_span": [
+          363,
+          375
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_09",
+        "surface": "Rocky",
+        "char_span": [
+          103,
+          108
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_09",
+        "surface": "Rahul",
+        "char_span": [
+          362,
+          367
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_09",
+        "surface": "D",
+        "char_span": [
+          390,
+          391
+        ],
+        "class": "INSIDE_GOLD_LEFT",
+        "paired_gold_span": [
+          390,
+          400
+        ]
+      },
+      {
+        "file": "H_10",
+        "surface": "Dabri",
+        "char_span": [
+          125,
+          130
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_10",
+        "surface": "Imran",
+        "char_span": [
+          347,
+          352
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_10",
+        "surface": "Tarun",
+        "char_span": [
+          382,
+          387
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_11",
+        "surface": "Din",
+        "char_span": [
+          24,
+          27
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_11",
+        "surface": "Pidit Archana Joshi",
+        "char_span": [
+          172,
+          191
+        ],
+        "class": "EXTENDS_GOLD",
+        "paired_gold_span": [
+          178,
+          191
+        ]
+      },
+      {
+        "file": "H_12",
+        "surface": "Harpreet",
+        "char_span": [
+          394,
+          402
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_12",
+        "surface": "Manjeet",
+        "char_span": [
+          568,
+          575
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_12",
+        "surface": "Vinod",
+        "char_span": [
+          317,
+          322
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_12",
+        "surface": "Jaspal",
+        "char_span": [
+          595,
+          601
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_13",
+        "surface": "Sonu",
+        "char_span": [
+          331,
+          335
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_13",
+        "surface": "Rakesh",
+        "char_span": [
+          407,
+          413
+        ],
+        "class": "INSIDE_GOLD_RIGHT",
+        "paired_gold_span": [
+          397,
+          413
+        ]
+      },
+      {
+        "file": "H_14",
+        "surface": "ASI",
+        "char_span": [
+          42,
+          45
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Mehrauli",
+        "char_span": [
+          104,
+          112
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Rajesh",
+        "char_span": [
+          311,
+          317
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Rajesh",
+        "char_span": [
+          398,
+          404
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Rajesh",
+        "char_span": [
+          454,
+          460
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Rajesh",
+        "char_span": [
+          511,
+          517
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Aadhaar",
+        "char_span": [
+          243,
+          250
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Kiran",
+        "char_span": [
+          272,
+          277
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Kiran",
+        "char_span": [
+          483,
+          488
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Salman",
+        "char_span": [
+          340,
+          346
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_15",
+        "surface": "Prakash",
+        "char_span": [
+          428,
+          435
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_15",
+        "surface": "Arjun",
+        "char_span": [
+          304,
+          309
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_15",
+        "surface": "Arjun",
+        "char_span": [
+          404,
+          409
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_15",
+        "surface": "Arjun",
+        "char_span": [
+          489,
+          494
+        ],
+        "class": "REPEAT_SHORT_FORM",
+        "paired_gold_span": null
+      }
+    ],
+    "classified_fns": [
+      {
+        "file": "D_02",
+        "surface": "निरीक्षक विजय शुक्ला",
+        "char_span": [
+          402,
+          422
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+        "paired_fp_span": [
+          411,
+          422
+        ]
+      },
+      {
+        "file": "D_03",
+        "surface": "हवलदार रामप्रताप",
+        "char_span": [
+          334,
+          350
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+        "paired_fp_span": [
+          341,
+          350
+        ]
+      },
+      {
+        "file": "D_04",
+        "surface": "उपनिरीक्षक संजय मिश्रा",
+        "char_span": [
+          393,
+          415
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+        "paired_fp_span": [
+          404,
+          415
+        ]
+      },
+      {
+        "file": "D_05",
+        "surface": "डीएसपी राजीव सक्सेना",
+        "char_span": [
+          609,
+          629
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+        "paired_fp_span": [
+          616,
+          629
+        ]
+      },
+      {
+        "file": "E_01",
+        "surface": "Inspector Ramesh Gowda",
+        "char_span": [
+          420,
+          442
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+        "paired_fp_span": [
+          430,
+          442
+        ]
+      },
+      {
+        "file": "E_02",
+        "surface": "SI Prakash Hegde",
+        "char_span": [
+          728,
+          744
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+        "paired_fp_span": [
+          731,
+          744
+        ]
+      },
+      {
+        "file": "E_05",
+        "surface": "Dy.SP Nitin Desai",
+        "char_span": [
+          797,
+          814
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+        "paired_fp_span": [
+          803,
+          814
+        ]
+      },
+      {
+        "file": "H_06",
+        "surface": "Geeta Verma",
+        "char_span": [
+          250,
+          261
+        ],
+        "class": "PAIRED_WITH_FP (EXTENDS_GOLD)",
+        "paired_fp_span": [
+          244,
+          261
+        ]
+      },
+      {
+        "file": "H_07",
+        "surface": "Baban Shinde",
+        "char_span": [
+          360,
+          372
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_LEFT)",
+        "paired_fp_span": [
+          360,
+          370
+        ]
+      },
+      {
+        "file": "H_09",
+        "surface": "Dharam Pal",
+        "char_span": [
+          390,
+          400
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_LEFT)",
+        "paired_fp_span": [
+          390,
+          391
+        ]
+      },
+      {
+        "file": "H_11",
+        "surface": "Archana Joshi",
+        "char_span": [
+          178,
+          191
+        ],
+        "class": "PAIRED_WITH_FP (EXTENDS_GOLD)",
+        "paired_fp_span": [
+          172,
+          191
+        ]
+      },
+      {
+        "file": "H_12",
+        "surface": "Jaspal Brar",
+        "char_span": [
+          180,
+          191
+        ],
+        "class": "UNPAIRED",
+        "paired_fp_span": null
+      },
+      {
+        "file": "H_13",
+        "surface": "Constable Rakesh",
+        "char_span": [
+          397,
+          413
+        ],
+        "class": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+        "paired_fp_span": [
+          407,
+          413
+        ]
+      }
+    ],
+    "other_fps": [
+      {
+        "file": "D_04",
+        "surface": "चिंटू",
+        "char_span": [
+          51,
+          56
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_02",
+        "surface": "ASI",
+        "char_span": [
+          333,
+          336
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_04",
+        "surface": "Chomu",
+        "char_span": [
+          388,
+          393
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_05",
+        "surface": "Lamba",
+        "char_span": [
+          97,
+          102
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_07",
+        "surface": "Hadapsar",
+        "char_span": [
+          34,
+          42
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_08",
+        "surface": "Barwala",
+        "char_span": [
+          54,
+          61
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_09",
+        "surface": "Rocky",
+        "char_span": [
+          103,
+          108
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_10",
+        "surface": "Dabri",
+        "char_span": [
+          125,
+          130
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_11",
+        "surface": "Din",
+        "char_span": [
+          24,
+          27
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "ASI",
+        "char_span": [
+          42,
+          45
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Mehrauli",
+        "char_span": [
+          104,
+          112
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      },
+      {
+        "file": "H_14",
+        "surface": "Aadhaar",
+        "char_span": [
+          243,
+          250
+        ],
+        "class": "OTHER",
+        "paired_gold_span": null
+      }
+    ]
+  },
+  "relation_classes": {
+    "fp_counts": {
+      "NAME_FORM_MISMATCH": 11,
+      "SOURCE_DIFFERS": 6,
+      "AMOUNT_MISSING": 1,
+      "OTHER": 5
+    },
+    "fn_counts": {
+      "PAIRED_WITH_FP": 18,
+      "UNPAIRED": 49
+    },
+    "classified_fps": [
+      {
+        "file": "D_02",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "दीपक",
+        "target_surface": "1234000100567890",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "D_02",
+          "error_type": "FN",
+          "relation": "CONTROLS_ACCOUNT",
+          "source_id": "E2",
+          "target_id": "E5",
+          "source_surface": "दीपक सिंह",
+          "target_surface": "1234000100567890",
+          "amount": null
+        }
+      },
+      {
+        "file": "D_02",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "दीपक",
+        "target_surface": "1234000100567890",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      },
+      {
+        "file": "D_04",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "सोनू बघेल",
+        "target_surface": "7000123456",
+        "amount": null,
+        "class": "SOURCE_DIFFERS",
+        "matched_fn": {
+          "file": "D_04",
+          "error_type": "FN",
+          "relation": "OWNS_DEVICE",
+          "source_id": "E1",
+          "target_id": "E5",
+          "source_surface": "अमित चौहान",
+          "target_surface": "7000123456",
+          "amount": null
+        }
+      },
+      {
+        "file": "E_02",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "9900112233",
+        "target_surface": "9448099887",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      },
+      {
+        "file": "E_03",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Mehta",
+        "target_surface": "50100987654321",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "E_03",
+          "error_type": "FN",
+          "relation": "CONTROLS_ACCOUNT",
+          "source_id": "E2",
+          "target_id": "E5",
+          "source_surface": "Sanjay Mehta",
+          "target_surface": "50100987654321",
+          "amount": null
+        }
+      },
+      {
+        "file": "E_03",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Pooja Deshmukh",
+        "target_surface": "038901567890",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "E_03",
+          "error_type": "FN",
+          "relation": "CONTROLS_ACCOUNT",
+          "source_id": "E9",
+          "target_id": "E8",
+          "source_surface": "Pooja Deshmukh",
+          "target_surface": "038901567890",
+          "amount": null
+        }
+      },
+      {
+        "file": "E_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Bansal",
+        "target_surface": "6412345678",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "E_05",
+          "error_type": "FN",
+          "relation": "CONTROLS_ACCOUNT",
+          "source_id": "E2",
+          "target_id": "E8",
+          "source_surface": "Tarlok Bansal",
+          "target_surface": "6412345678",
+          "amount": null
+        }
+      },
+      {
+        "file": "E_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Nair",
+        "target_surface": "3987001234567890",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "E_05",
+          "error_type": "FN",
+          "relation": "CONTROLS_ACCOUNT",
+          "source_id": "E4",
+          "target_id": "E10",
+          "source_surface": "Deepa Nair",
+          "target_surface": "3987001234567890",
+          "amount": null
+        }
+      },
+      {
+        "file": "E_05",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Bansal",
+        "target_surface": "9821144556",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "E_05",
+          "error_type": "FN",
+          "relation": "OWNS_DEVICE",
+          "source_id": "E2",
+          "target_id": "E11",
+          "source_surface": "Tarlok Bansal",
+          "target_surface": "9821144556",
+          "amount": null
+        }
+      },
+      {
+        "file": "E_05",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Sheikh",
+        "target_surface": "8369011223",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "E_05",
+          "error_type": "FN",
+          "relation": "OWNS_DEVICE",
+          "source_id": "E5",
+          "target_id": "E12",
+          "source_surface": "Farhan Sheikh",
+          "target_surface": "8369011223",
+          "amount": null
+        }
+      },
+      {
+        "file": "H_01",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Mohit Sharma",
+        "target_surface": "4521003298761",
+        "amount": 85000.0,
+        "class": "SOURCE_DIFFERS",
+        "matched_fn": {
+          "file": "H_01",
+          "error_type": "FN",
+          "relation": "TRANSFERRED_FUNDS",
+          "source_id": "E1",
+          "target_id": "E3",
+          "source_surface": "Sunita Devi",
+          "target_surface": "4521003298761",
+          "amount": 85000.0
+        }
+      },
+      {
+        "file": "H_02",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Bikas",
+        "target_surface": "50100234567890",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "H_02",
+          "error_type": "FN",
+          "relation": "CONTROLS_ACCOUNT",
+          "source_id": "E2",
+          "target_id": "E9",
+          "source_surface": "Bikas Tiwary",
+          "target_surface": "50100234567890",
+          "amount": null
+        }
+      },
+      {
+        "file": "H_04",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Bhanwar Singh",
+        "target_surface": "123405009876",
+        "amount": null,
+        "class": "AMOUNT_MISSING",
+        "matched_fn": {
+          "file": "H_04",
+          "error_type": "FN",
+          "relation": "TRANSFERRED_FUNDS",
+          "source_id": "E7",
+          "target_id": "E10",
+          "source_surface": "Bhanwar Singh",
+          "target_surface": "123405009876",
+          "amount": 150000.0
+        }
+      },
+      {
+        "file": "H_05",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Lamba",
+        "target_surface": "7007123456",
+        "amount": null,
+        "class": "SOURCE_DIFFERS",
+        "matched_fn": {
+          "file": "H_05",
+          "error_type": "FN",
+          "relation": "OWNS_DEVICE",
+          "source_id": "E2",
+          "target_id": "E8",
+          "source_surface": "Irfan Qureshi",
+          "target_surface": "7007123456",
+          "amount": null
+        }
+      },
+      {
+        "file": "H_05",
+        "relation": "ASSOCIATED_IMEI",
+        "source_surface": "9415098765",
+        "target_surface": "917020045512345",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      },
+      {
+        "file": "H_06",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Pidit Geeta Verma",
+        "target_surface": "7712034598",
+        "amount": 220000.0,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "H_06",
+          "error_type": "FN",
+          "relation": "TRANSFERRED_FUNDS",
+          "source_id": "E5",
+          "target_id": "E6",
+          "source_surface": "Geeta Verma",
+          "target_surface": "7712034598",
+          "amount": 220000.0
+        }
+      },
+      {
+        "file": "H_10",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Dabri",
+        "target_surface": "9654321098",
+        "amount": null,
+        "class": "SOURCE_DIFFERS",
+        "matched_fn": {
+          "file": "H_10",
+          "error_type": "FN",
+          "relation": "OWNS_DEVICE",
+          "source_id": "E1",
+          "target_id": "E5",
+          "source_surface": "Tarun Bhatia",
+          "target_surface": "9654321098",
+          "amount": null
+        }
+      },
+      {
+        "file": "H_11",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Din",
+        "target_surface": "9650871234",
+        "amount": null,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "H_11",
+          "error_type": "FN",
+          "relation": "OWNS_DEVICE",
+          "source_id": "E1",
+          "target_id": "E4",
+          "source_surface": "Dinesh Rathore",
+          "target_surface": "9650871234",
+          "amount": null
+        }
+      },
+      {
+        "file": "H_12",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Vinod",
+        "target_surface": "33456789012",
+        "amount": 12000000.0,
+        "class": "NAME_FORM_MISMATCH",
+        "matched_fn": {
+          "file": "H_12",
+          "error_type": "FN",
+          "relation": "TRANSFERRED_FUNDS",
+          "source_id": "E1",
+          "target_id": "E8",
+          "source_surface": "Vinod Malhotra",
+          "target_surface": "33456789012",
+          "amount": 12000000.0
+        }
+      },
+      {
+        "file": "H_12",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Manjeet Kaur",
+        "target_surface": "4120001002345678",
+        "amount": 10000000.0,
+        "class": "SOURCE_DIFFERS",
+        "matched_fn": {
+          "file": "H_12",
+          "error_type": "FN",
+          "relation": "TRANSFERRED_FUNDS",
+          "source_id": "E8",
+          "target_id": "E13",
+          "source_surface": "33456789012",
+          "target_surface": "4120001002345678",
+          "amount": 10000000.0
+        }
+      },
+      {
+        "file": "H_13",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Sonu Pathak",
+        "target_surface": "8527341290",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      },
+      {
+        "file": "H_13",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Sonu Pathak",
+        "target_surface": "8845120937",
+        "amount": 250000.0,
+        "class": "SOURCE_DIFFERS",
+        "matched_fn": {
+          "file": "H_13",
+          "error_type": "FN",
+          "relation": "TRANSFERRED_FUNDS",
+          "source_id": "E5",
+          "target_id": "E7",
+          "source_surface": "Lalita Sharma",
+          "target_surface": "8845120937",
+          "amount": 250000.0
+        }
+      },
+      {
+        "file": "H_15",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Arjun Menon",
+        "target_surface": "9847012345",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      }
+    ],
+    "classified_fns": [
+      {
+        "file": "D_01",
+        "relation": "ASSOCIATED_IMEI",
+        "source_surface": "9936012345",
+        "target_surface": "358912076543210",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_01",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "राकेश पांडेय",
+        "target_surface": "31245098761",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_01",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "सुमन वर्मा",
+        "target_surface": "31245098761",
+        "amount": 48000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_02",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "दीपक सिंह",
+        "target_surface": "1234000100567890",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "D_02",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "महेश गुप्ता",
+        "target_surface": "1234000100567890",
+        "amount": 200000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_02",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "1234000100567890",
+        "target_surface": "50100456789012",
+        "amount": 150000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_04",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "अमित चौहान",
+        "target_surface": "7000123456",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "D_04",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "सोनू बघेल",
+        "target_surface": "8319876543",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_04",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "+91 70001 23456",
+        "target_surface": "8319876543",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_05",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "विनोद पाटीदार",
+        "target_surface": "9827055443",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_05",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "कमलेश जैन",
+        "target_surface": "6260188776",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_05",
+        "relation": "ASSOCIATED_IMEI",
+        "source_surface": "+91-62601-88776",
+        "target_surface": "869912034567891",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_05",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "98270 55443",
+        "target_surface": "6260188776",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "रेखा पाटीदार",
+        "target_surface": "915010087654321",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "D_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "012301987654",
+        "target_surface": "915010087654321",
+        "amount": 18000000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "E_03",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Sanjay Mehta",
+        "target_surface": "50100987654321",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "E_03",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Pooja Deshmukh",
+        "target_surface": "038901567890",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "E_03",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Prakash Joshi",
+        "target_surface": "50100987654321",
+        "amount": 500000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "E_03",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "50100987654321",
+        "target_surface": "038901567890",
+        "amount": 450000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "E_04",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Bablu Ansari",
+        "target_surface": "6300155220",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "E_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Tarlok Bansal",
+        "target_surface": "6412345678",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "E_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Deepa Nair",
+        "target_surface": "3987001234567890",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "E_05",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Tarlok Bansal",
+        "target_surface": "9821144556",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "E_05",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Farhan Sheikh",
+        "target_surface": "8369011223",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "E_05",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "+91 98211 44556",
+        "target_surface": "8369011223",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "E_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Arvind Kulkarni",
+        "target_surface": "6412345678",
+        "amount": 25000000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "E_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "6412345678",
+        "target_surface": "3987001234567890",
+        "amount": 17500000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_01",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Mohit Sharma",
+        "target_surface": "4521003298761",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_01",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Sunita Devi",
+        "target_surface": "4521003298761",
+        "amount": 85000.0,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_02",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Vikas Tiwari",
+        "target_surface": "9876543210",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_02",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Bikas Tiwary",
+        "target_surface": "7012345678",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_02",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Ramesh Gupta",
+        "target_surface": "50100234567890",
+        "amount": 75000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_02",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Bikas Tiwary",
+        "target_surface": "50100234567890",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_04",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Pappu Lal Meena",
+        "target_surface": "123405009876",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_04",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Bhanwar Singh",
+        "target_surface": "123405009876",
+        "amount": 150000.0,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_05",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Irfan Qureshi",
+        "target_surface": "7007123456",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_05",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Irfan Qureshi",
+        "target_surface": "917020045512345",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Anwar Ali",
+        "target_surface": "917020045512345",
+        "amount": 120000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_05",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Anwar Ali",
+        "target_surface": "917020045512345",
+        "amount": 30000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_06",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Naveen Yadav",
+        "target_surface": "9810055667",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_06",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Pawan Kumar",
+        "target_surface": "9810055667",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_06",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Pawan Kumar",
+        "target_surface": "7712034598",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_06",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Geeta Verma",
+        "target_surface": "7712034598",
+        "amount": 220000.0,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_09",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Rahul Kapoor",
+        "target_surface": "9812345678",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_09",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Monu Sethi",
+        "target_surface": "7011223344",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_09",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "+91 98123\n45678",
+        "target_surface": "7011223344",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_09",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Rahul Kapoor",
+        "target_surface": "917020045512399",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_09",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Neha Arora",
+        "target_surface": "917020045512399",
+        "amount": 60000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_10",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Tarun Bhatia",
+        "target_surface": "9654321098",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_10",
+        "relation": "ASSOCIATED_IMEI",
+        "source_surface": "+91-96543-21098",
+        "target_surface": "356938035643811",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_10",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Imran Khan",
+        "target_surface": "8860099887",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_10",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "+91-96543-21098",
+        "target_surface": "8860099887",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_10",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Tarun Bhatia",
+        "target_surface": "602301098765",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_11",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Dinesh Rathore",
+        "target_surface": "9650871234",
+        "amount": null,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_12",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Jaspal Brar",
+        "target_surface": "7814009988",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_12",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Harpreet Singh Gill",
+        "target_surface": "33456789012",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_12",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Vinod Malhotra",
+        "target_surface": "33456789012",
+        "amount": 12000000.0,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_12",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "33456789012",
+        "target_surface": "4120001002345678",
+        "amount": 10000000.0,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_13",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Sonu Pathak",
+        "target_surface": "8845120937",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_13",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Lalita Sharma",
+        "target_surface": "8845120937",
+        "amount": 250000.0,
+        "class": "PAIRED_WITH_FP"
+      },
+      {
+        "file": "H_13",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "Lalita Sharma",
+        "target_surface": "8845120937",
+        "amount": 90000.0,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_14",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Kiran Bala",
+        "target_surface": "6201234567",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_14",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Rajesh Chaudhary",
+        "target_surface": "9310155443",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_14",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "+91 62012 34567",
+        "target_surface": "9310155443",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_14",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_surface": "Rajesh Chaudhary",
+        "target_surface": "918010023456789",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_15",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Arjun Menon",
+        "target_surface": "7907654321",
+        "amount": null,
+        "class": "UNPAIRED"
+      },
+      {
+        "file": "H_15",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "7907654321",
+        "target_surface": "9847012345",
+        "amount": null,
+        "class": "UNPAIRED"
+      }
+    ],
+    "other_fps": [
+      {
+        "file": "D_02",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_surface": "दीपक",
+        "target_surface": "1234000100567890",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      },
+      {
+        "file": "E_02",
+        "relation": "COMMUNICATED_WITH",
+        "source_surface": "9900112233",
+        "target_surface": "9448099887",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      },
+      {
+        "file": "H_05",
+        "relation": "ASSOCIATED_IMEI",
+        "source_surface": "9415098765",
+        "target_surface": "917020045512345",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      },
+      {
+        "file": "H_13",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Sonu Pathak",
+        "target_surface": "8527341290",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      },
+      {
+        "file": "H_15",
+        "relation": "OWNS_DEVICE",
+        "source_surface": "Arjun Menon",
+        "target_surface": "9847012345",
+        "amount": null,
+        "class": "OTHER",
+        "matched_fn": null
+      }
+    ]
+  },
+  "amount_errors": {
+    "status": "ASSERTION_PASSED",
+    "tp": 37,
+    "fp": 8,
+    "fn": 1,
+    "precision": 0.8222222222222222,
+    "recall": 0.9736842105263158,
+    "f1": 0.891566265060241
+  },
+  "ifsc_gold": {
+    "gold_count": 4,
+    "extracted_contract_count": 0,
+    "unextracted_count": 4,
+    "mentions": [
+      {
+        "file": "D_05",
+        "surface": "ICIC0000123",
+        "char_span": [
+          290,
+          301
+        ]
+      },
+      {
+        "file": "E_03",
+        "surface": "HDFC0002345",
+        "char_span": [
+          195,
+          206
+        ]
+      },
+      {
+        "file": "H_04",
+        "surface": "ICIC0001234",
+        "char_span": [
+          326,
+          337
+        ]
+      },
+      {
+        "file": "H_13",
+        "surface": "KKBK0000631",
+        "char_span": [
+          266,
+          277
+        ]
+      }
+    ]
+  },
+  "post_hoc_adjusted": {
+    "person": {
+      "label": "post-hoc; uses knowledge of gold-labelling gaps; NOT a held-out result and never used as a headline",
+      "before": {
+        "tp": 79,
+        "fp": 72,
+        "fn": 13,
+        "precision": 0.5231788079470199,
+        "recall": 0.8586956521739131,
+        "f1": 0.6502057613168725
+      },
+      "adjustments": {
+        "repeat_short_form_fps_removed": 48,
+        "inside_gold_right_pairs_converted_to_tp": 8
+      },
+      "after": {
+        "tp": 87,
+        "fp": 16,
+        "fn": 5,
+        "precision": 0.8446601941747572,
+        "recall": 0.9456521739130435,
+        "f1": 0.8923076923076922
+      }
+    },
+    "headline_micro": {
+      "label": "post-hoc; uses knowledge of gold-labelling gaps; NOT a held-out result and never used as a headline",
+      "before": {
+        "tp": 202,
+        "fp": 78,
+        "fn": 30,
+        "precision": 0.7214285714285714,
+        "recall": 0.8706896551724138,
+        "f1": 0.7890625,
+        "ci_95": [
+          0.7406107728424273,
+          0.8353909465020576
+        ]
+      },
+      "adjustments": {
+        "repeat_short_form_fps_removed": 48,
+        "inside_gold_right_pairs_converted_to_tp": 8
+      },
+      "after": {
+        "tp": 210,
+        "fp": 22,
+        "fn": 22,
+        "precision": 0.9051724137931034,
+        "recall": 0.9051724137931034,
+        "f1": 0.9051724137931035
+      }
+    },
+    "relations_micro": {
+      "label": "post-hoc; uses knowledge of gold-labelling gaps; NOT a held-out result and never used as a headline",
+      "before": {
+        "tp": 21,
+        "fp": 23,
+        "fn": 67,
+        "precision": 0.4772727272727273,
+        "recall": 0.23863636363636365,
+        "f1": 0.31818181818181823,
+        "ci_95": [
+          0.1951219512195122,
+          0.4444444444444444
+        ]
+      },
+      "adjustments": {
+        "name_form_mismatch_pairs_converted_to_tp": 11
+      },
+      "after": {
+        "tp": 32,
+        "fp": 12,
+        "fn": 56,
+        "precision": 0.7272727272727273,
+        "recall": 0.36363636363636365,
+        "f1": 0.4848484848484849
+      }
+    }
+  }
+}

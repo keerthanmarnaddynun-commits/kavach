@@ -1,0 +1,205 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_15",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PHONE",
+        "char_span": [
+          263,
+          273
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              263,
+              273
+            ],
+            "surface": "7907654321",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7907654321",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "IMEI",
+        "char_span": [
+          282,
+          297
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              282,
+              297
+            ],
+            "surface": "862345067891234",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "862345067891234",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_03",
+        "type": "AADHAAR",
+        "char_span": [
+          321,
+          335
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              321,
+              335
+            ],
+            "surface": "7890 1234 5678",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "789012345678",
+        "ai_confidence": 0.6,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.6,
+          "context": null
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ]
+      },
+      {
+        "id": "ent_04",
+        "type": "PHONE",
+        "char_span": [
+          366,
+          376
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              366,
+              376
+            ],
+            "surface": "9847012345",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9847012345",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "ACCOUNT",
+        "char_span": [
+          452,
+          466
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              452,
+              466
+            ],
+            "surface": "50200012345678",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "50200012345678",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "HDFC"
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_02",
+        "relation": "ASSOCIATED_IMEI",
+        "trigger": "IMEI",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          244,
+          303
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 8000.0,
+        "start": 104,
+        "end": 115,
+        "surface": "Rs. 8,000/-"
+      },
+      {
+        "value": 150000.0,
+        "start": 223,
+        "end": 235,
+        "surface": "INR 1,50,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 1
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "43beecdff5ce9961aa16c73f5258c2a18ab182c37e9721f7fb6d745813e8e388",
+    "char_count": 558,
+    "entities_by_type": {
+      "PHONE": 2,
+      "IMEI": 1,
+      "AADHAAR": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 2,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

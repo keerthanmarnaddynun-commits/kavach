@@ -1,0 +1,272 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "D_04",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "char_span": [
+          37,
+          47
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              37,
+              47
+            ],
+            "surface": "अमित चौहान",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "अमित चौहान",
+        "role": "SUSPECT",
+        "ai_confidence": 0.99971,
+        "confidence_breakdown": {
+          "model": 0.99971,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PERSON",
+        "char_span": [
+          51,
+          56
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              51,
+              56
+            ],
+            "surface": "चिंटू",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "चिंटू",
+        "role": "SUSPECT",
+        "ai_confidence": 0.813988,
+        "confidence_breakdown": {
+          "model": 0.813988,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          84,
+          93
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              84,
+              93
+            ],
+            "surface": "सोनू बघेल",
+            "kind": "NAME"
+          },
+          {
+            "char_span": [
+              100,
+              115
+            ],
+            "surface": "मोहन बघेल। अमित",
+            "kind": "FATHER"
+          },
+          {
+            "char_span": [
+              149,
+              153
+            ],
+            "surface": "सोनू",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "सोनू बघेल",
+        "role": "SUSPECT",
+        "ai_confidence": 0.912975,
+        "confidence_breakdown": {
+          "model": 0.912975,
+          "validator": null,
+          "context": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_FATHER"
+        ],
+        "father_name": "मोहन बघेल। अमित"
+      },
+      {
+        "id": "ent_04",
+        "type": "PHONE",
+        "char_span": [
+          130,
+          145
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              130,
+              145
+            ],
+            "surface": "+91 70001 23456",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7000123456",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_05",
+        "type": "PERSON",
+        "char_span": [
+          243,
+          252
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              243,
+              252
+            ],
+            "surface": "रीना सोनी",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "रीना सोनी",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.9997,
+        "confidence_breakdown": {
+          "model": 0.9997,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_06",
+        "type": "UPI",
+        "char_span": [
+          292,
+          317
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              292,
+              317
+            ],
+            "surface": "chintu.chauhan@okhdfcbank",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "chintu.chauhan@okhdfcbank",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_07",
+        "type": "PERSON",
+        "char_span": [
+          404,
+          415
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              404,
+              415
+            ],
+            "surface": "संजय मिश्रा",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "संजय मिश्रा",
+        "role": "OFFICER",
+        "ai_confidence": 0.999612,
+        "confidence_breakdown": {
+          "model": 0.999612,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_03",
+        "target": "ent_04",
+        "relation": "OWNS_DEVICE",
+        "trigger": "STRUCTURE",
+        "confidence": 0.6,
+        "evidence_char_span": [
+          111,
+          178
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 35000.0,
+        "start": 270,
+        "end": 282,
+        "surface": "Rs. 35,000/-"
+      },
+      {
+        "value": 7400.0,
+        "start": 344,
+        "end": 353,
+        "surface": "Rs. 7,400"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 1,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "document_hash": "60d99d27a99bb76a4117d0fc00d44aff543567b25bf53ddc0890a8480ad8b6e9",
+    "char_count": 423,
+    "entities_by_type": {
+      "PERSON": 5,
+      "PHONE": 1,
+      "UPI": 1
+    },
+    "relations_by_label": {
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "cue": 0,
+      "STRUCTURE": 1
+    },
+    "amounts_count": 2,
+    "warnings": []
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "doc": {
+    "schema_version": "1.1",
+    "case_id": "CASE_DEMO_V2",
+    "source_doc_id": "H_02",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PHONE",
+        "char_span": [
+          109,
+          120
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              109,
+              120
+            ],
+            "surface": "98765 43210",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              166,
+              177
+            ],
+            "surface": "98765 43210",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "9876543210",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PHONE",
+        "char_span": [
+          142,
+          157
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              142,
+              157
+            ],
+            "surface": "+91-70123-45678",
+            "kind": "VALUE"
+          },
+          {
+            "char_span": [
+              181,
+              196
+            ],
+            "surface": "+91-70123-45678",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "7012345678",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_03",
+        "type": "PERSON",
+        "char_span": [
+          233,
+          245
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              233,
+              245
+            ],
+            "surface": "Ramesh Gupta",
+            "kind": "NAME"
+          }
+        ],
+        "canonical_name": "Ramesh Gupta",
+        "role": "COMPLAINANT",
+        "ai_confidence": 0.5,
+        "confidence_breakdown": {
+          "model": 0.5,
+          "validator": null,
+          "context": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_04",
+        "type": "ACCOUNT",
+        "char_span": [
+          285,
+          299
+        ],
+        "mentions": [
+          {
+            "char_span": [
+              285,
+              299
+            ],
+            "surface": "50100234567890",
+            "kind": "VALUE"
+          }
+        ],
+        "value": "50100234567890",
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "model": null,
+          "validator": 0.99,
+          "context": 1.0
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "bank": "HDFC"
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_02",
+        "relation": "COMMUNICATED_WITH",
+        "trigger": "CDR",
+        "confidence": 0.9,
+        "evidence_char_span": [
+          159,
+          220
+        ]
+      }
+    ]
+  },
+  "aux": {
+    "amounts": [
+      {
+        "value": 75000.0,
+        "start": 256,
+        "end": 263,
+        "surface": "₹75,000"
+      }
+    ],
+    "ifsc": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "short_name_merges": 0,
+    "short_name_ambiguous": []
+  },
+  "info": {
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "document_hash": "2c268bce3b33030dee2773fd1c24bdc095e1b251f79c00f55a7eb50f72c31a8a",
+    "char_count": 360,
+    "entities_by_type": {
+      "PHONE": 2,
+      "PERSON": 1,
+      "ACCOUNT": 1
+    },
+    "relations_by_label": {
+      "COMMUNICATED_WITH": 1
+    },
+    "relations_by_origin": {
+      "cue": 1,
+      "STRUCTURE": 0
+    },
+    "amounts_count": 1,
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}
