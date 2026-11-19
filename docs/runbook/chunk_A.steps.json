@@ -238,8 +238,7 @@
         "tests/test_api_evidence.py"
       ],
       "allow_edit": [
-        "kavach_api/*",
-        "case_graph/builder.py"
+        "kavach_api/*"
       ],
       "done_when": [
         {

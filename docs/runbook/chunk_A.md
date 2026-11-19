@@ -220,9 +220,13 @@ job fields: `job_id, kind ("extract"|"analyze"), case_id, status ("queued"|"runn
 traceback goes to the log); `queue_length()`; clean `shutdown()` used by tests.
 
 `extract_service.py`:
-- `extract_document(store, case_id, doc_id, extractor)` reads the stored text, calls `extractor(text)`, validates the output with `contracts.v1_1.validate` (use the function the inventory
-  names), saves the analysis, sets the document status `extracted`; on the extractor's typed errors (empty, too long, no entities) sets status `failed` with the matching code
-  (`empty_text`, `text_too_long`, `no_entities_found`); on a contract-invalid output sets `failed` with `invalid_output`. One failing document never stops the others.
+- `extract_document(store, case_id, doc_id, extractor)` reads the stored text and calls `extractor(text, doc_id, case_id)`. The default extractor is
+  `ai_pipeline.pipeline.analyze_text(text, doc_id=doc_id, case_id=case_id)`, which returns a dict with the keys `aux`, `doc` and `info`.
+  Store that WHOLE dict as `analyses/<doc_id>.analysis.json` (the case graph builder reads exactly this format). Validate `result["doc"]` with
+  `contracts.v1_1.validate.validate_ai_output`. Save the analysis and set the document status `extracted`. The extractor's typed errors are classes of
+  `ai_pipeline.pipeline`: `EmptyText`, `TextTooLong`, `NoEntitiesFound`; map them to the document status `failed` with the codes `empty_text`,
+  `text_too_long`, `no_entities_found` by matching the CLASS NAME of the exception (`type(exc).__name__`), so that the module does not have to import the
+  pipeline (which takes about 10 seconds and loads torch). A contract-invalid output sets `failed` with `invalid_output`. One failing document never stops the others.
 - `default_extractor()` returns a callable that imports `ai_pipeline.pipeline` LAZILY, sets `HF_HUB_OFFLINE=1`, and serialises calls with a lock (the model is not thread-safe).
   `model_loaded()` tells whether the lazy import has happened. Importing `extract_service` must NOT import torch or transformers.
 - `run_extract_job(...)` processes the listed documents in order, updating job progress after each, and finishes with a summary `{extracted, failed}`.
@@ -230,8 +234,9 @@ traceback goes to the log); `queue_length()`; clean `shutdown()` used by tests.
 Tests required: fake extractor (a plain function) for all job tests; job lifecycle; a document that raises each typed error ends `failed` with the right code and the next document still runs;
 runner survives an exception; progress counts; `import kavach_api.extract_service` does not put `torch` in `sys.modules` (test in a subprocess).
 Real-model test (named with `real_model` in its name, runs ONLY when the environment variable `KAVACH_RUN_MODEL_TESTS=1` is set, otherwise skipped): run the real extractor on the texts
-`data/synthetic/out/firs_v5/FIR_01.txt`, `FIR_45.txt` and `FIR_60.txt` (if a file name differs, use the first three files in that folder and log which) and assert that the parsed JSON equals the
-parsed JSON of the matching files in `results/2026-11-11_step6_extraction_r2/run1/` (dictionary equality, not byte equality).
+`data/synthetic/out/firs_v5/FIR_01.txt`, `FIR_45.txt` and `FIR_60.txt` (if a file name differs, use the first three files in that folder and log which) and assert that the parsed JSON (all three keys `aux`, `doc`, `info`)
+equals the parsed JSON of the matching files in `results/2026-11-11_step6_extraction_r2/run1/` (dictionary equality, not byte equality). Call the extractor with
+`doc_id` = the file stem and with the `case_id` value that the saved file contains inside its `doc` section.
 If it is not equal, STOP (rule 4): do not change anything; log the first differing key.
 
 ---
@@ -239,23 +244,29 @@ If it is not equal, STOP (rule 4): do not change anything; log the first differi
 ### A5. Case graph service, contract 2 rendering, evidence, timeline
 
 Create `kavach_api/analysis_service.py` (graph part), `kavach_api/render.py`, `kavach_api/evidence.py`, `kavach_api/timeline.py`, `tests/test_api_graph.py`, `tests/test_api_evidence.py`.
-You may make ONE additive edit to `case_graph/builder.py`: only if the inventory (A0 item 5a) says the builder finds analysis files only by `FIR_*.analysis.json`, add an optional keyword
-argument (for example `pattern="FIR_*.analysis.json"`) with the current behaviour as default. Rebuild `data/synthetic/out/case_demo_v2` + the step 6 analyses and prove the result equals
-the committed `data/graph/out/case_demo_v2_r2/graph.json` (loaded dict equality) before and after the edit. If it differs, STOP.
+Do NOT edit `case_graph/builder.py`: the inventory shows that `build_case_graph(fir_dir, cdr_path, bank_path)` already reads every `*.analysis.json` file in the folder
+(sorted), whatever the file name. First prove that building from a case's `analyses/` folder with the demo files equals the committed
+`data/graph/out/case_demo_v2_r2/graph.json` (loaded dict equality). If it differs, STOP.
 
 `analysis_service.build_graph(store, case_id)`: calls the builder with the case's analyses directory and CSV files (if a CSV is missing, use only the FIR data; if both are missing and there are
 no analyses, raise a typed error `nothing_to_analyze`). Saves `derived/graph.json` and `derived/fingerprint.json` (hashes of all inputs); a later call with an unchanged fingerprint returns the cached graph.
 
-`render.py`: `render_graph(graph) -> dict` in contract 2 (Cytoscape `elements` + `summary`). READ `contracts/v1_1/graph_render_schema.json` and `contracts/v1_1/validate.py` first.
+`render.py`: `render_graph(graph) -> dict` in contract 2 (Cytoscape `elements` + `summary`). The contract 2 validator is
+`contracts.v1_1.validate.validate_graph` (do not confuse it with `case_graph.validate.validate_graph`, which checks the internal graph). The inventory shows that
+`contracts/v1_1/graph_render_schema.json` has `additionalProperties: false` at every level. Required fields: `summary`: `schema_version, total_nodes, total_edges,
+kingpin_node_id, document_hash`; node `data`: `id, label, type, isKingpin, centrality_score, ai_confidence` (plus an optional `scores` object); edge `data`: `id, source, target, label`.
+READ the schema file itself before writing the code, and write its exact field types and any enumerations of node types and edge labels at the top of your worklog entry.
+- NEVER add a field the schema does not list. Flags such as "hide this vehicle node", "non-suspect person" or "suggested same person" therefore go into the `/people`
+  and `/leads` responses, not into `/graph`. `SAME_AS_CANDIDATE` edges are included in `/graph` only if the schema's edge label list allows them; otherwise they are
+  returned in `/people` as `suggested_same_person` pairs with their reasons.
 - Node ids are the graph node ids. Edge ids are `E-` + first 12 hex characters of sha1 of `source|target|relation|source_kind`.
-- `summary` must include `schema_version` (from the contract), `total_nodes`, `total_edges`, `document_hash` = sha256 of the sorted list of all input hashes joined by newline.
-- VEHICLE nodes with no edges and non-suspect persons are kept in the data but flagged so the front end can hide them (use an allowed field; if the schema forbids extra fields, return the flags in
-  `/people` instead).
-- `SAME_AS_CANDIDATE` edges are returned with a `suggested` marker (or in a separate list) and never styled as facts.
-- Claims: set `isKingpin` to false for EVERY node (this system does not assert kingpins). `centrality_score` = the structural composite from the person projection (0 to 1) for PERSON nodes
-  and 0 for others (it is explanation only). If a required field would force another claim, STOP (rule 5).
-- Every response is validated with `contracts.v1_1.validate` in the tests and in the service (a failure becomes a typed server error, not a broken response).
-- `ai_confidence` stays out of the canvas data (it appears only in node detail).
+- `summary`: `schema_version` from the contract; `total_nodes`, `total_edges`; `document_hash` = sha256 of the sorted list of all input hashes joined by newline.
+- Claims. `isKingpin` is false for EVERY node (this system does not assert kingpins). `kingpin_node_id` is REQUIRED by the schema: if its type allows null, use null;
+  if it must be a string, use the empty string if the schema allows it; if the schema forbids both (a pattern or a minimum length), STOP (rule 5) and hold.
+  `centrality_score` = the structural composite from the person projection (0 to 1, `case_analytics.projection.compute_projection_scores`) for PERSON nodes and 0 for the
+  other node types (explanation only). `ai_confidence` is required by the schema: fill it from the extractor's entity confidence where one exists and with the schema's neutral value otherwise;
+  the front end will not draw it on the canvas. Use the optional `scores` object only if its allowed property names fit the structural components; otherwise leave it out.
+- Every response is validated with `contracts.v1_1.validate.validate_graph` in the tests and in the service (a failure becomes a typed server error, not a broken response).
 
 `evidence.py`: `node_evidence(store, case_id, graph, node_id)` -> for FIR evidence: list of `{doc_id, sha256_raw, char_span, surface, entity_id, ai_confidence, excerpt}` where `excerpt` is up to 80
 characters either side of the span; for CSV evidence: `{file, sha256, row_numbers (first 50), row_count}`; neighbours. `edge_evidence(...)` similarly (FIR spans or CSV rows with aggregate fields).
@@ -266,8 +277,8 @@ conversion). Buckets `day` and `hour` only.
 
 Tests required (use a temp runtime; build the demo-like case from the real files `data/synthetic/out/case_demo_v2/*.csv` and the analyses in `results/2026-11-11_step6_extraction_r2/run1/` with the texts
 from `data/synthetic/out/firs_v5/`): graph equals the committed `data/graph/out/case_demo_v2_r2/graph.json`; rendered JSON validates; ids stable across two builds; the cache is used when nothing changed and
-rebuilt when a document is added; EVERY FIR evidence span slices the stored document text back to the recorded surface (all nodes, all edges); every CSV evidence row number exists in the stored file and the
-file hash equals the recorded hash; `rows` returns the same values as reading the CSV by hand for 5 chosen rows; no node has `isKingpin` true; timeline counts sum to the CSV row counts; FIR-only case (no CSV) works.
+rebuilt when a document is added; EVERY FIR evidence span slices the stored document text back to the recorded surface (all nodes, all edges); a response with an extra field fails validation (prove it with a deliberately broken copy); every CSV evidence row number exists in the stored file and the
+file hash equals the recorded hash; `rows` returns the same values as reading the CSV by hand for 5 chosen rows; no node has `isKingpin` true; the summary has `kingpin_node_id` as decided above; timeline counts sum to the CSV row counts; FIR-only case (no CSV) works.
 
 ---
 
@@ -276,18 +287,19 @@ file hash equals the recorded hash; `rows` returns the same values as reading th
 Extend `kavach_api/analysis_service.py` (or add `kavach_api/leads.py`) and add `tests/test_api_analytics.py`. Only IMPORT and CALL the frozen analytics modules; do not copy their code.
 
 Compute and cache in `derived/leads.json` (keyed by the same fingerprint):
-1. `money_flow`: persons ordered by financial control (the frozen definition: paise sent plus received on the accounts the documents say the person controls, divided by the maximum), best first.
-   Rank = 1 + number of persons with a strictly higher score; persons with equal scores share a rank and carry `tied: true`. Return at most 25. Each item: `{rank, tied, person_id, name, score, accounts: [...], reasons: [...], evidence: {...}}`.
+1. `money_flow`: persons ordered by financial control, best first. Financial control comes from `case_analytics.projection.build_person_projection` /
+   `compute_projection_scores` (paise sent plus received on the accounts the documents say the person controls, divided by the maximum). Ranks come from the frozen
+   `case_analytics.projection.compute_pessimistic_ranks` (persons with equal scores all get the worst rank of their tie group); set `tied: true` when another person has the same score after
+   rounding to 9 decimals. Return at most 25. Each item: `{rank, tied, person_id, name, score, accounts: [...], reasons: [...], evidence: {...}}`.
    `reasons` are generated from numbers (for example total paise in and out, number of controlled accounts) as short strings; no adjectives.
-2. `structural_explanation`: per person `{degree, betweenness, eigenvector, composite}` from the frozen projection code (explanation only).
-3. `mule_accounts` and `burner_phones`: the full ranked lists from the frozen detectors using `config/detector_defaults.json` (read it; never hard-code weights); each item `{id, score, flagged, reasons, evidence_rows: {file, sha256, rows: [...]}, controlled_by or owned_by: [person ids]}`; `flagged` = score at or above the configured chip threshold; at most 25 each.
-4. `role_chips`: from the frozen `roles.assign_role_chips` using the flagged items and the money-flow ranks.
+2. `structural_explanation`: per person `{degree, betweenness, eigenvector, composite}` from `case_analytics.projection.compute_projection_scores` (explanation only; do not use `case_analytics.scores`, which is the older mixed-graph version).
+3. `mule_accounts` and `burner_phones`: the full ranked lists from `case_detectors.mule.detect_mules(bank_csv_path, config)` and `case_detectors.burner.detect_burners(cdr_csv_path, config)`, called with the stored CSV paths and the config dict loaded from `config/detector_defaults.json` (read it; never hard-code weights); each item `{id, score, flagged, reasons, evidence_rows: {file, sha256, rows: [...]}, controlled_by or owned_by: [person ids]}`; `flagged` = score at or above the configured chip threshold; at most 25 each.
+4. `role_chips`: from `case_detectors.roles.assign_role_chips(person_nodes, financial_rank, cut_members, mule_accounts_flagged, burner_phones_flagged, owner_maps, mule_min_score, burner_min_score)` using the flagged items, the money-flow ranks, and the chip thresholds read from the config. Build `owner_maps` from the OWNS_DEVICE and CONTROLS_ACCOUNT edges of the case graph and log its exact shape in the worklog.
 5. `limitations`: a fixed list of strings (define once): persons appear only when a document states ownership or control; phones and accounts without a stated owner are unidentified; scores are decision support; relation extraction from text was measured at F1 0.32 on an independent held-out set; no scanned documents.
 6. `generated_from`: document ids and hashes, CDR and bank hashes.
-`run_break(store, case_id, group_a, group_b)`: validate that the groups are non-empty, disjoint, contain known person ids, and each has at most 200 members (typed errors otherwise); build the call-layer person graph with the frozen
-function; call the frozen cut; also list the unowned bridging phones (with call counts to each side and up to 10 evidence rows). Return `{finite, size, cut: [{person_id, name}], direct_link, bridging_unowned_phones, groups_used, note}` where `note` states that only observed calls are used and unobserved links are ignored; plus the disclaimer.
+`run_break(store, case_id, group_a, group_b)`: validate that the groups are non-empty, disjoint, contain known person ids, and each has at most 200 members (typed errors otherwise); build the call-layer person graph with `case_detectors.cut_calls.call_layer_graph(cdr_rows, owners)` (`owners` maps a phone number to the list of person node ids that own it, taken from the OWNS_DEVICE edges); call `break_groups(graph, group_a, group_b)`; also list `unowned_bridging_phones(cdr_rows, owners, group_a, group_b)` (with call counts to each side and up to 10 evidence rows). Return `{finite, size, cut: [{person_id, name}], direct_link, bridging_unowned_phones, groups_used, note}` where `note` states that only observed calls are used and unobserved links are ignored; plus the disclaimer.
 
-Tests required: on the demo-like case the money-flow list is non-empty, sorted, ranks follow the tie rule, scores equal the frozen function's output; detectors' top items equal a direct call of the frozen detectors; chips follow the configured threshold (change the threshold in a temp copy of the config and see the flags change); `run_break` with two disjoint groups returns a result and never includes a terminal in the cut; empty, overlapping, unknown and oversized groups are rejected with typed errors; the note and disclaimer are always present; `leads.json` is reused when the fingerprint is unchanged. Do NOT assert that any particular person is the top lead or a kingpin.
+Tests required: on the demo-like case the money-flow list is non-empty, sorted, ranks equal the frozen pessimistic ranks, scores equal the frozen function's output; detectors' top items equal a direct call of the frozen detectors; chips follow the configured threshold (change the threshold in a temp copy of the config and see the flags change); `run_break` with two disjoint groups returns a result and never includes a terminal in the cut; empty, overlapping, unknown and oversized groups are rejected with typed errors; the note and disclaimer are always present; `leads.json` is reused when the fingerprint is unchanged. Do NOT assert that any particular person is the top lead or a kingpin.
 
 ---
 

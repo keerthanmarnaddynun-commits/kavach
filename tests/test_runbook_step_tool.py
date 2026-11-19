@@ -218,6 +218,24 @@ class StepToolTests(unittest.TestCase):
         files = self.git("show", "--name-only", "--format=", "HEAD").stdout
         self.assertNotIn("__pycache__", files)
 
+    def test_tool_errors_are_written_to_the_worklog(self):
+        self.git("checkout", "-b", "somewhere-else")
+        code, out = self.tool("begin", "--chunk", "T", "T0")
+        self.assertEqual(code, 2, out)
+        log = (self.tmp / "runbook_logs" / "T" / "worklog.txt").read_text(encoding="utf-8")
+        self.assertIn("TOOL ERROR", log)
+        self.assertIn("wrong branch", log)
+
+    def test_git_retries_while_index_lock_exists(self):
+        import threading
+        lock = self.tmp / ".git" / "index.lock"
+        lock.write_text("", encoding="utf-8")
+        threading.Timer(1.5, lambda: lock.unlink()).start()
+        code = ("import sys; sys.path.insert(0, %r); import step_tool; "
+                "r = step_tool.git('add', '--', 'README.md'); print('rc', r.returncode)" % str(TOOL.parent))
+        r = subprocess.run([sys.executable, "-c", code], cwd=self.tmp, env=self.env, capture_output=True, text=True)
+        self.assertIn("rc 0", r.stdout + r.stderr)
+
     def test_wrong_branch_refused(self):
         self.git("checkout", "-b", "somewhere-else")
         code, out = self.tool("begin", "--chunk", "T", "T0")

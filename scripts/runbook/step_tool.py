@@ -82,8 +82,14 @@ def read_json(path, default=None):
 
 
 def git(*args, check=True):
-    r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True,
-                       encoding="utf-8", errors="replace")
+    r = None
+    for _attempt in range(8):
+        r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True,
+                           encoding="utf-8", errors="replace")
+        if r.returncode != 0 and "index.lock" in (r.stderr or ""):
+            time.sleep(1.0)  # another process (an editor or a status poller) holds the lock; wait and retry
+            continue
+        break
     if check and r.returncode != 0:
         raise ToolError("git %s failed: %s" % (" ".join(args), (r.stderr or r.stdout).strip()))
     return r
@@ -571,6 +577,12 @@ def main(argv=None):
         return args.fn(args)
     except ToolError as e:
         print("ERROR: %s" % e)
+        chunk, step = getattr(args, "chunk", None), getattr(args, "step", None)
+        if chunk and step and steps_path(chunk).exists():
+            try:
+                append_worklog(chunk, step, "TOOL ERROR (exit %s): %s" % (e.code, str(e)[:500]))
+            except Exception:
+                pass
         return e.code
 
 

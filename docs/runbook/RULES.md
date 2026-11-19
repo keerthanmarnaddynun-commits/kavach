@@ -83,8 +83,7 @@ Never run `release` or `unlock`. Those commands belong to the user only.
 
 ## 5. Frozen areas (read-only; import from them, do not edit)
 
-`ai_pipeline/` (the extractor), `contracts/`, `case_graph/` (exception: step A5 may add ONE optional keyword argument to
-`case_graph/builder.py` if the step text says so), `case_analytics/`, `case_detectors/`, `case_simulation/`,
+`ai_pipeline/` (the extractor), `contracts/`, `case_graph/`, `case_analytics/`, `case_detectors/`, `case_simulation/`,
 `llm_firs/`, `config/`, `scoring.py`, `scripts/` that already exist, `tests/` that already exist, everything under `data/` and
 `results/`, the legacy folders `backend/` and `frontend/` and the old `extractor.py`, `regex_engine.py`, `model_engine.py`.
 If you believe something frozen is wrong, log it (with the command output that shows it) and continue without changing it.
