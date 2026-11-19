@@ -1,0 +1,435 @@
+{
+  "chunk": "A",
+  "branch": "phase-d-ag",
+  "global": {
+    "max_attempts": 2,
+    "test_command": [
+      "PY",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "banned_all": [
+      "optimal",
+      "sweet spot",
+      "robust",
+      "decisively",
+      "catastrophic",
+      "proves",
+      "guarantees",
+      "perfect",
+      "excellent",
+      "state-of-the-art"
+    ],
+    "banned_docs": [
+      "verified",
+      "confirmed",
+      "audited"
+    ],
+    "scan_exclude": [
+      "docs/runbook/*",
+      "scripts/runbook/*",
+      "tests/test_runbook_step_tool.py",
+      "runbook_logs/*",
+      "runbook_state/*"
+    ],
+    "forbidden_path_fragments": [
+      "C:\\Users",
+      "C:/Users",
+      "/home/",
+      "/Users/",
+      "Kirthan",
+      "kirthan"
+    ]
+  },
+  "steps": [
+    {
+      "id": "A0",
+      "title": "Preflight: environment facts, API inventory of existing modules, ignore rules",
+      "allow_create": [],
+      "allow_edit": [
+        ".gitignore",
+        "requirements.txt"
+      ],
+      "done_when": [
+        {
+          "name": "imports",
+          "argv": [
+            "PY",
+            "-c",
+            "import fastapi, uvicorn, multipart, pydantic, starlette, httpx, networkx, numpy; print('import ok')"
+          ],
+          "must_contain": "import ok"
+        },
+        {
+          "name": "python_311",
+          "argv": [
+            "PY",
+            "-c",
+            "import sys; assert sys.version_info[:2]==(3,11), sys.version; print('py311')"
+          ],
+          "must_contain": "py311"
+        },
+        {
+          "name": "ignore_rules",
+          "argv": [
+            "PY",
+            "-c",
+            "t=open('.gitignore',encoding='utf-8').read(); assert all(x in t for x in ('runtime/','scratch/','models/')); print('ignore ok')"
+          ],
+          "must_contain": "ignore ok"
+        },
+        {
+          "name": "environment_log",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib,sys; p=pathlib.Path('runbook_logs/A/A0_environment.txt'); assert p.exists() and p.stat().st_size>=300, 'runbook_logs/A/A0_environment.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        },
+        {
+          "name": "inventory_log",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib,sys; p=pathlib.Path('runbook_logs/A/A0_api_inventory.txt'); assert p.exists() and p.stat().st_size>=1000, 'runbook_logs/A/A0_api_inventory.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook A0: preflight, environment facts, module inventory, ignore rules for runtime/scratch/models"
+    },
+    {
+      "id": "A1",
+      "title": "Settings and storage layer (no HTTP)",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_settings_storage.py"
+      ],
+      "allow_edit": [],
+      "done_when": [
+        {
+          "name": "tests_test_api_settings_storage",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_settings_storage.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "imports",
+          "argv": [
+            "PY",
+            "-c",
+            "import kavach_api.settings, kavach_api.storage; print('import ok')"
+          ],
+          "must_contain": "import ok"
+        }
+      ],
+      "commit_message": "Runbook A1: kavach_api settings and filesystem storage layer with tests"
+    },
+    {
+      "id": "A2",
+      "title": "Security primitives (password hashing, HS256 token, roles) and hash-chained audit log",
+      "allow_create": [
+        "kavach_api/*",
+        "scripts/create_user.py",
+        "tests/test_api_security.py",
+        "tests/test_api_audit.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_security_test_api_audit",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_security.py",
+            "tests/test_api_audit.py"
+          ],
+          "must_contain": "passed"
+        }
+      ],
+      "commit_message": "Runbook A2: standard-library password hashing and HS256 tokens, roles, hash-chained audit log, create_user script"
+    },
+    {
+      "id": "A3",
+      "title": "Ingestion validation for FIR text, CDR csv and bank csv",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_ingest.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_ingest",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_ingest.py"
+          ],
+          "must_contain": "passed"
+        }
+      ],
+      "commit_message": "Runbook A3: FIR, CDR and bank intake validation with row-level errors"
+    },
+    {
+      "id": "A4",
+      "title": "Job store, single worker and extraction service around the frozen extractor",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_jobs.py",
+        "tests/test_api_extract.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_jobs_test_api_extract",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_jobs.py",
+            "tests/test_api_extract.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "real_model_matches_saved_outputs",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_extract.py",
+            "-k",
+            "real_model"
+          ],
+          "must_contain": "passed",
+          "env": {
+            "KAVACH_RUN_MODEL_TESTS": "1",
+            "HF_HUB_OFFLINE": "1"
+          }
+        }
+      ],
+      "commit_message": "Runbook A4: job store and worker, extraction service; real-model outputs equal the saved step 6 outputs"
+    },
+    {
+      "id": "A5",
+      "title": "Case graph service, contract 2 rendering, evidence and timeline",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_graph.py",
+        "tests/test_api_evidence.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*",
+        "case_graph/builder.py"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_graph_test_api_evidence",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_graph.py",
+            "tests/test_api_evidence.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "existing_graph_tests",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_case_graph.py",
+            "tests/test_person_merge.py"
+          ],
+          "must_contain": "passed"
+        }
+      ],
+      "commit_message": "Runbook A5: graph service, contract 2 rendering validated against the schema, evidence and timeline"
+    },
+    {
+      "id": "A6",
+      "title": "Analytics service: money-flow leads, structural explanation, mule and burner leads, role chips, call-layer break",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_analytics.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_analytics",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_analytics.py"
+          ],
+          "must_contain": "passed"
+        }
+      ],
+      "commit_message": "Runbook A6: analytics service reusing frozen analytics modules"
+    },
+    {
+      "id": "A7",
+      "title": "HTTP app factory, authentication, roles and read endpoints",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_http_read.py",
+        "tests/test_api_auth_http.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_http_read_test_api_auth_http",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_http_read.py",
+            "tests/test_api_auth_http.py"
+          ],
+          "must_contain": "passed"
+        }
+      ],
+      "commit_message": "Runbook A7: FastAPI app factory, login and roles, read endpoints with audit entries"
+    },
+    {
+      "id": "A8",
+      "title": "Write endpoints: uploads, jobs, progress stream, analyze, break",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_http_write.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_http_write",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_http_write.py"
+          ],
+          "must_contain": "passed"
+        }
+      ],
+      "commit_message": "Runbook A8: upload, job, progress stream, analyze and break endpoints"
+    },
+    {
+      "id": "A9",
+      "title": "Demo case loader, run script, OpenAPI export and end-to-end test",
+      "allow_create": [
+        "kavach_api/*",
+        "scripts/load_demo_case.py",
+        "scripts/run_api.py",
+        "scripts/export_openapi.py",
+        "docs/api/*",
+        "tests/test_api_demo_e2e.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_demo_e2e",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_demo_e2e.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "openapi_exported",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib,sys; p=pathlib.Path('docs/api/openapi.json'); assert p.exists() and p.stat().st_size>=2000, 'docs/api/openapi.json'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook A9: demo case loader, run script, exported OpenAPI, end-to-end test"
+    },
+    {
+      "id": "A10",
+      "title": "Security test pass over the HTTP API",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_security_http.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_security_http",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_security_http.py"
+          ],
+          "must_contain": "passed"
+        }
+      ],
+      "commit_message": "Runbook A10: HTTP security tests (path traversal, limits, roles, tokens, audit chain)"
+    },
+    {
+      "id": "A11",
+      "title": "Chunk end: summary for the user and log bundle",
+      "allow_create": [
+        "docs/api/*"
+      ],
+      "allow_edit": [
+        "docs/api/*"
+      ],
+      "done_when": [
+        {
+          "name": "summary_written",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib,sys; p=pathlib.Path('runbook_logs/A/SUMMARY_FOR_USER.txt'); assert p.exists() and p.stat().st_size>=600, 'runbook_logs/A/SUMMARY_FOR_USER.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook A11: chunk A summary and bundle"
+    }
+  ]
+}
