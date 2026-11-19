@@ -1,0 +1,5 @@
+COMMAND: PY scratch/build_inventory.py
+EXIT: 0
+SECONDS: 11.9
+--- OUTPUT ---
+Successfully generated C:\Users\Kirthan\Desktop\crimi-nex\runbook_logs\A\A0_api_inventory.txt (14832 characters, 15016 bytes)

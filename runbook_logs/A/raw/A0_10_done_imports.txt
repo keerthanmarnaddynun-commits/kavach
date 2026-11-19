@@ -1,0 +1,4 @@
+COMMAND: PY -c import fastapi, uvicorn, multipart, pydantic, starlette, httpx, networkx, numpy; print('import ok')
+EXIT: 0
+--- OUTPUT ---
+import ok

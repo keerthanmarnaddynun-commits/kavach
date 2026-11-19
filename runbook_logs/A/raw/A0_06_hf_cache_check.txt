@@ -1,0 +1,5 @@
+COMMAND: PY -c from pathlib import Path; import os; p = Path(os.environ.get('HF_HOME', Path.home() / '.cache' / 'huggingface' / 'hub')) / 'models--Davlan--xlm-roberta-base-ner-hrl'; print('HF cache folder models--Davlan--xlm-roberta-base-ner-hrl exists:', p.exists())
+EXIT: 0
+SECONDS: 0.1
+--- OUTPUT ---
+HF cache folder models--Davlan--xlm-roberta-base-ner-hrl exists: True

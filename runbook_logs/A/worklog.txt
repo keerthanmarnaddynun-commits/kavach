@@ -1,0 +1,13 @@
+2026-11-19 08:16:31 [A0] BEGIN: Preflight: environment facts, API inventory of existing modules, ignore rules
+2026-11-19 08:16:55 [A0] RUN PY -c import sys; print(sys.version) -> exit 0 (A0_01_python_version.txt)
+2026-11-19 08:17:09 [A0] RUN PY -m pip list -> exit 0 (A0_02_pip_list.txt)
+2026-11-19 08:17:22 [A0] RUN PY -c import httpx; print('httpx imported successfully:', httpx.__version__) -> exit 0 (A0_03_import_httpx.txt)
+2026-11-19 08:17:50 [A0] RUN PY -m pytest --collect-only -q -> exit 0 (A0_04_pytest_collect.txt)
+2026-11-19 08:18:04 [A0] RUN git log --oneline -5 -> exit 0 (A0_05_git_log.txt)
+2026-11-19 08:18:36 [A0] RUN PY -c from pathlib import Path; import os; p = Path(os.environ.get('HF_HOME', Path.home() / '.cache' / 'huggingface' / 'hub')) / 'models--Davlan--xlm-roberta-base-ner-hrl'; print('HF cache folder mode -> exit 0 (A0_06_hf_cache_check.txt)
+2026-11-19 08:25:14 [A0] RUN PY scratch/build_inventory.py -> exit 1 (A0_07_build_inventory.txt)
+2026-11-19 08:25:45 [A0] RUN PY scratch/build_inventory.py -> exit 0 (A0_08_build_inventory.txt)
+2026-11-19 08:26:55 [A0] Pinned and added httpx==0.25.2 to requirements.txt as approved by user.
+2026-11-19 08:27:09 [A0] Verified Python 3.11.9, httpx 0.25.2 import, git branch phase-d-ag, and 501 baseline tests collected.
+2026-11-19 08:27:28 [A0] Updated .gitignore additively with runtime/, scratch/, models/. Generated runbook_logs/A/A0_api_inventory.txt via scratch/build_inventory.py with function signatures, docstrings, schema checks, and answers to questions 5a-5d.
+2026-11-19 08:30:22 [A0] GATE A0: PASS

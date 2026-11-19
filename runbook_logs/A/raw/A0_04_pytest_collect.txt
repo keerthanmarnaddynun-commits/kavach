@@ -1,0 +1,507 @@
+COMMAND: PY -m pytest --collect-only -q
+EXIT: 0
+SECONDS: 17.6
+--- OUTPUT ---
+test_nlp_pipeline.py::TestNLPPipeline::test_entity_extraction_count
+test_nlp_pipeline.py::TestNLPPipeline::test_kingpin_identification
+test_nlp_pipeline.py::TestNLPPipeline::test_person_deduplication_and_aliases
+test_nlp_pipeline.py::TestNLPPipeline::test_relationship_count_and_types
+test_nlp_pipeline.py::TestNLPPipeline::test_structured_identifiers
+tests/test_answer_key_converter.py::test_all_100_firs_convert_and_validate
+tests/test_answer_key_converter.py::test_determinism
+tests/test_answer_key_converter.py::test_each_mention_span_equals_text_slice_and_surface
+tests/test_answer_key_converter.py::test_every_original_mention_appears_exactly_once
+tests/test_answer_key_converter.py::test_relation_count_equals_distinct_relations_in_key
+tests/test_answer_key_converter.py::test_each_transfer_amount_equals_key_amount
+tests/test_answer_key_converter.py::test_suspect_father_name_equals_truth_json
+tests/test_answer_key_converter.py::test_no_truth_id_in_contract_files
+tests/test_answer_key_converter.py::test_backend_graph_compatibility
+tests/test_assemble.py::test_same_phone_two_ways_merged
+tests/test_assemble.py::test_same_name_twice_merged
+tests/test_assemble.py::test_vikas_and_bikas_stay_two_entities
+tests/test_assemble.py::test_alias_attaches_to_preceding_person_and_orphan_dropped
+tests/test_assemble.py::test_father_attaches_no_extra_entity_and_orphan_dropped
+tests/test_assemble.py::test_officer_role
+tests/test_assemble.py::test_amounts_and_ifsc_in_aux_not_entities
+tests/test_assemble.py::test_bank_detection_within_25_chars
+tests/test_assemble.py::test_ids_sequential_mentions_valid_and_deterministic
+tests/test_assemble.py::test_identifier_and_person_confidence_rules
+tests/test_assemble.py::test_devanagari_text_assembly
+tests/test_assemble.py::test_empty_text_returns_empty_entities
+tests/test_assemble.py::test_short_name_merge_english_hinglish_devanagari
+tests/test_assemble.py::test_short_name_ambiguous_when_two_fuller_share_first_token
+tests/test_assemble.py::test_short_name_guards_lookalike_lastname_partial_alias_role_father
+tests/test_case_analytics.py::test_star_centre_ranks_first_and_normalisation_bounds
+tests/test_case_analytics.py::test_vehicle_and_non_suspect_persons_excluded
+tests/test_case_analytics.py::test_strict_ignores_candidate_and_resolved_collapses_with_edge_union
+tests/test_case_analytics.py::test_parallel_edges_sum_weights
+tests/test_case_analytics.py::test_betweenness_uses_inverse_weight_distance
+tests/test_case_analytics.py::test_ranking_and_robustness_deterministic_across_runs
+tests/test_case_analytics.py::test_run_kingpin_scores_refuses_existing_output_dir
+tests/test_case_analytics.py::test_baseline_call_count_ranking_tiny_cdr
+tests/test_case_analytics.py::test_case_analytics_source_never_mentions_truth
+tests/test_case_detectors.py::test_mule_features_hand_made_bank_table
+tests/test_case_detectors.py::test_mule_score_ordering_toy_example
+tests/test_case_detectors.py::test_burner_features_hand_made_cdr
+tests/test_case_detectors.py::test_burner_score_ordering_toy_example
+tests/test_case_detectors.py::test_min_vertex_cut_equals_brute_force_on_random_graphs
+tests/test_case_detectors.py::test_cut_returns_finite_false_when_person_free_path_exists
+tests/test_case_detectors.py::test_terminals_never_in_cut
+tests/test_case_detectors.py::test_empty_group_returns_skipped
+tests/test_case_detectors.py::test_articulation_persons_agrees_with_networkx
+tests/test_case_detectors.py::test_role_chips_rules
+tests/test_case_detectors.py::test_outputs_identical_across_two_runs
+tests/test_case_detectors.py::test_scripts_refuse_existing_output_folder
+tests/test_case_detectors.py::test_no_truth_in_case_detectors_and_config
+tests/test_case_detectors.py::test_detectors_read_only_csv_files
+tests/test_case_graph.py::test_person_merge_same_name_shared_phone_merges
+tests/test_case_graph.py::test_person_merge_same_name_without_shared_id_does_not_merge
+tests/test_case_graph.py::test_person_merge_different_and_similar_names_stay_separate_on_shared_phone
+tests/test_case_graph.py::test_cdr_aggregation_symmetric_pairs_and_imei_direction
+tests/test_case_graph.py::test_bank_aggregation_exact_paise_direction_and_leading_zeros
+tests/test_case_graph.py::test_validator_catches_dangling_and_duplicate_edges
+tests/test_case_graph.py::test_deterministic_builds_identical_json
+tests/test_case_graph.py::test_cli_refuses_existing_output_dir
+tests/test_case_graph.py::test_real_files_invariants_and_determinism
+tests/test_case_graph.py::test_case_graph_source_never_mentions_truth
+tests/test_case_graph.py::test_validator_accepts_same_as_candidate_rule_edge
+tests/test_contracts_v1_1.py::test_golden_ai_output_validates
+tests/test_contracts_v1_1.py::test_golden_graph_validates
+tests/test_contracts_v1_1.py::test_fail_unknown_relation_label
+tests/test_contracts_v1_1.py::test_fail_unknown_entity_type
+tests/test_contracts_v1_1.py::test_fail_missing_ai_confidence
+tests/test_contracts_v1_1.py::test_fail_confidence_in_place_of_ai_confidence
+tests/test_contracts_v1_1.py::test_fail_person_without_canonical_name
+tests/test_contracts_v1_1.py::test_fail_non_person_without_value
+tests/test_contracts_v1_1.py::test_fail_missing_relation_endpoint
+tests/test_contracts_v1_1.py::test_fail_wrong_type_pair
+tests/test_contracts_v1_1.py::test_fail_start_gte_end_span
+tests/test_contracts_v1_1.py::test_fail_char_span_different_from_first_mention
+tests/test_contracts_v1_1.py::test_fail_duplicate_ids
+tests/test_contracts_v1_1.py::test_fail_negative_amount
+tests/test_contracts_v1_1.py::test_fail_ai_confidence_over_one
+tests/test_contracts_v1_1.py::test_fail_total_nodes_mismatch
+tests/test_contracts_v1_1.py::test_fail_kingpin_id_not_in_nodes
+tests/test_contracts_v1_1.py::test_fail_sixty_three_char_document_hash
+tests/test_cut_calls.py::test_call_layer_edges_and_unowned_ignored
+tests/test_cut_calls.py::test_min_vertex_cut_equals_brute_force_on_random_call_layer_graphs
+tests/test_cut_calls.py::test_direct_terminal_link_gives_finite_false
+tests/test_cut_calls.py::test_terminals_never_appear_in_cut
+tests/test_cut_calls.py::test_top2_baselines_with_ties_not_exact
+tests/test_cut_calls.py::test_unowned_bridging_phones
+tests/test_cut_calls.py::test_opaque_ids_contain_no_per_or_dec
+tests/test_cut_calls.py::test_same_seed_gives_identical_output
+tests/test_cut_calls.py::test_scripts_refuse_existing_output_folder
+tests/test_cut_calls.py::test_no_truth_in_case_detectors_and_config
+tests/test_generate_case.py::test_determinism_by_seed
+tests/test_generate_case.py::test_all_imeis_luhn_valid
+tests/test_generate_case.py::test_phone_format
+tests/test_generate_case.py::test_kingpin_phone_not_top_by_call_count
+tests/test_generate_case.py::test_removing_bridge_couriers_disconnects_gang_a_from_b
+tests/test_generate_case.py::test_burner_life_3_to_8_days
+tests/test_generate_case.py::test_row_counts_within_range
+tests/test_generate_case.py::test_mule_accounts_and_structuring
+tests/test_generate_case.py::test_decoys_metadata
+tests/test_generate_case.py::test_pizza_shop_at_least_20_distinct_contacts
+tests/test_generate_case.py::test_pizza_shop_is_top_3_by_call_count
+tests/test_generate_case.py::test_pizza_shop_no_contact_with_both_gangs
+tests/test_generate_case.py::test_ifsc_format_in_truth_and_bank
+tests/test_generate_case.py::test_ifsc_prefix_matches_bank
+tests/test_generate_case.py::test_account_length_matches_bank
+tests/test_generate_case.py::test_no_account_has_10_or_15_digits
+tests/test_generate_case.py::test_bank_csv_ifsc_equals_receiving_account_ifsc
+tests/test_generate_case.py::test_no_account_number_equals_any_phone_or_imei
+tests/test_generate_firs.py::test_entity_surface_exact_offset
+tests/test_generate_firs.py::test_no_overlapping_spans
+tests/test_generate_firs.py::test_relation_types_and_labels_valid
+tests/test_generate_firs.py::test_same_entity_key_same_normalized_value
+tests/test_generate_firs.py::test_relation_mentions_inside_evidence_span_and_match_keys
+tests/test_generate_firs.py::test_aliases_and_father_name_labelled
+tests/test_generate_firs.py::test_transfers_match_bank_row
+tests/test_generate_firs.py::test_amount_surface_parses_to_numeric_value
+tests/test_generate_firs.py::test_amount_parser_known_pairs
+tests/test_generate_firs.py::test_no_ipc_and_bns_present
+tests/test_generate_firs.py::test_split_counts_and_language_coverage
+tests/test_generate_firs.py::test_held_out_templates_only_in_test
+tests/test_generate_firs.py::test_fir_types_and_entity_count_extremes
+tests/test_generate_firs.py::test_no_golden_fir_8word_sequences
+tests/test_generate_firs.py::test_decoys_not_labelled
+tests/test_generate_firs.py::test_person_roles_present
+tests/test_generate_firs.py::test_vikas_and_bikas_never_linked
+tests/test_generate_firs.py::test_determinism_by_seed
+tests/test_generate_firs.py::test_transfers_per_split_counts
+tests/test_generate_firs.py::test_fir_types_per_split_coverage
+tests/test_generate_firs.py::test_fir_length_and_short_firs
+tests/test_generate_firs.py::test_boilerplate_opening_closing_diversity
+tests/test_identifiers.py::test_precedence_tuple
+tests/test_identifiers.py::test_upi_phone_overlap
+tests/test_identifiers.py::test_imei_only_not_account
+tests/test_identifiers.py::test_aadhaar_only_not_account
+tests/test_identifiers.py::test_account_only_without_aadhaar
+tests/test_identifiers.py::test_alias_with_at_is_empty
+tests/test_identifiers.py::test_invalid_pan_not_extracted
+tests/test_identifiers.py::test_email_not_upi
+tests/test_identifiers.py::test_phone_next_to_amount_both_found
+tests/test_identifiers.py::test_integrated_all_nine_types
+tests/test_identifiers.py::test_same_type_overlap_longer_stays
+tests/test_identifiers.py::test_same_type_overlap_equal_length_earlier_stays
+tests/test_identifiers.py::test_property_never_overlapping[]
+tests/test_identifiers.py::test_property_never_overlapping[   \n\t  ]
+tests/test_identifiers.py::test_property_never_overlapping[Plain text without any identifiers mentioned anywhere in this statement.]
+tests/test_identifiers.py::test_property_never_overlapping[9876543210@paytm and 9876543210 were both in the logs.]
+tests/test_identifiers.py::test_property_never_overlapping[A/c 693103413164 and IFSC SBIN0001234 credited Rs. 50,000/-.]
+tests/test_identifiers.py::test_property_never_overlapping[Vehicle DL-8C-AB-5198 chased down phone +91 98765 43210 IMEI 490154203237518.]
+tests/test_identifiers.py::test_property_always_sorted_by_start[]
+tests/test_identifiers.py::test_property_always_sorted_by_start[   \n\t  ]
+tests/test_identifiers.py::test_property_always_sorted_by_start[Plain text without any identifiers mentioned anywhere in this statement.]
+tests/test_identifiers.py::test_property_always_sorted_by_start[9876543210@paytm and 9876543210 were both in the logs.]
+tests/test_identifiers.py::test_property_always_sorted_by_start[A/c 693103413164 and IFSC SBIN0001234 credited Rs. 50,000/-.]
+tests/test_identifiers.py::test_property_always_sorted_by_start[Vehicle DL-8C-AB-5198 chased down phone +91 98765 43210 IMEI 490154203237518.]
+tests/test_identifiers.py::test_property_idempotent_and_deterministic[]
+tests/test_identifiers.py::test_property_idempotent_and_deterministic[   \n\t  ]
+tests/test_identifiers.py::test_property_idempotent_and_deterministic[Plain text without any identifiers mentioned anywhere in this statement.]
+tests/test_identifiers.py::test_property_idempotent_and_deterministic[9876543210@paytm and 9876543210 were both in the logs.]
+tests/test_identifiers.py::test_property_idempotent_and_deterministic[A/c 693103413164 and IFSC SBIN0001234 credited Rs. 50,000/-.]
+tests/test_identifiers.py::test_property_idempotent_and_deterministic[Vehicle DL-8C-AB-5198 chased down phone +91 98765 43210 IMEI 490154203237518.]
+tests/test_identifiers.py::test_property_surface_equals_slice[]
+tests/test_identifiers.py::test_property_surface_equals_slice[   \n\t  ]
+tests/test_identifiers.py::test_property_surface_equals_slice[Plain text without any identifiers mentioned anywhere in this statement.]
+tests/test_identifiers.py::test_property_surface_equals_slice[9876543210@paytm and 9876543210 were both in the logs.]
+tests/test_identifiers.py::test_property_surface_equals_slice[A/c 693103413164 and IFSC SBIN0001234 credited Rs. 50,000/-.]
+tests/test_identifiers.py::test_property_surface_equals_slice[Vehicle DL-8C-AB-5198 chased down phone +91 98765 43210 IMEI 490154203237518.]
+tests/test_llm_fir_converter.py::test_brief_example_round_trip
+tests/test_llm_fir_converter.py::test_error_classes[Language: hinglish\nFoo\n---\n-missing_or_unknown_lang_line]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: french\nFoo\n---\n-missing_or_unknown_lang_line]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nNo separator here-missing_separator_line]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello [[PERSON:P1:S|Mohit\n---\n-unbalanced_or_nested_tags]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello [[PERSON:P1:S|[[ALIAS:P1|Bicky]] Mohit]]\n---\n-unbalanced_or_nested_tags]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello Mohit]]\n---\n-unbalanced_or_nested_tags]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello [[UNKNOWN:U1|Foo]]\n---\n-unknown_tag_type]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello [[PERSON:P1:X|Mohit]]\n---\n-invalid_person_role]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello [[PERSON:P1|Mohit]]\n---\n-invalid_person_role]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello [[ALIAS:P99|Tiger]]\n---\n-orphan_alias_or_father]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello [[FATHER:P99|Gopal]]\n---\n-orphan_alias_or_father]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PHONE:K1|9811234567]] and [[ACCOUNT:K1|1234567890]]\n---\n-duplicate_key_different_type]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PERSON:P1:S|Mohit]][[PHONE:PH1|9811234567]]\n---\n-ambiguous_tag_spans]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PERSON:P1:S|Mohit]]\n---\nNOT_REL: FOO\n-invalid_rel_syntax]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PERSON:P1:S|Mohit]]\n---\nREL: OWNS_DEVICE P1\n-invalid_rel_syntax]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PERSON:P1:S|Mohit]] [[PHONE:PH1|9811234567]]\n---\nREL: BORROWS_DEVICE P1 PH1\n-unknown_rel_type]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PERSON:P1:S|Mohit]]\n---\nREL: OWNS_DEVICE P1 PH_MISSING\n-rel_key_not_in_text]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PERSON:P1:S|Mohit]] [[ACCOUNT:AC1|1234567890]]\n---\nREL: OWNS_DEVICE P1 AC1\n-invalid_rel_endpoints]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PHONE:PH1|9811234567]] [[ACCOUNT:AC1|1234567890]]\n---\nREL: CONTROLS_ACCOUNT PH1 AC1\n-invalid_rel_endpoints]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PERSON:P1:S|Mohit]] [[ACCOUNT:AC1|1234567890]]\n---\nREL: TRANSFERRED_FUNDS P1 AC1\n-missing_transfer_amount]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n[[PERSON:P1:S|Mohit]] [[ACCOUNT:AC1|1234567890]]\n---\nREL: TRANSFERRED_FUNDS P1 AC1 non_num\n-missing_transfer_amount]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\n\n---\n-empty_clean_text]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n---\n-clean_text_too_long]
+tests/test_llm_fir_converter.py::test_error_classes[LANG: english\nHello [[PERSON:P1:S|]]\n---\n-empty_tag_text]
+tests/test_llm_fir_converter.py::test_warning_classes
+tests/test_llm_fir_converter.py::test_alias_and_father_share_person_key_without_error
+tests/test_llm_fir_converter.py::test_devanagari_example
+tests/test_llm_fir_converter.py::test_crlf_and_bom_give_identical_outputs_to_lf
+tests/test_llm_fir_converter.py::test_output_identical_across_two_runs
+tests/test_llm_fir_converter.py::test_script_refuses_existing_output_folder
+tests/test_llm_fir_converter.py::test_script_does_not_modify_raw_files
+tests/test_llm_fir_converter.py::test_converted_json_loaded_by_scoring_gold_loader
+tests/test_names.py::test_honorific_stripping_with_and_without_dot
+tests/test_names.py::test_alias_cues
+tests/test_names.py::test_father_cues
+tests/test_names.py::test_role_cues
+tests/test_names.py::test_model_span_replaced_by_alias
+tests/test_names.py::test_honorific_only_span_dropped
+tests/test_names.py::test_no_overlap_sorted_idempotent
+tests/test_names.py::test_spans_match_original_text
+tests/test_names.py::test_cue_trim_trailing_alias
+tests/test_names.py::test_cue_trim_leading_urf
+tests/test_names.py::test_cue_trim_devanagari_trailing_urf
+tests/test_names.py::test_cue_trim_both_ends
+tests/test_names.py::test_cue_only_span_dropped
+tests/test_names.py::test_whole_token_boundary_not_trimmed
+tests/test_names.py::test_cue_trim_idempotent_and_valid_offsets
+tests/test_names.py::test_alias_stops_at_location_words_and_numbers
+tests/test_ner_baseline.py::test_trims_leading_space
+tests/test_ner_baseline.py::test_merges_touching_word_pieces
+tests/test_ner_baseline.py::test_does_not_merge_names_separated_by_space
+tests/test_ner_baseline.py::test_drops_all_whitespace_span
+tests/test_ner_baseline.py::test_output_sorted_and_non_overlapping
+tests/test_ner_baseline.py::test_person_only_removes_father_and_alias
+tests/test_ner_baseline.py::test_all_names_maps_all_three_to_name
+tests/test_ner_baseline.py::test_end_to_end_evaluate_with_fake_predictions
+tests/test_ner_baseline.py::test_decoded_word_check_counts_deliberately_damaged_word
+tests/test_normalizer.py::test_devanagari_digits
+tests/test_normalizer.py::test_arabic_indic_digits
+tests/test_normalizer.py::test_fullwidth_digits
+tests/test_normalizer.py::test_unicode_space_variants
+tests/test_normalizer.py::test_unicode_dashes_and_minus
+tests/test_normalizer.py::test_curly_quotes
+tests/test_normalizer.py::test_length_preserving_property
+tests/test_normalizer.py::test_untouched_text
+tests/test_person_merge.py::test_rule_a_same_name_same_father_merges_and_different_father_blocks
+tests/test_person_merge.py::test_non_suspect_keeps_old_rule_only
+tests/test_person_merge.py::test_rule_b_cross_script_with_and_without_strong_id
+tests/test_person_merge.py::test_vikas_and_bikas_stay_apart_in_both_scripts
+tests/test_person_merge.py::test_shared_phone_different_names_stay_separate
+tests/test_person_merge.py::test_father_conflict_blocks_candidate_link_and_merge
+tests/test_person_merge.py::test_same_as_candidate_star_shape_stats_and_determinism
+tests/test_person_merge.py::test_eval_person_merge_tiny_handmade_graph
+tests/test_person_merge.py::test_case_graph_source_still_contains_no_truth
+tests/test_pipeline.py::test_end_to_end_english_hinglish_devanagari_with_raw_spans
+tests/test_pipeline.py::test_deterministic_and_process_text
+tests/test_pipeline.py::test_text_length_boundary_5000_vs_5001
+tests/test_pipeline.py::test_empty_text_exceptions
+tests/test_pipeline.py::test_no_entities_found_exception
+tests/test_pipeline.py::test_document_hash_and_timings_and_metadata
+tests/test_pipeline.py::test_degraded_mode_without_model
+tests/test_pipeline.py::test_model_failure_falls_back_to_degraded
+tests/test_pipeline.py::test_heuristic_person_spans_examples_and_plain_text
+tests/test_pipeline.py::test_golden_demo_paragraph_with_two_person_spans
+tests/test_pipeline.py::test_short_name_merge_three_sentence_pipeline_transfer
+tests/test_planted_eval.py::test_coverage_one_and_zero
+tests/test_planted_eval.py::test_fragmented_vs_resolved_node_counts
+tests/test_planted_eval.py::test_deterministic_reproducibility
+tests/test_planted_eval.py::test_decoy_owner_treated_like_any_other_person
+tests/test_planted_eval.py::test_kingpin_without_stated_fact_gets_rank_none
+tests/test_planted_eval.py::test_bootstrap_reproducibility
+tests/test_planted_eval.py::test_paired_difference_identical_hits
+tests/test_planted_eval.py::test_no_truth_in_case_analytics_and_case_graph
+tests/test_planted_eval.py::test_csv_edges_match_case_demo_v2_r2
+tests/test_planted_eval_v2.py::test_pessimistic_rank_ties_and_no_ids
+tests/test_planted_eval_v2.py::test_permuting_node_ids_leaves_ranks_unchanged
+tests/test_planted_eval_v2.py::test_no_per_or_dec_in_relabelled_graph
+tests/test_planted_eval_v2.py::test_projection_phone_calls_edge_weight
+tests/test_planted_eval_v2.py::test_projection_account_transfers_edge_weight
+tests/test_planted_eval_v2.py::test_projection_shared_controlled_account_and_phone
+tests/test_planted_eval_v2.py::test_projection_no_self_loops
+tests/test_planted_eval_v2.py::test_financial_control_sent_plus_received_normalised
+tests/test_planted_eval_v2.py::test_composite_v2_formula_weights
+tests/test_planted_eval_v2.py::test_financial_only_ranks_equal_transfer_amount_paise
+tests/test_planted_eval_v2.py::test_same_seed_gives_identical_output
+tests/test_planted_eval_v2.py::test_bootstrap_reproducible_and_diff_zero
+tests/test_planted_eval_v2.py::test_no_truth_in_case_analytics_and_case_graph
+tests/test_relations.py::test_five_relations_english
+tests/test_relations.py::test_five_relations_hinglish
+tests/test_relations.py::test_five_relations_devanagari
+tests/test_relations.py::test_communicated_with_direction
+tests/test_relations.py::test_person_and_account_transfers_with_amounts
+tests/test_relations.py::test_cash_recovery_gives_no_transfer
+tests/test_relations.py::test_officer_never_owns_or_controls
+tests/test_relations.py::test_carry_forward_two_sentence_window
+tests/test_relations.py::test_two_suspects_choose_nearer
+tests/test_relations.py::test_sentence_splitting_abbreviations_initials_numbers
+tests/test_relations.py::test_deterministic_no_duplicates_and_valid
+tests/test_relations.py::test_hybrid_fallback_ownership_person_plus_phone
+tests/test_relations.py::test_hybrid_fallback_calls_between_two_phones
+tests/test_relations.py::test_hybrid_fallback_account_to_account_with_amount
+tests/test_relations.py::test_hybrid_fallback_person_account_with_and_without_amount
+tests/test_relations.py::test_hybrid_cash_recovery_gives_no_relation
+tests/test_relations.py::test_hybrid_two_suspects_ambiguous_no_fallback
+tests/test_relations.py::test_hybrid_officer_never_owns_or_controls
+tests/test_relations.py::test_cue_version_regression_three_texts
+tests/test_relations.py::test_hybrid_cue_wins_deterministic_and_no_duplicates
+tests/test_relations.py::test_hybrid_anaphoric_owner_cross_sentence_and_guards
+tests/test_relations.py::test_hybrid_demonstrative_phone_and_ambiguity_guard
+tests/test_relations.py::test_hybrid_two_suspect_money_clauses_and_role_guards
+tests/test_relations.py::test_cue_only_extract_relations_unchanged_and_no_duplicates
+tests/test_runbook_step_tool.py::StepToolTests::test_banned_word_detected_whole_word_only
+tests/test_runbook_step_tool.py::StepToolTests::test_bundle_contains_logs
+tests/test_runbook_step_tool.py::StepToolTests::test_bytecode_and_cache_files_are_ignored
+tests/test_runbook_step_tool.py::StepToolTests::test_commit_refused_if_files_change_after_gate
+tests/test_runbook_step_tool.py::StepToolTests::test_commit_refused_without_gate
+tests/test_runbook_step_tool.py::StepToolTests::test_deleting_a_file_fails
+tests/test_runbook_step_tool.py::StepToolTests::test_editing_existing_file_without_permission_fails
+tests/test_runbook_step_tool.py::StepToolTests::test_file_outside_allow_list_fails_and_attempt_limit_locks
+tests/test_runbook_step_tool.py::StepToolTests::test_happy_path_commits_only_step_files
+tests/test_runbook_step_tool.py::StepToolTests::test_hold_before_requires_release
+tests/test_runbook_step_tool.py::StepToolTests::test_hold_blocks_begin_until_release
+tests/test_runbook_step_tool.py::StepToolTests::test_machine_specific_path_detected
+tests/test_runbook_step_tool.py::StepToolTests::test_modified_tracked_file_before_begin_refused
+tests/test_runbook_step_tool.py::StepToolTests::test_run_option_order_does_not_matter
+tests/test_runbook_step_tool.py::StepToolTests::test_run_saves_raw_output_and_returns_exit_code
+tests/test_runbook_step_tool.py::StepToolTests::test_step_order_enforced
+tests/test_runbook_step_tool.py::StepToolTests::test_test_count_must_not_decrease
+tests/test_runbook_step_tool.py::StepToolTests::test_wrong_branch_refused
+tests/test_scoring.py::test_perfect_predictions_give_one
+tests/test_scoring.py::test_empty_predictions_give_recall_zero_and_precision_none
+tests/test_scoring.py::test_span_shifted_by_one_character_strict_miss_lenient_hit
+tests/test_scoring.py::test_wrong_type_is_fp_and_fn
+tests/test_scoring.py::test_duplicate_prediction_is_one_tp_plus_one_fp
+tests/test_scoring.py::test_three_gold_two_correct_one_extra_precision_and_recall_two_thirds
+tests/test_scoring.py::test_group_by_split_and_language_add_up_to_overall
+tests/test_scoring.py::test_relations_gold_used_as_predictions_gives_one
+tests/test_scoring.py::test_relations_dropping_one_relation_lowers_recall
+tests/test_scoring.py::test_relations_wrong_label_gives_fp_and_fn
+tests/test_scoring.py::test_relations_swapped_source_and_target_is_wrong
+tests/test_scoring.py::test_relations_wrong_amount_is_wrong
+tests/test_scoring.py::test_entity_alignment_one_to_one
+tests/test_scoring.py::test_load_gold_mentions_total_and_counts
+tests/test_step7_report.py::test_table_column_counts_valid
+tests/test_step7_report.py::test_table_column_counts_mismatch
+tests/test_step7_report.py::test_key_number_helper_resolves_and_raises
+tests/test_step7_report.py::test_bootstrap_reproducible
+tests/test_step7_report.py::test_forbidden_word_scan_flags_each_forbidden_word
+tests/test_step7_report.py::test_forbidden_word_scan_clean
+tests/test_step7_report.py::test_regenerate_step7_markdown_preserves_surrounding
+tests/test_step7b_gap.py::test_mention_classes_fixtures
+tests/test_step7b_gap.py::test_fn_pairing_fixtures
+tests/test_step7b_gap.py::test_relation_classes_fixtures
+tests/test_step7b_gap.py::test_adjusted_score_arithmetic
+tests/test_step7b_gap.py::test_regenerate_md_preserves_surrounding_content
+tests/test_step7b_gap.py::test_new_md_table_columns_and_forbidden_words
+tests/test_step7b_gap.py::test_script_refuses_existing_dir_and_protects_r2
+tests/test_validators.py::test_verhoeff_classic_example_and_generator
+tests/test_validators.py::test_luhn_imei_checksums
+tests/test_validators.py::test_mask_aadhaar
+tests/test_validators.py::test_find_phones_valid[9876543210-9876543210]
+tests/test_validators.py::test_find_phones_valid[8765432109-8765432109]
+tests/test_validators.py::test_find_phones_valid[7654321098-7654321098]
+tests/test_validators.py::test_find_phones_valid[6543210987-6543210987]
+tests/test_validators.py::test_find_phones_valid[98765 43210-9876543210]
+tests/test_validators.py::test_find_phones_valid[+91 98765 43210-9876543210]
+tests/test_validators.py::test_find_phones_valid[+91-98765-43210-9876543210]
+tests/test_validators.py::test_find_phones_valid[09876543210-9876543210]
+tests/test_validators.py::test_find_phones_valid[+91-6647468723-6647468723]
+tests/test_validators.py::test_find_phones_valid[\u096f\u096e\u096d\u096c\u096b\u096a\u0969\u0968\u0967\u0966-9876543210]
+tests/test_validators.py::test_find_phones_invalid[1234567890]
+tests/test_validators.py::test_find_phones_invalid[5432109876]
+tests/test_validators.py::test_find_phones_invalid[987654321]
+tests/test_validators.py::test_find_phones_invalid[98765432109]
+tests/test_validators.py::test_find_phones_invalid[490154203237518]
+tests/test_validators.py::test_find_phones_invalid[123456789012]
+tests/test_validators.py::test_find_phones_invalid[1234567890123456]
+tests/test_validators.py::test_find_phones_invalid[98765A43210]
+tests/test_validators.py::test_find_phones_invalid[++919876543210]
+tests/test_validators.py::test_phone_not_found_inside_longer_digit_runs
+tests/test_validators.py::test_find_imeis_valid[490154203237518]
+tests/test_validators.py::test_find_imeis_valid[490154203237526]
+tests/test_validators.py::test_find_imeis_valid[490154203237534]
+tests/test_validators.py::test_find_imeis_valid[490154203237542]
+tests/test_validators.py::test_find_imeis_valid[490154203237559]
+tests/test_validators.py::test_find_imeis_valid[490154203237567]
+tests/test_validators.py::test_find_imeis_valid[490154203237575]
+tests/test_validators.py::test_find_imeis_valid[\u096a\u096f\u0966\u0967\u096b\u096a\u0968\u0966\u0969\u0968\u0969\u096d\u096b\u0967\u096e]
+tests/test_validators.py::test_find_imeis_invalid[490154203237519-True]
+tests/test_validators.py::test_find_imeis_invalid[864201948201940-True]
+tests/test_validators.py::test_find_imeis_invalid[12345678901234-False]
+tests/test_validators.py::test_find_imeis_invalid[1234567890123456-False]
+tests/test_validators.py::test_find_imeis_invalid[86420194820194A-False]
+tests/test_validators.py::test_find_imeis_invalid[86420 1948201948-False]
+tests/test_validators.py::test_find_imeis_invalid[12345-False]
+tests/test_validators.py::test_find_imeis_invalid[86420194820194-False]
+tests/test_validators.py::test_find_aadhaar_valid[Aadhaar card: 234567890124]
+tests/test_validators.py::test_find_aadhaar_valid[Aadhar number 345678901238]
+tests/test_validators.py::test_find_aadhaar_valid[UID: 456789012341]
+tests/test_validators.py::test_find_aadhaar_valid[\u0906\u0927\u093e\u0930 \u0915\u093e\u0930\u094d\u0921 567890123458]
+tests/test_validators.py::test_find_aadhaar_valid[2345 6789 0124]
+tests/test_validators.py::test_find_aadhaar_valid[3456-7890-1238]
+tests/test_validators.py::test_find_aadhaar_valid[4567 8901 2341]
+tests/test_validators.py::test_find_aadhaar_valid[5678 9012 3458]
+tests/test_validators.py::test_find_aadhaar_invalid[234567890124]
+tests/test_validators.py::test_find_aadhaar_invalid[123456789012]
+tests/test_validators.py::test_find_aadhaar_invalid[012345678901]
+tests/test_validators.py::test_find_aadhaar_invalid[Account 693103413164 credited]
+tests/test_validators.py::test_find_aadhaar_invalid[2345 6789 0125]
+tests/test_validators.py::test_find_aadhaar_invalid[Aadhaar: 23456789012]
+tests/test_validators.py::test_find_aadhaar_invalid[Aadhaar: 2345678901234]
+tests/test_validators.py::test_find_aadhaar_invalid[Aadhaar: 2345 6789 012]
+tests/test_validators.py::test_find_pan_valid[ABCPE1234F]
+tests/test_validators.py::test_find_pan_valid[ABCCE1234F]
+tests/test_validators.py::test_find_pan_valid[ABCHE1234F]
+tests/test_validators.py::test_find_pan_valid[ABCFE1234F]
+tests/test_validators.py::test_find_pan_valid[ABCAT1234F]
+tests/test_validators.py::test_find_pan_valid[ABCTP1234F]
+tests/test_validators.py::test_find_pan_valid[ABCBA1234F]
+tests/test_validators.py::test_find_pan_valid[ABCLP1234F]
+tests/test_validators.py::test_find_pan_invalid[ABCZE1234F-True]
+tests/test_validators.py::test_find_pan_invalid[ABCDX1234F-True]
+tests/test_validators.py::test_find_pan_invalid[ABCDE123F-False]
+tests/test_validators.py::test_find_pan_invalid[ABCDE12345-False]
+tests/test_validators.py::test_find_pan_invalid[12345ABCDE-False]
+tests/test_validators.py::test_find_pan_invalid[ABCD1234F-False]
+tests/test_validators.py::test_find_pan_invalid[ABCDEF1234F-False]
+tests/test_validators.py::test_find_pan_invalid[ABCDE12345F-False]
+tests/test_validators.py::test_find_ifsc_valid[SBIN0001234]
+tests/test_validators.py::test_find_ifsc_valid[HDFC0002345]
+tests/test_validators.py::test_find_ifsc_valid[ICIC0003456]
+tests/test_validators.py::test_find_ifsc_valid[PUNB0004567]
+tests/test_validators.py::test_find_ifsc_valid[UTIB0005678]
+tests/test_validators.py::test_find_ifsc_valid[BARB0006789]
+tests/test_validators.py::test_find_ifsc_valid[KKBK0007890]
+tests/test_validators.py::test_find_ifsc_valid[YESB0008901]
+tests/test_validators.py::test_find_ifsc_invalid[SBIN1001234]
+tests/test_validators.py::test_find_ifsc_invalid[SBI0001234]
+tests/test_validators.py::test_find_ifsc_invalid[SBINO001234]
+tests/test_validators.py::test_find_ifsc_invalid[SBIN000123]
+tests/test_validators.py::test_find_ifsc_invalid[SBIN00012345]
+tests/test_validators.py::test_find_ifsc_invalid[12340001234]
+tests/test_validators.py::test_find_ifsc_invalid[SBIN000123$]
+tests/test_validators.py::test_find_ifsc_invalid[SBIN 0001234]
+tests/test_validators.py::test_find_upi_valid[ravi@okhdfcbank]
+tests/test_validators.py::test_find_upi_valid[9876543210@paytm]
+tests/test_validators.py::test_find_upi_valid[user.name@okaxis]
+tests/test_validators.py::test_find_upi_valid[merchant_store@icici]
+tests/test_validators.py::test_find_upi_valid[amit-kumar@ybl]
+tests/test_validators.py::test_find_upi_valid[payment123@sbi]
+tests/test_validators.py::test_find_upi_valid[shop@apl]
+tests/test_validators.py::test_find_upi_valid[rajesh@barodampay]
+tests/test_validators.py::test_find_upi_invalid[ravi@gmail.com]
+tests/test_validators.py::test_find_upi_invalid[Rajendra Singh @ Raju Bhai]
+tests/test_validators.py::test_find_upi_invalid[someone@company.co.in]
+tests/test_validators.py::test_find_upi_invalid[@okhdfcbank]
+tests/test_validators.py::test_find_upi_invalid[ravi@]
+tests/test_validators.py::test_find_upi_invalid[ravi @okhdfcbank]
+tests/test_validators.py::test_find_upi_invalid[ravi@ okhdfcbank]
+tests/test_validators.py::test_find_upi_invalid[user@domain.org]
+tests/test_validators.py::test_find_vehicle_plates_valid[MH12AB1234-MH12AB1234]
+tests/test_validators.py::test_find_vehicle_plates_valid[MH 12 AB 1234-MH12AB1234]
+tests/test_validators.py::test_find_vehicle_plates_valid[MH-12-AB-1234-MH12AB1234]
+tests/test_validators.py::test_find_vehicle_plates_valid[DL-8C-AB-5198-DL8CAB5198]
+tests/test_validators.py::test_find_vehicle_plates_valid[KA01AB1234-KA01AB1234]
+tests/test_validators.py::test_find_vehicle_plates_valid[UP32CD5678-UP32CD5678]
+tests/test_validators.py::test_find_vehicle_plates_valid[HR26DQ1111-HR26DQ1111]
+tests/test_validators.py::test_find_vehicle_plates_valid[GJ01EF9999-GJ01EF9999]
+tests/test_validators.py::test_find_vehicle_plates_invalid[XX12AB1234-True]
+tests/test_validators.py::test_find_vehicle_plates_invalid[ZZ01CD5678-True]
+tests/test_validators.py::test_find_vehicle_plates_invalid[MH123AB1234-False]
+tests/test_validators.py::test_find_vehicle_plates_invalid[M12AB1234-False]
+tests/test_validators.py::test_find_vehicle_plates_invalid[MH12ABCD1234-False]
+tests/test_validators.py::test_find_vehicle_plates_invalid[MH12AB12345-False]
+tests/test_validators.py::test_find_vehicle_plates_invalid[12MHAB1234-False]
+tests/test_validators.py::test_find_vehicle_plates_invalid[MH 12 AB-False]
+tests/test_validators.py::test_find_amounts_valid_pairs[1,57,400-157400.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[Rs. 1,57,400/--157400.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[INR 1,57,400.00-157400.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[INR 5,00,000.00-500000.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[Rs. 25,628/--25628.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[1.5 lakh-150000.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[2 lakh-200000.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[Rs. 73,500/--73500.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[\u20b95,00,000-500000.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[Rupees 5,00,000-500000.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[\u0930\u0941. 25,000-25000.0]
+tests/test_validators.py::test_find_amounts_valid_pairs[\u096b \u0932\u093e\u0916-500000.0]
+tests/test_validators.py::test_find_amounts_invalid[157400]
+tests/test_validators.py::test_find_amounts_invalid[500000]
+tests/test_validators.py::test_find_amounts_invalid[25628]
+tests/test_validators.py::test_find_amounts_invalid[9876543210]
+tests/test_validators.py::test_find_amounts_invalid[864201948201948]
+tests/test_validators.py::test_find_amounts_invalid[30291827465]
+tests/test_validators.py::test_find_amounts_invalid[INR]
+tests/test_validators.py::test_find_amounts_invalid[Rs.]
+tests/test_validators.py::test_find_accounts_valid[Account 30291827465-30291827465]
+tests/test_validators.py::test_find_accounts_valid[SBI A/c 693103413164-693103413164]
+tests/test_validators.py::test_find_accounts_valid[HDFC acct 12345678901234-12345678901234]
+tests/test_validators.py::test_find_accounts_valid[PNB account 1234567890123456-1234567890123456]
+tests/test_validators.py::test_find_accounts_valid[khata no 95217729622-95217729622]
+tests/test_validators.py::test_find_accounts_valid[\u0916\u093e\u0924\u093e \u0938\u0902\u0916\u094d\u092f\u093e 12345678901-12345678901]
+tests/test_validators.py::test_find_accounts_valid[ICICI Bank 693103413164-693103413164]
+tests/test_validators.py::test_find_accounts_valid[Axis account 912345678901-912345678901]
+tests/test_validators.py::test_find_accounts_invalid[30291827465]
+tests/test_validators.py::test_find_accounts_invalid[95217729622]
+tests/test_validators.py::test_find_accounts_invalid[Phone 9876543210]
+tests/test_validators.py::test_find_accounts_invalid[IMEI: 864201948201948]
+tests/test_validators.py::test_find_accounts_invalid[Account 12345]
+tests/test_validators.py::test_find_accounts_invalid[Account 1234567890123456789]
+tests/test_validators.py::test_find_accounts_invalid[Some random text with account]
+tests/test_validators.py::test_find_accounts_invalid[A/C with no numbers]
+tests/test_validators.py::test_embed_valid_values_property
+
+501 tests collected in 15.61s

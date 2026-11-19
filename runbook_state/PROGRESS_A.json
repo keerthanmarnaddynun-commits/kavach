@@ -1,0 +1,12 @@
+{
+  "baseline_tests": 0,
+  "chunk": "A",
+  "steps": {
+    "A0": {
+      "attempts": 0,
+      "begin_head": "1a62fb3f79ec64a7761fcf74d25e9cb9da84059d",
+      "status": "gated",
+      "tests_passed": 501
+    }
+  }
+}

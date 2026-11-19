@@ -1,0 +1,5 @@
+COMMAND: PY -c import httpx; print('httpx imported successfully:', httpx.__version__)
+EXIT: 0
+SECONDS: 0.8
+--- OUTPUT ---
+httpx imported successfully: 0.25.2

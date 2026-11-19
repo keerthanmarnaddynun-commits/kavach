@@ -1,0 +1,70 @@
+{
+  "files": [
+    ".gitignore",
+    "requirements.txt"
+  ],
+  "fingerprint": "d9d37d7a4aa82fa82cf46759a01a4724f87822e61e75beac9a7a8071771ccd40",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 501, baseline 0, log A0_09_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: imports",
+      "detail": [
+        "exit 0, log A0_10_done_imports.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: python_311",
+      "detail": [
+        "exit 0, log A0_11_done_python_311.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: ignore_rules",
+      "detail": [
+        "exit 0, log A0_12_done_ignore_rules.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: environment_log",
+      "detail": [
+        "exit 0, log A0_13_done_environment_log.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: inventory_log",
+      "detail": [
+        "exit 0, log A0_14_done_inventory_log.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A0",
+  "tests_passed": 501,
+  "time": "2026-11-19 08:30:22"
+}

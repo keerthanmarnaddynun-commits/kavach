@@ -34,3 +34,9 @@ Thumbs.db
 .env
 
 .venv311/
+
+# Runtime, scratch and model directories
+runtime/
+scratch/
+models/
+

@@ -1,0 +1,30 @@
+=== PYTHON VERSION ===
+3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+
+=== TARGET PACKAGES (pip list) ===
+fastapi                   0.104.1
+httpx                     0.25.2
+networkx                  3.2.1
+numpy                     1.26.4
+pydantic                  2.14.3
+python-multipart          0.0.6
+starlette                 0.27.0
+torch                     2.1.0
+transformers              4.35.2
+uvicorn                   0.24.0
+
+=== HTTPX IMPORT CHECK ===
+httpx imported successfully: 0.25.2
+
+=== PYTEST COLLECT (last line) ===
+501 tests collected in 15.61s
+
+=== GIT LOG (-5) ===
+1a62fb3 Runbook pack: step tool, rules and chunk A
+3f527c0 Phase C 7d-2/7d-3: held-out LLM-FIR evaluation (frozen extractor), Table A correction, post-hoc gap analysis, RESULTS_PART2
+9a26aa6 Phase C 7d-1: LLM-authored FIR set (25 files), converter and validator, converted gold and reports
+ef02dc9 Phase B 7b-5: call-layer min vertex cut for couriers (50 fresh seeds), unowned bridging phones, chip score threshold
+ba67757 Phase B 7b-4: mule and burner detectors, min vertex cut (mixed-graph cut finds no finite cut), role chips, evaluation
+
+=== HUGGING FACE CACHE CHECK ===
+HF cache folder models--Davlan--xlm-roberta-base-ner-hrl exists: True

@@ -1,0 +1,184 @@
+================================================================================
+KAVACH CHUNK A: API INVENTORY OF EXISTING MODULES
+================================================================================
+
+### 1. MODULE EXPORTS (Signatures and First Docstring Lines)
+
+--- Module: ai_pipeline.pipeline (imported in 9.80s) ---
+  [class] EmptyText(...)
+         Raised when input text is not a string, empty, or whitespace-only.
+  [class] NoEntitiesFound(...)
+         Raised when pipeline processing yields zero entities.
+  [class] TextTooLong(...)
+         Raised when input text exceeds MAX_CHARS.
+  [func] analyze_text(text: 'str', doc_id: 'str' = 'DOC_001', case_id: 'str' = 'CASE_DEMO_V2', use_model: 'bool' = True, raw_spans: 'list[dict[str, Any]] | None' = None) -> 'dict[str, Any]'
+         Run end-to-end FIR extraction and assembly pipeline:
+  [func] assemble_entities(text: 'str', doc_id: 'str', raw_spans: 'list[dict[str, Any]]') -> 'tuple[dict[str, Any], dict[str, Any]]'
+         Assemble extracted person/alias/father spans and Indian identifiers into a Contract 1 v1.1
+  [func] extract_names(text: 'str', model_spans: 'list[dict[str, Any]]') -> 'list[dict[str, Any]]'
+         Extract structured names from text and post-processed model spans:
+  [func] extract_relations_hybrid(text: 'str', doc: 'dict[str, Any]', aux: 'dict[str, Any]') -> 'list[dict[str, Any]]'
+         Hybrid relation extractor (Step 6b-3 + Step 6c-2):
+  [func] find_all_identifiers(text: 'str') -> 'list[Candidate]'
+         Run all nine identifier finders on original text and resolve overlapping spans
+  [func] heuristic_person_spans(text: 'str') -> 'list[dict[str, Any]]'
+         Heuristic person extractor used in DEGRADED_NO_MODEL mode.
+  [func] process_text(text: 'str', doc_id: 'str' = 'DOC_001', **kwargs: 'Any') -> 'dict[str, Any]'
+         Run analyze_text and return only the Contract 1 v1.1 document dict.
+  [func] validate_ai_output(doc: 'dict[str, Any]') -> 'None'
+         Validate AI output against Contract 1 v1.1 schema and semantic rules.
+
+--- Module: case_graph.builder (imported in 0.01s) ---
+  [class] Decimal(value='0', context=None)
+         Construct a new Decimal object. 'value' can be an integer, string, tuple,
+  [func] build_case_graph(fir_dir: 'str | Path', cdr_path: 'str | Path', bank_path: 'str | Path') -> 'dict[str, Any]'
+         Build a deterministic case graph and stats from FIR outputs, CDR, and Bank CSVs.
+  [func] cross_script_names_match(name_a: 'str', name_b: 'str') -> 'bool'
+         Return True iff one name is Devanagari, one is Roman, and tokens match.
+  [class] datetime(...)
+         datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
+  [func] devanagari_to_roman(text: 'str') -> 'str'
+         Transliterate Devanagari text to whitespace-joined Roman tokens.
+  [func] normalise_name(name: 'str') -> 'str'
+         Return case-folded, whitespace-collapsed NFKC form of a person name.
+  [func] normalise_value(node_type: 'str', raw_value: 'str') -> 'str'
+         Normalise non-person identifier values while preserving leading digits.
+
+--- Module: case_graph.validate (imported in 0.00s) ---
+  [func] validate_graph(graph: 'dict[str, Any]') -> 'list[str]'
+         Validate nodes, edges, keys, allowed types, and CSV row provenance.
+
+--- Module: case_analytics.scores (imported in 1.02s) ---
+  [func] build_analytics_graph(graph_data: 'dict[str, Any]', mode: 'str' = 'strict', base_weights: 'dict[str, float] | None' = None) -> 'tuple[nx.Graph, dict[str, Any]]'
+         Build simple undirected NetworkX graph for 'strict' or 'resolved' mode.
+  [func] compute_kingpin_scores(graph_data: 'dict[str, Any]', mode: 'str' = 'strict', base_weights: 'dict[str, float] | None' = None) -> 'dict[str, Any]'
+         Compute normalised centrality components, composite score, and explanations.
+  [func] compute_robustness(graph_data: 'dict[str, Any]', mode: 'str' = 'strict', n_samples: 'int' = 200, seed: 'int' = 20261112) -> 'dict[str, Any]'
+         Perturb base weights 200 times in [0.8, 1.2] and track rank-1 / top-3 stability.
+  [func] resolve_candidate_representatives(graph_data: 'dict[str, Any]') -> 'tuple[dict[str, str], dict[str, list[str]]]'
+         Return representative node id per suspect node and collapsed member lists.
+
+--- Module: case_analytics.projection (imported in 0.00s) ---
+  [func] build_person_projection(graph_data: 'dict[str, Any]') -> 'tuple[nx.Graph, dict[str, float], dict[str, int]]'
+         Build undirected person-to-person projection graph and financial control values.
+  [func] compute_pessimistic_ranks(scores: 'dict[str, float | int]') -> 'dict[str, int]'
+         Compute pessimistic rank for each person.
+  [func] compute_projection_scores(graph_data: 'dict[str, Any]') -> 'dict[str, Any]'
+         Compute projection-based structural metrics, financial control, and composites.
+
+--- Module: case_analytics.baselines (imported in 0.00s) ---
+  [func] build_analytics_graph(graph_data: 'dict[str, Any]', mode: 'str' = 'strict', base_weights: 'dict[str, float] | None' = None) -> 'tuple[nx.Graph, dict[str, Any]]'
+         Build simple undirected NetworkX graph for 'strict' or 'resolved' mode.
+  [func] compute_baselines(graph_data: 'dict[str, Any]', mode: 'str' = 'strict') -> 'dict[str, Any]'
+         Compute all four baseline rankings on the same person set and mode.
+
+--- Module: case_detectors.mule (imported in 0.03s) ---
+  [class] datetime(...)
+         datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
+  [func] detect_mules(bank_csv_path: 'str | Path', config: 'dict[str, Any] | None' = None) -> 'list[dict[str, Any]]'
+         Score and rank all accounts in bank.csv for mule account characteristics.
+
+--- Module: case_detectors.burner (imported in 0.00s) ---
+  [class] datetime(...)
+         datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
+  [func] detect_burners(cdr_csv_path: 'str | Path', config: 'dict[str, Any] | None' = None) -> 'list[dict[str, Any]]'
+         Score and rank all phones in cdr.csv for burner phone characteristics.
+
+--- Module: case_detectors.cut (imported in 0.00s) ---
+  [func] articulation_persons(graph_data: 'dict[str, Any]') -> 'list[dict[str, Any]]'
+         Find articulation points restricted to PERSON nodes with component sizes after removal.
+  [func] build_person_projection(graph_data: 'dict[str, Any]') -> 'tuple[nx.Graph, dict[str, float], dict[str, int]]'
+         Build undirected person-to-person projection graph and financial control values.
+  [func] detect_communities(graph_data: 'dict[str, Any]', seed: 'int' = 20261115) -> 'list[list[str]]'
+         Run Louvain community detection on person projection and return communities ordered by size.
+  [func] min_vertex_cut(graph_data: 'dict[str, Any]', group_a: 'Sequence[str]', group_b: 'Sequence[str]', arrestable_types: 'Sequence[str]' = ('PERSON',)) -> 'dict[str, Any]'
+         Compute minimum vertex cut disconnecting group_a from group_b using node-splitting flow.
+
+--- Module: case_detectors.cut_calls (imported in 0.00s) ---
+  [func] articulation_persons(graph_data: 'dict[str, Any]') -> 'list[dict[str, Any]]'
+         Find articulation points restricted to PERSON nodes with component sizes after removal.
+  [func] break_groups(graph: 'dict[str, Any]', group_a: 'Sequence[str] | set[str]', group_b: 'Sequence[str] | set[str]') -> 'dict[str, Any]'
+         Break communication groups using min vertex cut.
+  [func] call_layer_graph(cdr_rows: 'Iterable[Mapping[str, Any]]', owners: 'Mapping[str, Sequence[str]]') -> 'dict[str, list[dict[str, Any]]]'
+         Build call-layer graph containing only PERSON nodes from CDR and ownership.
+  [func] detect_communities_calls(graph: 'dict[str, Any]', seed: 'int') -> 'list[list[str]]'
+         Detect communities in call-layer graph using Louvain algorithm.
+  [func] min_vertex_cut(graph_data: 'dict[str, Any]', group_a: 'Sequence[str]', group_b: 'Sequence[str]', arrestable_types: 'Sequence[str]' = ('PERSON',)) -> 'dict[str, Any]'
+         Compute minimum vertex cut disconnecting group_a from group_b using node-splitting flow.
+  [func] top2_betweenness(graph: 'dict[str, Any]') -> 'dict[str, Any]'
+         Compute top 2 nodes by betweenness centrality with pessimistic tie detection.
+  [func] top2_degree(graph: 'dict[str, Any]') -> 'dict[str, Any]'
+         Compute top 2 nodes by degree with pessimistic tie detection.
+  [func] unowned_bridging_phones(cdr_rows: 'Iterable[Mapping[str, Any]]', owners: 'Mapping[str, Sequence[str]]', group_a: 'Sequence[str] | set[str]', group_b: 'Sequence[str] | set[str]') -> 'list[dict[str, Any]]'
+         Identify devices with no stated owner that communicate with both groups.
+
+--- Module: case_detectors.roles (imported in 0.00s) ---
+  [func] assign_role_chips(person_nodes: 'Sequence[dict[str, Any] | str]', financial_rank: 'Mapping[str, int]', cut_members: 'Sequence[str] | set[str]', mule_accounts_flagged: 'Sequence[dict[str, Any]] | Mapping[str, float] | Sequence[str] | set[str]', burner_phones_flagged: 'Sequence[dict[str, Any]] | Mapping[str, float] | Sequence[str] | set[str]', owner_maps: 'Mapping[str, Any]', mule_min_score: 'float' = 0.7, burner_min_score: 'float' = 0.7) -> 'dict[str, list[dict[str, str]]]'
+         Assign investigative role chips to individuals based on network and financial leads.
+
+--- Module: case_simulation.v2 (imported in 0.01s) ---
+  [func] build_planted_graph(case_dir: 'str | Path', coverage: 'float', fragmented: 'bool', rng: 'np.random.RandomState', csv_cache: 'tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, dict[str, Any]]] | None' = None) -> 'dict[str, Any]'
+         Build a graph dict in the same format as case_graph graph.json.
+  [func] build_planted_graph_v2(case_dir: 'str | Path', coverage: 'float', seed: 'int', coverage_index: 'int', csv_cache: 'tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, dict[str, Any]]] | None' = None) -> 'tuple[dict[str, Any], dict[str, str], dict[str, list[str]]]'
+         Build planted graph with opaque person node IDs and canonical names.
+
+--- Module: case_simulation.builder (imported in 0.00s) ---
+  [func] build_planted_graph(case_dir: 'str | Path', coverage: 'float', fragmented: 'bool', rng: 'np.random.RandomState', csv_cache: 'tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, dict[str, Any]]] | None' = None) -> 'dict[str, Any]'
+         Build a graph dict in the same format as case_graph graph.json.
+  [func] sample_stated_facts(truth: 'dict[str, Any]', coverage: 'float', rng: 'np.random.RandomState') -> 'dict[str, list[dict[str, str]]]'
+         Sample true ownership facts per person independently with probability = coverage.
+
+--- Module: contracts.v1_1.validate (imported in 0.00s) ---
+  [class] Draft202012Validator(schema: 'referencing.jsonschema.Schema', resolver=None, format_checker: '_format.FormatChecker | None' = None, *, registry: 'referencing.jsonschema.SchemaRegistry' = <Registry (20 resources)>, _resolver=None) -> None
+         No docstring.
+  [func] validate_ai_output(doc: 'dict[str, Any]') -> 'None'
+         Validate AI output against Contract 1 v1.1 schema and semantic rules.
+  [func] validate_graph(doc: 'dict[str, Any]') -> 'None'
+         Validate Graph Render against Contract 2 v1.1 schema and semantic rules.
+
+--------------------------------------------------------------------------------
+### 2. TOP-LEVEL KEYS AND SCHEMA CHECKS
+
+Top-level keys in FIR_01.analysis.json: ['aux', 'doc', 'info']
+Top-level keys in graph.json: ['edges', 'nodes', 'stats']
+Inspection of graph_render_schema.json:
+  root.required = ['summary', 'elements']
+  root.additionalProperties = False
+  root.properties.summary.required = ['schema_version', 'total_nodes', 'total_edges', 'kingpin_node_id', 'document_hash']
+  root.properties.summary.additionalProperties = False
+  root.properties.elements.required = ['nodes', 'edges']
+  root.properties.elements.additionalProperties = False
+  root.properties.elements.properties.nodes.items.required = ['data']
+  root.properties.elements.properties.nodes.items.additionalProperties = False
+  root.properties.elements.properties.nodes.items.properties.data.required = ['id', 'label', 'type', 'isKingpin', 'centrality_score', 'ai_confidence']
+  root.properties.elements.properties.nodes.items.properties.data.additionalProperties = False
+  root.properties.elements.properties.nodes.items.properties.data.properties.scores.additionalProperties = False
+  root.properties.elements.properties.edges.items.required = ['data']
+  root.properties.elements.properties.edges.items.additionalProperties = False
+  root.properties.elements.properties.edges.items.properties.data.required = ['id', 'source', 'target', 'label']
+  root.properties.elements.properties.edges.items.properties.data.additionalProperties = False
+additionalProperties is False anywhere: True
+
+--------------------------------------------------------------------------------
+### 3. SPECIFIC QUESTIONS AND ANSWERS
+
+Question (a): does case_graph.builder.build_case_graph find analysis files only by the pattern FIR_*.analysis.json?
+Answer (a): No. case_graph.builder._collect_fir_files matches all files ending with `*.analysis.json` (sorted(fir_dir.glob('*.analysis.json'))), and falls back to all `*.json` files if no `*.analysis.json` files exist. It does NOT require or restrict to the `FIR_` prefix.
+
+Question (b): which function computes financial control per person?
+Answer (b): `case_analytics.projection.build_person_projection(graph_data)` computes normalized financial control (`norm_financial_control`) and raw financial control in paise (`raw_financial_paise`) per person. `case_analytics.projection.compute_projection_scores(graph_data)` wraps this computation along with projection structural metrics.
+
+Question (c): which function turns CDR rows into the call-layer person graph?
+Answer (c): `case_detectors.cut_calls.call_layer_graph(cdr_rows, owners)` turns CDR rows and device ownership mappings into an undirected call-layer graph containing only PERSON nodes.
+
+Question (d): what exact exception classes does the extractor raise for empty, too long and no-entity text?
+Answer (d):
+  - Empty text: `ai_pipeline.pipeline.EmptyText` (doc: Raised when input text is not a string, empty, or whitespace-only.)
+  - Too long text: `ai_pipeline.pipeline.TextTooLong` (doc: Raised when input text exceeds MAX_CHARS.)
+  - Zero entities: `ai_pipeline.pipeline.NoEntitiesFound` (doc: Raised when pipeline processing yields zero entities.)
+
+--------------------------------------------------------------------------------
+### 4. NEURAL MODEL LOAD CHECK
+
+ai_pipeline.model_engine._NER_PIPELINE is loaded on import: False
+Confirmed: Model weights and pipeline are loaded lazily; importing does not load the neural model.

@@ -1,0 +1,19 @@
+COMMAND: PY scratch/build_inventory.py
+EXIT: 1
+SECONDS: 0.2
+--- OUTPUT ---
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scratch\build_inventory.py", line 50, in <module>
+    mod = importlib.import_module(mod_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kirthan\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'ai_pipeline'

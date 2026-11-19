@@ -1,0 +1,4 @@
+COMMAND: PY -c t=open('.gitignore',encoding='utf-8').read(); assert all(x in t for x in ('runtime/','scratch/','models/')); print('ignore ok')
+EXIT: 0
+--- OUTPUT ---
+ignore ok

@@ -1,0 +1,4 @@
+COMMAND: PY -c import sys; assert sys.version_info[:2]==(3,11), sys.version; print('py311')
+EXIT: 0
+--- OUTPUT ---
+py311
