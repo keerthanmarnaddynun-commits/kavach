@@ -16,3 +16,12 @@
 2026-11-20 07:28:35 [A1] RUN PY -m pytest -v tests/test_api_settings_storage.py -> exit 0 (A1_01_unit_storage.txt)
 2026-11-20 07:29:02 [A1] Implemented Settings dataclass with environment loading and Store filesystem manager. Added 11 unit tests covering case lifecycle, UTF-8 byte persistence with CRLF and BOM, duplicate detection, odd filename stem fallbacks, atomic writes, and concurrent document addition. All 11 tests passed in raw log A1_01_unit_storage.txt.
 2026-11-20 07:31:47 [A1] GATE A1: PASS
+2026-11-20 10:16:06 [A1] COMMIT a853e675e3 pushed=True
+2026-11-20 10:16:37 [A2] BEGIN: Security primitives (password hashing, HS256 token, roles) and hash-chained audit log
+2026-11-20 10:19:00 [A2] RUN PY -m pytest -v tests/test_api_security.py tests/test_api_audit.py -> exit 1 (A2_01_unit_security_audit.txt)
+2026-11-20 10:19:29 [A2] RUN PY -m pytest -v tests/test_api_security.py tests/test_api_audit.py -> exit 0 (A2_02_unit_security_audit.txt)
+2026-11-20 10:20:18 [A2] Implemented PBKDF2 password hashing, HS256 tokens, roles, UserStore, LoginLimiter, load_or_create_secret, AuditLog, and scripts/create_user.py. Added 15 unit tests in tests/test_api_security.py and tests/test_api_audit.py. All 15 tests passed as recorded in raw log A2_02_unit_security_audit.txt.
+2026-11-20 10:23:33 [A2] GATE A2: PASS
+2026-11-20 10:25:31 [A2] TOOL ERROR (exit 2): files changed after the gate passed; run the gate again
+2026-11-20 10:28:49 [A2] GATE A2: FAIL
+2026-11-20 10:34:08 [A2] GATE A2: PASS

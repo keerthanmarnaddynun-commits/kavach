@@ -1,0 +1,28 @@
+COMMAND: PY -m pytest -v tests/test_api_security.py tests/test_api_audit.py
+EXIT: 0
+SECONDS: 7.2
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 15 items
+
+tests/test_api_security.py::test_password_round_trip_and_mismatch PASSED [  6%]
+tests/test_api_security.py::test_two_hashes_of_same_password_differ PASSED [ 13%]
+tests/test_api_security.py::test_token_round_trip PASSED                 [ 20%]
+tests/test_api_security.py::test_token_tampering_rejected PASSED         [ 26%]
+tests/test_api_security.py::test_token_alg_none_rejected PASSED          [ 33%]
+tests/test_api_security.py::test_token_expiration_rejected PASSED        [ 40%]
+tests/test_api_security.py::test_role_ordering PASSED                    [ 46%]
+tests/test_api_security.py::test_user_store_operations_and_security PASSED [ 53%]
+tests/test_api_security.py::test_login_limiter_blocks_and_resets PASSED  [ 60%]
+tests/test_api_security.py::test_load_or_create_secret PASSED            [ 66%]
+tests/test_api_audit.py::test_audit_empty_log PASSED                     [ 73%]
+tests/test_api_audit.py::test_audit_sequential_append_and_verify PASSED  [ 80%]
+tests/test_api_audit.py::test_tampering_one_character_in_middle_fails_verify PASSED [ 86%]
+tests/test_api_audit.py::test_deleting_middle_line_fails_verify PASSED   [ 93%]
+tests/test_api_audit.py::test_concurrent_multithreaded_appends PASSED    [100%]
+
+============================= 15 passed in 4.82s ==============================

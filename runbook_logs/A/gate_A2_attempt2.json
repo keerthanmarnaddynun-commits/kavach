@@ -1,0 +1,45 @@
+{
+  "files": [
+    "kavach_api/audit.py",
+    "kavach_api/security.py",
+    "scripts/create_user.py",
+    "tests/test_api_audit.py",
+    "tests/test_api_security.py"
+  ],
+  "fingerprint": "51b82687b6d1536545b892b01d6694d7523f799cc7634f33b39f09b193234143",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 529, baseline 514, log A2_07_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_security_test_api_audit",
+      "detail": [
+        "exit 0, log A2_08_done_tests_test_api_security_test_api_audit.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A2",
+  "tests_passed": 529,
+  "time": "2026-11-20 10:34:08"
+}

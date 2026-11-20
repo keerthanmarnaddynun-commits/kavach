@@ -1,0 +1,91 @@
+COMMAND: PY -m pytest -v tests/test_api_security.py tests/test_api_audit.py
+EXIT: 1
+SECONDS: 6.5
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 15 items
+
+tests/test_api_security.py::test_password_round_trip_and_mismatch PASSED [  6%]
+tests/test_api_security.py::test_two_hashes_of_same_password_differ PASSED [ 13%]
+tests/test_api_security.py::test_token_round_trip PASSED                 [ 20%]
+tests/test_api_security.py::test_token_tampering_rejected PASSED         [ 26%]
+tests/test_api_security.py::test_token_alg_none_rejected PASSED          [ 33%]
+tests/test_api_security.py::test_token_expiration_rejected PASSED        [ 40%]
+tests/test_api_security.py::test_role_ordering PASSED                    [ 46%]
+tests/test_api_security.py::test_user_store_operations_and_security FAILED [ 53%]
+tests/test_api_security.py::test_login_limiter_blocks_and_resets FAILED  [ 60%]
+tests/test_api_security.py::test_load_or_create_secret PASSED            [ 66%]
+tests/test_api_audit.py::test_audit_empty_log PASSED                     [ 73%]
+tests/test_api_audit.py::test_audit_sequential_append_and_verify PASSED  [ 80%]
+tests/test_api_audit.py::test_tampering_one_character_in_middle_fails_verify PASSED [ 86%]
+tests/test_api_audit.py::test_deleting_middle_line_fails_verify PASSED   [ 93%]
+tests/test_api_audit.py::test_concurrent_multithreaded_appends PASSED    [100%]
+
+================================== FAILURES ===================================
+___________________ test_user_store_operations_and_security ___________________
+
+tmp_path = WindowsPath('C:/Users/Kirthan/AppData/Local/Temp/pytest-of-Kirthan/pytest-120/test_user_store_operations_and0')
+
+    def test_user_store_operations_and_security(tmp_path):
+        """UserStore validates usernames, enforces password constraints, and never returns hashes."""
+        users_file = tmp_path / "users.json"
+>       store = UserStore(users_file, iterations=1000)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_api_security.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <kavach_api.security.UserStore object at 0x0000028F866AF210>
+path = WindowsPath('C:/Users/Kirthan/AppData/Local/Temp/pytest-of-Kirthan/pytest-120/test_user_store_operations_and0/users.json')
+iterations = 1000
+
+    def __init__(self, path: str | Path, iterations: int = 600000):
+        self.path = Path(path).resolve()
+        self.iterations = iterations
+>       self._lock = threading.Lock()
+                     ^^^^^^^^^
+E       NameError: name 'threading' is not defined
+
+kavach_api\security.py:175: NameError
+____________________ test_login_limiter_blocks_and_resets _____________________
+
+    def test_login_limiter_blocks_and_resets():
+        """Limiter blocks after 5 failures and releases after sliding window."""
+        fake_time = 1000.0
+    
+        def clock():
+            return fake_time
+    
+>       limiter = LoginLimiter(limit=5, window_seconds=300, clock=clock)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_api_security.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <kavach_api.security.LoginLimiter object at 0x0000028F86FA46D0>
+limit = 5, window_seconds = 300
+clock = <function test_login_limiter_blocks_and_resets.<locals>.clock at 0x0000028F84B66020>
+
+    def __init__(
+        self,
+        limit: int = 5,
+        window_seconds: int = 300,
+        clock: Any = None,
+    ):
+        self.limit = limit
+        self.window_seconds = window_seconds
+        self._clock = clock if clock is not None else time.time
+        self._failures: dict[str, list[float]] = {}
+>       self._lock = threading.Lock()
+                     ^^^^^^^^^
+E       NameError: name 'threading' is not defined
+
+kavach_api\security.py:291: NameError
+=========================== short test summary info ===========================
+FAILED tests/test_api_security.py::test_user_store_operations_and_security - ...
+FAILED tests/test_api_security.py::test_login_limiter_blocks_and_resets - Nam...
+======================== 2 failed, 13 passed in 4.74s =========================

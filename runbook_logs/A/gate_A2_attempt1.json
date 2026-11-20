@@ -1,0 +1,95 @@
+{
+  "files": [
+    "kavach_api/audit.py",
+    "kavach_api/security.py",
+    "new_chat_pack/new_chat_pack/ADDENDUM_19NOV.md",
+    "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt",
+    "new_chat_pack/new_chat_pack/CRIMI-NEX_HANDOFF.md",
+    "new_chat_pack/new_chat_pack/CRIMI-NEX_Transformation_Plan.txt",
+    "new_chat_pack/new_chat_pack/nlp-project.md",
+    "new_chat_pack/new_chat_pack/runbook/RULES.md",
+    "new_chat_pack/new_chat_pack/runbook/START_PROMPT.txt",
+    "new_chat_pack/new_chat_pack/runbook/chunk_A.md",
+    "new_chat_pack/new_chat_pack/runbook/chunk_A.steps.json",
+    "scripts/create_user.py",
+    "tests/test_api_audit.py",
+    "tests/test_api_security.py"
+  ],
+  "fingerprint": null,
+  "ok": false,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/ADDENDUM_19NOV.md",
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt",
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/CRIMI-NEX_HANDOFF.md",
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/CRIMI-NEX_Transformation_Plan.txt",
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/nlp-project.md",
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/runbook/RULES.md",
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/runbook/START_PROMPT.txt",
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/runbook/chunk_A.md",
+        "new file outside the allow-list: new_chat_pack/new_chat_pack/runbook/chunk_A.steps.json"
+      ],
+      "ok": false
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [
+        "new_chat_pack/new_chat_pack/ADDENDUM_19NOV.md contains machine-specific text 'C:\\Users'",
+        "new_chat_pack/new_chat_pack/ADDENDUM_19NOV.md contains machine-specific text 'Kirthan'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:63 banned word 'Optimal'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:63 banned word 'Sweet Spot'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:63 banned word 'decisively'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:64 banned word 'optimal'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:64 banned word 'catastrophic'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:65 banned word 'robust'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:68 banned word 'optimal'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:144 banned word 'optimal'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:144 banned word 'sweet spot'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:144 banned word 'robust'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:144 banned word 'decisively'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:145 banned word 'catastrophic'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:145 banned word 'proves'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:145 banned word 'guarantees'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:191 banned word 'optimal'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:191 banned word 'sweet spot'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:191 banned word 'robust'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:191 banned word 'decisively'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:191 banned word 'catastrophic'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:192 banned word 'proves'",
+        "new_chat_pack/new_chat_pack/AG_LESSONS_NOTE.txt:192 banned word 'guarantees'",
+        "new_chat_pack/new_chat_pack/CRIMI-NEX_HANDOFF.md contains machine-specific text 'C:\\Users'",
+        "new_chat_pack/new_chat_pack/CRIMI-NEX_HANDOFF.md contains machine-specific text 'Kirthan'",
+        "new_chat_pack/new_chat_pack/CRIMI-NEX_Transformation_Plan.txt:1442 banned word 'excellent'",
+        "new_chat_pack/new_chat_pack/nlp-project.md contains machine-specific text 'C:\\Users'",
+        "new_chat_pack/new_chat_pack/nlp-project.md contains machine-specific text 'Kirthan'",
+        "new_chat_pack/new_chat_pack/runbook/RULES.md:80 banned word 'optimal'",
+        "new_chat_pack/new_chat_pack/runbook/RULES.md:80 banned word 'sweet spot'"
+      ],
+      "ok": false
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 529, baseline 514, log A2_05_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_security_test_api_audit",
+      "detail": [
+        "exit 0, log A2_06_done_tests_test_api_security_test_api_audit.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A2",
+  "tests_passed": 529,
+  "time": "2026-11-20 10:28:49"
+}
