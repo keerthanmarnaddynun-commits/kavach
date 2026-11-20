@@ -1,0 +1,14 @@
+COMMAND: PY -m pytest -v tests/test_api_extract.py -k real_model
+EXIT: 0
+SECONDS: 0.8
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 5 items / 4 deselected / 1 selected
+
+tests/test_api_extract.py::test_real_model_matches_saved_outputs SKIPPED [100%]
+
+====================== 1 skipped, 4 deselected in 0.21s =======================

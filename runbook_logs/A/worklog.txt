@@ -30,3 +30,16 @@
 2026-11-20 10:40:52 [A3] RUN PY -m pytest -v tests/test_api_ingest.py -> exit 0 (A3_01_unit_ingest.txt)
 2026-11-20 10:41:35 [A3] Implemented decode_fir for FIR text with UTF-8 BOM removal and IngestError (codes: invalid_encoding, empty_text, text_too_long). Implemented validate_cdr and validate_bank for CSV ingestion returning CsvReport with 1-based data row errors and error_count capped at 50 in errors list. Created tests/test_api_ingest.py with 13 unit tests covering minimal files, row rules, missing columns, empty/header-only files, BOM/CRLF, Hindi text, demo case_demo_v2 row count match with stats.json, and 10MB performance. All 13 unit tests passed as saved in raw log A3_01_unit_ingest.txt.
 2026-11-20 10:43:50 [A3] GATE A3: PASS
+2026-11-20 10:49:40 [A3] COMMIT 597f2e10e6 pushed=True
+2026-11-20 13:04:35 [A4] BEGIN: Job store, single worker and extraction service around the frozen extractor
+2026-11-20 13:10:10 [A4] Applied three pre-A4 fixes: (a) storage.py case_id/doc_id and security.py username regex patterns updated to use \\Z and fullmatch to reject trailing newlines. (b) UserStore raises UserStoreCorrupt when users.json exists but is unreadable or not a JSON object. (c) AuditLog.append raises AuditLogCorrupt if log file is non-empty and last line is not a valid JSON object with seq and hash.
+2026-11-20 13:16:37 [A4] RUN PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py -> exit 2 (A4_01_unit_jobs_extract.txt)
+2026-11-20 13:17:35 [A4] RUN PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py -> exit 1 (A4_02_unit_jobs_extract.txt)
+2026-11-20 13:18:27 [A4] RUN PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py -> exit 1 (A4_03_unit_jobs_extract.txt)
+2026-11-20 13:20:04 [A4] RUN PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py -> exit 1 (A4_04_unit_jobs_extract.txt)
+2026-11-20 13:20:36 [A4] RUN PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py -> exit 1 (A4_05_unit_jobs_extract.txt)
+2026-11-20 13:21:06 [A4] RUN PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py -> exit 1 (A4_06_unit_jobs_extract.txt)
+2026-11-20 13:22:38 [A4] RUN PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py -> exit 0 (A4_07_unit_jobs_extract.txt)
+2026-11-20 13:23:14 [A4] RUN PY -m pytest -v tests/test_api_extract.py -k real_model -> exit 0 (A4_08_real_model.txt)
+2026-11-20 13:24:54 [A4] Implemented JobStore and JobRunner in kavach_api/jobs.py. Implemented extract_document, lazy default_extractor, model_loaded, and run_extract_job in kavach_api/extract_service.py. Created tests/test_api_jobs.py (5 tests) and tests/test_api_extract.py (5 tests). Offline real-model extraction test matches saved step 6 outputs for FIR_01, FIR_45, and FIR_60. Saved raw log A4_07_unit_jobs_extract.txt shows 9 passed, 1 skipped.
+2026-11-20 13:27:06 [A4] GATE A4: PASS

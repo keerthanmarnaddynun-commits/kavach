@@ -1,0 +1,73 @@
+COMMAND: PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py
+EXIT: 1
+SECONDS: 1.8
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 10 items
+
+tests/test_api_jobs.py::test_validate_job_id PASSED                      [ 10%]
+tests/test_api_jobs.py::test_job_store_lifecycle PASSED                  [ 20%]
+tests/test_api_jobs.py::test_job_store_list_for_case PASSED              [ 30%]
+tests/test_api_jobs.py::test_job_runner_execution_and_queue_length PASSED [ 40%]
+tests/test_api_jobs.py::test_job_runner_survives_exception PASSED        [ 50%]
+tests/test_api_extract.py::test_import_extract_service_does_not_load_torch PASSED [ 60%]
+tests/test_api_extract.py::test_extract_document_lifecycle FAILED        [ 70%]
+tests/test_api_extract.py::test_extract_document_typed_errors FAILED     [ 80%]
+tests/test_api_extract.py::test_run_extract_job_progress_and_counts FAILED [ 90%]
+tests/test_api_extract.py::test_real_model_matches_saved_outputs SKIPPED [100%]
+
+================================== FAILURES ===================================
+_______________________ test_extract_document_lifecycle _______________________
+
+test_env = (<kavach_api.storage.Store object at 0x000002244EA35510>, <kavach_api.jobs.JobStore object at 0x000002244EA98E50>)
+
+    def test_extract_document_lifecycle(test_env: tuple[Storage, JobStore]) -> None:
+        """Document extraction updates status, saves analysis, and validates output."""
+        store, _ = test_env
+        case = store.create_case("Case 1", "test_user")
+        case_id = case["case_id"]
+    
+>       meta = store.add_document(case_id, "DOC_001", b"Ramesh Kumar went to the station.")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: Store.add_document() missing 1 required positional argument: 'uploaded_by'
+
+tests\test_api_extract.py:98: TypeError
+_____________________ test_extract_document_typed_errors ______________________
+
+test_env = (<kavach_api.storage.Store object at 0x000002244EACA7D0>, <kavach_api.jobs.JobStore object at 0x000002244EACA690>)
+
+    def test_extract_document_typed_errors(test_env: tuple[Storage, JobStore]) -> None:
+        """Extractor exceptions are mapped to exact status codes and one failure does not halt others."""
+        store, _ = test_env
+        case = store.create_case("Case Errors", "test_user")
+        case_id = case["case_id"]
+    
+>       store.add_document(case_id, "DOC_EMPTY", b"")
+E       TypeError: Store.add_document() missing 1 required positional argument: 'uploaded_by'
+
+tests\test_api_extract.py:124: TypeError
+__________________ test_run_extract_job_progress_and_counts ___________________
+
+test_env = (<kavach_api.storage.Store object at 0x000002244EA4E810>, <kavach_api.jobs.JobStore object at 0x000002244EA4DE90>)
+
+    def test_run_extract_job_progress_and_counts(test_env: tuple[Storage, JobStore]) -> None:
+        """run_extract_job iterates documents, updates progress, and writes final summary."""
+        store, job_store = test_env
+        case = store.create_case("Case Batch", "test_user")
+        case_id = case["case_id"]
+    
+        doc_ids = ["DOC_A", "DOC_B", "DOC_C"]
+        for did in doc_ids:
+>           store.add_document(case_id, did, f"Content for {did}".encode("utf-8"))
+E           TypeError: Store.add_document() missing 1 required positional argument: 'uploaded_by'
+
+tests\test_api_extract.py:189: TypeError
+=========================== short test summary info ===========================
+FAILED tests/test_api_extract.py::test_extract_document_lifecycle - TypeError...
+FAILED tests/test_api_extract.py::test_extract_document_typed_errors - TypeEr...
+FAILED tests/test_api_extract.py::test_run_extract_job_progress_and_counts - ...
+=================== 3 failed, 6 passed, 1 skipped in 0.81s ====================

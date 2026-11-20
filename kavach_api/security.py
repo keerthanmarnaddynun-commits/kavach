@@ -21,11 +21,15 @@ ROLE_LEVELS: dict[str, int] = {
     "admin": 3,
 }
 
-USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,40}$")
+USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,40}\Z")
 
 
 class TokenError(Exception):
     """Raised when token validation or decoding fails."""
+
+
+class UserStoreCorrupt(Exception):
+    """Raised when users.json exists but is unreadable or not a valid JSON object."""
 
 
 def role_at_least(role: str, minimum: str) -> bool:
@@ -181,14 +185,20 @@ class UserStore:
             return {}
         try:
             content = self.path.read_text(encoding="utf-8")
-            if not content.strip():
-                return {}
+        except Exception as exc:
+            raise UserStoreCorrupt(f"Cannot read users store file: {exc}") from exc
+
+        if not content.strip():
+            return {}
+
+        try:
             data = json.loads(content)
-            if isinstance(data, dict):
-                return data
-            return {}
-        except Exception:
-            return {}
+        except Exception as exc:
+            raise UserStoreCorrupt(f"Users store file contains invalid JSON: {exc}") from exc
+
+        if not isinstance(data, dict):
+            raise UserStoreCorrupt("Users store file is not a JSON object")
+        return data
 
     def _save_data(self, data: dict[str, dict[str, Any]]) -> None:
         """Atomically write user records."""
@@ -207,7 +217,7 @@ class UserStore:
 
     def create_user(self, username: str, password: str, role: str) -> dict[str, Any]:
         """Create a new user. Rejects invalid names, weak passwords, and duplicates."""
-        if not isinstance(username, str) or not USERNAME_PATTERN.match(username):
+        if not isinstance(username, str) or not USERNAME_PATTERN.fullmatch(username):
             raise ValueError(f"Invalid username format: {username!r}")
 
         if not isinstance(password, str) or len(password) < 10:

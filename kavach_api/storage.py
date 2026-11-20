@@ -15,8 +15,8 @@ from typing import Any, Mapping
 from kavach_api.settings import Settings
 
 
-CASE_ID_PATTERN = re.compile(r"^C-[0-9a-f]{10}$")
-DOC_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,40}$")
+CASE_ID_PATTERN = re.compile(r"^C-[0-9a-f]{10}\Z")
+DOC_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,40}\Z")
 
 
 class StorageError(Exception):
@@ -43,25 +43,25 @@ class DocumentNotFoundError(StorageError):
 
 
 def validate_case_id(case_id: str) -> str:
-    """Validate case identifier against ^C-[0-9a-f]{10}$."""
-    if not isinstance(case_id, str) or not CASE_ID_PATTERN.match(case_id):
+    """Validate case identifier against ^C-[0-9a-f]{10}\\Z."""
+    if not isinstance(case_id, str) or not CASE_ID_PATTERN.fullmatch(case_id):
         raise InvalidIdError(f"Invalid case_id format: {case_id!r}")
     return case_id
 
 
 def validate_doc_id(doc_id: str) -> str:
-    """Validate document identifier against ^[A-Za-z0-9_-]{1,40}$."""
-    if not isinstance(doc_id, str) or not DOC_ID_PATTERN.match(doc_id):
+    """Validate document identifier against ^[A-Za-z0-9_-]{1,40}\\Z."""
+    if not isinstance(doc_id, str) or not DOC_ID_PATTERN.fullmatch(doc_id):
         raise InvalidIdError(f"Invalid doc_id format: {doc_id!r}")
     return doc_id
 
 
 def safe_stem(filename: str) -> str:
-    """Return clean stem if it matches ^[A-Za-z0-9_-]{1,40}$, else empty string."""
+    """Return clean stem if it matches ^[A-Za-z0-9_-]{1,40}\\Z, else empty string."""
     if not filename:
         return ""
     stem = Path(filename).stem
-    if DOC_ID_PATTERN.match(stem):
+    if DOC_ID_PATTERN.fullmatch(stem):
         return stem
     return ""
 
@@ -103,6 +103,7 @@ def _atomic_write_bytes(path: Path, data: bytes) -> None:
 
 
 class Store:
+    """Thread-safe filesystem storage for cases, documents, analyses and CSV uploads."""
     """Filesystem storage manager for cases, documents, and derived artifacts."""
 
     def __init__(self, settings: Settings):
@@ -441,3 +442,7 @@ class Store:
         if derived_dir.resolve() not in target.parents:
             raise StorageError(f"Derived path escape detected: {name}")
         return target
+
+
+# Alias Store as Storage for compatibility
+Storage = Store

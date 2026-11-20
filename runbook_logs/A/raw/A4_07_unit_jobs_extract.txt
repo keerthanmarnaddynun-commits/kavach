@@ -1,0 +1,23 @@
+COMMAND: PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py
+EXIT: 0
+SECONDS: 1.9
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 10 items
+
+tests/test_api_jobs.py::test_validate_job_id PASSED                      [ 10%]
+tests/test_api_jobs.py::test_job_store_lifecycle PASSED                  [ 20%]
+tests/test_api_jobs.py::test_job_store_list_for_case PASSED              [ 30%]
+tests/test_api_jobs.py::test_job_runner_execution_and_queue_length PASSED [ 40%]
+tests/test_api_jobs.py::test_job_runner_survives_exception PASSED        [ 50%]
+tests/test_api_extract.py::test_import_extract_service_does_not_load_torch PASSED [ 60%]
+tests/test_api_extract.py::test_extract_document_lifecycle PASSED        [ 70%]
+tests/test_api_extract.py::test_extract_document_typed_errors PASSED     [ 80%]
+tests/test_api_extract.py::test_run_extract_job_progress_and_counts PASSED [ 90%]
+tests/test_api_extract.py::test_real_model_matches_saved_outputs SKIPPED [100%]
+
+======================== 9 passed, 1 skipped in 1.29s =========================

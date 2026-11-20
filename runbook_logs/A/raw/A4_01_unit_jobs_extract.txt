@@ -1,0 +1,28 @@
+COMMAND: PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py
+EXIT: 2
+SECONDS: 1.1
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 5 items / 1 error
+
+=================================== ERRORS ====================================
+_________________ ERROR collecting tests/test_api_extract.py __________________
+ImportError while importing test module 'C:\Users\Kirthan\Desktop\crimi-nex\tests\test_api_extract.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_api_extract.py:11: in <module>
+    from kavach_api.extract_service import (
+kavach_api\extract_service.py:12: in <module>
+    from kavach_api.storage import Storage
+E   ImportError: cannot import name 'Storage' from 'kavach_api.storage' (C:\Users\Kirthan\Desktop\crimi-nex\kavach_api\storage.py)
+=========================== short test summary info ===========================
+ERROR tests/test_api_extract.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+============================== 1 error in 0.45s ===============================

@@ -1,0 +1,54 @@
+{
+  "files": [
+    "kavach_api/extract_service.py",
+    "kavach_api/jobs.py",
+    "tests/test_api_extract.py",
+    "tests/test_api_jobs.py",
+    "kavach_api/audit.py",
+    "kavach_api/security.py",
+    "kavach_api/storage.py"
+  ],
+  "fingerprint": "be8e5c5ebfd2372e30e05b4943d9671fdad3877451d54ff46bdd670b665f3211",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 551, baseline 542, log A4_09_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_jobs_test_api_extract",
+      "detail": [
+        "exit 0, log A4_10_done_tests_test_api_jobs_test_api_extract.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: real_model_matches_saved_outputs",
+      "detail": [
+        "exit 0, log A4_11_done_real_model_matches_saved_outputs.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A4",
+  "tests_passed": 551,
+  "time": "2026-11-20 13:27:06"
+}

@@ -13,6 +13,10 @@ from typing import Any
 GENESIS_PREV_HASH = "0" * 64
 
 
+class AuditLogCorrupt(Exception):
+    """Raised when the audit log file is non-empty but corrupt or missing required fields."""
+
+
 def canonical_json(data: Any) -> str:
     """Serialize dictionary to canonical JSON with sorted keys and no whitespace."""
     return json.dumps(data, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
@@ -36,15 +40,28 @@ class AuditLog:
         if not self.path.is_file():
             return None
 
-        # Read lines from end
-        lines = [line.strip() for line in self.path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        try:
+            content = self.path.read_text(encoding="utf-8")
+        except Exception as exc:
+            raise AuditLogCorrupt(f"Cannot read audit log file: {exc}") from exc
+
+        lines = [line.strip() for line in content.splitlines() if line.strip()]
         if not lines:
             return None
 
+        last_line = lines[-1]
         try:
-            return json.loads(lines[-1])
-        except Exception:
-            return None
+            entry = json.loads(last_line)
+        except Exception as exc:
+            raise AuditLogCorrupt(f"Last line of audit log is not valid JSON: {exc}") from exc
+
+        if not isinstance(entry, dict):
+            raise AuditLogCorrupt("Last line of audit log is not a JSON object")
+
+        if "seq" not in entry or "hash" not in entry:
+            raise AuditLogCorrupt("Last line of audit log is missing 'seq' or 'hash'")
+
+        return entry
 
     def append(
         self,

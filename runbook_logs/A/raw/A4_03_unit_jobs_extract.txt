@@ -1,0 +1,157 @@
+COMMAND: PY -m pytest -v tests/test_api_jobs.py tests/test_api_extract.py
+EXIT: 1
+SECONDS: 2.1
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 10 items
+
+tests/test_api_jobs.py::test_validate_job_id PASSED                      [ 10%]
+tests/test_api_jobs.py::test_job_store_lifecycle PASSED                  [ 20%]
+tests/test_api_jobs.py::test_job_store_list_for_case PASSED              [ 30%]
+tests/test_api_jobs.py::test_job_runner_execution_and_queue_length PASSED [ 40%]
+tests/test_api_jobs.py::test_job_runner_survives_exception PASSED        [ 50%]
+tests/test_api_extract.py::test_import_extract_service_does_not_load_torch PASSED [ 60%]
+tests/test_api_extract.py::test_extract_document_lifecycle FAILED        [ 70%]
+tests/test_api_extract.py::test_extract_document_typed_errors FAILED     [ 80%]
+tests/test_api_extract.py::test_run_extract_job_progress_and_counts FAILED [ 90%]
+tests/test_api_extract.py::test_real_model_matches_saved_outputs SKIPPED [100%]
+
+================================== FAILURES ===================================
+_______________________ test_extract_document_lifecycle _______________________
+
+test_env = (<kavach_api.storage.Store object at 0x0000021BF442C350>, <kavach_api.jobs.JobStore object at 0x0000021BF3C02290>)
+
+    def test_extract_document_lifecycle(test_env: tuple[Storage, JobStore]) -> None:
+        """Document extraction updates status, saves analysis, and validates output."""
+        store, _ = test_env
+        case = store.create_case("Case 1", "test_user")
+        case_id = case["case_id"]
+    
+        meta = store.add_document(case_id, "DOC_001", b"Ramesh Kumar went to the station.", "test_user")
+        doc_id = meta["doc_id"]
+    
+        def fake_extractor(text: str, doc_id: str, case_id: str) -> dict[str, Any]:
+            return _dummy_valid_ai_output(doc_id, case_id)
+    
+        res = extract_document(store, case_id, doc_id, fake_extractor)
+>       assert res["status"] == "extracted"
+E       AssertionError: assert 'failed' == 'extracted'
+E         
+E         - extracted
+E         + failed
+
+tests\test_api_extract.py:105: AssertionError
+_____________________ test_extract_document_typed_errors ______________________
+
+test_env = (<kavach_api.storage.Store object at 0x0000021BF4680450>, <kavach_api.jobs.JobStore object at 0x0000021BF4680350>)
+
+    def test_extract_document_typed_errors(test_env: tuple[Storage, JobStore]) -> None:
+        """Extractor exceptions are mapped to exact status codes and one failure does not halt others."""
+        store, _ = test_env
+        case = store.create_case("Case Errors", "test_user")
+        case_id = case["case_id"]
+    
+        store.add_document(case_id, "DOC_EMPTY", b"", "test_user")
+        store.add_document(case_id, "DOC_LONG", b"Long text", "test_user")
+        store.add_document(case_id, "DOC_NOENT", b"No entities here", "test_user")
+        store.add_document(case_id, "DOC_INVALID", b"Invalid contract payload", "test_user")
+        store.add_document(case_id, "DOC_OK", b"Valid text", "test_user")
+    
+        def error_extractor(text: str, doc_id: str, case_id: str) -> dict[str, Any]:
+            if doc_id == "DOC_EMPTY":
+                raise EmptyText("Empty text input")
+            if doc_id == "DOC_LONG":
+                raise TextTooLong("Text exceeds maximum length")
+            if doc_id == "DOC_NOENT":
+                raise NoEntitiesFound("No entities recognized")
+            if doc_id == "DOC_INVALID":
+                # Invalid doc missing schema_version and required fields
+                return {"aux": {}, "doc": {"bad_field": 123}, "info": {}}
+            return _dummy_valid_ai_output(doc_id, case_id)
+    
+        # Empty text
+        r_empty = extract_document(store, case_id, "DOC_EMPTY", error_extractor)
+        assert r_empty["status"] == "failed"
+        assert r_empty["code"] == "empty_text"
+        m_empty, _ = store.get_document(case_id, "DOC_EMPTY")
+        assert m_empty["status"] == "failed"
+        assert m_empty["error"]["code"] == "empty_text"
+    
+        # Text too long
+        r_long = extract_document(store, case_id, "DOC_LONG", error_extractor)
+        assert r_long["status"] == "failed"
+        assert r_long["code"] == "text_too_long"
+        m_long, _ = store.get_document(case_id, "DOC_LONG")
+        assert m_long["status"] == "failed"
+        assert m_long["error"]["code"] == "text_too_long"
+    
+        # No entities found
+        r_noent = extract_document(store, case_id, "DOC_NOENT", error_extractor)
+        assert r_noent["status"] == "failed"
+        assert r_noent["code"] == "no_entities_found"
+        m_noent, _ = store.get_document(case_id, "DOC_NOENT")
+        assert m_noent["status"] == "failed"
+        assert m_noent["error"]["code"] == "no_entities_found"
+    
+        # Invalid contract output
+        r_invalid = extract_document(store, case_id, "DOC_INVALID", error_extractor)
+        assert r_invalid["status"] == "failed"
+        assert r_invalid["code"] == "invalid_output"
+        m_invalid, _ = store.get_document(case_id, "DOC_INVALID")
+        assert m_invalid["status"] == "failed"
+        assert m_invalid["error"]["code"] == "invalid_output"
+    
+        # Next document still extracts successfully
+        r_ok = extract_document(store, case_id, "DOC_OK", error_extractor)
+>       assert r_ok["status"] == "extracted"
+E       AssertionError: assert 'failed' == 'extracted'
+E         
+E         - extracted
+E         + failed
+
+tests\test_api_extract.py:176: AssertionError
+__________________ test_run_extract_job_progress_and_counts ___________________
+
+test_env = (<kavach_api.storage.Store object at 0x0000021BF45EAE90>, <kavach_api.jobs.JobStore object at 0x0000021BF45E9110>)
+
+    def test_run_extract_job_progress_and_counts(test_env: tuple[Storage, JobStore]) -> None:
+        """run_extract_job iterates documents, updates progress, and writes final summary."""
+        store, job_store = test_env
+        case = store.create_case("Case Batch", "test_user")
+        case_id = case["case_id"]
+    
+        doc_ids = ["DOC_A", "DOC_B", "DOC_C"]
+        for did in doc_ids:
+            store.add_document(case_id, did, f"Content for {did}".encode("utf-8"), "test_user")
+    
+        job = job_store.create(kind="extract", case_id=case_id, total=len(doc_ids))
+        job_id = job["job_id"]
+    
+        def mixed_extractor(text: str, doc_id: str, case_id: str) -> dict[str, Any]:
+            if doc_id == "DOC_B":
+                raise EmptyText("Failed doc B")
+            return _dummy_valid_ai_output(doc_id, case_id)
+    
+        summary = run_extract_job(store, job_store, case_id, doc_ids, job_id, mixed_extractor)
+>       assert summary == {"extracted": 2, "failed": 1}
+E       AssertionError: assert {'extracted': 0, 'failed': 3} == {'extracted': 2, 'failed': 1}
+E         
+E         Differing items:
+E         {'extracted': 0} != {'extracted': 2}
+E         {'failed': 3} != {'failed': 1}
+E         
+E         Full diff:
+E           {...
+E         
+E         ...Full output truncated (9 lines hidden), use '-vv' to show
+
+tests\test_api_extract.py:200: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_api_extract.py::test_extract_document_lifecycle - Assertion...
+FAILED tests/test_api_extract.py::test_extract_document_typed_errors - Assert...
+FAILED tests/test_api_extract.py::test_run_extract_job_progress_and_counts - ...
+=================== 3 failed, 6 passed, 1 skipped in 1.40s ====================
