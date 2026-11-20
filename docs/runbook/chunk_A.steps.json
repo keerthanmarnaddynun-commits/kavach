@@ -387,12 +387,15 @@
       "id": "A10",
       "title": "Security test pass over the HTTP API",
       "allow_create": [
-        "kavach_api/*",
-        "tests/test_api_security_http.py"
-      ],
+  "kavach_api/*",
+  "tests/test_api_security_http.py",
+  "tests/test_api_demo_e2e_full.py"
+],
       "allow_edit": [
-        "kavach_api/*"
-      ],
+  "kavach_api/*",
+  "scripts/create_user.py",
+  "scripts/load_demo_case.py"
+],
       "done_when": [
         {
           "name": "tests_test_api_security_http",
