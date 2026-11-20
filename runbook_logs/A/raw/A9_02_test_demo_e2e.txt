@@ -1,0 +1,16 @@
+COMMAND: PY -m pytest -v tests/test_api_demo_e2e.py
+EXIT: 0
+SECONDS: 28.1
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 3 items
+
+tests/test_api_demo_e2e.py::test_demo_case_loader_and_duplicate_prevention PASSED [ 33%]
+tests/test_api_demo_e2e.py::test_query_loaded_demo_case_via_api PASSED   [ 66%]
+tests/test_api_demo_e2e.py::test_export_openapi_script PASSED            [100%]
+
+============================= 3 passed in 22.06s ==============================

@@ -1,0 +1,53 @@
+{
+  "files": [
+    "docs/api/RUNNING.md",
+    "docs/api/openapi.json",
+    "scripts/export_openapi.py",
+    "scripts/load_demo_case.py",
+    "scripts/run_api.py",
+    "tests/test_api_demo_e2e.py"
+  ],
+  "fingerprint": "299c0ac77463268820cfbb9d91d5bab6e0b9444d506c4aaf6787fd18221dd5e2",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 601, baseline 598, log A9_03_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_demo_e2e",
+      "detail": [
+        "exit 0, log A9_04_done_tests_test_api_demo_e2e.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: openapi_exported",
+      "detail": [
+        "exit 0, log A9_05_done_openapi_exported.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A9",
+  "tests_passed": 601,
+  "time": "2026-11-20 17:24:18"
+}

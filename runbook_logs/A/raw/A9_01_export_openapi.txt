@@ -1,0 +1,5 @@
+COMMAND: PY scripts/export_openapi.py docs/api/openapi.json
+EXIT: 0
+SECONDS: 2.8
+--- OUTPUT ---
+Exported OpenAPI schema (44384 bytes) to C:\Users\Kirthan\Desktop\crimi-nex\docs\api\openapi.json

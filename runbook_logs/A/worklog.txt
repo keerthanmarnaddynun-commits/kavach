@@ -68,3 +68,9 @@
 2026-11-20 16:57:34 [A8] RUN PY -m pytest -v tests/test_api_http_write.py -> exit 0 (A8_01_test_write.txt)
 2026-11-20 16:58:24 [A8] Step A8 implementation: write endpoints in kavach_api/app.py for create case (POST /api/cases), upload documents with bounded streaming and extraction job (POST /api/cases/{id}/documents), CDR and Bank CSV uploads with validation (POST /api/cases/{id}/cdr and /bank), analyze job with 409 concurrency lock (POST /api/cases/{id}/analyze), SSE job events stream (GET /api/jobs/{id}/events), and courier break endpoint (POST /api/cases/{id}/break). Added comprehensive test suite in tests/test_api_http_write.py covering auth/permissions, full workflow, error codes (409, 413, 422), concurrency, SSE, break, and audit log chaining. All 8 tests passed (A8_01_test_write.txt).
 2026-11-20 17:05:57 [A8] GATE A8: PASS
+2026-11-20 17:07:59 [A8] COMMIT a9e3b24957 pushed=True
+2026-11-20 17:09:05 [A9] BEGIN: Demo case loader, run script, OpenAPI export and end-to-end test
+2026-11-20 17:09:57 [A9] RUN PY scripts/export_openapi.py docs/api/openapi.json -> exit 0 (A9_01_export_openapi.txt)
+2026-11-20 17:15:04 [A9] RUN PY -m pytest -v tests/test_api_demo_e2e.py -> exit 0 (A9_02_test_demo_e2e.txt)
+2026-11-20 17:16:23 [A9] Step A9 implementation: created scripts/export_openapi.py and generated docs/api/openapi.json (44384 bytes, A9_01_export_openapi.txt). Created scripts/run_api.py for uvicorn runner with HF_HUB_OFFLINE=1. Created scripts/load_demo_case.py loading 100 FIR documents, saved analyses, demo CSVs, building graph and leads, auditing demo_loaded, and preventing duplicate cases. Created docs/api/RUNNING.md with factual running instructions. Created tests/test_api_demo_e2e.py verifying loader, duplicate refusal, OpenAPI script, and API query responses. All 3 tests passed in 22.06s (A9_02_test_demo_e2e.txt).
+2026-11-20 17:24:18 [A9] GATE A9: PASS
