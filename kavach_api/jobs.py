@@ -173,15 +173,14 @@ class JobRunner:
             fn, job_id = item
             try:
                 fn()
-            except Exception as exc:
-                logger.exception("Job %s encountered unhandled error: %s", job_id, exc)
+            except Exception:
+                logger.exception("Job %s encountered unhandled error", job_id)
                 if self.job_store is not None:
                     try:
-                        short_msg = str(exc) or "Internal job error"
                         self.job_store.update(
                             job_id,
                             status="failed",
-                            errors=[{"doc_id": "", "code": "job_error", "message": short_msg}],
+                            errors=[{"doc_id": "", "code": "job_error", "message": "Internal job error"}],
                         )
                     except Exception:
                         pass

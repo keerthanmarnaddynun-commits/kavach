@@ -2,11 +2,31 @@
 from __future__ import annotations
 
 import csv
-import io
 from pathlib import Path
 from typing import Any, Sequence
 
+from kavach_api.render import compute_edge_id
 from kavach_api.storage import Storage
+
+
+class EvidenceError(Exception):
+    """Exception for evidence retrieval failures."""
+
+    def __init__(self, message: str, code: str = "evidence_error") -> None:
+        super().__init__(message)
+        self.code = code
+        self.message = message
+
+
+def _extract_confidence(val: Any) -> float:
+    """Extract float confidence preserving 0.0 and defaulting to 0.0 if None."""
+    if val is None:
+        return 0.0
+    try:
+        f = float(val)
+        return max(0.0, min(1.0, f))
+    except (ValueError, TypeError):
+        return 0.0
 
 
 def node_evidence(
@@ -17,6 +37,8 @@ def node_evidence(
 ) -> dict[str, Any]:
     """
     Retrieve FIR spans, CSV row references, and immediate neighbours for a node.
+    Raises EvidenceError(code='node_not_found') if node is missing.
+    Raises EvidenceError(code='document_missing') if referenced document is missing.
     """
     target_node = None
     for n in graph.get("nodes", []):
@@ -25,7 +47,9 @@ def node_evidence(
             break
 
     if target_node is None:
-        raise ValueError(f"Node '{node_id}' not found in case graph")
+        raise EvidenceError(f"Node '{node_id}' not found in case graph", code="node_not_found")
+
+    node_conf = _extract_confidence(target_node.get("ai_confidence"))
 
     fir_evidence: list[dict[str, Any]] = []
     # Collect FIR evidence
@@ -37,8 +61,10 @@ def node_evidence(
             meta, text = store.get_document(case_id, fir_id)
             sha256_raw = meta.get("sha256_raw", "")
         except Exception:
-            text = ""
-            sha256_raw = ""
+            raise EvidenceError(
+                f"Document '{fir_id}' missing in case '{case_id}'",
+                code="document_missing",
+            )
 
         mentions = span.get("mentions", [])
         if mentions:
@@ -54,7 +80,7 @@ def node_evidence(
                         "char_span": coords,
                         "surface": surface,
                         "entity_id": span.get("entity_id", ""),
-                        "ai_confidence": target_node.get("ai_confidence", 1.0),
+                        "ai_confidence": node_conf,
                         "excerpt": excerpt,
                     }
                 )
@@ -70,7 +96,7 @@ def node_evidence(
                     "char_span": coords,
                     "surface": surface,
                     "entity_id": span.get("entity_id", ""),
-                    "ai_confidence": target_node.get("ai_confidence", 1.0),
+                    "ai_confidence": node_conf,
                     "excerpt": excerpt,
                 }
             )
@@ -137,17 +163,134 @@ def node_evidence(
     }
 
 
+def edge_evidence_by_id(
+    store: Storage,
+    case_id: str,
+    graph: dict[str, Any],
+    edge_id: str,
+) -> dict[str, Any]:
+    """
+    Retrieve evidence for an edge by its Contract 2 edge ID.
+    Merges evidence from ALL internal edges that share the same edge ID.
+    Raises EvidenceError(code='edge_not_found') if edge ID is not found.
+    Raises EvidenceError(code='document_missing') if referenced document is missing.
+    """
+    matched_edges = []
+    for e in graph.get("edges", []):
+        src = str(e.get("source", ""))
+        tgt = str(e.get("target", ""))
+        rel = str(e.get("relation", ""))
+        skind = str(e.get("source_kind", "FIR"))
+        eid = compute_edge_id(src, tgt, rel, skind)
+        if eid == edge_id:
+            matched_edges.append(e)
+
+    if not matched_edges:
+        raise EvidenceError(f"Edge '{edge_id}' not found in case graph", code="edge_not_found")
+
+    primary = matched_edges[0]
+    source_kind = primary.get("source_kind", "FIR")
+    src = primary.get("source")
+    tgt = primary.get("target")
+    rel = primary.get("relation")
+
+    fir_evidence: list[dict[str, Any]] = []
+    csv_evidence: dict[str, Any] | None = None
+    aggregates: dict[str, Any] = {}
+
+    if source_kind == "FIR":
+        seen_spans: set[tuple[str, int, int]] = set()
+        for e in matched_edges:
+            for span in e.get("evidence_spans", []):
+                fir_id = span.get("fir_id")
+                if not fir_id:
+                    continue
+                try:
+                    meta, text = store.get_document(case_id, fir_id)
+                    sha256_raw = meta.get("sha256_raw", "")
+                except Exception:
+                    raise EvidenceError(
+                        f"Document '{fir_id}' missing in case '{case_id}'",
+                        code="document_missing",
+                    )
+
+                coords = span.get("evidence_char_span", [0, 0])
+                start, end = coords[0], coords[1]
+                span_key = (fir_id, start, end)
+                if span_key in seen_spans:
+                    continue
+                seen_spans.add(span_key)
+
+                surface = text[start:end] if text else ""
+                excerpt = text[max(0, start - 80) : min(len(text), end + 80)] if text else ""
+                fir_evidence.append(
+                    {
+                        "doc_id": fir_id,
+                        "sha256_raw": sha256_raw,
+                        "char_span": coords,
+                        "surface": surface,
+                        "trigger": span.get("trigger", ""),
+                        "ai_confidence": _extract_confidence(span.get("confidence")),
+                        "excerpt": excerpt,
+                    }
+                )
+
+    elif source_kind == "CSV":
+        all_row_numbers: set[int] = set()
+        for e in matched_edges:
+            all_row_numbers.update(e.get("row_numbers", []))
+
+        fname = primary.get("source_file", "")
+        clean_key = fname[:-4] if fname.endswith(".csv") else fname
+        f_info = store.files_info(case_id).get(fname) or store.files_info(case_id).get(clean_key) or {}
+        sorted_rows = sorted(all_row_numbers)
+
+        csv_evidence = {
+            "file": fname,
+            "sha256": f_info.get("sha256", ""),
+            "row_numbers": sorted_rows[:50],
+            "row_count": len(sorted_rows),
+        }
+        aggregates = {
+            "first_time": primary.get("first_time"),
+            "last_time": primary.get("last_time"),
+            "modes": primary.get("modes", []),
+            "total_amount": primary.get("total_amount"),
+            "total_amount_paise": primary.get("total_amount_paise"),
+            "txn_count": primary.get("txn_count"),
+        }
+
+    return {
+        "edge_id": edge_id,
+        "source": src,
+        "target": tgt,
+        "relation": rel,
+        "source_kind": source_kind,
+        "fir_evidence": fir_evidence,
+        "csv_evidence": csv_evidence,
+        "aggregates": aggregates,
+    }
+
+
 def edge_evidence(
     store: Storage,
     case_id: str,
     graph: dict[str, Any],
     source: str,
-    target: str,
+    target: str | None = None,
     relation: str | None = None,
+    edge_id: str | None = None,
 ) -> dict[str, Any]:
     """
     Retrieve FIR spans or CSV row numbers with aggregates for an edge.
+    Supports either (source, target, relation) or edge_id lookup.
     """
+    if edge_id is not None:
+        return edge_evidence_by_id(store, case_id, graph, edge_id)
+
+    if target is None and source.startswith("E-"):
+        return edge_evidence_by_id(store, case_id, graph, source)
+
     matched_edge = None
     for e in graph.get("edges", []):
         if e.get("source") == source and e.get("target") == target:
@@ -156,63 +299,15 @@ def edge_evidence(
                 break
 
     if matched_edge is None:
-        raise ValueError(f"Edge from '{source}' to '{target}' (rel={relation}) not found")
+        raise EvidenceError(f"Edge from '{source}' to '{target}' (rel={relation}) not found", code="edge_not_found")
 
-    fir_evidence: list[dict[str, Any]] = []
-    csv_evidence: dict[str, Any] | None = None
-    aggregates: dict[str, Any] = {}
-
-    if matched_edge.get("source_kind") == "FIR":
-        for span in matched_edge.get("evidence_spans", []):
-            fir_id = span.get("fir_id")
-            try:
-                meta, text = store.get_document(case_id, fir_id)
-                sha256_raw = meta.get("sha256_raw", "")
-            except Exception:
-                text = ""
-                sha256_raw = ""
-
-            coords = span.get("evidence_char_span", [0, 0])
-            start, end = coords[0], coords[1]
-            surface = text[start:end] if text else ""
-            excerpt = text[max(0, start - 80) : min(len(text), end + 80)] if text else ""
-            fir_evidence.append(
-                {
-                    "doc_id": fir_id,
-                    "sha256_raw": sha256_raw,
-                    "char_span": coords,
-                    "surface": surface,
-                    "trigger": span.get("trigger", ""),
-                    "ai_confidence": span.get("confidence", 1.0),
-                    "excerpt": excerpt,
-                }
-            )
-    elif matched_edge.get("source_kind") == "CSV":
-        fname = matched_edge.get("source_file", "")
-        clean_key = fname[:-4] if fname.endswith(".csv") else fname
-        f_info = store.files_info(case_id).get(fname) or store.files_info(case_id).get(clean_key) or {}
-        rows_list = matched_edge.get("row_numbers", [])
-        csv_evidence = {
-            "file": fname,
-            "sha256": f_info.get("sha256", ""),
-            "row_numbers": rows_list[:50],
-            "row_count": len(rows_list),
-        }
-        aggregates = {
-            "first_time": matched_edge.get("first_time"),
-            "last_time": matched_edge.get("last_time"),
-            "modes": matched_edge.get("modes", []),
-            "total_amount": matched_edge.get("total_amount"),
-            "total_amount_paise": matched_edge.get("total_amount_paise"),
-            "txn_count": matched_edge.get("txn_count"),
-        }
-
-    return {
-        "edge": matched_edge,
-        "fir_evidence": fir_evidence,
-        "csv_evidence": csv_evidence,
-        "aggregates": aggregates,
-    }
+    eid = compute_edge_id(
+        str(matched_edge.get("source", "")),
+        str(matched_edge.get("target", "")),
+        str(matched_edge.get("relation", "")),
+        str(matched_edge.get("source_kind", "FIR")),
+    )
+    return edge_evidence_by_id(store, case_id, graph, eid)
 
 
 def document_view(
@@ -223,6 +318,8 @@ def document_view(
 ) -> dict[str, Any]:
     """
     Retrieve document text, hashes, and entity/edge spans for UI highlighting.
+    Returns doc_id, filename, text, sha256_raw, sha256_text, spans.
+    Guards span sort against None char_span values.
     """
     meta, text = store.get_document(case_id, doc_id)
     spans: list[dict[str, Any]] = []
@@ -258,13 +355,20 @@ def document_view(
                         }
                     )
 
-    spans.sort(key=lambda s: (s.get("char_span", [0])[0], s.get("char_span", [0, 0])[1]))
+    def _span_key(s: dict[str, Any]) -> tuple[int, int]:
+        c = s.get("char_span")
+        if isinstance(c, (list, tuple)) and len(c) >= 2 and c[0] is not None and c[1] is not None:
+            return (int(c[0]), int(c[1]))
+        return (999999999, 999999999)
+
+    spans.sort(key=_span_key)
 
     return {
         "doc_id": doc_id,
+        "filename": meta.get("filename", f"{doc_id}.txt"),
         "text": text,
-        "sha256_raw": meta.get("sha256_raw"),
-        "sha256_stored": meta.get("sha256_stored"),
+        "sha256_raw": meta.get("sha256_raw", ""),
+        "sha256_text": meta.get("sha256_text", ""),
         "spans": spans,
     }
 

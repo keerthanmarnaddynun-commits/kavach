@@ -54,38 +54,51 @@ def extract_document(
     if extractor is None:
         extractor = default_extractor()
 
-    _meta, text = store.get_document(case_id, doc_id)
+    try:
+        _meta, text = store.get_document(case_id, doc_id)
+    except Exception:
+        logger.exception("Failed to retrieve document %s in case %s", doc_id, case_id)
+        code = "document_not_found"
+        msg = "Extraction failed"
+        try:
+            store.set_document_status(case_id, doc_id, "failed", error={"code": code, "message": msg})
+        except Exception:
+            pass
+        return {"status": "failed", "doc_id": doc_id, "code": code, "message": msg}
 
     try:
-        try:
-            result = extractor(text, doc_id=doc_id, case_id=case_id)
-        except TypeError:
-            result = extractor(text, doc_id, case_id)
+        result = extractor(text, doc_id=doc_id, case_id=case_id)
     except Exception as exc:
+        logger.exception("Extraction execution error on doc %s in case %s", doc_id, case_id)
         exc_name = type(exc).__name__
         if exc_name == "EmptyText":
             code = "empty_text"
+            msg = "empty_text"
         elif exc_name == "TextTooLong":
             code = "text_too_long"
+            msg = "text_too_long"
         elif exc_name == "NoEntitiesFound":
             code = "no_entities_found"
+            msg = "no_entities_found"
         else:
             code = "extraction_error"
-        msg = str(exc)
+            msg = "Extraction failed"
         store.set_document_status(case_id, doc_id, "failed", error={"code": code, "message": msg})
         return {"status": "failed", "doc_id": doc_id, "code": code, "message": msg}
 
     if not isinstance(result, dict) or "doc" not in result:
+        logger.error("Extractor result for doc %s lacks 'doc' key", doc_id)
         code = "invalid_output"
-        msg = "Extractor result is not a dict or lacks 'doc' key"
+        msg = "Extraction failed"
         store.set_document_status(case_id, doc_id, "failed", error={"code": code, "message": msg})
         return {"status": "failed", "doc_id": doc_id, "code": code, "message": msg}
 
     try:
         validate_ai_output(result["doc"])
     except Exception as val_exc:
+        logger.exception("Contract validation failed on doc %s", doc_id)
         code = "invalid_output"
-        msg = f"Contract validation failed: {val_exc}"
+        msg = f"Contract validation failed: {val_exc}"[:200]
         store.set_document_status(case_id, doc_id, "failed", error={"code": code, "message": msg})
         return {"status": "failed", "doc_id": doc_id, "code": code, "message": msg}
 

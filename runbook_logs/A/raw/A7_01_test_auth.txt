@@ -1,0 +1,19 @@
+COMMAND: PY -m pytest -v tests/test_api_auth_http.py
+EXIT: 0
+SECONDS: 4.1
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 6 items
+
+tests/test_api_auth_http.py::test_health_public_and_no_paths PASSED      [ 16%]
+tests/test_api_auth_http.py::test_protected_routes_reject_unauthenticated PASSED [ 33%]
+tests/test_api_auth_http.py::test_viewer_cannot_call_admin_or_analyst_routes PASSED [ 50%]
+tests/test_api_auth_http.py::test_login_success_and_failures PASSED      [ 66%]
+tests/test_api_auth_http.py::test_token_for_deleted_user_rejected PASSED [ 83%]
+tests/test_api_auth_http.py::test_admin_create_user_and_audit_verification PASSED [100%]
+
+============================== 6 passed in 2.48s ==============================

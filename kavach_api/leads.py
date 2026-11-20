@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 import csv
+import hashlib
 import json
 import logging
 from pathlib import Path
@@ -45,18 +46,25 @@ class InvalidGroupError(BreakError):
     """Raised when group_a or group_b is invalid."""
 
 
+class DetectorConfigError(Exception):
+    """Raised when detector configuration file is missing or invalid."""
+
+
 def load_detector_config(config_path: str | Path | None = None) -> dict[str, Any]:
-    """Load detector default configuration from disk."""
+    """Load detector default configuration from disk. Raises DetectorConfigError if missing."""
+    p = Path(config_path) if config_path else repo_root() / "config" / "detector_defaults.json"
+    if not p.is_file():
+        raise DetectorConfigError(f"Detector configuration file missing: {p}")
+    with open(p, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _get_config_sha256(config_path: str | Path | None = None) -> str:
+    """Compute SHA-256 digest of detector defaults configuration file."""
     p = Path(config_path) if config_path else repo_root() / "config" / "detector_defaults.json"
     if p.is_file():
-        with open(p, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {
-        "chip_min_score": {
-            "burner": 0.70,
-            "mule": 0.70,
-        }
-    }
+        return hashlib.sha256(p.read_bytes()).hexdigest()
+    return ""
 
 
 def _extract_owner_maps(graph: dict[str, Any]) -> dict[str, Any]:
@@ -121,26 +129,30 @@ def build_leads(
 ) -> dict[str, Any]:
     """
     Compute and cache deterministic investigative leads in derived/leads.json.
-    Keyed by case input fingerprint.
+    Keyed by case input fingerprint and detector config_sha256.
+    When custom config or cut_members is provided, never reads or writes leads.json.
     """
     with store.case_lock(case_id):
         cdir = store.case_dir(case_id)
         derived_dir = cdir / "derived"
         derived_dir.mkdir(exist_ok=True)
         leads_path = derived_dir / "leads.json"
-        fp_path = derived_dir / "fingerprint.json"
 
         fingerprint, doc_hash = compute_case_fingerprint(store, case_id)
+        is_default_run = (config is None and cut_members is None)
+        curr_cfg_sha = _get_config_sha256()
 
-        # Check if cached leads match fingerprint
-        if config is None and cut_members is None:
-            if fp_path.is_file() and leads_path.is_file():
-                try:
-                    cached_fp = json.loads(fp_path.read_text(encoding="utf-8"))
-                    if cached_fp.get("fingerprint") == fingerprint:
-                        return json.loads(leads_path.read_text(encoding="utf-8"))
-                except Exception:
-                    pass
+        # F3: Check freshness from leads.json contents (not fingerprint.json)
+        if is_default_run and leads_path.is_file():
+            try:
+                cached = json.loads(leads_path.read_text(encoding="utf-8"))
+                if (
+                    cached.get("fingerprint") == fingerprint
+                    and cached.get("config_sha256") == curr_cfg_sha
+                ):
+                    return cached
+            except Exception:
+                pass
 
         # Load graph and configuration
         graph = build_graph(store, case_id)
@@ -165,6 +177,7 @@ def build_leads(
         pessimistic_fin_ranks = scores_data.get("pessimistic_ranks", {}).get("financial_only", {})
         raw_financial_paise = scores_data.get("raw_financial_paise", {})
         components = scores_data.get("components", {})
+        # F9: Structural composite score from raw_scores["projection_only"]
         structural_composite = raw_scores.get("projection_only", {})
 
         # Ties detection for money flow: rounded to 9 decimal places
@@ -229,8 +242,11 @@ def build_leads(
         bank_path = store.csv_path(case_id, "bank")
         cdr_path = store.csv_path(case_id, "cdr")
         files_info = store.files_info(case_id)
-        bank_sha256 = files_info.get("bank", {}).get("sha256", "")
-        cdr_sha256 = files_info.get("cdr", {}).get("sha256", "")
+        # F2: files_info()["bank"|"cdr"] can be None when absent
+        bank_info = files_info.get("bank") or {}
+        bank_sha256 = bank_info.get("sha256", "") if isinstance(bank_info, dict) else ""
+        cdr_info = files_info.get("cdr") or {}
+        cdr_sha256 = cdr_info.get("sha256", "") if isinstance(cdr_info, dict) else ""
 
         raw_mules = detect_mules(bank_path, config) if bank_path.is_file() else []
         raw_burners = detect_burners(cdr_path, config) if cdr_path.is_file() else []
@@ -317,6 +333,7 @@ def build_leads(
 
         leads_payload = {
             "case_id": case_id,
+            "config_sha256": curr_cfg_sha,
             "disclaimer": DISCLAIMER,
             "document_hash": doc_hash,
             "fingerprint": fingerprint,
@@ -330,7 +347,8 @@ def build_leads(
             "structural_explanation": structural_explanation,
         }
 
-        _atomic_write_json(leads_path, leads_payload)
+        if is_default_run:
+            _atomic_write_json(leads_path, leads_payload)
         return leads_payload
 
 
@@ -403,7 +421,11 @@ def run_break(
     bridging = unowned_bridging_phones(cdr_rows, owners, sorted(set_a), sorted(set_b))
 
     finite = bool(break_res.get("finite", False))
-    direct_link = (break_res.get("reason") == "direct_link" or break_res.get("direct_links_count", 0) > 0)
+    # F10: Read direct_links_count and reason from frozen break_groups
+    direct_link = (
+        break_res.get("reason") == "direct_link"
+        or break_res.get("direct_links_count", 0) > 0
+    )
     size = int(break_res.get("size", 0)) if finite else 0
     raw_cut = break_res.get("cut", []) if finite else []
     cut_formatted = [

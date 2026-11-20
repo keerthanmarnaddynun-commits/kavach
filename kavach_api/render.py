@@ -21,6 +21,12 @@ ALLOWED_EDGE_LABELS = frozenset(
 ALLOWED_ROLES = frozenset({"SUSPECT", "OFFICER", "COMPLAINANT", "WITNESS"})
 
 
+def compute_edge_id(source: str, target: str, relation: str, source_kind: str) -> str:
+    """Deterministic edge ID formula for Contract 2 edges."""
+    key = f"{source}|{target}|{relation}|{source_kind}"
+    return "E-" + hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
+
+
 def render_graph(
     graph: dict[str, Any],
     document_hash: str | None = None,
@@ -31,7 +37,8 @@ def render_graph(
     Validates output with contracts.v1_1.validate.validate_graph.
     """
     proj_scores = compute_projection_scores(graph)
-    scores_map = proj_scores.get("raw_scores", {}).get("composite_v2", {})
+    # F9: Structural composite score from raw_scores["projection_only"]
+    scores_map = proj_scores.get("raw_scores", {}).get("projection_only", {})
 
     rendered_nodes: list[dict[str, Any]] = []
     seen_node_ids: set[str] = set()
@@ -48,8 +55,15 @@ def render_graph(
         else:
             score_val = 0.0
 
-        conf_val = float(node.get("ai_confidence") or 1.0)
-        conf_val = max(0.0, min(1.0, conf_val))
+        # F7: ai_confidence preserves real values including 0.0, defaults to 0.0 when missing
+        raw_conf = node.get("ai_confidence")
+        if raw_conf is not None:
+            try:
+                conf_val = max(0.0, min(1.0, float(raw_conf)))
+            except (ValueError, TypeError):
+                conf_val = 0.0
+        else:
+            conf_val = 0.0
 
         ndata: dict[str, Any] = {
             "id": nid,
@@ -69,10 +83,13 @@ def render_graph(
 
     rendered_edges: list[dict[str, Any]] = []
     seen_edge_ids: set[str] = set()
+    dropped_non_enum = 0
+    dropped_duplicates = 0
 
     for edge in graph.get("edges", []):
         rel = str(edge.get("relation", ""))
         if rel not in ALLOWED_EDGE_LABELS:
+            dropped_non_enum += 1
             continue
 
         src = str(edge["source"])
@@ -81,9 +98,9 @@ def render_graph(
             continue
 
         skind = str(edge.get("source_kind", "FIR"))
-        key = f"{src}|{tgt}|{rel}|{skind}"
-        eid = "E-" + hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
+        eid = compute_edge_id(src, tgt, rel, skind)
         if eid in seen_edge_ids:
+            dropped_duplicates += 1
             continue
         seen_edge_ids.add(eid)
 
@@ -123,5 +140,12 @@ def render_graph(
         },
     }
 
+    logger.info(
+        "Rendered graph: %d nodes, %d edges (dropped %d non-enum, %d duplicates)",
+        len(rendered_nodes),
+        len(rendered_edges),
+        dropped_non_enum,
+        dropped_duplicates,
+    )
     validate_graph(rendered)
     return rendered

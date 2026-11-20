@@ -1,0 +1,27 @@
+COMMAND: PY -m pytest -v tests/test_api_http_read.py
+EXIT: 0
+SECONDS: 32.0
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 14 items
+
+tests/test_api_http_read.py::test_read_endpoints_documented_shapes PASSED [  7%]
+tests/test_api_http_read.py::test_malformed_and_unknown_case_ids PASSED  [ 14%]
+tests/test_api_http_read.py::test_rows_limit_rejection PASSED            [ 21%]
+tests/test_api_http_read.py::test_f1_build_graph_combinations PASSED     [ 28%]
+tests/test_api_http_read.py::test_f2_leads_missing_files_info PASSED     [ 35%]
+tests/test_api_http_read.py::test_f3_leads_caching_and_config_sha256 PASSED [ 42%]
+tests/test_api_http_read.py::test_f4_document_view_keys_and_span_sort PASSED [ 50%]
+tests/test_api_http_read.py::test_f5_edge_evidence_lookup_by_id PASSED   [ 57%]
+tests/test_api_http_read.py::test_f6_no_raw_exception_messages PASSED    [ 64%]
+tests/test_api_http_read.py::test_f7_ai_confidence_defaults_and_zero_preserved PASSED [ 71%]
+tests/test_api_http_read.py::test_f8_load_detector_config_missing_raises PASSED [ 78%]
+tests/test_api_http_read.py::test_f9_centrality_score_and_structural_composite_equality PASSED [ 85%]
+tests/test_api_http_read.py::test_f10_run_break_direct_link PASSED       [ 92%]
+tests/test_api_http_read.py::test_f11_strengthened_analytics_checks PASSED [100%]
+
+============================= 14 passed in 30.75s =============================

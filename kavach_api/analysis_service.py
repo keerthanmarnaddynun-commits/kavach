@@ -119,13 +119,14 @@ def build_graph(store: Storage, case_id: str) -> dict[str, Any]:
             except Exception:
                 pass
 
-        # Prepare CSV inputs for builder
+        # Prepare CSV and analysis inputs for builder
         temp_dir: tempfile.TemporaryDirectory | None = None
         try:
             actual_cdr = cdr_path
             actual_bank = bank_path
+            analyses_input_dir = analyses_dir
 
-            if not has_cdr or not has_bank:
+            if not has_analyses or not has_cdr or not has_bank:
                 temp_dir = tempfile.TemporaryDirectory()
                 td_path = Path(temp_dir.name)
                 if not has_cdr:
@@ -134,10 +135,9 @@ def build_graph(store: Storage, case_id: str) -> dict[str, Any]:
                 if not has_bank:
                     actual_bank = td_path / "dummy_bank.csv"
                     actual_bank.write_text(EMPTY_BANK_HEADER, encoding="utf-8")
-
-            analyses_input_dir = analyses_dir if has_analyses else td_path / "empty_analyses"
-            if not has_analyses:
-                analyses_input_dir.mkdir(exist_ok=True)
+                if not has_analyses:
+                    analyses_input_dir = td_path / "empty_analyses"
+                    analyses_input_dir.mkdir(exist_ok=True)
 
             graph = build_case_graph(analyses_input_dir, actual_cdr, actual_bank)
             graph["document_hash"] = doc_hash

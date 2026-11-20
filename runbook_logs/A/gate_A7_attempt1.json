@@ -1,0 +1,49 @@
+{
+  "files": [
+    "kavach_api/app.py",
+    "tests/test_api_auth_http.py",
+    "tests/test_api_http_read.py",
+    "kavach_api/analysis_service.py",
+    "kavach_api/evidence.py",
+    "kavach_api/extract_service.py",
+    "kavach_api/jobs.py",
+    "kavach_api/leads.py",
+    "kavach_api/render.py"
+  ],
+  "fingerprint": "711bed0195fbfabae2897229b90d1b1e70cc212355e35ba456faa20ab4870f58",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 590, baseline 570, log A7_03_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_http_read_test_api_auth_http",
+      "detail": [
+        "exit 0, log A7_04_done_tests_test_api_http_read_test_api_auth_http.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A7",
+  "tests_passed": 590,
+  "time": "2026-11-20 16:31:07"
+}
