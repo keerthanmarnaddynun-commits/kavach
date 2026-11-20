@@ -1,0 +1,32 @@
+COMMAND: PY -m pytest -v tests/test_case_analytics.py tests/test_cut_calls.py
+EXIT: 0
+SECONDS: 5.1
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 19 items
+
+tests/test_case_analytics.py::test_star_centre_ranks_first_and_normalisation_bounds PASSED [  5%]
+tests/test_case_analytics.py::test_vehicle_and_non_suspect_persons_excluded PASSED [ 10%]
+tests/test_case_analytics.py::test_strict_ignores_candidate_and_resolved_collapses_with_edge_union PASSED [ 15%]
+tests/test_case_analytics.py::test_parallel_edges_sum_weights PASSED     [ 21%]
+tests/test_case_analytics.py::test_betweenness_uses_inverse_weight_distance PASSED [ 26%]
+tests/test_case_analytics.py::test_ranking_and_robustness_deterministic_across_runs PASSED [ 31%]
+tests/test_case_analytics.py::test_run_kingpin_scores_refuses_existing_output_dir PASSED [ 36%]
+tests/test_case_analytics.py::test_baseline_call_count_ranking_tiny_cdr PASSED [ 42%]
+tests/test_case_analytics.py::test_case_analytics_source_never_mentions_truth PASSED [ 47%]
+tests/test_cut_calls.py::test_call_layer_edges_and_unowned_ignored PASSED [ 52%]
+tests/test_cut_calls.py::test_min_vertex_cut_equals_brute_force_on_random_call_layer_graphs PASSED [ 57%]
+tests/test_cut_calls.py::test_direct_terminal_link_gives_finite_false PASSED [ 63%]
+tests/test_cut_calls.py::test_terminals_never_appear_in_cut PASSED       [ 68%]
+tests/test_cut_calls.py::test_top2_baselines_with_ties_not_exact PASSED  [ 73%]
+tests/test_cut_calls.py::test_unowned_bridging_phones PASSED             [ 78%]
+tests/test_cut_calls.py::test_opaque_ids_contain_no_per_or_dec PASSED    [ 84%]
+tests/test_cut_calls.py::test_same_seed_gives_identical_output PASSED    [ 89%]
+tests/test_cut_calls.py::test_scripts_refuse_existing_output_folder PASSED [ 94%]
+tests/test_cut_calls.py::test_no_truth_in_case_detectors_and_config PASSED [100%]
+
+============================= 19 passed in 1.62s ==============================

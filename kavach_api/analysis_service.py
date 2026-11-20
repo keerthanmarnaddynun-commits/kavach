@@ -27,6 +27,19 @@ class NothingToAnalyzeError(AnalysisError):
     """Raised when neither analyses nor CSV files exist for a case."""
 
 
+def build_leads(store: Storage, case_id: str, **kwargs: Any) -> dict[str, Any]:
+    """Re-export build_leads from leads module."""
+    from kavach_api.leads import build_leads as _bl
+    return _bl(store, case_id, **kwargs)
+
+
+def run_break(store: Storage, case_id: str, group_a: Any, group_b: Any, **kwargs: Any) -> dict[str, Any]:
+    """Re-export run_break from leads module."""
+    from kavach_api.leads import run_break as _rb
+    return _rb(store, case_id, group_a, group_b, **kwargs)
+
+
+
 def _compute_file_sha256(path: Path) -> str:
     """Compute SHA-256 of a file's contents."""
     h = hashlib.sha256()

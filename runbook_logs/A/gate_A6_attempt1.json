@@ -1,0 +1,43 @@
+{
+  "files": [
+    "kavach_api/leads.py",
+    "tests/test_api_analytics.py",
+    "kavach_api/analysis_service.py"
+  ],
+  "fingerprint": "271d9df36b115e4ddc39b85a8a3aa99eb48f7aef5760cb0c3b927d946a2026b0",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 570, baseline 563, log A6_04_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_analytics",
+      "detail": [
+        "exit 0, log A6_05_done_tests_test_api_analytics.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A6",
+  "tests_passed": 570,
+  "time": "2026-11-20 14:27:48"
+}

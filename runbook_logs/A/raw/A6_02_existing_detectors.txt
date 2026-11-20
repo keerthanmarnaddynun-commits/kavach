@@ -1,0 +1,27 @@
+COMMAND: PY -m pytest -v tests/test_case_detectors.py
+EXIT: 0
+SECONDS: 2.7
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 14 items
+
+tests/test_case_detectors.py::test_mule_features_hand_made_bank_table PASSED [  7%]
+tests/test_case_detectors.py::test_mule_score_ordering_toy_example PASSED [ 14%]
+tests/test_case_detectors.py::test_burner_features_hand_made_cdr PASSED  [ 21%]
+tests/test_case_detectors.py::test_burner_score_ordering_toy_example PASSED [ 28%]
+tests/test_case_detectors.py::test_min_vertex_cut_equals_brute_force_on_random_graphs PASSED [ 35%]
+tests/test_case_detectors.py::test_cut_returns_finite_false_when_person_free_path_exists PASSED [ 42%]
+tests/test_case_detectors.py::test_terminals_never_in_cut PASSED         [ 50%]
+tests/test_case_detectors.py::test_empty_group_returns_skipped PASSED    [ 57%]
+tests/test_case_detectors.py::test_articulation_persons_agrees_with_networkx PASSED [ 64%]
+tests/test_case_detectors.py::test_role_chips_rules PASSED               [ 71%]
+tests/test_case_detectors.py::test_outputs_identical_across_two_runs PASSED [ 78%]
+tests/test_case_detectors.py::test_scripts_refuse_existing_output_folder PASSED [ 85%]
+tests/test_case_detectors.py::test_no_truth_in_case_detectors_and_config PASSED [ 92%]
+tests/test_case_detectors.py::test_detectors_read_only_csv_files PASSED  [100%]
+
+============================= 14 passed in 1.36s ==============================

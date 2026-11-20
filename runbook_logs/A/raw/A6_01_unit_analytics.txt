@@ -1,0 +1,20 @@
+COMMAND: PY -m pytest -v tests/test_api_analytics.py
+EXIT: 0
+SECONDS: 87.8
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 7 items
+
+tests/test_api_analytics.py::test_money_flow_and_structural_explanation_on_demo_case PASSED [ 14%]
+tests/test_api_analytics.py::test_detectors_top_items_match_frozen_detectors PASSED [ 28%]
+tests/test_api_analytics.py::test_chips_follow_configured_threshold PASSED [ 42%]
+tests/test_api_analytics.py::test_run_break_with_disjoint_groups PASSED  [ 57%]
+tests/test_api_analytics.py::test_run_break_rejects_invalid_groups PASSED [ 71%]
+tests/test_api_analytics.py::test_leads_cached_and_reused PASSED         [ 85%]
+tests/test_api_analytics.py::test_disclaimer_and_limitations_always_present PASSED [100%]
+
+======================== 7 passed in 82.94s (0:01:22) =========================
