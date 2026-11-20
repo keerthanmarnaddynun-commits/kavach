@@ -1,5 +1,5 @@
 {
-  "baseline_tests": 542,
+  "baseline_tests": 551,
   "chunk": "A",
   "steps": {
     "A0": {
@@ -41,8 +41,17 @@
     "A4": {
       "attempts": 0,
       "begin_head": "597f2e10e622360d6477c1a5c94818889ae4ada4",
-      "status": "gated",
+      "commit": "0f6f298b714e250c3df2acfe0ff9816f25c4bfd7",
+      "done_at": "2026-11-20 13:28:57",
+      "pushed": true,
+      "status": "done",
       "tests_passed": 551
+    },
+    "A5": {
+      "attempts": 0,
+      "begin_head": "0f6f298b714e250c3df2acfe0ff9816f25c4bfd7",
+      "status": "gated",
+      "tests_passed": 563
     }
   }
 }

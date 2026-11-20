@@ -1,0 +1,53 @@
+{
+  "files": [
+    "kavach_api/analysis_service.py",
+    "kavach_api/evidence.py",
+    "kavach_api/render.py",
+    "kavach_api/timeline.py",
+    "tests/test_api_evidence.py",
+    "tests/test_api_graph.py"
+  ],
+  "fingerprint": "349a04082d8038d58fe918b9f1deda5c175de6460d1d271d3263a2ac5ea5afde",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 563, baseline 551, log A5_04_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_graph_test_api_evidence",
+      "detail": [
+        "exit 0, log A5_05_done_tests_test_api_graph_test_api_evidence.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: existing_graph_tests",
+      "detail": [
+        "exit 0, log A5_06_done_existing_graph_tests.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A5",
+  "tests_passed": 563,
+  "time": "2026-11-20 13:53:46"
+}

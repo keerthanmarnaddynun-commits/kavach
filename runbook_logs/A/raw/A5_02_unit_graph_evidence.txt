@@ -1,0 +1,25 @@
+COMMAND: PY -m pytest -v tests/test_api_graph.py tests/test_api_evidence.py
+EXIT: 0
+SECONDS: 124.7
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 12 items
+
+tests/test_api_graph.py::test_build_graph_matches_committed_case_demo_v2 PASSED [  8%]
+tests/test_api_graph.py::test_render_graph_validates_against_contract2 PASSED [ 16%]
+tests/test_api_graph.py::test_ids_stable_across_two_builds PASSED        [ 25%]
+tests/test_api_graph.py::test_cache_used_and_rebuilt_on_document_add PASSED [ 33%]
+tests/test_api_graph.py::test_extra_field_fails_validation PASSED        [ 41%]
+tests/test_api_graph.py::test_fir_only_case_works PASSED                 [ 50%]
+tests/test_api_graph.py::test_nothing_to_analyze_error PASSED            [ 58%]
+tests/test_api_evidence.py::test_fir_evidence_spans_slice_back_to_surface PASSED [ 66%]
+tests/test_api_evidence.py::test_csv_evidence_row_numbers_exist_and_hashes_match PASSED [ 75%]
+tests/test_api_evidence.py::test_rows_returns_same_values_as_manual_read PASSED [ 83%]
+tests/test_api_evidence.py::test_document_view PASSED                    [ 91%]
+tests/test_api_evidence.py::test_timeline_aggregation_counts_sum_to_csv_rows PASSED [100%]
+
+======================= 12 passed in 122.86s (0:02:02) ========================

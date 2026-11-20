@@ -1,0 +1,5 @@
+COMMAND: PY -m pytest -q tests/test_case_graph.py tests/test_person_merge.py
+EXIT: 0
+--- OUTPUT ---
+....................                                                     [100%]
+20 passed in 1.08s

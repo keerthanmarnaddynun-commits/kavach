@@ -1,0 +1,108 @@
+COMMAND: PY -m pytest -v tests/test_api_graph.py tests/test_api_evidence.py
+EXIT: 1
+SECONDS: 131.0
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 12 items
+
+tests/test_api_graph.py::test_build_graph_matches_committed_case_demo_v2 PASSED [  8%]
+tests/test_api_graph.py::test_render_graph_validates_against_contract2 PASSED [ 16%]
+tests/test_api_graph.py::test_ids_stable_across_two_builds PASSED        [ 25%]
+tests/test_api_graph.py::test_cache_used_and_rebuilt_on_document_add FAILED [ 33%]
+tests/test_api_graph.py::test_extra_field_fails_validation PASSED        [ 41%]
+tests/test_api_graph.py::test_fir_only_case_works PASSED                 [ 50%]
+tests/test_api_graph.py::test_nothing_to_analyze_error PASSED            [ 58%]
+tests/test_api_evidence.py::test_fir_evidence_spans_slice_back_to_surface PASSED [ 66%]
+tests/test_api_evidence.py::test_csv_evidence_row_numbers_exist_and_hashes_match FAILED [ 75%]
+tests/test_api_evidence.py::test_rows_returns_same_values_as_manual_read PASSED [ 83%]
+tests/test_api_evidence.py::test_document_view PASSED                    [ 91%]
+tests/test_api_evidence.py::test_timeline_aggregation_counts_sum_to_csv_rows PASSED [100%]
+
+================================== FAILURES ===================================
+_________________ test_cache_used_and_rebuilt_on_document_add _________________
+
+temp_store = <kavach_api.storage.Store object at 0x000001B61A3264D0>
+
+    def test_cache_used_and_rebuilt_on_document_add(temp_store: Storage) -> None:
+        """Graph cache is used when fingerprint is unchanged and rebuilt on document addition."""
+        case_id, _ = _setup_demo_case(temp_store)
+    
+        build1 = build_graph(temp_store, case_id)
+        fp1 = build1["fingerprint"]
+    
+        # Read cached graph directly
+        cdir = temp_store.case_dir(case_id)
+        graph_path = cdir / "derived" / "graph.json"
+        assert graph_path.is_file()
+    
+        # Second call uses cache
+        build2 = build_graph(temp_store, case_id)
+        assert build2["fingerprint"] == fp1
+    
+        # Add an analysis file to alter fingerprint
+        new_doc_id = "FIR_999"
+        temp_store.add_document(case_id, new_doc_id, b"Additional FIR text", "test_user")
+        temp_store.save_analysis(case_id, new_doc_id, {"aux": {}, "doc": {"entities": []}, "info": {}})
+    
+        fp2, _ = compute_case_fingerprint(temp_store, case_id)
+        assert fp1 != fp2
+    
+>       build3 = build_graph(temp_store, case_id)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_api_graph.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+kavach_api\analysis_service.py:129: in build_graph
+    graph = build_case_graph(analyses_input_dir, actual_cdr, actual_bank)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+case_graph\builder.py:1257: in build_case_graph
+    ) = _merge_persons_and_collect_nodes(docs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+docs = [{'entities': []}, {'case_id': 'CASE_DEMO_V2', 'entities': [{'ai_confidence': 0.99, 'char_span': [172, 185], 'confiden...pan': [1082, 1180], 'relation': 'CONTROLS_ACCOUNT', 'source': 'ent_09', ...}, ...], 'schema_version': '1.1', ...}, ...]
+
+    def _merge_persons_and_collect_nodes(
+        docs: list[dict[str, Any]],
+    ) -> tuple[
+        dict[str, dict[str, Any]],
+        dict[tuple[str, str], str],
+        int,
+        int,
+        dict[str, int],
+        list[dict[str, Any]],
+        int,
+    ]:
+        """Merge PERSON mentions across FIRs and collect all FIR non-person nodes."""
+        person_records: list[dict[str, Any]] = []
+        non_person_nodes: dict[str, dict[str, Any]] = {}
+        local_non_person_id: dict[tuple[str, str], str] = {}
+    
+        for doc in docs:
+>           fir_id = str(doc["source_doc_id"])
+                         ^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'source_doc_id'
+
+case_graph\builder.py:553: KeyError
+____________ test_csv_evidence_row_numbers_exist_and_hashes_match _____________
+
+temp_store = <kavach_api.storage.Store object at 0x000001B67E1E4410>
+
+    def test_csv_evidence_row_numbers_exist_and_hashes_match(temp_store: Storage) -> None:
+        """CSV evidence row numbers exist in stored CSV and file hash matches recorded hash."""
+        case_id, graph = _populate_demo_case(temp_store)
+    
+        files_info = temp_store.files_info(case_id)
+>       cdr_sha = files_info["cdr.csv"]["sha256"]
+                  ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'cdr.csv'
+
+tests\test_api_evidence.py:94: KeyError
+=========================== short test summary info ===========================
+FAILED tests/test_api_graph.py::test_cache_used_and_rebuilt_on_document_add
+FAILED tests/test_api_evidence.py::test_csv_evidence_row_numbers_exist_and_hashes_match
+================== 2 failed, 10 passed in 129.42s (0:02:09) ===================
