@@ -1,0 +1,4 @@
+COMMAND: PY -c import kavach_api.settings, kavach_api.storage; print('import ok')
+EXIT: 0
+--- OUTPUT ---
+import ok

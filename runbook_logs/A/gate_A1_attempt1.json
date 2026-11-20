@@ -1,0 +1,51 @@
+{
+  "files": [
+    "kavach_api/__init__.py",
+    "kavach_api/settings.py",
+    "kavach_api/storage.py",
+    "tests/test_api_settings_storage.py"
+  ],
+  "fingerprint": "330d85a390a97aee59f87a27a95f85032f71b0d3b3c83c768cb85f60563d4413",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 514, baseline 501, log A1_02_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_settings_storage",
+      "detail": [
+        "exit 0, log A1_03_done_tests_test_api_settings_storage.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: imports",
+      "detail": [
+        "exit 0, log A1_04_done_imports.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A1",
+  "tests_passed": 514,
+  "time": "2026-11-20 07:31:47"
+}

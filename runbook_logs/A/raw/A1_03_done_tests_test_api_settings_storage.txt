@@ -1,0 +1,5 @@
+COMMAND: PY -m pytest -q tests/test_api_settings_storage.py
+EXIT: 0
+--- OUTPUT ---
+...........                                                              [100%]
+11 passed in 1.14s

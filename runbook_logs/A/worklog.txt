@@ -11,3 +11,8 @@
 2026-11-19 08:27:09 [A0] Verified Python 3.11.9, httpx 0.25.2 import, git branch phase-d-ag, and 501 baseline tests collected.
 2026-11-19 08:27:28 [A0] Updated .gitignore additively with runtime/, scratch/, models/. Generated runbook_logs/A/A0_api_inventory.txt via scratch/build_inventory.py with function signatures, docstrings, schema checks, and answers to questions 5a-5d.
 2026-11-19 08:30:22 [A0] GATE A0: PASS
+2026-11-19 08:32:24 [A0] COMMIT 2549621696 pushed=True
+2026-11-20 07:26:20 [A1] BEGIN: Settings and storage layer (no HTTP)
+2026-11-20 07:28:35 [A1] RUN PY -m pytest -v tests/test_api_settings_storage.py -> exit 0 (A1_01_unit_storage.txt)
+2026-11-20 07:29:02 [A1] Implemented Settings dataclass with environment loading and Store filesystem manager. Added 11 unit tests covering case lifecycle, UTF-8 byte persistence with CRLF and BOM, duplicate detection, odd filename stem fallbacks, atomic writes, and concurrent document addition. All 11 tests passed in raw log A1_01_unit_storage.txt.
+2026-11-20 07:31:47 [A1] GATE A1: PASS

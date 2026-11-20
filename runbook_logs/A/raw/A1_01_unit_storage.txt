@@ -1,0 +1,24 @@
+COMMAND: PY -m pytest -v tests/test_api_settings_storage.py
+EXIT: 0
+SECONDS: 3.4
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 11 items
+
+tests/test_api_settings_storage.py::test_settings_defaults PASSED        [  9%]
+tests/test_api_settings_storage.py::test_settings_env_overrides PASSED   [ 18%]
+tests/test_api_settings_storage.py::test_id_validation_rejects_invalid_patterns PASSED [ 27%]
+tests/test_api_settings_storage.py::test_case_lifecycle PASSED           [ 36%]
+tests/test_api_settings_storage.py::test_document_store_exact_bytes_and_crlf_hindi PASSED [ 45%]
+tests/test_api_settings_storage.py::test_duplicate_document_rejection PASSED [ 54%]
+tests/test_api_settings_storage.py::test_doc_id_generation_odd_filenames PASSED [ 63%]
+tests/test_api_settings_storage.py::test_atomic_write_leaves_no_temp_file PASSED [ 72%]
+tests/test_api_settings_storage.py::test_concurrent_document_addition PASSED [ 81%]
+tests/test_api_settings_storage.py::test_case_directory_never_outside_runtime_dir PASSED [ 90%]
+tests/test_api_settings_storage.py::test_csv_and_analysis_storage PASSED [100%]
+
+============================= 11 passed in 1.49s ==============================
