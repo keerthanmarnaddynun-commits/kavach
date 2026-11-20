@@ -25,3 +25,8 @@
 2026-11-20 10:25:31 [A2] TOOL ERROR (exit 2): files changed after the gate passed; run the gate again
 2026-11-20 10:28:49 [A2] GATE A2: FAIL
 2026-11-20 10:34:08 [A2] GATE A2: PASS
+2026-11-20 10:35:00 [A2] COMMIT 3bfdf27ed5 pushed=True
+2026-11-20 10:35:14 [A3] BEGIN: Ingestion validation for FIR text, CDR csv and bank csv
+2026-11-20 10:40:52 [A3] RUN PY -m pytest -v tests/test_api_ingest.py -> exit 0 (A3_01_unit_ingest.txt)
+2026-11-20 10:41:35 [A3] Implemented decode_fir for FIR text with UTF-8 BOM removal and IngestError (codes: invalid_encoding, empty_text, text_too_long). Implemented validate_cdr and validate_bank for CSV ingestion returning CsvReport with 1-based data row errors and error_count capped at 50 in errors list. Created tests/test_api_ingest.py with 13 unit tests covering minimal files, row rules, missing columns, empty/header-only files, BOM/CRLF, Hindi text, demo case_demo_v2 row count match with stats.json, and 10MB performance. All 13 unit tests passed as saved in raw log A3_01_unit_ingest.txt.
+2026-11-20 10:43:50 [A3] GATE A3: PASS

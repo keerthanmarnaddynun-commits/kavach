@@ -1,0 +1,42 @@
+{
+  "files": [
+    "kavach_api/ingest.py",
+    "tests/test_api_ingest.py"
+  ],
+  "fingerprint": "3959b00671d8749bf54d8febe08074c675f4b392c7c6e75ec2bcc12ed1397304",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 542, baseline 529, log A3_02_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_ingest",
+      "detail": [
+        "exit 0, log A3_03_done_tests_test_api_ingest.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A3",
+  "tests_passed": 542,
+  "time": "2026-11-20 10:43:50"
+}

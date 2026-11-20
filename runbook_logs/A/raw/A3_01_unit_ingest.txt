@@ -1,0 +1,26 @@
+COMMAND: PY -m pytest -v tests/test_api_ingest.py
+EXIT: 0
+SECONDS: 1.1
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 13 items
+
+tests/test_api_ingest.py::test_decode_fir_valid_and_hindi PASSED         [  7%]
+tests/test_api_ingest.py::test_decode_fir_errors PASSED                  [ 15%]
+tests/test_api_ingest.py::test_validate_cdr_valid_minimal PASSED         [ 23%]
+tests/test_api_ingest.py::test_validate_cdr_leading_zeros_and_bom_crlf PASSED [ 30%]
+tests/test_api_ingest.py::test_validate_cdr_rule_failures PASSED         [ 38%]
+tests/test_api_ingest.py::test_validate_cdr_missing_column PASSED        [ 46%]
+tests/test_api_ingest.py::test_validate_cdr_file_level_rejections PASSED [ 53%]
+tests/test_api_ingest.py::test_validate_bank_valid_minimal PASSED        [ 61%]
+tests/test_api_ingest.py::test_validate_bank_rule_failures PASSED        [ 69%]
+tests/test_api_ingest.py::test_validate_bank_missing_column PASSED       [ 76%]
+tests/test_api_ingest.py::test_error_capping_at_50_with_error_count PASSED [ 84%]
+tests/test_api_ingest.py::test_real_demo_v2_files_pass_and_row_counts_match_stats PASSED [ 92%]
+tests/test_api_ingest.py::test_large_10mb_file_performance PASSED        [100%]
+
+============================= 13 passed in 0.40s ==============================
