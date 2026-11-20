@@ -1,0 +1,19 @@
+COMMAND: PY -m pytest -q
+EXIT: 0
+--- OUTPUT ---
+.........................................s.............................. [ 12%]
+........................................................................ [ 24%]
+........................................................................ [ 36%]
+........................................................................ [ 48%]
+........................................................................ [ 60%]
+........................................................................ [ 72%]
+........................................................................ [ 84%]
+........................................................................ [ 96%]
+.......................                                                  [100%]
+============================== warnings summary ===============================
+test_nlp_pipeline.py::TestNLPPipeline::test_entity_extraction_count
+  C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Lib\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+598 passed, 1 skipped, 1 warning in 343.27s (0:05:43)

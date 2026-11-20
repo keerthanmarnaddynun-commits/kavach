@@ -1,0 +1,42 @@
+{
+  "files": [
+    "tests/test_api_http_write.py",
+    "kavach_api/app.py"
+  ],
+  "fingerprint": "7446be0bcbf595927e9d24335a38d71a0b890bafe8f9d293160592b819cb95fa",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 598, baseline 590, log A8_02_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_http_write",
+      "detail": [
+        "exit 0, log A8_03_done_tests_test_api_http_write.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A8",
+  "tests_passed": 598,
+  "time": "2026-11-20 17:05:57"
+}

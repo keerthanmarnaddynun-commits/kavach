@@ -3,13 +3,17 @@ from __future__ import annotations
 
 from collections import defaultdict
 from contextlib import asynccontextmanager
+import asyncio
+import hashlib
+import json
 import logging
+import time
 from typing import Any, Callable, Sequence
 
-from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request, status
+from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Query, Request, UploadFile, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel
 
 from kavach_api.analysis_service import NothingToAnalyzeError, build_graph
@@ -20,7 +24,8 @@ from kavach_api.evidence import (
     node_evidence,
     rows as fetch_csv_rows,
 )
-from kavach_api.extract_service import default_extractor, model_loaded
+from kavach_api.extract_service import default_extractor, model_loaded, run_extract_job
+from kavach_api.ingest import IngestError, decode_fir, validate_bank, validate_cdr
 from kavach_api.jobs import JobNotFoundError, JobRunner, JobStore, validate_job_id
 from kavach_api.leads import (
     BreakError,
@@ -48,6 +53,7 @@ from kavach_api.storage import (
     InvalidIdError,
     Storage,
     StorageError,
+    _atomic_write_json,
     validate_case_id,
     validate_doc_id,
 )
@@ -65,6 +71,17 @@ class CreateUserRequest(BaseModel):
     username: str
     password: str
     role: str
+
+
+class CreateCaseRequest(BaseModel):
+    name: str
+    synthetic: bool = False
+    description: str | None = None
+
+
+class BreakRequest(BaseModel):
+    group_a: list[str]
+    group_b: list[str]
 
 
 def _get_current_user(
@@ -129,43 +146,40 @@ def create_app(
 
     settings.runtime_dir.mkdir(parents=True, exist_ok=True)
 
+    store = Storage(settings)
+    secret_path = settings.runtime_dir / "secret.key"
+    secret = load_or_create_secret(secret_path)
+    user_store = UserStore(
+        settings.runtime_dir / "users.json",
+        iterations=settings.pbkdf2_iterations,
+    )
+    from kavach_api.audit import AuditLog
+    audit_log = AuditLog(settings.runtime_dir / "audit.log")
+
+    job_store = JobStore(settings.runtime_dir)
+    job_runner = JobRunner(job_store=job_store)
+    from kavach_api.security import LoginLimiter
+    limiter = LoginLimiter(
+        limit=settings.login_fail_limit,
+        window_seconds=settings.login_fail_window_seconds,
+    )
+
     @asynccontextmanager
     async def lifespan(app: FastAPI):
-        store = Storage(settings)
-        secret_path = settings.runtime_dir / "secret.key"
-        secret = load_or_create_secret(secret_path)
-        user_store = UserStore(
-            settings.runtime_dir / "users.json",
-            iterations=settings.pbkdf2_iterations,
-        )
-        audit_log = store.audit_log if hasattr(store, "audit_log") else None
-        if audit_log is None:
-            from kavach_api.audit import AuditLog
-            audit_log = AuditLog(settings.runtime_dir / "audit.log")
-
-        job_store = JobStore(settings.runtime_dir)
-        job_runner = JobRunner(job_store=job_store)
-        from kavach_api.security import LoginLimiter
-        limiter = LoginLimiter(
-            limit=settings.login_fail_limit,
-            window_seconds=settings.login_fail_window_seconds,
-        )
-
-        app.state.settings = settings
-        app.state.store = store
-        app.state.secret = secret
-        app.state.user_store = user_store
-        app.state.audit_log = audit_log
-        app.state.job_store = job_store
-        app.state.job_runner = job_runner
-        app.state.limiter = limiter
-        app.state.extractor = extractor or default_extractor()
-
         yield
-
         job_runner.shutdown()
 
     app = FastAPI(title="KAVACH API", version="1.1", lifespan=lifespan)
+
+    app.state.settings = settings
+    app.state.store = store
+    app.state.secret = secret
+    app.state.user_store = user_store
+    app.state.audit_log = audit_log
+    app.state.job_store = job_store
+    app.state.job_runner = job_runner
+    app.state.limiter = limiter
+    app.state.extractor = extractor or default_extractor()
 
     # CORS middleware
     app.add_middleware(
@@ -636,5 +650,400 @@ def create_app(
                 detail=f"Job not found: {job_id}",
             )
         return job
+
+    # ==========================================================================
+    # WRITE ENDPOINTS (STEP A8)
+    # ==========================================================================
+
+    async def _read_upload_bounded(upload: UploadFile, max_bytes: int) -> bytes:
+        """Read UploadFile stream up to max_bytes, raising 413 if limit exceeded."""
+        chunks: list[bytes] = []
+        total = 0
+        while True:
+            chunk = await upload.read(65536)
+            if not chunk:
+                break
+            total += len(chunk)
+            if total > max_bytes:
+                raise HTTPException(
+                    status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                    detail=f"Upload exceeds maximum allowed size ({max_bytes} bytes)",
+                )
+            chunks.append(chunk)
+        return b"".join(chunks)
+
+    @app.post("/api/cases", status_code=status.HTTP_201_CREATED)
+    def create_case_endpoint(
+        body: CreateCaseRequest,
+        current_user: dict[str, Any] = Depends(require_role("analyst")),
+    ):
+        """Create a new investigative case."""
+        case_name = body.name.strip() if body.name else ""
+        if not case_name:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Case name cannot be empty",
+            )
+        case = app.state.store.create_case(
+            name=case_name,
+            created_by=current_user["username"],
+            synthetic=body.synthetic,
+        )
+        app.state.audit_log.append(
+            actor=current_user["username"],
+            role=current_user["role"],
+            action="case_created",
+            case_id=case["case_id"],
+            detail={"name": case_name, "synthetic": body.synthetic},
+        )
+        return case
+
+    @app.post("/api/cases/{case_id}/documents")
+    async def upload_documents_endpoint(
+        case_id: str,
+        request: Request,
+        files: list[UploadFile] = File(default=[]),
+        text: str | None = Form(default=None),
+        name: str | None = Form(default=None),
+        current_user: dict[str, Any] = Depends(require_role("analyst")),
+    ):
+        """Upload FIR documents (multipart files and/or form text) and queue extraction."""
+        validate_case_id(case_id)
+        app.state.store.get_case(case_id)
+
+        items_to_process: list[tuple[str, bytes]] = []
+        content_type = request.headers.get("content-type", "")
+
+        if "application/json" in content_type:
+            try:
+                body = await request.json()
+                if isinstance(body, dict):
+                    json_text = body.get("text")
+                    json_name = body.get("name") or "document.txt"
+                    if json_text is not None:
+                        items_to_process.append((json_name, json_text.encode("utf-8")))
+            except Exception:
+                pass
+        else:
+            if text is not None and text.strip():
+                doc_name = name or "document.txt"
+                raw_bytes = text.encode("utf-8")
+                if len(raw_bytes) > app.state.settings.max_upload_bytes:
+                    raise HTTPException(
+                        status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                        detail=f"Upload exceeds maximum allowed size ({app.state.settings.max_upload_bytes} bytes)",
+                    )
+                items_to_process.append((doc_name, raw_bytes))
+
+            for f in files:
+                fname = f.filename or "document.txt"
+                raw = await _read_upload_bounded(f, app.state.settings.max_upload_bytes)
+                items_to_process.append((fname, raw))
+
+        if not items_to_process:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="No documents provided in request",
+            )
+
+        # Validate each document format and encoding before storing
+        validated_items: list[tuple[str, bytes]] = []
+        for fname, raw in items_to_process:
+            # Check file extension
+            if "." in fname and not fname.lower().endswith(".txt"):
+                raise HTTPException(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    detail=f"Only .txt documents are supported: {fname}",
+                )
+            try:
+                decode_fir(raw, max_chars=app.state.settings.max_fir_chars)
+            except IngestError as exc:
+                raise HTTPException(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    detail=f"Validation error in {fname}: {exc.message}",
+                )
+            validated_items.append((fname, raw))
+
+        # Store documents (raises DuplicateDocument on content collision)
+        added_metas: list[dict[str, Any]] = []
+        for fname, raw in validated_items:
+            meta = app.state.store.add_document(
+                case_id=case_id,
+                filename=fname,
+                raw_bytes=raw,
+                uploaded_by=current_user["username"],
+            )
+            app.state.audit_log.append(
+                actor=current_user["username"],
+                role=current_user["role"],
+                action="document_uploaded",
+                case_id=case_id,
+                detail={
+                    "doc_id": meta["doc_id"],
+                    "filename": fname,
+                    "sha256": meta["sha256_raw"],
+                    "size": len(raw),
+                },
+            )
+            added_metas.append(meta)
+
+        # Create single extraction job for newly added documents
+        job = app.state.job_store.create(kind="extract", case_id=case_id, total=len(added_metas))
+        app.state.audit_log.append(
+            actor=current_user["username"],
+            role=current_user["role"],
+            action="job_started",
+            case_id=case_id,
+            detail={"job_id": job["job_id"], "kind": "extract", "doc_count": len(added_metas)},
+        )
+        doc_ids = [m["doc_id"] for m in added_metas]
+        extract_jid = job["job_id"]
+        app.state.job_runner.submit(
+            lambda: run_extract_job(
+                store=app.state.store,
+                case_id=case_id,
+                doc_ids=doc_ids,
+                extractor=app.state.extractor,
+                job_store=app.state.job_store,
+                job_id=extract_jid,
+            ),
+            extract_jid,
+        )
+
+        return {"job_id": job["job_id"], "documents": added_metas}
+
+    async def _handle_csv_upload(
+        case_id: str,
+        kind: str,
+        request: Request,
+        file: UploadFile | None,
+        current_user: dict[str, Any],
+    ) -> Any:
+        """Common upload logic for CDR and Bank CSV uploads."""
+        validate_case_id(case_id)
+        app.state.store.get_case(case_id)
+
+        if file is not None:
+            raw_bytes = await _read_upload_bounded(file, app.state.settings.max_upload_bytes)
+        else:
+            raw_bytes = await request.body()
+            if len(raw_bytes) > app.state.settings.max_upload_bytes:
+                raise HTTPException(
+                    status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                    detail=f"Upload exceeds maximum allowed size ({app.state.settings.max_upload_bytes} bytes)",
+                )
+
+        if not raw_bytes:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"{kind.upper()} file cannot be empty",
+            )
+
+        if kind == "cdr":
+            report = validate_cdr(raw_bytes, app.state.settings)
+        else:
+            report = validate_bank(raw_bytes, app.state.settings)
+
+        if not report.ok:
+            return JSONResponse(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                content={
+                    "error": {
+                        "code": "invalid_csv",
+                        "message": f"CSV validation failed with {report.error_count} errors",
+                        "errors": report.errors,
+                        "error_count": report.error_count,
+                    },
+                    "ok": False,
+                    "rows": report.rows,
+                    "errors": report.errors,
+                },
+            )
+
+        # Valid CSV: store file and update case files.json
+        sha256 = hashlib.sha256(raw_bytes).hexdigest()
+        report_dict = {
+            "rows": report.rows,
+            "columns": report.columns,
+            "sha256": sha256,
+        }
+        app.state.store.save_csv(case_id, kind, raw_bytes, report_dict)
+        app.state.audit_log.append(
+            actor=current_user["username"],
+            role=current_user["role"],
+            action=f"{kind}_uploaded",
+            case_id=case_id,
+            detail={
+                "sha256": sha256,
+                "size": len(raw_bytes),
+                "rows": report.rows,
+            },
+        )
+        return {"ok": True, "rows": report.rows, "errors": []}
+
+    @app.post("/api/cases/{case_id}/cdr")
+    @app.post("/api/cases/{case_id}/files/cdr")
+    async def upload_cdr_endpoint(
+        case_id: str,
+        request: Request,
+        file: UploadFile | None = File(default=None),
+        current_user: dict[str, Any] = Depends(require_role("analyst")),
+    ):
+        """Upload and validate Call Detail Record (CDR) CSV."""
+        return await _handle_csv_upload(case_id, "cdr", request, file, current_user)
+
+    @app.post("/api/cases/{case_id}/bank")
+    @app.post("/api/cases/{case_id}/files/bank")
+    async def upload_bank_endpoint(
+        case_id: str,
+        request: Request,
+        file: UploadFile | None = File(default=None),
+        current_user: dict[str, Any] = Depends(require_role("analyst")),
+    ):
+        """Upload and validate Bank transactions CSV."""
+        return await _handle_csv_upload(case_id, "bank", request, file, current_user)
+
+    @app.post("/api/cases/{case_id}/analyze")
+    def analyze_case_endpoint(
+        case_id: str,
+        current_user: dict[str, Any] = Depends(require_role("analyst")),
+    ):
+        """Queue graph and leads analysis for a case. Rejects concurrent jobs with 409."""
+        validate_case_id(case_id)
+        app.state.store.get_case(case_id)
+
+        # Enforce single active analyze job per case
+        existing_jobs = app.state.job_store.list_for_case(case_id)
+        for j in existing_jobs:
+            if j.get("kind") == "analyze" and j.get("status") in ("queued", "running"):
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT,
+                    detail="An analyze job is already queued or running for this case",
+                )
+
+        job = app.state.job_store.create(kind="analyze", case_id=case_id, total=1)
+        app.state.audit_log.append(
+            actor=current_user["username"],
+            role=current_user["role"],
+            action="job_started",
+            case_id=case_id,
+            detail={"job_id": job["job_id"], "kind": "analyze"},
+        )
+
+        analyze_jid = job["job_id"]
+
+        def _run_analyze():
+            app.state.job_store.update(analyze_jid, status="running")
+            try:
+                build_graph(app.state.store, case_id)
+                build_leads(app.state.store, case_id)
+
+                # Mark case analyzed in metadata
+                cdir = app.state.store.case_dir(case_id)
+                meta_path = cdir / "case.json"
+                if meta_path.is_file():
+                    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+                    meta["analyzed"] = True
+                    _atomic_write_json(meta_path, meta)
+
+                app.state.job_store.update(
+                    analyze_jid,
+                    status="done",
+                    progress={"done": 1, "total": 1, "current": "completed"},
+                    result={"analyzed": True},
+                )
+                app.state.audit_log.append(
+                    actor="system",
+                    role="system",
+                    action="job_finished",
+                    case_id=case_id,
+                    detail={"job_id": analyze_jid, "status": "done"},
+                )
+            except Exception as exc:
+                logger.exception("Analyze job failed: %s", exc)
+                app.state.job_store.update(
+                    analyze_jid,
+                    status="failed",
+                    progress={"done": 0, "total": 1, "current": "failed"},
+                    errors=[{"code": "analyze_failed", "message": "Analysis failed"}],
+                )
+                app.state.audit_log.append(
+                    actor="system",
+                    role="system",
+                    action="job_finished",
+                    case_id=case_id,
+                    detail={"job_id": analyze_jid, "status": "failed"},
+                )
+
+        app.state.job_runner.submit(_run_analyze, analyze_jid)
+        return {"job_id": job["job_id"], "status": "queued"}
+
+    @app.get("/api/jobs/{job_id}/events")
+    async def job_events_endpoint(
+        job_id: str,
+        request: Request,
+        current_user: dict[str, Any] = Depends(require_role("viewer")),
+    ):
+        """Server-sent events (SSE) stream delivering progress updates for a background job."""
+        validate_job_id(job_id)
+        job = app.state.job_store.get(job_id)
+        if job is None:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Job not found: {job_id}",
+            )
+
+        async def _event_stream():
+            last_version = None
+            last_keepalive = time.time()
+            while True:
+                if await request.is_disconnected():
+                    break
+
+                j = app.state.job_store.get(job_id)
+                if j is not None:
+                    ver = (j.get("updated_at"), j.get("status"), str(j.get("progress")))
+                    if ver != last_version:
+                        last_version = ver
+                        data = json.dumps(j, ensure_ascii=False)
+                        yield f"event: progress\ndata: {data}\n\n"
+
+                    if j.get("status") in ("done", "failed"):
+                        break
+
+                now = time.time()
+                if now - last_keepalive >= 15:
+                    last_keepalive = now
+                    yield ": keepalive\n\n"
+
+                await asyncio.sleep(0.05)
+
+        return StreamingResponse(
+            _event_stream(),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "Connection": "keep-alive",
+                "X-Accel-Buffering": "no",
+            },
+        )
+
+    @app.post("/api/cases/{case_id}/break")
+    def run_break_endpoint(
+        case_id: str,
+        body: BreakRequest,
+        current_user: dict[str, Any] = Depends(require_role("analyst")),
+    ):
+        """Run call-layer courier network break between two person groups."""
+        validate_case_id(case_id)
+        app.state.store.get_case(case_id)
+        app.state.audit_log.append(
+            actor=current_user["username"],
+            role=current_user["role"],
+            action="break_run",
+            case_id=case_id,
+            detail={"group_a": body.group_a, "group_b": body.group_b},
+        )
+        return run_break(app.state.store, case_id, body.group_a, body.group_b)
 
     return app

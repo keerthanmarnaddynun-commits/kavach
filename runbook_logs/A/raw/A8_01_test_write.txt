@@ -1,0 +1,21 @@
+COMMAND: PY -m pytest -v tests/test_api_http_write.py
+EXIT: 0
+SECONDS: 11.2
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 8 items
+
+tests/test_api_http_write.py::test_write_auth_and_permissions PASSED     [ 12%]
+tests/test_api_http_write.py::test_full_write_flow_and_analysis PASSED   [ 25%]
+tests/test_api_http_write.py::test_document_upload_validations PASSED    [ 37%]
+tests/test_api_http_write.py::test_csv_upload_validations PASSED         [ 50%]
+tests/test_api_http_write.py::test_analyze_concurrency_rejection PASSED  [ 62%]
+tests/test_api_http_write.py::test_job_events_sse_stream PASSED          [ 75%]
+tests/test_api_http_write.py::test_break_endpoint_behavior PASSED        [ 87%]
+tests/test_api_http_write.py::test_audit_log_verification PASSED         [100%]
+
+============================== 8 passed in 9.19s ==============================
