@@ -41,6 +41,21 @@ class Settings:
     login_fail_limit: int = DEFAULT_LOGIN_FAIL_LIMIT
     login_fail_window_seconds: int = DEFAULT_LOGIN_FAIL_WINDOW_SECONDS
 
+    @property
+    def users_path(self) -> Path:
+        """Single source of truth for users store file path."""
+        return self.runtime_dir / "users.json"
+
+    @property
+    def secret_path(self) -> Path:
+        """Single source of truth for HS256 secret key file path."""
+        return self.runtime_dir / "secret.key"
+
+    @property
+    def audit_path(self) -> Path:
+        """Single source of truth for append-only audit log file path."""
+        return self.runtime_dir / "audit.log"
+
 
 def load_settings(env: Mapping[str, str] | None = None) -> Settings:
     """

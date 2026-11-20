@@ -1,0 +1,27 @@
+COMMAND: PY -m pytest -v tests/test_api_security_http.py
+EXIT: 0
+SECONDS: 4.9
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 14 items
+
+tests/test_api_security_http.py::test_path_traversal_attempts_rejected PASSED [  7%]
+tests/test_api_security_http.py::test_upload_filename_with_control_characters PASSED [ 14%]
+tests/test_api_security_http.py::test_large_json_body_rejection PASSED   [ 21%]
+tests/test_api_security_http.py::test_token_tampering_and_alg_none PASSED [ 28%]
+tests/test_api_security_http.py::test_expired_token_rejection PASSED     [ 35%]
+tests/test_api_security_http.py::test_role_escalation_in_token_payload PASSED [ 42%]
+tests/test_api_security_http.py::test_admin_cannot_be_created_by_analyst PASSED [ 50%]
+tests/test_api_security_http.py::test_passwords_never_appear_in_runtime_files_or_responses PASSED [ 57%]
+tests/test_api_security_http.py::test_secret_key_file_not_served PASSED  [ 64%]
+tests/test_api_security_http.py::test_cors_answers_only_for_allowed_origins PASSED [ 71%]
+tests/test_api_security_http.py::test_error_responses_contain_no_paths_or_tracebacks PASSED [ 78%]
+tests/test_api_security_http.py::test_g5_concurrency_audit_duplicate_checks PASSED [ 85%]
+tests/test_api_security_http.py::test_audit_chain_validity PASSED        [ 92%]
+tests/test_api_security_http.py::test_read_only_data_folders_no_writes_outside_runtime PASSED [100%]
+
+============================= 14 passed in 3.28s ==============================

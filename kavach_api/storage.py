@@ -446,3 +446,14 @@ class Store:
 
 # Alias Store as Storage for compatibility
 Storage = Store
+
+
+def mark_case_analyzed(store: Storage, case_id: str) -> None:
+    """Mark case as analyzed in its case.json metadata file."""
+    with store.case_lock(case_id):
+        cdir = store.case_dir(case_id)
+        meta_path = cdir / "case.json"
+        if meta_path.is_file():
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            meta["analyzed"] = True
+            _atomic_write_json(meta_path, meta)

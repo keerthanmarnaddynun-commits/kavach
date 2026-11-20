@@ -16,7 +16,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel
 
-from kavach_api.analysis_service import NothingToAnalyzeError, build_graph
+from kavach_api.analysis_service import (
+    NothingToAnalyzeError,
+    build_graph,
+    mark_case_analyzed,
+)
 from kavach_api.evidence import (
     EvidenceError,
     document_view,
@@ -106,10 +110,10 @@ def _get_current_user(
     secret = request.app.state.secret
     try:
         claims = decode_token(secret, token)
-    except TokenError as exc:
+    except TokenError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=f"Invalid token: {exc}",
+            detail="Invalid or expired token",
         )
 
     username = claims.get("sub") or claims.get("username", "")
@@ -136,6 +140,110 @@ def require_role(min_role: str) -> Callable[..., dict[str, Any]]:
     return _role_checker
 
 
+class BoundedBodyMiddleware:
+    """Pure ASGI middleware enforcing request body size limits without buffering streaming responses."""
+
+    def __init__(self, app: Any, settings: Settings):
+        self.app = app
+        self.settings = settings
+
+    async def __call__(self, scope: Any, receive: Any, send: Any) -> None:
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+
+        method: str = scope.get("method", "GET").upper()
+        if method in ("GET", "HEAD", "OPTIONS"):
+            await self.app(scope, receive, send)
+            return
+
+        path: str = scope.get("path", "")
+        headers = dict(scope.get("headers", []))
+        content_type = headers.get(b"content-type", b"").decode("latin-1").lower()
+
+        is_upload_route = path.endswith(("/documents", "/cdr", "/bank")) or "/files/" in path
+        if is_upload_route:
+            max_bytes = self.settings.max_upload_bytes + (1024 * 1024)
+        else:
+            max_bytes = 256 * 1024
+
+        cl_header = headers.get(b"content-length")
+        if cl_header:
+            try:
+                cl = int(cl_header.decode("ascii"))
+                if cl > max_bytes:
+                    await self._send_413(send)
+                    return
+            except ValueError:
+                pass
+
+        bytes_received = 0
+        response_started = False
+
+        async def tracking_send(message: Any) -> None:
+            nonlocal response_started
+            if message.get("type") == "http.response.start":
+                response_started = True
+            await send(message)
+
+        async def bounded_receive() -> Any:
+            nonlocal bytes_received
+            message = await receive()
+            if message.get("type") == "http.request":
+                chunk = message.get("body", b"")
+                bytes_received += len(chunk)
+                if bytes_received > max_bytes:
+                    raise HTTPException(
+                        status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                        detail="Upload exceeds maximum allowed size",
+                    )
+            return message
+
+        try:
+            await self.app(scope, bounded_receive, tracking_send)
+        except HTTPException as exc:
+            if exc.status_code == 413 and not response_started:
+                await self._send_413(send)
+            else:
+                raise
+
+    async def _send_413(self, send: Any) -> None:
+        body = json.dumps(
+            {"error": {"code": "upload_too_large", "message": "Upload exceeds maximum allowed size"}}
+        ).encode("utf-8")
+        await send(
+            {
+                "type": "http.response.start",
+                "status": 413,
+                "headers": [
+                    (b"content-type", b"application/json"),
+                    (b"content-length", str(len(body)).encode("ascii")),
+                ],
+            }
+        )
+        await send(
+            {
+                "type": "http.response.body",
+                "body": body,
+            }
+        )
+
+
+async def _read_request_body_bounded(request: Request, max_bytes: int) -> bytes:
+    """Read request stream up to max_bytes, raising 413 if limit exceeded."""
+    chunks: list[bytes] = []
+    total = 0
+    async for chunk in request.stream():
+        total += len(chunk)
+        if total > max_bytes:
+            raise HTTPException(
+                status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                detail=f"Upload exceeds maximum allowed size ({max_bytes} bytes)",
+            )
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
 def create_app(
     settings: Settings | None = None,
     extractor: Callable[..., dict[str, Any]] | None = None,
@@ -147,14 +255,13 @@ def create_app(
     settings.runtime_dir.mkdir(parents=True, exist_ok=True)
 
     store = Storage(settings)
-    secret_path = settings.runtime_dir / "secret.key"
-    secret = load_or_create_secret(secret_path)
+    secret = load_or_create_secret(settings.secret_path)
     user_store = UserStore(
-        settings.runtime_dir / "users.json",
+        settings.users_path,
         iterations=settings.pbkdf2_iterations,
     )
     from kavach_api.audit import AuditLog
-    audit_log = AuditLog(settings.runtime_dir / "audit.log")
+    audit_log = AuditLog(settings.audit_path)
 
     job_store = JobStore(settings.runtime_dir)
     job_runner = JobRunner(job_store=job_store)
@@ -180,6 +287,9 @@ def create_app(
     app.state.job_runner = job_runner
     app.state.limiter = limiter
     app.state.extractor = extractor or default_extractor()
+
+    # Bounded body size middleware (pure ASGI)
+    app.add_middleware(BoundedBodyMiddleware, settings=settings)
 
     # CORS middleware
     app.add_middleware(
@@ -284,7 +394,7 @@ def create_app(
     async def token_error_handler(request: Request, exc: TokenError):
         return JSONResponse(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            content={"error": {"code": "unauthorized", "message": str(exc)}},
+            content={"error": {"code": "unauthorized", "message": "Invalid or expired token"}},
         )
 
     @app.exception_handler(Exception)
@@ -419,8 +529,14 @@ def create_app(
             doc_count = len(app.state.store.list_documents(cid))
             cdr_info = finfo.get("cdr") or {}
             bank_info = finfo.get("bank") or {}
-            cdr_rows_cnt = cdr_info.get("row_count", 0) if isinstance(cdr_info, dict) else 0
-            bank_rows_cnt = bank_info.get("row_count", 0) if isinstance(bank_info, dict) else 0
+            if isinstance(cdr_info, dict):
+                cdr_rows_cnt = cdr_info.get("rows", cdr_info.get("row_count", 0))
+            else:
+                cdr_rows_cnt = 0
+            if isinstance(bank_info, dict):
+                bank_rows_cnt = bank_info.get("rows", bank_info.get("row_count", 0))
+            else:
+                bank_rows_cnt = 0
             analyzed = (cdir / "derived" / "graph.json").is_file()
 
             summaries.append(
@@ -716,12 +832,17 @@ def create_app(
 
         if "application/json" in content_type:
             try:
-                body = await request.json()
+                raw_json = await _read_request_body_bounded(
+                    request, app.state.settings.max_upload_bytes
+                )
+                body = json.loads(raw_json.decode("utf-8")) if raw_json else {}
                 if isinstance(body, dict):
                     json_text = body.get("text")
                     json_name = body.get("name") or "document.txt"
                     if json_text is not None:
                         items_to_process.append((json_name, json_text.encode("utf-8")))
+            except HTTPException:
+                raise
             except Exception:
                 pass
         else:
@@ -764,7 +885,32 @@ def create_app(
                 )
             validated_items.append((fname, raw))
 
-        # Store documents (raises DuplicateDocument on content collision)
+        # Check ALL files for duplicates (against stored documents and within upload batch)
+        # BEFORE storing any file or creating a job.
+        existing_docs = app.state.store.list_documents(case_id)
+        existing_hashes = {
+            d["sha256_raw"]: d["doc_id"]
+            for d in existing_docs
+            if d.get("sha256_raw")
+        }
+        batch_hashes: dict[str, str] = {}
+        for fname, raw in validated_items:
+            h = hashlib.sha256(raw).hexdigest()
+            if h in existing_hashes:
+                existing_doc_id = existing_hashes[h]
+                raise DuplicateDocument(
+                    doc_id=existing_doc_id,
+                    message=f"Document with identical content already exists as {existing_doc_id}",
+                )
+            if h in batch_hashes:
+                first_name = batch_hashes[h]
+                raise DuplicateDocument(
+                    doc_id=first_name,
+                    message=f"Document with identical content already exists in batch as {first_name}",
+                )
+            batch_hashes[h] = fname
+
+        # Store documents
         added_metas: list[dict[str, Any]] = []
         for fname, raw in validated_items:
             meta = app.state.store.add_document(
@@ -806,6 +952,7 @@ def create_app(
                 extractor=app.state.extractor,
                 job_store=app.state.job_store,
                 job_id=extract_jid,
+                audit_log=app.state.audit_log,
             ),
             extract_jid,
         )
@@ -826,12 +973,7 @@ def create_app(
         if file is not None:
             raw_bytes = await _read_upload_bounded(file, app.state.settings.max_upload_bytes)
         else:
-            raw_bytes = await request.body()
-            if len(raw_bytes) > app.state.settings.max_upload_bytes:
-                raise HTTPException(
-                    status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
-                    detail=f"Upload exceeds maximum allowed size ({app.state.settings.max_upload_bytes} bytes)",
-                )
+            raw_bytes = await _read_request_body_bounded(request, app.state.settings.max_upload_bytes)
 
         if not raw_bytes:
             raise HTTPException(
@@ -912,23 +1054,24 @@ def create_app(
         validate_case_id(case_id)
         app.state.store.get_case(case_id)
 
-        # Enforce single active analyze job per case
-        existing_jobs = app.state.job_store.list_for_case(case_id)
-        for j in existing_jobs:
-            if j.get("kind") == "analyze" and j.get("status") in ("queued", "running"):
-                raise HTTPException(
-                    status_code=status.HTTP_409_CONFLICT,
-                    detail="An analyze job is already queued or running for this case",
-                )
+        # Enforce single active analyze job per case guarded with case_lock
+        with app.state.store.case_lock(case_id):
+            existing_jobs = app.state.job_store.list_for_case(case_id)
+            for j in existing_jobs:
+                if j.get("kind") == "analyze" and j.get("status") in ("queued", "running"):
+                    raise HTTPException(
+                        status_code=status.HTTP_409_CONFLICT,
+                        detail="An analyze job is already queued or running for this case",
+                    )
 
-        job = app.state.job_store.create(kind="analyze", case_id=case_id, total=1)
-        app.state.audit_log.append(
-            actor=current_user["username"],
-            role=current_user["role"],
-            action="job_started",
-            case_id=case_id,
-            detail={"job_id": job["job_id"], "kind": "analyze"},
-        )
+            job = app.state.job_store.create(kind="analyze", case_id=case_id, total=1)
+            app.state.audit_log.append(
+                actor=current_user["username"],
+                role=current_user["role"],
+                action="job_started",
+                case_id=case_id,
+                detail={"job_id": job["job_id"], "kind": "analyze"},
+            )
 
         analyze_jid = job["job_id"]
 
@@ -937,14 +1080,7 @@ def create_app(
             try:
                 build_graph(app.state.store, case_id)
                 build_leads(app.state.store, case_id)
-
-                # Mark case analyzed in metadata
-                cdir = app.state.store.case_dir(case_id)
-                meta_path = cdir / "case.json"
-                if meta_path.is_file():
-                    meta = json.loads(meta_path.read_text(encoding="utf-8"))
-                    meta["analyzed"] = True
-                    _atomic_write_json(meta_path, meta)
+                mark_case_analyzed(app.state.store, case_id)
 
                 app.state.job_store.update(
                     analyze_jid,

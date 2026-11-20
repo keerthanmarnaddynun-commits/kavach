@@ -1,0 +1,49 @@
+{
+  "files": [
+    "tests/test_api_demo_e2e_full.py",
+    "tests/test_api_security_http.py",
+    "kavach_api/analysis_service.py",
+    "kavach_api/app.py",
+    "kavach_api/extract_service.py",
+    "kavach_api/settings.py",
+    "kavach_api/storage.py",
+    "scripts/create_user.py",
+    "scripts/load_demo_case.py"
+  ],
+  "fingerprint": "69314a7df3d1b3b84b6c53f0967d6d6a810717b3b82a286178a08589dc0dd050",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 624, baseline 601, log A10_05_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_security_http",
+      "detail": [
+        "exit 0, log A10_06_done_tests_test_api_security_http.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A10",
+  "tests_passed": 624,
+  "time": "2026-11-20 18:53:23"
+}

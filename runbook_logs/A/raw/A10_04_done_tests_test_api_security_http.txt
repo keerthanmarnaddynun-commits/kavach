@@ -1,0 +1,5 @@
+COMMAND: PY -m pytest -q tests/test_api_security_http.py
+EXIT: 0
+--- OUTPUT ---
+..............                                                           [100%]
+14 passed in 4.20s

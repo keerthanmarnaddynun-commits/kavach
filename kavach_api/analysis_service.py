@@ -11,7 +11,7 @@ import threading
 from typing import Any
 
 from case_graph.builder import build_case_graph
-from kavach_api.storage import Storage, _atomic_write_json
+from kavach_api.storage import Storage, mark_case_analyzed, _atomic_write_json
 
 logger = logging.getLogger(__name__)
 

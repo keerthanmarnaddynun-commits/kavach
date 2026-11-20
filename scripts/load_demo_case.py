@@ -18,14 +18,19 @@ from kavach_api.audit import AuditLog
 from kavach_api.ingest import validate_bank, validate_cdr
 from kavach_api.leads import build_leads
 from kavach_api.settings import Settings, load_settings
-from kavach_api.storage import Storage, _atomic_write_json
+from kavach_api.storage import Storage, mark_case_analyzed
 
 logger = logging.getLogger(__name__)
 
 DEMO_CASE_NAME = "Demo (synthetic case_demo_v2)"
 
 
-def load_demo_case(settings: Settings | None = None) -> dict[str, Any]:
+def load_demo_case(
+    settings: Settings | None = None,
+    firs_dir: Path | str | None = None,
+    analyses_dir: Path | str | None = None,
+    csv_dir: Path | str | None = None,
+) -> dict[str, Any]:
     """
     Load demo case using the same service functions as the HTTP path.
     Refuses to run if a case with name 'Demo (synthetic case_demo_v2)' already exists.
@@ -35,7 +40,7 @@ def load_demo_case(settings: Settings | None = None) -> dict[str, Any]:
 
     settings.runtime_dir.mkdir(parents=True, exist_ok=True)
     store = Storage(settings)
-    audit_log = AuditLog(settings.runtime_dir / "audit.log")
+    audit_log = AuditLog(settings.audit_path)
 
     # 1. Refuse if case already exists
     existing_cases = store.list_cases()
@@ -49,14 +54,14 @@ def load_demo_case(settings: Settings | None = None) -> dict[str, Any]:
     case = store.create_case(name=DEMO_CASE_NAME, created_by="system", synthetic=True)
     case_id = case["case_id"]
 
-    # 3. Store 100 FIR text files from firs_v5
-    firs_dir = REPO_ROOT / "data" / "synthetic" / "out" / "firs_v5"
-    if not firs_dir.exists():
-        raise FileNotFoundError(f"FIR directory missing: {firs_dir}")
+    # 3. Store FIR text files
+    f_dir = Path(firs_dir).resolve() if firs_dir else (REPO_ROOT / "data" / "synthetic" / "out" / "firs_v5")
+    if not f_dir.exists():
+        raise FileNotFoundError(f"FIR directory missing: {f_dir}")
 
-    fir_files = sorted(firs_dir.glob("FIR_*.txt"))
+    fir_files = sorted(f_dir.glob("FIR_*.txt"))
     if not fir_files:
-        raise FileNotFoundError(f"No FIR text files found in {firs_dir}")
+        raise FileNotFoundError(f"No FIR text files found in {f_dir}")
 
     doc_metas: dict[str, dict[str, Any]] = {}
     for fpath in fir_files:
@@ -69,12 +74,12 @@ def load_demo_case(settings: Settings | None = None) -> dict[str, Any]:
         )
         doc_metas[meta["doc_id"]] = meta
 
-    # 4. Store saved analyses from results/2026-11-11_step6_extraction_r2/run1/
-    analyses_dir = REPO_ROOT / "results" / "2026-11-11_step6_extraction_r2" / "run1"
-    if not analyses_dir.exists():
-        raise FileNotFoundError(f"Analyses directory missing: {analyses_dir}")
+    # 4. Store saved analyses
+    a_dir = Path(analyses_dir).resolve() if analyses_dir else (REPO_ROOT / "results" / "2026-11-11_step6_extraction_r2" / "run1")
+    if not a_dir.exists():
+        raise FileNotFoundError(f"Analyses directory missing: {a_dir}")
 
-    analysis_files = sorted(analyses_dir.glob("*.analysis.json"))
+    analysis_files = sorted(a_dir.glob("*.analysis.json"))
     for apath in analysis_files:
         stem = apath.name[:-len(".analysis.json")]
         if stem not in doc_metas:
@@ -92,16 +97,26 @@ def load_demo_case(settings: Settings | None = None) -> dict[str, Any]:
                 f"Analysis source doc mismatch: file stem {stem} != recorded {recorded_id}"
             )
 
+        # G7: Check recorded text hash (document_hash) against stored document
+        doc_hash = analysis.get("info", {}).get("document_hash")
+        if doc_hash:
+            stored_text_hash = doc_metas[stem]["sha256_text"]
+            stored_raw_hash = doc_metas[stem]["sha256_raw"]
+            if doc_hash != stored_text_hash and doc_hash != stored_raw_hash:
+                raise ValueError(
+                    f"Analysis text hash mismatch for {stem}: recorded {doc_hash} != stored {stored_text_hash}"
+                )
+
         store.save_analysis(case_id, stem, analysis)
         store.set_document_status(case_id, stem, status="extracted")
 
-    # 5. Store CDR and Bank CSV files from case_demo_v2
-    demo_csv_dir = REPO_ROOT / "data" / "synthetic" / "out" / "case_demo_v2"
-    cdr_path = demo_csv_dir / "cdr.csv"
-    bank_path = demo_csv_dir / "bank.csv"
+    # 5. Store CDR and Bank CSV files
+    c_dir = Path(csv_dir).resolve() if csv_dir else (REPO_ROOT / "data" / "synthetic" / "out" / "case_demo_v2")
+    cdr_path = c_dir / "cdr.csv"
+    bank_path = c_dir / "bank.csv"
 
     if not cdr_path.is_file() or not bank_path.is_file():
-        raise FileNotFoundError(f"Demo CSV files missing in {demo_csv_dir}")
+        raise FileNotFoundError(f"Demo CSV files missing in {c_dir}")
 
     cdr_bytes = cdr_path.read_bytes()
     cdr_report = validate_cdr(cdr_bytes, settings)
@@ -137,13 +152,8 @@ def load_demo_case(settings: Settings | None = None) -> dict[str, Any]:
     build_graph(store, case_id)
     build_leads(store, case_id)
 
-    # 7. Mark case analyzed
-    cdir = store.case_dir(case_id)
-    meta_path = cdir / "case.json"
-    if meta_path.is_file():
-        meta_dict = json.loads(meta_path.read_text(encoding="utf-8"))
-        meta_dict["analyzed"] = True
-        _atomic_write_json(meta_path, meta_dict)
+    # 7. Mark case analyzed using shared helper
+    mark_case_analyzed(store, case_id)
 
     # 8. Record audit log entry
     audit_log.append(

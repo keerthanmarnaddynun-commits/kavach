@@ -114,6 +114,7 @@ def run_extract_job(
     doc_ids: Sequence[str],
     job_id: str,
     extractor: Callable[..., dict[str, Any]] | None = None,
+    audit_log: Any = None,
 ) -> dict[str, int]:
     """
     Process listed documents in order, updating job progress after each,
@@ -129,31 +130,56 @@ def run_extract_job(
     failed_count = 0
     job_errors: list[dict[str, Any]] = []
 
-    for i, doc_id in enumerate(doc_ids):
-        job_store.update(job_id, progress={"done": i, "total": total, "current": doc_id})
-        res = extract_document(store, case_id, doc_id, extractor)
-        if res.get("status") == "extracted":
-            extracted_count += 1
-        else:
-            failed_count += 1
-            job_errors.append(
-                {
-                    "doc_id": doc_id,
-                    "code": res.get("code", "unknown_error"),
-                    "message": res.get("message", "Extraction failed"),
-                }
+    try:
+        for i, doc_id in enumerate(doc_ids):
+            job_store.update(job_id, progress={"done": i, "total": total, "current": doc_id})
+            res = extract_document(store, case_id, doc_id, extractor)
+            if res.get("status") == "extracted":
+                extracted_count += 1
+            else:
+                failed_count += 1
+                job_errors.append(
+                    {
+                        "doc_id": doc_id,
+                        "code": res.get("code", "unknown_error"),
+                        "message": res.get("message", "Extraction failed"),
+                    }
+                )
+            job_store.update(
+                job_id,
+                progress={"done": i + 1, "total": total, "current": doc_id},
+                errors=job_errors,
             )
+
+        summary = {"extracted": extracted_count, "failed": failed_count}
         job_store.update(
             job_id,
-            progress={"done": i + 1, "total": total, "current": doc_id},
-            errors=job_errors,
+            status="done",
+            progress={"done": total, "total": total, "current": None},
+            result=summary,
         )
-
-    summary = {"extracted": extracted_count, "failed": failed_count}
-    job_store.update(
-        job_id,
-        status="done",
-        progress={"done": total, "total": total, "current": None},
-        result=summary,
-    )
-    return summary
+        if audit_log is not None:
+            audit_log.append(
+                actor="system",
+                role="system",
+                action="job_finished",
+                case_id=case_id,
+                detail={"job_id": job_id, "kind": "extract", "status": "done", "counts": summary},
+            )
+        return summary
+    except Exception:
+        job_store.update(
+            job_id,
+            status="failed",
+            progress={"done": extracted_count, "total": total, "current": "failed"},
+            errors=[{"code": "job_failed", "message": "Extraction failed"}],
+        )
+        if audit_log is not None:
+            audit_log.append(
+                actor="system",
+                role="system",
+                action="job_finished",
+                case_id=case_id,
+                detail={"job_id": job_id, "kind": "extract", "status": "failed"},
+            )
+        raise

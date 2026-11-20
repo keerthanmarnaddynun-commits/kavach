@@ -1,0 +1,22 @@
+COMMAND: PY -m pytest -v tests/test_api_demo_e2e_full.py
+EXIT: 0
+SECONDS: 87.7
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 9 items
+
+tests/test_api_demo_e2e_full.py::test_login_and_case_list_row_counts PASSED [ 11%]
+tests/test_api_demo_e2e_full.py::test_graph_validation_and_node_counts PASSED [ 22%]
+tests/test_api_demo_e2e_full.py::test_leads_presence PASSED              [ 33%]
+tests/test_api_demo_e2e_full.py::test_evidence_spans_slice_back_to_text PASSED [ 44%]
+tests/test_api_demo_e2e_full.py::test_timeline_sums_equal_csv_rows PASSED [ 55%]
+tests/test_api_demo_e2e_full.py::test_openapi_surface_matches_a2 PASSED  [ 66%]
+tests/test_api_demo_e2e_full.py::test_direct_link_evaluation PASSED      [ 77%]
+tests/test_api_demo_e2e_full.py::test_graph_caching_and_invalidation PASSED [ 88%]
+tests/test_api_demo_e2e_full.py::test_load_demo_case_tampered_analysis_raises PASSED [100%]
+
+======================== 9 passed in 86.15s (0:01:26) =========================
