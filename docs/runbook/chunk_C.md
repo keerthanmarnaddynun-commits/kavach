@@ -118,6 +118,17 @@ Create and edit under `web/*`.
 
 ### C3. Overview, leads, people
 
+**C3-0. Repair the API fixtures first (the C1 fixtures `node_detail.json`, `edge_detail*.json` are wrong: they hold an error body and empty objects).**
+`/graph` returns `{summary, elements: {nodes, edges}}`; every element is `{data: {...}}`; node data has only `ai_confidence`, `centrality_score`, `id`, `isKingpin`, `label`, `type`;
+edge data has only `amount`, `count`, `id`, `label` (the relation), `source`, `target`. Edit `scripts/dump_api_shapes.py` (allowed in this step) and regenerate:
+(a) `node_detail` = the real `/nodes/<id>` response for the first PERSON node (graph order) whose `fir_evidence` is not empty;
+(b) `edge_detail_fir` and `edge_detail_csv` = the real `/edges/<id>` responses for the first edges whose `fir_evidence` (resp. `csv_evidence`) is not empty;
+(c) `break_result` = a real break between two persons that gives `finite` true and a non-empty `cut` (try pairs taken from the money-flow leads and then the people list, at most 60 pairs; if none is found use the first pair and write that fact in the worklog);
+(d) `graph` = a consistent subgraph: walk the edges in graph order collecting end points until 12 nodes are collected, keep every edge whose two ends are both collected, do NOT apply the generic 5-item cut to it;
+(e) write every fixture file as bytes with `\n` line endings (no `\r\n`);
+(f) the script must FAIL with a clear message if `node_detail`, `edge_detail_fir` or `edge_detail_csv` is an error body or empty.
+Run it with `step_tool.py run` twice and compare the outputs byte for byte. Only then continue with the overview. Write in the worklog that C1 shipped wrong fixtures and why.
+
 - Overview `#/case/<id>/overview`: case facts line, the disclaimer (verbatim), a sentence "Ordered by money flow; structural scores are explanation only", the priority-lead table (rank, "tied" marker, name, money-flow score, accounts, role chips, reasons, evidence link),
   a toggle that adds the columns degree, betweenness, eigenvector, composite labelled "explanation only, not a ranking", the mule-lead table and the burner-lead table (id, score, flagged yes/no, reasons, evidence-rows link).
   Show the `limitations` strings in the Limits panel.
@@ -159,7 +170,7 @@ Create and edit under `web/*`.
 ### C8. Chunk end
 
 No new code. Do: (1) `run` the whole Python suite once and `scripts/web_check.py build`, `test`, `size`; (2) write `runbook_logs/C/SUMMARY_FOR_USER.txt` (at least 800 characters) with the headings of the A11 summary plus `LIMITS TO STATE` containing the limits of C.6 item 1,
-read from `docs/api/CHUNK_A_CORRECTIONS.md`, and `PAGES` (each page and what it shows); (3) `gate`, `commit`, then `step_tool.py bundle --chunk C` and print the path. STOP.
+read from `docs/api/CHUNK_A_CORRECTIONS.md`, and `PAGES` (each page and what it shows); list under DEVIATIONS the 50 ms `time.sleep` that C0 added at the start of the analyze job in `kavach_api/app.py` to stabilise a timing-dependent frozen test (state that the frozen test still depends on timing), the C1 fixture defect and its repair in C3, and any other deviation; (3) `gate`, `commit`, then `step_tool.py bundle --chunk C` and print the path. STOP.
 
 ## C.6 Text for `docs/api/CHUNK_A_CORRECTIONS.md` (copy exactly)
 
