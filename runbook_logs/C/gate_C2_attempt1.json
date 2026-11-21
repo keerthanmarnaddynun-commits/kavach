@@ -1,0 +1,60 @@
+{
+  "files": [
+    "web/src/components/CaseRail.jsx",
+    "web/src/pages/Intake.jsx",
+    "web/src/pages/Login.jsx",
+    "web/src/pages/intakeReducers.js",
+    "web/src/pages/intakeReducers.test.js",
+    "web/src/App.jsx"
+  ],
+  "fingerprint": "14e315bafb473688dae4d3adbede28e5ef754bd3d1fac6a8e9cd343e8b57b2db",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 631, log C2_01_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log C2_02_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log C2_03_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log C2_04_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "C2",
+  "tests_passed": 631,
+  "time": "2026-11-21 21:18:53"
+}
