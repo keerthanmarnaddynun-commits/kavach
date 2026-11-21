@@ -1,0 +1,41 @@
+{
+  "files": [
+    "docs/api/RUNNING.md"
+  ],
+  "fingerprint": null,
+  "ok": false,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 2, passed 0, baseline 624, log A11_03_gate_full_suite.txt"
+      ],
+      "ok": false
+    },
+    {
+      "check": "done_when: summary_written",
+      "detail": [
+        "exit 0, log A11_04_done_summary_written.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A11",
+  "tests_passed": 0,
+  "time": "2026-11-21 09:27:34"
+}

@@ -15,8 +15,10 @@ Use the Python 3.11 virtual environment:
 To initialize authentication, create an administrative account using `scripts/create_user.py`:
 
 ```powershell
-.\.venv311\Scripts\python.exe scripts/create_user.py <username> <password> --role admin
+.\.venv311\Scripts\python.exe scripts/create_user.py --username <username> --role admin
 ```
+
+(The script securely prompts for the password via getpass; password must be at least 10 characters long.)
 
 Requirements:
 - `username`: 3 to 40 characters matching `^[A-Za-z0-9_.-]{3,40}$`

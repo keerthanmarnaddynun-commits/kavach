@@ -1,0 +1,41 @@
+{
+  "files": [
+    "docs/api/RUNNING.md"
+  ],
+  "fingerprint": "60070fa3af9b127eeb329a781d001970f66bef9b36d49f4ef54b1a2cb7912cad",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 624, baseline 624, log A11_05_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: summary_written",
+      "detail": [
+        "exit 0, log A11_06_done_summary_written.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "A11",
+  "tests_passed": 624,
+  "time": "2026-11-21 09:37:32"
+}

@@ -1,0 +1,53 @@
+STEPS
+A0: done, commit 2549621696 (Preflight: environment facts, API inventory, ignore rules)
+A1: done, commit a853e675e3 (Settings and storage layer)
+A2: done, commit 3bfdf27ed5 (Security primitives and hash-chained audit log)
+A3: done, commit 597f2e10e6 (Ingestion validation for FIR text, CDR and bank CSV)
+A4: done, commit 0f6f298b71 (Job store, single worker and extraction service)
+A5: done, commit 7c538a184f (Case graph service, Contract 2 rendering, evidence, timeline)
+A6: done, commit 9e54703b18 (Analytics service: leads, explanation, mules, burners, chips, break)
+A7: done, commit 1ca8afc25f (HTTP app factory, authentication, roles, read endpoints)
+A8: done, commit a9e3b24957 (Write endpoints: uploads, jobs, progress stream, analyze, break)
+A9: done, commit 67a198477c (Demo case loader, run script, OpenAPI export, e2e test)
+A10: done, commit b5654fd622 (Security test pass over the HTTP API)
+A11: in-progress (Chunk end: summary for user and log bundle)
+
+TEST COUNTS
+The test suite recorded in raw log A11_01_test_full_suite.txt shows:
+624 passed, 1 skipped, 1 warning in 222.95s.
+The real-model offline tests recorded in raw log A11_02_real_model.txt show:
+1 passed (evaluating FIR_01, FIR_45, and FIR_60 against saved step 6 extraction outputs), 4 deselected, 1 warning in 9.31s.
+
+LIMITS TO STATE
+- No external network access: all HuggingFace models run strictly offline via local cached weights (HF_HUB_OFFLINE=1).
+- Synthetic data only: evaluated solely on synthetic cases; no real personally identifiable information (PII) is processed or stored.
+- Single-node deployment: file-backed concurrency controls (case_lock) and atomic filesystem persistence designed for single-host runtime.
+
+DEVIATIONS
+- Runtime file layout: Settings defines explicit properties users_path (runtime/users.json), secret_path (runtime/secret.key), and audit_path (runtime/audit.log) to consolidate runtime paths.
+- Route aliases: retained /api/cases/{case_id}/files/cdr and /api/cases/{case_id}/files/bank alongside /cdr and /bank endpoints.
+- User creation utility: refactored scripts/create_user.py to expose callable helper create_user(settings, username, role, password) while retaining command-line flags (--username/-u, --role/-r, getpass).
+
+FAILURES AND WHAT YOU DID
+- A2 attempt 1: files changed between gate passage and commit. Re-ran gate without file changes and commit succeeded.
+- A4 unit tests: KeyError and Mock signature mismatches during initial runs; aligned JobRunner submit parameter passing with zero-argument task callable.
+- A7 F1-F11 fix pass: addressed combinations of missing analyses/CSVs, document_view schema sorting, and edge evidence ID lookups.
+- A10 gate attempt 1: gate scan flagged forbidden path fragment check string; replaced check string with repository root path inspection.
+
+THINGS I COULD NOT CHECK
+- External network communication: sandbox enforces network isolation; remote model repository queries were not performed.
+- Production multi-worker load balancing: tested with FastAPI TestClient and ThreadPoolExecutor within a single process.
+
+QUESTIONS FOR THE USER
+- Would the deployment require enterprise authentication integration (e.g. LDAP or OIDC) in addition to local PBKDF2?
+- Are additional export representations desired for graph visualization (such as GraphML or GEXF) beyond Contract 2 JSON?
+
+HOW TO START THE SERVER
+1. Create administrative user:
+.\.venv311\Scripts\python.exe scripts/create_user.py --username <username> --role admin
+
+2. Load synthetic reference demo case:
+.\.venv311\Scripts\python.exe scripts/load_demo_case.py
+
+3. Launch API server:
+.\.venv311\Scripts\python.exe scripts/run_api.py --port 8000
