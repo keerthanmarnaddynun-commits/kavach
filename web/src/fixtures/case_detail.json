@@ -1,0 +1,89 @@
+{
+  "_truncated": true,
+  "case": {
+    "analyzed": true,
+    "case_id": "C-0003000300",
+    "created_by": "system",
+    "name": "Demo (synthetic case_demo_v2)",
+    "synthetic": true
+  },
+  "documents": [
+    {
+      "chars": 1268,
+      "doc_id": "FIR_01",
+      "error": null,
+      "filename": "FIR_01.txt",
+      "sha256_raw": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+      "sha256_text": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+      "status": "extracted",
+      "uploaded_by": "system"
+    },
+    {
+      "chars": 796,
+      "doc_id": "FIR_02",
+      "error": null,
+      "filename": "FIR_02.txt",
+      "sha256_raw": "d6b48277fa5bf01e9a1f5a8694a3e401f0162c10034545e38235c9c8cc3b9c09",
+      "sha256_text": "d6b48277fa5bf01e9a1f5a8694a3e401f0162c10034545e38235c9c8cc3b9c09",
+      "status": "extracted",
+      "uploaded_by": "system"
+    },
+    {
+      "chars": 750,
+      "doc_id": "FIR_03",
+      "error": null,
+      "filename": "FIR_03.txt",
+      "sha256_raw": "db11798c6a5dea99c2cb5d3ff1b35cbd7a17484820885e8f9db5f3b01d0c0054",
+      "sha256_text": "db11798c6a5dea99c2cb5d3ff1b35cbd7a17484820885e8f9db5f3b01d0c0054",
+      "status": "extracted",
+      "uploaded_by": "system"
+    },
+    {
+      "chars": 794,
+      "doc_id": "FIR_04",
+      "error": null,
+      "filename": "FIR_04.txt",
+      "sha256_raw": "f15e6e6ae126aeb636a2f28102b981ebcfab228d05c5d74826522a881b20b600",
+      "sha256_text": "f15e6e6ae126aeb636a2f28102b981ebcfab228d05c5d74826522a881b20b600",
+      "status": "extracted",
+      "uploaded_by": "system"
+    },
+    {
+      "chars": 1393,
+      "doc_id": "FIR_05",
+      "error": null,
+      "filename": "FIR_05.txt",
+      "sha256_raw": "4f9e64e39c0ba947e3681114328eea062979692e945a061f2dacc85f088335cf",
+      "sha256_text": "4f9e64e39c0ba947e3681114328eea062979692e945a061f2dacc85f088335cf",
+      "status": "extracted",
+      "uploaded_by": "system"
+    }
+  ],
+  "files": {
+    "bank": {
+      "_truncated": true,
+      "columns": [
+        "txn_id",
+        "datetime",
+        "from_acct",
+        "to_acct",
+        "amount"
+      ],
+      "rows": 1489,
+      "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+    },
+    "cdr": {
+      "_truncated": true,
+      "columns": [
+        "a_party",
+        "b_party",
+        "imei_a",
+        "imsi_a",
+        "start_time"
+      ],
+      "rows": 7483,
+      "sha256": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94"
+    }
+  },
+  "latest_jobs": []
+}

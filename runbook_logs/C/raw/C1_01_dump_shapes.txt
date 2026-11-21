@@ -1,0 +1,8 @@
+COMMAND: PY scripts/dump_api_shapes.py
+EXIT: 1
+SECONDS: 1.6
+--- OUTPUT ---
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scripts\dump_api_shapes.py", line 13, in <module>
+    from kavach_api.app import create_app
+ModuleNotFoundError: No module named 'kavach_api'

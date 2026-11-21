@@ -1,0 +1,114 @@
+{
+  "files": [
+    "scripts/dump_api_shapes.py",
+    "scripts/web_check.py",
+    "tests/test_frontend_static.py",
+    "web/index.html",
+    "web/package-lock.json",
+    "web/package.json",
+    "web/src/App.jsx",
+    "web/src/api/client.js",
+    "web/src/api/client.test.js",
+    "web/src/api/sse.js",
+    "web/src/api/sse.test.js",
+    "web/src/fixtures/break_result.json",
+    "web/src/fixtures/case_detail.json",
+    "web/src/fixtures/cases.json",
+    "web/src/fixtures/csv_columns.json",
+    "web/src/fixtures/document.json",
+    "web/src/fixtures/edge_detail.json",
+    "web/src/fixtures/edge_detail_csv.json",
+    "web/src/fixtures/edge_detail_fir.json",
+    "web/src/fixtures/graph.json",
+    "web/src/fixtures/health.json",
+    "web/src/fixtures/job.json",
+    "web/src/fixtures/leads.json",
+    "web/src/fixtures/login.json",
+    "web/src/fixtures/node_detail.json",
+    "web/src/fixtures/people.json",
+    "web/src/fixtures/rows.json",
+    "web/src/fixtures/rows_bank.json",
+    "web/src/fixtures/timeline_day.json",
+    "web/src/fixtures/timeline_hour.json",
+    "web/src/lib/format.js",
+    "web/src/lib/format.test.js",
+    "web/src/lib/roles.js",
+    "web/src/lib/roles.test.js",
+    "web/src/main.jsx",
+    "web/src/styles/app.css",
+    "web/src/styles/tokens.css",
+    "web/vite.config.js",
+    ".gitignore"
+  ],
+  "fingerprint": "4548415ad9d3a29d7c21955d49e0700b970dfa1f2841b7347812b1ba9a2ed408",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 629, log C1_11_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log C1_12_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log C1_13_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log C1_14_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: ignore_rules",
+      "detail": [
+        "exit 0, log C1_15_done_ignore_rules.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: lock_file",
+      "detail": [
+        "exit 0, log C1_16_done_lock_file.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: fixtures_present",
+      "detail": [
+        "exit 0, log C1_17_done_fixtures_present.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "C1",
+  "tests_passed": 631,
+  "time": "2026-11-21 21:07:47"
+}

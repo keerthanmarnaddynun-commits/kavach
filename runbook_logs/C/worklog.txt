@@ -4,3 +4,14 @@
 2026-11-21 18:54:39 [C0] Step C0 implementation: Implemented path traversal tests in tests/test_api_followup.py testing 27 hostile id requests in case, doc, and node positions asserting 400/404, error structure, and no filesystem leakage outside runtime directory. Added StarletteHTTPException handler in kavach_api/app.py returning standard JSON error shape for unknown routes (404 not_found) and wrong methods (405 method_not_allowed), tested on GET /api/nope and DELETE /api/health. Implemented read-only repository check asserting git status unchanged before and after workload. Updated scripts/load_demo_case.py to perform all pre-validation before creating the case, tested with tampered analysis raising ValueError and leaving zero cases behind. Implemented deterministic analyze concurrency test patching kavach_api.app.build_graph with threading.Event. Added running instructions and runtime file locations to docs/api/RUNNING.md. Created docs/api/CHUNK_A_CORRECTIONS.md with Section C.6 text. All 5 tests passed in 36.62s (raw log C0_02_test_api_followup.txt).
 2026-11-21 19:03:58 [C0] GATE C0: FAIL
 2026-11-21 19:58:30 [C0] GATE C0: PASS
+2026-11-21 19:59:57 [C0] COMMIT 8f71b09979 pushed=True
+2026-11-21 20:00:25 [C1] BEGIN: Frontend scaffold: package files, install hold, fixtures from the real API, skeleton, design lint
+2026-11-21 20:01:19 [C1] HOLD: user must run: npm --prefix web install
+2026-11-21 20:36:35 [C1] RELEASED by the user
+2026-11-21 20:37:38 [C1] BEGIN (resuming): Frontend scaffold: package files, install hold, fixtures from the real API, skeleton, design lint
+2026-11-21 20:40:32 [C1] RUN PY scripts/dump_api_shapes.py -> exit 1 (C1_01_dump_shapes.txt)
+2026-11-21 20:41:40 [C1] RUN PY scripts/dump_api_shapes.py -> exit 1 (C1_02_dump_shapes.txt)
+2026-11-21 20:42:52 [C1] RUN PY scripts/dump_api_shapes.py -> exit 0 (C1_03_dump_shapes.txt)
+2026-11-21 20:57:42 [C1] Step C1 implementation: Added web/node_modules/ and web/dist/ to .gitignore. Created web/package.json with exact pinned versions of React 18, Cytoscape, Vite, and Vitest. Created web/vite.config.js with strict port 5173, api proxy, and node test environment. Created web/index.html. Created scripts/web_check.py supporting build, test, and size commands. Created scripts/dump_api_shapes.py dumping 19 byte-identical JSON fixtures to web/src/fixtures/ (raw log C1_03_dump_shapes.txt). Created web skeleton: tokens.css, app.css, format.js, roles.js, sse.js, client.js, App.jsx, and main.jsx. Created unit test suites in web/src covering roles, formatting, SSE parsing, and error mapping; vitest passed with TESTS OK. Created tests/test_frontend_static.py covering manifest versions and static design rules; 2 tests passed in 0.13s.
+2026-11-21 21:02:14 [C1] GATE C1: FAIL
+2026-11-21 21:07:47 [C1] GATE C1: PASS

@@ -1,0 +1,1689 @@
+{
+  "_truncated": true,
+  "burner_phones": [
+    {
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "cdr.csv",
+        "rows": [
+          5692,
+          5799,
+          5813,
+          5817,
+          5825
+        ],
+        "sha256": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94"
+      },
+      "flagged": true,
+      "id": "8149368998",
+      "owned_by": [],
+      "reasons": [
+        "Short active lifespan: 2.5 days",
+        "Late network activation: Day 23.1",
+        "High contact concentration: 100.0% with top 2 contacts",
+        "Limited distinct contacts: 1 peers"
+      ],
+      "score": 0.909798
+    },
+    {
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "cdr.csv",
+        "rows": [
+          5448,
+          5455,
+          5475,
+          5485,
+          5581
+        ],
+        "sha256": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94"
+      },
+      "flagged": true,
+      "id": "6592124998",
+      "owned_by": [],
+      "reasons": [
+        "Short active lifespan: 3.6 days",
+        "Late network activation: Day 22.1",
+        "High contact concentration: 100.0% with top 2 contacts",
+        "Limited distinct contacts: 1 peers"
+      ],
+      "score": 0.890824
+    },
+    {
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "cdr.csv",
+        "rows": [
+          4931,
+          4960,
+          4975,
+          5029,
+          5033
+        ],
+        "sha256": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94"
+      },
+      "flagged": true,
+      "id": "7950240268",
+      "owned_by": [],
+      "reasons": [
+        "Short active lifespan: 4.4 days",
+        "Late network activation: Day 20.1",
+        "High contact concentration: 100.0% with top 2 contacts",
+        "Limited distinct contacts: 2 peers"
+      ],
+      "score": 0.857083
+    },
+    {
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "cdr.csv",
+        "rows": [
+          5188,
+          5229,
+          5286,
+          5296,
+          5361
+        ],
+        "sha256": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94"
+      },
+      "flagged": true,
+      "id": "8527111161",
+      "owned_by": [],
+      "reasons": [
+        "Short active lifespan: 6.4 days",
+        "Late network activation: Day 21.1",
+        "High contact concentration: 100.0% with top 2 contacts",
+        "Limited distinct contacts: 2 peers"
+      ],
+      "score": 0.845604
+    },
+    {
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "cdr.csv",
+        "rows": [
+          1208,
+          1455,
+          2434,
+          2683,
+          3134
+        ],
+        "sha256": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94"
+      },
+      "flagged": false,
+      "id": "7389083863",
+      "owned_by": [
+        "PERSON:FIR_05:ent_09"
+      ],
+      "reasons": [
+        "High contact concentration: 100.0% with top 2 contacts",
+        "Limited distinct contacts: 2 peers"
+      ],
+      "score": 0.530529
+    }
+  ],
+  "case_id": "C-0003000300",
+  "config_sha256": "906f042098ea52cbb25cecf7c79f0f1862041361bfb372767074d16830df1ef0",
+  "disclaimer": "Leads are decision support derived only from the uploaded records. They are not findings of guilt and not proof.",
+  "document_hash": "af0c0d67c9387ccba48c628b721e5373a94ce275114b6f72089eccc689393f8b",
+  "fingerprint": "ba868ff6cc405e029a82720af9bbac9cf29a23f270d5a435082f36e04c2d6472",
+  "generated_from": {
+    "_truncated": true,
+    "bank": {
+      "file": "bank.csv",
+      "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+    },
+    "cdr": {
+      "file": "cdr.csv",
+      "sha256": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94"
+    },
+    "documents": [
+      {
+        "doc_id": "FIR_01",
+        "sha256": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37"
+      },
+      {
+        "doc_id": "FIR_02",
+        "sha256": "d6b48277fa5bf01e9a1f5a8694a3e401f0162c10034545e38235c9c8cc3b9c09"
+      },
+      {
+        "doc_id": "FIR_03",
+        "sha256": "db11798c6a5dea99c2cb5d3ff1b35cbd7a17484820885e8f9db5f3b01d0c0054"
+      },
+      {
+        "doc_id": "FIR_04",
+        "sha256": "f15e6e6ae126aeb636a2f28102b981ebcfab228d05c5d74826522a881b20b600"
+      },
+      {
+        "doc_id": "FIR_05",
+        "sha256": "4f9e64e39c0ba947e3681114328eea062979692e945a061f2dacc85f088335cf"
+      }
+    ]
+  },
+  "limitations": [
+    "persons appear only when a document states ownership or control",
+    "phones and accounts without a stated owner are unidentified",
+    "scores are decision support",
+    "relation extraction from text was measured at F1 0.32 on an independent held-out set",
+    "no scanned documents"
+  ],
+  "money_flow": [
+    {
+      "_truncated": true,
+      "accounts": [
+        "1273226992728702",
+        "26309165168",
+        "45784370118033",
+        "53839750530",
+        "80322489136043"
+      ],
+      "evidence": {
+        "_truncated": true,
+        "accounts": [
+          "1273226992728702",
+          "26309165168",
+          "45784370118033",
+          "53839750530",
+          "80322489136043"
+        ],
+        "controlled_account_count": 6,
+        "paise_flow": 443306284
+      },
+      "name": "Rajendra Singh",
+      "person_id": "PERSON:FIR_05:ent_09",
+      "rank": 1,
+      "reasons": [
+        "Paise flow: 443,306,284 across 6 controlled accounts",
+        "Financial control score: 1.000000"
+      ],
+      "score": 1.0,
+      "tied": false
+    },
+    {
+      "accounts": [
+        "15329318393"
+      ],
+      "evidence": {
+        "accounts": [
+          "15329318393"
+        ],
+        "controlled_account_count": 1,
+        "paise_flow": 419260000
+      },
+      "name": "\u0938\u0932\u092e\u093e\u0928 \u092e\u093f\u0930\u094d\u091c\u093c\u093e",
+      "person_id": "PERSON:FIR_49:ent_07",
+      "rank": 2,
+      "reasons": [
+        "Paise flow: 419,260,000 across 1 controlled accounts",
+        "Financial control score: 0.945757"
+      ],
+      "score": 0.945757,
+      "tied": false
+    },
+    {
+      "accounts": [
+        "693103413164"
+      ],
+      "evidence": {
+        "accounts": [
+          "693103413164"
+        ],
+        "controlled_account_count": 1,
+        "paise_flow": 402209985
+      },
+      "name": "Rajendra Singh",
+      "person_id": "PERSON:FIR_09:ent_04",
+      "rank": 3,
+      "reasons": [
+        "Paise flow: 402,209,985 across 1 controlled accounts",
+        "Financial control score: 0.907296"
+      ],
+      "score": 0.907296,
+      "tied": false
+    },
+    {
+      "accounts": [
+        "258506431713"
+      ],
+      "evidence": {
+        "accounts": [
+          "258506431713"
+        ],
+        "controlled_account_count": 1,
+        "paise_flow": 366040000
+      },
+      "name": "Sunil Kumar",
+      "person_id": "PERSON:FIR_85:ent_09",
+      "rank": 4,
+      "reasons": [
+        "Paise flow: 366,040,000 across 1 controlled accounts",
+        "Financial control score: 0.825705"
+      ],
+      "score": 0.825705,
+      "tied": false
+    },
+    {
+      "accounts": [
+        "7909670546688937"
+      ],
+      "evidence": {
+        "accounts": [
+          "7909670546688937"
+        ],
+        "controlled_account_count": 1,
+        "paise_flow": 340288164
+      },
+      "name": "Mukhtar Ansari",
+      "person_id": "PERSON:FIR_37:ent_08",
+      "rank": 5,
+      "reasons": [
+        "Paise flow: 340,288,164 across 1 controlled accounts",
+        "Financial control score: 0.767614"
+      ],
+      "score": 0.767614,
+      "tied": false
+    }
+  ],
+  "mule_accounts": [
+    {
+      "controlled_by": [
+        "PERSON:FIR_49:ent_07"
+      ],
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "bank.csv",
+        "rows": [
+          57,
+          59,
+          62,
+          69,
+          148
+        ],
+        "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+      },
+      "flagged": true,
+      "id": "15329318393",
+      "reasons": [
+        "High fan-in: 31 distinct senders",
+        "High pass-through ratio: 100.0% turnover",
+        "Rapid onward movement: median dwell 3.8 hours",
+        "Structuring pattern: 72.5% deposits just below reporting threshold"
+      ],
+      "score": 0.91063
+    },
+    {
+      "controlled_by": [
+        "PERSON:FIR_85:ent_09"
+      ],
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "bank.csv",
+        "rows": [
+          7,
+          12,
+          17,
+          21,
+          27
+        ],
+        "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+      },
+      "flagged": true,
+      "id": "258506431713",
+      "reasons": [
+        "High fan-in: 29 distinct senders",
+        "High pass-through ratio: 100.0% turnover",
+        "Rapid onward movement: median dwell 3.5 hours",
+        "Structuring pattern: 65.2% deposits just below reporting threshold"
+      ],
+      "score": 0.87892
+    },
+    {
+      "controlled_by": [
+        "PERSON:FIR_09:ent_02"
+      ],
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "bank.csv",
+        "rows": [
+          61,
+          70,
+          81,
+          160,
+          168
+        ],
+        "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+      },
+      "flagged": true,
+      "id": "6869261796405377",
+      "reasons": [
+        "High fan-in: 25 distinct senders",
+        "High pass-through ratio: 100.0% turnover",
+        "Rapid onward movement: median dwell 3.4 hours",
+        "Structuring pattern: 65.0% deposits just below reporting threshold"
+      ],
+      "score": 0.840945
+    },
+    {
+      "controlled_by": [],
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "bank.csv",
+        "rows": [
+          790,
+          800,
+          801,
+          806,
+          821
+        ],
+        "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+      },
+      "flagged": true,
+      "id": "62904228421020",
+      "reasons": [
+        "High fan-in: 16 distinct senders",
+        "High pass-through ratio: 100.0% turnover",
+        "Rapid onward movement: median dwell 3.8 hours",
+        "Structuring pattern: 57.9% deposits just below reporting threshold"
+      ],
+      "score": 0.736456
+    },
+    {
+      "controlled_by": [
+        "PERSON:FIR_33:ent_05"
+      ],
+      "evidence_rows": {
+        "_truncated": true,
+        "file": "bank.csv",
+        "rows": [
+          2,
+          133,
+          248,
+          258,
+          273
+        ],
+        "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+      },
+      "flagged": false,
+      "id": "82788957986",
+      "reasons": [
+        "High fan-in: 22 distinct senders",
+        "High pass-through ratio: 86.7% turnover"
+      ],
+      "score": 0.589642
+    }
+  ],
+  "role_chips": {
+    "PERSON:FIR_01:ent_02": [],
+    "PERSON:FIR_01:ent_04": [],
+    "PERSON:FIR_01:ent_08": [],
+    "PERSON:FIR_01:ent_09": [],
+    "PERSON:FIR_02:ent_02": [],
+    "PERSON:FIR_02:ent_05": [],
+    "PERSON:FIR_03:ent_02": [],
+    "PERSON:FIR_03:ent_03": [],
+    "PERSON:FIR_03:ent_06": [],
+    "PERSON:FIR_04:ent_02": [],
+    "PERSON:FIR_04:ent_03": [],
+    "PERSON:FIR_05:ent_02": [],
+    "PERSON:FIR_05:ent_07": [],
+    "PERSON:FIR_05:ent_09": [
+      {
+        "chip": "PRIORITY_LEAD_MONEY",
+        "reason": "Top-3 financial control rank lead (rank #1)"
+      }
+    ],
+    "PERSON:FIR_06:ent_02": [],
+    "PERSON:FIR_06:ent_03": [],
+    "PERSON:FIR_07:ent_03": [],
+    "PERSON:FIR_08:ent_06": [],
+    "PERSON:FIR_09:ent_02": [
+      {
+        "chip": "MULE_OWNER",
+        "reason": "Controls flagged mule lead account(s): 6869261796405377"
+      }
+    ],
+    "PERSON:FIR_09:ent_04": [
+      {
+        "chip": "PRIORITY_LEAD_MONEY",
+        "reason": "Top-3 financial control rank lead (rank #3)"
+      }
+    ],
+    "PERSON:FIR_09:ent_05": [],
+    "PERSON:FIR_100:ent_02": [],
+    "PERSON:FIR_100:ent_03": [],
+    "PERSON:FIR_10:ent_02": [],
+    "PERSON:FIR_10:ent_05": [],
+    "PERSON:FIR_11:ent_05": [],
+    "PERSON:FIR_11:ent_07": [],
+    "PERSON:FIR_11:ent_10": [],
+    "PERSON:FIR_12:ent_02": [],
+    "PERSON:FIR_12:ent_03": [],
+    "PERSON:FIR_13:ent_03": [],
+    "PERSON:FIR_14:ent_02": [],
+    "PERSON:FIR_14:ent_05": [],
+    "PERSON:FIR_15:ent_03": [],
+    "PERSON:FIR_15:ent_06": [],
+    "PERSON:FIR_16:ent_03": [],
+    "PERSON:FIR_17:ent_07": [],
+    "PERSON:FIR_17:ent_08": [],
+    "PERSON:FIR_18:ent_02": [],
+    "PERSON:FIR_18:ent_03": [],
+    "PERSON:FIR_19:ent_02": [],
+    "PERSON:FIR_19:ent_05": [],
+    "PERSON:FIR_19:ent_08": [],
+    "PERSON:FIR_20:ent_03": [],
+    "PERSON:FIR_21:ent_04": [],
+    "PERSON:FIR_21:ent_05": [],
+    "PERSON:FIR_22:ent_03": [],
+    "PERSON:FIR_23:ent_05": [],
+    "PERSON:FIR_23:ent_08": [],
+    "PERSON:FIR_23:ent_10": [],
+    "PERSON:FIR_24:ent_03": [],
+    "PERSON:FIR_25:ent_08": [],
+    "PERSON:FIR_26:ent_05": [],
+    "PERSON:FIR_27:ent_05": [],
+    "PERSON:FIR_28:ent_03": [],
+    "PERSON:FIR_29:ent_03": [],
+    "PERSON:FIR_30:ent_03": [],
+    "PERSON:FIR_31:ent_05": [],
+    "PERSON:FIR_31:ent_09": [],
+    "PERSON:FIR_32:ent_06": [],
+    "PERSON:FIR_33:ent_03": [],
+    "PERSON:FIR_33:ent_05": [],
+    "PERSON:FIR_34:ent_05": [],
+    "PERSON:FIR_35:ent_05": [],
+    "PERSON:FIR_35:ent_08": [],
+    "PERSON:FIR_35:ent_10": [],
+    "PERSON:FIR_36:ent_03": [],
+    "PERSON:FIR_37:ent_03": [],
+    "PERSON:FIR_37:ent_08": [],
+    "PERSON:FIR_38:ent_03": [],
+    "PERSON:FIR_39:ent_03": [],
+    "PERSON:FIR_39:ent_06": [],
+    "PERSON:FIR_40:ent_03": [],
+    "PERSON:FIR_41:ent_07": [],
+    "PERSON:FIR_41:ent_09": [],
+    "PERSON:FIR_42:ent_04": [],
+    "PERSON:FIR_43:ent_03": [],
+    "PERSON:FIR_43:ent_07": [],
+    "PERSON:FIR_44:ent_03": [],
+    "PERSON:FIR_45:ent_05": [],
+    "PERSON:FIR_46:ent_05": [],
+    "PERSON:FIR_47:ent_05": [],
+    "PERSON:FIR_47:ent_09": [],
+    "PERSON:FIR_48:ent_03": [],
+    "PERSON:FIR_49:ent_07": [
+      {
+        "chip": "PRIORITY_LEAD_MONEY",
+        "reason": "Top-3 financial control rank lead (rank #2)"
+      },
+      {
+        "chip": "MULE_OWNER",
+        "reason": "Controls flagged mule lead account(s): 15329318393"
+      }
+    ],
+    "PERSON:FIR_49:ent_08": [],
+    "PERSON:FIR_50:ent_05": [],
+    "PERSON:FIR_51:ent_03": [],
+    "PERSON:FIR_52:ent_06": [],
+    "PERSON:FIR_52:ent_09": [],
+    "PERSON:FIR_53:ent_04": [],
+    "PERSON:FIR_54:ent_03": [],
+    "PERSON:FIR_55:ent_06": [],
+    "PERSON:FIR_55:ent_07": [],
+    "PERSON:FIR_56:ent_03": [],
+    "PERSON:FIR_57:ent_04": [],
+    "PERSON:FIR_57:ent_05": [],
+    "PERSON:FIR_58:ent_05": [],
+    "PERSON:FIR_59:ent_03": [],
+    "PERSON:FIR_59:ent_04": [],
+    "PERSON:FIR_59:ent_09": [],
+    "PERSON:FIR_60:ent_03": [],
+    "PERSON:FIR_61:ent_06": [],
+    "PERSON:FIR_61:ent_08": [],
+    "PERSON:FIR_62:ent_05": [],
+    "PERSON:FIR_62:ent_08": [],
+    "PERSON:FIR_63:ent_05": [],
+    "PERSON:FIR_64:ent_03": [],
+    "PERSON:FIR_64:ent_05": [],
+    "PERSON:FIR_65:ent_04": [],
+    "PERSON:FIR_65:ent_07": [],
+    "PERSON:FIR_66:ent_03": [],
+    "PERSON:FIR_67:ent_05": [],
+    "PERSON:FIR_67:ent_08": [],
+    "PERSON:FIR_68:ent_03": [],
+    "PERSON:FIR_68:ent_08": [],
+    "PERSON:FIR_69:ent_05": [],
+    "PERSON:FIR_70:ent_03": [],
+    "PERSON:FIR_71:ent_03": [],
+    "PERSON:FIR_72:ent_03": [],
+    "PERSON:FIR_73:ent_09": [],
+    "PERSON:FIR_74:ent_06": [],
+    "PERSON:FIR_74:ent_09": [],
+    "PERSON:FIR_75:ent_03": [],
+    "PERSON:FIR_76:ent_06": [],
+    "PERSON:FIR_77:ent_05": [],
+    "PERSON:FIR_78:ent_03": [],
+    "PERSON:FIR_79:ent_04": [],
+    "PERSON:FIR_79:ent_09": [],
+    "PERSON:FIR_80:ent_03": [],
+    "PERSON:FIR_81:ent_04": [],
+    "PERSON:FIR_81:ent_07": [],
+    "PERSON:FIR_82:ent_09": [],
+    "PERSON:FIR_83:ent_06": [],
+    "PERSON:FIR_84:ent_05": [],
+    "PERSON:FIR_85:ent_04": [],
+    "PERSON:FIR_85:ent_09": [
+      {
+        "chip": "MULE_OWNER",
+        "reason": "Controls flagged mule lead account(s): 258506431713"
+      }
+    ],
+    "PERSON:FIR_86:ent_03": [],
+    "PERSON:FIR_87:ent_02": [],
+    "PERSON:FIR_87:ent_05": [],
+    "PERSON:FIR_87:ent_08": [],
+    "PERSON:FIR_88:ent_04": [],
+    "PERSON:FIR_88:ent_07": [],
+    "PERSON:FIR_89:ent_03": [],
+    "PERSON:FIR_90:ent_05": [],
+    "PERSON:FIR_91:ent_05": [],
+    "PERSON:FIR_92:ent_03": [],
+    "PERSON:FIR_93:ent_06": [],
+    "PERSON:FIR_93:ent_09": [],
+    "PERSON:FIR_94:ent_05": [],
+    "PERSON:FIR_95:ent_06": [],
+    "PERSON:FIR_96:ent_03": [],
+    "PERSON:FIR_97:ent_05": [],
+    "PERSON:FIR_98:ent_03": [],
+    "PERSON:FIR_99:ent_07": []
+  },
+  "schema_version": "1.1",
+  "structural_explanation": {
+    "PERSON:FIR_01:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.179937,
+      "degree": 0.374325,
+      "eigenvector": 0.100691,
+      "person_id": "PERSON:FIR_01:ent_02"
+    },
+    "PERSON:FIR_01:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.088439,
+      "degree": 0.188969,
+      "eigenvector": 0.042838,
+      "person_id": "PERSON:FIR_01:ent_04"
+    },
+    "PERSON:FIR_01:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_01:ent_08"
+    },
+    "PERSON:FIR_01:ent_09": {
+      "betweenness": 0.303739,
+      "composite": 0.6139,
+      "degree": 0.620201,
+      "eigenvector": 0.915661,
+      "person_id": "PERSON:FIR_01:ent_09"
+    },
+    "PERSON:FIR_02:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.178939,
+      "degree": 0.372135,
+      "eigenvector": 0.100283,
+      "person_id": "PERSON:FIR_02:ent_02"
+    },
+    "PERSON:FIR_02:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_02:ent_05"
+    },
+    "PERSON:FIR_03:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.180265,
+      "degree": 0.375033,
+      "eigenvector": 0.100838,
+      "person_id": "PERSON:FIR_03:ent_02"
+    },
+    "PERSON:FIR_03:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_03:ent_03"
+    },
+    "PERSON:FIR_03:ent_06": {
+      "betweenness": 0.036518,
+      "composite": 0.095856,
+      "degree": 0.18304,
+      "eigenvector": 0.038947,
+      "person_id": "PERSON:FIR_03:ent_06"
+    },
+    "PERSON:FIR_04:ent_02": {
+      "betweenness": 0.097382,
+      "composite": 0.553719,
+      "degree": 0.56191,
+      "eigenvector": 0.999137,
+      "person_id": "PERSON:FIR_04:ent_02"
+    },
+    "PERSON:FIR_04:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_04:ent_03"
+    },
+    "PERSON:FIR_05:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.255839,
+      "degree": 0.541008,
+      "eigenvector": 0.131452,
+      "person_id": "PERSON:FIR_05:ent_02"
+    },
+    "PERSON:FIR_05:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_05:ent_07"
+    },
+    "PERSON:FIR_05:ent_09": {
+      "betweenness": 1.0,
+      "composite": 0.755359,
+      "degree": 1.0,
+      "eigenvector": 0.184529,
+      "person_id": "PERSON:FIR_05:ent_09"
+    },
+    "PERSON:FIR_06:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.427588,
+      "degree": 0.412986,
+      "eigenvector": 0.874644,
+      "person_id": "PERSON:FIR_06:ent_02"
+    },
+    "PERSON:FIR_06:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_06:ent_03"
+    },
+    "PERSON:FIR_07:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_07:ent_03"
+    },
+    "PERSON:FIR_08:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_08:ent_06"
+    },
+    "PERSON:FIR_09:ent_02": {
+      "betweenness": 0.270119,
+      "composite": 0.348688,
+      "degree": 0.572731,
+      "eigenvector": 0.128534,
+      "person_id": "PERSON:FIR_09:ent_02"
+    },
+    "PERSON:FIR_09:ent_04": {
+      "betweenness": 0.069848,
+      "composite": 0.113664,
+      "degree": 0.205805,
+      "eigenvector": 0.034626,
+      "person_id": "PERSON:FIR_09:ent_04"
+    },
+    "PERSON:FIR_09:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_09:ent_05"
+    },
+    "PERSON:FIR_100:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.059218,
+      "degree": 0.054581,
+      "eigenvector": 0.124618,
+      "person_id": "PERSON:FIR_100:ent_02"
+    },
+    "PERSON:FIR_100:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_100:ent_03"
+    },
+    "PERSON:FIR_10:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.073131,
+      "degree": 0.067388,
+      "eigenvector": 0.15392,
+      "person_id": "PERSON:FIR_10:ent_02"
+    },
+    "PERSON:FIR_10:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_10:ent_05"
+    },
+    "PERSON:FIR_11:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_11:ent_05"
+    },
+    "PERSON:FIR_11:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_11:ent_07"
+    },
+    "PERSON:FIR_11:ent_10": {
+      "betweenness": 0.0,
+      "composite": 0.089149,
+      "degree": 0.193056,
+      "eigenvector": 0.039755,
+      "person_id": "PERSON:FIR_11:ent_10"
+    },
+    "PERSON:FIR_12:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.41743,
+      "degree": 0.402749,
+      "eigenvector": 0.854435,
+      "person_id": "PERSON:FIR_12:ent_02"
+    },
+    "PERSON:FIR_12:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_12:ent_03"
+    },
+    "PERSON:FIR_13:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_13:ent_03"
+    },
+    "PERSON:FIR_14:ent_02": {
+      "betweenness": 0.108975,
+      "composite": 0.28544,
+      "degree": 0.525866,
+      "eigenvector": 0.141338,
+      "person_id": "PERSON:FIR_14:ent_02"
+    },
+    "PERSON:FIR_14:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_14:ent_05"
+    },
+    "PERSON:FIR_15:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_15:ent_03"
+    },
+    "PERSON:FIR_15:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.085539,
+      "degree": 0.184407,
+      "eigenvector": 0.039252,
+      "person_id": "PERSON:FIR_15:ent_06"
+    },
+    "PERSON:FIR_16:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_16:ent_03"
+    },
+    "PERSON:FIR_17:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.093218,
+      "degree": 0.187746,
+      "eigenvector": 0.060399,
+      "person_id": "PERSON:FIR_17:ent_07"
+    },
+    "PERSON:FIR_17:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_17:ent_08"
+    },
+    "PERSON:FIR_18:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.430534,
+      "degree": 0.41644,
+      "eigenvector": 0.879862,
+      "person_id": "PERSON:FIR_18:ent_02"
+    },
+    "PERSON:FIR_18:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_18:ent_03"
+    },
+    "PERSON:FIR_19:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.428274,
+      "degree": 0.414095,
+      "eigenvector": 0.875452,
+      "person_id": "PERSON:FIR_19:ent_02"
+    },
+    "PERSON:FIR_19:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_19:ent_05"
+    },
+    "PERSON:FIR_19:ent_08": {
+      "betweenness": 0.002705,
+      "composite": 0.114351,
+      "degree": 0.246643,
+      "eigenvector": 0.049607,
+      "person_id": "PERSON:FIR_19:ent_08"
+    },
+    "PERSON:FIR_20:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_20:ent_03"
+    },
+    "PERSON:FIR_21:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.053128,
+      "degree": 0.12066,
+      "eigenvector": 0.016213,
+      "person_id": "PERSON:FIR_21:ent_04"
+    },
+    "PERSON:FIR_21:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_21:ent_05"
+    },
+    "PERSON:FIR_22:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_22:ent_03"
+    },
+    "PERSON:FIR_23:ent_05": {
+      "betweenness": 0.077674,
+      "composite": 0.546099,
+      "degree": 0.556993,
+      "eigenvector": 1.0,
+      "person_id": "PERSON:FIR_23:ent_05"
+    },
+    "PERSON:FIR_23:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.093265,
+      "degree": 0.202467,
+      "eigenvector": 0.040926,
+      "person_id": "PERSON:FIR_23:ent_08"
+    },
+    "PERSON:FIR_23:ent_10": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_23:ent_10"
+    },
+    "PERSON:FIR_24:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_24:ent_03"
+    },
+    "PERSON:FIR_25:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_25:ent_08"
+    },
+    "PERSON:FIR_26:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_26:ent_05"
+    },
+    "PERSON:FIR_27:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_27:ent_05"
+    },
+    "PERSON:FIR_28:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_28:ent_03"
+    },
+    "PERSON:FIR_29:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_29:ent_03"
+    },
+    "PERSON:FIR_30:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_30:ent_03"
+    },
+    "PERSON:FIR_31:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.068735,
+      "degree": 0.14282,
+      "eigenvector": 0.03869,
+      "person_id": "PERSON:FIR_31:ent_05"
+    },
+    "PERSON:FIR_31:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_31:ent_09"
+    },
+    "PERSON:FIR_32:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_32:ent_06"
+    },
+    "PERSON:FIR_33:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_33:ent_03"
+    },
+    "PERSON:FIR_33:ent_05": {
+      "betweenness": 0.002319,
+      "composite": 0.126517,
+      "degree": 0.26348,
+      "eigenvector": 0.068098,
+      "person_id": "PERSON:FIR_33:ent_05"
+    },
+    "PERSON:FIR_34:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_34:ent_05"
+    },
+    "PERSON:FIR_35:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.178325,
+      "degree": 0.371043,
+      "eigenvector": 0.099693,
+      "person_id": "PERSON:FIR_35:ent_05"
+    },
+    "PERSON:FIR_35:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.098862,
+      "degree": 0.22326,
+      "eigenvector": 0.031859,
+      "person_id": "PERSON:FIR_35:ent_08"
+    },
+    "PERSON:FIR_35:ent_10": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_35:ent_10"
+    },
+    "PERSON:FIR_36:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_36:ent_03"
+    },
+    "PERSON:FIR_37:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_37:ent_03"
+    },
+    "PERSON:FIR_37:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.081384,
+      "degree": 0.181673,
+      "eigenvector": 0.029048,
+      "person_id": "PERSON:FIR_37:ent_08"
+    },
+    "PERSON:FIR_38:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_38:ent_03"
+    },
+    "PERSON:FIR_39:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_39:ent_03"
+    },
+    "PERSON:FIR_39:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.106231,
+      "degree": 0.217806,
+      "eigenvector": 0.063695,
+      "person_id": "PERSON:FIR_39:ent_06"
+    },
+    "PERSON:FIR_40:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_40:ent_03"
+    },
+    "PERSON:FIR_41:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_41:ent_07"
+    },
+    "PERSON:FIR_41:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.075187,
+      "degree": 0.168319,
+      "eigenvector": 0.026197,
+      "person_id": "PERSON:FIR_41:ent_09"
+    },
+    "PERSON:FIR_42:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_42:ent_04"
+    },
+    "PERSON:FIR_43:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_43:ent_03"
+    },
+    "PERSON:FIR_43:ent_07": {
+      "betweenness": 0.002319,
+      "composite": 0.106328,
+      "degree": 0.239348,
+      "eigenvector": 0.032978,
+      "person_id": "PERSON:FIR_43:ent_07"
+    },
+    "PERSON:FIR_44:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_44:ent_03"
+    },
+    "PERSON:FIR_45:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_45:ent_05"
+    },
+    "PERSON:FIR_46:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_46:ent_05"
+    },
+    "PERSON:FIR_47:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_47:ent_05"
+    },
+    "PERSON:FIR_47:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_47:ent_09"
+    },
+    "PERSON:FIR_48:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_48:ent_03"
+    },
+    "PERSON:FIR_49:ent_07": {
+      "betweenness": 0.00058,
+      "composite": 0.108955,
+      "degree": 0.241189,
+      "eigenvector": 0.041019,
+      "person_id": "PERSON:FIR_49:ent_07"
+    },
+    "PERSON:FIR_49:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_49:ent_08"
+    },
+    "PERSON:FIR_50:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_50:ent_05"
+    },
+    "PERSON:FIR_51:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_51:ent_03"
+    },
+    "PERSON:FIR_52:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_52:ent_06"
+    },
+    "PERSON:FIR_52:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.086017,
+      "degree": 0.173025,
+      "eigenvector": 0.056022,
+      "person_id": "PERSON:FIR_52:ent_09"
+    },
+    "PERSON:FIR_53:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_53:ent_04"
+    },
+    "PERSON:FIR_54:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_54:ent_03"
+    },
+    "PERSON:FIR_55:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_55:ent_06"
+    },
+    "PERSON:FIR_55:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_55:ent_07"
+    },
+    "PERSON:FIR_56:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_56:ent_03"
+    },
+    "PERSON:FIR_57:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_57:ent_04"
+    },
+    "PERSON:FIR_57:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_57:ent_05"
+    },
+    "PERSON:FIR_58:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_58:ent_05"
+    },
+    "PERSON:FIR_59:ent_03": {
+      "betweenness": 0.076514,
+      "composite": 0.109327,
+      "degree": 0.109163,
+      "eigenvector": 0.142359,
+      "person_id": "PERSON:FIR_59:ent_03"
+    },
+    "PERSON:FIR_59:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_59:ent_04"
+    },
+    "PERSON:FIR_59:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.088439,
+      "degree": 0.188969,
+      "eigenvector": 0.042838,
+      "person_id": "PERSON:FIR_59:ent_09"
+    },
+    "PERSON:FIR_60:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_60:ent_03"
+    },
+    "PERSON:FIR_61:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.055721,
+      "degree": 0.126732,
+      "eigenvector": 0.01676,
+      "person_id": "PERSON:FIR_61:ent_06"
+    },
+    "PERSON:FIR_61:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_61:ent_08"
+    },
+    "PERSON:FIR_62:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_62:ent_05"
+    },
+    "PERSON:FIR_62:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.06957,
+      "degree": 0.154203,
+      "eigenvector": 0.026298,
+      "person_id": "PERSON:FIR_62:ent_08"
+    },
+    "PERSON:FIR_63:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_63:ent_05"
+    },
+    "PERSON:FIR_64:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_64:ent_03"
+    },
+    "PERSON:FIR_64:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.082397,
+      "degree": 0.18304,
+      "eigenvector": 0.030601,
+      "person_id": "PERSON:FIR_64:ent_05"
+    },
+    "PERSON:FIR_65:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_65:ent_04"
+    },
+    "PERSON:FIR_65:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.089149,
+      "degree": 0.193056,
+      "eigenvector": 0.039755,
+      "person_id": "PERSON:FIR_65:ent_07"
+    },
+    "PERSON:FIR_66:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_66:ent_03"
+    },
+    "PERSON:FIR_67:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_67:ent_05"
+    },
+    "PERSON:FIR_67:ent_08": {
+      "betweenness": 0.076514,
+      "composite": 0.137026,
+      "degree": 0.244054,
+      "eigenvector": 0.054833,
+      "person_id": "PERSON:FIR_67:ent_08"
+    },
+    "PERSON:FIR_68:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_68:ent_03"
+    },
+    "PERSON:FIR_68:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.075897,
+      "degree": 0.163614,
+      "eigenvector": 0.034837,
+      "person_id": "PERSON:FIR_68:ent_08"
+    },
+    "PERSON:FIR_69:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_69:ent_05"
+    },
+    "PERSON:FIR_70:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_70:ent_03"
+    },
+    "PERSON:FIR_71:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_71:ent_03"
+    },
+    "PERSON:FIR_72:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_72:ent_03"
+    },
+    "PERSON:FIR_73:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_73:ent_09"
+    },
+    "PERSON:FIR_74:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_74:ent_06"
+    },
+    "PERSON:FIR_74:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.115144,
+      "degree": 0.229938,
+      "eigenvector": 0.077228,
+      "person_id": "PERSON:FIR_74:ent_09"
+    },
+    "PERSON:FIR_75:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_75:ent_03"
+    },
+    "PERSON:FIR_76:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_76:ent_06"
+    },
+    "PERSON:FIR_77:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_77:ent_05"
+    },
+    "PERSON:FIR_78:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_78:ent_03"
+    },
+    "PERSON:FIR_79:ent_04": {
+      "betweenness": 0.001159,
+      "composite": 0.076776,
+      "degree": 0.162247,
+      "eigenvector": 0.038431,
+      "person_id": "PERSON:FIR_79:ent_04"
+    },
+    "PERSON:FIR_79:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_79:ent_09"
+    },
+    "PERSON:FIR_80:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_80:ent_03"
+    },
+    "PERSON:FIR_81:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.079807,
+      "degree": 0.18304,
+      "eigenvector": 0.021969,
+      "person_id": "PERSON:FIR_81:ent_04"
+    },
+    "PERSON:FIR_81:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_81:ent_07"
+    },
+    "PERSON:FIR_82:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_82:ent_09"
+    },
+    "PERSON:FIR_83:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_83:ent_06"
+    },
+    "PERSON:FIR_84:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_84:ent_05"
+    },
+    "PERSON:FIR_85:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_85:ent_04"
+    },
+    "PERSON:FIR_85:ent_09": {
+      "betweenness": 0.004637,
+      "composite": 0.078569,
+      "degree": 0.18032,
+      "eigenvector": 0.016833,
+      "person_id": "PERSON:FIR_85:ent_09"
+    },
+    "PERSON:FIR_86:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_86:ent_03"
+    },
+    "PERSON:FIR_87:ent_02": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_87:ent_02"
+    },
+    "PERSON:FIR_87:ent_05": {
+      "betweenness": 0.035359,
+      "composite": 0.09992,
+      "degree": 0.199128,
+      "eigenvector": 0.032203,
+      "person_id": "PERSON:FIR_87:ent_05"
+    },
+    "PERSON:FIR_87:ent_08": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_87:ent_08"
+    },
+    "PERSON:FIR_88:ent_04": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_88:ent_04"
+    },
+    "PERSON:FIR_88:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.079807,
+      "degree": 0.18304,
+      "eigenvector": 0.021969,
+      "person_id": "PERSON:FIR_88:ent_07"
+    },
+    "PERSON:FIR_89:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_89:ent_03"
+    },
+    "PERSON:FIR_90:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_90:ent_05"
+    },
+    "PERSON:FIR_91:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_91:ent_05"
+    },
+    "PERSON:FIR_92:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_92:ent_03"
+    },
+    "PERSON:FIR_93:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_93:ent_06"
+    },
+    "PERSON:FIR_93:ent_09": {
+      "betweenness": 0.0,
+      "composite": 0.069083,
+      "degree": 0.162247,
+      "eigenvector": 0.013949,
+      "person_id": "PERSON:FIR_93:ent_09"
+    },
+    "PERSON:FIR_94:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_94:ent_05"
+    },
+    "PERSON:FIR_95:ent_06": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_95:ent_06"
+    },
+    "PERSON:FIR_96:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_96:ent_03"
+    },
+    "PERSON:FIR_97:ent_05": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_97:ent_05"
+    },
+    "PERSON:FIR_98:ent_03": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_98:ent_03"
+    },
+    "PERSON:FIR_99:ent_07": {
+      "betweenness": 0.0,
+      "composite": 0.0,
+      "degree": 0.0,
+      "eigenvector": 0.0,
+      "person_id": "PERSON:FIR_99:ent_07"
+    }
+  }
+}

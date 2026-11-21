@@ -1,0 +1,13 @@
+[
+  {
+    "analyzed": true,
+    "case_id": "C-0003000300",
+    "counts": {
+      "bank_rows": 1489,
+      "cdr_rows": 7483,
+      "documents": 100
+    },
+    "name": "Demo (synthetic case_demo_v2)",
+    "synthetic": true
+  }
+]

@@ -1,0 +1,179 @@
+[
+  {
+    "_truncated": true,
+    "aliases": [
+      "Bicky",
+      "Kallu",
+      "Viku",
+      "\u0915\u0932\u094d\u0932\u0942",
+      "\u0935\u093f\u0915\u0942"
+    ],
+    "canonical_name": "Vikas Sharma",
+    "controlled_accounts": [],
+    "document_references": [
+      "FIR_01",
+      "FIR_08",
+      "FIR_15",
+      "FIR_25",
+      "FIR_28"
+    ],
+    "documents": [
+      "FIR_01",
+      "FIR_08",
+      "FIR_15",
+      "FIR_25",
+      "FIR_28"
+    ],
+    "id": "PERSON:FIR_01:ent_02",
+    "name": "Vikas Sharma",
+    "owned_phones": [
+      "6834738299"
+    ],
+    "person_id": "PERSON:FIR_01:ent_02",
+    "roles": [
+      "SUSPECT"
+    ],
+    "suggested_same_person": []
+  },
+  {
+    "_truncated": true,
+    "aliases": [],
+    "canonical_name": "Rajendra Singh",
+    "controlled_accounts": [
+      "95217729622"
+    ],
+    "document_references": [
+      "FIR_01"
+    ],
+    "documents": [
+      "FIR_01"
+    ],
+    "id": "PERSON:FIR_01:ent_04",
+    "name": "Rajendra Singh",
+    "owned_phones": [],
+    "person_id": "PERSON:FIR_01:ent_04",
+    "roles": [
+      "SUSPECT"
+    ],
+    "suggested_same_person": [
+      {
+        "other_person_id": "PERSON:FIR_05:ent_09",
+        "reasons": [
+          "same_name"
+        ]
+      },
+      {
+        "other_person_id": "PERSON:FIR_09:ent_04",
+        "reasons": [
+          "cross_script_name",
+          "same_name"
+        ]
+      },
+      {
+        "other_person_id": "PERSON:FIR_15:ent_06",
+        "reasons": [
+          "same_name"
+        ]
+      },
+      {
+        "other_person_id": "PERSON:FIR_21:ent_04",
+        "reasons": [
+          "same_name"
+        ]
+      },
+      {
+        "other_person_id": "PERSON:FIR_23:ent_08",
+        "reasons": [
+          "same_name"
+        ]
+      }
+    ]
+  },
+  {
+    "aliases": [],
+    "canonical_name": "Arvind Swaminathan",
+    "controlled_accounts": [],
+    "document_references": [
+      "FIR_01"
+    ],
+    "documents": [
+      "FIR_01"
+    ],
+    "id": "PERSON:FIR_01:ent_08",
+    "name": "Arvind Swaminathan",
+    "owned_phones": [],
+    "person_id": "PERSON:FIR_01:ent_08",
+    "roles": [
+      "OFFICER"
+    ],
+    "suggested_same_person": []
+  },
+  {
+    "_truncated": true,
+    "aliases": [
+      "Biku",
+      "\u092c\u0940\u0915\u0942"
+    ],
+    "canonical_name": "Bikas Sharma",
+    "controlled_accounts": [
+      "44352408240"
+    ],
+    "document_references": [
+      "FIR_01",
+      "FIR_11",
+      "FIR_15",
+      "FIR_17",
+      "FIR_25"
+    ],
+    "documents": [
+      "FIR_01",
+      "FIR_11",
+      "FIR_15",
+      "FIR_17",
+      "FIR_25"
+    ],
+    "id": "PERSON:FIR_01:ent_09",
+    "name": "Bikas Sharma",
+    "owned_phones": [
+      "9014363495"
+    ],
+    "person_id": "PERSON:FIR_01:ent_09",
+    "roles": [
+      "SUSPECT"
+    ],
+    "suggested_same_person": []
+  },
+  {
+    "_truncated": true,
+    "aliases": [
+      "Pandit",
+      "\u092a\u0902\u0921\u093f\u0924"
+    ],
+    "canonical_name": "Pankaj Tiwari",
+    "controlled_accounts": [],
+    "document_references": [
+      "FIR_02",
+      "FIR_05",
+      "FIR_21",
+      "FIR_22",
+      "FIR_45"
+    ],
+    "documents": [
+      "FIR_02",
+      "FIR_05",
+      "FIR_21",
+      "FIR_22",
+      "FIR_45"
+    ],
+    "id": "PERSON:FIR_02:ent_02",
+    "name": "Pankaj Tiwari",
+    "owned_phones": [
+      "8980841241"
+    ],
+    "person_id": "PERSON:FIR_02:ent_02",
+    "roles": [
+      "SUSPECT"
+    ],
+    "suggested_same_person": []
+  }
+]

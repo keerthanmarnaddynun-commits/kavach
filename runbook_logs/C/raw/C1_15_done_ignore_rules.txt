@@ -1,0 +1,4 @@
+COMMAND: PY -c t=open('.gitignore',encoding='utf-8').read(); assert 'web/node_modules/' in t and 'web/dist/' in t; print('ignore ok')
+EXIT: 0
+--- OUTPUT ---
+ignore ok

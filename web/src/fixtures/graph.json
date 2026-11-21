@@ -1,0 +1,116 @@
+{
+  "elements": {
+    "_truncated": true,
+    "edges": [
+      {
+        "data": {
+          "amount": 5924.13,
+          "count": 1,
+          "id": "E-c79cf80f868e",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:1273226992728702"
+        }
+      },
+      {
+        "data": {
+          "amount": 29599.98,
+          "count": 1,
+          "id": "E-9f9c438efab3",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:1499129363228029"
+        }
+      },
+      {
+        "data": {
+          "amount": 2940.01,
+          "count": 1,
+          "id": "E-7b67ea074870",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:15359627630097"
+        }
+      },
+      {
+        "data": {
+          "amount": 16475.34,
+          "count": 1,
+          "id": "E-4b6c7e0c9450",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:17520025569318"
+        }
+      },
+      {
+        "data": {
+          "amount": 3921.61,
+          "count": 1,
+          "id": "E-7f4ccb8f04c4",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:199656789564"
+        }
+      }
+    ],
+    "nodes": [
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:1075079752217806",
+          "isKingpin": false,
+          "label": "1075079752217806",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:109751102939",
+          "isKingpin": false,
+          "label": "109751102939",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:11482923792599",
+          "isKingpin": false,
+          "label": "11482923792599",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:1273226992728702",
+          "isKingpin": false,
+          "label": "1273226992728702",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:1499129363228029",
+          "isKingpin": false,
+          "label": "1499129363228029",
+          "type": "ACCOUNT"
+        }
+      }
+    ]
+  },
+  "summary": {
+    "document_hash": "af0c0d67c9387ccba48c628b721e5373a94ce275114b6f72089eccc689393f8b",
+    "kingpin_node_id": null,
+    "schema_version": "1.1",
+    "total_edges": 1571,
+    "total_nodes": 425
+  }
+}

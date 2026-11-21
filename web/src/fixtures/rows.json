@@ -1,0 +1,45 @@
+{
+  "file": "cdr.csv",
+  "rows": [
+    {
+      "a_party": "7710947775",
+      "b_party": "9014363495",
+      "call_type": "VOICE",
+      "duration_sec": "52",
+      "imei_a": "304711671902299",
+      "imsi_a": "405851318699938",
+      "lat": "28.64700",
+      "lon": "77.19126",
+      "row": 1,
+      "start_time": "2026-01-01T07:04:13",
+      "tower_id": "TWR_DEL_03"
+    },
+    {
+      "a_party": "9065627298",
+      "b_party": "6679740344",
+      "call_type": "SMS",
+      "duration_sec": "0",
+      "imei_a": "169901627204650",
+      "imsi_a": "404207556464170",
+      "lat": "28.65160",
+      "lon": "77.23078",
+      "row": 2,
+      "start_time": "2026-01-01T07:06:24",
+      "tower_id": "TWR_DEL_02"
+    },
+    {
+      "a_party": "8674680715",
+      "b_party": "6531003309",
+      "call_type": "VOICE",
+      "duration_sec": "123",
+      "imei_a": "551680876038599",
+      "imsi_a": "405707034824771",
+      "lat": "28.67348",
+      "lon": "77.29272",
+      "row": 3,
+      "start_time": "2026-01-01T07:21:00",
+      "tower_id": "TWR_DEL_10"
+    }
+  ],
+  "sha256": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94"
+}

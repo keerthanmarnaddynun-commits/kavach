@@ -1,0 +1,39 @@
+{
+  "file": "bank.csv",
+  "rows": [
+    {
+      "amount": "29508.99",
+      "datetime": "2026-01-01T08:28:10",
+      "from_acct": "26309165168",
+      "ifsc": "SBIN0970914",
+      "mode": "NEFT",
+      "narration": "Travel Expense",
+      "row": 1,
+      "to_acct": "82788957986",
+      "txn_id": "TXN000224"
+    },
+    {
+      "amount": "26144.93",
+      "datetime": "2026-01-01T09:10:00",
+      "from_acct": "8481893016368426",
+      "ifsc": "HDFC0403373",
+      "mode": "IMPS",
+      "narration": "Operational Payout",
+      "row": 2,
+      "to_acct": "31384332133000",
+      "txn_id": "TXN000249"
+    },
+    {
+      "amount": "7905.83",
+      "datetime": "2026-01-01T10:51:09",
+      "from_acct": "98496965328710",
+      "ifsc": "PUNB0130536",
+      "mode": "NEFT",
+      "narration": "Logistics Fuel",
+      "row": 3,
+      "to_acct": "6066011655865115",
+      "txn_id": "TXN000226"
+    }
+  ],
+  "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+}

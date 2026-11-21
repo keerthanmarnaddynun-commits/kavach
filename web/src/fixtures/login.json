@@ -1,0 +1,7 @@
+{
+  "access_token": "REDACTED",
+  "expires_in": 28800,
+  "role": "viewer",
+  "token_type": "bearer",
+  "username": "viewer_user"
+}

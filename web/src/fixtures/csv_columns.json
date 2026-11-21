@@ -1,0 +1,24 @@
+{
+  "bank": [
+    "amount",
+    "datetime",
+    "from_acct",
+    "ifsc",
+    "mode",
+    "narration",
+    "to_acct",
+    "txn_id"
+  ],
+  "cdr": [
+    "a_party",
+    "b_party",
+    "call_type",
+    "duration_sec",
+    "imei_a",
+    "imsi_a",
+    "lat",
+    "lon",
+    "start_time",
+    "tower_id"
+  ]
+}

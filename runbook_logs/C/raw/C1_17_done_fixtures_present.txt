@@ -1,0 +1,4 @@
+COMMAND: PY -c import pathlib; n=len(list(pathlib.Path('web/src/fixtures').glob('*.json'))); assert n>=15, n; print('fixtures ok')
+EXIT: 0
+--- OUTPUT ---
+fixtures ok

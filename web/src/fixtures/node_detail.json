@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "node_not_found",
+    "message": "Node 'None' not found in case graph"
+  }
+}

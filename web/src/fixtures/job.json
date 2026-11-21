@@ -1,0 +1,15 @@
+{
+  "case_id": "C-0003000300",
+  "errors": [],
+  "job_id": "J-01a001a001a0",
+  "kind": "extract",
+  "progress": {
+    "current": "completed",
+    "done": 1,
+    "total": 1
+  },
+  "result": {
+    "documents": 1
+  },
+  "status": "done"
+}

@@ -20,6 +20,8 @@ node_modules/
 dist/
 build/
 .npm/
+web/node_modules/
+web/dist/
 
 # Environment variables & secrets
 .env

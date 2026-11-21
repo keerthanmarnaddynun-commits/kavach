@@ -1,0 +1,60 @@
+{
+  "_truncated": true,
+  "doc_id": "FIR_01",
+  "filename": "FIR_01.txt",
+  "sha256_raw": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+  "sha256_text": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+  "spans": [
+    {
+      "char_span": [
+        172,
+        185
+      ],
+      "kind": "VALUE",
+      "node_id": "VEHICLE:DL5CAB5012",
+      "surface": "DL-5C-AB-5012",
+      "type": "VEHICLE"
+    },
+    {
+      "char_span": [
+        213,
+        225
+      ],
+      "kind": "NAME",
+      "node_id": "PERSON:FIR_01:ent_02",
+      "surface": "Vikas Sharma",
+      "type": "PERSON"
+    },
+    {
+      "char_span": [
+        230,
+        235
+      ],
+      "kind": "ALIAS",
+      "node_id": "PERSON:FIR_01:ent_02",
+      "surface": "Bicky",
+      "type": "PERSON"
+    },
+    {
+      "char_span": [
+        238,
+        242
+      ],
+      "kind": "ALIAS",
+      "node_id": "PERSON:FIR_01:ent_02",
+      "surface": "Viku",
+      "type": "PERSON"
+    },
+    {
+      "char_span": [
+        245,
+        250
+      ],
+      "kind": "ALIAS",
+      "node_id": "PERSON:FIR_01:ent_02",
+      "surface": "Kallu",
+      "type": "PERSON"
+    }
+  ],
+  "text": "Police Station Special Staff ke tahat FIR No.201/2026 u/s 318(4)/61(2) BNS ke antargat mukadma darj kiya gaya. Gupte suchna ke aadhar par police team ne suspicious vehicle DL-5C-AB-5012 ko intercept karke suspect Vikas Sharma urf Bicky @ Viku @ Kallu s/o Shri Harish Sharma r/o Block-A, Lane-1 ko hirasat mein liya. Banking ledger scrutiny se pata chala ki accused Vikas Sharma ne sum Rs. 20,144.99/- beneficiary account 95217729622 mein credit karwaya. Ukt khata 95217729622 mule handler Rajendra Singh dwara secretly manage hota tha. CDR analysis se pata chala ki phone 6834738299 ne doosre mobile 6112805982 par multiple voice calls kiye. Search memo ke dauran suspect ke bag se cash rashi INR 15,000.00 alag se recover hui jo hawala proceeds ka hissa batayi gayi. Accused Vikas Sharma ke pas se o"
+}
