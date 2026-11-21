@@ -1,0 +1,490 @@
+{
+  "chunk": "C",
+  "branch": "phase-d-ag",
+  "global": {
+    "max_attempts": 2,
+    "test_command": [
+      "PY",
+      "-m",
+      "pytest",
+      "-q",
+      "--ignore=scratch",
+      "-o",
+      "faulthandler_timeout=900"
+    ],
+    "banned_all": [
+      "optimal",
+      "sweet spot",
+      "robust",
+      "decisively",
+      "catastrophic",
+      "proves",
+      "guarantees",
+      "perfect",
+      "excellent",
+      "state-of-the-art"
+    ],
+    "banned_docs": [
+      "verified",
+      "confirmed",
+      "audited"
+    ],
+    "scan_exclude": [
+      "docs/runbook/*",
+      "scripts/runbook/*",
+      "tests/test_runbook_step_tool.py",
+      "runbook_logs/*",
+      "runbook_state/*",
+      "web/package-lock.json"
+    ],
+    "forbidden_path_fragments": [
+      "C:\\Users",
+      "C:/Users",
+      "/home/",
+      "/Users/",
+      "Kirthan",
+      "kirthan"
+    ]
+  },
+  "steps": [
+    {
+      "id": "C0",
+      "title": "Backend follow-up: path-traversal tests, error format for unknown routes, repository read-only check, loader preflight, analyze concurrency test, corrections note",
+      "allow_create": [
+        "tests/test_api_followup.py",
+        "docs/api/CHUNK_A_CORRECTIONS.md"
+      ],
+      "allow_edit": [
+        "kavach_api/*",
+        "scripts/load_demo_case.py",
+        "docs/api/RUNNING.md"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_followup",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_followup.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "corrections_note",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('docs/api/CHUNK_A_CORRECTIONS.md'); assert p.exists() and p.stat().st_size>=1500, 'docs/api/CHUNK_A_CORRECTIONS.md'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        },
+        {
+          "name": "imports",
+          "argv": [
+            "PY",
+            "-c",
+            "import kavach_api.app, scripts.load_demo_case; print('import ok')"
+          ],
+          "must_contain": "import ok"
+        }
+      ],
+      "commit_message": "Runbook C0: follow-up tests and fixes for chunk A review findings, corrections note"
+    },
+    {
+      "id": "C1",
+      "title": "Frontend scaffold: package files, install hold, fixtures from the real API, skeleton, design lint",
+      "allow_create": [
+        "web/*",
+        "scripts/web_check.py",
+        "scripts/dump_api_shapes.py",
+        "tests/test_frontend_static.py",
+        "docs/web/*"
+      ],
+      "allow_edit": [
+        ".gitignore"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        },
+        {
+          "name": "ignore_rules",
+          "argv": [
+            "PY",
+            "-c",
+            "t=open('.gitignore',encoding='utf-8').read(); assert 'web/node_modules/' in t and 'web/dist/' in t; print('ignore ok')"
+          ],
+          "must_contain": "ignore ok"
+        },
+        {
+          "name": "lock_file",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('web/package-lock.json'); assert p.exists() and p.stat().st_size>=1000, 'web/package-lock.json'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        },
+        {
+          "name": "fixtures_present",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; n=len(list(pathlib.Path('web/src/fixtures').glob('*.json'))); assert n>=15, n; print('fixtures ok')"
+          ],
+          "must_contain": "fixtures ok"
+        }
+      ],
+      "commit_message": "Runbook C1: web scaffold (Vite, React, Cytoscape pinned), API fixtures from the real demo case, design lint"
+    },
+    {
+      "id": "C2",
+      "title": "Login, case rail and intake (documents, CDR, bank, extract and analyze progress)",
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        }
+      ],
+      "commit_message": "Runbook C2: login, case rail, intake with row-error table and job progress",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*"
+      ]
+    },
+    {
+      "id": "C3",
+      "title": "Case overview with priority leads, mule and burner leads, people table",
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        }
+      ],
+      "commit_message": "Runbook C3: overview with money-flow leads, detector leads, people table, sortable table component",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*"
+      ]
+    },
+    {
+      "id": "C4",
+      "title": "Network graph with filters, label policy and evidence inspector",
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        }
+      ],
+      "commit_message": "Runbook C4: Cytoscape graph page, filters, inspector with evidence",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*"
+      ]
+    },
+    {
+      "id": "C5",
+      "title": "Evidence viewer: FIR text with highlighted spans and hashes, CSV rows viewer",
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        }
+      ],
+      "commit_message": "Runbook C5: evidence viewer for FIR spans and CSV rows",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*"
+      ]
+    },
+    {
+      "id": "C6",
+      "title": "Break analysis and timeline",
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        }
+      ],
+      "commit_message": "Runbook C6: break analysis page and timeline page",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*"
+      ]
+    },
+    {
+      "id": "C7",
+      "title": "Polish, empty and error states, layout check notes, web run instructions",
+      "allow_create": [
+        "web/*",
+        "docs/web/*"
+      ],
+      "allow_edit": [
+        "web/*",
+        "docs/web/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        },
+        {
+          "name": "web_size",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "size"
+          ],
+          "must_contain": "SIZE OK"
+        },
+        {
+          "name": "web_run_doc",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('docs/web/RUNNING_WEB.md'); assert p.exists() and p.stat().st_size>=400, 'docs/web/RUNNING_WEB.md'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook C7: polish, states, layout notes, web run instructions"
+    },
+    {
+      "id": "C8",
+      "title": "Chunk end: summary for the user and log bundle",
+      "allow_create": [
+        "docs/web/*"
+      ],
+      "allow_edit": [
+        "docs/web/*"
+      ],
+      "done_when": [
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        },
+        {
+          "name": "web_size",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "size"
+          ],
+          "must_contain": "SIZE OK"
+        },
+        {
+          "name": "summary_written",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('runbook_logs/C/SUMMARY_FOR_USER.txt'); assert p.exists() and p.stat().st_size>=800, 'runbook_logs/C/SUMMARY_FOR_USER.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook C8: chunk C summary and bundle"
+    }
+  ]
+}

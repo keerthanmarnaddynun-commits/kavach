@@ -1,0 +1,14 @@
+PASTE THIS TO AG AT THE START OF EVERY SESSION OF CHUNK C
+------------------------------------------------------------------------------
+
+You are working in the KAVACH repository on the branch phase-d-ag, chunk C (new frontend in web/).
+
+1. Read docs/runbook/RULES.md completely. Then read docs/runbook/chunk_C.md completely.
+2. Run:  .\.venv311\Scripts\python.exe scripts\runbook\step_tool.py status --chunk C
+3. Do the step marked NEXT, exactly as written in chunk_C.md, using the loop in RULES.md section 2
+   (begin, implement, run, worklog, gate, commit). Then continue with the following step.
+4. Keep going step by step until the tool, a STOP rule in RULES.md, or the batch limit in my message tells you to stop.
+5. Never summarise numbers from memory: quote the saved raw log files. Never run the commands release or unlock.
+6. If a STOP rule applies, write the reason in the worklog, run hold if the rules say so, and end your turn with a message
+   of at most 15 lines. Do not ask me questions in the chat for anything a STOP rule already covers.
+7. Do not create any file named test_*.py or *_test.py outside tests/. Scratch files go only in scratch/ and are never named like tests.
