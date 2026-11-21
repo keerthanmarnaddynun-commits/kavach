@@ -1,0 +1,59 @@
+{
+  "files": [
+    "docs/api/CHUNK_A_CORRECTIONS.md",
+    "tests/test_api_followup.py",
+    "docs/api/RUNNING.md",
+    "kavach_api/app.py",
+    "scripts/load_demo_case.py"
+  ],
+  "fingerprint": "3462f59434ac7b1bcc71758acd026afd88f5e50bf6c781a449c673974d08204e",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 629, baseline 0, log C0_07_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_followup",
+      "detail": [
+        "exit 0, log C0_08_done_tests_test_api_followup.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: corrections_note",
+      "detail": [
+        "exit 0, log C0_09_done_corrections_note.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: imports",
+      "detail": [
+        "exit 0, log C0_10_done_imports.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "C0",
+  "tests_passed": 629,
+  "time": "2026-11-21 19:58:30"
+}

@@ -1,0 +1,122 @@
+COMMAND: PY -m pytest -v tests/test_api_followup.py
+EXIT: 1
+SECONDS: 35.6
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 5 items
+
+tests/test_api_followup.py::test_path_traversal_properly FAILED          [ 20%]
+tests/test_api_followup.py::test_unknown_routes_and_wrong_methods_error_format PASSED [ 40%]
+tests/test_api_followup.py::test_read_only_repository_check PASSED       [ 60%]
+tests/test_api_followup.py::test_load_demo_case_preflight_validation FAILED [ 80%]
+tests/test_api_followup.py::test_analyze_concurrency_deterministic PASSED [100%]
+
+================================== FAILURES ===================================
+________________________ test_path_traversal_properly _________________________
+
+tmp_path = WindowsPath('C:/Users/Kirthan/AppData/Local/Temp/pytest-of-Kirthan/pytest-204/test_path_traversal_properly0')
+
+    def test_path_traversal_properly(tmp_path: Path):
+        """Hostile ids in case, doc, node positions return 400/404 with error body; >= 8 requests sent."""
+        env = _create_test_environment(tmp_path)
+        client: TestClient = env["client"]
+        v_headers = env["viewer_headers"]
+        a_headers = env["analyst_headers"]
+        runtime_dir = env["runtime_dir"]
+    
+        # Create a valid case with a valid document
+        r_case = client.post("/api/cases", json={"name": "ValidCase"}, headers=a_headers)
+>       assert r_case.status_code == 200
+E       assert 201 == 200
+E        +  where 201 = <Response [201 Created]>.status_code
+
+tests\test_api_followup.py:98: AssertionError
+__________________ test_load_demo_case_preflight_validation ___________________
+
+tmp_path = WindowsPath('C:/Users/Kirthan/AppData/Local/Temp/pytest-of-Kirthan/pytest-204/test_load_demo_case_preflight_0')
+
+    def test_load_demo_case_preflight_validation(tmp_path: Path):
+        """Preflight validation in load_demo_case: tampered analysis raises ValueError and leaves zero cases behind."""
+        runtime_dir = tmp_path / "runtime"
+        runtime_dir.mkdir(parents=True, exist_ok=True)
+        settings = load_settings({"KAVACH_RUNTIME_DIR": str(runtime_dir)})
+        store = Storage(settings)
+    
+        # Prepare tampered analysis in a temporary directory
+        src_analyses = REPO_ROOT / "results" / "2026-11-11_step6_extraction_r2" / "run1"
+        temp_analyses = tmp_path / "tampered_analyses"
+        temp_analyses.mkdir(parents=True, exist_ok=True)
+    
+        for afile in src_analyses.glob("*.analysis.json"):
+            shutil.copy2(afile, temp_analyses / afile.name)
+    
+        # Tamper one file's document_hash
+        target_analysis = temp_analyses / "FIR_01.analysis.json"
+        content = json.loads(target_analysis.read_text(encoding="utf-8"))
+        content["info"]["document_hash"] = "0000000000000000000000000000000000000000000000000000000000000000"
+>       target_analysis.write_text(json.dumps(content, indent=2), encoding="utf-8")
+
+tests\test_api_followup.py:253: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1078: in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/Kirthan/AppData/Local/Temp/pytest-of-Kirthan/pytest-204/test_load_demo_case_preflight_0/tampered_analyses/FIR_01.analysis.json')
+mode = 'w', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\Kirthan\\AppData\\Local\\Temp\\pytest-of-Kirthan\\pytest-204\\test_load_demo_case_preflight_0\\tampered_analyses\\FIR_01.analysis.json'
+
+..\..\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1044: PermissionError
+------------------------------ Captured log call ------------------------------
+ERROR    kavach_api.extract_service:extract_service.py:99 Contract validation failed on doc FIR_extra
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\contracts\v1_1\validate.py", line 37, in validate_ai_output
+    _AI_OUTPUT_VALIDATOR.validate(doc)
+  File "C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Lib\site-packages\jsonschema\validators.py", line 435, in validate
+    raise error
+jsonschema.exceptions.ValidationError: 'kind' is a required property
+
+Failed validating 'required' in schema['properties']['entities']['items']['properties']['mentions']['items']:
+    {'additionalProperties': False,
+     'properties': {'char_span': {'items': {'minimum': 0,
+                                            'type': 'integer'},
+                                  'maxItems': 2,
+                                  'minItems': 2,
+                                  'type': 'array'},
+                    'kind': {'enum': ['NAME', 'ALIAS', 'FATHER', 'VALUE'],
+                             'type': 'string'},
+                    'surface': {'type': 'string'}},
+     'required': ['char_span', 'surface', 'kind'],
+     'type': 'object'}
+
+On instance['entities'][0]['mentions'][0]:
+    {'char_span': [14, 27], 'surface': 'Target Person'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\kavach_api\extract_service.py", line 97, in extract_document
+    validate_ai_output(result["doc"])
+  File "C:\Users\Kirthan\Desktop\crimi-nex\contracts\v1_1\validate.py", line 39, in validate_ai_output
+    raise ValueError(f"AI output schema validation error: {e.message}") from e
+ValueError: AI output schema validation error: 'kind' is a required property
+=========================== short test summary info ===========================
+FAILED tests/test_api_followup.py::test_path_traversal_properly - assert 201 ...
+FAILED tests/test_api_followup.py::test_load_demo_case_preflight_validation
+======================== 2 failed, 3 passed in 33.32s =========================

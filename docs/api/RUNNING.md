@@ -36,6 +36,8 @@ To populate the runtime store with the reference synthetic demo case (100 FIR do
 Optional arguments:
 - `--runtime-dir <path>`: override the default runtime directory
 
+Stop the server before running `scripts/load_demo_case.py` (the loader and the server use separate audit-log objects).
+
 ## 3. Starting the API Server
 
 Start the uvicorn server on `127.0.0.1:8000`:
@@ -50,7 +52,11 @@ Optional arguments:
 
 The server sets `HF_HUB_OFFLINE=1` automatically upon launch.
 
-## 4. Exporting OpenAPI Specification
+## 4. Runtime Files
+
+The runtime files (`users.json`, `secret.key`, `audit.log`) are stored directly in the runtime directory (`runtime/` by default; `KAVACH_RUNTIME_DIR` overrides it).
+
+## 5. Exporting OpenAPI Specification
 
 To export the OpenAPI JSON specification:
 

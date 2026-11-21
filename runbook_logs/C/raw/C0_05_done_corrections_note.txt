@@ -1,0 +1,4 @@
+COMMAND: PY -c import pathlib; p=pathlib.Path('docs/api/CHUNK_A_CORRECTIONS.md'); assert p.exists() and p.stat().st_size>=1500, 'docs/api/CHUNK_A_CORRECTIONS.md'; print('file ok')
+EXIT: 0
+--- OUTPUT ---
+file ok

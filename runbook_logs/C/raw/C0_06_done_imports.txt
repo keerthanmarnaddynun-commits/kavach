@@ -1,0 +1,4 @@
+COMMAND: PY -c import kavach_api.app, scripts.load_demo_case; print('import ok')
+EXIT: 0
+--- OUTPUT ---
+import ok

@@ -1,0 +1,45 @@
+COMMAND: PY -m pytest -q --ignore=scratch -o faulthandler_timeout=900
+EXIT: 1
+--- OUTPUT ---
+.....................................................s.................. [ 11%]
+............F........................................................... [ 22%]
+........................................................................ [ 34%]
+........................................................................ [ 45%]
+........................................................................ [ 57%]
+........................................................................ [ 68%]
+........................................................................ [ 80%]
+........................................................................ [ 91%]
+......................................................                   [100%]
+================================== FAILURES ===================================
+_____________________ test_analyze_concurrency_rejection ______________________
+
+write_app_setup = {'analyst_headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbmFseXN0X3VzZXIiLCJyb2x...upload_bytes=10485760, max_fir_chars=5000, max_csv_rows=50000, login_fail_limit=5, login_fail_window_seconds=300), ...}
+
+    def test_analyze_concurrency_rejection(write_app_setup):
+        """Triggering second analyze job while one is queued or running is rejected with 409."""
+        client: TestClient = write_app_setup["client"]
+        analyst_h = write_app_setup["analyst_headers"]
+    
+        r_case = client.post("/api/cases", json={"name": "Concurrency Case"}, headers=analyst_h)
+        case_id = r_case.json()["case_id"]
+    
+        # First analyze request
+        r_an1 = client.post(f"/api/cases/{case_id}/analyze", headers=analyst_h)
+        assert r_an1.status_code == 200
+    
+        # Second analyze request immediately -> 409
+        r_an2 = client.post(f"/api/cases/{case_id}/analyze", headers=analyst_h)
+>       assert r_an2.status_code == 409
+E       assert 200 == 409
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests\test_api_http_write.py:404: AssertionError
+============================== warnings summary ===============================
+test_nlp_pipeline.py::TestNLPPipeline::test_entity_extraction_count
+  C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Lib\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_api_http_write.py::test_analyze_concurrency_rejection - ass...
+1 failed, 628 passed, 1 skipped, 1 warning in 476.91s (0:07:56)

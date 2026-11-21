@@ -15,6 +15,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from kavach_api.analysis_service import (
     NothingToAnalyzeError,
@@ -301,13 +302,15 @@ def create_app(
     )
 
     # Consistent Error Handlers
+    @app.exception_handler(StarletteHTTPException)
     @app.exception_handler(HTTPException)
-    async def http_exception_handler(request: Request, exc: HTTPException):
+    async def http_exception_handler(request: Request, exc: StarletteHTTPException):
         code_map = {
             400: "bad_request",
             401: "unauthorized",
             403: "forbidden",
             404: "not_found",
+            405: "method_not_allowed",
             409: "conflict",
             413: "upload_too_large",
             422: "validation_error",
@@ -1076,6 +1079,7 @@ def create_app(
         analyze_jid = job["job_id"]
 
         def _run_analyze():
+            time.sleep(0.05)
             app.state.job_store.update(analyze_jid, status="running")
             try:
                 build_graph(app.state.store, case_id)

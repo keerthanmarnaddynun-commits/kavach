@@ -1,0 +1,18 @@
+COMMAND: PY -m pytest -v tests/test_api_followup.py
+EXIT: 0
+SECONDS: 45.7
+--- OUTPUT ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 5 items
+
+tests/test_api_followup.py::test_path_traversal_properly PASSED          [ 20%]
+tests/test_api_followup.py::test_unknown_routes_and_wrong_methods_error_format PASSED [ 40%]
+tests/test_api_followup.py::test_read_only_repository_check PASSED       [ 60%]
+tests/test_api_followup.py::test_load_demo_case_preflight_validation PASSED [ 80%]
+tests/test_api_followup.py::test_analyze_concurrency_deterministic PASSED [100%]
+
+============================= 5 passed in 36.62s ==============================
