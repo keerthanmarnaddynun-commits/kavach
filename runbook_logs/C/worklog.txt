@@ -66,3 +66,13 @@
 2026-11-22 21:50:22 [C7] Authored docs/web/RUNNING_WEB.md covering backend startup, demo loader, dev server, build, test, and size checks
 2026-11-22 21:50:22 [C7] Executed headless Chrome layout check at 1366x768 across all 8 views using temporary scratch runtime and in-memory password; all views measured scrollWidth 1366, clientWidth 1366, horizontal scroll false, table overflow false; child processes stopped by PID
 2026-11-22 21:55:54 [C7] GATE C7: PASS
+2026-11-22 21:59:43 [C7] COMMIT e303ef34b0 pushed=True
+2026-11-22 22:00:08 [C8] BEGIN: Chunk end: summary for the user and log bundle
+2026-11-22 22:05:51 [C8] RUN PY -m pytest -q -> exit 0 (C8_01_python_suite.txt)
+2026-11-22 22:06:16 [C8] RUN PY scripts/web_check.py build -> exit 0 (C8_02_web_build.txt)
+2026-11-22 22:06:21 [C8] RUN PY scripts/web_check.py test -> exit 0 (C8_03_web_tests.txt)
+2026-11-22 22:06:22 [C8] RUN PY scripts/web_check.py size -> exit 0 (C8_04_web_size.txt)
+2026-11-22 22:06:32 [C8] RUN PY -c import subprocess, shutil, sys; npm = shutil.which('npm'); res = subprocess.run([npm, '--prefix', 'web', 'test'], text=True); sys.exit(res.returncode) -> exit 0 (C8_05_vitest_summary.txt)
+2026-11-22 22:08:21 [C8] Executed full Python test suite (631 passed, 1 skipped) and web checks (build, test with 101 vitest tests passed, size under 3MB)
+2026-11-22 22:08:21 [C8] Wrote runbook_logs/C/SUMMARY_FOR_USER.txt containing all required sections, limits from CHUNK_A_CORRECTIONS.md, page descriptions, and all deviations
+2026-11-22 22:14:54 [C8] GATE C8: PASS

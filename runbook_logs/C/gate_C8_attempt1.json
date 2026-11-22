@@ -1,0 +1,60 @@
+{
+  "files": [],
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 631, log C8_06_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log C8_07_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log C8_08_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_size",
+      "detail": [
+        "exit 0, log C8_09_done_web_size.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: summary_written",
+      "detail": [
+        "exit 0, log C8_10_done_summary_written.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "C8",
+  "tests_passed": 631,
+  "time": "2026-11-22 22:14:54"
+}

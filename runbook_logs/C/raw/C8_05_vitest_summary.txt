@@ -1,0 +1,32 @@
+COMMAND: PY -c import subprocess, shutil, sys; npm = shutil.which('npm'); res = subprocess.run([npm, '--prefix', 'web', 'test'], text=True); sys.exit(res.returncode)
+EXIT: 0
+SECONDS: 9.3
+--- OUTPUT ---
+
+> kavach-web@1.0.0 test
+> vitest run
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.8 [39m[90mC:/Users/Kirthan/Desktop/crimi-nex/web[39m
+
+ [32m✓[39m src/pages/overviewHelpers.test.js [2m([22m[2m5 tests[22m[2m)[22m[90m 33[2mms[22m[39m
+ [32m✓[39m src/pages/breakHelpers.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 36[2mms[22m[39m
+ [32m✓[39m src/api/client.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 28[2mms[22m[39m
+ [32m✓[39m src/pages/graphHelpers.test.js [2m([22m[2m11 tests[22m[2m)[22m[90m 53[2mms[22m[39m
+ [32m✓[39m src/pages/intakeReducers.test.js [2m([22m[2m13 tests[22m[2m)[22m[90m 55[2mms[22m[39m
+ [32m✓[39m src/pages/evidenceHelpers.test.js [2m([22m[2m10 tests[22m[2m)[22m[90m 56[2mms[22m[39m
+ [32m✓[39m src/pages/timelineHelpers.test.js [2m([22m[2m5 tests[22m[2m)[22m[90m 32[2mms[22m[39m
+ [32m✓[39m src/api/sse.test.js [2m([22m[2m4 tests[22m[2m)[22m[90m 34[2mms[22m[39m
+ [32m✓[39m src/styles/colors.test.js [2m([22m[2m1 test[22m[2m)[22m[90m 68[2mms[22m[39m
+ [32m✓[39m src/pages/peopleHelpers.test.js [2m([22m[2m6 tests[22m[2m)[22m[90m 35[2mms[22m[39m
+ [32m✓[39m src/lib/format.test.js [2m([22m[2m4 tests[22m[2m)[22m[90m 132[2mms[22m[39m
+ [32m✓[39m src/components/Table.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 101[2mms[22m[39m
+ [32m✓[39m src/lib/roles.test.js [2m([22m[2m2 tests[22m[2m)[22m[90m 27[2mms[22m[39m
+ [32m✓[39m src/lib/chips.test.js [2m([22m[2m6 tests[22m[2m)[22m[90m 35[2mms[22m[39m
+ [32m✓[39m src/pages/views.test.jsx [2m([22m[2m13 tests[22m[2m)[22m[90m 149[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m15 passed[39m[22m[90m (15)[39m
+[2m      Tests [22m [1m[32m101 passed[39m[22m[90m (101)[39m
+[2m   Start at [22m 22:06:24
+[2m   Duration [22m 7.02s[2m (transform 5.38s, setup 0ms, collect 13.29s, tests 873ms, environment 27ms, prepare 26.14s)[22m
+

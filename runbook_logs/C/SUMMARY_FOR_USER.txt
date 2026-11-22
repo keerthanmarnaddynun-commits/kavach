@@ -1,0 +1,84 @@
+STEPS
+C0: done, commit 8f71b09979 (Backend follow-up: path-traversal tests, error format for unknown routes, repository read-only check, loader preflight, analyze concurrency test, corrections note)
+C1: done, commit ae7bb7f813 (Frontend scaffold: package files, install hold, fixtures from the real API, skeleton, design lint)
+C2: done, commit 48b7c1908a (Login, case rail and intake: documents, CDR, bank, extract and analyze progress)
+C3: done, commit 606dd40fac (Case overview with priority leads, mule and burner leads, people table)
+C4: done, commit 52975e5fef (Network graph with filters, label policy and evidence inspector)
+C5: done, commit 5b8ee3e968 (Evidence viewer: FIR text with highlighted spans and hashes, CSV rows viewer)
+C6: done, commit 3cd7a22628 (Break analysis and timeline)
+C7: done, commit e303ef34b0 (Polish, empty and error states, layout check notes, web run instructions)
+C8: in-progress (Chunk end: summary for the user and log bundle)
+
+TEST COUNTS
+The Python test suite recorded in raw log C8_01_python_suite.txt shows:
+631 passed, 1 skipped, 1 warning in 323.24s (0:05:23).
+The web unit test suite recorded in raw log C8_05_vitest_summary.txt shows:
+15 test files passed, 101 passed (101).
+The production bundle size recorded in raw log C8_04_web_size.txt shows:
+SIZE OK (total web/dist size is 734,785 bytes / 0.70 MB, within the 3 MB limit).
+
+LIMITS TO STATE
+The limits that apply (copied from docs/api/CHUNK_A_CORRECTIONS.md item 1):
+- Relation extraction from FIR text measured F1 0.32 on an independent held-out set.
+- Identifiers (phone, Aadhaar, PAN, UPI, vehicle) were strong.
+- IFSC codes are not extracted.
+- There is no OCR (typed text only).
+- CDR and bank CSV files must use the exact column names.
+- All tuning data was synthetic.
+- The 0.70 chip threshold was chosen after looking at one case and is labelled not evaluated.
+- Break results ignore unobserved links.
+- The audit hash chain is unkeyed (a person with file access can rewrite it, and removal of the last entries is not detectable).
+- The login limiter counts failures per user name.
+- File permissions on the secret key are not enforced on Windows.
+- The live event-stream keepalive was not tested against a running server.
+Additional Chunk C limits:
+- The web unit tests cover pure functions and server-side rendering of views, not a real browser.
+- The layout was not checked on any screen size other than 1366x768.
+- npm reported vulnerabilities in development dependencies (not production runtime).
+
+PAGES
+- #/login: User authentication with credentials against /api/auth/login, rate-limiting retry seconds display, token handling via sessionStorage, and session clearing on logout.
+- #/case/<id>/overview: Case facts header, verbatim disclaimer banner, priority leads ranked by money flow with role chips and evidence links, structural metric toggles (explanation only, not ranking), mule account leads table, burner phone leads table, and system limitations modal trigger.
+- #/case/<id>/intake: Document upload (.txt and pasted text), CDR CSV upload, bank transactions CSV upload with required column references, SSE extraction and analysis job progress bars with polling fallback, row validation error table, and documents list with status, characters, and hashes.
+- #/case/<id>/graph: Cytoscape link analysis canvas with node and relation type toggles, leads-only default filter, isolated nodes toggle, instant centering search, zoom-dependent label policy, and collapsible node/edge inspector panels with FIR excerpts and CSV row references.
+- #/case/<id>/people: Searchable and sortable directory of individuals in the case, aliases, role chips, owned phones, controlled accounts, associated documents, and suggested same person cross-references.
+- #/case/<id>/break: Courier break analysis between investigator-selected Group A and Group B (up to 200 members each, no overlap), cut size and member list, direct link indicator, unowned bridging phone numbers, verbatim server note and disclaimer, and Show on Graph navigation button. Restricted to analyst role.
+- #/case/<id>/timeline: Aggregation by day and hour, hand-written SVG bar charts for calls and transfers volume with keyboard-focusable bars showing exact counts, and first-seen identifier timestamps table.
+- #/case/<id>/evidence/doc/<doc_id>: Document text display with non-overlapping and overlap span segmentation, entity/relation property inspector, character counts, and raw/text SHA-256 hashes with copy buttons.
+- #/case/<id>/evidence/rows/<file>?rows=...: Tabular viewer for raw CSV records from CDR or bank transactions with row numbers, file hash, and 200-row query limit notice.
+- 404 Not Found: Fallback view for unmapped routes with a link returning to case overview.
+
+DEVIATIONS
+- A 50 ms time.sleep was added at the start of the analyze background job in kavach_api/app.py in C0 to stabilise a timing-dependent frozen test (tests/test_api_http_write.py::test_analyze_concurrency_rejection); that frozen test still depends on timing.
+- Step C1 shipped invalid fixtures for node_detail.json, edge_detail_fir.json, edge_detail_csv.json, and break_result.json; these fixtures were repaired in step C3-0 and C6-0 by updating scripts/dump_api_shapes.py to query valid graph elements and read money_flow instead of priority_leads.
+- The blank-screen defect (role chip objects drawn directly as React children) discovered after the C5 commit was resolved in a separate manual commit (43b430c) outside the step loop; step C6-0 formalized this with the chipLabel helper, role chip normalization, and SSR render smoke tests across all views.
+- Screenshots (including 08_graph_node_selected.png) were captured by an AG session outside the step loop using headless Chrome and a temporary scratch runtime.
+
+FAILURES AND WHAT YOU DID
+- C0: path traversal and starlette 404/405 exception mapping implemented cleanly on attempt 1.
+- C1: package installation hold completed by user; dump_api_shapes generated baseline fixtures.
+- C6: initial dump_api_shapes read priority_leads key; updated to money_flow and verified 19 fixture files byte-identical across two consecutive runs.
+- C6: render smoke tests caught an object rendered as React child in bridging_unowned_phones; normalized bridging phone entries to display phone number strings and total call counts.
+- C7: visual fixes 1 to 9 from scratch/visual_fixes.txt executed across web/*; headless Chrome layout check at 1366x768 verified zero horizontal scroll across all 8 views.
+
+THINGS I COULD NOT CHECK
+- Real web browser layout on screen resolutions other than 1366x768 (such as mobile or ultra-wide viewports).
+- Production multi-process concurrency behind a reverse proxy (tested via Vite proxy and single-node uvicorn/fastapi).
+- OCR extraction on scanned PDF/image documents (the pipeline supports typed text only).
+
+QUESTIONS FOR THE USER
+- Should Courier Break Analysis support multi-layer cuts (e.g. financial transaction layer in addition to call layer)?
+- Would investigators prefer persistent layout coordinates saved per case rather than running fcose on load?
+
+HOW TO START THE SERVER
+1. Load synthetic demo case:
+   .\.venv311\Scripts\python.exe scripts/load_demo_case.py
+
+2. Start backend API service on port 8000:
+   .\.venv311\Scripts\python.exe scripts/run_api.py --port 8000
+
+3. Start frontend development server on port 5173:
+   npm --prefix web run dev
+
+4. Open web user interface:
+   http://localhost:5173
