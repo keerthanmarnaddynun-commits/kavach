@@ -165,6 +165,18 @@ Run it with `step_tool.py run` twice and compare the outputs byte for byte. Only
 
 ### C6. Break analysis and timeline
 
+**C6-0. Repairs found in the C3-C5 review (do these first; web/* and `scripts/dump_api_shapes.py` only; one fix per point, a test for each).**
+1. Render smoke tests. A blank screen once came from drawing a role-chip object as a React child, and no test could catch it because only pure functions were tested.
+   Split each page into a data-loading wrapper and a presentational view that takes data as props (Overview leads view, People view, graph inspector blocks for a node and for an edge, evidence document view, evidence rows view,
+   intake documents table and row-error table, login form, the error boundary fallback). Render each view with `renderToString` from `react-dom/server` in a vitest test, using the real fixtures (chips as objects, `node_detail`, `edge_detail_fir`, `edge_detail_csv`,
+   `document`, `rows`, `case_detail`). Any exception fails the test. Change the vitest `include` in `web/vite.config.js` to `src/**/*.test.{js,jsx}`. Stub `window` and `sessionStorage` inside the tests if a view needs them; do not add packages.
+2. A pure helper `chipLabel(chip)` (object with `chip`, plain string, missing value) used by Overview and People, with a test for each case.
+3. Label policy: `getLabelVisibility` and its tests exist but `Graph.jsx` does not use them. Use it for real: labels of the selected node, its neighbours and the top 10 priority leads are always shown, all labels are shown when 60 or fewer nodes are visible,
+   all others follow the zoom rule. Apply it with Cytoscape classes that are updated when the selection or the filters change. A vitest test must cover the neighbour case.
+4. Colours: no raw hex or `rgb()` or `rgba()` anywhere in `web/src` except `styles/tokens.css`. Cytoscape styles read the CSS variables with `getComputedStyle(document.documentElement)`. Add a vitest test that scans the source files (not the fixtures, not the tests) for those patterns.
+5. Edge width comes from `count` only (log scale, 1 to 6 px); money amounts are shown in the inspector only. No animation anywhere: replace `cy.animate` by instant centring. Test the width helper.
+6. `scripts/dump_api_shapes.py` reads the leads key `priority_leads`; the real key is `money_flow`. Fix it, run the script twice with `step_tool.py run`, compare the outputs byte for byte, and keep the fixtures valid.
+
 - Break `#/case/<id>/break`: analysts choose group A and group B from the people list (filter box, counts, at most 200 each, no overlap; server errors are shown). Result: finite or not, size, the persons in the cut (name and id), `direct_link`,
   the unowned bridging phones as "phones with no stated owner: who holds this number?", the server `note` and `disclaimer` verbatim. If there is no finite cut or the cut is empty show: "No observed link between the groups on the call layer. This does not mean the groups are unconnected."
   Button "Show on graph" opens the graph page with the cut persons highlighted (URL state). Viewers see the text "Requires the analyst role".
@@ -172,6 +184,8 @@ Run it with `step_tool.py run` twice and compare the outputs byte for byte. Only
 - Vitest tests: group validation, break view model, timeline scale and bucketing helpers.
 
 ### C7. Polish, layout check, docs
+
+If the file `scratch/visual_fixes.txt` exists when this step begins, its numbered items come from the reviewer's look at the screenshots and are part of this step (same rules: `web/*` only, one fix per point). Write in the worklog that you read it and which items you did.
 
 - Empty, loading and error states on every page; visible keyboard focus; a 404 page; page titles; the Limits panel on every case page; status bar complete (case id, short fingerprint with copy, user, role).
 - Layout check at 1366x768: if you have a browser tool, start the backend on a temp runtime with the demo case and the dev server, open every page and write in the worklog: any horizontal page scroll, clipped or overlapping text, table overflow.
