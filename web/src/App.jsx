@@ -7,6 +7,7 @@ import { CaseRail } from "./components/CaseRail.jsx";
 import { Intake } from "./pages/Intake.jsx";
 import { Overview } from "./pages/Overview.jsx";
 import { People } from "./pages/People.jsx";
+import { Graph } from "./pages/Graph.jsx";
 import { EvidenceDoc } from "./pages/EvidenceDoc.jsx";
 import { EvidenceRows } from "./pages/EvidenceRows.jsx";
 
@@ -330,6 +331,10 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
 
   if (subPage === "people") {
     return <People caseId={caseId} />;
+  }
+
+  if (subPage === "graph") {
+    return <Graph caseId={caseId} route={route} />;
   }
 
   if (subPage === "overview" || !subPage) {

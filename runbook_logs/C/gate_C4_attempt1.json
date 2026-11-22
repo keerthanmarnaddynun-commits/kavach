@@ -1,0 +1,58 @@
+{
+  "files": [
+    "web/src/pages/Graph.jsx",
+    "web/src/pages/graphHelpers.js",
+    "web/src/pages/graphHelpers.test.js",
+    "web/src/App.jsx"
+  ],
+  "fingerprint": "81bb6d9de7b7d73fbcf65a922699b233c94a2a9d248eb9ab3dbcd74da20a2034",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 631, log C4_03_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log C4_04_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log C4_05_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log C4_06_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "C4",
+  "tests_passed": 631,
+  "time": "2026-11-22 09:40:30"
+}
