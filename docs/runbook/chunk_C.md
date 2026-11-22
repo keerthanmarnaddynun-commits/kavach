@@ -129,6 +129,17 @@ edge data has only `amount`, `count`, `id`, `label` (the relation), `source`, `t
 (f) the script must FAIL with a clear message if `node_detail`, `edge_detail_fir` or `edge_detail_csv` is an error body or empty.
 Run it with `step_tool.py run` twice and compare the outputs byte for byte. Only then continue with the overview. Write in the worklog that C1 shipped wrong fixtures and why.
 
+**C3-1. Repair the C2 defects found in review (files under `web/*` only; add a vitest test for each point that can be tested as a pure function).**
+1. Runaway reload loop: the job-event effect in `Intake.jsx` depends on `onCaseUpdated`, which `App.jsx` re-creates on every render; when a job finishes the stream for a finished job re-sends its final event, `onCaseUpdated` changes App state, the effect restarts, and the cycle repeats forever.
+   Keep `onCaseUpdated` in a ref (or memoise it with `useCallback` in `App.jsx`) and clear `activeJob` when the job reaches `done` or `failed` so a stream is never reopened for a finished job. Put the decision "may a stream be opened for this job state" in a pure function and test it.
+2. Login message: a failed login must show the server's message (it is returned by `/auth/login`). The fixed text "Invalid or expired token" is only for an expired session on other calls. Fix `mapError` and the test that expects the old behaviour.
+3. A 401 on any call clears the token and goes to `#/login` (one place in `client.js`, for example a handler that `App.jsx` registers). List and detail loads must show an error text instead of an empty `catch`.
+4. Status bar "Hash": show the first 12 characters of the case fingerprint (`document_hash` from the `/leads` response) once the case is analyzed, and "not analyzed" otherwise. Never show the case id as a hash.
+5. Documents table: read `chars` and `error.code` (the field names in `case_detail.json`); refresh the table when an extract job finishes.
+6. CSV errors: keep `error_count` from the 422 body and show "N errors, first 50 shown" using that count, not the length of the returned list.
+7. Limits panel: no hard-coded list. Show the `limitations` strings of the `/leads` response verbatim plus the fixed sentence "Typed text only: no OCR". For a case that is not analyzed show only that sentence.
+8. Polish: case list items reachable by keyboard (use links or buttons); replace `alert()` by an error text; connect labels to inputs (`htmlFor`/`id`); take the modal backdrop colour from a token (no raw `rgba`); clear the cases and the active case from memory on logout.
+
 - Overview `#/case/<id>/overview`: case facts line, the disclaimer (verbatim), a sentence "Ordered by money flow; structural scores are explanation only", the priority-lead table (rank, "tied" marker, name, money-flow score, accounts, role chips, reasons, evidence link),
   a toggle that adds the columns degree, betweenness, eigenvector, composite labelled "explanation only, not a ranking", the mule-lead table and the burner-lead table (id, score, flagged yes/no, reasons, evidence-rows link).
   Show the `limitations` strings in the Limits panel.
