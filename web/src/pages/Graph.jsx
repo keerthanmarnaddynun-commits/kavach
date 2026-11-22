@@ -9,6 +9,7 @@ import {
   parseSelectedIdFromUrl,
   filterGraphElements,
   splitExcerptHighlight,
+  getIsolatedNodeIds,
 } from "./graphHelpers.js";
 
 // Register fcose layout plugin once
@@ -24,6 +25,7 @@ export function getCytoscapeStyles() {
     return "";
   }
 
+  const bg = getComputedToken("--bg");
   const border = getComputedToken("--border");
   const text = getComputedToken("--text");
   const muted = getComputedToken("--muted");
@@ -41,10 +43,12 @@ export function getCytoscapeStyles() {
         "border-color": muted,
         label: "data(label)",
         color: text,
-        "font-size": "10px",
+        "font-size": "11px",
         "font-family": 'ui-monospace, "Cascadia Mono", Consolas, monospace',
         "text-valign": "bottom",
         "text-margin-y": 4,
+        "text-outline-width": 2,
+        "text-outline-color": bg,
         "min-zoomed-font-size": 8,
         width: 28,
         height: 28,
@@ -79,10 +83,24 @@ export function getCytoscapeStyles() {
       style: {
         width: "data(edgeWidth)",
         "line-color": muted,
-        "target-arrow-shape": "triangle",
-        "target-arrow-color": muted,
+        opacity: 0.35,
+        "target-arrow-shape": "none",
         "curve-style": "bezier",
         "arrow-scale": 0.8,
+      },
+    },
+    {
+      selector: 'edge[label = "TRANSFERRED_FUNDS"], edge[label = "CONTROLS_ACCOUNT"]',
+      style: {
+        "target-arrow-shape": "triangle",
+        "target-arrow-color": muted,
+        "arrow-scale": 0.8,
+      },
+    },
+    {
+      selector: 'edge[label = "COMMUNICATED_WITH"]',
+      style: {
+        "curve-style": "haystack",
       },
     },
     {
@@ -91,6 +109,7 @@ export function getCytoscapeStyles() {
         label: "data(label)",
         "font-size": "10px",
         color: accent,
+        opacity: 1,
         "text-background-color": surface,
         "text-background-opacity": 0.9,
         "text-background-padding": 2,
@@ -121,7 +140,10 @@ export function Graph({ caseId, route }) {
     VEHICLE: false,
   });
   const [relations, setRelations] = useState({});
-  const [leadsOnly, setLeadsOnly] = useState(false);
+  // Visual Fix 2: Leads only default ON at load
+  const [leadsOnly, setLeadsOnly] = useState(true);
+  // Visual Fix 1: Hide isolated nodes by default
+  const [showIsolated, setShowIsolated] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   // Selection & Inspector
@@ -166,11 +188,24 @@ export function Graph({ caseId, route }) {
       });
   }, [caseId]);
 
-  // Compute filtered elements
-  const filteredElements = useMemo(() => {
-    if (!rawElements) return { nodes: [], edges: [] };
-    return filterGraphElements(rawElements, nodeTypes, relations, leadsOnly, topLeadIds);
-  }, [rawElements, nodeTypes, relations, leadsOnly, topLeadIds]);
+  // Compute filtered elements (accounting for leadsOnly, nodeTypes, relations, and isolated nodes)
+  const { filteredElements, isolatedCount } = useMemo(() => {
+    if (!rawElements) return { filteredElements: { nodes: [], edges: [] }, isolatedCount: 0 };
+    const base = filterGraphElements(rawElements, nodeTypes, relations, leadsOnly, topLeadIds);
+
+    const isolatedIds = new Set(getIsolatedNodeIds(base.nodes, base.edges));
+    const count = isolatedIds.size;
+
+    if (!showIsolated && count > 0) {
+      const activeNodes = base.nodes.filter((n) => !isolatedIds.has(n.data && n.data.id));
+      return {
+        filteredElements: { nodes: activeNodes, edges: base.edges },
+        isolatedCount: count,
+      };
+    }
+
+    return { filteredElements: base, isolatedCount: count };
+  }, [rawElements, nodeTypes, relations, leadsOnly, topLeadIds, showIsolated]);
 
   // Initialise Cytoscape instance
   useEffect(() => {
@@ -209,7 +244,7 @@ export function Graph({ caseId, route }) {
 
     cyRef.current = cy;
 
-    // Run layout
+    // Run layout with visual fix fcose options
     runLayout(cy);
 
     // Event listeners
@@ -266,6 +301,9 @@ export function Graph({ caseId, route }) {
         }
       });
     });
+
+    // Visual Fix 1: Call fit with 30 px padding after every filter change
+    cy.fit(undefined, 30);
   }, [selectedItem, filteredElements, topLeadIds]);
 
   function runLayout(cyInstance) {
@@ -273,17 +311,27 @@ export function Graph({ caseId, route }) {
     if (!cy) return;
 
     setLayoutRunning(true);
+    // Visual Fix 3: fcose options
     const layout = cy.layout({
       name: "fcose",
       nodeDimensionsIncludeLabels: true,
       animate: false,
-      randomize: false,
+      randomize: true,
+      quality: "default",
+      nodeRepulsion: 20000,
+      idealEdgeLength: 120,
+      edgeElasticity: 0.2,
+      nodeSeparation: 150,
+      numIter: 2500,
+      packComponents: true,
       fit: true,
       padding: 30,
     });
 
     layout.one("layoutstop", () => {
       setLayoutRunning(false);
+      // Visual Fix 1: Call fit with 30 px padding after every layout
+      cy.fit(undefined, 30);
     });
 
     layout.run();
@@ -345,7 +393,7 @@ export function Graph({ caseId, route }) {
     if (target.length > 0) {
       cyRef.current.nodes().unselect();
       target.select();
-      cyRef.current.center(target);
+      cy.center(target);
       setSelectedItem({ type: "node", id: target.id(), data: target.data() });
     }
   }
@@ -380,15 +428,24 @@ export function Graph({ caseId, route }) {
           ))}
         </div>
 
-        {/* Leads Only Toggle */}
+        {/* Visual Fix 2: Leads Only Toggle with one-click full graph */}
         <label style={{ display: "flex", alignItems: "center", gap: "4px", cursor: "pointer", marginLeft: "6px" }}>
           <input
             type="checkbox"
             checked={leadsOnly}
             onChange={(e) => setLeadsOnly(e.target.checked)}
           />
-          <strong>Top Leads &amp; Neighbours</strong>
+          <strong>Leads only (Top 10 + Neighbours)</strong>
         </label>
+
+        {/* Visual Fix 1: Isolated nodes toggle */}
+        <button
+          type="button"
+          onClick={() => setShowIsolated(!showIsolated)}
+          style={{ fontSize: "11px", padding: "2px 8px" }}
+        >
+          {showIsolated ? `Hide ${isolatedCount} isolated nodes` : `Show ${isolatedCount} isolated nodes`}
+        </button>
 
         {/* Search */}
         <form onSubmit={handleSearch} style={{ display: "flex", gap: "4px", alignItems: "center" }}>
@@ -409,7 +466,7 @@ export function Graph({ caseId, route }) {
           <button type="button" onClick={() => runLayout()} disabled={layoutRunning}>
             Re-layout
           </button>
-          <button type="button" onClick={() => cyRef.current && cyRef.current.fit()}>
+          <button type="button" onClick={() => cyRef.current && cyRef.current.fit(undefined, 30)}>
             Fit
           </button>
         </div>
@@ -430,6 +487,12 @@ export function Graph({ caseId, route }) {
       >
         <div>
           Legend: PERSON (ellipse) | PHONE (round-rectangle) | IMEI (diamond) | ACCOUNT (rectangle) | VEHICLE (triangle)
+          {/* Visual Fix 2: Large view line if > 150 nodes */}
+          {filteredElements.nodes.length > 150 && (
+            <span style={{ marginLeft: "10px", color: "var(--text)" }}>
+              Large view: labels shown only for leads and the selection
+            </span>
+          )}
         </div>
         <div>
           {layoutRunning ? (
@@ -548,12 +611,19 @@ export function NodeInspectorView({ caseId, selectedItem, data = {}, onNeighbour
   const csvEvidence = data.csv_evidence || [];
   const neighbours = data.neighbours || [];
 
-  // Extractor confidence
-  const confidence = typeof rawData.ai_confidence === "number"
-    ? (rawData.ai_confidence * 100).toFixed(0) + "%"
-    : (firEvidence.length > 0 && typeof firEvidence[0].ai_confidence === "number"
-        ? (firEvidence[0].ai_confidence * 100).toFixed(0) + "%"
-        : "N/A");
+  // Visual Fix 6: Extractor confidence calculation
+  let confidence = "not recorded";
+  if (typeof rawData.ai_confidence === "number" && rawData.ai_confidence > 0) {
+    confidence = (rawData.ai_confidence * 100).toFixed(0) + "%";
+  } else if (firEvidence.length > 0) {
+    const confs = firEvidence
+      .map((ev) => ev.ai_confidence)
+      .filter((c) => typeof c === "number" && c > 0);
+    if (confs.length > 0) {
+      const highest = Math.max(...confs);
+      confidence = `${(highest * 100).toFixed(0)}% (highest extractor confidence in evidence)`;
+    }
+  }
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>

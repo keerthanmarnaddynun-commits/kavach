@@ -249,8 +249,8 @@ export function EvidenceDocView({
                 let border = "1px solid var(--accent)";
 
                 if (seg.isOverlap) {
-                  bg = "var(--bg)";
-                  border = "1px dashed var(--muted)";
+                  bg = "var(--accent-weak)";
+                  border = "1px dotted var(--accent)";
                 }
                 if (isTarget) {
                   border = "2px solid var(--accent)";
@@ -287,7 +287,7 @@ export function EvidenceDocView({
                           fontSize: "9px",
                           verticalAlign: "super",
                           marginLeft: "2px",
-                          color: "var(--muted)",
+                          color: "var(--accent)",
                           fontWeight: "bold",
                         }}
                       >

@@ -53,6 +53,8 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
   }, [leadsData]);
 
   const priorityColumns = useMemo(() => {
+    const hasTied = priorityLeads.some((r) => r.tied);
+
     const cols = [
       {
         key: "rank",
@@ -61,12 +63,18 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
         align: "right",
         headerStyle: { width: "60px" },
       },
-      {
+    ];
+
+    if (hasTied) {
+      cols.push({
         key: "tied",
         header: "Tied",
         headerStyle: { width: "60px" },
         render: (tied) => (tied ? "tied" : ""),
-      },
+      });
+    }
+
+    cols.push(
       {
         key: "name",
         header: "Name",
@@ -90,6 +98,7 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
       {
         key: "accounts",
         header: "Accounts",
+        headerStyle: { minWidth: "160px" },
         render: (accs) =>
           Array.isArray(accs) && accs.length > 0 ? (
             <span className="mono" style={{ fontSize: "11px" }}>
@@ -121,16 +130,25 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
       {
         key: "reasons",
         header: "Reasons",
-        render: (reasons) =>
-          Array.isArray(reasons) ? (
-            <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "11px" }}>
-              {reasons.map((r, i) => (
-                <li key={i}>{r}</li>
-              ))}
-            </ul>
-          ) : (
-            reasons || "-"
-          ),
+        headerStyle: { minWidth: "220px" },
+        render: (reasons) => {
+          const text = Array.isArray(reasons) ? reasons.join("; ") : (reasons || "-");
+          return (
+            <div
+              title={text}
+              style={{
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                fontSize: "11px",
+                lineHeight: "1.3",
+              }}
+            >
+              {text}
+            </div>
+          );
+        },
       },
       {
         key: "evidence",
@@ -144,8 +162,8 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
             </a>
           );
         },
-      },
-    ];
+      }
+    );
 
     if (showStructural) {
       cols.push(
@@ -207,16 +225,25 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
     {
       key: "reasons",
       header: "Reasons",
-      render: (reasons) =>
-        Array.isArray(reasons) ? (
-          <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "11px" }}>
-            {reasons.map((r, i) => (
-              <li key={i}>{r}</li>
-            ))}
-          </ul>
-        ) : (
-          reasons || "-"
-        ),
+      headerStyle: { minWidth: "220px" },
+      render: (reasons) => {
+        const text = Array.isArray(reasons) ? reasons.join("; ") : (reasons || "-");
+        return (
+          <div
+            title={text}
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              fontSize: "11px",
+              lineHeight: "1.3",
+            }}
+          >
+            {text}
+          </div>
+        );
+      },
     },
     {
       key: "evidence",
@@ -261,16 +288,25 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
     {
       key: "reasons",
       header: "Reasons",
-      render: (reasons) =>
-        Array.isArray(reasons) ? (
-          <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "11px" }}>
-            {reasons.map((r, i) => (
-              <li key={i}>{r}</li>
-            ))}
-          </ul>
-        ) : (
-          reasons || "-"
-        ),
+      headerStyle: { minWidth: "220px" },
+      render: (reasons) => {
+        const text = Array.isArray(reasons) ? reasons.join("; ") : (reasons || "-");
+        return (
+          <div
+            title={text}
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              fontSize: "11px",
+              lineHeight: "1.3",
+            }}
+          >
+            {text}
+          </div>
+        );
+      },
     },
     {
       key: "evidence",

@@ -176,6 +176,20 @@ body {
 }
 
 /* Standard dense tables: rows 26px, borders 1px, max radius 2px */
+a, a:visited {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
 table.dense-table {
   width: 100%;
   border-collapse: collapse;
@@ -184,8 +198,15 @@ table.dense-table {
   border-radius: 2px;
 }
 
+table.dense-table tr {
+  min-height: 26px;
+}
+
 table.dense-table th {
   height: 26px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: var(--bg);
   border-bottom: 1px solid var(--border);
   border-right: 1px solid var(--border);

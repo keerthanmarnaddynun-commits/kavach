@@ -1,0 +1,76 @@
+{
+  "files": [
+    "docs/web/RUNNING_WEB.md",
+    "web/src/App.jsx",
+    "web/src/pages/EvidenceDoc.jsx",
+    "web/src/pages/Graph.jsx",
+    "web/src/pages/Overview.jsx",
+    "web/src/pages/graphHelpers.js",
+    "web/src/pages/graphHelpers.test.js",
+    "web/src/styles/app.css"
+  ],
+  "fingerprint": "f06cc175b07804a7be282abd553927eae5d7dd7f5f8c97b43dfcf05a67b0908d",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 631, log C7_03_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log C7_04_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log C7_05_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log C7_06_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_size",
+      "detail": [
+        "exit 0, log C7_07_done_web_size.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_run_doc",
+      "detail": [
+        "exit 0, log C7_08_done_web_run_doc.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "C7",
+  "tests_passed": 631,
+  "time": "2026-11-22 21:55:54"
+}

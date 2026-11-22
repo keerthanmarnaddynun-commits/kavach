@@ -1,0 +1,4 @@
+COMMAND: PY -c import pathlib; p=pathlib.Path('docs/web/RUNNING_WEB.md'); assert p.exists() and p.stat().st_size>=400, 'docs/web/RUNNING_WEB.md'; print('file ok')
+EXIT: 0
+--- OUTPUT ---
+file ok

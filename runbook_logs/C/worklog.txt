@@ -57,3 +57,12 @@
 2026-11-22 21:32:49 [C6] Implemented Break analysis page with group selection (at most 200 members, no overlap), cut result display, unowned bridging phones, verbatim disclaimer/note, empty-cut message, and Show on Graph navigation
 2026-11-22 21:32:49 [C6] Implemented Timeline page with day/hour aggregation toggle, hand-written SVG bar charts with keyboard-focusable bars for exact counts, and first-seen identifiers table
 2026-11-22 21:39:08 [C6] GATE C6: PASS
+2026-11-22 21:41:50 [C6] COMMIT 3cd7a22628 pushed=True
+2026-11-22 21:42:04 [C7] BEGIN: Polish, empty and error states, layout check notes, web run instructions
+2026-11-22 21:49:51 [C7] RUN PY scripts/web_check.py test -> exit 0 (C7_01_web_tests.txt)
+2026-11-22 21:50:01 [C7] RUN PY -c import subprocess, shutil, sys; npm = shutil.which('npm'); res = subprocess.run([npm, '--prefix', 'web', 'test'], text=True); sys.exit(res.returncode) -> exit 0 (C7_02_vitest_summary.txt)
+2026-11-22 21:50:21 [C7] Read scratch/visual_fixes.txt and executed all 9 visual fix items across web/*
+2026-11-22 21:50:21 [C7] Added visible keyboard focus styling, 404 page for unknown case routes, dynamic document titles, and confirmed Limits modal access
+2026-11-22 21:50:22 [C7] Authored docs/web/RUNNING_WEB.md covering backend startup, demo loader, dev server, build, test, and size checks
+2026-11-22 21:50:22 [C7] Executed headless Chrome layout check at 1366x768 across all 8 views using temporary scratch runtime and in-memory password; all views measured scrollWidth 1366, clientWidth 1366, horizontal scroll false, table overflow false; child processes stopped by PID
+2026-11-22 21:55:54 [C7] GATE C7: PASS

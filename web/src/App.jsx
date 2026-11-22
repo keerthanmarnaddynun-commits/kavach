@@ -54,6 +54,19 @@ export function App() {
   const subRoutePath = caseMatch && caseMatch[2] ? caseMatch[2] : "overview";
   const subPage = subRoutePath.split("?")[0].split("/")[0];
 
+  // Set document title dynamically
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    if (isLogin) {
+      document.title = "KAVACH - Login";
+    } else if (routeCaseId) {
+      const pageTitle = subPage ? subPage.charAt(0).toUpperCase() + subPage.slice(1) : "Overview";
+      document.title = `KAVACH - ${routeCaseId} [${pageTitle}]`;
+    } else {
+      document.title = "KAVACH - Cases";
+    }
+  }, [isLogin, routeCaseId, subPage]);
+
   useEffect(() => {
     if (routeCaseId && routeCaseId !== activeCaseId) {
       setActiveCaseId(routeCaseId);
@@ -359,15 +372,16 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
     return <Overview caseId={caseId} activeCase={activeCase} />;
   }
 
+  // 404 Not Found Page for unknown subpage routes
   return (
-    <div>
-      <div className="disclaimer-box">
-        Decision-support leads only. Financial ranking by money flow; structural centrality metrics are provided for structural explanation only.
-      </div>
-      <h3>Case: {activeCase && activeCase.case ? activeCase.case.name : caseId}</h3>
-      <p style={{ marginTop: "8px", color: "var(--muted)" }}>
-        Page: <strong>{subPage}</strong>. Active investigator view.
+    <div style={{ padding: "24px", backgroundColor: "var(--surface)", border: "1px solid var(--border)", borderRadius: "2px" }}>
+      <h3 style={{ marginBottom: "8px" }}>Page Not Found (404)</h3>
+      <p style={{ color: "var(--muted)", marginBottom: "16px" }}>
+        The requested page <span className="mono">{subPage}</span> does not exist in this case.
       </p>
+      <a href={`#/case/${caseId}/overview`} className="table-link">
+        Return to Overview
+      </a>
     </div>
   );
 }

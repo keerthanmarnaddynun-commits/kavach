@@ -21,9 +21,27 @@ export function getNodeShape(nodeType) {
 
 export function getEdgeWidth(count) {
   const c = typeof count === "number" && count > 0 ? count : 1;
-  // Log scale bounded between 1px and 6px
+  // Log scale bounded between 1px and 3px (visual fixes item 4)
   const width = Math.round(Math.log2(c + 1));
-  return Math.max(1, Math.min(6, width));
+  return Math.max(1, Math.min(3, width));
+}
+
+export function getIsolatedNodeIds(nodes = [], edges = []) {
+  const connected = new Set();
+  for (const e of edges) {
+    const src = e.data ? e.data.source : e.source;
+    const tgt = e.data ? e.data.target : e.target;
+    if (src) connected.add(src);
+    if (tgt) connected.add(tgt);
+  }
+  const isolated = [];
+  for (const n of nodes) {
+    const id = n.data ? n.data.id : n.id;
+    if (id && !connected.has(id)) {
+      isolated.push(id);
+    }
+  }
+  return isolated;
 }
 
 export function getLabelVisibility(

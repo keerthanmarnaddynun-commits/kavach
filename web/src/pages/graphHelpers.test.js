@@ -21,16 +21,15 @@ describe("getNodeShape", () => {
 });
 
 describe("getEdgeWidth", () => {
-  it("calculates log scale width from count only bounded within 1 and 6", () => {
+  it("calculates log scale width from count only bounded within 1 and 3", () => {
     expect(getEdgeWidth(0)).toBe(1);
     expect(getEdgeWidth(undefined)).toBe(1);
     expect(getEdgeWidth(1)).toBe(1);
     expect(getEdgeWidth(3)).toBe(2);
     expect(getEdgeWidth(7)).toBe(3);
-    expect(getEdgeWidth(15)).toBe(4);
-    expect(getEdgeWidth(31)).toBe(5);
-    expect(getEdgeWidth(100)).toBe(6);
-    expect(getEdgeWidth(1000000)).toBe(6);
+    expect(getEdgeWidth(15)).toBe(3);
+    expect(getEdgeWidth(100)).toBe(3);
+    expect(getEdgeWidth(1000000)).toBe(3);
   });
 });
 
