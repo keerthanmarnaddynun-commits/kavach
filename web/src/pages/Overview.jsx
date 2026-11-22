@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { request } from "../api/client.js";
 import { Table } from "../components/Table.jsx";
+import { chipLabel, chipTooltip } from "../lib/chips.js";
 import {
   getLimitations,
   extractDocId,
@@ -105,8 +106,8 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
           <div style={{ display: "flex", gap: "4px", flexWrap: "wrap" }}>
             {Array.isArray(roles) && roles.length > 0
               ? roles.map((r, i) => {
-                  const label = typeof r === "object" && r !== null ? (r.chip || r.name || r.role || "") : String(r);
-                  const tip = typeof r === "object" && r !== null ? (r.reason || undefined) : undefined;
+                  const label = chipLabel(r);
+                  const tip = chipTooltip(r);
                   return (
                     <span key={i} className="role-chip" title={tip}>
                       {label}
@@ -291,6 +292,44 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
   ];
 
   return (
+    <OverviewView
+      caseId={caseId}
+      caseObj={caseObj}
+      isAnalyzed={isAnalyzed}
+      docCount={docCount}
+      cdrRows={cdrRows}
+      bankRows={bankRows}
+      leadsData={leadsData}
+      errorText={errorText}
+      loading={loading}
+      showStructural={showStructural}
+      setShowStructural={setShowStructural}
+      priorityLeads={priorityLeads}
+      priorityColumns={priorityColumns}
+      muleColumns={muleColumns}
+      burnerColumns={burnerColumns}
+    />
+  );
+}
+
+export function OverviewView({
+  caseId,
+  caseObj = {},
+  isAnalyzed = false,
+  docCount = 0,
+  cdrRows = 0,
+  bankRows = 0,
+  leadsData = null,
+  errorText = null,
+  loading = false,
+  showStructural = false,
+  setShowStructural,
+  priorityLeads = [],
+  priorityColumns = [],
+  muleColumns = [],
+  burnerColumns = [],
+}) {
+  return (
     <div>
       {/* Case Facts Line */}
       <div
@@ -356,7 +395,7 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
                 <input
                   type="checkbox"
                   checked={showStructural}
-                  onChange={(e) => setShowStructural(e.target.checked)}
+                  onChange={(e) => setShowStructural && setShowStructural(e.target.checked)}
                 />
                 Show structural explanation metrics (explanation only, not a ranking)
               </label>

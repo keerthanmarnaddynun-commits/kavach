@@ -1,0 +1,5 @@
+COMMAND: PY scripts/dump_api_shapes.py
+EXIT: 0
+SECONDS: 11.5
+--- OUTPUT ---
+Dumped 19 fixture files to C:\Users\Kirthan\Desktop\crimi-nex\web\src\fixtures

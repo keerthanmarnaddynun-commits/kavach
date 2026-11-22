@@ -15,7 +15,7 @@ export function EvidenceDoc({ caseId, docId, route }) {
 
   // Parse active span from query ?span=start-end
   const targetSpan = useMemo(() => {
-    return parseSpanQuery(route || window.location.hash);
+    return parseSpanQuery(route || (typeof window !== "undefined" ? window.location.hash : ""));
   }, [route]);
 
   // Load documents list for the case
@@ -65,13 +65,55 @@ export function EvidenceDoc({ caseId, docId, route }) {
   async function handleCopy(key, text) {
     const ok = await copyToClipboard(text);
     if (ok) {
-      setCopyStatus({ ...copyStatus, [key]: true });
+      setCopyStatus((prev) => ({ ...prev, [key]: true }));
       setTimeout(() => {
         setCopyStatus((prev) => ({ ...prev, [key]: false }));
       }, 2000);
     }
   }
 
+  return (
+    <EvidenceDocView
+      caseId={caseId}
+      docId={docId}
+      docList={docList}
+      docData={docData}
+      loading={loading}
+      errorText={errorText}
+      selectedSpan={selectedSpan}
+      setSelectedSpan={setSelectedSpan}
+      targetSpan={targetSpan}
+      segments={segments}
+      outOfRangeCount={outOfRangeCount}
+      targetSpanRef={targetSpanRef}
+      copyStatus={copyStatus}
+      handleCopy={handleCopy}
+      onSelectDoc={(id) => {
+        if (typeof window !== "undefined") {
+          window.location.hash = `#/case/${caseId}/evidence/doc/${id}`;
+        }
+      }}
+    />
+  );
+}
+
+export function EvidenceDocView({
+  caseId,
+  docId,
+  docList = [],
+  docData,
+  loading = false,
+  errorText = null,
+  selectedSpan = null,
+  setSelectedSpan,
+  targetSpan = null,
+  segments = [],
+  outOfRangeCount = 0,
+  targetSpanRef,
+  copyStatus = {},
+  handleCopy,
+  onSelectDoc,
+}) {
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "calc(100vh - 80px)", overflow: "hidden" }}>
       {/* Top Document Header */}
@@ -94,9 +136,7 @@ export function EvidenceDoc({ caseId, docId, route }) {
           <select
             id="doc-select"
             value={docId}
-            onChange={(e) => {
-              window.location.hash = `#/case/${caseId}/evidence/doc/${e.target.value}`;
-            }}
+            onChange={(e) => onSelectDoc && onSelectDoc(e.target.value)}
             style={{ fontSize: "12px" }}
           >
             {docList.map((d) => (
@@ -124,14 +164,16 @@ export function EvidenceDoc({ caseId, docId, route }) {
               <span className="mono" title={docData.sha256_raw}>
                 {shortenHash(docData.sha256_raw, 12)}
               </span>
-              <button
-                type="button"
-                className="copy-btn"
-                onClick={() => handleCopy("raw", docData.sha256_raw)}
-                style={{ marginLeft: "4px" }}
-              >
-                {copyStatus["raw"] ? "Copied" : "Copy"}
-              </button>
+              {handleCopy && (
+                <button
+                  type="button"
+                  className="copy-btn"
+                  onClick={() => handleCopy("raw", docData.sha256_raw)}
+                  style={{ marginLeft: "4px" }}
+                >
+                  {copyStatus["raw"] ? "Copied" : "Copy"}
+                </button>
+              )}
             </span>
 
             <span>
@@ -139,14 +181,16 @@ export function EvidenceDoc({ caseId, docId, route }) {
               <span className="mono" title={docData.sha256_text}>
                 {shortenHash(docData.sha256_text, 12)}
               </span>
-              <button
-                type="button"
-                className="copy-btn"
-                onClick={() => handleCopy("text", docData.sha256_text)}
-                style={{ marginLeft: "4px" }}
-              >
-                {copyStatus["text"] ? "Copied" : "Copy"}
-              </button>
+              {handleCopy && (
+                <button
+                  type="button"
+                  className="copy-btn"
+                  onClick={() => handleCopy("text", docData.sha256_text)}
+                  style={{ marginLeft: "4px" }}
+                >
+                  {copyStatus["text"] ? "Copied" : "Copy"}
+                </button>
+              )}
             </span>
           </div>
         )}
@@ -205,15 +249,15 @@ export function EvidenceDoc({ caseId, docId, route }) {
                 let border = "1px solid var(--accent)";
 
                 if (seg.isOverlap) {
-                  bg = "#fef3c7"; // Distinct overlap tone
-                  border = "1px dashed #d97706";
+                  bg = "var(--bg)";
+                  border = "1px dashed var(--muted)";
                 }
                 if (isTarget) {
-                  border = "2px solid #0b5cab";
-                  bg = "#bfdbfe";
+                  border = "2px solid var(--accent)";
+                  bg = "var(--accent-weak)";
                 }
                 if (isSelected) {
-                  border = "2px solid #1d2733";
+                  border = "2px solid var(--text)";
                 }
 
                 return (
@@ -230,9 +274,11 @@ export function EvidenceDoc({ caseId, docId, route }) {
                       fontWeight: isTarget || isSelected ? "600" : "normal",
                     }}
                     onClick={() => {
-                      setSelectedSpan(seg.spans[0]);
+                      if (setSelectedSpan && seg.spans) {
+                        setSelectedSpan(seg.spans[0]);
+                      }
                     }}
-                    title={`Span [${seg.start}, ${seg.end}] - ${seg.spans.map((s) => s.surface || s.node_id).join(", ")}`}
+                    title={`Span [${seg.start}, ${seg.end}] - ${(seg.spans || []).map((s) => s.surface || s.node_id).join(", ")}`}
                   >
                     {seg.text}
                     {seg.isOverlap && (
@@ -241,11 +287,11 @@ export function EvidenceDoc({ caseId, docId, route }) {
                           fontSize: "9px",
                           verticalAlign: "super",
                           marginLeft: "2px",
-                          color: "#d97706",
+                          color: "var(--muted)",
                           fontWeight: "bold",
                         }}
                       >
-                        [{seg.spans.length}]
+                        [{(seg.spans || []).length}]
                       </span>
                     )}
                   </mark>

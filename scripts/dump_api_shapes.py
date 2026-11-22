@@ -231,7 +231,7 @@ def dump_fixtures(out_dir: Path | None = None) -> list[str]:
 
             # (c) break_result = real break between two persons giving finite: true and non-empty cut
             break_data = None
-            priority_lead_persons = [p["person_id"] for p in leads_raw.get("priority_leads", []) if "person_id" in p]
+            priority_lead_persons = [p["person_id"] for p in leads_raw.get("money_flow", []) if "person_id" in p]
             people_raw = r_people.json()
             all_person_ids = priority_lead_persons + [p["id"] for p in people_raw if p["id"] not in priority_lead_persons]
 

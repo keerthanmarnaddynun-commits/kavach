@@ -43,6 +43,28 @@ export function Login({ onLoginSuccess }) {
   }
 
   return (
+    <LoginFormView
+      username={username}
+      setUsername={setUsername}
+      password={password}
+      setPassword={setPassword}
+      errorText={errorText}
+      loading={loading}
+      onSubmit={handleLogin}
+    />
+  );
+}
+
+export function LoginFormView({
+  username,
+  setUsername,
+  password,
+  setPassword,
+  errorText,
+  loading,
+  onSubmit,
+}) {
+  return (
     <div style={{ maxWidth: "320px", margin: "60px auto" }}>
       <h2 style={{ marginBottom: "16px", fontSize: "16px", fontWeight: "600" }}>Login to KAVACH</h2>
       {errorText && (
@@ -50,7 +72,7 @@ export function Login({ onLoginSuccess }) {
           {errorText}
         </div>
       )}
-      <form onSubmit={handleLogin} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         <div>
           <label htmlFor="login-username" style={{ display: "block", marginBottom: "4px", color: "var(--muted)" }}>
             User Name
@@ -60,7 +82,7 @@ export function Login({ onLoginSuccess }) {
             type="text"
             style={{ width: "100%" }}
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setUsername && setUsername(e.target.value)}
             disabled={loading}
             required
             autoFocus
@@ -75,7 +97,7 @@ export function Login({ onLoginSuccess }) {
             type="password"
             style={{ width: "100%" }}
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword && setPassword(e.target.value)}
             disabled={loading}
             required
           />

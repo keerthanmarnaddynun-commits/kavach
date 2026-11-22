@@ -3,6 +3,7 @@ import {
   getNodeShape,
   getEdgeWidth,
   getLabelVisibility,
+  getNodeLabelVisibilityMap,
   parseSelectedIdFromUrl,
   filterGraphElements,
   splitExcerptHighlight,
@@ -20,10 +21,16 @@ describe("getNodeShape", () => {
 });
 
 describe("getEdgeWidth", () => {
-  it("calculates log scale width bounded within 1 and 8", () => {
-    expect(getEdgeWidth(0, 0)).toBe(1);
-    expect(getEdgeWidth(100, 1)).toBeGreaterThanOrEqual(6);
-    expect(getEdgeWidth(1000000, 1)).toBe(8);
+  it("calculates log scale width from count only bounded within 1 and 6", () => {
+    expect(getEdgeWidth(0)).toBe(1);
+    expect(getEdgeWidth(undefined)).toBe(1);
+    expect(getEdgeWidth(1)).toBe(1);
+    expect(getEdgeWidth(3)).toBe(2);
+    expect(getEdgeWidth(7)).toBe(3);
+    expect(getEdgeWidth(15)).toBe(4);
+    expect(getEdgeWidth(31)).toBe(5);
+    expect(getEdgeWidth(100)).toBe(6);
+    expect(getEdgeWidth(1000000)).toBe(6);
   });
 });
 
@@ -38,6 +45,35 @@ describe("getLabelVisibility", () => {
     expect(getLabelVisibility("N1", false, true, false, 100)).toBe(true);
     expect(getLabelVisibility("N1", false, false, true, 100)).toBe(true);
     expect(getLabelVisibility("N1", false, false, false, 100)).toBe(false);
+  });
+});
+
+describe("getNodeLabelVisibilityMap", () => {
+  const dummyNodes = Array.from({ length: 70 }, (_, i) => ({
+    data: { id: `N${i + 1}` },
+  }));
+  const dummyEdges = [
+    { data: { id: "E1", source: "N1", target: "N2" } },
+    { data: { id: "E2", source: "N2", target: "N3" } },
+  ];
+
+  it("shows all labels when total nodes <= 60", () => {
+    const smallNodes = dummyNodes.slice(0, 50);
+    const map = getNodeLabelVisibilityMap(smallNodes, dummyEdges, null, []);
+    expect(Object.keys(map).length).toBe(50);
+    expect(map["N1"]).toBe(true);
+    expect(map["N50"]).toBe(true);
+  });
+
+  it("shows labels for selected node, its neighbours, and top leads (covering neighbour case)", () => {
+    const topLeads = ["N10"];
+    const map = getNodeLabelVisibilityMap(dummyNodes, dummyEdges, "N1", topLeads);
+
+    expect(map["N1"]).toBe(true); // Selected
+    expect(map["N2"]).toBe(true); // Immediate neighbour of selected N1
+    expect(map["N10"]).toBe(true); // Top lead
+    expect(map["N3"]).toBe(false); // Second-degree neighbour (not immediate)
+    expect(map["N4"]).toBe(false); // Unrelated node
   });
 });
 

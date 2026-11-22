@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { request } from "../api/client.js";
 import { Table } from "../components/Table.jsx";
+import { chipLabel, chipTooltip } from "../lib/chips.js";
 import { filterPeople } from "./peopleHelpers.js";
 
 export function People({ caseId }) {
@@ -66,8 +67,8 @@ export function People({ caseId }) {
         <div style={{ display: "flex", gap: "4px", flexWrap: "wrap" }}>
           {Array.isArray(roles) && roles.length > 0
             ? roles.map((r, i) => {
-                const label = typeof r === "object" && r !== null ? (r.chip || r.name || r.role || "") : String(r);
-                const tip = typeof r === "object" && r !== null ? (r.reason || undefined) : undefined;
+                const label = chipLabel(r);
+                const tip = chipTooltip(r);
                 return (
                   <span key={i} className="role-chip" title={tip}>
                     {label}
@@ -146,9 +147,33 @@ export function People({ caseId }) {
   ], [caseId]);
 
   return (
+    <PeopleView
+      caseId={caseId}
+      people={filteredPeople}
+      totalCount={people.length}
+      filterText={filterText}
+      setFilterText={setFilterText}
+      loading={loading}
+      errorText={errorText}
+      columns={columns}
+    />
+  );
+}
+
+export function PeopleView({
+  caseId,
+  people = [],
+  totalCount = 0,
+  filterText = "",
+  setFilterText,
+  loading = false,
+  errorText = null,
+  columns = [],
+}) {
+  return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
-        <h3 style={{ margin: 0 }}>People in Case ({filteredPeople.length})</h3>
+        <h3 style={{ margin: 0 }}>People in Case ({people.length})</h3>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <label htmlFor="people-filter" style={{ fontSize: "11px", color: "var(--muted)" }}>
             Filter:
@@ -158,7 +183,7 @@ export function People({ caseId }) {
             type="text"
             placeholder="Search name, phone, account, doc..."
             value={filterText}
-            onChange={(e) => setFilterText(e.target.value)}
+            onChange={(e) => setFilterText && setFilterText(e.target.value)}
             style={{ width: "260px" }}
           />
         </div>
@@ -175,7 +200,7 @@ export function People({ caseId }) {
       {!loading && (
         <Table
           columns={columns}
-          data={filteredPeople}
+          data={people}
           keyField="id"
           initialSortKey="name"
           initialSortDir="asc"

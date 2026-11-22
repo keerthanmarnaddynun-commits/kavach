@@ -19,14 +19,11 @@ export function getNodeShape(nodeType) {
   }
 }
 
-export function getEdgeWidth(amount, count) {
-  const num = typeof amount === "number" && amount > 0
-    ? amount
-    : (typeof count === "number" && count > 0 ? count : 1);
-
-  // Log scale bounded between 1px and 8px
-  const width = Math.round(Math.log2(num + 1));
-  return Math.max(1, Math.min(8, width));
+export function getEdgeWidth(count) {
+  const c = typeof count === "number" && count > 0 ? count : 1;
+  // Log scale bounded between 1px and 6px
+  const width = Math.round(Math.log2(c + 1));
+  return Math.max(1, Math.min(6, width));
 }
 
 export function getLabelVisibility(
@@ -45,6 +42,44 @@ export function getLabelVisibility(
     return true;
   }
   return false;
+}
+
+export function getNodeLabelVisibilityMap(
+  nodes = [],
+  edges = [],
+  selectedNodeId = null,
+  topLeadIds = []
+) {
+  const totalVisibleNodes = nodes.length;
+  if (totalVisibleNodes <= 60) {
+    const map = {};
+    for (const n of nodes) {
+      const id = n.data ? n.data.id : n.id;
+      map[id] = true;
+    }
+    return map;
+  }
+
+  const topSet = new Set(topLeadIds);
+  const neighbourSet = new Set();
+  if (selectedNodeId) {
+    for (const e of edges) {
+      const src = e.data ? e.data.source : e.source;
+      const tgt = e.data ? e.data.target : e.target;
+      if (src === selectedNodeId && tgt) neighbourSet.add(tgt);
+      if (tgt === selectedNodeId && src) neighbourSet.add(src);
+    }
+  }
+
+  const map = {};
+  for (const n of nodes) {
+    const id = n.data ? n.data.id : n.id;
+    const isSelected = id === selectedNodeId;
+    const isNeighbour = neighbourSet.has(id);
+    const isTop = topSet.has(id);
+    map[id] = getLabelVisibility(id, isSelected, isNeighbour, isTop, totalVisibleNodes);
+  }
+  return map;
 }
 
 export function parseSelectedIdFromUrl(hashOrQuery) {

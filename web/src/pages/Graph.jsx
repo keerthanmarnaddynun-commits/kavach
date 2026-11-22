@@ -1,18 +1,105 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import cytoscape from "cytoscape";
 import fcose from "cytoscape-fcose";
 import { request } from "../api/client.js";
 import {
   getNodeShape,
   getEdgeWidth,
+  getNodeLabelVisibilityMap,
   parseSelectedIdFromUrl,
   filterGraphElements,
   splitExcerptHighlight,
 } from "./graphHelpers.js";
 
 // Register fcose layout plugin once
-if (typeof cytoscape("core", "fcose") !== "function") {
+if (typeof cytoscape === "function" && typeof cytoscape("core", "fcose") !== "function") {
   cytoscape.use(fcose);
+}
+
+export function getCytoscapeStyles() {
+  function getComputedToken(name) {
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    }
+    return "";
+  }
+
+  const border = getComputedToken("--border");
+  const text = getComputedToken("--text");
+  const muted = getComputedToken("--muted");
+  const accent = getComputedToken("--accent");
+  const accentWeak = getComputedToken("--accent-weak");
+  const surface = getComputedToken("--surface");
+
+  return [
+    {
+      selector: "node",
+      style: {
+        shape: "data(shape)",
+        "background-color": border,
+        "border-width": 1,
+        "border-color": muted,
+        label: "data(label)",
+        color: text,
+        "font-size": "10px",
+        "font-family": 'ui-monospace, "Cascadia Mono", Consolas, monospace',
+        "text-valign": "bottom",
+        "text-margin-y": 4,
+        "min-zoomed-font-size": 8,
+        width: 28,
+        height: 28,
+      },
+    },
+    {
+      selector: "node.show-label",
+      style: {
+        "min-zoomed-font-size": 0,
+      },
+    },
+    {
+      selector: "node[?isTopLead]",
+      style: {
+        "border-color": accent,
+        "border-width": 2,
+        "background-color": accentWeak,
+      },
+    },
+    {
+      selector: "node:selected",
+      style: {
+        "border-color": accent,
+        "border-width": 3,
+        "background-color": accent,
+        color: accent,
+        "font-weight": "bold",
+      },
+    },
+    {
+      selector: "edge",
+      style: {
+        width: "data(edgeWidth)",
+        "line-color": muted,
+        "target-arrow-shape": "triangle",
+        "target-arrow-color": muted,
+        "curve-style": "bezier",
+        "arrow-scale": 0.8,
+      },
+    },
+    {
+      selector: "edge:selected",
+      style: {
+        label: "data(label)",
+        "font-size": "10px",
+        color: accent,
+        "text-background-color": surface,
+        "text-background-opacity": 0.9,
+        "text-background-padding": 2,
+        "line-color": accent,
+        "target-arrow-color": accent,
+        width: 3,
+      },
+    },
+  ];
 }
 
 export function Graph({ caseId, route }) {
@@ -38,7 +125,7 @@ export function Graph({ caseId, route }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Selection & Inspector
-  const [selectedItem, setSelectedItem] = useState(null); // { type: 'node' | 'edge', id: string }
+  const [selectedItem, setSelectedItem] = useState(null); // { type: 'node' | 'edge', id: string, data: object }
   const [inspectorData, setInspectorData] = useState(null);
   const [inspectorLoading, setInspectorLoading] = useState(false);
   const [inspectorCollapsed, setInspectorCollapsed] = useState(false);
@@ -85,7 +172,7 @@ export function Graph({ caseId, route }) {
     return filterGraphElements(rawElements, nodeTypes, relations, leadsOnly, topLeadIds);
   }, [rawElements, nodeTypes, relations, leadsOnly, topLeadIds]);
 
-  // Initialise or update Cytoscape instance
+  // Initialise Cytoscape instance
   useEffect(() => {
     if (!containerRef.current || loading || !rawElements) return;
 
@@ -108,7 +195,7 @@ export function Graph({ caseId, route }) {
       return {
         data: {
           ...d,
-          edgeWidth: getEdgeWidth(d.amount, d.count),
+          edgeWidth: getEdgeWidth(d.count),
         },
       };
     });
@@ -116,71 +203,7 @@ export function Graph({ caseId, route }) {
     const cy = cytoscape({
       container: containerRef.current,
       elements: [...cyNodes, ...cyEdges],
-      style: [
-        {
-          selector: "node",
-          style: {
-            shape: "data(shape)",
-            "background-color": "#d8dce2",
-            "border-width": 1,
-            "border-color": "#5b6775",
-            label: "data(label)",
-            color: "#1d2733",
-            "font-size": "10px",
-            "font-family": 'ui-monospace, "Cascadia Mono", Consolas, monospace',
-            "text-valign": "bottom",
-            "text-margin-y": 4,
-            "min-zoomed-font-size": filteredElements.nodes.length <= 60 ? 0 : 8,
-            width: 28,
-            height: 28,
-          },
-        },
-        {
-          selector: "node[?isTopLead]",
-          style: {
-            "border-color": "#0b5cab",
-            "border-width": 2,
-            "background-color": "#e3eefa",
-            "min-zoomed-font-size": 0,
-          },
-        },
-        {
-          selector: "node:selected",
-          style: {
-            "border-color": "#0b5cab",
-            "border-width": 3,
-            "background-color": "#0b5cab",
-            color: "#0b5cab",
-            "font-weight": "bold",
-            "min-zoomed-font-size": 0,
-          },
-        },
-        {
-          selector: "edge",
-          style: {
-            width: "data(edgeWidth)",
-            "line-color": "#8c97a5",
-            "target-arrow-shape": "triangle",
-            "target-arrow-color": "#8c97a5",
-            "curve-style": "bezier",
-            "arrow-scale": 0.8,
-          },
-        },
-        {
-          selector: "edge:selected",
-          style: {
-            label: "data(label)",
-            "font-size": "10px",
-            color: "#0b5cab",
-            "text-background-color": "#ffffff",
-            "text-background-opacity": 0.9,
-            "text-background-padding": 2,
-            "line-color": "#0b5cab",
-            "target-arrow-color": "#0b5cab",
-            width: 3,
-          },
-        },
-      ],
+      style: getCytoscapeStyles(),
       wheelSensitivity: 0.3,
     });
 
@@ -207,7 +230,7 @@ export function Graph({ caseId, route }) {
     });
 
     // Check for URL selection parameter
-    const initialSelect = parseSelectedIdFromUrl(route || window.location.hash);
+    const initialSelect = parseSelectedIdFromUrl(route || (typeof window !== "undefined" ? window.location.hash : ""));
     if (initialSelect) {
       const targetNode = cy.getElementById(initialSelect);
       if (targetNode.length > 0) {
@@ -222,6 +245,28 @@ export function Graph({ caseId, route }) {
       cyRef.current = null;
     };
   }, [loading, filteredElements, topLeadIds]);
+
+  // Label policy update via Cytoscape classes
+  useEffect(() => {
+    if (!cyRef.current) return;
+    const cy = cyRef.current;
+    const selId = selectedItem && selectedItem.type === "node" ? selectedItem.id : null;
+    const visMap = getNodeLabelVisibilityMap(
+      filteredElements.nodes,
+      filteredElements.edges,
+      selId,
+      topLeadIds
+    );
+    cy.batch(() => {
+      cy.nodes().forEach((n) => {
+        if (visMap[n.id()]) {
+          n.addClass("show-label");
+        } else {
+          n.removeClass("show-label");
+        }
+      });
+    });
+  }, [selectedItem, filteredElements, topLeadIds]);
 
   function runLayout(cyInstance) {
     const cy = cyInstance || cyRef.current;
@@ -252,11 +297,11 @@ export function Graph({ caseId, route }) {
     }
 
     setInspectorLoading(true);
-    const path = selectedItem.type === "node"
+    const endpoint = selectedItem.type === "node"
       ? `/cases/${caseId}/nodes/${selectedItem.id}`
       : `/cases/${caseId}/edges/${selectedItem.id}`;
 
-    request(path)
+    request(endpoint)
       .then((data) => {
         setInspectorData(data);
       })
@@ -268,7 +313,7 @@ export function Graph({ caseId, route }) {
       });
   }, [selectedItem, caseId]);
 
-  // Search handler
+  // Search handler (instant centering without cy.animate)
   function handleSearch(e) {
     if (e) e.preventDefault();
     const query = searchQuery.trim().toLowerCase();
@@ -284,10 +329,10 @@ export function Graph({ caseId, route }) {
     if (matches.length > 0) {
       cy.nodes().unselect();
       matches.select();
-      cy.animate({
-        center: { eles: matches },
-        zoom: Math.max(cy.zoom(), 1.2),
-      });
+      cy.center(matches);
+      if (cy.zoom() < 1.2) {
+        cy.zoom(1.2);
+      }
       const first = matches[0];
       setSelectedItem({ type: "node", id: first.id(), data: first.data() });
     }
@@ -322,30 +367,28 @@ export function Graph({ caseId, route }) {
       >
         {/* Node Type Toggles */}
         <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-          <span style={{ fontWeight: "600" }}>Nodes:</span>
-          {Object.keys(nodeTypes).map((type) => (
-            <label key={type} style={{ display: "flex", alignItems: "center", gap: "4px", cursor: "pointer" }}>
+          <span style={{ fontWeight: "600", fontSize: "11px", color: "var(--muted)" }}>Nodes:</span>
+          {["PERSON", "PHONE", "IMEI", "ACCOUNT", "VEHICLE"].map((t) => (
+            <label key={t} style={{ display: "flex", alignItems: "center", gap: "4px", cursor: "pointer" }}>
               <input
                 type="checkbox"
-                checked={nodeTypes[type]}
-                onChange={(e) => setNodeTypes({ ...nodeTypes, [type]: e.target.checked })}
+                checked={Boolean(nodeTypes[t])}
+                onChange={(e) => setNodeTypes({ ...nodeTypes, [t]: e.target.checked })}
               />
-              {type}
+              {t}
             </label>
           ))}
         </div>
 
         {/* Leads Only Toggle */}
-        <div style={{ borderLeft: "1px solid var(--border)", paddingLeft: "10px" }}>
-          <label style={{ display: "flex", alignItems: "center", gap: "4px", cursor: "pointer", fontWeight: "600" }}>
-            <input
-              type="checkbox"
-              checked={leadsOnly}
-              onChange={(e) => setLeadsOnly(e.target.checked)}
-            />
-            Leads Only (Top 10 + Neighbours)
-          </label>
-        </div>
+        <label style={{ display: "flex", alignItems: "center", gap: "4px", cursor: "pointer", marginLeft: "6px" }}>
+          <input
+            type="checkbox"
+            checked={leadsOnly}
+            onChange={(e) => setLeadsOnly(e.target.checked)}
+          />
+          <strong>Top Leads &amp; Neighbours</strong>
+        </label>
 
         {/* Search */}
         <form onSubmit={handleSearch} style={{ display: "flex", gap: "4px", alignItems: "center" }}>
@@ -480,152 +523,172 @@ export function Graph({ caseId, route }) {
 
 function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourClick }) {
   if (itemType === "node") {
-    const rawData = selectedItem.data || {};
-    const firEvidence = data.fir_evidence || [];
-    const csvEvidence = data.csv_evidence || [];
-    const neighbours = data.neighbours || [];
-
-    // Extractor confidence
-    const confidence = typeof rawData.ai_confidence === "number"
-      ? (rawData.ai_confidence * 100).toFixed(0) + "%"
-      : (firEvidence.length > 0 && typeof firEvidence[0].ai_confidence === "number"
-          ? (firEvidence[0].ai_confidence * 100).toFixed(0) + "%"
-          : "N/A");
-
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        <div>
-          <div style={{ color: "var(--muted)", fontSize: "10px" }}>Type</div>
-          <div><strong>{rawData.type || "NODE"}</strong></div>
-        </div>
-
-        <div>
-          <div style={{ color: "var(--muted)", fontSize: "10px" }}>Label</div>
-          <div>{rawData.label || "-"}</div>
-          <div className="mono" style={{ fontSize: "10px", color: "var(--muted)" }}>{selectedItem.id}</div>
-        </div>
-
-        <div>
-          <div style={{ color: "var(--muted)", fontSize: "10px" }}>Extractor Confidence</div>
-          <div>{confidence}</div>
-        </div>
-
-        {/* FIR Evidence Blocks */}
-        {firEvidence.length > 0 && (
-          <div>
-            <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
-              FIR Evidence ({firEvidence.length})
-            </div>
-            {firEvidence.map((ev, idx) => {
-              const highlight = splitExcerptHighlight(ev.excerpt, ev.surface);
-              return (
-                <div
-                  key={idx}
-                  style={{
-                    padding: "6px",
-                    backgroundColor: "var(--bg)",
-                    border: "1px solid var(--border)",
-                    marginBottom: "6px",
-                    fontSize: "11px",
-                  }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "2px" }}>
-                    <a
-                      href={`#/case/${caseId}/evidence/doc/${ev.doc_id}?span=${(ev.char_span || []).join("-")}`}
-                      className="mono table-link"
-                    >
-                      {ev.doc_id}
-                    </a>
-                    <span className="mono" style={{ fontSize: "10px" }}>
-                      [{ (ev.char_span || []).join(", ") }]
-                    </span>
-                  </div>
-                  <div style={{ lineHeight: "1.4", marginTop: "4px" }}>
-                    <span>{highlight.before}</span>
-                    <mark style={{ backgroundColor: "var(--accent-weak)", color: "var(--accent)", padding: "1px 2px" }}>
-                      {highlight.surface}
-                    </mark>
-                    <span>{highlight.after}</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
-
-        {/* CSV Evidence References */}
-        {csvEvidence.length > 0 && (
-          <div>
-            <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
-              CSV Evidence References
-            </div>
-            {csvEvidence.map((cev, idx) => {
-              const rows = cev.row_numbers || cev.rows || [];
-              const fName = (cev.file || "").includes("bank") ? "bank" : "cdr";
-              return (
-                <div
-                  key={idx}
-                  style={{
-                    padding: "6px",
-                    backgroundColor: "var(--bg)",
-                    border: "1px solid var(--border)",
-                    marginBottom: "6px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <span className="mono">{cev.file || fName} ({rows.length} rows)</span>
-                  <a
-                    href={`#/case/${caseId}/evidence/rows/${fName}?rows=${rows.join(",")}`}
-                    className="table-link"
-                    style={{ fontSize: "11px" }}
-                  >
-                    View Rows
-                  </a>
-                </div>
-              );
-            })}
-          </div>
-        )}
-
-        {/* Neighbours List */}
-        <div>
-          <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
-            Neighbours ({neighbours.length})
-          </div>
-          {neighbours.length === 0 ? (
-            <div style={{ color: "var(--muted)", fontSize: "11px" }}>None</div>
-          ) : (
-            <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "11px" }}>
-              {neighbours.map((nbr, idx) => (
-                <li key={idx} style={{ marginBottom: "2px" }}>
-                  <button
-                    type="button"
-                    onClick={() => onNeighbourClick(nbr.id)}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      color: "var(--accent)",
-                      cursor: "pointer",
-                      padding: 0,
-                      textAlign: "left",
-                    }}
-                  >
-                    <span className="mono">{nbr.label || nbr.id}</span>
-                    <span style={{ color: "var(--muted)", marginLeft: "4px" }}>({nbr.relation || nbr.type})</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </div>
+      <NodeInspectorView
+        caseId={caseId}
+        selectedItem={selectedItem}
+        data={data}
+        onNeighbourClick={onNeighbourClick}
+      />
     );
   }
+  return (
+    <EdgeInspectorView
+      caseId={caseId}
+      selectedItem={selectedItem}
+      data={data}
+      onNeighbourClick={onNeighbourClick}
+    />
+  );
+}
 
-  // Edge Inspector
-  const rawData = selectedItem.data || {};
+export function NodeInspectorView({ caseId, selectedItem, data = {}, onNeighbourClick }) {
+  const rawData = (selectedItem && selectedItem.data) || {};
+  const firEvidence = data.fir_evidence || [];
+  const csvEvidence = data.csv_evidence || [];
+  const neighbours = data.neighbours || [];
+
+  // Extractor confidence
+  const confidence = typeof rawData.ai_confidence === "number"
+    ? (rawData.ai_confidence * 100).toFixed(0) + "%"
+    : (firEvidence.length > 0 && typeof firEvidence[0].ai_confidence === "number"
+        ? (firEvidence[0].ai_confidence * 100).toFixed(0) + "%"
+        : "N/A");
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      <div>
+        <div style={{ color: "var(--muted)", fontSize: "10px" }}>Type</div>
+        <div><strong>{rawData.type || "NODE"}</strong></div>
+      </div>
+
+      <div>
+        <div style={{ color: "var(--muted)", fontSize: "10px" }}>Label</div>
+        <div>{rawData.label || "-"}</div>
+        <div className="mono" style={{ fontSize: "10px", color: "var(--muted)" }}>{(selectedItem && selectedItem.id) || rawData.id}</div>
+      </div>
+
+      <div>
+        <div style={{ color: "var(--muted)", fontSize: "10px" }}>Extractor Confidence</div>
+        <div>{confidence}</div>
+      </div>
+
+      {/* FIR Evidence Blocks */}
+      {firEvidence.length > 0 && (
+        <div>
+          <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
+            FIR Evidence ({firEvidence.length})
+          </div>
+          {firEvidence.map((ev, idx) => {
+            const highlight = splitExcerptHighlight(ev.excerpt, ev.surface);
+            return (
+              <div
+                key={idx}
+                style={{
+                  padding: "6px",
+                  backgroundColor: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  marginBottom: "6px",
+                  fontSize: "11px",
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "2px" }}>
+                  <a
+                    href={`#/case/${caseId}/evidence/doc/${ev.doc_id}?span=${(ev.char_span || []).join("-")}`}
+                    className="mono table-link"
+                  >
+                    {ev.doc_id}
+                  </a>
+                  <span className="mono" style={{ fontSize: "10px" }}>
+                    [{ (ev.char_span || []).join(", ") }]
+                  </span>
+                </div>
+                <div style={{ lineHeight: "1.4", marginTop: "4px" }}>
+                  <span>{highlight.before}</span>
+                  <mark style={{ backgroundColor: "var(--accent-weak)", color: "var(--accent)", padding: "1px 2px" }}>
+                    {highlight.surface}
+                  </mark>
+                  <span>{highlight.after}</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* CSV Evidence References */}
+      {csvEvidence.length > 0 && (
+        <div>
+          <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
+            CSV Evidence References
+          </div>
+          {csvEvidence.map((cev, idx) => {
+            const rows = cev.row_numbers || cev.rows || [];
+            const fName = (cev.file || "").includes("bank") ? "bank" : "cdr";
+            return (
+              <div
+                key={idx}
+                style={{
+                  padding: "6px",
+                  backgroundColor: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  marginBottom: "6px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <span className="mono">{cev.file || fName} ({rows.length} rows)</span>
+                <a
+                  href={`#/case/${caseId}/evidence/rows/${fName}?rows=${rows.join(",")}`}
+                  className="table-link"
+                  style={{ fontSize: "11px" }}
+                >
+                  View Rows
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Neighbours List */}
+      <div>
+        <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
+          Neighbours ({neighbours.length})
+        </div>
+        {neighbours.length === 0 ? (
+          <div style={{ color: "var(--muted)", fontSize: "11px" }}>None</div>
+        ) : (
+          <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "11px" }}>
+            {neighbours.map((nbr, idx) => (
+              <li key={idx} style={{ marginBottom: "2px" }}>
+                <button
+                  type="button"
+                  onClick={() => onNeighbourClick && onNeighbourClick(nbr.id)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "var(--accent)",
+                    cursor: "pointer",
+                    padding: 0,
+                    textAlign: "left",
+                  }}
+                >
+                  <span className="mono">{nbr.label || nbr.id}</span>
+                  <span style={{ color: "var(--muted)", marginLeft: "4px" }}>({nbr.relation || nbr.type})</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export function EdgeInspectorView({ caseId, selectedItem, data = {}, onNeighbourClick }) {
+  const rawData = (selectedItem && selectedItem.data) || {};
   const firEvidence = data.fir_evidence || [];
   const csvEvidence = data.csv_evidence || [];
 
@@ -634,14 +697,14 @@ function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourCli
       <div>
         <div style={{ color: "var(--muted)", fontSize: "10px" }}>Relation</div>
         <div><strong>{data.relation || rawData.label || "EDGE"}</strong></div>
-        <div className="mono" style={{ fontSize: "10px", color: "var(--muted)" }}>{selectedItem.id}</div>
+        <div className="mono" style={{ fontSize: "10px", color: "var(--muted)" }}>{(selectedItem && selectedItem.id) || rawData.id}</div>
       </div>
 
       <div>
         <div style={{ color: "var(--muted)", fontSize: "10px" }}>Source</div>
         <button
           type="button"
-          onClick={() => onNeighbourClick(data.source || rawData.source)}
+          onClick={() => onNeighbourClick && onNeighbourClick(data.source || rawData.source)}
           style={{ background: "none", border: "none", color: "var(--accent)", cursor: "pointer", padding: 0 }}
         >
           <span className="mono">{data.source || rawData.source}</span>
@@ -652,17 +715,20 @@ function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourCli
         <div style={{ color: "var(--muted)", fontSize: "10px" }}>Target</div>
         <button
           type="button"
-          onClick={() => onNeighbourClick(data.target || rawData.target)}
+          onClick={() => onNeighbourClick && onNeighbourClick(data.target || rawData.target)}
           style={{ background: "none", border: "none", color: "var(--accent)", cursor: "pointer", padding: 0 }}
         >
           <span className="mono">{data.target || rawData.target}</span>
         </button>
       </div>
 
-      {rawData.amount !== undefined && (
+      {/* Financial amount shown in inspector only */}
+      {(data.amount !== undefined || rawData.amount !== undefined) && (
         <div>
-          <div style={{ color: "var(--muted)", fontSize: "10px" }}>Amount</div>
-          <div className="mono">{rawData.amount}</div>
+          <div style={{ color: "var(--muted)", fontSize: "10px" }}>Transfer Amount</div>
+          <div className="mono">
+            {data.amount !== undefined ? data.amount : rawData.amount}
+          </div>
         </div>
       )}
 
@@ -710,60 +776,38 @@ function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourCli
       )}
 
       {/* CSV Evidence References */}
-      {csvEvidence && (
+      {csvEvidence.length > 0 && (
         <div>
           <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
             CSV Evidence References
           </div>
-          {Array.isArray(csvEvidence) ? (
-            csvEvidence.map((cev, idx) => {
-              const rows = cev.row_numbers || cev.rows || [];
-              const fName = (cev.file || "").includes("bank") ? "bank" : "cdr";
-              return (
-                <div
-                  key={idx}
-                  style={{
-                    padding: "6px",
-                    backgroundColor: "var(--bg)",
-                    border: "1px solid var(--border)",
-                    marginBottom: "6px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <span className="mono">{cev.file || fName} ({rows.length} rows)</span>
-                  <a
-                    href={`#/case/${caseId}/evidence/rows/${fName}?rows=${rows.join(",")}`}
-                    className="table-link"
-                    style={{ fontSize: "11px" }}
-                  >
-                    View Rows
-                  </a>
-                </div>
-              );
-            })
-          ) : (
-            <div
-              style={{
-                padding: "6px",
-                backgroundColor: "var(--bg)",
-                border: "1px solid var(--border)",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <span className="mono">{csvEvidence.file || "records"} ({(csvEvidence.row_numbers || []).length} rows)</span>
-              <a
-                href={`#/case/${caseId}/evidence/rows/${(csvEvidence.file || "").includes("bank") ? "bank" : "cdr"}?rows=${(csvEvidence.row_numbers || []).join(",")}`}
-                className="table-link"
-                style={{ fontSize: "11px" }}
+          {csvEvidence.map((cev, idx) => {
+            const rows = cev.row_numbers || cev.rows || [];
+            const fName = (cev.file || "").includes("bank") ? "bank" : "cdr";
+            return (
+              <div
+                key={idx}
+                style={{
+                  padding: "6px",
+                  backgroundColor: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  marginBottom: "6px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
               >
-                View Rows
-              </a>
-            </div>
-          )}
+                <span className="mono">{cev.file || fName} ({rows.length} rows)</span>
+                <a
+                  href={`#/case/${caseId}/evidence/rows/${fName}?rows=${rows.join(",")}`}
+                  className="table-link"
+                  style={{ fontSize: "11px" }}
+                >
+                  View Rows
+                </a>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

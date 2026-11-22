@@ -261,33 +261,7 @@ export function Intake({ caseId, user, onCaseUpdated }) {
       )}
 
       {/* Row Error Table for CSV Failures */}
-      {rowErrorVm.errors.length > 0 && (
-        <div style={{ marginBottom: "16px" }}>
-          <h4 style={{ color: "var(--danger)", marginBottom: "6px" }}>
-            CSV Validation Errors ({rowErrorVm.totalCount > 50 ? `${rowErrorVm.totalCount} errors, first 50 shown` : `${rowErrorVm.totalCount} errors`})
-          </h4>
-          <table className="dense-table">
-            <thead>
-              <tr>
-                <th style={{ width: "60px" }}>Row</th>
-                <th style={{ width: "120px" }}>Column</th>
-                <th style={{ width: "140px" }}>Code</th>
-                <th>Message</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rowErrorVm.errors.map((e, idx) => (
-                <tr key={idx}>
-                  <td className="mono">{e.row}</td>
-                  <td className="mono">{e.column}</td>
-                  <td>{e.code}</td>
-                  <td>{e.message}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+      <RowErrorTable rowErrorVm={rowErrorVm} />
 
       {/* Job Progress Indicator */}
       {jobProgress && (
@@ -420,39 +394,78 @@ export function Intake({ caseId, user, onCaseUpdated }) {
       )}
 
       {/* Documents Table */}
-      <div>
-        <h4 style={{ marginBottom: "8px" }}>Case Documents ({documents.length})</h4>
-        {documents.length === 0 ? (
-          <div style={{ padding: "12px", backgroundColor: "var(--surface)", border: "1px solid var(--border)", color: "var(--muted)" }}>
-            No documents uploaded yet.
-          </div>
-        ) : (
-          <table className="dense-table">
-            <thead>
-              <tr>
-                <th style={{ width: "120px" }}>Doc ID</th>
-                <th>Filename</th>
-                <th style={{ width: "90px" }}>Status</th>
-                <th style={{ width: "90px" }}>Characters</th>
-                <th style={{ width: "120px" }}>Hash</th>
-                <th style={{ width: "100px" }}>Error</th>
+      <IntakeDocumentsTable documents={documents} />
+    </div>
+  );
+}
+
+export function RowErrorTable({ rowErrorVm }) {
+  if (!rowErrorVm || !rowErrorVm.errors || rowErrorVm.errors.length === 0) {
+    return null;
+  }
+  return (
+    <div style={{ marginBottom: "16px" }}>
+      <h4 style={{ color: "var(--danger)", marginBottom: "6px" }}>
+        CSV Validation Errors ({rowErrorVm.totalCount > 50 ? `${rowErrorVm.totalCount} errors, first 50 shown` : `${rowErrorVm.totalCount} errors`})
+      </h4>
+      <table className="dense-table">
+        <thead>
+          <tr>
+            <th style={{ width: "60px" }}>Row</th>
+            <th style={{ width: "120px" }}>Column</th>
+            <th style={{ width: "140px" }}>Code</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rowErrorVm.errors.map((e, idx) => (
+            <tr key={idx}>
+              <td className="mono">{e.row}</td>
+              <td className="mono">{e.column}</td>
+              <td>{e.code}</td>
+              <td>{e.message}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function IntakeDocumentsTable({ documents = [] }) {
+  return (
+    <div>
+      <h4 style={{ marginBottom: "8px" }}>Case Documents ({documents.length})</h4>
+      {documents.length === 0 ? (
+        <div style={{ padding: "12px", backgroundColor: "var(--surface)", border: "1px solid var(--border)", color: "var(--muted)" }}>
+          No documents uploaded yet.
+        </div>
+      ) : (
+        <table className="dense-table">
+          <thead>
+            <tr>
+              <th style={{ width: "120px" }}>Doc ID</th>
+              <th>Filename</th>
+              <th style={{ width: "90px" }}>Status</th>
+              <th style={{ width: "90px" }}>Characters</th>
+              <th style={{ width: "120px" }}>Hash</th>
+              <th style={{ width: "100px" }}>Error</th>
+            </tr>
+          </thead>
+          <tbody>
+            {documents.map((doc) => (
+              <tr key={doc.doc_id}>
+                <td className="mono">{doc.doc_id}</td>
+                <td>{doc.filename || doc.name || "-"}</td>
+                <td>{doc.status || "uploaded"}</td>
+                <td className="mono">{formatDocChars(doc.chars !== undefined ? doc.chars : doc.char_count)}</td>
+                <td className="mono">{shortenHash(doc.sha256_raw || doc.document_hash, 12)}</td>
+                <td className="error-text">{formatDocError(doc.error)}</td>
               </tr>
-            </thead>
-            <tbody>
-              {documents.map((doc) => (
-                <tr key={doc.doc_id}>
-                  <td className="mono">{doc.doc_id}</td>
-                  <td>{doc.filename || doc.name || "-"}</td>
-                  <td>{doc.status || "uploaded"}</td>
-                  <td className="mono">{formatDocChars(doc.chars !== undefined ? doc.chars : doc.char_count)}</td>
-                  <td className="mono">{shortenHash(doc.sha256_raw || doc.document_hash, 12)}</td>
-                  <td className="error-text">{formatDocError(doc.error)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }

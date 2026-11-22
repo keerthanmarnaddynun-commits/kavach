@@ -10,6 +10,8 @@ import { People } from "./pages/People.jsx";
 import { Graph } from "./pages/Graph.jsx";
 import { EvidenceDoc } from "./pages/EvidenceDoc.jsx";
 import { EvidenceRows } from "./pages/EvidenceRows.jsx";
+import { Break } from "./pages/Break.jsx";
+import { Timeline } from "./pages/Timeline.jsx";
 
 export function App() {
   const [route, setRoute] = useState(() => window.location.hash || "#/cases");
@@ -345,11 +347,18 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
     return <Graph caseId={caseId} route={route} />;
   }
 
+  if (subPage === "break") {
+    return <Break caseId={caseId} user={user} />;
+  }
+
+  if (subPage === "timeline") {
+    return <Timeline caseId={caseId} />;
+  }
+
   if (subPage === "overview" || !subPage) {
     return <Overview caseId={caseId} activeCase={activeCase} />;
   }
 
-  // Placeholder for later steps (graph, break, timeline)
   return (
     <div>
       <div className="disclaimer-box">
@@ -359,6 +368,26 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
       <p style={{ marginTop: "8px", color: "var(--muted)" }}>
         Page: <strong>{subPage}</strong>. Active investigator view.
       </p>
+    </div>
+  );
+}
+
+export function ErrorBoundaryFallback({ error, onRetry }) {
+  return (
+    <div style={{ padding: "16px", color: "var(--danger)" }}>
+      <h4 style={{ marginBottom: "8px" }}>View rendering error</h4>
+      <pre style={{ fontSize: "11px", whiteSpace: "pre-wrap" }}>
+        {error?.message || String(error)}
+      </pre>
+      {onRetry && (
+        <button
+          type="button"
+          onClick={onRetry}
+          style={{ marginTop: "8px" }}
+        >
+          Retry
+        </button>
+      )}
     </div>
   );
 }
@@ -380,19 +409,10 @@ export class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ padding: "16px", color: "var(--danger, #c00)" }}>
-          <h4 style={{ marginBottom: "8px" }}>View rendering error</h4>
-          <pre style={{ fontSize: "11px", whiteSpace: "pre-wrap" }}>
-            {this.state.error?.message || String(this.state.error)}
-          </pre>
-          <button
-            type="button"
-            onClick={() => this.setState({ hasError: false, error: null })}
-            style={{ marginTop: "8px" }}
-          >
-            Retry
-          </button>
-        </div>
+        <ErrorBoundaryFallback
+          error={this.state.error}
+          onRetry={() => this.setState({ hasError: false, error: null })}
+        />
       );
     }
     return this.props.children;

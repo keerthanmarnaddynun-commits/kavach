@@ -240,7 +240,7 @@ button:hover {
 
 button.primary {
   background-color: var(--accent);
-  color: #ffffff;
+  color: var(--surface);
   border-color: var(--accent);
 }
 

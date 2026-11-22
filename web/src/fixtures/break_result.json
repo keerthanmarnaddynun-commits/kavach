@@ -1,9 +1,25 @@
 {
-  "bridging_unowned_phones": [],
+  "bridging_unowned_phones": [
+    {
+      "_truncated": true,
+      "calls_with_group_a": 8,
+      "calls_with_group_b": 71,
+      "evidence_rows": [
+        140,
+        359,
+        489,
+        497,
+        559
+      ],
+      "phone": "7691669784",
+      "status": "unverified leads: who holds this number?",
+      "total_calls": 79
+    }
+  ],
   "cut": [
     {
-      "name": "Farooq Ahmed",
-      "person_id": "PERSON:FIR_23:ent_05"
+      "name": "Devendra Yadav",
+      "person_id": "PERSON:FIR_14:ent_02"
     }
   ],
   "direct_link": false,
@@ -11,10 +27,10 @@
   "finite": true,
   "groups_used": {
     "group_a": [
-      "PERSON:FIR_01:ent_02"
+      "PERSON:FIR_05:ent_09"
     ],
     "group_b": [
-      "PERSON:FIR_01:ent_09"
+      "PERSON:FIR_09:ent_02"
     ]
   },
   "note": "Only observed calls are used; unobserved links are ignored.",

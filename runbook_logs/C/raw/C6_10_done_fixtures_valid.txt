@@ -1,0 +1,4 @@
+COMMAND: PY -c import json; L=lambda n: json.load(open('web/src/fixtures/'+n+'.json',encoding='utf-8')); n=L('node_detail'); f=L('edge_detail_fir'); c=L('edge_detail_csv'); g=L('graph'); ids={x['data']['id'] for x in g['elements']['nodes']}; assert 'error' not in n and n.get('fir_evidence'), 'node_detail'; assert f.get('fir_evidence'), 'edge_detail_fir'; assert c.get('csv_evidence'), 'edge_detail_csv'; assert all(e['data']['source'] in ids and e['data']['target'] in ids for e in g['elements']['edges']), 'dangling edge'; print('fixtures valid')
+EXIT: 0
+--- OUTPUT ---
+fixtures valid

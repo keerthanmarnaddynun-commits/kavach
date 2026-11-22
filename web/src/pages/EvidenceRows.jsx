@@ -11,7 +11,7 @@ export function EvidenceRows({ caseId, fileKind, route }) {
   const [copyStatus, setCopyStatus] = useState(false);
 
   const queryInfo = useMemo(() => {
-    return parseRowsQuery(route || window.location.hash);
+    return parseRowsQuery(route || (typeof window !== "undefined" ? window.location.hash : ""));
   }, [route]);
 
   useEffect(() => {
@@ -96,6 +96,34 @@ export function EvidenceRows({ caseId, fileKind, route }) {
   }, [rows]);
 
   return (
+    <EvidenceRowsView
+      caseId={caseId}
+      fileKind={fileKind}
+      data={data}
+      rows={rows}
+      columns={columns}
+      loading={loading}
+      errorText={errorText}
+      queryInfo={queryInfo}
+      copyStatus={copyStatus}
+      handleCopyHash={handleCopyHash}
+    />
+  );
+}
+
+export function EvidenceRowsView({
+  caseId,
+  fileKind,
+  data,
+  rows = [],
+  columns = [],
+  loading = false,
+  errorText = null,
+  queryInfo = { isOverLimit: false, totalRequested: 0 },
+  copyStatus = false,
+  handleCopyHash,
+}) {
+  return (
     <div>
       {/* File Header Bar */}
       <div
@@ -125,14 +153,16 @@ export function EvidenceRows({ caseId, fileKind, route }) {
               <span className="mono" title={data.sha256}>
                 {shortenHash(data.sha256, 12)}
               </span>
-              <button
-                type="button"
-                className="copy-btn"
-                onClick={handleCopyHash}
-                style={{ marginLeft: "4px" }}
-              >
-                {copyStatus ? "Copied" : "Copy"}
-              </button>
+              {handleCopyHash && (
+                <button
+                  type="button"
+                  className="copy-btn"
+                  onClick={handleCopyHash}
+                  style={{ marginLeft: "4px" }}
+                >
+                  {copyStatus ? "Copied" : "Copy"}
+                </button>
+              )}
             </span>
           )}
         </div>
@@ -145,7 +175,7 @@ export function EvidenceRows({ caseId, fileKind, route }) {
       </div>
 
       {/* Message if over 200 rows requested */}
-      {queryInfo.isOverLimit && (
+      {queryInfo && queryInfo.isOverLimit && (
         <div
           style={{
             padding: "8px 12px",

@@ -44,3 +44,16 @@
 2026-11-22 09:47:28 [C5] RUN PY -c import subprocess, sys; res = subprocess.run(['npm', 'test'], cwd='web', shell=True, capture_output=True, text=True); print(res.stdout); print(res.stderr); sys.exit(res.returncode) -> exit 0 (C5_02_vitest_out.txt)
 2026-11-22 09:51:11 [C5] GATE C5: PASS
 2026-11-22 09:51:32 [C5] Step C5 implementation: Created EvidenceDoc.jsx featuring document selection, header with filename, raw and text sha256 hashes with copy controls, character count, and text segmentation displaying highlighted spans. Integrated segmentTextWithSpans to compute non-overlapping segments, preserve overlaps, count out-of-range annotations, and scroll to target span queries. Created right-side annotation inspector displaying surface text, char span, entity type, mention kind, and graph links. Created EvidenceRows.jsx displaying requested CSV rows with 1-based indexing, file metadata, hash copy, and over-limit message when more than 200 rows are queried. Added evidenceHelpers.js and unit tests in evidenceHelpers.test.js covering segmentation, adjacent/overlapping spans, empty/out-of-range spans, and query parsing (67 tests passed in vitest raw log C5_02_vitest_out.txt). Gate passed.
+2026-11-22 09:52:28 [C5] COMMIT 5b8ee3e968 pushed=True
+2026-11-22 09:53:59 [C5] Screenshot task: no browser tool available to capture and save screenshots to disk; skipping screenshot task as instructed.
+2026-11-22 20:58:09 [C6] BEGIN: Break analysis and timeline
+2026-11-22 21:04:05 [C6] RUN PY scripts/dump_api_shapes.py -> exit 0 (C6_01_dump_shapes_1.txt)
+2026-11-22 21:04:26 [C6] RUN PY scripts/dump_api_shapes.py -> exit 0 (C6_02_dump_shapes_2.txt)
+2026-11-22 21:31:34 [C6] RUN PY scripts/web_check.py test -> exit 0 (C6_03_web_tests.txt)
+2026-11-22 21:32:21 [C6] RUN PY -c import subprocess, sys; res = subprocess.run(['npm', '--prefix', 'web', 'test'], text=True); sys.exit(res.returncode) -> exit 1 (C6_04_vitest_summary.txt)
+2026-11-22 21:32:34 [C6] RUN PY -c import subprocess, shutil, sys; npm = shutil.which('npm'); res = subprocess.run([npm, '--prefix', 'web', 'test'], text=True); sys.exit(res.returncode) -> exit 0 (C6_05_vitest_summary.txt)
+2026-11-22 21:32:49 [C6] Repaired dump_api_shapes.py to read money_flow instead of priority_leads; ran twice and verified 19 fixture files byte-identical
+2026-11-22 21:32:49 [C6] Implemented C6-0 repairs 1-5: chipLabel helper, Cytoscape CSS variable styles with no raw hex/rgb, edge width from count only (1-6px), instant centering without animation, label policy classes covering neighbour case, and renderToString smoke tests across all views with real fixtures
+2026-11-22 21:32:49 [C6] Implemented Break analysis page with group selection (at most 200 members, no overlap), cut result display, unowned bridging phones, verbatim disclaimer/note, empty-cut message, and Show on Graph navigation
+2026-11-22 21:32:49 [C6] Implemented Timeline page with day/hour aggregation toggle, hand-written SVG bar charts with keyboard-focusable bars for exact counts, and first-seen identifiers table
+2026-11-22 21:39:08 [C6] GATE C6: PASS
