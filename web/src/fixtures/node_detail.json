@@ -1,6 +1,97 @@
 {
-  "error": {
-    "code": "node_not_found",
-    "message": "Node 'None' not found in case graph"
-  }
+  "_truncated": true,
+  "csv_evidence": [],
+  "fir_evidence": [
+    {
+      "ai_confidence": 0.0,
+      "char_span": [
+        213,
+        225
+      ],
+      "doc_id": "FIR_01",
+      "entity_id": "ent_02",
+      "excerpt": " par police team ne suspicious vehicle DL-5C-AB-5012 ko intercept karke suspect Vikas Sharma urf Bicky @ Viku @ Kallu s/o Shri Harish Sharma r/o Block-A, Lane-1 ko hirasat ",
+      "sha256_raw": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+      "surface": "Vikas Sharma"
+    },
+    {
+      "ai_confidence": 0.0,
+      "char_span": [
+        230,
+        235
+      ],
+      "doc_id": "FIR_01",
+      "entity_id": "ent_02",
+      "excerpt": "ne suspicious vehicle DL-5C-AB-5012 ko intercept karke suspect Vikas Sharma urf Bicky @ Viku @ Kallu s/o Shri Harish Sharma r/o Block-A, Lane-1 ko hirasat mein liya.",
+      "sha256_raw": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+      "surface": "Bicky"
+    },
+    {
+      "ai_confidence": 0.0,
+      "char_span": [
+        238,
+        242
+      ],
+      "doc_id": "FIR_01",
+      "entity_id": "ent_02",
+      "excerpt": "cious vehicle DL-5C-AB-5012 ko intercept karke suspect Vikas Sharma urf Bicky @ Viku @ Kallu s/o Shri Harish Sharma r/o Block-A, Lane-1 ko hirasat mein liya. Bankin",
+      "sha256_raw": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+      "surface": "Viku"
+    },
+    {
+      "ai_confidence": 0.0,
+      "char_span": [
+        245,
+        250
+      ],
+      "doc_id": "FIR_01",
+      "entity_id": "ent_02",
+      "excerpt": "ehicle DL-5C-AB-5012 ko intercept karke suspect Vikas Sharma urf Bicky @ Viku @ Kallu s/o Shri Harish Sharma r/o Block-A, Lane-1 ko hirasat mein liya. Banking ledger",
+      "sha256_raw": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+      "surface": "Kallu"
+    },
+    {
+      "ai_confidence": 0.0,
+      "char_span": [
+        260,
+        273
+      ],
+      "doc_id": "FIR_01",
+      "entity_id": "ent_02",
+      "excerpt": "-5012 ko intercept karke suspect Vikas Sharma urf Bicky @ Viku @ Kallu s/o Shri Harish Sharma r/o Block-A, Lane-1 ko hirasat mein liya. Banking ledger scrutiny se pata chala",
+      "sha256_raw": "4ec19076765345d6605474d26e21437c421f0289d14659efea1975992ae6fc37",
+      "surface": "Harish Sharma"
+    }
+  ],
+  "neighbours": [
+    {
+      "direction": "out",
+      "id": "ACCOUNT:44352408240",
+      "label": "44352408240",
+      "relation": "TRANSFERRED_FUNDS",
+      "type": "ACCOUNT"
+    },
+    {
+      "direction": "out",
+      "id": "ACCOUNT:82788957986",
+      "label": "82788957986",
+      "relation": "TRANSFERRED_FUNDS",
+      "type": "ACCOUNT"
+    },
+    {
+      "direction": "out",
+      "id": "ACCOUNT:95217729622",
+      "label": "95217729622",
+      "relation": "TRANSFERRED_FUNDS",
+      "type": "ACCOUNT"
+    },
+    {
+      "direction": "out",
+      "id": "PHONE:6834738299",
+      "label": "6834738299",
+      "relation": "OWNS_DEVICE",
+      "type": "PHONE"
+    }
+  ],
+  "node_id": "PERSON:FIR_01:ent_02"
 }

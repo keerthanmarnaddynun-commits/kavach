@@ -3,6 +3,9 @@ import { request, getToken } from "../api/client.js";
 import { shortenHash } from "../lib/format.js";
 import { canUpload, canAnalyze } from "../lib/roles.js";
 import {
+  mayOpenStream,
+  formatDocChars,
+  formatDocError,
   reduceUploadResult,
   buildRowErrorViewModel,
   reduceJobProgress,
@@ -15,6 +18,7 @@ export function Intake({ caseId, user, onCaseUpdated }) {
   const [filesInfo, setFilesInfo] = useState({});
   const [uploadError, setUploadError] = useState(null);
   const [rowErrors, setRowErrors] = useState(null);
+  const [rowErrorCount, setRowErrorCount] = useState(0);
   const [uploading, setUploading] = useState(false);
 
   // Document form state
@@ -31,21 +35,30 @@ export function Intake({ caseId, user, onCaseUpdated }) {
   const userCanUpload = user && canUpload(user.role);
   const userCanAnalyze = user && canAnalyze(user.role);
 
-  // Load documents and case files on mount or caseId change
+  // Stable ref for onCaseUpdated callback to prevent effect reload loop
+  const onCaseUpdatedRef = useRef(onCaseUpdated);
   useEffect(() => {
-    if (!caseId) return;
+    onCaseUpdatedRef.current = onCaseUpdated;
+  }, [onCaseUpdated]);
 
+  // Load documents and case files on mount or caseId change
+  function loadCaseDetails() {
+    if (!caseId) return;
     request(`/cases/${caseId}`)
       .then((data) => {
         setDocuments(data.documents || []);
         setFilesInfo(data.files || {});
       })
       .catch((err) => setUploadError(err.message));
+  }
+
+  useEffect(() => {
+    loadCaseDetails();
   }, [caseId]);
 
   // SSE streaming listener with polling fallback for active job
   useEffect(() => {
-    if (!activeJob) return;
+    if (!activeJob || !mayOpenStream(jobProgress)) return;
 
     let aborted = false;
     const controller = new AbortController();
@@ -79,7 +92,9 @@ export function Intake({ caseId, user, onCaseUpdated }) {
               setJobProgress((prev) => reduceJobProgress(prev || {}, ev.data));
               if (ev.data.status === "done" || ev.data.status === "failed") {
                 aborted = true;
-                if (onCaseUpdated) onCaseUpdated();
+                setActiveJob(null);
+                loadCaseDetails();
+                if (onCaseUpdatedRef.current) onCaseUpdatedRef.current();
                 break;
               }
             }
@@ -99,7 +114,9 @@ export function Intake({ caseId, user, onCaseUpdated }) {
             if (data.status === "done" || data.status === "failed") {
               aborted = true;
               clearInterval(pollTimer);
-              if (onCaseUpdated) onCaseUpdated();
+              setActiveJob(null);
+              loadCaseDetails();
+              if (onCaseUpdatedRef.current) onCaseUpdatedRef.current();
             }
           } catch {
             clearInterval(pollTimer);
@@ -116,13 +133,14 @@ export function Intake({ caseId, user, onCaseUpdated }) {
       aborted = true;
       controller.abort();
     };
-  }, [activeJob, onCaseUpdated]);
+  }, [activeJob]);
 
   // Handle document upload (files and/or pasted text)
   async function handleDocumentUpload(e) {
     e.preventDefault();
     setUploadError(null);
     setRowErrors(null);
+    setRowErrorCount(0);
     setUploading(true);
 
     const formData = new FormData();
@@ -149,9 +167,7 @@ export function Intake({ caseId, user, onCaseUpdated }) {
       setPastedText("");
       if (fileInputRef.current) fileInputRef.current.value = "";
 
-      // Refresh documents
-      const caseDetail = await request(`/cases/${caseId}`);
-      setDocuments(caseDetail.documents || []);
+      loadCaseDetails();
 
       if (res && res.job_id) {
         setActiveJob(res.job_id);
@@ -161,6 +177,7 @@ export function Intake({ caseId, user, onCaseUpdated }) {
       setUploadError(err.message);
       if (err.details) {
         setRowErrors(err.details);
+        setRowErrorCount(err.errorCount || err.details.length);
       }
     } finally {
       setUploading(false);
@@ -173,6 +190,7 @@ export function Intake({ caseId, user, onCaseUpdated }) {
 
     setUploadError(null);
     setRowErrors(null);
+    setRowErrorCount(0);
     setUploading(true);
 
     const formData = new FormData();
@@ -184,13 +202,13 @@ export function Intake({ caseId, user, onCaseUpdated }) {
         body: formData,
       });
 
-      const caseDetail = await request(`/cases/${caseId}`);
-      setFilesInfo(caseDetail.files || {});
-      if (onCaseUpdated) onCaseUpdated();
+      loadCaseDetails();
+      if (onCaseUpdatedRef.current) onCaseUpdatedRef.current();
     } catch (err) {
       setUploadError(err.message);
       if (err.details) {
         setRowErrors(err.details);
+        setRowErrorCount(err.errorCount || (Array.isArray(err.details) ? err.details.length : 0));
       }
     } finally {
       setUploading(false);
@@ -213,7 +231,7 @@ export function Intake({ caseId, user, onCaseUpdated }) {
     }
   }
 
-  const rowErrorVm = buildRowErrorViewModel(rowErrors);
+  const rowErrorVm = buildRowErrorViewModel(rowErrors, rowErrorCount);
   const cdrColumns = (csvColsFixture && csvColsFixture.cdr) || [
     "a_party", "b_party", "imei_a", "imsi_a", "start_time", "duration_sec", "call_type", "tower_id", "lat", "lon"
   ];
@@ -246,7 +264,7 @@ export function Intake({ caseId, user, onCaseUpdated }) {
       {rowErrorVm.errors.length > 0 && (
         <div style={{ marginBottom: "16px" }}>
           <h4 style={{ color: "var(--danger)", marginBottom: "6px" }}>
-            CSV Validation Errors ({rowErrorVm.displayedCount} of {rowErrorVm.totalCount} shown)
+            CSV Validation Errors ({rowErrorVm.totalCount > 50 ? `${rowErrorVm.totalCount} errors, first 50 shown` : `${rowErrorVm.totalCount} errors`})
           </h4>
           <table className="dense-table">
             <thead>
@@ -295,16 +313,30 @@ export function Intake({ caseId, user, onCaseUpdated }) {
             <h4 style={{ marginBottom: "10px" }}>Upload FIR Documents</h4>
             <form onSubmit={handleDocumentUpload} style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <div>
-                <label style={{ display: "block", fontSize: "11px", color: "var(--muted)", marginBottom: "2px" }}>
+                <label
+                  htmlFor="doc-files-input"
+                  style={{ display: "block", fontSize: "11px", color: "var(--muted)", marginBottom: "2px" }}
+                >
                   Select .txt files
                 </label>
-                <input type="file" multiple accept=".txt" ref={fileInputRef} disabled={uploading} />
+                <input
+                  id="doc-files-input"
+                  type="file"
+                  multiple
+                  accept=".txt"
+                  ref={fileInputRef}
+                  disabled={uploading}
+                />
               </div>
               <div>
-                <label style={{ display: "block", fontSize: "11px", color: "var(--muted)", marginBottom: "2px" }}>
-                  Or paste text
+                <label
+                  htmlFor="pasted-name-input"
+                  style={{ display: "block", fontSize: "11px", color: "var(--muted)", marginBottom: "2px" }}
+                >
+                  Document title / name (optional)
                 </label>
                 <input
+                  id="pasted-name-input"
                   type="text"
                   placeholder="Optional filename/title"
                   value={pastedName}
@@ -312,7 +344,14 @@ export function Intake({ caseId, user, onCaseUpdated }) {
                   style={{ width: "100%", marginBottom: "4px" }}
                   disabled={uploading}
                 />
+                <label
+                  htmlFor="pasted-text-input"
+                  style={{ display: "block", fontSize: "11px", color: "var(--muted)", marginBottom: "2px" }}
+                >
+                  Or paste text
+                </label>
                 <textarea
+                  id="pasted-text-input"
                   rows={4}
                   placeholder="Paste FIR text here..."
                   value={pastedText}
@@ -333,11 +372,14 @@ export function Intake({ caseId, user, onCaseUpdated }) {
 
             {/* CDR Upload */}
             <div style={{ marginBottom: "12px" }}>
-              <strong>CDR CSV:</strong>
+              <label htmlFor="cdr-file-input" style={{ display: "block", fontWeight: "600", marginBottom: "2px" }}>
+                CDR CSV:
+              </label>
               <div style={{ fontSize: "10px", color: "var(--muted)", marginBottom: "4px" }}>
                 Columns: <span className="mono">{cdrColumns.join(", ")}</span>
               </div>
               <input
+                id="cdr-file-input"
                 type="file"
                 accept=".csv"
                 ref={cdrInputRef}
@@ -353,11 +395,14 @@ export function Intake({ caseId, user, onCaseUpdated }) {
 
             {/* Bank Upload */}
             <div>
-              <strong>Bank Transactions CSV:</strong>
+              <label htmlFor="bank-file-input" style={{ display: "block", fontWeight: "600", marginBottom: "2px" }}>
+                Bank Transactions CSV:
+              </label>
               <div style={{ fontSize: "10px", color: "var(--muted)", marginBottom: "4px" }}>
                 Columns: <span className="mono">{bankColumns.join(", ")}</span>
               </div>
               <input
+                id="bank-file-input"
                 type="file"
                 accept=".csv"
                 ref={bankInputRef}
@@ -399,9 +444,9 @@ export function Intake({ caseId, user, onCaseUpdated }) {
                   <td className="mono">{doc.doc_id}</td>
                   <td>{doc.filename || doc.name || "-"}</td>
                   <td>{doc.status || "uploaded"}</td>
-                  <td className="mono">{doc.char_count || doc.characters || (doc.text ? doc.text.length : "-")}</td>
+                  <td className="mono">{formatDocChars(doc.chars !== undefined ? doc.chars : doc.char_count)}</td>
                   <td className="mono">{shortenHash(doc.sha256_raw || doc.document_hash, 12)}</td>
-                  <td className="error-text">{doc.error_code || "-"}</td>
+                  <td className="error-text">{formatDocError(doc.error)}</td>
                 </tr>
               ))}
             </tbody>

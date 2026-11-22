@@ -2,6 +2,29 @@
  * Pure reducers and view models for Intake page and Job Progress.
  */
 
+export function mayOpenStream(jobState) {
+  if (!jobState) return false;
+  if (typeof jobState === "string") {
+    return true;
+  }
+  const status = jobState.status || "";
+  if (status === "done" || status === "failed" || jobState.isComplete) {
+    return false;
+  }
+  return true;
+}
+
+export function formatDocChars(chars) {
+  if (chars === null || chars === undefined) return "-";
+  return String(chars);
+}
+
+export function formatDocError(error) {
+  if (!error) return "-";
+  if (typeof error === "string") return error;
+  return error.code || "-";
+}
+
 export function reduceUploadResult(state, action) {
   switch (action.type) {
     case "UPLOAD_START":
@@ -10,6 +33,7 @@ export function reduceUploadResult(state, action) {
         uploading: true,
         error: null,
         rowErrors: null,
+        rowErrorCount: 0,
       };
 
     case "DOCUMENT_UPLOAD_SUCCESS": {
@@ -39,6 +63,7 @@ export function reduceUploadResult(state, action) {
         uploading: false,
         error: null,
         rowErrors: null,
+        rowErrorCount: 0,
         files: {
           ...state.files,
           [fileKind]: action.payload.fileInfo,
@@ -48,11 +73,13 @@ export function reduceUploadResult(state, action) {
 
     case "UPLOAD_ERROR": {
       const err = action.payload;
+      const rawDetails = err.details && Array.isArray(err.details) ? err.details : null;
       return {
         ...state,
         uploading: false,
         error: err.message || "Upload failed",
-        rowErrors: err.details && Array.isArray(err.details) ? err.details : null,
+        rowErrors: rawDetails,
+        rowErrorCount: err.errorCount || (rawDetails ? rawDetails.length : 0),
       };
     }
 
@@ -61,6 +88,7 @@ export function reduceUploadResult(state, action) {
         ...state,
         error: null,
         rowErrors: null,
+        rowErrorCount: 0,
       };
 
     default:
@@ -68,20 +96,31 @@ export function reduceUploadResult(state, action) {
   }
 }
 
-export function buildRowErrorViewModel(rawErrors) {
-  if (!rawErrors || !Array.isArray(rawErrors)) {
+export function buildRowErrorViewModel(rawErrors, totalErrorCount) {
+  let list = [];
+  let total = 0;
+  if (Array.isArray(rawErrors)) {
+    list = rawErrors;
+    total = typeof totalErrorCount === "number" ? totalErrorCount : list.length;
+  } else if (rawErrors && typeof rawErrors === "object") {
+    list = Array.isArray(rawErrors.errors) ? rawErrors.errors : [];
+    total = typeof rawErrors.error_count === "number"
+      ? rawErrors.error_count
+      : (typeof totalErrorCount === "number" ? totalErrorCount : list.length);
+  } else {
     return { errors: [], totalCount: 0, displayedCount: 0 };
   }
-  const totalCount = rawErrors.length;
-  const displayedErrors = rawErrors.slice(0, 50).map((item) => ({
+
+  const displayedErrors = list.slice(0, 50).map((item) => ({
     row: item.row !== undefined ? item.row : "-",
     column: item.column || "-",
     code: item.code || "invalid",
     message: item.message || "Row validation error",
   }));
+
   return {
     errors: displayedErrors,
-    totalCount,
+    totalCount: total,
     displayedCount: displayedErrors.length,
   };
 }

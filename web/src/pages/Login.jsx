@@ -52,10 +52,11 @@ export function Login({ onLoginSuccess }) {
       )}
       <form onSubmit={handleLogin} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         <div>
-          <label style={{ display: "block", marginBottom: "4px", color: "var(--muted)" }}>
+          <label htmlFor="login-username" style={{ display: "block", marginBottom: "4px", color: "var(--muted)" }}>
             User Name
           </label>
           <input
+            id="login-username"
             type="text"
             style={{ width: "100%" }}
             value={username}
@@ -66,10 +67,11 @@ export function Login({ onLoginSuccess }) {
           />
         </div>
         <div>
-          <label style={{ display: "block", marginBottom: "4px", color: "var(--muted)" }}>
+          <label htmlFor="login-password" style={{ display: "block", marginBottom: "4px", color: "var(--muted)" }}>
             Password
           </label>
           <input
+            id="login-password"
             type="password"
             style={{ width: "100%" }}
             value={password}

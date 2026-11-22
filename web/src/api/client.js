@@ -4,6 +4,12 @@
 
 const TOKEN_KEY = "kavach_token";
 
+let unauthorizedHandler = null;
+
+export function setUnauthorizedHandler(fn) {
+  unauthorizedHandler = fn;
+}
+
 export function getToken() {
   if (typeof sessionStorage === "undefined") return null;
   return sessionStorage.getItem(TOKEN_KEY);
@@ -26,9 +32,13 @@ export function mapError(status, errorBody, headers = {}) {
   const code = errObj.code || `http_${status}`;
   let message = errObj.message || "An error occurred";
   let details = errObj.details || null;
+  const rawList = errObj.errors || errObj.row_errors || null;
+  const errorCount = typeof errObj.error_count === "number"
+    ? errObj.error_count
+    : (Array.isArray(rawList) ? rawList.length : 0);
 
   if (status === 401) {
-    message = "Invalid or expired token";
+    message = errObj.message || "Invalid or expired token";
   } else if (status === 403) {
     message = "Your role cannot do this";
   } else if (status === 413) {
@@ -37,15 +47,13 @@ export function mapError(status, errorBody, headers = {}) {
     const retryAfter = (headers && (headers["retry-after"] || headers["Retry-After"])) || "60";
     message = `Too many requests. Retry after ${retryAfter} seconds.`;
   } else if (status === 409) {
-    // 409 conflict retains server message which contains existing doc id
     message = errObj.message || "Resource conflict";
   } else if (status === 422) {
-    // Validation error, e.g. CSV row errors
     message = errObj.message || "Validation failed";
-    details = errObj.errors || errObj.row_errors || null;
+    details = rawList;
   }
 
-  return { code, message, details, status };
+  return { code, message, details, errorCount, status };
 }
 
 export async function request(path, options = {}) {
@@ -72,12 +80,18 @@ export async function request(path, options = {}) {
   if (!response.ok) {
     if (response.status === 401) {
       clearToken();
+      if (unauthorizedHandler) {
+        unauthorizedHandler();
+      } else if (typeof window !== "undefined") {
+        window.location.hash = "#/login";
+      }
     }
     const errMap = mapError(response.status, data, Object.fromEntries(response.headers.entries()));
     const error = new Error(errMap.message);
     error.code = errMap.code;
     error.status = response.status;
     error.details = errMap.details;
+    error.errorCount = errMap.errorCount;
     throw error;
   }
 

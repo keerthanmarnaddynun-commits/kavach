@@ -1,17 +1,22 @@
 {
   "bridging_unowned_phones": [],
-  "cut": [],
+  "cut": [
+    {
+      "name": "Farooq Ahmed",
+      "person_id": "PERSON:FIR_23:ent_05"
+    }
+  ],
   "direct_link": false,
   "disclaimer": "Leads are decision support derived only from the uploaded records. They are not findings of guilt and not proof.",
-  "finite": false,
+  "finite": true,
   "groups_used": {
     "group_a": [
       "PERSON:FIR_01:ent_02"
     ],
     "group_b": [
-      "PERSON:FIR_01:ent_04"
+      "PERSON:FIR_01:ent_09"
     ]
   },
   "note": "Only observed calls are used; unobserved links are ignored.",
-  "size": 0
+  "size": 1
 }

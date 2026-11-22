@@ -1,0 +1,102 @@
+{
+  "files": [
+    "web/src/components/Table.jsx",
+    "web/src/components/Table.test.js",
+    "web/src/pages/EvidenceDoc.jsx",
+    "web/src/pages/EvidenceRows.jsx",
+    "web/src/pages/Overview.jsx",
+    "web/src/pages/People.jsx",
+    "web/src/pages/overviewHelpers.js",
+    "web/src/pages/overviewHelpers.test.js",
+    "web/src/pages/peopleHelpers.js",
+    "web/src/pages/peopleHelpers.test.js",
+    "scripts/dump_api_shapes.py",
+    "web/src/App.jsx",
+    "web/src/api/client.js",
+    "web/src/api/client.test.js",
+    "web/src/components/CaseRail.jsx",
+    "web/src/fixtures/break_result.json",
+    "web/src/fixtures/case_detail.json",
+    "web/src/fixtures/cases.json",
+    "web/src/fixtures/csv_columns.json",
+    "web/src/fixtures/document.json",
+    "web/src/fixtures/edge_detail.json",
+    "web/src/fixtures/edge_detail_csv.json",
+    "web/src/fixtures/edge_detail_fir.json",
+    "web/src/fixtures/graph.json",
+    "web/src/fixtures/health.json",
+    "web/src/fixtures/job.json",
+    "web/src/fixtures/leads.json",
+    "web/src/fixtures/login.json",
+    "web/src/fixtures/node_detail.json",
+    "web/src/fixtures/people.json",
+    "web/src/fixtures/rows.json",
+    "web/src/fixtures/rows_bank.json",
+    "web/src/fixtures/timeline_day.json",
+    "web/src/fixtures/timeline_hour.json",
+    "web/src/lib/format.js",
+    "web/src/lib/format.test.js",
+    "web/src/pages/Intake.jsx",
+    "web/src/pages/Login.jsx",
+    "web/src/pages/intakeReducers.js",
+    "web/src/pages/intakeReducers.test.js",
+    "web/src/styles/tokens.css"
+  ],
+  "fingerprint": "f75f07a1c0456c6e41ac6c84cbab4c9fdb399d1d46fdf49a4f1f9cd0752ecfb2",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 631, log C3_05_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log C3_06_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log C3_07_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log C3_08_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: fixtures_valid",
+      "detail": [
+        "exit 0, log C3_09_done_fixtures_valid.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "C3",
+  "tests_passed": 631,
+  "time": "2026-11-22 09:16:04"
+}

@@ -9,6 +9,13 @@ export function shortenHash(hash, length = 12) {
   return hash.slice(0, length);
 }
 
+export function formatCaseFingerprint(isAnalyzed, documentHash) {
+  if (!isAnalyzed || !documentHash || typeof documentHash !== "string") {
+    return "not analyzed";
+  }
+  return documentHash.slice(0, 12);
+}
+
 export function formatNumber(val) {
   if (val === null || val === undefined) {
     return "0";

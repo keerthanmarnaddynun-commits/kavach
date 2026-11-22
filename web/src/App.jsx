@@ -1,30 +1,39 @@
-import React, { useState, useEffect } from "react";
-import { getToken, clearToken, request } from "./api/client.js";
-import { shortenHash, copyToClipboard } from "./lib/format.js";
+import React, { useState, useEffect, useCallback } from "react";
+import { getToken, clearToken, request, setUnauthorizedHandler } from "./api/client.js";
+import { formatCaseFingerprint, copyToClipboard } from "./lib/format.js";
+import { getLimitations } from "./pages/overviewHelpers.js";
 import { Login } from "./pages/Login.jsx";
 import { CaseRail } from "./components/CaseRail.jsx";
 import { Intake } from "./pages/Intake.jsx";
-
-const DEFAULT_LIMITS = [
-  "Relation extraction from FIR text measured F1 0.32 on an independent held-out set.",
-  "Identifiers (phone, Aadhaar, PAN, UPI, vehicle) were strong; IFSC codes are not extracted.",
-  "There is no OCR (typed text only).",
-  "CDR and bank CSV files must use the exact required column names.",
-  "All tuning data was synthetic.",
-  "The 0.70 chip threshold was chosen after looking at one case and is labelled not evaluated.",
-  "Break results ignore unobserved links on the call layer.",
-  "The audit hash chain is unkeyed.",
-  "The login limiter counts failures per user name.",
-];
+import { Overview } from "./pages/Overview.jsx";
+import { People } from "./pages/People.jsx";
+import { EvidenceDoc } from "./pages/EvidenceDoc.jsx";
+import { EvidenceRows } from "./pages/EvidenceRows.jsx";
 
 export function App() {
   const [route, setRoute] = useState(() => window.location.hash || "#/cases");
   const [user, setUser] = useState(null);
   const [cases, setCases] = useState([]);
+  const [casesError, setCasesError] = useState(null);
   const [activeCaseId, setActiveCaseId] = useState(null);
   const [activeCase, setActiveCase] = useState(null);
+  const [activeCaseError, setActiveCaseError] = useState(null);
+  const [activeCaseLeads, setActiveCaseLeads] = useState(null);
   const [showLimits, setShowLimits] = useState(false);
   const [copyStatus, setCopyStatus] = useState(false);
+
+  // Register 401 unauthorized handler to clear session
+  useEffect(() => {
+    setUnauthorizedHandler(() => {
+      clearToken();
+      setUser(null);
+      setCases([]);
+      setActiveCaseId(null);
+      setActiveCase(null);
+      setActiveCaseLeads(null);
+      window.location.hash = "#/login";
+    });
+  }, []);
 
   // Hash route listener
   useEffect(() => {
@@ -39,7 +48,8 @@ export function App() {
   const isLogin = route.startsWith("#/login");
   const caseMatch = route.match(/^#\/case\/([^/]+)(?:\/(.*))?$/);
   const routeCaseId = caseMatch ? caseMatch[1] : null;
-  const subPage = caseMatch && caseMatch[2] ? caseMatch[2].split("?")[0] : "overview";
+  const subRoutePath = caseMatch && caseMatch[2] ? caseMatch[2] : "overview";
+  const subPage = subRoutePath.split("?")[0].split("/")[0];
 
   useEffect(() => {
     if (routeCaseId && routeCaseId !== activeCaseId) {
@@ -67,9 +77,10 @@ export function App() {
     }
   }, [isLogin]);
 
-  // Load cases list helper
-  function loadCases() {
+  // Load cases list
+  const loadCases = useCallback(() => {
     if (user) {
+      setCasesError(null);
       request("/cases")
         .then((data) => {
           setCases(data || []);
@@ -77,49 +88,74 @@ export function App() {
             setActiveCaseId(data[0].case_id);
           }
         })
-        .catch(() => {});
+        .catch((err) => {
+          setCasesError(err.message || "Failed to load cases");
+        });
     }
-  }
+  }, [user, activeCaseId]);
 
   useEffect(() => {
     loadCases();
-  }, [user, activeCaseId]);
+  }, [loadCases]);
 
-  // Load active case details
-  function loadActiveCase() {
+  // Load active case details and leads if analyzed
+  const loadActiveCase = useCallback(() => {
     if (user && activeCaseId) {
+      setActiveCaseError(null);
       request(`/cases/${activeCaseId}`)
         .then((data) => {
           setActiveCase(data);
+          if (data && data.case && data.case.analyzed) {
+            request(`/cases/${activeCaseId}/leads`)
+              .then((leads) => setActiveCaseLeads(leads))
+              .catch(() => setActiveCaseLeads(null));
+          } else {
+            setActiveCaseLeads(null);
+          }
         })
-        .catch(() => {});
+        .catch((err) => {
+          setActiveCaseError(err.message || "Failed to load case details");
+        });
     }
-  }
+  }, [user, activeCaseId]);
 
   useEffect(() => {
     loadActiveCase();
-  }, [user, activeCaseId]);
+  }, [loadActiveCase]);
+
+  const handleCaseUpdated = useCallback(() => {
+    loadCases();
+    loadActiveCase();
+  }, [loadCases, loadActiveCase]);
 
   function handleLogout() {
     clearToken();
     setUser(null);
+    setCases([]);
+    setActiveCaseId(null);
+    setActiveCase(null);
+    setActiveCaseLeads(null);
     window.location.hash = "#/login";
   }
 
-  async function handleCopyHash(hash) {
-    const ok = await copyToClipboard(hash);
+  const isAnalyzed = Boolean(activeCase && activeCase.case && activeCase.case.analyzed);
+  const docHash = activeCaseLeads ? activeCaseLeads.document_hash : "";
+  const displayFingerprint = formatCaseFingerprint(isAnalyzed, docHash);
+
+  async function handleCopyHash() {
+    if (!isAnalyzed || !docHash) return;
+    const ok = await copyToClipboard(docHash);
     if (ok) {
       setCopyStatus(true);
       setTimeout(() => setCopyStatus(false), 2000);
     }
   }
 
-  const caseFingerprint = activeCase && activeCase.case ? activeCase.case.case_id : activeCaseId || "";
-  const shortFingerprint = shortenHash(caseFingerprint, 12);
+  const limitsList = getLimitations(isAnalyzed, activeCaseLeads ? activeCaseLeads.limitations : null);
 
   return (
     <div className="app-container">
-      {/* 28px Status Bar */}
+      {/* Status Bar */}
       <header className="status-bar">
         <div className="status-bar-left">
           <span className="status-brand">KAVACH</span>
@@ -131,15 +167,19 @@ export function App() {
               </span>
               <span className="status-item">
                 <span>Hash:</span>
-                <span className="mono" title={caseFingerprint}>{shortFingerprint}</span>
-                <button
-                  type="button"
-                  className="copy-btn"
-                  onClick={() => handleCopyHash(caseFingerprint)}
-                  title="Copy full fingerprint"
-                >
-                  {copyStatus ? "Copied" : "Copy"}
-                </button>
+                <span className="mono" title={docHash || "not analyzed"}>
+                  {displayFingerprint}
+                </span>
+                {isAnalyzed && docHash && (
+                  <button
+                    type="button"
+                    className="copy-btn"
+                    onClick={handleCopyHash}
+                    title="Copy full fingerprint"
+                  >
+                    {copyStatus ? "Copied" : "Copy"}
+                  </button>
+                )}
               </span>
             </>
           )}
@@ -161,9 +201,9 @@ export function App() {
         </div>
       </header>
 
-      {/* Main Layout Area */}
+      {/* Main Workspace Layout */}
       <div className="workspace">
-        {/* 200px Case Rail */}
+        {/* Case Rail */}
         {!isLogin && (
           <CaseRail
             cases={cases}
@@ -178,17 +218,31 @@ export function App() {
 
         {/* Content Pane */}
         <main className="main-content">
+          {casesError && (
+            <div className="error-text" style={{ marginBottom: "12px" }}>
+              {casesError}
+            </div>
+          )}
+          {activeCaseError && (
+            <div className="error-text" style={{ marginBottom: "12px" }}>
+              {activeCaseError}
+            </div>
+          )}
+
           {isLogin ? (
             <Login onLoginSuccess={() => (window.location.hash = "#/cases")} />
           ) : (
             <CaseContentView
               caseId={activeCaseId}
+              route={route}
               subPage={subPage}
               user={user}
               activeCase={activeCase}
-              onCaseUpdated={() => {
-                loadCases();
-                loadActiveCase();
+              onCaseUpdated={handleCaseUpdated}
+              onLimitsLoaded={(limits) => {
+                if (limits && activeCaseLeads) {
+                  // Leads loaded via Overview
+                }
               }}
             />
           )}
@@ -213,7 +267,7 @@ export function App() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(0,0,0,0.4)",
+            backgroundColor: "var(--modal-backdrop)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -234,10 +288,12 @@ export function App() {
           >
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
               <strong>System Limitations</strong>
-              <button type="button" onClick={() => setShowLimits(false)}>Close</button>
+              <button type="button" onClick={() => setShowLimits(false)}>
+                Close
+              </button>
             </div>
             <ul style={{ paddingLeft: "20px", fontSize: "12px", lineHeight: "1.6" }}>
-              {DEFAULT_LIMITS.map((limit, idx) => (
+              {limitsList.map((limit, idx) => (
                 <li key={idx}>{limit}</li>
               ))}
             </ul>
@@ -248,15 +304,39 @@ export function App() {
   );
 }
 
-function CaseContentView({ caseId, subPage, user, activeCase, onCaseUpdated }) {
+function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdated }) {
   if (!caseId) {
     return <div>Select a case from the rail to inspect.</div>;
+  }
+
+  // Evidence document route: #/case/<id>/evidence/doc/<doc_id>
+  const docMatch = route.match(/^#\/case\/[^/]+\/evidence\/doc\/(.+)$/);
+  if (docMatch) {
+    const docId = docMatch[1].split("?")[0];
+    return <EvidenceDoc caseId={caseId} docId={docId} />;
+  }
+
+  // Evidence rows route: #/case/<id>/evidence/rows/<file>?rows=...
+  const rowsMatch = route.match(/^#\/case\/[^/]+\/evidence\/rows\/([^?]+)(?:\?rows=(.*))?$/);
+  if (rowsMatch) {
+    const fileKind = rowsMatch[1];
+    const rowsParam = rowsMatch[2] || "";
+    return <EvidenceRows caseId={caseId} fileKind={fileKind} rowsParam={rowsParam} />;
   }
 
   if (subPage === "intake") {
     return <Intake caseId={caseId} user={user} onCaseUpdated={onCaseUpdated} />;
   }
 
+  if (subPage === "people") {
+    return <People caseId={caseId} />;
+  }
+
+  if (subPage === "overview" || !subPage) {
+    return <Overview caseId={caseId} activeCase={activeCase} />;
+  }
+
+  // Placeholder for later steps (graph, break, timeline)
   return (
     <div>
       <div className="disclaimer-box">

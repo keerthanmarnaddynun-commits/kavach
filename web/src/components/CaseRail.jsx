@@ -6,11 +6,13 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
   const [creating, setCreating] = useState(false);
   const [newCaseName, setNewCaseName] = useState("");
   const [isSynthetic, setIsSynthetic] = useState(false);
+  const [createError, setCreateError] = useState(null);
 
   async function handleCreateCase(e) {
     e.preventDefault();
     if (!newCaseName.trim()) return;
 
+    setCreateError(null);
     try {
       const res = await request("/cases", {
         method: "POST",
@@ -25,7 +27,7 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
       }
       window.location.hash = `#/case/${res.case_id}/intake`;
     } catch (err) {
-      alert(err.message || "Failed to create case");
+      setCreateError(err.message || "Failed to create case");
     }
   }
 
@@ -44,7 +46,16 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
 
       {creating && (
         <form onSubmit={handleCreateCase} style={{ padding: "8px 10px", borderBottom: "1px solid var(--border)" }}>
+          {createError && (
+            <div className="error-text" style={{ marginBottom: "6px", fontSize: "11px" }}>
+              {createError}
+            </div>
+          )}
+          <label htmlFor="new-case-name" style={{ display: "block", fontSize: "11px", marginBottom: "2px" }}>
+            Case Name
+          </label>
           <input
+            id="new-case-name"
             type="text"
             placeholder="Case name"
             style={{ width: "100%", marginBottom: "6px" }}
@@ -111,7 +122,7 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
       )}
 
       {/* Case List */}
-      <ul className="case-list">
+      <ul className="case-list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
         {cases.map((c) => {
           const isActive = c.case_id === activeCaseId;
           const docCnt = c.counts ? c.counts.documents : 0;
@@ -119,21 +130,32 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
           const bankCnt = c.counts ? c.counts.bank_rows : 0;
 
           return (
-            <li
-              key={c.case_id}
-              className={`case-item ${isActive ? "active" : ""}`}
-              onClick={() => {
-                window.location.hash = `#/case/${c.case_id}/overview`;
-              }}
-            >
-              <div className="case-item-title">{c.name}</div>
-              <div className="case-item-meta">
-                {c.synthetic ? "synthetic | " : ""}
-                {c.analyzed ? "analyzed" : "not analyzed"}
-              </div>
-              <div className="case-item-meta mono">
-                Docs: {docCnt} | CDR: {cdrCnt} | Bank: {bankCnt}
-              </div>
+            <li key={c.case_id} style={{ margin: 0, padding: 0 }}>
+              <button
+                type="button"
+                className={`case-item ${isActive ? "active" : ""}`}
+                style={{
+                  width: "100%",
+                  textAlign: "left",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "block",
+                  padding: "8px 10px",
+                }}
+                onClick={() => {
+                  window.location.hash = `#/case/${c.case_id}/overview`;
+                }}
+              >
+                <div className="case-item-title">{c.name}</div>
+                <div className="case-item-meta">
+                  {c.synthetic ? "synthetic | " : ""}
+                  {c.analyzed ? "analyzed" : "not analyzed"}
+                </div>
+                <div className="case-item-meta mono">
+                  Docs: {docCnt} | CDR: {cdrCnt} | Bank: {bankCnt}
+                </div>
+              </button>
             </li>
           );
         })}

@@ -2,9 +2,15 @@ import { describe, it, expect } from "vitest";
 import { mapError } from "./client.js";
 
 describe("API Error Mapping", () => {
-  it("maps 401 to unauthorized", () => {
+  it("maps 401 to unauthorized with default message", () => {
     const err = mapError(401, { error: { code: "unauthorized" } });
     expect(err.message).toBe("Invalid or expired token");
+    expect(err.status).toBe(401);
+  });
+
+  it("maps 401 preserving server message when provided", () => {
+    const err = mapError(401, { error: { code: "unauthorized", message: "Incorrect username or password" } });
+    expect(err.message).toBe("Incorrect username or password");
     expect(err.status).toBe(401);
   });
 
@@ -29,11 +35,12 @@ describe("API Error Mapping", () => {
     expect(err.message).toBe(msg);
   });
 
-  it("maps 422 with row error details", () => {
+  it("maps 422 with row error details and errorCount", () => {
     const body = {
       error: {
         code: "invalid_csv",
         message: "Invalid CSV format",
+        error_count: 142,
         errors: [{ row: 12, column: "amount", message: "Negative amount" }],
       },
     };
@@ -41,5 +48,6 @@ describe("API Error Mapping", () => {
     expect(err.message).toBe("Invalid CSV format");
     expect(err.details).toHaveLength(1);
     expect(err.details[0].row).toBe(12);
+    expect(err.errorCount).toBe(142);
   });
 });

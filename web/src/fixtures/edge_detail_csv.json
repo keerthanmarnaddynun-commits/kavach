@@ -1,1 +1,26 @@
-{}
+{
+  "aggregates": {
+    "first_time": "2026-01-07T09:30:41",
+    "last_time": "2026-01-07T09:30:41",
+    "modes": [
+      "IMPS"
+    ],
+    "total_amount": "5924.13",
+    "total_amount_paise": 592413,
+    "txn_count": 1
+  },
+  "csv_evidence": {
+    "file": "bank.csv",
+    "row_count": 1,
+    "row_numbers": [
+      295
+    ],
+    "sha256": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+  },
+  "edge_id": "E-c79cf80f868e",
+  "fir_evidence": [],
+  "relation": "TRANSFERRED_FUNDS",
+  "source": "ACCOUNT:1075079752217806",
+  "source_kind": "CSV",
+  "target": "ACCOUNT:1273226992728702"
+}

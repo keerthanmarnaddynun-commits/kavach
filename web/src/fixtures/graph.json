@@ -1,6 +1,5 @@
 {
   "elements": {
-    "_truncated": true,
     "edges": [
       {
         "data": {
@@ -51,6 +50,366 @@
           "source": "ACCOUNT:1075079752217806",
           "target": "ACCOUNT:199656789564"
         }
+      },
+      {
+        "data": {
+          "amount": 20005.16,
+          "count": 1,
+          "id": "E-7abe179142f5",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:23472096738"
+        }
+      },
+      {
+        "data": {
+          "amount": 1346.25,
+          "count": 1,
+          "id": "E-a1af357b0b8e",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:28384251354"
+        }
+      },
+      {
+        "data": {
+          "amount": 19213.74,
+          "count": 1,
+          "id": "E-fb112ee36eae",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:35543349232124"
+        }
+      },
+      {
+        "data": {
+          "amount": 3476.18,
+          "count": 1,
+          "id": "E-bc713e6d61f1",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:45784370118033"
+        }
+      },
+      {
+        "data": {
+          "amount": 12127.86,
+          "count": 1,
+          "id": "E-65ab57006633",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:527244753987"
+        }
+      },
+      {
+        "data": {
+          "amount": 2556.33,
+          "count": 1,
+          "id": "E-08145600b4b6",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1075079752217806",
+          "target": "ACCOUNT:53710458260"
+        }
+      },
+      {
+        "data": {
+          "amount": 57912.19,
+          "count": 2,
+          "id": "E-a3a737d2d085",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1499129363228029",
+          "target": "ACCOUNT:1273226992728702"
+        }
+      },
+      {
+        "data": {
+          "amount": 30254.34,
+          "count": 1,
+          "id": "E-6c0f5a1c427a",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:1499129363228029",
+          "target": "ACCOUNT:53710458260"
+        }
+      },
+      {
+        "data": {
+          "amount": 2443.13,
+          "count": 1,
+          "id": "E-afce56af6735",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:15359627630097",
+          "target": "ACCOUNT:1075079752217806"
+        }
+      },
+      {
+        "data": {
+          "amount": 785.09,
+          "count": 1,
+          "id": "E-85f8cbccb27f",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:15359627630097",
+          "target": "ACCOUNT:1273226992728702"
+        }
+      },
+      {
+        "data": {
+          "amount": 24979.88,
+          "count": 1,
+          "id": "E-8911ca54cc1e",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:15359627630097",
+          "target": "ACCOUNT:23472096738"
+        }
+      },
+      {
+        "data": {
+          "amount": 58129.86,
+          "count": 2,
+          "id": "E-8da0edf397b3",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:17520025569318",
+          "target": "ACCOUNT:199656789564"
+        }
+      },
+      {
+        "data": {
+          "amount": 16477.35,
+          "count": 2,
+          "id": "E-b9065e6de1fa",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:17520025569318",
+          "target": "ACCOUNT:28384251354"
+        }
+      },
+      {
+        "data": {
+          "amount": 22241.89,
+          "count": 1,
+          "id": "E-f60d9e8d9fba",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:17520025569318",
+          "target": "ACCOUNT:45784370118033"
+        }
+      },
+      {
+        "data": {
+          "amount": 31610.7,
+          "count": 1,
+          "id": "E-bfb8ab83708c",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:17520025569318",
+          "target": "ACCOUNT:527244753987"
+        }
+      },
+      {
+        "data": {
+          "amount": 32923.48,
+          "count": 1,
+          "id": "E-024e5768e590",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:199656789564",
+          "target": "ACCOUNT:1075079752217806"
+        }
+      },
+      {
+        "data": {
+          "amount": 31387.56,
+          "count": 1,
+          "id": "E-f64111c78839",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:199656789564",
+          "target": "ACCOUNT:1499129363228029"
+        }
+      },
+      {
+        "data": {
+          "amount": 4980.23,
+          "count": 1,
+          "id": "E-766a6151ea59",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:199656789564",
+          "target": "ACCOUNT:15359627630097"
+        }
+      },
+      {
+        "data": {
+          "amount": 17533.7,
+          "count": 1,
+          "id": "E-0cbb30a95beb",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:199656789564",
+          "target": "ACCOUNT:28384251354"
+        }
+      },
+      {
+        "data": {
+          "amount": 32427.88,
+          "count": 2,
+          "id": "E-ac516883fcd9",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:199656789564",
+          "target": "ACCOUNT:527244753987"
+        }
+      },
+      {
+        "data": {
+          "amount": 5318.88,
+          "count": 1,
+          "id": "E-bdf8d7bae4dc",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:23472096738",
+          "target": "ACCOUNT:17520025569318"
+        }
+      },
+      {
+        "data": {
+          "amount": 3212.5,
+          "count": 1,
+          "id": "E-e7e29a3fc631",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:28384251354",
+          "target": "ACCOUNT:45784370118033"
+        }
+      },
+      {
+        "data": {
+          "amount": 40702.35,
+          "count": 2,
+          "id": "E-6f5f674147f6",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:28384251354",
+          "target": "ACCOUNT:53710458260"
+        }
+      },
+      {
+        "data": {
+          "amount": 23275.36,
+          "count": 1,
+          "id": "E-8fe87ff18dcd",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:35543349232124",
+          "target": "ACCOUNT:23472096738"
+        }
+      },
+      {
+        "data": {
+          "amount": 26246.48,
+          "count": 1,
+          "id": "E-eda95ae1cac3",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:45784370118033",
+          "target": "ACCOUNT:1273226992728702"
+        }
+      },
+      {
+        "data": {
+          "amount": 32578.49,
+          "count": 1,
+          "id": "E-377ad2b47c0f",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:45784370118033",
+          "target": "ACCOUNT:1499129363228029"
+        }
+      },
+      {
+        "data": {
+          "amount": 3982.3,
+          "count": 1,
+          "id": "E-56325b428265",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:45784370118033",
+          "target": "ACCOUNT:15359627630097"
+        }
+      },
+      {
+        "data": {
+          "amount": 21753.49,
+          "count": 2,
+          "id": "E-2080edf9e8e5",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:45784370118033",
+          "target": "ACCOUNT:199656789564"
+        }
+      },
+      {
+        "data": {
+          "amount": 31107.01,
+          "count": 1,
+          "id": "E-e9dd985f96cc",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:45784370118033",
+          "target": "ACCOUNT:23472096738"
+        }
+      },
+      {
+        "data": {
+          "amount": 33393.19,
+          "count": 1,
+          "id": "E-457d08624129",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:45784370118033",
+          "target": "ACCOUNT:527244753987"
+        }
+      },
+      {
+        "data": {
+          "amount": 34889.53,
+          "count": 1,
+          "id": "E-fee016017777",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:527244753987",
+          "target": "ACCOUNT:28384251354"
+        }
+      },
+      {
+        "data": {
+          "amount": 13293.57,
+          "count": 1,
+          "id": "E-6fdaf45f42de",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:53710458260",
+          "target": "ACCOUNT:15359627630097"
+        }
+      },
+      {
+        "data": {
+          "amount": 5094.26,
+          "count": 1,
+          "id": "E-3e0aed1d67b1",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:53710458260",
+          "target": "ACCOUNT:17520025569318"
+        }
+      },
+      {
+        "data": {
+          "amount": 27201.75,
+          "count": 1,
+          "id": "E-6e297d91044b",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:53710458260",
+          "target": "ACCOUNT:28384251354"
+        }
+      },
+      {
+        "data": {
+          "amount": 59773.98,
+          "count": 2,
+          "id": "E-58bf175a3c89",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:53710458260",
+          "target": "ACCOUNT:35543349232124"
+        }
+      },
+      {
+        "data": {
+          "amount": 10057.37,
+          "count": 2,
+          "id": "E-cb63d4c6d719",
+          "label": "TRANSFERRED_FUNDS",
+          "source": "ACCOUNT:53710458260",
+          "target": "ACCOUNT:45784370118033"
+        }
       }
     ],
     "nodes": [
@@ -61,26 +420,6 @@
           "id": "ACCOUNT:1075079752217806",
           "isKingpin": false,
           "label": "1075079752217806",
-          "type": "ACCOUNT"
-        }
-      },
-      {
-        "data": {
-          "ai_confidence": 0.0,
-          "centrality_score": 0.0,
-          "id": "ACCOUNT:109751102939",
-          "isKingpin": false,
-          "label": "109751102939",
-          "type": "ACCOUNT"
-        }
-      },
-      {
-        "data": {
-          "ai_confidence": 0.0,
-          "centrality_score": 0.0,
-          "id": "ACCOUNT:11482923792599",
-          "isKingpin": false,
-          "label": "11482923792599",
           "type": "ACCOUNT"
         }
       },
@@ -101,6 +440,96 @@
           "id": "ACCOUNT:1499129363228029",
           "isKingpin": false,
           "label": "1499129363228029",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:15359627630097",
+          "isKingpin": false,
+          "label": "15359627630097",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:17520025569318",
+          "isKingpin": false,
+          "label": "17520025569318",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:199656789564",
+          "isKingpin": false,
+          "label": "199656789564",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:23472096738",
+          "isKingpin": false,
+          "label": "23472096738",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:28384251354",
+          "isKingpin": false,
+          "label": "28384251354",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:35543349232124",
+          "isKingpin": false,
+          "label": "35543349232124",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:45784370118033",
+          "isKingpin": false,
+          "label": "45784370118033",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:527244753987",
+          "isKingpin": false,
+          "label": "527244753987",
+          "type": "ACCOUNT"
+        }
+      },
+      {
+        "data": {
+          "ai_confidence": 0.0,
+          "centrality_score": 0.0,
+          "id": "ACCOUNT:53710458260",
+          "isKingpin": false,
+          "label": "53710458260",
           "type": "ACCOUNT"
         }
       }

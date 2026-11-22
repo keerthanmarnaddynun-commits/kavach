@@ -56,7 +56,7 @@ def dump_fixtures(out_dir: Path | None = None) -> list[str]:
     target_dir = out_dir or FIXTURES_DIR
     target_dir.mkdir(parents=True, exist_ok=True)
 
-    # Use a deterministic token generator so running twice yields identical outputs
+    # Use deterministic token generator so running twice yields identical outputs
     token_counter = 0
 
     def deterministic_hex(nbytes=None):
@@ -124,57 +124,94 @@ def dump_fixtures(out_dir: Path | None = None) -> list[str]:
             r_case_det = client.get(f"/api/cases/{case_id}", headers=viewer_h)
             case_detail_data = sanitize(r_case_det.json())
 
-            # 5. Graph
+            # 5. Full Graph
             r_graph = client.get(f"/api/cases/{case_id}/graph", headers=viewer_h)
-            graph_data = sanitize(r_graph.json())
+            full_graph = r_graph.json()
+            graph_nodes = full_graph.get("elements", {}).get("nodes", [])
+            graph_edges = full_graph.get("elements", {}).get("edges", [])
+
+            # (d) Subgraph: walk edges collecting end points until 12 nodes are collected
+            collected_node_ids: set[str] = set()
+            for e in graph_edges:
+                src = e.get("data", {}).get("source")
+                tgt = e.get("data", {}).get("target")
+                if src and tgt:
+                    needed = {src, tgt} - collected_node_ids
+                    if len(collected_node_ids) + len(needed) <= 12:
+                        collected_node_ids.update(needed)
+                    if len(collected_node_ids) == 12:
+                        break
+
+            if len(collected_node_ids) < 12:
+                for n in graph_nodes:
+                    nid = n.get("data", {}).get("id")
+                    if nid and nid not in collected_node_ids:
+                        collected_node_ids.add(nid)
+                        if len(collected_node_ids) == 12:
+                            break
+
+            node_map = {n.get("data", {}).get("id"): n for n in graph_nodes}
+            final_nodes = [node_map[nid] for nid in sorted(collected_node_ids) if nid in node_map]
+            final_edges = [
+                e for e in graph_edges
+                if e.get("data", {}).get("source") in collected_node_ids
+                and e.get("data", {}).get("target") in collected_node_ids
+            ]
+
+            graph_data = {
+                "elements": {
+                    "edges": final_edges,
+                    "nodes": final_nodes,
+                },
+                "summary": full_graph.get("summary", {}),
+            }
 
             # 6. Leads
             r_leads = client.get(f"/api/cases/{case_id}/leads", headers=viewer_h)
-            leads_data = sanitize(r_leads.json())
+            leads_raw = r_leads.json()
+            leads_data = sanitize(leads_raw)
 
             # 7. People
             r_people = client.get(f"/api/cases/{case_id}/people", headers=viewer_h)
             people_data = sanitize(r_people.json())
 
-            # 8. Node Detail (PERSON with FIR evidence)
-            target_node_id = None
-            full_graph = r_graph.json()
-            for n in full_graph.get("nodes", []):
+            # (a) node_detail = real /nodes/<id> for first PERSON node (graph order) with fir_evidence
+            node_detail_data = None
+            for n in graph_nodes:
                 ndata = n.get("data", {})
-                if ndata.get("type") == "PERSON" and ndata.get("fir_evidence"):
-                    target_node_id = ndata.get("id")
-                    break
-            if not target_node_id:
-                for n in full_graph.get("nodes", []):
-                    ndata = n.get("data", {})
-                    if ndata.get("type") == "PERSON":
-                        target_node_id = ndata.get("id")
+                if ndata.get("type") == "PERSON":
+                    nid = ndata.get("id")
+                    res = client.get(f"/api/cases/{case_id}/nodes/{nid}", headers=viewer_h)
+                    if res.status_code == 200:
+                        cand = res.json()
+                        if cand.get("fir_evidence") and len(cand["fir_evidence"]) > 0:
+                            node_detail_data = sanitize(cand)
+                            break
+
+            # (b) edge_detail_fir and edge_detail_csv
+            edge_fir_data = None
+            edge_csv_data = None
+            for e in graph_edges:
+                eid = e.get("data", {}).get("id")
+                if not eid:
+                    continue
+                res = client.get(f"/api/cases/{case_id}/edges/{eid}", headers=viewer_h)
+                if res.status_code == 200:
+                    cand = res.json()
+                    if not edge_fir_data and cand.get("fir_evidence") and len(cand["fir_evidence"]) > 0:
+                        edge_fir_data = sanitize(cand)
+                    if not edge_csv_data and cand.get("csv_evidence") and len(cand["csv_evidence"]) > 0:
+                        edge_csv_data = sanitize(cand)
+                    if edge_fir_data and edge_csv_data:
                         break
-            r_node = client.get(f"/api/cases/{case_id}/nodes/{target_node_id}", headers=viewer_h)
-            node_detail_data = sanitize(r_node.json())
 
-            # 9. Edge Detail (one FIR edge and one CSV edge)
-            fir_edge_id = None
-            csv_edge_id = None
-            for e in full_graph.get("edges", []):
-                edata = e.get("data", {})
-                if edata.get("fir_evidence") and not fir_edge_id:
-                    fir_edge_id = edata.get("id")
-                if edata.get("csv_evidence") and not csv_edge_id:
-                    csv_edge_id = edata.get("id")
-                if fir_edge_id and csv_edge_id:
-                    break
-
-            r_edge_fir = client.get(f"/api/cases/{case_id}/edges/{fir_edge_id}", headers=viewer_h) if fir_edge_id else None
-            r_edge_csv = client.get(f"/api/cases/{case_id}/edges/{csv_edge_id}", headers=viewer_h) if csv_edge_id else None
-
-            edge_fir_data = sanitize(r_edge_fir.json()) if r_edge_fir else {}
-            edge_csv_data = sanitize(r_edge_csv.json()) if r_edge_csv else {}
-
-            combined_edge_detail = {
-                "fir_edge": edge_fir_data,
-                "csv_edge": edge_csv_data,
-            }
+            # (f) Fail with clear message if node_detail, edge_detail_fir, or edge_detail_csv is invalid/empty
+            if not node_detail_data or "error" in node_detail_data or not node_detail_data.get("fir_evidence"):
+                raise RuntimeError(f"node_detail is invalid, empty, or missing fir_evidence: {node_detail_data}")
+            if not edge_fir_data or "error" in edge_fir_data or not edge_fir_data.get("fir_evidence"):
+                raise RuntimeError(f"edge_detail_fir is invalid, empty, or missing fir_evidence: {edge_fir_data}")
+            if not edge_csv_data or "error" in edge_csv_data or not edge_csv_data.get("csv_evidence"):
+                raise RuntimeError(f"edge_detail_csv is invalid, empty, or missing csv_evidence: {edge_csv_data}")
 
             # 10. Document
             r_doc = client.get(f"/api/cases/{case_id}/documents/FIR_01", headers=viewer_h)
@@ -192,16 +229,42 @@ def dump_fixtures(out_dir: Path | None = None) -> list[str]:
             r_tl_hour = client.get(f"/api/cases/{case_id}/timeline?bucket=hour", headers=viewer_h)
             timeline_hour_data = sanitize(r_tl_hour.json())
 
-            # 13. Break result
-            p_list = r_people.json()
-            p1 = p_list[0]["id"] if len(p_list) > 0 else "P1"
-            p2 = p_list[1]["id"] if len(p_list) > 1 else "P2"
-            r_break = client.post(
-                f"/api/cases/{case_id}/break",
-                json={"group_a": [p1], "group_b": [p2]},
-                headers=analyst_h,
-            )
-            break_data = sanitize(r_break.json())
+            # (c) break_result = real break between two persons giving finite: true and non-empty cut
+            break_data = None
+            priority_lead_persons = [p["person_id"] for p in leads_raw.get("priority_leads", []) if "person_id" in p]
+            people_raw = r_people.json()
+            all_person_ids = priority_lead_persons + [p["id"] for p in people_raw if p["id"] not in priority_lead_persons]
+
+            pairs_tried = 0
+            for i in range(len(all_person_ids)):
+                for j in range(i + 1, len(all_person_ids)):
+                    if pairs_tried >= 60:
+                        break
+                    pairs_tried += 1
+                    pa = all_person_ids[i]
+                    pb = all_person_ids[j]
+                    r_brk = client.post(
+                        f"/api/cases/{case_id}/break",
+                        json={"group_a": [pa], "group_b": [pb]},
+                        headers=analyst_h,
+                    )
+                    if r_brk.status_code == 200:
+                        cand = r_brk.json()
+                        if cand.get("finite") is True and len(cand.get("cut", [])) > 0:
+                            break_data = sanitize(cand)
+                            break
+                if break_data or pairs_tried >= 60:
+                    break
+
+            if not break_data:
+                pa = all_person_ids[0] if all_person_ids else "P1"
+                pb = all_person_ids[1] if len(all_person_ids) > 1 else "P2"
+                r_brk = client.post(
+                    f"/api/cases/{case_id}/break",
+                    json={"group_a": [pa], "group_b": [pb]},
+                    headers=analyst_h,
+                )
+                break_data = sanitize(r_brk.json())
 
             # 14. Job
             job = app.state.job_store.create(kind="extract", case_id=case_id, total=1)
@@ -230,7 +293,7 @@ def dump_fixtures(out_dir: Path | None = None) -> list[str]:
                 "leads": leads_data,
                 "people": people_data,
                 "node_detail": node_detail_data,
-                "edge_detail": combined_edge_detail,
+                "edge_detail": edge_fir_data,
                 "edge_detail_fir": edge_fir_data,
                 "edge_detail_csv": edge_csv_data,
                 "document": doc_data,
@@ -243,10 +306,12 @@ def dump_fixtures(out_dir: Path | None = None) -> list[str]:
                 "csv_columns": csv_cols_data,
             }
 
+            # (e) Write every fixture file as bytes with \n line endings
             for name, data in fixture_map.items():
                 fpath = target_dir / f"{name}.json"
                 content = json.dumps(data, indent=2, sort_keys=True) + "\n"
-                fpath.write_text(content, encoding="utf-8")
+                content = content.replace("\r\n", "\n")
+                fpath.write_bytes(content.encode("utf-8"))
                 saved_files.append(fpath.name)
 
     finally:
@@ -262,5 +327,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-

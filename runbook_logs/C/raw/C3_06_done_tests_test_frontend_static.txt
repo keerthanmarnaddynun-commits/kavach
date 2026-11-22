@@ -1,0 +1,5 @@
+COMMAND: PY -m pytest -q tests/test_frontend_static.py
+EXIT: 0
+--- OUTPUT ---
+..                                                                       [100%]
+2 passed in 0.12s
