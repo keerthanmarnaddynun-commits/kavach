@@ -21,8 +21,20 @@ export function compareTableValues(valA, valB, isNumeric, isIdentifier, dir = "a
     const numB = Number(valB);
     cmp = numA - numB;
   } else {
-    const strA = Array.isArray(valA) ? valA.join(", ") : String(valA);
-    const strB = Array.isArray(valB) ? valB.join(", ") : String(valB);
+    const toText = (v) => {
+      if (Array.isArray(v)) {
+        return v
+          .map((x) =>
+            typeof x === "object" && x !== null
+              ? x.chip || x.name || x.role || ""
+              : String(x)
+          )
+          .join(", ");
+      }
+      return String(v);
+    };
+    const strA = toText(valA);
+    const strB = toText(valB);
     cmp = strA.localeCompare(strB, undefined, { numeric: !isIdentifier, sensitivity: "base" });
   }
 

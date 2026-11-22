@@ -65,11 +65,15 @@ export function People({ caseId }) {
       render: (roles) => (
         <div style={{ display: "flex", gap: "4px", flexWrap: "wrap" }}>
           {Array.isArray(roles) && roles.length > 0
-            ? roles.map((r, i) => (
-                <span key={i} className="role-chip">
-                  {r}
-                </span>
-              ))
+            ? roles.map((r, i) => {
+                const label = typeof r === "object" && r !== null ? (r.chip || r.name || r.role || "") : String(r);
+                const tip = typeof r === "object" && r !== null ? (r.reason || undefined) : undefined;
+                return (
+                  <span key={i} className="role-chip" title={tip}>
+                    {label}
+                  </span>
+                );
+              })
             : "-"}
         </div>
       ),

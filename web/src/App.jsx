@@ -58,6 +58,13 @@ export function App() {
     }
   }, [routeCaseId, activeCaseId]);
 
+  // Sync default route #/cases to active case overview once loaded
+  useEffect(() => {
+    if (activeCaseId && (route === "#/cases" || route === "#/" || !route)) {
+      window.location.hash = `#/case/${activeCaseId}/overview`;
+    }
+  }, [activeCaseId, route]);
+
   // Auth me check on load
   useEffect(() => {
     const token = getToken();
@@ -233,19 +240,21 @@ export function App() {
           {isLogin ? (
             <Login onLoginSuccess={() => (window.location.hash = "#/cases")} />
           ) : (
-            <CaseContentView
-              caseId={activeCaseId}
-              route={route}
-              subPage={subPage}
-              user={user}
-              activeCase={activeCase}
-              onCaseUpdated={handleCaseUpdated}
-              onLimitsLoaded={(limits) => {
-                if (limits && activeCaseLeads) {
-                  // Leads loaded via Overview
-                }
-              }}
-            />
+            <ErrorBoundary>
+              <CaseContentView
+                caseId={activeCaseId}
+                route={route}
+                subPage={subPage}
+                user={user}
+                activeCase={activeCase}
+                onCaseUpdated={handleCaseUpdated}
+                onLimitsLoaded={(limits) => {
+                  if (limits && activeCaseLeads) {
+                    // Leads loaded via Overview
+                  }
+                }}
+              />
+            </ErrorBoundary>
           )}
         </main>
       </div>
@@ -352,6 +361,42 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
       </p>
     </div>
   );
+}
+
+export class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("ErrorBoundary caught error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: "16px", color: "var(--danger, #c00)" }}>
+          <h4 style={{ marginBottom: "8px" }}>View rendering error</h4>
+          <pre style={{ fontSize: "11px", whiteSpace: "pre-wrap" }}>
+            {this.state.error?.message || String(this.state.error)}
+          </pre>
+          <button
+            type="button"
+            onClick={() => this.setState({ hasError: false, error: null })}
+            style={{ marginTop: "8px" }}
+          >
+            Retry
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
 }
 
 export default App;
