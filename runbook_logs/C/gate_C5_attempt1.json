@@ -1,0 +1,59 @@
+{
+  "files": [
+    "web/src/pages/evidenceHelpers.js",
+    "web/src/pages/evidenceHelpers.test.js",
+    "web/src/App.jsx",
+    "web/src/pages/EvidenceDoc.jsx",
+    "web/src/pages/EvidenceRows.jsx"
+  ],
+  "fingerprint": "7d78b542d5818729664f8ba4203d857241fa7bf25c795cced31216cdbef07be2",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 631, log C5_03_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log C5_04_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log C5_05_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log C5_06_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "C5",
+  "tests_passed": 631,
+  "time": "2026-11-22 09:51:11"
+}

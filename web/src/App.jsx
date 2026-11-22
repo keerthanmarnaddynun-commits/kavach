@@ -314,15 +314,14 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
   const docMatch = route.match(/^#\/case\/[^/]+\/evidence\/doc\/(.+)$/);
   if (docMatch) {
     const docId = docMatch[1].split("?")[0];
-    return <EvidenceDoc caseId={caseId} docId={docId} />;
+    return <EvidenceDoc caseId={caseId} docId={docId} route={route} />;
   }
 
   // Evidence rows route: #/case/<id>/evidence/rows/<file>?rows=...
   const rowsMatch = route.match(/^#\/case\/[^/]+\/evidence\/rows\/([^?]+)(?:\?rows=(.*))?$/);
   if (rowsMatch) {
     const fileKind = rowsMatch[1];
-    const rowsParam = rowsMatch[2] || "";
-    return <EvidenceRows caseId={caseId} fileKind={fileKind} rowsParam={rowsParam} />;
+    return <EvidenceRows caseId={caseId} fileKind={fileKind} route={route} />;
   }
 
   if (subPage === "intake") {

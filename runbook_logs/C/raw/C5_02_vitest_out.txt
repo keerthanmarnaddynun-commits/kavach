@@ -1,0 +1,29 @@
+COMMAND: PY -c import subprocess, sys; res = subprocess.run(['npm', 'test'], cwd='web', shell=True, capture_output=True, text=True); print(res.stdout); print(res.stderr); sys.exit(res.returncode)
+EXIT: 0
+SECONDS: 1.5
+--- OUTPUT ---
+
+> kavach-web@1.0.0 test
+> vitest run
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.8 [39m[90mC:/Users/Kirthan/Desktop/crimi-nex/web[39m
+
+ [32m✓[39m src/pages/intakeReducers.test.js [2m([22m[2m13 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m src/pages/evidenceHelpers.test.js [2m([22m[2m10 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+ [32m✓[39m src/pages/graphHelpers.test.js [2m([22m[2m9 tests[22m[2m)[22m[90m 9[2mms[22m[39m
+ [32m✓[39m src/lib/roles.test.js [2m([22m[2m2 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m src/pages/overviewHelpers.test.js [2m([22m[2m5 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m src/pages/peopleHelpers.test.js [2m([22m[2m6 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m src/api/client.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32m✓[39m src/api/sse.test.js [2m([22m[2m4 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32m✓[39m src/components/Table.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 15[2mms[22m[39m
+ [32m✓[39m src/lib/format.test.js [2m([22m[2m4 tests[22m[2m)[22m[90m 20[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m10 passed[39m[22m[90m (10)[39m
+[2m      Tests [22m [1m[32m67 passed[39m[22m[90m (67)[39m
+[2m   Start at [22m 09:47:27
+[2m   Duration [22m 709ms[2m (transform 258ms, setup 0ms, collect 582ms, tests 86ms, environment 2ms, prepare 2.08s)[22m
+
+
+
