@@ -1,0 +1,799 @@
+{
+  "meta": {
+    "run_id": "step5b_ner_baseline_r2",
+    "created_at": "2026-11-23T17:11:03.201573+00:00",
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "python_version_short": "3.11.9",
+    "torch_version": "2.1.0+cpu",
+    "transformers_version": "4.35.2",
+    "command": "python scripts/report/step5b_ner_baseline.py --run-id step5b_ner_baseline_r2",
+    "pytest_command": "python -m pytest -v tests/test_ner_baseline.py"
+  },
+  "input_hashes": {
+    "ner_baseline_py": "fce2f5061807bf99e4ac69a0f121c609dc7783b1ee023ec86be6bd436c73465b",
+    "scoring_py": "f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b",
+    "test_ner_baseline_py": "fed7cc9b594cc45cea122bd44c41d0cbb29d084dab03236afa45346598e570f8",
+    "firs_v5_index_json": "a21ef522c2a21a8f098ae317742ecb2bb99d4f17b27ffeb6854a4b86e5c38f85",
+    "firs_v5_combined": "4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949"
+  },
+  "dataset_counts": {
+    "total_firs": 100,
+    "total_gold_mentions": 1235
+  },
+  "determinism": {
+    "davlan_xlm_roberta_base_ner_hrl": {
+      "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+      "run1_sha256": "bcd2d21bd44cf8dd9f5d8421ccae0bc2303ad2945b11250af63abdcb2cdac2ea",
+      "run2_sha256": "bcd2d21bd44cf8dd9f5d8421ccae0bc2303ad2945b11250af63abdcb2cdac2ea",
+      "match": true
+    },
+    "ai4bharat_indicner": {
+      "model_name": "ai4bharat/IndicNER",
+      "run1_sha256": "5b53a73634412b11cbe7c73299bba9d346f4c94e1f259302d4b6886d71637b96",
+      "run2_sha256": "5b53a73634412b11cbe7c73299bba9d346f4c94e1f259302d4b6886d71637b96",
+      "match": true
+    }
+  },
+  "stride_and_runtime": {
+    "davlan_xlm_roberta_base_ner_hrl": {
+      "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+      "texts_needing_stride": 0,
+      "texts_with_stride": [],
+      "runtime_seconds": 65.31755495071411,
+      "max_length": 512,
+      "stride_value": 64
+    },
+    "ai4bharat_indicner": {
+      "model_name": "ai4bharat/IndicNER",
+      "texts_needing_stride": 2,
+      "texts_with_stride": [
+        "FIR_41",
+        "FIR_45"
+      ],
+      "runtime_seconds": 80.78915190696716,
+      "max_length": 512,
+      "stride_value": 64
+    }
+  },
+  "models": {
+    "davlan_xlm_roberta_base_ner_hrl": {
+      "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+      "overall": {
+        "RAW": {
+          "PERSON_ONLY": {
+            "strict": {
+              "tp": 3,
+              "fp": 693,
+              "fn": 380,
+              "precision": 0.004310344827586207,
+              "recall": 0.007832898172323759,
+              "f1": 0.005560704355885079
+            },
+            "lenient": {
+              "tp": 383,
+              "fp": 313,
+              "fn": 0,
+              "precision": 0.5502873563218391,
+              "recall": 1.0,
+              "f1": 0.7099165894346617
+            }
+          },
+          "ALL_NAMES": {
+            "strict": {
+              "tp": 7,
+              "fp": 689,
+              "fn": 658,
+              "precision": 0.010057471264367816,
+              "recall": 0.010526315789473684,
+              "f1": 0.010286554004408522
+            },
+            "lenient": {
+              "tp": 631,
+              "fp": 65,
+              "fn": 34,
+              "precision": 0.9066091954022989,
+              "recall": 0.9488721804511279,
+              "f1": 0.9272593681116826
+            }
+          }
+        },
+        "POSTPROCESSED": {
+          "PERSON_ONLY": {
+            "strict": {
+              "tp": 376,
+              "fp": 262,
+              "fn": 7,
+              "precision": 0.5893416927899686,
+              "recall": 0.9817232375979112,
+              "f1": 0.7365328109696376
+            },
+            "lenient": {
+              "tp": 383,
+              "fp": 255,
+              "fn": 0,
+              "precision": 0.6003134796238244,
+              "recall": 1.0,
+              "f1": 0.7502448579823702
+            }
+          },
+          "ALL_NAMES": {
+            "strict": {
+              "tp": 586,
+              "fp": 52,
+              "fn": 79,
+              "precision": 0.9184952978056427,
+              "recall": 0.881203007518797,
+              "f1": 0.8994627782041443
+            },
+            "lenient": {
+              "tp": 631,
+              "fp": 7,
+              "fn": 34,
+              "precision": 0.9890282131661442,
+              "recall": 0.9488721804511279,
+              "f1": 0.9685341519570223
+            }
+          }
+        }
+      },
+      "postprocessed_all_names": {
+        "by_language": {
+          "hinglish": {
+            "strict": {
+              "tp": 391,
+              "fp": 36,
+              "fn": 39,
+              "precision": 0.9156908665105387,
+              "recall": 0.9093023255813953,
+              "f1": 0.912485414235706
+            },
+            "lenient": {
+              "tp": 423,
+              "fp": 4,
+              "fn": 7,
+              "precision": 0.990632318501171,
+              "recall": 0.9837209302325581,
+              "f1": 0.987164527421237
+            }
+          },
+          "hindi": {
+            "strict": {
+              "tp": 97,
+              "fp": 4,
+              "fn": 27,
+              "precision": 0.9603960396039604,
+              "recall": 0.782258064516129,
+              "f1": 0.8622222222222222
+            },
+            "lenient": {
+              "tp": 98,
+              "fp": 3,
+              "fn": 26,
+              "precision": 0.9702970297029703,
+              "recall": 0.7903225806451613,
+              "f1": 0.8711111111111111
+            }
+          },
+          "english": {
+            "strict": {
+              "tp": 98,
+              "fp": 12,
+              "fn": 13,
+              "precision": 0.8909090909090909,
+              "recall": 0.8828828828828829,
+              "f1": 0.8868778280542986
+            },
+            "lenient": {
+              "tp": 110,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.990990990990991,
+              "f1": 0.9954751131221719
+            }
+          }
+        },
+        "by_split": {
+          "train": {
+            "strict": {
+              "tp": 355,
+              "fp": 30,
+              "fn": 48,
+              "precision": 0.922077922077922,
+              "recall": 0.8808933002481389,
+              "f1": 0.9010152284263959
+            },
+            "lenient": {
+              "tp": 381,
+              "fp": 4,
+              "fn": 22,
+              "precision": 0.9896103896103896,
+              "recall": 0.9454094292803971,
+              "f1": 0.9670050761421319
+            }
+          },
+          "dev": {
+            "strict": {
+              "tp": 113,
+              "fp": 10,
+              "fn": 17,
+              "precision": 0.9186991869918699,
+              "recall": 0.8692307692307693,
+              "f1": 0.8932806324110673
+            },
+            "lenient": {
+              "tp": 122,
+              "fp": 1,
+              "fn": 8,
+              "precision": 0.991869918699187,
+              "recall": 0.9384615384615385,
+              "f1": 0.9644268774703556
+            }
+          },
+          "test": {
+            "strict": {
+              "tp": 118,
+              "fp": 12,
+              "fn": 14,
+              "precision": 0.9076923076923077,
+              "recall": 0.8939393939393939,
+              "f1": 0.900763358778626
+            },
+            "lenient": {
+              "tp": 128,
+              "fp": 2,
+              "fn": 4,
+              "precision": 0.9846153846153847,
+              "recall": 0.9696969696969697,
+              "f1": 0.9770992366412214
+            }
+          }
+        }
+      },
+      "decoded_word_check": {
+        "by_language": {
+          "hinglish": {
+            "total_spans": 463,
+            "mismatches": 0,
+            "examples": []
+          },
+          "hindi": {
+            "total_spans": 117,
+            "mismatches": 0,
+            "examples": []
+          },
+          "english": {
+            "total_spans": 116,
+            "mismatches": 0,
+            "examples": []
+          }
+        }
+      },
+      "gold_classification": {
+        "PERSON": {
+          "total": 383,
+          "strict_hit": 376,
+          "lenient_only": 7,
+          "missed": 0,
+          "strict_plus_lenient": 383
+        },
+        "ALIAS": {
+          "total": 155,
+          "strict_hit": 95,
+          "lenient_only": 27,
+          "missed": 33,
+          "strict_plus_lenient": 122
+        },
+        "FATHER": {
+          "total": 127,
+          "strict_hit": 115,
+          "lenient_only": 12,
+          "missed": 0,
+          "strict_plus_lenient": 127
+        },
+        "TOTAL": {
+          "total": 665,
+          "strict_hit": 586,
+          "lenient_only": 46,
+          "missed": 33,
+          "strict_plus_lenient": 632,
+          "lenient_tp": 631
+        }
+      },
+      "error_examples": {
+        "strict_miss_lenient_hit": [
+          {
+            "doc_id": "FIR_02",
+            "gold_text": "Pandit",
+            "pred_text": "Pand"
+          },
+          {
+            "doc_id": "FIR_02",
+            "gold_text": "Madan Tiwari",
+            "pred_text": "Shri Madan Tiwari"
+          },
+          {
+            "doc_id": "FIR_05",
+            "gold_text": "Shyam Verma",
+            "pred_text": "Shri Shyam Verma"
+          },
+          {
+            "doc_id": "FIR_05",
+            "gold_text": "Madan Tiwari",
+            "pred_text": "Shri Madan Tiwari"
+          },
+          {
+            "doc_id": "FIR_08",
+            "gold_text": "Kallu",
+            "pred_text": "lu"
+          }
+        ],
+        "missed": [
+          {
+            "doc_id": "FIR_03",
+            "gold_type": "ALIAS",
+            "gold_text": "Sunny"
+          },
+          {
+            "doc_id": "FIR_04",
+            "gold_type": "ALIAS",
+            "gold_text": "Shooter"
+          },
+          {
+            "doc_id": "FIR_20",
+            "gold_type": "ALIAS",
+            "gold_text": "Hawai"
+          },
+          {
+            "doc_id": "FIR_24",
+            "gold_type": "ALIAS",
+            "gold_text": "Shooter"
+          },
+          {
+            "doc_id": "FIR_40",
+            "gold_type": "ALIAS",
+            "gold_text": "Hawai"
+          }
+        ],
+        "false_positive": [
+          {
+            "doc_id": "FIR_30",
+            "pred_text": "Shri"
+          },
+          {
+            "doc_id": "FIR_31",
+            "pred_text": "Zabt"
+          },
+          {
+            "doc_id": "FIR_31",
+            "pred_text": "Zabt"
+          },
+          {
+            "doc_id": "FIR_45",
+            "pred_text": "\u0936\u094d\u0930\u0940"
+          },
+          {
+            "doc_id": "FIR_75",
+            "pred_text": "\u0936\u094d\u0930\u0940"
+          }
+        ]
+      }
+    },
+    "ai4bharat_indicner": {
+      "model_name": "ai4bharat/IndicNER",
+      "overall": {
+        "RAW": {
+          "PERSON_ONLY": {
+            "strict": {
+              "tp": 42,
+              "fp": 848,
+              "fn": 341,
+              "precision": 0.04719101123595506,
+              "recall": 0.10966057441253264,
+              "f1": 0.06598586017282011
+            },
+            "lenient": {
+              "tp": 283,
+              "fp": 607,
+              "fn": 100,
+              "precision": 0.31797752808988766,
+              "recall": 0.7389033942558747,
+              "f1": 0.4446190102120974
+            }
+          },
+          "ALL_NAMES": {
+            "strict": {
+              "tp": 50,
+              "fp": 840,
+              "fn": 615,
+              "precision": 0.056179775280898875,
+              "recall": 0.07518796992481203,
+              "f1": 0.06430868167202572
+            },
+            "lenient": {
+              "tp": 450,
+              "fp": 440,
+              "fn": 215,
+              "precision": 0.5056179775280899,
+              "recall": 0.6766917293233082,
+              "f1": 0.5787781350482315
+            }
+          }
+        },
+        "POSTPROCESSED": {
+          "PERSON_ONLY": {
+            "strict": {
+              "tp": 72,
+              "fp": 718,
+              "fn": 311,
+              "precision": 0.09113924050632911,
+              "recall": 0.18798955613577023,
+              "f1": 0.12276214833759592
+            },
+            "lenient": {
+              "tp": 283,
+              "fp": 507,
+              "fn": 100,
+              "precision": 0.35822784810126584,
+              "recall": 0.7389033942558747,
+              "f1": 0.4825234441602728
+            }
+          },
+          "ALL_NAMES": {
+            "strict": {
+              "tp": 86,
+              "fp": 704,
+              "fn": 579,
+              "precision": 0.10886075949367088,
+              "recall": 0.1293233082706767,
+              "f1": 0.118213058419244
+            },
+            "lenient": {
+              "tp": 450,
+              "fp": 340,
+              "fn": 215,
+              "precision": 0.569620253164557,
+              "recall": 0.6766917293233082,
+              "f1": 0.6185567010309279
+            }
+          }
+        }
+      },
+      "postprocessed_all_names": {
+        "by_language": {
+          "hinglish": {
+            "strict": {
+              "tp": 16,
+              "fp": 507,
+              "fn": 414,
+              "precision": 0.030592734225621414,
+              "recall": 0.037209302325581395,
+              "f1": 0.03357817418677859
+            },
+            "lenient": {
+              "tp": 247,
+              "fp": 276,
+              "fn": 183,
+              "precision": 0.4722753346080306,
+              "recall": 0.5744186046511628,
+              "f1": 0.5183630640083946
+            }
+          },
+          "hindi": {
+            "strict": {
+              "tp": 27,
+              "fp": 123,
+              "fn": 97,
+              "precision": 0.18,
+              "recall": 0.21774193548387097,
+              "f1": 0.19708029197080293
+            },
+            "lenient": {
+              "tp": 108,
+              "fp": 42,
+              "fn": 16,
+              "precision": 0.72,
+              "recall": 0.8709677419354839,
+              "f1": 0.7883211678832117
+            }
+          },
+          "english": {
+            "strict": {
+              "tp": 43,
+              "fp": 74,
+              "fn": 68,
+              "precision": 0.36752136752136755,
+              "recall": 0.38738738738738737,
+              "f1": 0.37719298245614036
+            },
+            "lenient": {
+              "tp": 95,
+              "fp": 22,
+              "fn": 16,
+              "precision": 0.811965811965812,
+              "recall": 0.8558558558558559,
+              "f1": 0.8333333333333335
+            }
+          }
+        },
+        "by_split": {
+          "train": {
+            "strict": {
+              "tp": 50,
+              "fp": 446,
+              "fn": 353,
+              "precision": 0.10080645161290322,
+              "recall": 0.12406947890818859,
+              "f1": 0.11123470522803114
+            },
+            "lenient": {
+              "tp": 281,
+              "fp": 215,
+              "fn": 122,
+              "precision": 0.5665322580645161,
+              "recall": 0.6972704714640199,
+              "f1": 0.625139043381535
+            }
+          },
+          "dev": {
+            "strict": {
+              "tp": 16,
+              "fp": 137,
+              "fn": 114,
+              "precision": 0.10457516339869281,
+              "recall": 0.12307692307692308,
+              "f1": 0.11307420494699646
+            },
+            "lenient": {
+              "tp": 88,
+              "fp": 65,
+              "fn": 42,
+              "precision": 0.5751633986928104,
+              "recall": 0.676923076923077,
+              "f1": 0.6219081272084805
+            }
+          },
+          "test": {
+            "strict": {
+              "tp": 20,
+              "fp": 121,
+              "fn": 112,
+              "precision": 0.14184397163120568,
+              "recall": 0.15151515151515152,
+              "f1": 0.14652014652014653
+            },
+            "lenient": {
+              "tp": 81,
+              "fp": 60,
+              "fn": 51,
+              "precision": 0.574468085106383,
+              "recall": 0.6136363636363636,
+              "f1": 0.5934065934065934
+            }
+          }
+        }
+      },
+      "decoded_word_check": {
+        "by_language": {
+          "hinglish": {
+            "total_spans": 540,
+            "mismatches": 437,
+            "examples": [
+              {
+                "word": "vik",
+                "slice": "Vik",
+                "start": 213,
+                "end": 216
+              },
+              {
+                "word": "hari",
+                "slice": "Hari",
+                "start": 260,
+                "end": 264
+              },
+              {
+                "word": "vik",
+                "slice": "Vik",
+                "start": 365,
+                "end": 368
+              },
+              {
+                "word": "vik",
+                "slice": "Vik",
+                "start": 776,
+                "end": 779
+              },
+              {
+                "word": "za",
+                "slice": "Za",
+                "start": 863,
+                "end": 865
+              }
+            ]
+          },
+          "hindi": {
+            "total_spans": 202,
+            "mismatches": 98,
+            "examples": [
+              {
+                "word": "\u0938\u0928\u0940\u0932 \u0915\u092e\u093e\u0930",
+                "slice": "\u0938\u0941\u0928\u0940\u0932 \u0915\u0941\u092e\u093e\u0930",
+                "start": 196,
+                "end": 207
+              },
+              {
+                "word": "\u092d\u0917\u0935\u093e\u0928 \u0915\u092e\u093e\u0930",
+                "slice": "\u092d\u0917\u0935\u093e\u0928 \u0915\u0941\u092e\u093e\u0930",
+                "start": 228,
+                "end": 239
+              },
+              {
+                "word": "##\u0928\u0926 \u0935\u0930\u092e\u093e",
+                "slice": "\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e",
+                "start": 531,
+                "end": 540
+              },
+              {
+                "word": "\u090f\u0921",
+                "slice": "\u090f\u0902\u0921",
+                "start": 546,
+                "end": 549
+              },
+              {
+                "word": "\u0938\u0928",
+                "slice": "\u0938\u0941\u0928",
+                "start": 630,
+                "end": 633
+              }
+            ]
+          },
+          "english": {
+            "total_spans": 148,
+            "mismatches": 147,
+            "examples": [
+              {
+                "word": "sure",
+                "slice": "Sure",
+                "start": 208,
+                "end": 212
+              },
+              {
+                "word": "pal",
+                "slice": "Pal",
+                "start": 215,
+                "end": 218
+              },
+              {
+                "word": "moh",
+                "slice": "Moh",
+                "start": 240,
+                "end": 243
+              },
+              {
+                "word": "pal",
+                "slice": "Pal",
+                "start": 246,
+                "end": 249
+              },
+              {
+                "word": "amit tomar",
+                "slice": "Amit Tomar",
+                "start": 294,
+                "end": 304
+              }
+            ]
+          }
+        }
+      },
+      "gold_classification": {
+        "PERSON": {
+          "total": 383,
+          "strict_hit": 72,
+          "lenient_only": 211,
+          "missed": 100,
+          "strict_plus_lenient": 283
+        },
+        "ALIAS": {
+          "total": 155,
+          "strict_hit": 6,
+          "lenient_only": 53,
+          "missed": 96,
+          "strict_plus_lenient": 59
+        },
+        "FATHER": {
+          "total": 127,
+          "strict_hit": 8,
+          "lenient_only": 101,
+          "missed": 18,
+          "strict_plus_lenient": 109
+        },
+        "TOTAL": {
+          "total": 665,
+          "strict_hit": 86,
+          "lenient_only": 365,
+          "missed": 214,
+          "strict_plus_lenient": 451,
+          "lenient_tp": 450
+        }
+      },
+      "error_examples": {
+        "strict_miss_lenient_hit": [
+          {
+            "doc_id": "FIR_01",
+            "gold_text": "Vikas Sharma",
+            "pred_text": "Vik"
+          },
+          {
+            "doc_id": "FIR_01",
+            "gold_text": "Harish Sharma",
+            "pred_text": "Hari"
+          },
+          {
+            "doc_id": "FIR_01",
+            "gold_text": "Vikas Sharma",
+            "pred_text": "Vik"
+          },
+          {
+            "doc_id": "FIR_01",
+            "gold_text": "Vikas Sharma",
+            "pred_text": "Vik"
+          },
+          {
+            "doc_id": "FIR_01",
+            "gold_text": "Arvind Swaminathan",
+            "pred_text": "Arv"
+          }
+        ],
+        "missed": [
+          {
+            "doc_id": "FIR_01",
+            "gold_type": "ALIAS",
+            "gold_text": "Bicky"
+          },
+          {
+            "doc_id": "FIR_01",
+            "gold_type": "ALIAS",
+            "gold_text": "Viku"
+          },
+          {
+            "doc_id": "FIR_01",
+            "gold_type": "ALIAS",
+            "gold_text": "Kallu"
+          },
+          {
+            "doc_id": "FIR_01",
+            "gold_type": "PERSON",
+            "gold_text": "Rajendra Singh"
+          },
+          {
+            "doc_id": "FIR_01",
+            "gold_type": "ALIAS",
+            "gold_text": "Biku"
+          }
+        ],
+        "false_positive": [
+          {
+            "doc_id": "FIR_01",
+            "pred_text": "Za"
+          },
+          {
+            "doc_id": "FIR_01",
+            "pred_text": "kar"
+          },
+          {
+            "doc_id": "FIR_02",
+            "pred_text": "za"
+          },
+          {
+            "doc_id": "FIR_03",
+            "pred_text": "Mau"
+          },
+          {
+            "doc_id": "FIR_05",
+            "pred_text": "za"
+          }
+        ]
+      }
+    }
+  }
+}

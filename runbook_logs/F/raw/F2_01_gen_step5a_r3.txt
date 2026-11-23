@@ -1,0 +1,15 @@
+COMMAND: PY scripts/report/step5_baseline.py --run-id step5a_baseline_r3
+EXIT: 1
+SECONDS: 2.4
+--- OUTPUT ---
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scripts\report\step5_baseline.py", line 776, in <module>
+    main()
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scripts\report\step5_baseline.py", line 730, in main
+    step5a_md = build_markdown_section(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scripts\report\step5_baseline.py", line 498, in build_markdown_section
+    validate_markdown_tables_and_rules(section)
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scripts\report\step5_baseline.py", line 264, in validate_markdown_tables_and_rules
+    raise ValueError(f"Forbidden word {w!r} found in generated markdown.")
+ValueError: Forbidden word 'perfect' found in generated markdown.

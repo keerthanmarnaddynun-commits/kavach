@@ -1,0 +1,14 @@
+COMMAND: PY scripts/report/step5b_ner_baseline.py --run-id step5b_ner_baseline_r2
+EXIT: 0
+SECONDS: 329.5
+--- OUTPUT ---
+Step 5b baseline completed successfully.
+New folder: C:\Users\Kirthan\Desktop\crimi-nex\results\2026-11-23_step5b_ner_baseline_r2
+STEP1 hash: 741f5305847741679ee03cebaf70ad0e7a48a78355aeb1c1e0c27358dd9d369f
+STEP2 hash: 7d46c0c4fc9a736432f0d701e1b308180754543746bdfb7f2a374afe917e0021
+STEP5A hash: 4d3508f8c57ad84b33f20aca2783624cf12d42ae1800937892739eecbeec269c
+C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Lib\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Lib\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Token indices sequence length is longer than the specified maximum sequence length for this model (514 > 512). Running this sequence through the model will result in indexing errors

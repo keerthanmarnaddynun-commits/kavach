@@ -1,0 +1,4 @@
+COMMAND: PY scripts/check_results_docs.py docs/RESULTS.md STEP5A STEP5B
+EXIT: 0
+--- OUTPUT ---
+DOCS OK

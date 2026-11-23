@@ -1,0 +1,23 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 14 items
+
+tests/test_scoring.py::test_perfect_predictions_give_one PASSED          [  7%]
+tests/test_scoring.py::test_empty_predictions_give_recall_zero_and_precision_none PASSED [ 14%]
+tests/test_scoring.py::test_span_shifted_by_one_character_strict_miss_lenient_hit PASSED [ 21%]
+tests/test_scoring.py::test_wrong_type_is_fp_and_fn PASSED               [ 28%]
+tests/test_scoring.py::test_duplicate_prediction_is_one_tp_plus_one_fp PASSED [ 35%]
+tests/test_scoring.py::test_three_gold_two_correct_one_extra_precision_and_recall_two_thirds PASSED [ 42%]
+tests/test_scoring.py::test_group_by_split_and_language_add_up_to_overall PASSED [ 50%]
+tests/test_scoring.py::test_relations_gold_used_as_predictions_gives_one PASSED [ 57%]
+tests/test_scoring.py::test_relations_dropping_one_relation_lowers_recall PASSED [ 64%]
+tests/test_scoring.py::test_relations_wrong_label_gives_fp_and_fn PASSED [ 71%]
+tests/test_scoring.py::test_relations_swapped_source_and_target_is_wrong PASSED [ 78%]
+tests/test_scoring.py::test_relations_wrong_amount_is_wrong PASSED       [ 85%]
+tests/test_scoring.py::test_entity_alignment_one_to_one PASSED           [ 92%]
+tests/test_scoring.py::test_load_gold_mentions_total_and_counts PASSED   [100%]
+
+============================= 14 passed in 0.41s ==============================

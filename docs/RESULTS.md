@@ -320,8 +320,8 @@
 
 ### Results Card
 - **Purpose**: Baseline evaluation of Indian identifier extraction against synthetic First Information Report narrative texts and relational ground truth using strict and lenient scoring metrics.
-- **Exact Command**: `python scripts/report/step5_baseline.py --run-id step5a_baseline_r2`
-- **Exact Pytest Command**: `C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe -m pytest -v tests/test_scoring.py`
+- **Exact Command**: `python scripts/report/step5_baseline.py --run-id step5a_baseline_r4`
+- **Exact Pytest Command**: `python -m pytest -v tests/test_scoring.py`
 - **Input Files**:
   - `ai_pipeline/scoring.py` (SHA-256: `f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b`)
   - `ai_pipeline/identifiers.py` (SHA-256: `3dc5b861b5f048ae675608915853b78fa745ded9c9f900604930ac7abdf01d99`)
@@ -332,9 +332,9 @@
   - Combined `firs_v5` texts and answer keys (SHA-256: `4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949`)
   - Combined `firs_v5_contract` documents (SHA-256: `98cd05e846ee59c9be4bde1877f84fde630dc3c2c232f8b8ed347b81d46e90c6`)
 - **Output Files**:
-  - `metrics.json` (SHA-256: `def9e3ee53d6ddd8eb678281012a1df5012149ab58b146e191d1eebfb8582ca7`)
-  - `pytest_raw.txt` (SHA-256: `0546b36cf70db0fe43fd6a9a89a1428430543560b252fe8ad8cea28e8a20bf3b`)
-  - `SHA256SUMS.txt` (SHA-256: `d929002832a961e257ca4835c7c9b6a0ec101eebdbf006e81a10fcb6aa1e99b2`)
+  - `metrics.json` (SHA-256: `1d6beb0f8c95c642d4fae5ff931e47378a6a3097ec5c58b78b4706fdf6c45210`)
+  - `pytest_raw.txt` (SHA-256: `f1c82fc333c41df03d71435611803ed6f8a600d206e6355fcd620de9bf54bf6e`)
+  - `SHA256SUMS.txt` (SHA-256: `13fe2d2d6ae34d9a5e4c4ba93212375551fd261685b40e2c31ad3c4406e23f81`)
 - **Key Numbers**:
   - `metrics.json` (`dataset_counts.total_firs`): 100 total documents
   - `metrics.json` (`dataset_counts.total_gold_mentions`): 1235 total ground truth mentions
@@ -461,8 +461,8 @@
 
 ### Results Card
 - **Purpose**: Baseline evaluation of pre-trained multilingual and Indic Named Entity Recognition models against synthetic First Information Report narratives and ground truth name entities.
-- **Exact Command**: `python scripts/report/step5b_ner_baseline.py --run-id step5b_ner_baseline`
-- **Exact Pytest Command**: `C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe -m pytest -v tests/test_ner_baseline.py`
+- **Exact Command**: `python scripts/report/step5b_ner_baseline.py --run-id step5b_ner_baseline_r2`
+- **Exact Pytest Command**: `python -m pytest -v tests/test_ner_baseline.py`
 - **Input Files**:
   - `ai_pipeline/ner_baseline.py` (SHA-256: `fce2f5061807bf99e4ac69a0f121c609dc7783b1ee023ec86be6bd436c73465b`)
   - `ai_pipeline/scoring.py` (SHA-256: `f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b`)
@@ -470,13 +470,13 @@
   - `data/synthetic/out/firs_v5/index.json` (SHA-256: `a21ef522c2a21a8f098ae317742ecb2bb99d4f17b27ffeb6854a4b86e5c38f85`)
   - Combined `firs_v5` texts and answer keys (SHA-256: `4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949`)
 - **Output Files**:
-  - `metrics.json` (SHA-256: `c02e32ee18c59574ee22722513b35c8e4da9012735d00aa842d9d4ae1883d053`)
-  - `pytest_raw.txt` (SHA-256: `dff513f93439c92719cf5dbce52a7db1f9aed742dae77af1178af4e7c314b05c`)
+  - `metrics.json` (SHA-256: `de311827262ada8e7d24e14333f0d839fe9af3703c84ce2eccc613ab7e3df4f2`)
+  - `pytest_raw.txt` (SHA-256: `da27e4e53e60f2657468a34208c9d0bfb39adf693189703b137dbb3125a67706`)
   - `raw_davlan_xlm_roberta_base_ner_hrl_run1.json` (SHA-256: `bcd2d21bd44cf8dd9f5d8421ccae0bc2303ad2945b11250af63abdcb2cdac2ea`)
   - `raw_davlan_xlm_roberta_base_ner_hrl_run2.json` (SHA-256: `bcd2d21bd44cf8dd9f5d8421ccae0bc2303ad2945b11250af63abdcb2cdac2ea`)
   - `raw_ai4bharat_indicner_run1.json` (SHA-256: `5b53a73634412b11cbe7c73299bba9d346f4c94e1f259302d4b6886d71637b96`)
   - `raw_ai4bharat_indicner_run2.json` (SHA-256: `5b53a73634412b11cbe7c73299bba9d346f4c94e1f259302d4b6886d71637b96`)
-  - `SHA256SUMS.txt` (SHA-256: `e8aa8c1b9e369f86278d6149cf340c248d40f253d52601428e59d7d51244ac49`)
+  - `SHA256SUMS.txt` (SHA-256: `88535d61ddd670230a935b0e7672acd10243afe14057b70352ab27837aecdcbe`)
 - **Key Numbers**:
   - `metrics.json` (`determinism.davlan_xlm_roberta_base_ner_hrl.match`): True XLM-R determinism match between runs
   - `metrics.json` (`determinism.ai4bharat_indicner.match`): True IndicNER determinism match between runs
@@ -579,8 +579,8 @@
 #### Table F: Stride and Runtime Summary
 | Model | Texts Evaluated | Texts Needing Stride | Model Max Length | Stride Parameter | Runtime Seconds |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Davlan/xlm-roberta-base-ner-hrl | 100 | 0 | 512 | 64 | 52.56 |
-| ai4bharat/IndicNER | 100 | 2 | 512 | 64 | 97.79 |
+| Davlan/xlm-roberta-base-ner-hrl | 100 | 0 | 512 | 64 | 65.32 |
+| ai4bharat/IndicNER | 100 | 2 | 512 | 64 | 80.79 |
 
 #### Table G: Input Hashes
 | Component File | SHA-256 Digest | Evaluation Role |

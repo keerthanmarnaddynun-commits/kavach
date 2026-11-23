@@ -1,0 +1,5074 @@
+{
+  "FIR_01": [
+    {
+      "end": 225,
+      "score": 0.9982430934906006,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 231,
+      "score": 0.9955390095710754,
+      "start": 229,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 235,
+      "score": 0.8560734987258911,
+      "start": 231,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 242,
+      "score": 0.9415019750595093,
+      "start": 237,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 250,
+      "score": 0.8551802039146423,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Kallu"
+    },
+    {
+      "end": 273,
+      "score": 0.9007174968719482,
+      "start": 259,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 377,
+      "score": 0.978928804397583,
+      "start": 364,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 503,
+      "score": 0.9967896342277527,
+      "start": 488,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 788,
+      "score": 0.9857659339904785,
+      "start": 775,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 979,
+      "score": 0.9996582269668579,
+      "start": 960,
+      "type": "PERSON",
+      "word": "Arvind Swaminathan"
+    },
+    {
+      "end": 1086,
+      "score": 0.97993403673172,
+      "start": 1073,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 1095,
+      "score": 0.8460544347763062,
+      "start": 1090,
+      "type": "PERSON",
+      "word": "Biku"
+    },
+    {
+      "end": 1118,
+      "score": 0.9937470555305481,
+      "start": 1104,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    }
+  ],
+  "FIR_02": [
+    {
+      "end": 227,
+      "score": 0.9995250701904297,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 236,
+      "score": 0.5403363704681396,
+      "start": 231,
+      "type": "PERSON",
+      "word": "Pand"
+    },
+    {
+      "end": 260,
+      "score": 0.9859400987625122,
+      "start": 242,
+      "type": "PERSON",
+      "word": "Shri Madan Tiwari"
+    },
+    {
+      "end": 436,
+      "score": 0.9850055575370789,
+      "start": 423,
+      "type": "PERSON",
+      "word": "Rajesh Kumar"
+    },
+    {
+      "end": 531,
+      "score": 0.999113142490387,
+      "start": 517,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    }
+  ],
+  "FIR_03": [
+    {
+      "end": 231,
+      "score": 0.9986863136291504,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 264,
+      "score": 0.9053597450256348,
+      "start": 250,
+      "type": "PERSON",
+      "word": "Bhagwan Kumar"
+    },
+    {
+      "end": 334,
+      "score": 0.9987419843673706,
+      "start": 319,
+      "type": "PERSON",
+      "word": "Vikram Rathore"
+    },
+    {
+      "end": 626,
+      "score": 0.9992806315422058,
+      "start": 613,
+      "type": "PERSON",
+      "word": "Aslam Parvez"
+    }
+  ],
+  "FIR_04": [
+    {
+      "end": 225,
+      "score": 0.9995386600494385,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    },
+    {
+      "end": 256,
+      "score": 0.9993829727172852,
+      "start": 246,
+      "type": "PERSON",
+      "word": "Asif Khan"
+    },
+    {
+      "end": 323,
+      "score": 0.9994512796401978,
+      "start": 312,
+      "type": "PERSON",
+      "word": "Amit Tomar"
+    },
+    {
+      "end": 559,
+      "score": 0.999832272529602,
+      "start": 547,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    }
+  ],
+  "FIR_05": [
+    {
+      "end": 214,
+      "score": 0.9993932843208313,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 223,
+      "score": 0.8957982063293457,
+      "start": 218,
+      "type": "PERSON",
+      "word": "Andy"
+    },
+    {
+      "end": 244,
+      "score": 0.944451630115509,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Shri Shyam Verma"
+    },
+    {
+      "end": 433,
+      "score": 0.999513566493988,
+      "start": 421,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 634,
+      "score": 0.9991874694824219,
+      "start": 620,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 776,
+      "score": 0.999191403388977,
+      "start": 762,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 787,
+      "score": 0.9679527878761292,
+      "start": 780,
+      "type": "PERSON",
+      "word": "Pandit"
+    },
+    {
+      "end": 809,
+      "score": 0.9658911824226379,
+      "start": 791,
+      "type": "PERSON",
+      "word": "Shri Madan Tiwari"
+    },
+    {
+      "end": 886,
+      "score": 0.9995708465576172,
+      "start": 872,
+      "type": "PERSON",
+      "word": "Kuldeep Yadav"
+    },
+    {
+      "end": 1004,
+      "score": 0.9996375441551208,
+      "start": 992,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 1151,
+      "score": 0.9993484020233154,
+      "start": 1136,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ],
+  "FIR_06": [
+    {
+      "end": 225,
+      "score": 0.9983570575714111,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Aslam Parvez"
+    },
+    {
+      "end": 236,
+      "score": 0.4872606098651886,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Chacha"
+    },
+    {
+      "end": 258,
+      "score": 0.981526792049408,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Latif Parvez"
+    },
+    {
+      "end": 399,
+      "score": 0.9842838048934937,
+      "start": 388,
+      "type": "PERSON",
+      "word": "Ram Avatar"
+    }
+  ],
+  "FIR_07": [
+    {
+      "end": 228,
+      "score": 0.9771832823753357,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 242,
+      "score": 0.959430992603302,
+      "start": 232,
+      "type": "PERSON",
+      "word": "Raju Bhai"
+    },
+    {
+      "end": 255,
+      "score": 0.9759449362754822,
+      "start": 251,
+      "type": "PERSON",
+      "word": "Mah"
+    },
+    {
+      "end": 267,
+      "score": 0.8719891309738159,
+      "start": 255,
+      "type": "PERSON",
+      "word": "eshwar Singh"
+    },
+    {
+      "end": 340,
+      "score": 0.9617401957511902,
+      "start": 326,
+      "type": "PERSON",
+      "word": "Suresh Bansal"
+    },
+    {
+      "end": 706,
+      "score": 0.9967458248138428,
+      "start": 691,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 1071,
+      "score": 0.9985658526420593,
+      "start": 1056,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ],
+  "FIR_08": [
+    {
+      "end": 232,
+      "score": 0.9768209457397461,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 238,
+      "score": 0.9674426317214966,
+      "start": 236,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 242,
+      "score": 0.8771203756332397,
+      "start": 238,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 249,
+      "score": 0.8667715787887573,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 257,
+      "score": 0.5156080722808838,
+      "start": 255,
+      "type": "PERSON",
+      "word": "lu"
+    },
+    {
+      "end": 280,
+      "score": 0.914792537689209,
+      "start": 266,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 370,
+      "score": 0.965461254119873,
+      "start": 357,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 662,
+      "score": 0.9895464777946472,
+      "start": 650,
+      "type": "PERSON",
+      "word": "Pawan Verma"
+    }
+  ],
+  "FIR_09": [
+    {
+      "end": 228,
+      "score": 0.9201388955116272,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    },
+    {
+      "end": 237,
+      "score": 0.8003780841827393,
+      "start": 232,
+      "type": "PERSON",
+      "word": "Deep"
+    },
+    {
+      "end": 251,
+      "score": 0.9197055697441101,
+      "start": 247,
+      "type": "PERSON",
+      "word": "Sar"
+    },
+    {
+      "end": 262,
+      "score": 0.8352909088134766,
+      "start": 251,
+      "type": "PERSON",
+      "word": "dar Chauhan"
+    },
+    {
+      "end": 353,
+      "score": 0.9804517030715942,
+      "start": 338,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    },
+    {
+      "end": 502,
+      "score": 0.9913437366485596,
+      "start": 487,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 544,
+      "score": 0.995736837387085,
+      "start": 531,
+      "type": "PERSON",
+      "word": "Dinesh Joshi"
+    }
+  ],
+  "FIR_10": [
+    {
+      "end": 217,
+      "score": 0.9994094967842102,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 232,
+      "score": 0.919236958026886,
+      "start": 221,
+      "type": "PERSON",
+      "word": "Bade Miyan"
+    },
+    {
+      "end": 254,
+      "score": 0.9985564351081848,
+      "start": 241,
+      "type": "PERSON",
+      "word": "Iqbal Ansari"
+    },
+    {
+      "end": 347,
+      "score": 0.9954662919044495,
+      "start": 332,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 649,
+      "score": 0.9978659749031067,
+      "start": 639,
+      "type": "PERSON",
+      "word": "Mohan Lal"
+    }
+  ],
+  "FIR_100": [
+    {
+      "end": 218,
+      "score": 0.997721791267395,
+      "start": 207,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    },
+    {
+      "end": 230,
+      "score": 0.8993011116981506,
+      "start": 229,
+      "type": "PERSON",
+      "word": "i"
+    },
+    {
+      "end": 249,
+      "score": 0.7210344076156616,
+      "start": 239,
+      "type": "PERSON",
+      "word": "Mohan Pal"
+    },
+    {
+      "end": 304,
+      "score": 0.9989566802978516,
+      "start": 293,
+      "type": "PERSON",
+      "word": "Amit Tomar"
+    }
+  ],
+  "FIR_11": [
+    {
+      "end": 225,
+      "score": 0.9862868785858154,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 232,
+      "score": 0.9357705116271973,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 234,
+      "score": 0.6835882663726807,
+      "start": 232,
+      "type": "PERSON",
+      "word": "ku"
+    },
+    {
+      "end": 246,
+      "score": 0.9991303086280823,
+      "start": 243,
+      "type": "PERSON",
+      "word": "Gi"
+    },
+    {
+      "end": 257,
+      "score": 0.8778465986251831,
+      "start": 246,
+      "type": "PERSON",
+      "word": "rish Sharma"
+    },
+    {
+      "end": 347,
+      "score": 0.9881382584571838,
+      "start": 334,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 641,
+      "score": 0.9989867210388184,
+      "start": 629,
+      "type": "PERSON",
+      "word": "Kishore Sen"
+    },
+    {
+      "end": 856,
+      "score": 0.999236524105072,
+      "start": 841,
+      "type": "PERSON",
+      "word": "Nadeem Qureshi"
+    },
+    {
+      "end": 864,
+      "score": 0.6564762592315674,
+      "start": 860,
+      "type": "PERSON",
+      "word": "Don"
+    },
+    {
+      "end": 887,
+      "score": 0.9959225058555603,
+      "start": 873,
+      "type": "PERSON",
+      "word": "Yusuf Qureshi"
+    },
+    {
+      "end": 1147,
+      "score": 0.9997162818908691,
+      "start": 1132,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    }
+  ],
+  "FIR_12": [
+    {
+      "end": 225,
+      "score": 0.9803550243377686,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    },
+    {
+      "end": 231,
+      "score": 0.9990717172622681,
+      "start": 229,
+      "type": "PERSON",
+      "word": "V"
+    },
+    {
+      "end": 235,
+      "score": 0.9882569909095764,
+      "start": 231,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 257,
+      "score": 0.9664166569709778,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Shabir Akram"
+    },
+    {
+      "end": 330,
+      "score": 0.9928078055381775,
+      "start": 314,
+      "type": "PERSON",
+      "word": "Rameshwar Dayal"
+    }
+  ],
+  "FIR_13": [
+    {
+      "end": 234,
+      "score": 0.9941723346710205,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 248,
+      "score": 0.9732943177223206,
+      "start": 238,
+      "type": "PERSON",
+      "word": "Raju Bhai"
+    },
+    {
+      "end": 261,
+      "score": 0.9553696513175964,
+      "start": 257,
+      "type": "PERSON",
+      "word": "Mah"
+    },
+    {
+      "end": 273,
+      "score": 0.8501955270767212,
+      "start": 261,
+      "type": "PERSON",
+      "word": "eshwar Singh"
+    },
+    {
+      "end": 347,
+      "score": 0.9996566772460938,
+      "start": 328,
+      "type": "PERSON",
+      "word": "Arvind Swaminathan"
+    },
+    {
+      "end": 484,
+      "score": 0.9966280460357666,
+      "start": 469,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 650,
+      "score": 0.9995939135551453,
+      "start": 635,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 841,
+      "score": 0.9986825585365295,
+      "start": 826,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ],
+  "FIR_14": [
+    {
+      "end": 228,
+      "score": 0.9932555556297302,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Devendra Yadav"
+    },
+    {
+      "end": 235,
+      "score": 0.9989407658576965,
+      "start": 232,
+      "type": "PERSON",
+      "word": "Ch"
+    },
+    {
+      "end": 237,
+      "score": 0.7149200439453125,
+      "start": 235,
+      "type": "PERSON",
+      "word": "ho"
+    },
+    {
+      "end": 244,
+      "score": 0.984163761138916,
+      "start": 237,
+      "type": "PERSON",
+      "word": "ta Raju"
+    },
+    {
+      "end": 268,
+      "score": 0.9965431690216064,
+      "start": 248,
+      "type": "PERSON",
+      "word": "Shri Ramakant Yadav"
+    },
+    {
+      "end": 334,
+      "score": 0.9732486605644226,
+      "start": 319,
+      "type": "PERSON",
+      "word": "Devendra Yadav"
+    },
+    {
+      "end": 527,
+      "score": 0.9937036037445068,
+      "start": 514,
+      "type": "PERSON",
+      "word": "Rajesh Kumar"
+    }
+  ],
+  "FIR_15": [
+    {
+      "end": 215,
+      "score": 0.9940037727355957,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 221,
+      "score": 0.9932073950767517,
+      "start": 219,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 225,
+      "score": 0.926109790802002,
+      "start": 221,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 232,
+      "score": 0.9493153095245361,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 240,
+      "score": 0.9685140252113342,
+      "start": 234,
+      "type": "PERSON",
+      "word": "Kallu"
+    },
+    {
+      "end": 263,
+      "score": 0.8983179330825806,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Shri Harish Sharma"
+    },
+    {
+      "end": 334,
+      "score": 0.9994798302650452,
+      "start": 319,
+      "type": "PERSON",
+      "word": "Vikram Rathore"
+    },
+    {
+      "end": 629,
+      "score": 0.9988090395927429,
+      "start": 614,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 924,
+      "score": 0.9964737892150879,
+      "start": 911,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 933,
+      "score": 0.7418801784515381,
+      "start": 928,
+      "type": "PERSON",
+      "word": "Biku"
+    },
+    {
+      "end": 956,
+      "score": 0.8786837458610535,
+      "start": 942,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 1045,
+      "score": 0.9731853604316711,
+      "start": 1032,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    }
+  ],
+  "FIR_16": [
+    {
+      "end": 227,
+      "score": 0.999647855758667,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    },
+    {
+      "end": 237,
+      "score": 0.9115245342254639,
+      "start": 231,
+      "type": "PERSON",
+      "word": "Deepu"
+    },
+    {
+      "end": 261,
+      "score": 0.9333869814872742,
+      "start": 246,
+      "type": "PERSON",
+      "word": "Sardar Chauhan"
+    },
+    {
+      "end": 452,
+      "score": 0.9996176958084106,
+      "start": 441,
+      "type": "PERSON",
+      "word": "Amit Tomar"
+    },
+    {
+      "end": 575,
+      "score": 0.9754753708839417,
+      "start": 560,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    }
+  ],
+  "FIR_17": [
+    {
+      "end": 226,
+      "score": 0.9967332482337952,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 233,
+      "score": 0.9605658650398254,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 235,
+      "score": 0.62735915184021,
+      "start": 233,
+      "type": "PERSON",
+      "word": "ku"
+    },
+    {
+      "end": 258,
+      "score": 0.9823393225669861,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 334,
+      "score": 0.9986708164215088,
+      "start": 321,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 341,
+      "score": 0.9900063872337341,
+      "start": 338,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 343,
+      "score": 0.8005338907241821,
+      "start": 341,
+      "type": "PERSON",
+      "word": "ku"
+    },
+    {
+      "end": 366,
+      "score": 0.9934220910072327,
+      "start": 352,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 563,
+      "score": 0.8998714089393616,
+      "start": 550,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 892,
+      "score": 0.9995960593223572,
+      "start": 879,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 1036,
+      "score": 0.9997619986534119,
+      "start": 1021,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 1092,
+      "score": 0.9986887574195862,
+      "start": 1078,
+      "type": "PERSON",
+      "word": "Kuldeep Yadav"
+    }
+  ],
+  "FIR_18": [
+    {
+      "end": 232,
+      "score": 0.9985765218734741,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    },
+    {
+      "end": 243,
+      "score": 0.6809582710266113,
+      "start": 236,
+      "type": "PERSON",
+      "word": "Kabira"
+    },
+    {
+      "end": 266,
+      "score": 0.9813390374183655,
+      "start": 252,
+      "type": "PERSON",
+      "word": "Mustaq Sheikh"
+    },
+    {
+      "end": 336,
+      "score": 0.9626295566558838,
+      "start": 325,
+      "type": "PERSON",
+      "word": "Ram Avatar"
+    }
+  ],
+  "FIR_19": [
+    {
+      "end": 226,
+      "score": 0.9997547268867493,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Salman Mirza"
+    },
+    {
+      "end": 234,
+      "score": 0.9733641743659973,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Sal"
+    },
+    {
+      "end": 249,
+      "score": 0.9971743822097778,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Fer"
+    },
+    {
+      "end": 257,
+      "score": 0.943626344203949,
+      "start": 249,
+      "type": "PERSON",
+      "word": "oz Mirza"
+    },
+    {
+      "end": 459,
+      "score": 0.9877884387969971,
+      "start": 445,
+      "type": "PERSON",
+      "word": "Suresh Bansal"
+    },
+    {
+      "end": 735,
+      "score": 0.9990224242210388,
+      "start": 720,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 907,
+      "score": 0.9997147917747498,
+      "start": 894,
+      "type": "PERSON",
+      "word": "Salman Mirza"
+    }
+  ],
+  "FIR_20": [
+    {
+      "end": 213,
+      "score": 0.9962708353996277,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    },
+    {
+      "end": 242,
+      "score": 0.9841421842575073,
+      "start": 232,
+      "type": "PERSON",
+      "word": "Mohan Pal"
+    },
+    {
+      "end": 314,
+      "score": 0.9962731599807739,
+      "start": 302,
+      "type": "PERSON",
+      "word": "Pawan Verma"
+    },
+    {
+      "end": 537,
+      "score": 0.9971357583999634,
+      "start": 526,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    }
+  ],
+  "FIR_21": [
+    {
+      "end": 226,
+      "score": 0.9994804859161377,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 235,
+      "score": 0.73203045129776,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Pand"
+    },
+    {
+      "end": 259,
+      "score": 0.9442501664161682,
+      "start": 246,
+      "type": "PERSON",
+      "word": "Madan Tiwari"
+    },
+    {
+      "end": 359,
+      "score": 0.9799085855484009,
+      "start": 345,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 521,
+      "score": 0.9993146061897278,
+      "start": 506,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 564,
+      "score": 0.9931511282920837,
+      "start": 551,
+      "type": "PERSON",
+      "word": "Dinesh Joshi"
+    }
+  ],
+  "FIR_22": [
+    {
+      "end": 227,
+      "score": 0.9993394613265991,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 236,
+      "score": 0.5881603360176086,
+      "start": 231,
+      "type": "PERSON",
+      "word": "Pand"
+    },
+    {
+      "end": 260,
+      "score": 0.8359043002128601,
+      "start": 247,
+      "type": "PERSON",
+      "word": "Madan Tiwari"
+    },
+    {
+      "end": 446,
+      "score": 0.9973797798156738,
+      "start": 436,
+      "type": "PERSON",
+      "word": "Mohan Lal"
+    },
+    {
+      "end": 541,
+      "score": 0.9993783235549927,
+      "start": 527,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    }
+  ],
+  "FIR_23": [
+    {
+      "end": 231,
+      "score": 0.999678373336792,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 241,
+      "score": 0.9716406464576721,
+      "start": 235,
+      "type": "PERSON",
+      "word": "Sunny"
+    },
+    {
+      "end": 264,
+      "score": 0.9829227924346924,
+      "start": 250,
+      "type": "PERSON",
+      "word": "Bhagwan Kumar"
+    },
+    {
+      "end": 565,
+      "score": 0.9997251629829407,
+      "start": 552,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    },
+    {
+      "end": 575,
+      "score": 0.9864997863769531,
+      "start": 569,
+      "type": "PERSON",
+      "word": "Tiger"
+    },
+    {
+      "end": 596,
+      "score": 0.9942612648010254,
+      "start": 584,
+      "type": "PERSON",
+      "word": "Zahid Ahmed"
+    },
+    {
+      "end": 848,
+      "score": 0.9994034171104431,
+      "start": 833,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 897,
+      "score": 0.9994093775749207,
+      "start": 885,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 1076,
+      "score": 0.9987479448318481,
+      "start": 1064,
+      "type": "PERSON",
+      "word": "Kishore Sen"
+    }
+  ],
+  "FIR_24": [
+    {
+      "end": 225,
+      "score": 0.999546468257904,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    },
+    {
+      "end": 256,
+      "score": 0.9995747804641724,
+      "start": 246,
+      "type": "PERSON",
+      "word": "Asif Khan"
+    },
+    {
+      "end": 330,
+      "score": 0.9863901734352112,
+      "start": 314,
+      "type": "PERSON",
+      "word": "Rameshwar Dayal"
+    }
+  ],
+  "FIR_25": [
+    {
+      "end": 215,
+      "score": 0.962644100189209,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 221,
+      "score": 0.9959104061126709,
+      "start": 219,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 225,
+      "score": 0.9032071828842163,
+      "start": 221,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 232,
+      "score": 0.9268078207969666,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 240,
+      "score": 0.944354772567749,
+      "start": 234,
+      "type": "PERSON",
+      "word": "Kallu"
+    },
+    {
+      "end": 263,
+      "score": 0.8588955402374268,
+      "start": 249,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 354,
+      "score": 0.9727128148078918,
+      "start": 341,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 671,
+      "score": 0.9917128682136536,
+      "start": 658,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 812,
+      "score": 0.9989998936653137,
+      "start": 799,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 875,
+      "score": 0.9986793994903564,
+      "start": 862,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 882,
+      "score": 0.9831297993659973,
+      "start": 879,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 884,
+      "score": 0.6899121999740601,
+      "start": 882,
+      "type": "PERSON",
+      "word": "ku"
+    },
+    {
+      "end": 907,
+      "score": 0.9789019227027893,
+      "start": 893,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 989,
+      "score": 0.9992859959602356,
+      "start": 970,
+      "type": "PERSON",
+      "word": "Arvind Swaminathan"
+    }
+  ],
+  "FIR_26": [
+    {
+      "end": 225,
+      "score": 0.999627411365509,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Aslam Parvez"
+    },
+    {
+      "end": 233,
+      "score": 0.45516979694366455,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Cha"
+    },
+    {
+      "end": 258,
+      "score": 0.9798280000686646,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Latif Parvez"
+    },
+    {
+      "end": 348,
+      "score": 0.9997254014015198,
+      "start": 335,
+      "type": "PERSON",
+      "word": "Aslam Parvez"
+    },
+    {
+      "end": 530,
+      "score": 0.9979392886161804,
+      "start": 517,
+      "type": "PERSON",
+      "word": "Rajesh Kumar"
+    }
+  ],
+  "FIR_27": [
+    {
+      "end": 228,
+      "score": 0.9802077412605286,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 242,
+      "score": 0.9935672283172607,
+      "start": 232,
+      "type": "PERSON",
+      "word": "Raju Bhai"
+    },
+    {
+      "end": 267,
+      "score": 0.8699153065681458,
+      "start": 251,
+      "type": "PERSON",
+      "word": "Maheshwar Singh"
+    },
+    {
+      "end": 538,
+      "score": 0.9863857626914978,
+      "start": 523,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 580,
+      "score": 0.9977797269821167,
+      "start": 565,
+      "type": "PERSON",
+      "word": "Vikram Rathore"
+    }
+  ],
+  "FIR_28": [
+    {
+      "end": 232,
+      "score": 0.9971755146980286,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 238,
+      "score": 0.9670535922050476,
+      "start": 236,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 242,
+      "score": 0.8614656329154968,
+      "start": 238,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 249,
+      "score": 0.8935422301292419,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 257,
+      "score": 0.7162410020828247,
+      "start": 251,
+      "type": "PERSON",
+      "word": "Kallu"
+    },
+    {
+      "end": 280,
+      "score": 0.861619770526886,
+      "start": 266,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 346,
+      "score": 0.9988570213317871,
+      "start": 335,
+      "type": "PERSON",
+      "word": "Amit Tomar"
+    },
+    {
+      "end": 592,
+      "score": 0.9957971572875977,
+      "start": 579,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    }
+  ],
+  "FIR_29": [
+    {
+      "end": 226,
+      "score": 0.999785304069519,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    },
+    {
+      "end": 236,
+      "score": 0.9602361917495728,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Tiger"
+    },
+    {
+      "end": 257,
+      "score": 0.9956187605857849,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Zahid Ahmed"
+    },
+    {
+      "end": 327,
+      "score": 0.99955153465271,
+      "start": 313,
+      "type": "PERSON",
+      "word": "Kuldeep Yadav"
+    },
+    {
+      "end": 433,
+      "score": 0.9995673298835754,
+      "start": 421,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 443,
+      "score": 0.9660090208053589,
+      "start": 437,
+      "type": "PERSON",
+      "word": "Sunny"
+    },
+    {
+      "end": 466,
+      "score": 0.9486790299415588,
+      "start": 452,
+      "type": "PERSON",
+      "word": "Bhagwan Kumar"
+    },
+    {
+      "end": 802,
+      "score": 0.9998356103897095,
+      "start": 789,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    },
+    {
+      "end": 956,
+      "score": 0.9998118281364441,
+      "start": 951,
+      "type": "PERSON",
+      "word": "Mukh"
+    },
+    {
+      "end": 966,
+      "score": 0.9772554039955139,
+      "start": 956,
+      "type": "PERSON",
+      "word": "tar Ansari"
+    },
+    {
+      "end": 1028,
+      "score": 0.9997715950012207,
+      "start": 1015,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    }
+  ],
+  "FIR_30": [
+    {
+      "end": 217,
+      "score": 0.9954445362091064,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 232,
+      "score": 0.9828715324401855,
+      "start": 221,
+      "type": "PERSON",
+      "word": "Bade Miyan"
+    },
+    {
+      "end": 241,
+      "score": 0.7181758880615234,
+      "start": 236,
+      "type": "PERSON",
+      "word": "Shri"
+    },
+    {
+      "end": 254,
+      "score": 0.9200935959815979,
+      "start": 241,
+      "type": "PERSON",
+      "word": "Iqbal Ansari"
+    },
+    {
+      "end": 397,
+      "score": 0.7904191017150879,
+      "start": 381,
+      "type": "PERSON",
+      "word": "Shri Ram Avatar"
+    }
+  ],
+  "FIR_31": [
+    {
+      "end": 225,
+      "score": 0.9979154467582703,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 232,
+      "score": 0.8959645628929138,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 257,
+      "score": 0.8995115756988525,
+      "start": 243,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 646,
+      "score": 0.9949917793273926,
+      "start": 633,
+      "type": "PERSON",
+      "word": "Ramesh Chand"
+    },
+    {
+      "end": 709,
+      "score": 0.9083487391471863,
+      "start": 696,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 769,
+      "score": 0.7159224152565002,
+      "start": 764,
+      "type": "PERSON",
+      "word": "Zabt"
+    },
+    {
+      "end": 1006,
+      "score": 0.8892790079116821,
+      "start": 987,
+      "type": "PERSON",
+      "word": "Shri Suresh Bansal"
+    },
+    {
+      "end": 1084,
+      "score": 0.8103089332580566,
+      "start": 1079,
+      "type": "PERSON",
+      "word": "Zabt"
+    }
+  ],
+  "FIR_32": [
+    {
+      "end": 225,
+      "score": 0.9971835613250732,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    },
+    {
+      "end": 231,
+      "score": 0.9852655529975891,
+      "start": 229,
+      "type": "PERSON",
+      "word": "V"
+    },
+    {
+      "end": 235,
+      "score": 0.8923225402832031,
+      "start": 231,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 257,
+      "score": 0.9905075430870056,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Shabir Akram"
+    },
+    {
+      "end": 443,
+      "score": 0.9980658888816833,
+      "start": 431,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    },
+    {
+      "end": 640,
+      "score": 0.9903538227081299,
+      "start": 628,
+      "type": "PERSON",
+      "word": "Pawan Verma"
+    }
+  ],
+  "FIR_33": [
+    {
+      "end": 232,
+      "score": 0.9875304698944092,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 238,
+      "score": 0.9443719983100891,
+      "start": 236,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 242,
+      "score": 0.5890305042266846,
+      "start": 238,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 249,
+      "score": 0.8148635625839233,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 257,
+      "score": 0.5023136734962463,
+      "start": 255,
+      "type": "PERSON",
+      "word": "lu"
+    },
+    {
+      "end": 280,
+      "score": 0.8672106862068176,
+      "start": 266,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 350,
+      "score": 0.94333815574646,
+      "start": 337,
+      "type": "PERSON",
+      "word": "Dinesh Joshi"
+    },
+    {
+      "end": 477,
+      "score": 0.9856502413749695,
+      "start": 464,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 645,
+      "score": 0.9998320937156677,
+      "start": 633,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    }
+  ],
+  "FIR_34": [
+    {
+      "end": 228,
+      "score": 0.9932394027709961,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Devendra Yadav"
+    },
+    {
+      "end": 235,
+      "score": 0.9995977282524109,
+      "start": 232,
+      "type": "PERSON",
+      "word": "Ch"
+    },
+    {
+      "end": 237,
+      "score": 0.7094442248344421,
+      "start": 235,
+      "type": "PERSON",
+      "word": "ho"
+    },
+    {
+      "end": 244,
+      "score": 0.9888184666633606,
+      "start": 237,
+      "type": "PERSON",
+      "word": "ta Raju"
+    },
+    {
+      "end": 268,
+      "score": 0.9918275475502014,
+      "start": 248,
+      "type": "PERSON",
+      "word": "Shri Ramakant Yadav"
+    },
+    {
+      "end": 361,
+      "score": 0.960887610912323,
+      "start": 346,
+      "type": "PERSON",
+      "word": "Devendra Yadav"
+    },
+    {
+      "end": 518,
+      "score": 0.9992178082466125,
+      "start": 508,
+      "type": "PERSON",
+      "word": "Mohan Lal"
+    }
+  ],
+  "FIR_35": [
+    {
+      "end": 214,
+      "score": 0.9997116923332214,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 223,
+      "score": 0.9886987805366516,
+      "start": 218,
+      "type": "PERSON",
+      "word": "Andy"
+    },
+    {
+      "end": 244,
+      "score": 0.9615193009376526,
+      "start": 232,
+      "type": "PERSON",
+      "word": "Shyam Verma"
+    },
+    {
+      "end": 307,
+      "score": 0.9997367858886719,
+      "start": 295,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 508,
+      "score": 0.9996148943901062,
+      "start": 496,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    },
+    {
+      "end": 518,
+      "score": 0.9256457090377808,
+      "start": 512,
+      "type": "PERSON",
+      "word": "Munna"
+    },
+    {
+      "end": 541,
+      "score": 0.9925596117973328,
+      "start": 527,
+      "type": "PERSON",
+      "word": "Kishori Rawat"
+    },
+    {
+      "end": 907,
+      "score": 0.9986057281494141,
+      "start": 892,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 1072,
+      "score": 0.9981606006622314,
+      "start": 1060,
+      "type": "PERSON",
+      "word": "Kishore Sen"
+    }
+  ],
+  "FIR_36": [
+    {
+      "end": 227,
+      "score": 0.9994928240776062,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    },
+    {
+      "end": 236,
+      "score": 0.8979687690734863,
+      "start": 231,
+      "type": "PERSON",
+      "word": "Deep"
+    },
+    {
+      "end": 261,
+      "score": 0.9239240288734436,
+      "start": 246,
+      "type": "PERSON",
+      "word": "Sardar Chauhan"
+    },
+    {
+      "end": 396,
+      "score": 0.9296417236328125,
+      "start": 380,
+      "type": "PERSON",
+      "word": "Rameshwar Dayal"
+    }
+  ],
+  "FIR_37": [
+    {
+      "end": 226,
+      "score": 0.9997153282165527,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Salman Mirza"
+    },
+    {
+      "end": 234,
+      "score": 0.9746505618095398,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Sal"
+    },
+    {
+      "end": 249,
+      "score": 0.9976751208305359,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Fer"
+    },
+    {
+      "end": 257,
+      "score": 0.9323142766952515,
+      "start": 249,
+      "type": "PERSON",
+      "word": "oz Mirza"
+    },
+    {
+      "end": 331,
+      "score": 0.9997948408126831,
+      "start": 312,
+      "type": "PERSON",
+      "word": "Arvind Swaminathan"
+    },
+    {
+      "end": 578,
+      "score": 0.9997036457061768,
+      "start": 565,
+      "type": "PERSON",
+      "word": "Salman Mirza"
+    },
+    {
+      "end": 900,
+      "score": 0.9997515082359314,
+      "start": 887,
+      "type": "PERSON",
+      "word": "Salman Mirza"
+    },
+    {
+      "end": 1065,
+      "score": 0.9996789693832397,
+      "start": 1050,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    }
+  ],
+  "FIR_38": [
+    {
+      "end": 232,
+      "score": 0.999496579170227,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    },
+    {
+      "end": 243,
+      "score": 0.6280752420425415,
+      "start": 236,
+      "type": "PERSON",
+      "word": "Kabira"
+    },
+    {
+      "end": 266,
+      "score": 0.9259405732154846,
+      "start": 252,
+      "type": "PERSON",
+      "word": "Mustaq Sheikh"
+    },
+    {
+      "end": 334,
+      "score": 0.9984263777732849,
+      "start": 321,
+      "type": "PERSON",
+      "word": "Rajesh Kumar"
+    },
+    {
+      "end": 446,
+      "score": 0.999588131904602,
+      "start": 433,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    }
+  ],
+  "FIR_39": [
+    {
+      "end": 226,
+      "score": 0.9995999336242676,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Salman Mirza"
+    },
+    {
+      "end": 234,
+      "score": 0.9291282892227173,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Sal"
+    },
+    {
+      "end": 249,
+      "score": 0.9921585321426392,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Fer"
+    },
+    {
+      "end": 257,
+      "score": 0.8480706810951233,
+      "start": 249,
+      "type": "PERSON",
+      "word": "oz Mirza"
+    },
+    {
+      "end": 328,
+      "score": 0.9988629221916199,
+      "start": 313,
+      "type": "PERSON",
+      "word": "Vikram Rathore"
+    },
+    {
+      "end": 596,
+      "score": 0.9992291927337646,
+      "start": 581,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    }
+  ],
+  "FIR_40": [
+    {
+      "end": 213,
+      "score": 0.9898251295089722,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    },
+    {
+      "end": 242,
+      "score": 0.966011106967926,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Shri Mohan Pal"
+    },
+    {
+      "end": 309,
+      "score": 0.9965419173240662,
+      "start": 298,
+      "type": "PERSON",
+      "word": "Amit Tomar"
+    },
+    {
+      "end": 553,
+      "score": 0.9586226940155029,
+      "start": 542,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    }
+  ],
+  "FIR_41": [
+    {
+      "end": 207,
+      "score": 0.9996623396873474,
+      "start": 195,
+      "type": "PERSON",
+      "word": "\u0938\u0941\u0928\u0940\u0932 \u0915\u0941\u092e\u093e\u0930"
+    },
+    {
+      "end": 239,
+      "score": 0.9994978308677673,
+      "start": 227,
+      "type": "PERSON",
+      "word": "\u092d\u0917\u0935\u093e\u0928 \u0915\u0941\u092e\u093e\u0930"
+    },
+    {
+      "end": 540,
+      "score": 0.9996733665466309,
+      "start": 529,
+      "type": "PERSON",
+      "word": "\u0906\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 573,
+      "score": 0.9996769428253174,
+      "start": 561,
+      "type": "PERSON",
+      "word": "\u0936\u094d\u092f\u093e\u092e \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 641,
+      "score": 0.9997167587280273,
+      "start": 629,
+      "type": "PERSON",
+      "word": "\u0938\u0941\u0928\u0940\u0932 \u0915\u0941\u092e\u093e\u0930"
+    },
+    {
+      "end": 800,
+      "score": 0.9998407363891602,
+      "start": 788,
+      "type": "PERSON",
+      "word": "\u0915\u0941\u0932\u0926\u0940\u092a \u092f\u093e\u0926\u0935"
+    },
+    {
+      "end": 905,
+      "score": 0.99977707862854,
+      "start": 893,
+      "type": "PERSON",
+      "word": "\u0938\u0941\u0928\u0940\u0932 \u0915\u0941\u092e\u093e\u0930"
+    },
+    {
+      "end": 1083,
+      "score": 0.9997506141662598,
+      "start": 1069,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u091c\u0947\u0902\u0926\u094d\u0930 \u0938\u093f\u0902\u0939"
+    }
+  ],
+  "FIR_42": [
+    {
+      "end": 198,
+      "score": 0.9998228549957275,
+      "start": 186,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 210,
+      "score": 0.7351450324058533,
+      "start": 203,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u094d\u0915\u0940"
+    },
+    {
+      "end": 243,
+      "score": 0.9998189806938171,
+      "start": 242,
+      "type": "PERSON",
+      "word": ""
+    },
+    {
+      "end": 253,
+      "score": 0.9861106276512146,
+      "start": 243,
+      "type": "PERSON",
+      "word": "\u0939\u0930\u0940\u0936 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 330,
+      "score": 0.998553454875946,
+      "start": 318,
+      "type": "PERSON",
+      "word": "\u092c\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 363,
+      "score": 0.9989475607872009,
+      "start": 351,
+      "type": "PERSON",
+      "word": "\u0917\u093f\u0930\u0940\u0936 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 417,
+      "score": 0.9994090795516968,
+      "start": 407,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u092e \u0905\u0935\u0924\u093e\u0930"
+    },
+    {
+      "end": 510,
+      "score": 0.9998003244400024,
+      "start": 498,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 1063,
+      "score": 0.9997216463088989,
+      "start": 1052,
+      "type": "PERSON",
+      "word": "\u0926\u0940\u092a\u0915 \u091a\u094c\u0939\u093e\u0928"
+    }
+  ],
+  "FIR_43": [
+    {
+      "end": 192,
+      "score": 0.9998652935028076,
+      "start": 191,
+      "type": "PERSON",
+      "word": ""
+    },
+    {
+      "end": 201,
+      "score": 0.9997926950454712,
+      "start": 192,
+      "type": "PERSON",
+      "word": "\u0935\u0938\u0940\u092e \u0905\u0915\u0930\u092e"
+    },
+    {
+      "end": 236,
+      "score": 0.9712682962417603,
+      "start": 224,
+      "type": "PERSON",
+      "word": "\u0936\u092c\u094d\u092c\u0940\u0930 \u0905\u0915\u0930\u092e"
+    },
+    {
+      "end": 305,
+      "score": 0.9997901320457458,
+      "start": 294,
+      "type": "PERSON",
+      "word": "\u0938\u0941\u0930\u0947\u0936 \u092c\u0902\u0938\u0932"
+    },
+    {
+      "end": 483,
+      "score": 0.9998779296875,
+      "start": 482,
+      "type": "PERSON",
+      "word": ""
+    },
+    {
+      "end": 492,
+      "score": 0.9996739029884338,
+      "start": 483,
+      "type": "PERSON",
+      "word": "\u0935\u0938\u0940\u092e \u0905\u0915\u0930\u092e"
+    },
+    {
+      "end": 660,
+      "score": 0.9914779663085938,
+      "start": 645,
+      "type": "PERSON",
+      "word": "\u092e\u0941\u0916\u094d\u0924\u093e\u0930 \u0905\u0902\u0938\u093e\u0930\u0940"
+    },
+    {
+      "end": 691,
+      "score": 0.9998648166656494,
+      "start": 690,
+      "type": "PERSON",
+      "word": ""
+    },
+    {
+      "end": 700,
+      "score": 0.9997507929801941,
+      "start": 691,
+      "type": "PERSON",
+      "word": "\u0935\u0938\u0940\u092e \u0905\u0915\u0930\u092e"
+    }
+  ],
+  "FIR_44": [
+    {
+      "end": 206,
+      "score": 0.9988622665405273,
+      "start": 196,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u0936\u093f\u0926 \u0916\u093e\u0928"
+    },
+    {
+      "end": 236,
+      "score": 0.9953863620758057,
+      "start": 227,
+      "type": "PERSON",
+      "word": "\u0906\u0938\u093f\u092b \u0916\u093e\u0928"
+    },
+    {
+      "end": 305,
+      "score": 0.9989113807678223,
+      "start": 295,
+      "type": "PERSON",
+      "word": "\u092a\u0935\u0928 \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 383,
+      "score": 0.9855521321296692,
+      "start": 373,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u0936\u093f\u0926 \u0916\u093e\u0928"
+    }
+  ],
+  "FIR_45": [
+    {
+      "end": 210,
+      "score": 0.9998079538345337,
+      "start": 199,
+      "type": "PERSON",
+      "word": "\u0906\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 231,
+      "score": 0.6326717734336853,
+      "start": 226,
+      "type": "PERSON",
+      "word": "\u0936\u094d\u0930\u0940"
+    },
+    {
+      "end": 243,
+      "score": 0.9920369386672974,
+      "start": 231,
+      "type": "PERSON",
+      "word": "\u0936\u094d\u092f\u093e\u092e \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 418,
+      "score": 0.9998091459274292,
+      "start": 407,
+      "type": "PERSON",
+      "word": "\u0926\u093f\u0928\u0947\u0936 \u091c\u094b\u0936\u0940"
+    },
+    {
+      "end": 510,
+      "score": 0.9998140335083008,
+      "start": 499,
+      "type": "PERSON",
+      "word": "\u0906\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 689,
+      "score": 0.7110769748687744,
+      "start": 686,
+      "type": "PERSON",
+      "word": "\u092a\u0902"
+    },
+    {
+      "end": 690,
+      "score": 0.9765871167182922,
+      "start": 689,
+      "type": "PERSON",
+      "word": "\u0915"
+    },
+    {
+      "end": 698,
+      "score": 0.9821364283561707,
+      "start": 690,
+      "type": "PERSON",
+      "word": "\u091c \u0924\u093f\u0935\u093e\u0930\u0940"
+    },
+    {
+      "end": 987,
+      "score": 0.9997488260269165,
+      "start": 976,
+      "type": "PERSON",
+      "word": "\u0906\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 1033,
+      "score": 0.9891132116317749,
+      "start": 1030,
+      "type": "PERSON",
+      "word": "\u092a\u0902"
+    },
+    {
+      "end": 1034,
+      "score": 0.8871278166770935,
+      "start": 1033,
+      "type": "PERSON",
+      "word": "\u0915"
+    },
+    {
+      "end": 1042,
+      "score": 0.95540851354599,
+      "start": 1034,
+      "type": "PERSON",
+      "word": "\u091c \u0924\u093f\u0935\u093e\u0930\u0940"
+    },
+    {
+      "end": 1075,
+      "score": 0.9912854433059692,
+      "start": 1064,
+      "type": "PERSON",
+      "word": "\u092e\u0926\u0928 \u0924\u093f\u0935\u093e\u0930\u0940"
+    }
+  ],
+  "FIR_46": [
+    {
+      "end": 207,
+      "score": 0.982049822807312,
+      "start": 195,
+      "type": "PERSON",
+      "word": "\u0905\u0938\u0932\u092e \u092a\u0930\u0935\u0947\u091c\u093c"
+    },
+    {
+      "end": 240,
+      "score": 0.9894888997077942,
+      "start": 228,
+      "type": "PERSON",
+      "word": "\u0932\u0924\u0940\u092b \u092a\u0930\u0935\u0947\u091c\u093c"
+    },
+    {
+      "end": 301,
+      "score": 0.7714065313339233,
+      "start": 297,
+      "type": "PERSON",
+      "word": "\u0905\u0938\u0932"
+    },
+    {
+      "end": 309,
+      "score": 0.8178163766860962,
+      "start": 301,
+      "type": "PERSON",
+      "word": "\u092e \u092a\u0930\u0935\u0947\u091c\u093c"
+    },
+    {
+      "end": 492,
+      "score": 0.9992908239364624,
+      "start": 483,
+      "type": "PERSON",
+      "word": "\u092e\u094b\u0939\u0928 \u0932\u093e\u0932"
+    }
+  ],
+  "FIR_47": [
+    {
+      "end": 197,
+      "score": 0.999805212020874,
+      "start": 186,
+      "type": "PERSON",
+      "word": "\u0926\u0940\u092a\u0915 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "end": 230,
+      "score": 0.9957349300384521,
+      "start": 218,
+      "type": "PERSON",
+      "word": "\u0938\u0930\u0926\u093e\u0930 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "end": 417,
+      "score": 0.9997606873512268,
+      "start": 406,
+      "type": "PERSON",
+      "word": "\u0938\u0902\u091c\u092f \u092e\u0947\u0939\u0930\u093e"
+    },
+    {
+      "end": 450,
+      "score": 0.9997904896736145,
+      "start": 438,
+      "type": "PERSON",
+      "word": "\u092a\u094d\u0930\u0947\u092e \u092e\u0947\u0939\u0930\u093e"
+    },
+    {
+      "end": 628,
+      "score": 0.9998433589935303,
+      "start": 617,
+      "type": "PERSON",
+      "word": "\u0926\u0940\u092a\u0915 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "end": 830,
+      "score": 0.9998354911804199,
+      "start": 819,
+      "type": "PERSON",
+      "word": "\u0926\u0940\u092a\u0915 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "end": 961,
+      "score": 0.9994581341743469,
+      "start": 947,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u091c\u0947\u0902\u0926\u094d\u0930 \u0938\u093f\u0902\u0939"
+    },
+    {
+      "end": 1014,
+      "score": 0.9998055100440979,
+      "start": 1004,
+      "type": "PERSON",
+      "word": "\u0915\u093f\u0936\u094b\u0930 \u0938\u0947\u0928"
+    }
+  ],
+  "FIR_48": [
+    {
+      "end": 203,
+      "score": 0.9997625350952148,
+      "start": 191,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 215,
+      "score": 0.9197071194648743,
+      "start": 208,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u094d\u0915\u0940"
+    },
+    {
+      "end": 248,
+      "score": 0.9998292922973633,
+      "start": 247,
+      "type": "PERSON",
+      "word": ""
+    },
+    {
+      "end": 258,
+      "score": 0.9818713068962097,
+      "start": 248,
+      "type": "PERSON",
+      "word": "\u0939\u0930\u0940\u0936 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 327,
+      "score": 0.9998114705085754,
+      "start": 313,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u092e\u0947\u0936\u094d\u0935\u0930 \u0926\u092f\u093e\u0932"
+    }
+  ],
+  "FIR_49": [
+    {
+      "end": 206,
+      "score": 0.9996818900108337,
+      "start": 196,
+      "type": "PERSON",
+      "word": "\u092e\u0928\u094b\u091c \u0930\u093e\u0935\u0924"
+    },
+    {
+      "end": 241,
+      "score": 0.9992135167121887,
+      "start": 229,
+      "type": "PERSON",
+      "word": "\u0915\u093f\u0936\u094b\u0930\u0940 \u0930\u093e\u0935\u0924"
+    },
+    {
+      "end": 590,
+      "score": 0.9997795224189758,
+      "start": 576,
+      "type": "PERSON",
+      "word": "\u0938\u0932\u092e\u093e\u0928 \u092e\u093f\u0930\u094d\u091c\u093c\u093e"
+    },
+    {
+      "end": 746,
+      "score": 0.9995061159133911,
+      "start": 728,
+      "type": "PERSON",
+      "word": "\u0905\u0930\u0935\u093f\u0902\u0926 \u0938\u094d\u0935\u093e\u092e\u0940\u0928\u093e\u0925\u0928"
+    },
+    {
+      "end": 832,
+      "score": 0.999651312828064,
+      "start": 822,
+      "type": "PERSON",
+      "word": "\u092e\u0928\u094b\u091c \u0930\u093e\u0935\u0924"
+    }
+  ],
+  "FIR_50": [
+    {
+      "end": 214,
+      "score": 0.9684932231903076,
+      "start": 199,
+      "type": "PERSON",
+      "word": "\u092e\u0941\u0916\u094d\u0924\u093e\u0930 \u0905\u0902\u0938\u093e\u0930\u0940"
+    },
+    {
+      "end": 254,
+      "score": 0.9988051652908325,
+      "start": 241,
+      "type": "PERSON",
+      "word": "\u0907\u0915\u092c\u093e\u0932 \u0905\u0902\u0938\u093e\u0930\u0940"
+    },
+    {
+      "end": 329,
+      "score": 0.999832034111023,
+      "start": 325,
+      "type": "PERSON",
+      "word": "\u092e\u0941\u0916"
+    },
+    {
+      "end": 340,
+      "score": 0.8802672624588013,
+      "start": 329,
+      "type": "PERSON",
+      "word": "\u094d\u0924\u093e\u0930 \u0905\u0902\u0938\u093e\u0930\u0940"
+    },
+    {
+      "end": 499,
+      "score": 0.9991216659545898,
+      "start": 487,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u091c\u0947\u0936 \u0915\u0941\u092e\u093e\u0930"
+    }
+  ],
+  "FIR_51": [
+    {
+      "end": 221,
+      "score": 0.9905917048454285,
+      "start": 206,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 237,
+      "score": 0.9897982478141785,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Raju Bhai"
+    },
+    {
+      "end": 262,
+      "score": 0.8561169505119324,
+      "start": 246,
+      "type": "PERSON",
+      "word": "Maheshwar Singh"
+    },
+    {
+      "end": 320,
+      "score": 0.9906692504882812,
+      "start": 305,
+      "type": "PERSON",
+      "word": "Vikram Rathore"
+    },
+    {
+      "end": 441,
+      "score": 0.9934523105621338,
+      "start": 426,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 619,
+      "score": 0.996746838092804,
+      "start": 604,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ],
+  "FIR_52": [
+    {
+      "end": 220,
+      "score": 0.9795888066291809,
+      "start": 207,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 228,
+      "score": 0.9976168870925903,
+      "start": 226,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 239,
+      "score": 0.7476929426193237,
+      "start": 228,
+      "type": "PERSON",
+      "word": "icky @ Viku"
+    },
+    {
+      "end": 247,
+      "score": 0.6160938739776611,
+      "start": 241,
+      "type": "PERSON",
+      "word": "Kallu"
+    },
+    {
+      "end": 270,
+      "score": 0.9637700915336609,
+      "start": 256,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 319,
+      "score": 0.9996134638786316,
+      "start": 306,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 328,
+      "score": 0.9970898628234863,
+      "start": 325,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 330,
+      "score": 0.6398933529853821,
+      "start": 328,
+      "type": "PERSON",
+      "word": "ku"
+    },
+    {
+      "end": 353,
+      "score": 0.9682967662811279,
+      "start": 339,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 435,
+      "score": 0.9970975518226624,
+      "start": 422,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 614,
+      "score": 0.9996384382247925,
+      "start": 603,
+      "type": "PERSON",
+      "word": "Amit Tomar"
+    },
+    {
+      "end": 926,
+      "score": 0.9979941844940186,
+      "start": 911,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ],
+  "FIR_53": [
+    {
+      "end": 221,
+      "score": 0.999072253704071,
+      "start": 209,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    },
+    {
+      "end": 233,
+      "score": 0.9905819892883301,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Munna"
+    },
+    {
+      "end": 256,
+      "score": 0.9984744787216187,
+      "start": 242,
+      "type": "PERSON",
+      "word": "Kishori Rawat"
+    },
+    {
+      "end": 307,
+      "score": 0.9989132285118103,
+      "start": 292,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 323,
+      "score": 0.987923800945282,
+      "start": 313,
+      "type": "PERSON",
+      "word": "Raju Bhai"
+    },
+    {
+      "end": 348,
+      "score": 0.9970194697380066,
+      "start": 332,
+      "type": "PERSON",
+      "word": "Maheshwar Singh"
+    },
+    {
+      "end": 529,
+      "score": 0.9965695738792419,
+      "start": 515,
+      "type": "PERSON",
+      "word": "Kuldeep Yadav"
+    },
+    {
+      "end": 765,
+      "score": 0.999362051486969,
+      "start": 753,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    },
+    {
+      "end": 955,
+      "score": 0.9996933341026306,
+      "start": 943,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    },
+    {
+      "end": 1140,
+      "score": 0.9997064471244812,
+      "start": 1125,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ],
+  "FIR_54": [
+    {
+      "end": 223,
+      "score": 0.9685344099998474,
+      "start": 208,
+      "type": "PERSON",
+      "word": "Devendra Yadav"
+    },
+    {
+      "end": 232,
+      "score": 0.9992038607597351,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Ch"
+    },
+    {
+      "end": 241,
+      "score": 0.9824060797691345,
+      "start": 232,
+      "type": "PERSON",
+      "word": "hota Raju"
+    },
+    {
+      "end": 265,
+      "score": 0.9409049153327942,
+      "start": 250,
+      "type": "PERSON",
+      "word": "Ramakant Yadav"
+    },
+    {
+      "end": 389,
+      "score": 0.8607853055000305,
+      "start": 373,
+      "type": "PERSON",
+      "word": "Shri Ram Avatar"
+    }
+  ],
+  "FIR_55": [
+    {
+      "end": 223,
+      "score": 0.999640703201294,
+      "start": 211,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 234,
+      "score": 0.9736732840538025,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Andy"
+    },
+    {
+      "end": 255,
+      "score": 0.9923802614212036,
+      "start": 243,
+      "type": "PERSON",
+      "word": "Shyam Verma"
+    },
+    {
+      "end": 306,
+      "score": 0.9995646476745605,
+      "start": 292,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 319,
+      "score": 0.9974947571754456,
+      "start": 312,
+      "type": "PERSON",
+      "word": "Pandit"
+    },
+    {
+      "end": 341,
+      "score": 0.997572660446167,
+      "start": 328,
+      "type": "PERSON",
+      "word": "Madan Tiwari"
+    },
+    {
+      "end": 636,
+      "score": 0.9996154308319092,
+      "start": 621,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 668,
+      "score": 0.9958919882774353,
+      "start": 654,
+      "type": "PERSON",
+      "word": "Suresh Bansal"
+    },
+    {
+      "end": 960,
+      "score": 0.9994149208068848,
+      "start": 948,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 1150,
+      "score": 0.9996405839920044,
+      "start": 1136,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    }
+  ],
+  "FIR_56": [
+    {
+      "end": 221,
+      "score": 0.9677816033363342,
+      "start": 206,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    },
+    {
+      "end": 233,
+      "score": 0.9950716495513916,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Deepu"
+    },
+    {
+      "end": 246,
+      "score": 0.9948208332061768,
+      "start": 242,
+      "type": "PERSON",
+      "word": "Sar"
+    },
+    {
+      "end": 257,
+      "score": 0.8613875508308411,
+      "start": 246,
+      "type": "PERSON",
+      "word": "dar Chauhan"
+    },
+    {
+      "end": 307,
+      "score": 0.9982443451881409,
+      "start": 295,
+      "type": "PERSON",
+      "word": "Pawan Verma"
+    },
+    {
+      "end": 413,
+      "score": 0.976443350315094,
+      "start": 398,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    }
+  ],
+  "FIR_57": [
+    {
+      "end": 218,
+      "score": 0.999489426612854,
+      "start": 207,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    },
+    {
+      "end": 230,
+      "score": 0.5326653122901917,
+      "start": 229,
+      "type": "PERSON",
+      "word": "i"
+    },
+    {
+      "end": 249,
+      "score": 0.7873452305793762,
+      "start": 234,
+      "type": "PERSON",
+      "word": "Shri Mohan Pal"
+    },
+    {
+      "end": 329,
+      "score": 0.9996301531791687,
+      "start": 318,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    },
+    {
+      "end": 488,
+      "score": 0.9997137188911438,
+      "start": 475,
+      "type": "PERSON",
+      "word": "Aslam Parvez"
+    },
+    {
+      "end": 501,
+      "score": 0.999885082244873,
+      "start": 497,
+      "type": "PERSON",
+      "word": "Din"
+    },
+    {
+      "end": 510,
+      "score": 0.9741911292076111,
+      "start": 501,
+      "type": "PERSON",
+      "word": "esh Joshi"
+    }
+  ],
+  "FIR_58": [
+    {
+      "end": 222,
+      "score": 0.9997204542160034,
+      "start": 209,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    },
+    {
+      "end": 235,
+      "score": 0.9938112497329712,
+      "start": 228,
+      "type": "PERSON",
+      "word": "Kabira"
+    },
+    {
+      "end": 258,
+      "score": 0.9483510851860046,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Mustaq Sheikh"
+    },
+    {
+      "end": 343,
+      "score": 0.9996723532676697,
+      "start": 330,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    },
+    {
+      "end": 590,
+      "score": 0.9996350407600403,
+      "start": 580,
+      "type": "PERSON",
+      "word": "Mohan Lal"
+    }
+  ],
+  "FIR_59": [
+    {
+      "end": 221,
+      "score": 0.999808669090271,
+      "start": 208,
+      "type": "PERSON",
+      "word": "Salman Mirza"
+    },
+    {
+      "end": 233,
+      "score": 0.9261721968650818,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Sallu"
+    },
+    {
+      "end": 254,
+      "score": 0.8977834582328796,
+      "start": 242,
+      "type": "PERSON",
+      "word": "Feroz Mirza"
+    },
+    {
+      "end": 304,
+      "score": 0.9046120643615723,
+      "start": 291,
+      "type": "PERSON",
+      "word": "Ramesh Chand"
+    },
+    {
+      "end": 318,
+      "score": 0.9778040647506714,
+      "start": 310,
+      "type": "PERSON",
+      "word": "Postman"
+    },
+    {
+      "end": 340,
+      "score": 0.9846743941307068,
+      "start": 327,
+      "type": "PERSON",
+      "word": "Kishan Chand"
+    },
+    {
+      "end": 399,
+      "score": 0.9997696876525879,
+      "start": 387,
+      "type": "PERSON",
+      "word": "Kishore Sen"
+    },
+    {
+      "end": 902,
+      "score": 0.9896281361579895,
+      "start": 887,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 946,
+      "score": 0.9998090267181396,
+      "start": 933,
+      "type": "PERSON",
+      "word": "Salman Mirza"
+    }
+  ],
+  "FIR_60": [
+    {
+      "end": 222,
+      "score": 0.9974225759506226,
+      "start": 211,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    },
+    {
+      "end": 234,
+      "score": 0.9192976951599121,
+      "start": 233,
+      "type": "PERSON",
+      "word": "i"
+    },
+    {
+      "end": 253,
+      "score": 0.975617527961731,
+      "start": 243,
+      "type": "PERSON",
+      "word": "Mohan Pal"
+    },
+    {
+      "end": 374,
+      "score": 0.9726855158805847,
+      "start": 358,
+      "type": "PERSON",
+      "word": "Rameshwar Dayal"
+    }
+  ],
+  "FIR_61": [
+    {
+      "end": 224,
+      "score": 0.9996559023857117,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    },
+    {
+      "end": 255,
+      "score": 0.9996476173400879,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Asif Khan"
+    },
+    {
+      "end": 344,
+      "score": 0.9997446537017822,
+      "start": 332,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    },
+    {
+      "end": 552,
+      "score": 0.9998143911361694,
+      "start": 540,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    },
+    {
+      "end": 700,
+      "score": 0.999793291091919,
+      "start": 685,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 878,
+      "score": 0.9997706413269043,
+      "start": 859,
+      "type": "PERSON",
+      "word": "Arvind Swaminathan"
+    }
+  ],
+  "FIR_62": [
+    {
+      "end": 227,
+      "score": 0.9995221495628357,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 238,
+      "score": 0.85394287109375,
+      "start": 231,
+      "type": "PERSON",
+      "word": "Pandit"
+    },
+    {
+      "end": 260,
+      "score": 0.8566499948501587,
+      "start": 247,
+      "type": "PERSON",
+      "word": "Madan Tiwari"
+    },
+    {
+      "end": 342,
+      "score": 0.9978832006454468,
+      "start": 328,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 522,
+      "score": 0.9938419461250305,
+      "start": 509,
+      "type": "PERSON",
+      "word": "Rajesh Kumar"
+    },
+    {
+      "end": 820,
+      "score": 0.9599667191505432,
+      "start": 805,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 870,
+      "score": 0.9995260238647461,
+      "start": 855,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    },
+    {
+      "end": 880,
+      "score": 0.9375293254852295,
+      "start": 874,
+      "type": "PERSON",
+      "word": "Deepu"
+    },
+    {
+      "end": 904,
+      "score": 0.9785451889038086,
+      "start": 889,
+      "type": "PERSON",
+      "word": "Sardar Chauhan"
+    }
+  ],
+  "FIR_63": [
+    {
+      "end": 231,
+      "score": 0.9996050000190735,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 241,
+      "score": 0.678462028503418,
+      "start": 235,
+      "type": "PERSON",
+      "word": "Sunny"
+    },
+    {
+      "end": 264,
+      "score": 0.8895646929740906,
+      "start": 250,
+      "type": "PERSON",
+      "word": "Bhagwan Kumar"
+    },
+    {
+      "end": 344,
+      "score": 0.9996576905250549,
+      "start": 332,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 526,
+      "score": 0.9915629625320435,
+      "start": 511,
+      "type": "PERSON",
+      "word": "Vikram Rathore"
+    }
+  ],
+  "FIR_64": [
+    {
+      "end": 228,
+      "score": 0.9928651452064514,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Devendra Yadav"
+    },
+    {
+      "end": 235,
+      "score": 0.9996784925460815,
+      "start": 232,
+      "type": "PERSON",
+      "word": "Ch"
+    },
+    {
+      "end": 237,
+      "score": 0.983833372592926,
+      "start": 235,
+      "type": "PERSON",
+      "word": "ho"
+    },
+    {
+      "end": 244,
+      "score": 0.8801791071891785,
+      "start": 237,
+      "type": "PERSON",
+      "word": "ta Raju"
+    },
+    {
+      "end": 268,
+      "score": 0.9630388021469116,
+      "start": 248,
+      "type": "PERSON",
+      "word": "Shri Ramakant Yadav"
+    },
+    {
+      "end": 335,
+      "score": 0.999616265296936,
+      "start": 324,
+      "type": "PERSON",
+      "word": "Amit Tomar"
+    },
+    {
+      "end": 456,
+      "score": 0.9996086955070496,
+      "start": 441,
+      "type": "PERSON",
+      "word": "Devendra Yadav"
+    },
+    {
+      "end": 606,
+      "score": 0.9913510680198669,
+      "start": 594,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    }
+  ],
+  "FIR_65": [
+    {
+      "end": 215,
+      "score": 0.9707152843475342,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 221,
+      "score": 0.9967845678329468,
+      "start": 219,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 225,
+      "score": 0.8531240820884705,
+      "start": 221,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 232,
+      "score": 0.9377956986427307,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 240,
+      "score": 0.9520138502120972,
+      "start": 234,
+      "type": "PERSON",
+      "word": "Kallu"
+    },
+    {
+      "end": 263,
+      "score": 0.8003703951835632,
+      "start": 249,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 330,
+      "score": 0.9998693466186523,
+      "start": 327,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 340,
+      "score": 0.8841006755828857,
+      "start": 330,
+      "type": "PERSON",
+      "word": "kas Sharma"
+    },
+    {
+      "end": 349,
+      "score": 0.8445208072662354,
+      "start": 344,
+      "type": "PERSON",
+      "word": "Biku"
+    },
+    {
+      "end": 372,
+      "score": 0.9734813570976257,
+      "start": 358,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 449,
+      "score": 0.9986411929130554,
+      "start": 435,
+      "type": "PERSON",
+      "word": "Kuldeep Yadav"
+    },
+    {
+      "end": 771,
+      "score": 0.9927470088005066,
+      "start": 756,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 1073,
+      "score": 0.9771380424499512,
+      "start": 1060,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    }
+  ],
+  "FIR_66": [
+    {
+      "end": 225,
+      "score": 0.998600423336029,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Aslam Parvez"
+    },
+    {
+      "end": 236,
+      "score": 0.4775252342224121,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Chacha"
+    },
+    {
+      "end": 258,
+      "score": 0.9772634506225586,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Latif Parvez"
+    },
+    {
+      "end": 390,
+      "score": 0.9592885971069336,
+      "start": 379,
+      "type": "PERSON",
+      "word": "Ram Avatar"
+    }
+  ],
+  "FIR_67": [
+    {
+      "end": 226,
+      "score": 0.999704122543335,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    },
+    {
+      "end": 257,
+      "score": 0.9957964420318604,
+      "start": 245,
+      "type": "PERSON",
+      "word": "Zahid Ahmed"
+    },
+    {
+      "end": 320,
+      "score": 0.9997186660766602,
+      "start": 307,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    },
+    {
+      "end": 519,
+      "score": 0.9832735657691956,
+      "start": 505,
+      "type": "PERSON",
+      "word": "Suresh Bansal"
+    },
+    {
+      "end": 876,
+      "score": 0.9998359084129333,
+      "start": 863,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    },
+    {
+      "end": 1012,
+      "score": 0.9988887310028076,
+      "start": 1000,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    }
+  ],
+  "FIR_68": [
+    {
+      "end": 231,
+      "score": 0.9990069270133972,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 240,
+      "score": 0.913540244102478,
+      "start": 235,
+      "type": "PERSON",
+      "word": "Andy"
+    },
+    {
+      "end": 261,
+      "score": 0.9469925761222839,
+      "start": 249,
+      "type": "PERSON",
+      "word": "Shyam Verma"
+    },
+    {
+      "end": 332,
+      "score": 0.9767569303512573,
+      "start": 320,
+      "type": "PERSON",
+      "word": "Pawan Verma"
+    },
+    {
+      "end": 720,
+      "score": 0.992204487323761,
+      "start": 705,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 796,
+      "score": 0.9993411898612976,
+      "start": 784,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 961,
+      "score": 0.9993699193000793,
+      "start": 947,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 1103,
+      "score": 0.9993111491203308,
+      "start": 1089,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 1114,
+      "score": 0.9605019092559814,
+      "start": 1107,
+      "type": "PERSON",
+      "word": "Pandit"
+    },
+    {
+      "end": 1136,
+      "score": 0.9562188982963562,
+      "start": 1123,
+      "type": "PERSON",
+      "word": "Madan Tiwari"
+    }
+  ],
+  "FIR_69": [
+    {
+      "end": 225,
+      "score": 0.9988994002342224,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    },
+    {
+      "end": 233,
+      "score": 0.9539985060691833,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Mun"
+    },
+    {
+      "end": 258,
+      "score": 0.9762532114982605,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Kishori Rawat"
+    },
+    {
+      "end": 339,
+      "score": 0.9976447224617004,
+      "start": 327,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    },
+    {
+      "end": 522,
+      "score": 0.9988681674003601,
+      "start": 509,
+      "type": "PERSON",
+      "word": "Dinesh Joshi"
+    }
+  ],
+  "FIR_70": [
+    {
+      "end": 217,
+      "score": 0.9979760050773621,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 231,
+      "score": 0.9224058985710144,
+      "start": 221,
+      "type": "PERSON",
+      "word": "Raju Bhai"
+    },
+    {
+      "end": 244,
+      "score": 0.9842032194137573,
+      "start": 240,
+      "type": "PERSON",
+      "word": "Mah"
+    },
+    {
+      "end": 256,
+      "score": 0.7593169808387756,
+      "start": 244,
+      "type": "PERSON",
+      "word": "eshwar Singh"
+    },
+    {
+      "end": 324,
+      "score": 0.999567985534668,
+      "start": 314,
+      "type": "PERSON",
+      "word": "Mohan Lal"
+    },
+    {
+      "end": 453,
+      "score": 0.9996278285980225,
+      "start": 438,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 593,
+      "score": 0.9995648860931396,
+      "start": 578,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ],
+  "FIR_71": [
+    {
+      "end": 225,
+      "score": 0.9984676241874695,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 232,
+      "score": 0.9375219345092773,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 257,
+      "score": 0.8561123013496399,
+      "start": 243,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 326,
+      "score": 0.9985383749008179,
+      "start": 314,
+      "type": "PERSON",
+      "word": "Kishore Sen"
+    },
+    {
+      "end": 438,
+      "score": 0.9916143417358398,
+      "start": 425,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    }
+  ],
+  "FIR_72": [
+    {
+      "end": 225,
+      "score": 0.9921970367431641,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    },
+    {
+      "end": 231,
+      "score": 0.9992349147796631,
+      "start": 229,
+      "type": "PERSON",
+      "word": "V"
+    },
+    {
+      "end": 235,
+      "score": 0.9823700189590454,
+      "start": 231,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 257,
+      "score": 0.9356117248535156,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Shabir Akram"
+    },
+    {
+      "end": 380,
+      "score": 0.9996762275695801,
+      "start": 376,
+      "type": "PERSON",
+      "word": "Ram"
+    },
+    {
+      "end": 392,
+      "score": 0.8774919509887695,
+      "start": 380,
+      "type": "PERSON",
+      "word": "eshwar Dayal"
+    }
+  ],
+  "FIR_73": [
+    {
+      "end": 232,
+      "score": 0.9986537098884583,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Ramesh Chand"
+    },
+    {
+      "end": 244,
+      "score": 0.8748393058776855,
+      "start": 236,
+      "type": "PERSON",
+      "word": "Postman"
+    },
+    {
+      "end": 266,
+      "score": 0.8060408234596252,
+      "start": 253,
+      "type": "PERSON",
+      "word": "Kishan Chand"
+    },
+    {
+      "end": 660,
+      "score": 0.9997826218605042,
+      "start": 645,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    },
+    {
+      "end": 723,
+      "score": 0.9974845051765442,
+      "start": 710,
+      "type": "PERSON",
+      "word": "Ramesh Chand"
+    },
+    {
+      "end": 1024,
+      "score": 0.9997235536575317,
+      "start": 1005,
+      "type": "PERSON",
+      "word": "Arvind Swaminathan"
+    }
+  ],
+  "FIR_74": [
+    {
+      "end": 207,
+      "score": 0.9994291067123413,
+      "start": 195,
+      "type": "PERSON",
+      "word": "\u092c\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 240,
+      "score": 0.9857160449028015,
+      "start": 228,
+      "type": "PERSON",
+      "word": "\u0917\u093f\u0930\u0940\u0936 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 425,
+      "score": 0.9998061656951904,
+      "start": 413,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 437,
+      "score": 0.7224472165107727,
+      "start": 433,
+      "type": "PERSON",
+      "word": "\u0915\u094d\u0915\u0940"
+    },
+    {
+      "end": 470,
+      "score": 0.9998812675476074,
+      "start": 469,
+      "type": "PERSON",
+      "word": ""
+    },
+    {
+      "end": 480,
+      "score": 0.9937705397605896,
+      "start": 470,
+      "type": "PERSON",
+      "word": "\u0939\u0930\u0940\u0936 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 532,
+      "score": 0.9994504451751709,
+      "start": 520,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u091c\u0947\u0936 \u0915\u0941\u092e\u093e\u0930"
+    },
+    {
+      "end": 619,
+      "score": 0.9991635084152222,
+      "start": 607,
+      "type": "PERSON",
+      "word": "\u092c\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 917,
+      "score": 0.9994218349456787,
+      "start": 905,
+      "type": "PERSON",
+      "word": "\u092c\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 1070,
+      "score": 0.9264432191848755,
+      "start": 1063,
+      "type": "PERSON",
+      "word": "\u092e\u0941\u0916\u094d\u0924\u093e"
+    },
+    {
+      "end": 1078,
+      "score": 0.9186645150184631,
+      "start": 1070,
+      "type": "PERSON",
+      "word": "\u0930 \u0905\u0902\u0938\u093e\u0930\u0940"
+    }
+  ],
+  "FIR_75": [
+    {
+      "end": 197,
+      "score": 0.9997389316558838,
+      "start": 186,
+      "type": "PERSON",
+      "word": "\u0906\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 218,
+      "score": 0.5456982851028442,
+      "start": 213,
+      "type": "PERSON",
+      "word": "\u0936\u094d\u0930\u0940"
+    },
+    {
+      "end": 230,
+      "score": 0.9888128042221069,
+      "start": 218,
+      "type": "PERSON",
+      "word": "\u0936\u094d\u092f\u093e\u092e \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 299,
+      "score": 0.9997667074203491,
+      "start": 285,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u094d\u0930\u092e \u0930\u093e\u0920\u094c\u0921\u093c"
+    },
+    {
+      "end": 479,
+      "score": 0.9998043775558472,
+      "start": 468,
+      "type": "PERSON",
+      "word": "\u0906\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e"
+    }
+  ],
+  "FIR_76": [
+    {
+      "end": 202,
+      "score": 0.9997390508651733,
+      "start": 191,
+      "type": "PERSON",
+      "word": "\u0926\u0940\u092a\u0915 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "end": 235,
+      "score": 0.9966486096382141,
+      "start": 223,
+      "type": "PERSON",
+      "word": "\u0938\u0930\u0926\u093e\u0930 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "end": 474,
+      "score": 0.9997663497924805,
+      "start": 464,
+      "type": "PERSON",
+      "word": "\u092e\u0928\u094b\u091c \u0930\u093e\u0935\u0924"
+    },
+    {
+      "end": 516,
+      "score": 0.9996395707130432,
+      "start": 506,
+      "type": "PERSON",
+      "word": "\u0905\u092e\u093f\u0924 \u0924\u094b\u092e\u0930"
+    }
+  ],
+  "FIR_77": [
+    {
+      "end": 207,
+      "score": 0.9996585845947266,
+      "start": 196,
+      "type": "PERSON",
+      "word": "\u092b\u093e\u0930\u0942\u0915 \u0905\u0939\u092e\u0926"
+    },
+    {
+      "end": 240,
+      "score": 0.993159294128418,
+      "start": 229,
+      "type": "PERSON",
+      "word": "\u091c\u093e\u0939\u093f\u0926 \u0905\u0939\u092e\u0926"
+    },
+    {
+      "end": 315,
+      "score": 0.9974308013916016,
+      "start": 304,
+      "type": "PERSON",
+      "word": "\u092b\u093e\u0930\u0942\u0915 \u0905\u0939\u092e\u0926"
+    },
+    {
+      "end": 593,
+      "score": 0.9998238682746887,
+      "start": 581,
+      "type": "PERSON",
+      "word": "\u0915\u0941\u0932\u0926\u0940\u092a \u092f\u093e\u0926\u0935"
+    }
+  ],
+  "FIR_78": [
+    {
+      "end": 219,
+      "score": 0.9997249841690063,
+      "start": 206,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    },
+    {
+      "end": 232,
+      "score": 0.998245120048523,
+      "start": 225,
+      "type": "PERSON",
+      "word": "Kabira"
+    },
+    {
+      "end": 255,
+      "score": 0.9709984660148621,
+      "start": 241,
+      "type": "PERSON",
+      "word": "Mustaq Sheikh"
+    },
+    {
+      "end": 379,
+      "score": 0.9849601984024048,
+      "start": 368,
+      "type": "PERSON",
+      "word": "Ram Avatar"
+    }
+  ],
+  "FIR_79": [
+    {
+      "end": 219,
+      "score": 0.9993153214454651,
+      "start": 207,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 231,
+      "score": 0.7174533009529114,
+      "start": 225,
+      "type": "PERSON",
+      "word": "Sunny"
+    },
+    {
+      "end": 254,
+      "score": 0.9738940000534058,
+      "start": 235,
+      "type": "PERSON",
+      "word": "Shri Bhagwan Kumar"
+    },
+    {
+      "end": 336,
+      "score": 0.9981610774993896,
+      "start": 324,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 501,
+      "score": 0.9995090365409851,
+      "start": 486,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 747,
+      "score": 0.8789349794387817,
+      "start": 728,
+      "type": "PERSON",
+      "word": "Ramesh Chand alias"
+    },
+    {
+      "end": 755,
+      "score": 0.9322839379310608,
+      "start": 747,
+      "type": "PERSON",
+      "word": "Postman"
+    },
+    {
+      "end": 777,
+      "score": 0.9951316118240356,
+      "start": 759,
+      "type": "PERSON",
+      "word": "Shri Kishan Chand"
+    },
+    {
+      "end": 879,
+      "score": 0.9997575879096985,
+      "start": 867,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 1043,
+      "score": 0.9987976551055908,
+      "start": 1024,
+      "type": "PERSON",
+      "word": "Shri Suresh Bansal"
+    }
+  ],
+  "FIR_80": [
+    {
+      "end": 220,
+      "score": 0.9985260963439941,
+      "start": 209,
+      "type": "PERSON",
+      "word": "Suresh Pal"
+    },
+    {
+      "end": 232,
+      "score": 0.9057952761650085,
+      "start": 231,
+      "type": "PERSON",
+      "word": "i"
+    },
+    {
+      "end": 251,
+      "score": 0.9605438709259033,
+      "start": 241,
+      "type": "PERSON",
+      "word": "Mohan Pal"
+    },
+    {
+      "end": 302,
+      "score": 0.997144341468811,
+      "start": 290,
+      "type": "PERSON",
+      "word": "Pawan Verma"
+    }
+  ],
+  "FIR_81": [
+    {
+      "end": 225,
+      "score": 0.9972153902053833,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    },
+    {
+      "end": 231,
+      "score": 0.9944915771484375,
+      "start": 229,
+      "type": "PERSON",
+      "word": "V"
+    },
+    {
+      "end": 235,
+      "score": 0.9387385249137878,
+      "start": 231,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 257,
+      "score": 0.9787892699241638,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Shabir Akram"
+    },
+    {
+      "end": 360,
+      "score": 0.9971689581871033,
+      "start": 348,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    },
+    {
+      "end": 496,
+      "score": 0.9964761734008789,
+      "start": 481,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 680,
+      "score": 0.9940187931060791,
+      "start": 667,
+      "type": "PERSON",
+      "word": "Dinesh Joshi"
+    },
+    {
+      "end": 921,
+      "score": 0.9975183606147766,
+      "start": 909,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    }
+  ],
+  "FIR_82": [
+    {
+      "end": 216,
+      "score": 0.9995796084403992,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 227,
+      "score": 0.8424954414367676,
+      "start": 220,
+      "type": "PERSON",
+      "word": "Pandit"
+    },
+    {
+      "end": 249,
+      "score": 0.9019626379013062,
+      "start": 236,
+      "type": "PERSON",
+      "word": "Madan Tiwari"
+    },
+    {
+      "end": 523,
+      "score": 0.9993628859519958,
+      "start": 508,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 699,
+      "score": 0.9983912706375122,
+      "start": 684,
+      "type": "PERSON",
+      "word": "Deepak Chauhan"
+    },
+    {
+      "end": 709,
+      "score": 0.8602907657623291,
+      "start": 703,
+      "type": "PERSON",
+      "word": "Deepu"
+    },
+    {
+      "end": 733,
+      "score": 0.8965914249420166,
+      "start": 718,
+      "type": "PERSON",
+      "word": "Sardar Chauhan"
+    },
+    {
+      "end": 808,
+      "score": 0.9991021156311035,
+      "start": 798,
+      "type": "PERSON",
+      "word": "Mohan Lal"
+    },
+    {
+      "end": 925,
+      "score": 0.9994434118270874,
+      "start": 911,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    }
+  ],
+  "FIR_83": [
+    {
+      "end": 224,
+      "score": 0.9996481537818909,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 234,
+      "score": 0.7129068970680237,
+      "start": 228,
+      "type": "PERSON",
+      "word": "Sunny"
+    },
+    {
+      "end": 257,
+      "score": 0.9411344528198242,
+      "start": 243,
+      "type": "PERSON",
+      "word": "Bhagwan Kumar"
+    },
+    {
+      "end": 343,
+      "score": 0.9997716546058655,
+      "start": 331,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 642,
+      "score": 0.9987982511520386,
+      "start": 630,
+      "type": "PERSON",
+      "word": "Kishore Sen"
+    },
+    {
+      "end": 720,
+      "score": 0.7898659706115723,
+      "start": 715,
+      "type": "PERSON",
+      "word": "Zabt"
+    }
+  ],
+  "FIR_84": [
+    {
+      "end": 225,
+      "score": 0.9994351863861084,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 234,
+      "score": 0.8259246945381165,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Andy"
+    },
+    {
+      "end": 255,
+      "score": 0.886691153049469,
+      "start": 243,
+      "type": "PERSON",
+      "word": "Shyam Verma"
+    },
+    {
+      "end": 355,
+      "score": 0.9995284676551819,
+      "start": 343,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 499,
+      "score": 0.9970828890800476,
+      "start": 486,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 559,
+      "score": 0.9835987091064453,
+      "start": 543,
+      "type": "PERSON",
+      "word": "Rameshwar Dayal"
+    }
+  ],
+  "FIR_85": [
+    {
+      "end": 232,
+      "score": 0.9968622326850891,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 238,
+      "score": 0.9974843263626099,
+      "start": 236,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 242,
+      "score": 0.914269745349884,
+      "start": 238,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 249,
+      "score": 0.9435608386993408,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 257,
+      "score": 0.6028324365615845,
+      "start": 255,
+      "type": "PERSON",
+      "word": "lu"
+    },
+    {
+      "end": 280,
+      "score": 0.9911425709724426,
+      "start": 266,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 357,
+      "score": 0.9939959645271301,
+      "start": 344,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 364,
+      "score": 0.9971501231193542,
+      "start": 361,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 366,
+      "score": 0.9040291905403137,
+      "start": 364,
+      "type": "PERSON",
+      "word": "ku"
+    },
+    {
+      "end": 389,
+      "score": 0.9818558096885681,
+      "start": 375,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 471,
+      "score": 0.9994719624519348,
+      "start": 452,
+      "type": "PERSON",
+      "word": "Arvind Swaminathan"
+    },
+    {
+      "end": 990,
+      "score": 0.9995768070220947,
+      "start": 978,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 1065,
+      "score": 0.999249279499054,
+      "start": 1052,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    }
+  ],
+  "FIR_86": [
+    {
+      "end": 226,
+      "score": 0.9992671012878418,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Aslam Parvez"
+    },
+    {
+      "end": 234,
+      "score": 0.48781105875968933,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Cha"
+    },
+    {
+      "end": 259,
+      "score": 0.9843736290931702,
+      "start": 246,
+      "type": "PERSON",
+      "word": "Latif Parvez"
+    },
+    {
+      "end": 398,
+      "score": 0.9901607036590576,
+      "start": 385,
+      "type": "PERSON",
+      "word": "Rajesh Kumar"
+    }
+  ],
+  "FIR_87": [
+    {
+      "end": 218,
+      "score": 0.887730598449707,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Imran Sheikh ur"
+    },
+    {
+      "end": 226,
+      "score": 0.7240350842475891,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Kabira"
+    },
+    {
+      "end": 249,
+      "score": 0.8921911716461182,
+      "start": 235,
+      "type": "PERSON",
+      "word": "Mustaq Sheikh"
+    },
+    {
+      "end": 468,
+      "score": 0.9995108246803284,
+      "start": 455,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    },
+    {
+      "end": 638,
+      "score": 0.9996081590652466,
+      "start": 623,
+      "type": "PERSON",
+      "word": "Mukhtar Ansari"
+    },
+    {
+      "end": 806,
+      "score": 0.9982991218566895,
+      "start": 791,
+      "type": "PERSON",
+      "word": "Vikram Rathore"
+    },
+    {
+      "end": 924,
+      "score": 0.9995781183242798,
+      "start": 911,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    }
+  ],
+  "FIR_88": [
+    {
+      "end": 224,
+      "score": 0.9994251132011414,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 233,
+      "score": 0.9269400238990784,
+      "start": 228,
+      "type": "PERSON",
+      "word": "Andy"
+    },
+    {
+      "end": 254,
+      "score": 0.9954284429550171,
+      "start": 242,
+      "type": "PERSON",
+      "word": "Shyam Verma"
+    },
+    {
+      "end": 331,
+      "score": 0.9996182322502136,
+      "start": 317,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    },
+    {
+      "end": 342,
+      "score": 0.9866107106208801,
+      "start": 335,
+      "type": "PERSON",
+      "word": "Pandit"
+    },
+    {
+      "end": 364,
+      "score": 0.9951580166816711,
+      "start": 351,
+      "type": "PERSON",
+      "word": "Madan Tiwari"
+    },
+    {
+      "end": 438,
+      "score": 0.999656081199646,
+      "start": 427,
+      "type": "PERSON",
+      "word": "Amit Tomar"
+    },
+    {
+      "end": 743,
+      "score": 0.9994340538978577,
+      "start": 728,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    },
+    {
+      "end": 1048,
+      "score": 0.9996216893196106,
+      "start": 1036,
+      "type": "PERSON",
+      "word": "Anand Verma"
+    },
+    {
+      "end": 1228,
+      "score": 0.9989867806434631,
+      "start": 1214,
+      "type": "PERSON",
+      "word": "Pankaj Tiwari"
+    }
+  ],
+  "FIR_89": [
+    {
+      "end": 225,
+      "score": 0.9989053010940552,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    },
+    {
+      "end": 233,
+      "score": 0.9152030944824219,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Mun"
+    },
+    {
+      "end": 258,
+      "score": 0.9336115121841431,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Kishori Rawat"
+    },
+    {
+      "end": 328,
+      "score": 0.9996203780174255,
+      "start": 314,
+      "type": "PERSON",
+      "word": "Kuldeep Yadav"
+    },
+    {
+      "end": 571,
+      "score": 0.9987642765045166,
+      "start": 559,
+      "type": "PERSON",
+      "word": "Manoj Rawat"
+    }
+  ],
+  "FIR_90": [
+    {
+      "end": 232,
+      "score": 0.9958178997039795,
+      "start": 219,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 238,
+      "score": 0.9683114290237427,
+      "start": 236,
+      "type": "PERSON",
+      "word": "B"
+    },
+    {
+      "end": 242,
+      "score": 0.8703409433364868,
+      "start": 238,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 249,
+      "score": 0.826223611831665,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Viku"
+    },
+    {
+      "end": 257,
+      "score": 0.4944850206375122,
+      "start": 255,
+      "type": "PERSON",
+      "word": "lu"
+    },
+    {
+      "end": 280,
+      "score": 0.9101621508598328,
+      "start": 266,
+      "type": "PERSON",
+      "word": "Harish Sharma"
+    },
+    {
+      "end": 381,
+      "score": 0.9820640683174133,
+      "start": 368,
+      "type": "PERSON",
+      "word": "Vikas Sharma"
+    },
+    {
+      "end": 512,
+      "score": 0.9992520809173584,
+      "start": 500,
+      "type": "PERSON",
+      "word": "Sunil Kumar"
+    },
+    {
+      "end": 572,
+      "score": 0.874902069568634,
+      "start": 556,
+      "type": "PERSON",
+      "word": "Shri Ram Avatar"
+    }
+  ],
+  "FIR_91": [
+    {
+      "end": 226,
+      "score": 0.9937955737113953,
+      "start": 213,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 233,
+      "score": 0.9182223677635193,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Bi"
+    },
+    {
+      "end": 258,
+      "score": 0.946982204914093,
+      "start": 244,
+      "type": "PERSON",
+      "word": "Girish Sharma"
+    },
+    {
+      "end": 345,
+      "score": 0.9987308979034424,
+      "start": 332,
+      "type": "PERSON",
+      "word": "Bikas Sharma"
+    },
+    {
+      "end": 662,
+      "score": 0.8802595734596252,
+      "start": 648,
+      "type": "PERSON",
+      "word": "Suresh Bansal"
+    }
+  ],
+  "FIR_92": [
+    {
+      "end": 214,
+      "score": 0.9989262819290161,
+      "start": 202,
+      "type": "PERSON",
+      "word": "Wasim Akram"
+    },
+    {
+      "end": 220,
+      "score": 0.9925756454467773,
+      "start": 218,
+      "type": "PERSON",
+      "word": "V"
+    },
+    {
+      "end": 224,
+      "score": 0.8968281149864197,
+      "start": 220,
+      "type": "PERSON",
+      "word": "icky"
+    },
+    {
+      "end": 246,
+      "score": 0.9942847490310669,
+      "start": 233,
+      "type": "PERSON",
+      "word": "Shabir Akram"
+    },
+    {
+      "end": 393,
+      "score": 0.9977309107780457,
+      "start": 381,
+      "type": "PERSON",
+      "word": "Pawan Verma"
+    }
+  ],
+  "FIR_93": [
+    {
+      "end": 225,
+      "score": 0.9985198974609375,
+      "start": 212,
+      "type": "PERSON",
+      "word": "Ramesh Chand"
+    },
+    {
+      "end": 237,
+      "score": 0.7248793840408325,
+      "start": 229,
+      "type": "PERSON",
+      "word": "Postman"
+    },
+    {
+      "end": 259,
+      "score": 0.9246192574501038,
+      "start": 241,
+      "type": "PERSON",
+      "word": "Shri Kishan Chand"
+    },
+    {
+      "end": 482,
+      "score": 0.9904582500457764,
+      "start": 469,
+      "type": "PERSON",
+      "word": "Ramesh Chand"
+    },
+    {
+      "end": 669,
+      "score": 0.9989497661590576,
+      "start": 656,
+      "type": "PERSON",
+      "word": "Dinesh Joshi"
+    },
+    {
+      "end": 1058,
+      "score": 0.980610191822052,
+      "start": 1043,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ],
+  "FIR_94": [
+    {
+      "end": 213,
+      "score": 0.9997118711471558,
+      "start": 199,
+      "type": "PERSON",
+      "word": "\u0938\u0932\u092e\u093e\u0928 \u092e\u093f\u0930\u094d\u091c\u093c\u093e"
+    },
+    {
+      "end": 250,
+      "score": 0.9857742190361023,
+      "start": 235,
+      "type": "PERSON",
+      "word": "\u092b\u093f\u0930\u094b\u091c\u093c \u092e\u093f\u0930\u094d\u091c\u093c\u093e"
+    },
+    {
+      "end": 343,
+      "score": 0.9995332956314087,
+      "start": 329,
+      "type": "PERSON",
+      "word": "\u0938\u0932\u092e\u093e\u0928 \u092e\u093f\u0930\u094d\u091c\u093c\u093e"
+    },
+    {
+      "end": 495,
+      "score": 0.9716324210166931,
+      "start": 491,
+      "type": "PERSON",
+      "word": "\u092e\u0941\u0916"
+    },
+    {
+      "end": 498,
+      "score": 0.5952334403991699,
+      "start": 495,
+      "type": "PERSON",
+      "word": "\u094d\u0924\u093e"
+    },
+    {
+      "end": 506,
+      "score": 0.9034909605979919,
+      "start": 498,
+      "type": "PERSON",
+      "word": "\u0930 \u0905\u0902\u0938\u093e\u0930\u0940"
+    },
+    {
+      "end": 548,
+      "score": 0.9996414184570312,
+      "start": 539,
+      "type": "PERSON",
+      "word": "\u092e\u094b\u0939\u0928 \u0932\u093e\u0932"
+    },
+    {
+      "end": 746,
+      "score": 0.9996830224990845,
+      "start": 734,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u093e\u0938 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 758,
+      "score": 0.8832237720489502,
+      "start": 751,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u094d\u0915\u0940"
+    },
+    {
+      "end": 768,
+      "score": 0.6009896993637085,
+      "start": 763,
+      "type": "PERSON",
+      "word": "\u0935\u093f\u0915\u0942"
+    },
+    {
+      "end": 791,
+      "score": 0.9998288154602051,
+      "start": 790,
+      "type": "PERSON",
+      "word": ""
+    },
+    {
+      "end": 801,
+      "score": 0.996544599533081,
+      "start": 791,
+      "type": "PERSON",
+      "word": "\u0939\u0930\u0940\u0936 \u0936\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 963,
+      "score": 0.9997305870056152,
+      "start": 949,
+      "type": "PERSON",
+      "word": "\u0938\u0932\u092e\u093e\u0928 \u092e\u093f\u0930\u094d\u091c\u093c\u093e"
+    }
+  ],
+  "FIR_95": [
+    {
+      "end": 206,
+      "score": 0.9997442960739136,
+      "start": 195,
+      "type": "PERSON",
+      "word": "\u0906\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 227,
+      "score": 0.6066704392433167,
+      "start": 222,
+      "type": "PERSON",
+      "word": "\u0936\u094d\u0930\u0940"
+    },
+    {
+      "end": 239,
+      "score": 0.9622633457183838,
+      "start": 227,
+      "type": "PERSON",
+      "word": "\u0936\u094d\u092f\u093e\u092e \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 435,
+      "score": 0.9997567534446716,
+      "start": 424,
+      "type": "PERSON",
+      "word": "\u0906\u0928\u0902\u0926 \u0935\u0930\u094d\u092e\u093e"
+    },
+    {
+      "end": 615,
+      "score": 0.9997037053108215,
+      "start": 605,
+      "type": "PERSON",
+      "word": "\u0915\u093f\u0936\u094b\u0930 \u0938\u0947\u0928"
+    }
+  ],
+  "FIR_96": [
+    {
+      "end": 197,
+      "score": 0.9997882843017578,
+      "start": 186,
+      "type": "PERSON",
+      "word": "\u0926\u0940\u092a\u0915 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "end": 230,
+      "score": 0.9975665211677551,
+      "start": 218,
+      "type": "PERSON",
+      "word": "\u0938\u0930\u0926\u093e\u0930 \u091a\u094c\u0939\u093e\u0928"
+    },
+    {
+      "end": 299,
+      "score": 0.9998415112495422,
+      "start": 285,
+      "type": "PERSON",
+      "word": "\u0930\u093e\u092e\u0947\u0936\u094d\u0935\u0930 \u0926\u092f\u093e\u0932"
+    },
+    {
+      "end": 540,
+      "score": 0.9998384118080139,
+      "start": 529,
+      "type": "PERSON",
+      "word": "\u0926\u0940\u092a\u0915 \u091a\u094c\u0939\u093e\u0928"
+    }
+  ],
+  "FIR_97": [
+    {
+      "end": 221,
+      "score": 0.9998060464859009,
+      "start": 208,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    },
+    {
+      "end": 233,
+      "score": 0.9912034273147583,
+      "start": 227,
+      "type": "PERSON",
+      "word": "Tiger"
+    },
+    {
+      "end": 254,
+      "score": 0.9929201602935791,
+      "start": 242,
+      "type": "PERSON",
+      "word": "Zahid Ahmed"
+    },
+    {
+      "end": 317,
+      "score": 0.9997720122337341,
+      "start": 304,
+      "type": "PERSON",
+      "word": "Farooq Ahmed"
+    },
+    {
+      "end": 612,
+      "score": 0.9997256398200989,
+      "start": 593,
+      "type": "PERSON",
+      "word": "Arvind Swaminathan"
+    }
+  ],
+  "FIR_98": [
+    {
+      "end": 224,
+      "score": 0.9996302127838135,
+      "start": 211,
+      "type": "PERSON",
+      "word": "Imran Sheikh"
+    },
+    {
+      "end": 237,
+      "score": 0.9970417022705078,
+      "start": 230,
+      "type": "PERSON",
+      "word": "Kabira"
+    },
+    {
+      "end": 260,
+      "score": 0.9880512356758118,
+      "start": 246,
+      "type": "PERSON",
+      "word": "Mustaq Sheikh"
+    },
+    {
+      "end": 392,
+      "score": 0.9987592697143555,
+      "start": 379,
+      "type": "PERSON",
+      "word": "Rajesh Kumar"
+    }
+  ],
+  "FIR_99": [
+    {
+      "end": 218,
+      "score": 0.9998679757118225,
+      "start": 206,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    },
+    {
+      "end": 228,
+      "score": 0.4800845682621002,
+      "start": 224,
+      "type": "PERSON",
+      "word": "Sho"
+    },
+    {
+      "end": 251,
+      "score": 0.9966487884521484,
+      "start": 241,
+      "type": "PERSON",
+      "word": "Asif Khan"
+    },
+    {
+      "end": 334,
+      "score": 0.9998198747634888,
+      "start": 322,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    },
+    {
+      "end": 511,
+      "score": 0.9917289614677429,
+      "start": 498,
+      "type": "PERSON",
+      "word": "Ramesh Chand"
+    },
+    {
+      "end": 525,
+      "score": 0.8592766523361206,
+      "start": 517,
+      "type": "PERSON",
+      "word": "Postman"
+    },
+    {
+      "end": 540,
+      "score": 0.997268557548523,
+      "start": 534,
+      "type": "PERSON",
+      "word": "Kisha"
+    },
+    {
+      "end": 547,
+      "score": 0.9521920680999756,
+      "start": 540,
+      "type": "PERSON",
+      "word": "n Chand"
+    },
+    {
+      "end": 834,
+      "score": 0.9803183078765869,
+      "start": 819,
+      "type": "PERSON",
+      "word": "Vikram Rathore"
+    },
+    {
+      "end": 951,
+      "score": 0.9998677372932434,
+      "start": 939,
+      "type": "PERSON",
+      "word": "Rashid Khan"
+    },
+    {
+      "end": 1119,
+      "score": 0.9967721104621887,
+      "start": 1104,
+      "type": "PERSON",
+      "word": "Rajendra Singh"
+    }
+  ]
+}

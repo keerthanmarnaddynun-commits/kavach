@@ -1,0 +1,8 @@
+COMMAND: PY scripts/report/step5_baseline.py --run-id step5a_baseline_r4
+EXIT: 0
+SECONDS: 2.0
+--- OUTPUT ---
+Step 5a baseline completed successfully.
+New folder: C:\Users\Kirthan\Desktop\crimi-nex\results\2026-11-23_step5a_baseline_r4
+STEP1 hash: 741f5305847741679ee03cebaf70ad0e7a48a78355aeb1c1e0c27358dd9d369f
+STEP2 hash: 7d46c0c4fc9a736432f0d701e1b308180754543746bdfb7f2a374afe917e0021

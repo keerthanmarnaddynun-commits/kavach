@@ -30,3 +30,11 @@
 2026-11-23 21:04:16 [F1] HOLD: Gate check failed: commits were made outside the tool since begin (HEAD moved to 6440fdf while F1.begin.json has c4cfc34). Per instruction, holding instead of modifying begin.json.
 2026-11-23 21:16:36 [F1] RELEASED by the user
 2026-11-23 22:02:11 [F1] GATE F1: PASS
+2026-11-23 22:10:12 [F1] COMMIT 296d967de8 pushed=True
+2026-11-23 22:11:34 [F2] BEGIN: Regenerate STEP5A and STEP5B blocks from new runs
+2026-11-23 22:18:53 [F2] RUN PY scripts/report/step5_baseline.py --run-id step5a_baseline_r3 -> exit 1 (F2_01_gen_step5a_r3.txt)
+2026-11-23 22:29:33 [F2] RUN PY scripts/report/step5_baseline.py --run-id step5a_baseline_r4 -> exit 0 (F2_02_gen_step5a_r4.txt)
+2026-11-23 22:41:05 [F2] RUN PY scripts/report/step5b_ner_baseline.py --run-id step5b_ner_baseline_r2 -> exit 0 (F2_03_gen_step5b_r2.txt)
+2026-11-23 22:41:59 [F2] RUN PY scripts/check_results_docs.py docs/RESULTS.md STEP5A STEP5B -> exit 0 (F2_04_check_steps_5.txt)
+2026-11-23 22:42:25 [F2] Step 5A and Step 5B regenerated. Step 5A metrics diff: command, timestamps, pytest_command, run_id; all evaluation numbers identical. Step 5B metrics diff: command, timestamps, pytest_command, run_id, and runtime_seconds (IndicNER: 80.79s vs 97.79s; XLM-R: 65.32s vs 52.56s); all evaluation scores identical. scripts/check_results_docs.py docs/RESULTS.md STEP5A STEP5B returned DOCS OK (F2_04_check_steps_5.txt).
+2026-11-23 22:50:47 [F2] GATE F2: PASS

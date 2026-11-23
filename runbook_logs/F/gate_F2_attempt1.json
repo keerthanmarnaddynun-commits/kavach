@@ -1,0 +1,57 @@
+{
+  "files": [
+    "results/2026-11-23_step5a_baseline_r3/SHA256SUMS.txt",
+    "results/2026-11-23_step5a_baseline_r3/metrics.json",
+    "results/2026-11-23_step5a_baseline_r3/pytest_raw.txt",
+    "results/2026-11-23_step5a_baseline_r4/SHA256SUMS.txt",
+    "results/2026-11-23_step5a_baseline_r4/metrics.json",
+    "results/2026-11-23_step5a_baseline_r4/pytest_raw.txt",
+    "results/2026-11-23_step5b_ner_baseline_r2/SHA256SUMS.txt",
+    "results/2026-11-23_step5b_ner_baseline_r2/metrics.json",
+    "results/2026-11-23_step5b_ner_baseline_r2/pytest_raw.txt",
+    "results/2026-11-23_step5b_ner_baseline_r2/raw_ai4bharat_indicner_run1.json",
+    "results/2026-11-23_step5b_ner_baseline_r2/raw_ai4bharat_indicner_run2.json",
+    "results/2026-11-23_step5b_ner_baseline_r2/raw_davlan_xlm_roberta_base_ner_hrl_run1.json",
+    "results/2026-11-23_step5b_ner_baseline_r2/raw_davlan_xlm_roberta_base_ner_hrl_run2.json",
+    "docs/RESULTS.md",
+    "scripts/report/step5_baseline.py",
+    "scripts/report/step5b_ner_baseline.py",
+    "scripts/report/step6_extraction.py"
+  ],
+  "fingerprint": "2190fcc668389c1414b4fa3beb8085992dc356e973860220b507a5353831fe53",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 636, baseline 636, log F2_05_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: steps_5_ok",
+      "detail": [
+        "exit 0, log F2_06_done_steps_5_ok.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "F2",
+  "tests_passed": 636,
+  "time": "2026-11-23 22:50:47"
+}

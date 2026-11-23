@@ -1,0 +1,18 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 9 items
+
+tests/test_ner_baseline.py::test_trims_leading_space PASSED              [ 11%]
+tests/test_ner_baseline.py::test_merges_touching_word_pieces PASSED      [ 22%]
+tests/test_ner_baseline.py::test_does_not_merge_names_separated_by_space PASSED [ 33%]
+tests/test_ner_baseline.py::test_drops_all_whitespace_span PASSED        [ 44%]
+tests/test_ner_baseline.py::test_output_sorted_and_non_overlapping PASSED [ 55%]
+tests/test_ner_baseline.py::test_person_only_removes_father_and_alias PASSED [ 66%]
+tests/test_ner_baseline.py::test_all_names_maps_all_three_to_name PASSED [ 77%]
+tests/test_ner_baseline.py::test_end_to_end_evaluate_with_fake_predictions PASSED [ 88%]
+tests/test_ner_baseline.py::test_decoded_word_check_counts_deliberately_damaged_word PASSED [100%]
+
+============================== 9 passed in 8.09s ==============================
