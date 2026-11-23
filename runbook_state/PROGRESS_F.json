@@ -32,8 +32,17 @@
     "F3": {
       "attempts": 0,
       "begin_head": "5139720bb1dfd78cd2ba2d49c1b6f4e680eb2880",
-      "status": "gated",
+      "commit": "5cfdcf8fd76cb7fdf463096aa5edc48d178827b9",
+      "done_at": "2026-11-23 23:26:45",
+      "pushed": true,
+      "status": "done",
       "tests_passed": 636
+    },
+    "F4": {
+      "attempts": 0,
+      "begin_head": "5cfdcf8fd76cb7fdf463096aa5edc48d178827b9",
+      "status": "gated",
+      "tests_passed": 640
     }
   }
 }

@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "status": "ASSERTION_PASSED",
+    "tp": 37,
+    "fp": 8,
+    "fn": 1,
+    "precision": 0.8222222222222222,
+    "recall": 0.9736842105263158,
+    "f1": 0.891566265060241
+  },
+  "false_positives": [
+    {
+      "file": "D_04",
+      "surface": "Rs. 7,400",
+      "char_span": [
+        344,
+        353
+      ]
+    },
+    {
+      "file": "D_05",
+      "surface": "1.8 करोड",
+      "char_span": [
+        345,
+        353
+      ]
+    },
+    {
+      "file": "E_02",
+      "surface": "Rs. 20,000",
+      "char_span": [
+        401,
+        411
+      ]
+    },
+    {
+      "file": "E_04",
+      "surface": "1.25 lakh",
+      "char_span": [
+        397,
+        406
+      ]
+    },
+    {
+      "file": "E_05",
+      "surface": "2.5 crore",
+      "char_span": [
+        722,
+        731
+      ]
+    },
+    {
+      "file": "H_05",
+      "surface": "Rs. 18,500",
+      "char_span": [
+        245,
+        255
+      ]
+    },
+    {
+      "file": "H_11",
+      "surface": "Rs. 6,200",
+      "char_span": [
+        151,
+        160
+      ]
+    },
+    {
+      "file": "H_12",
+      "surface": "3 crore",
+      "char_span": [
+        262,
+        269
+      ]
+    }
+  ],
+  "false_negatives": [
+    {
+      "file": "D_05",
+      "surface": "1.8 करोड़",
+      "char_span": [
+        345,
+        354
+      ]
+    }
+  ]
+}

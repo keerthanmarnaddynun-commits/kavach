@@ -1,0 +1,4 @@
+COMMAND: PY scripts/check_results_docs.py docs/RESULTS.md
+EXIT: 0
+--- OUTPUT ---
+DOCS OK

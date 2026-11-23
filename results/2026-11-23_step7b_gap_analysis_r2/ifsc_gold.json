@@ -1,0 +1,39 @@
+{
+  "gold_count": 4,
+  "extracted_contract_count": 0,
+  "unextracted_count": 4,
+  "mentions": [
+    {
+      "file": "D_05",
+      "surface": "ICIC0000123",
+      "char_span": [
+        290,
+        301
+      ]
+    },
+    {
+      "file": "E_03",
+      "surface": "HDFC0002345",
+      "char_span": [
+        195,
+        206
+      ]
+    },
+    {
+      "file": "H_04",
+      "surface": "ICIC0001234",
+      "char_span": [
+        326,
+        337
+      ]
+    },
+    {
+      "file": "H_13",
+      "surface": "KKBK0000631",
+      "char_span": [
+        266,
+        277
+      ]
+    }
+  ]
+}

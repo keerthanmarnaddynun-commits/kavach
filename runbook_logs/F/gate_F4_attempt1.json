@@ -1,0 +1,61 @@
+{
+  "files": [
+    "results/2026-11-23_step7b_gap_analysis_r2/SHA256SUMS.txt",
+    "results/2026-11-23_step7b_gap_analysis_r2/amount_errors.json",
+    "results/2026-11-23_step7b_gap_analysis_r2/gap_analysis.json",
+    "results/2026-11-23_step7b_gap_analysis_r2/ifsc_gold.json",
+    "results/2026-11-23_step7b_gap_analysis_r2/run_info.json",
+    "tests/test_results_docs_lint.py",
+    "docs/RESULTS_PART2.md"
+  ],
+  "fingerprint": "92c3677f48563a0c2376c57cdb91b6106092528e9ba363aa032e0e8c230c6c79",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 640, baseline 636, log F4_04_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_docs_lint",
+      "detail": [
+        "exit 0, log F4_05_done_tests_docs_lint.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: all_blocks_ok",
+      "detail": [
+        "exit 0, log F4_06_done_all_blocks_ok.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: docs_ok_part2",
+      "detail": [
+        "exit 0, log F4_07_done_docs_ok_part2.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "F4",
+  "tests_passed": 640,
+  "time": "2026-11-23 23:40:50"
+}

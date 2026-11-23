@@ -44,3 +44,10 @@
 2026-11-23 23:08:10 [F3] RUN PY scripts/check_results_docs.py docs/RESULTS.md STEP6 -> exit 0 (F3_02_check_step6.txt)
 2026-11-23 23:08:33 [F3] Step 6 regenerated in results/2026-11-23_step6_extraction_r3. Quality metrics identical. Latency old vs new side by side: model_load_ms: 10230.0 vs 11854.8; total.mean_ms: 292.0 vs 684.9; total.p95_ms: 547.3 vs 965.2; model.mean_ms: 278.3 vs 659.6; relations.mean_ms: 7.7 vs 14.1; assemble.mean_ms: 3.0 vs 5.6; validate.mean_ms: 2.0 vs 3.7; names_identifiers.mean_ms: 1.0 vs 1.9. scripts/check_results_docs.py docs/RESULTS.md STEP6 returned DOCS OK (F3_02_check_step6.txt).
 2026-11-23 23:17:41 [F3] GATE F3: PASS
+2026-11-23 23:26:45 [F3] COMMIT 5cfdcf8fd7 pushed=True
+2026-11-23 23:27:39 [F4] BEGIN: Regenerate STEP7B, add the results-docs test
+2026-11-23 23:29:02 [F4] RUN PY scripts/report/step7b_gap_analysis.py --run-id step7b_gap_analysis_r2 -> exit 0 (F4_01_gen_step7b_r2.txt)
+2026-11-23 23:30:52 [F4] RUN PY scripts/check_results_docs.py docs/RESULTS.md -> exit 0 (F4_02_check_all_results_md.txt)
+2026-11-23 23:31:14 [F4] RUN PY scripts/check_results_docs.py docs/RESULTS_PART2.md -> exit 0 (F4_03_check_all_results_part2_md.txt)
+2026-11-23 23:32:10 [F4] Step 7B regenerated in results/2026-11-23_step7b_gap_analysis_r2. Counts and scores identical to r1; notes derived from data (4 alias overlap, 0 father overlap, 8 no gold overlap); wording adjusted and caveat added. STEP7 block in docs/RESULTS.md byte-identical (zero diff). Created tests/test_results_docs_lint.py with 4 passing tests. scripts/check_results_docs.py returned DOCS OK on docs/RESULTS.md (F4_02_check_all_results_md.txt) and docs/RESULTS_PART2.md (F4_03_check_all_results_part2_md.txt).
+2026-11-23 23:40:50 [F4] GATE F4: PASS

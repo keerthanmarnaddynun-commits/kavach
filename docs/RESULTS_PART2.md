@@ -18,7 +18,7 @@ and token containment without semantic or lexical rule lists.
 - **Repeat Short Form Mentions**: 48 of 72 person false positives match subsequent untagged mentions of individuals established earlier in the text.
 - **Boundary Span Variations**: 8 person false positives match reference persons with preceding rank or title annotations included in gold spans.
 - **Relation Name Surface Variations**: 11 of 23 relation false positives match reference relations where person entity endpoints reflect surface name variations.
-- **Amount Verification**: Exact concordance between re-scored amount extraction and recorded evaluation metrics (8 false positives, 1 false negative).
+- **Amount re-scoring check**: Exact concordance between re-scored amount extraction and recorded evaluation metrics (8 false positives, 1 false negative).
 - **Uncontracted Identifiers**: 4 gold IFSC codes recorded in reference data; zero extracted under contract schemas.
 
 ### Key Numbers
@@ -62,20 +62,22 @@ and token containment without semantic or lexical rule lists.
 | False Negative | UNPAIRED | 49 | 0.7313 | Reference relations omitted with zero prediction counterpart |
 
 #### Table 3: Unclassified False Positives (Category OTHER)
+Of the 12 unclassified PERSON false positives, 4 overlap a gold ALIAS mention, 0 overlap a gold FATHER mention, and 8 overlap no gold mention.
+
 | Anomaly Type | Document Identifier | Entity or Relation | Surface Text | Character Span or Endpoints | Diagnostic Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Mention | D_04 | PERSON | चिंटू | 51-56 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_02 | PERSON | ASI | 333-336 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_04 | PERSON | Chomu | 388-393 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_05 | PERSON | Lamba | 97-102 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_07 | PERSON | Hadapsar | 34-42 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_08 | PERSON | Barwala | 54-61 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_09 | PERSON | Rocky | 103-108 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_10 | PERSON | Dabri | 125-130 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_11 | PERSON | Din | 24-27 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_14 | PERSON | ASI | 42-45 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_14 | PERSON | Mehrauli | 104-112 | Non-overlapping name string not matching gold entity surface |
-| Mention | H_14 | PERSON | Aadhaar | 243-250 | Non-overlapping name string not matching gold entity surface |
+| Mention | D_04 | PERSON | चिंटू | 51-56 | overlaps a gold ALIAS mention |
+| Mention | H_02 | PERSON | ASI | 333-336 | overlaps no gold mention |
+| Mention | H_04 | PERSON | Chomu | 388-393 | overlaps no gold mention |
+| Mention | H_05 | PERSON | Lamba | 97-102 | overlaps a gold ALIAS mention |
+| Mention | H_07 | PERSON | Hadapsar | 34-42 | overlaps no gold mention |
+| Mention | H_08 | PERSON | Barwala | 54-61 | overlaps no gold mention |
+| Mention | H_09 | PERSON | Rocky | 103-108 | overlaps a gold ALIAS mention |
+| Mention | H_10 | PERSON | Dabri | 125-130 | overlaps no gold mention |
+| Mention | H_11 | PERSON | Din | 24-27 | overlaps a gold ALIAS mention |
+| Mention | H_14 | PERSON | ASI | 42-45 | overlaps no gold mention |
+| Mention | H_14 | PERSON | Mehrauli | 104-112 | overlaps no gold mention |
+| Mention | H_14 | PERSON | Aadhaar | 243-250 | overlaps no gold mention |
 | Relation | D_02 | TRANSFERRED_FUNDS | दीपक -> 1234000100567890 | — | Unpaired relation prediction |
 | Relation | E_02 | COMMUNICATED_WITH | 9900112233 -> 9448099887 | — | Unpaired relation prediction |
 | Relation | H_05 | ASSOCIATED_IMEI | 9415098765 -> 917020045512345 | — | Unpaired relation prediction |
@@ -92,12 +94,14 @@ and token containment without semantic or lexical rule lists.
 | Relations Micro Hybrid | Unchanged Frozen Metric | 21 | 23 | 67 | 0.4773 | 0.2386 | 0.3182 | Official frozen evaluation metric |
 | Relations Micro Hybrid | Post-Hoc Diagnostic Adjusted | 32 | 12 | 56 | 0.7273 | 0.3636 | 0.4848 | post-hoc; uses knowledge of gold-labelling gaps; NOT a held-out result and never used as a headline |
 
+These adjusted numbers use knowledge of the labelling gaps and are optimistic; they are not held-out results.
+
 ### Disclosed Diagnostic Facts
 - **Post-Hoc Status**: This analysis examines discrepancies retrospectively using character span and token coordinates after frozen evaluation completion.
-- **Reference Tagging Density**: In 48 instances, reference annotations omitted repeated mentions of established persons, causing correct textual recognitions to register as false positives under strict offset evaluation.
+- **Reference Tagging Density**: In 48 instances, reference annotations omitted repeated mentions of established persons, causing repeat mentions of persons that the reference did not tag to register as false positives under strict offset evaluation.
 - **Title Inclusion Shift**: In 8 instances, reference annotations enclosed police ranks or courtesy titles within person spans, whereas the pipeline consistently isolated the core name tokens.
 - **Endpoint Alignment Impact**: In 12 instances, valid relationships linked entities whose name surfaces reflected short-form variants, preventing strict endpoint alignment under Contract v1.1.
-- **Amount Consistency**: Exactly 8 amount false positives represent subsequent mentions of transaction sums untagged in the reference data, while 1 amount discrepancy reflects character normalization across orthographic variants.
+- **Amount Consistency**: Exactly 8 amount false positives and 1 amount false negative were recorded; causes were not analysed.
 
 ### Glossary
 - structural category = classification defined exclusively by character offset containment, token subsequence match, or endpoint identifier equality without lexical word lists
