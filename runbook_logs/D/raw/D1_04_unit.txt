@@ -1,0 +1,5 @@
+COMMAND: PY scripts/web_check.py test
+EXIT: 0
+SECONDS: 4.1
+--- OUTPUT ---
+TESTS OK

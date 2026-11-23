@@ -12,7 +12,9 @@ import { IntakeDocumentsTable, RowErrorTable } from "./Intake.jsx";
 import { LoginFormView } from "./Login.jsx";
 import { BreakView } from "./Break.jsx";
 import { TimelineView } from "./Timeline.jsx";
+import { DossierView } from "./Dossier.jsx";
 import { ErrorBoundaryFallback } from "../App.jsx";
+import { buildDossier } from "../lib/dossier.js";
 
 // Import Real Fixtures
 import nodeDetailFixture from "../fixtures/node_detail.json";
@@ -25,6 +27,7 @@ import leadsFixture from "../fixtures/leads.json";
 import peopleFixture from "../fixtures/people.json";
 import breakResultFixture from "../fixtures/break_result.json";
 import timelineDayFixture from "../fixtures/timeline_day.json";
+import graphFixture from "../fixtures/graph.json";
 
 describe("Render Smoke Tests (Repair 1)", () => {
   beforeEach(() => {
@@ -314,5 +317,39 @@ describe("Render Smoke Tests (Repair 1)", () => {
     const html = renderToString(<ErrorBoundaryFallback error={error} onRetry={() => {}} />);
     expect(html).toContain("View rendering error");
     expect(html).toContain("Simulated rendering exception for test");
+  });
+
+  it("renders DossierView with real analyzed case fixture without throwing", () => {
+    const dossier = buildDossier({
+      caseDetail: caseDetailFixture,
+      leads: leadsFixture,
+      graph: graphFixture,
+      user: { username: "officer", role: "analyst" },
+      generatedAt: "2026-11-23 10:00:00 UTC",
+    });
+    const html = renderToString(<DossierView dossier={dossier} onPrint={() => {}} />);
+    expect(html).toContain("Case dossier (draft for review)");
+    expect(html).toContain("Priority Leads");
+    expect(html).toContain("Certificate under Section 63(4)(c)");
+    expect(html).toContain("Evidence Inventory &amp; Hashes");
+  });
+
+  it("renders DossierView for unanalyzed case showing limited sections", () => {
+    const unanalyzedCase = {
+      case: { ...caseDetailFixture.case, analyzed: false },
+      documents: caseDetailFixture.documents,
+      files: caseDetailFixture.files,
+    };
+    const dossier = buildDossier({
+      caseDetail: unanalyzedCase,
+      leads: null,
+      graph: null,
+      user: { username: "officer", role: "analyst" },
+      generatedAt: "2026-11-23 10:00:00 UTC",
+    });
+    const html = renderToString(<DossierView dossier={dossier} onPrint={() => {}} />);
+    expect(html).toContain("Case not analyzed: no leads or graph summary.");
+    expect(html).not.toContain("Priority Leads");
+    expect(html).not.toContain("Certificate under Section 63(4)(c)");
   });
 });

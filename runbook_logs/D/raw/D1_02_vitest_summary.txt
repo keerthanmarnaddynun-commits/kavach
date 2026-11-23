@@ -1,0 +1,51 @@
+COMMAND: PY -c import subprocess, shutil; npm = shutil.which('npm'); res = subprocess.run([npm, 'test'], cwd='web', capture_output=True, text=True, shell=True); print(res.stdout); print(res.stderr)
+EXIT: 0
+SECONDS: 4.8
+--- OUTPUT ---
+
+> kavach-web@1.0.0 test
+> vitest run
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.8 [39m[90mC:/Users/Kirthan/Desktop/crimi-nex/web[39m
+
+ [32m✓[39m src/pages/intakeReducers.test.js [2m([22m[2m13 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+ [32m✓[39m src/pages/graphHelpers.test.js [2m([22m[2m11 tests[22m[2m)[22m[90m 13[2mms[22m[39m
+ [32m✓[39m src/pages/breakHelpers.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 10[2mms[22m[39m
+ [32m✓[39m src/pages/evidenceHelpers.test.js [2m([22m[2m10 tests[22m[2m)[22m[90m 18[2mms[22m[39m
+ [32m✓[39m src/pages/overviewHelpers.test.js [2m([22m[2m5 tests[22m[2m)[22m[90m 10[2mms[22m[39m
+ [32m✓[39m src/styles/colors.test.js [2m([22m[2m1 test[22m[2m)[22m[90m 19[2mms[22m[39m
+ [32m✓[39m src/lib/chips.test.js [2m([22m[2m6 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+ [32m✓[39m src/api/client.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 10[2mms[22m[39m
+ [32m✓[39m src/lib/roles.test.js [2m([22m[2m2 tests[22m[2m)[22m[90m 7[2mms[22m[39m
+ [32m✓[39m src/pages/peopleHelpers.test.js [2m([22m[2m6 tests[22m[2m)[22m[90m 10[2mms[22m[39m
+ [32m✓[39m src/pages/timelineHelpers.test.js [2m([22m[2m5 tests[22m[2m)[22m[90m 11[2mms[22m[39m
+ [32m✓[39m src/api/sse.test.js [2m([22m[2m4 tests[22m[2m)[22m[90m 11[2mms[22m[39m
+ [32m✓[39m src/components/Table.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 32[2mms[22m[39m
+ [32m✓[39m src/lib/format.test.js [2m([22m[2m4 tests[22m[2m)[22m[90m 133[2mms[22m[39m
+ [32m✓[39m src/lib/dossier.test.js [2m([22m[2m7 tests[22m[2m)[22m[90m 27[2mms[22m[39m
+ [31m❯[39m src/pages/views.test.jsx [2m([22m[2m15 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[90m 105[2mms[22m[39m
+[31m   [31m×[31m Render Smoke Tests (Repair 1)[2m > [22mrenders DossierView with real analyzed case fixture without throwing[90m 12[2mms[22m[31m[39m
+[31m     → graphFixture is not defined[39m
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m15 passed[39m[22m[90m (16)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m109 passed[39m[22m[90m (110)[39m
+[2m   Start at [22m 10:08:16
+[2m   Duration [22m 3.19s[2m (transform 2.45s, setup 0ms, collect 5.55s, tests 438ms, environment 6ms, prepare 10.37s)[22m
+
+
+[31m⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Tests 1 [27m[22m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/pages/views.test.jsx[2m > [22mRender Smoke Tests (Repair 1)[2m > [22mrenders DossierView with real analyzed case fixture without throwing
+[31m[1mReferenceError[22m: graphFixture is not defined[39m
+[36m [2m❯[22m src/pages/views.test.jsx:[2m325:14[22m[39m
+    [90m323| [39m      caseDetail[33m:[39m caseDetailFixture[33m,[39m
+    [90m324| [39m      leads[33m:[39m leadsFixture[33m,[39m
+    [90m325| [39m      graph[33m:[39m graphFixture[33m,[39m
+    [90m   | [39m             [31m^[39m
+    [90m326| [39m      user[33m:[39m { username[33m:[39m [32m"officer"[39m[33m,[39m role[33m:[39m [32m"analyst"[39m }[33m,[39m
+    [90m327| [39m      generatedAt[33m:[39m [32m"2026-11-23 10:00:00 UTC"[39m[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+

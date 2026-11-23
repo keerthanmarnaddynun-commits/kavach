@@ -118,6 +118,12 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
           >
             Timeline
           </a>
+          <a
+            href={`#/case/${activeCaseId}/dossier`}
+            className={window.location.hash.includes("/dossier") ? "active" : ""}
+          >
+            Dossier
+          </a>
         </nav>
       )}
 

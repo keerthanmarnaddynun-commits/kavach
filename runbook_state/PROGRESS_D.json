@@ -1,10 +1,19 @@
 {
-  "baseline_tests": 0,
+  "baseline_tests": 631,
   "chunk": "D",
   "steps": {
     "D0": {
       "attempts": 0,
       "begin_head": "440434ed1fcb4f9b792afd41f11bd44934ac6808",
+      "commit": "95f9e79b521126a3759df42b38200a282059f34f",
+      "done_at": "2026-11-23 10:04:30",
+      "pushed": true,
+      "status": "done",
+      "tests_passed": 631
+    },
+    "D1": {
+      "attempts": 0,
+      "begin_head": "95f9e79b521126a3759df42b38200a282059f34f",
       "status": "gated",
       "tests_passed": 631
     }

@@ -12,6 +12,7 @@ import { EvidenceDoc } from "./pages/EvidenceDoc.jsx";
 import { EvidenceRows } from "./pages/EvidenceRows.jsx";
 import { Break } from "./pages/Break.jsx";
 import { Timeline } from "./pages/Timeline.jsx";
+import { Dossier } from "./pages/Dossier.jsx";
 
 export function App() {
   const [route, setRoute] = useState(() => window.location.hash || "#/cases");
@@ -366,6 +367,10 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
 
   if (subPage === "timeline") {
     return <Timeline caseId={caseId} />;
+  }
+
+  if (subPage === "dossier") {
+    return <Dossier caseId={caseId} user={user} />;
   }
 
   if (subPage === "overview" || !subPage) {

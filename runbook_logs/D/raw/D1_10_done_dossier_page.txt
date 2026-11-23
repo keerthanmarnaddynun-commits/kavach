@@ -1,0 +1,4 @@
+COMMAND: PY -c import pathlib; n=len(list(pathlib.Path('web/src').rglob('Dossier*.jsx'))); assert n>=1, 'Dossier*.jsx'; print('file ok')
+EXIT: 0
+--- OUTPUT ---
+file ok

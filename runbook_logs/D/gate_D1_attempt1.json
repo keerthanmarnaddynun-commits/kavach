@@ -1,0 +1,66 @@
+{
+  "files": [
+    "web/src/pages/Dossier.jsx",
+    "web/src/App.jsx",
+    "web/src/components/CaseRail.jsx",
+    "web/src/pages/views.test.jsx",
+    "web/src/styles/app.css"
+  ],
+  "fingerprint": "021762f28af711d28655e9db724af32cf4fbaf5b1d77f944a9cfb2377422f7d2",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 631, log D1_06_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log D1_07_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log D1_08_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log D1_09_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: dossier_page",
+      "detail": [
+        "exit 0, log D1_10_done_dossier_page.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "D1",
+  "tests_passed": 631,
+  "time": "2026-11-23 10:15:20"
+}

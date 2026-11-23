@@ -318,3 +318,116 @@ button.primary:hover {
   background-color: var(--accent);
   transition: width 0.2s ease;
 }
+
+/* Dossier Screen and Print Styles */
+.dossier-container {
+  padding: 16px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.dossier-document {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 24px;
+}
+
+.dossier-section {
+  margin-bottom: 24px;
+}
+
+.dossier-section h2,
+.dossier-section h3 {
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.dossier-section h4 {
+  color: var(--text);
+}
+
+.print-button-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 14mm;
+}
+
+@media print {
+  /* Hide UI chrome */
+  .status-bar,
+  .case-rail,
+  .print-button-bar,
+  footer,
+  .limits-button,
+  button {
+    display: none !important;
+  }
+
+  /* Reset layout containers for full print width without inner scroll */
+  body,
+  .app-container,
+  .workspace,
+  main,
+  .dossier-container,
+  .dossier-document {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+  }
+
+  /* Text on white background using CSS variables only */
+  * {
+    color: var(--text) !important;
+    background-color: var(--surface) !important;
+    border-color: var(--border) !important;
+  }
+
+  /* Tables: avoid breaking inside rows; headings break-after avoid */
+  table {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  thead,
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  /* Parts 5, 7, and 9: start on new page only if content does not fit */
+  .dossier-part-5,
+  .dossier-part-7,
+  .dossier-part-9,
+  .certificate-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+
