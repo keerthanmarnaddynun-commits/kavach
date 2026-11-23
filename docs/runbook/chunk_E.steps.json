@@ -1,0 +1,177 @@
+{
+  "chunk": "E",
+  "branch": "phase-d-ag",
+  "global": {
+    "max_attempts": 2,
+    "test_command": [
+      "PY",
+      "-m",
+      "pytest",
+      "-q",
+      "--ignore=scratch",
+      "-o",
+      "faulthandler_timeout=900"
+    ],
+    "banned_all": [
+      "optimal",
+      "sweet spot",
+      "robust",
+      "decisively",
+      "catastrophic",
+      "proves",
+      "guarantees",
+      "perfect",
+      "excellent",
+      "state-of-the-art"
+    ],
+    "banned_docs": [
+      "verified",
+      "confirmed",
+      "audited"
+    ],
+    "scan_exclude": [
+      "docs/runbook/*",
+      "scripts/runbook/*",
+      "tests/test_runbook_step_tool.py",
+      "runbook_logs/*",
+      "runbook_state/*",
+      "web/package-lock.json"
+    ],
+    "forbidden_path_fragments": [
+      "C:\\Users",
+      "C:/Users",
+      "/home/",
+      "/Users/",
+      "Kirthan",
+      "kirthan"
+    ]
+  },
+  "steps": [
+    {
+      "id": "E0",
+      "title": "Retry on replace (Windows file lock) in job, storage and security writers, with tests",
+      "allow_create": [
+        "kavach_api/*",
+        "tests/test_api_atomic.py"
+      ],
+      "allow_edit": [
+        "kavach_api/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_api_atomic",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_api_atomic.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "imports",
+          "argv": [
+            "PY",
+            "-c",
+            "import kavach_api.atomic, kavach_api.jobs, kavach_api.storage, kavach_api.security; print('import ok')"
+          ],
+          "must_contain": "import ok"
+        }
+      ],
+      "commit_message": "Runbook E0: retry os.replace on PermissionError in job, storage and security writers, with tests"
+    },
+    {
+      "id": "E1",
+      "title": "Dossier: FIR documents per lead, honest CSV file labels",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*",
+        "docs/web/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        }
+      ],
+      "commit_message": "Runbook E1: dossier lists FIR documents per priority lead; CSV file name label corrected"
+    },
+    {
+      "id": "E2",
+      "title": "Chunk end: summary for the user and log bundle",
+      "allow_create": [
+        "docs/web/*"
+      ],
+      "allow_edit": [
+        "docs/web/*"
+      ],
+      "done_when": [
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        },
+        {
+          "name": "web_size",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "size"
+          ],
+          "must_contain": "SIZE OK"
+        },
+        {
+          "name": "summary_written",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('runbook_logs/E/SUMMARY_FOR_USER.txt'); assert p.exists() and p.stat().st_size>=600, 'runbook_logs/E/SUMMARY_FOR_USER.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook E2: chunk E summary and bundle"
+    }
+  ]
+}
