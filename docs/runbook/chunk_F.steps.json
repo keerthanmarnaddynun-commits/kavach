@@ -1,0 +1,235 @@
+{
+  "chunk": "F",
+  "branch": "phase-d-ag",
+  "global": {
+    "max_attempts": 2,
+    "test_command": [
+      "PY",
+      "-m",
+      "pytest",
+      "-q",
+      "--ignore=scratch",
+      "-o",
+      "faulthandler_timeout=900"
+    ],
+    "banned_all": [
+      "optimal",
+      "sweet spot",
+      "robust",
+      "decisively",
+      "catastrophic",
+      "proves",
+      "guarantees",
+      "perfect",
+      "excellent",
+      "state-of-the-art"
+    ],
+    "banned_docs": [
+      "verified",
+      "confirmed",
+      "audited"
+    ],
+    "scan_exclude": [
+      "docs/runbook/*",
+      "scripts/runbook/*",
+      "tests/test_runbook_step_tool.py",
+      "runbook_logs/*",
+      "runbook_state/*",
+      "web/package-lock.json",
+      "results/*",
+      "docs/RESULTS.md"
+    ],
+    "forbidden_path_fragments": [
+      "C:\\Users",
+      "C:/Users",
+      "/home/",
+      "/Users/",
+      "Kirthan",
+      "kirthan"
+    ]
+  },
+  "steps": [
+    {
+      "id": "F0",
+      "title": "Fix generating scripts; add the results-docs checker",
+      "allow_create": [
+        "scripts/check_results_docs.py"
+      ],
+      "allow_edit": [
+        "scripts/report/step1_results.py",
+        "scripts/report/step2_results.py",
+        "scripts/report/step5_baseline.py",
+        "scripts/report/step5b_ner_baseline.py",
+        "scripts/report/step6_extraction.py",
+        "scripts/report/step7b_gap_analysis.py"
+      ],
+      "done_when": [
+        {
+          "name": "checker_exists",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('scripts/check_results_docs.py'); assert p.exists() and p.stat().st_size>=1500; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        },
+        {
+          "name": "step7_block_ok",
+          "argv": [
+            "PY",
+            "scripts/check_results_docs.py",
+            "docs/RESULTS.md",
+            "STEP7"
+          ],
+          "must_contain": "DOCS OK"
+        },
+        {
+          "name": "no_interpreter_path_in_display",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; t=''.join(p.read_text(encoding='utf-8') for p in pathlib.Path('scripts/report').glob('*.py')); assert '{sys.executable} -m pytest' not in t; print('path ok')"
+          ],
+          "must_contain": "path ok"
+        }
+      ],
+      "commit_message": "Runbook F0: report templates fixed (display paths, table separators, step 7b wording), results-docs checker"
+    },
+    {
+      "id": "F1",
+      "title": "Regenerate STEP1 and STEP2 blocks from new runs",
+      "allow_create": [
+        "results/*"
+      ],
+      "allow_edit": [
+        "docs/RESULTS.md"
+      ],
+      "done_when": [
+        {
+          "name": "steps_1_2_ok",
+          "argv": [
+            "PY",
+            "scripts/check_results_docs.py",
+            "docs/RESULTS.md",
+            "STEP1",
+            "STEP2"
+          ],
+          "must_contain": "DOCS OK"
+        }
+      ],
+      "commit_message": "Runbook F1: STEP1 and STEP2 regenerated under Python 3.11 with corrected templates"
+    },
+    {
+      "id": "F2",
+      "title": "Regenerate STEP5A and STEP5B blocks from new runs",
+      "allow_create": [
+        "results/*"
+      ],
+      "allow_edit": [
+        "docs/RESULTS.md"
+      ],
+      "done_when": [
+        {
+          "name": "steps_5_ok",
+          "argv": [
+            "PY",
+            "scripts/check_results_docs.py",
+            "docs/RESULTS.md",
+            "STEP5A",
+            "STEP5B"
+          ],
+          "must_contain": "DOCS OK"
+        }
+      ],
+      "commit_message": "Runbook F2: STEP5A and STEP5B regenerated with corrected templates"
+    },
+    {
+      "id": "F3",
+      "title": "Regenerate STEP6 block from a new run",
+      "allow_create": [
+        "results/*"
+      ],
+      "allow_edit": [
+        "docs/RESULTS.md"
+      ],
+      "done_when": [
+        {
+          "name": "step6_ok",
+          "argv": [
+            "PY",
+            "scripts/check_results_docs.py",
+            "docs/RESULTS.md",
+            "STEP6"
+          ],
+          "must_contain": "DOCS OK"
+        }
+      ],
+      "commit_message": "Runbook F3: STEP6 regenerated with corrected template"
+    },
+    {
+      "id": "F4",
+      "title": "Regenerate STEP7B, add the results-docs test",
+      "allow_create": [
+        "results/*",
+        "tests/test_results_docs_lint.py"
+      ],
+      "allow_edit": [
+        "docs/RESULTS_PART2.md"
+      ],
+      "done_when": [
+        {
+          "name": "tests_docs_lint",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_results_docs_lint.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "all_blocks_ok",
+          "argv": [
+            "PY",
+            "scripts/check_results_docs.py",
+            "docs/RESULTS.md"
+          ],
+          "must_contain": "DOCS OK"
+        },
+        {
+          "name": "docs_ok_part2",
+          "argv": [
+            "PY",
+            "scripts/check_results_docs.py",
+            "docs/RESULTS_PART2.md"
+          ],
+          "must_contain": "DOCS OK"
+        }
+      ],
+      "commit_message": "Runbook F4: STEP7B regenerated with data-derived notes and corrected wording; results-docs lint test"
+    },
+    {
+      "id": "F5",
+      "title": "Chunk end: summary for the user and log bundle",
+      "allow_create": [
+        "docs/web/*"
+      ],
+      "allow_edit": [
+        "docs/web/*"
+      ],
+      "done_when": [
+        {
+          "name": "summary_written",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('runbook_logs/F/SUMMARY_FOR_USER.txt'); assert p.exists() and p.stat().st_size>=800, 'runbook_logs/F/SUMMARY_FOR_USER.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook F5: chunk F summary and bundle"
+    }
+  ]
+}

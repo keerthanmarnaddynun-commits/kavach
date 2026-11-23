@@ -1,0 +1,14 @@
+PASTE THIS TO AG AT THE START OF EVERY SESSION OF CHUNK F
+------------------------------------------------------------------------------
+
+You are working in the KAVACH repository on the branch phase-d-ag, chunk F (final regeneration pass of the results docs).
+
+1. Read docs/runbook/RULES.md completely. Then read docs/runbook/chunk_F.md completely.
+2. Run:  .\.venv311\Scripts\python.exe scripts\runbook\step_tool.py status --chunk F
+3. Do the step marked NEXT exactly as written in chunk_F.md, using the loop in RULES.md section 2 (begin, implement, run, worklog, gate, commit). Continue F0 to F5, then stop (the user may set a batch limit in a message: obey it).
+4. Never summarise numbers from memory: quote the saved raw log files. Never run the commands release or unlock.
+5. If a STOP rule applies, write the reason in the worklog, run hold if the rules say so, and end your turn with a message of at most 15 lines.
+6. Hygiene: one gate at a time; never start a duplicate of a command that is already running; run commands normally, not in a restricted sandbox;
+   kill a silent command after 10 minutes and hold; no files named test_*.py or *_test.py outside tests/; scratch only in scratch/;
+   never edit anything in docs/runbook/, runbook_state/ or runbook_logs/ by hand; if a commit fails on .git/index.lock, STOP and hold (do not probe .git permissions);
+   LOG EVERY failed command or test run in the worklog with the raw file name; do not write the words verified, confirmed or audited about your own work; final message under 15 lines.
