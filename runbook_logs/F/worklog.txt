@@ -38,3 +38,9 @@
 2026-11-23 22:41:59 [F2] RUN PY scripts/check_results_docs.py docs/RESULTS.md STEP5A STEP5B -> exit 0 (F2_04_check_steps_5.txt)
 2026-11-23 22:42:25 [F2] Step 5A and Step 5B regenerated. Step 5A metrics diff: command, timestamps, pytest_command, run_id; all evaluation numbers identical. Step 5B metrics diff: command, timestamps, pytest_command, run_id, and runtime_seconds (IndicNER: 80.79s vs 97.79s; XLM-R: 65.32s vs 52.56s); all evaluation scores identical. scripts/check_results_docs.py docs/RESULTS.md STEP5A STEP5B returned DOCS OK (F2_04_check_steps_5.txt).
 2026-11-23 22:50:47 [F2] GATE F2: PASS
+2026-11-23 22:52:10 [F2] COMMIT 5139720bb1 pushed=True
+2026-11-23 22:53:03 [F3] BEGIN: Regenerate STEP6 block from a new run
+2026-11-23 23:06:45 [F3] RUN PY scripts/report/step6_extraction.py --run-id step6_extraction_r3 -> exit 0 (F3_01_gen_step6_r3.txt)
+2026-11-23 23:08:10 [F3] RUN PY scripts/check_results_docs.py docs/RESULTS.md STEP6 -> exit 0 (F3_02_check_step6.txt)
+2026-11-23 23:08:33 [F3] Step 6 regenerated in results/2026-11-23_step6_extraction_r3. Quality metrics identical. Latency old vs new side by side: model_load_ms: 10230.0 vs 11854.8; total.mean_ms: 292.0 vs 684.9; total.p95_ms: 547.3 vs 965.2; model.mean_ms: 278.3 vs 659.6; relations.mean_ms: 7.7 vs 14.1; assemble.mean_ms: 3.0 vs 5.6; validate.mean_ms: 2.0 vs 3.7; names_identifiers.mean_ms: 1.0 vs 1.9. scripts/check_results_docs.py docs/RESULTS.md STEP6 returned DOCS OK (F3_02_check_step6.txt).
+2026-11-23 23:17:41 [F3] GATE F3: PASS

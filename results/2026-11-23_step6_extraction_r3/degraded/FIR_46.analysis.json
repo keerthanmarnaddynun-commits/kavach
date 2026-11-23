@@ -1,0 +1,210 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 599,
+        "start": 594,
+        "surface": "2 लाख",
+        "value": 200000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          164,
+          177
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              164,
+              177
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-9818"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB9818"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "चाचा"
+        ],
+        "canonical_name": "असलम परवेज़",
+        "char_span": [
+          196,
+          207
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "लतीफ परवेज़",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              196,
+              207
+            ],
+            "kind": "NAME",
+            "surface": "असलम परवेज़"
+          },
+          {
+            "char_span": [
+              213,
+              217
+            ],
+            "kind": "ALIAS",
+            "surface": "चाचा"
+          },
+          {
+            "char_span": [
+              229,
+              240
+            ],
+            "kind": "FATHER",
+            "surface": "लतीफ परवेज़"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          339,
+          349
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              339,
+              349
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          },
+          {
+            "char_span": [
+              401,
+              411
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7963605766"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          439,
+          454
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              439,
+              454
+            ],
+            "kind": "VALUE",
+            "surface": "370289517187028"
+          }
+        ],
+        "type": "IMEI",
+        "value": "370289517187028"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          282,
+          364
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "जब्त"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          365,
+          469
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "दर्ज किया"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_46"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 734,
+    "document_hash": "17b0c33276fa819613901f7f49c58e9d4024e2a10f66cdc6185dde8d6794b0fd",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 1,
+      "PHONE": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-4258"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB4258"
+      },
+      {
+        "ai_confidence": 0.980355,
+        "aliases": [
+          "Vicky"
+        ],
+        "canonical_name": "Wasim Akram",
+        "char_span": [
+          214,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.980355,
+          "validator": null
+        },
+        "father_name": "Shabir Akram",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Wasim Akram"
+          },
+          {
+            "char_span": [
+              230,
+              235
+            ],
+            "kind": "ALIAS",
+            "surface": "Vicky"
+          },
+          {
+            "char_span": [
+              245,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Shabir Akram"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.992808,
+        "canonical_name": "Rameshwar Dayal",
+        "char_span": [
+          315,
+          330
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.992808,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              315,
+              330
+            ],
+            "kind": "NAME",
+            "surface": "Rameshwar Dayal"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_12"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 572,
+    "document_hash": "17c3be9a68f0517b66735c771789ec8e9ccc0e58121d10484f80b6ecd1dbc2f0",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

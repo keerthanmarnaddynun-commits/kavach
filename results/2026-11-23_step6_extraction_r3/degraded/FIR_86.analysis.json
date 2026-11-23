@@ -1,0 +1,142 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-5497"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB5497"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Chacha"
+        ],
+        "canonical_name": "Aslam Parvez",
+        "char_span": [
+          214,
+          226
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Latif Parvez",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              226
+            ],
+            "kind": "NAME",
+            "surface": "Aslam Parvez"
+          },
+          {
+            "char_span": [
+              231,
+              237
+            ],
+            "kind": "ALIAS",
+            "surface": "Chacha"
+          },
+          {
+            "char_span": [
+              247,
+              259
+            ],
+            "kind": "FATHER",
+            "surface": "Latif Parvez"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Rajesh Kumar",
+        "char_span": [
+          386,
+          398
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              386,
+              398
+            ],
+            "kind": "NAME",
+            "surface": "Rajesh Kumar"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_86"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 567,
+    "document_hash": "580ae5d8e0a7624e21603ca261309fd15b9ad991a68fb9b66e59d3a49277efd8",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 349,
+        "start": 343,
+        "surface": "18,500",
+        "value": 18500.0
+      },
+      {
+        "end": 495,
+        "start": 486,
+        "surface": "27,480.64",
+        "value": 27480.64
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-6772"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB6772"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Kabira"
+        ],
+        "canonical_name": "Imran Sheikh",
+        "char_span": [
+          203,
+          215
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Mustaq Sheikh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              215
+            ],
+            "kind": "NAME",
+            "surface": "Imran Sheikh"
+          },
+          {
+            "char_span": [
+              220,
+              226
+            ],
+            "kind": "ALIAS",
+            "surface": "Kabira"
+          },
+          {
+            "char_span": [
+              236,
+              249
+            ],
+            "kind": "FATHER",
+            "surface": "Mustaq Sheikh"
+          },
+          {
+            "char_span": [
+              456,
+              468
+            ],
+            "kind": "NAME",
+            "surface": "Imran Sheikh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          515,
+          529
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              515,
+              529
+            ],
+            "kind": "VALUE",
+            "surface": "17520025569318"
+          },
+          {
+            "char_span": [
+              588,
+              602
+            ],
+            "kind": "VALUE",
+            "surface": "17520025569318"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "17520025569318"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          699,
+          710
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              699,
+              710
+            ],
+            "kind": "VALUE",
+            "surface": "77109 47775"
+          },
+          {
+            "char_span": [
+              958,
+              969
+            ],
+            "kind": "VALUE",
+            "surface": "77109 47775"
+          },
+          {
+            "char_span": [
+              1034,
+              1045
+            ],
+            "kind": "VALUE",
+            "surface": "77109 47775"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7710947775"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          728,
+          738
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              728,
+              738
+            ],
+            "kind": "VALUE",
+            "surface": "6679740344"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6679740344"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Vikram Rathore",
+        "char_span": [
+          792,
+          806
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              792,
+              806
+            ],
+            "kind": "NAME",
+            "surface": "Vikram Rathore"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1060,
+          1075
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              1060,
+              1075
+            ],
+            "kind": "VALUE",
+            "surface": "304711671902299"
+          }
+        ],
+        "type": "IMEI",
+        "value": "304711671902299"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 27480.64,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          411,
+          551
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "deposit"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          552,
+          653
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "authorized signatory"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          654,
+          778
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "ke beech"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1000,
+          1092
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_07",
+        "trigger": "IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_87"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1195,
+    "document_hash": "70b895e6cc429e404d45be0ab3e9eb8a31150d4296d87b5349cf9b5065680a1e",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 4
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 469,
+        "start": 456,
+        "surface": "INR 25,000.00",
+        "value": 25000.0
+      },
+      {
+        "end": 932,
+        "start": 918,
+        "surface": "Rs. 1,28,800/-",
+        "value": 128800.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-6C-AB-6143"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL6CAB6143"
+      },
+      {
+        "ai_confidence": 0.999723,
+        "aliases": [
+          "Sallu"
+        ],
+        "canonical_name": "Salman Mirza",
+        "char_span": [
+          214,
+          226
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999723,
+          "validator": null
+        },
+        "father_name": "Feroz Mirza",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              226
+            ],
+            "kind": "NAME",
+            "surface": "Salman Mirza"
+          },
+          {
+            "char_span": [
+              231,
+              236
+            ],
+            "kind": "ALIAS",
+            "surface": "Sallu"
+          },
+          {
+            "char_span": [
+              246,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Feroz Mirza"
+          },
+          {
+            "char_span": [
+              566,
+              578
+            ],
+            "kind": "NAME",
+            "surface": "Salman Mirza"
+          },
+          {
+            "char_span": [
+              888,
+              900
+            ],
+            "kind": "NAME",
+            "surface": "Salman Mirza"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999795,
+        "canonical_name": "Arvind Swaminathan",
+        "char_span": [
+          313,
+          331
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999795,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              313,
+              331
+            ],
+            "kind": "NAME",
+            "surface": "Arvind Swaminathan"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          611,
+          621
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              611,
+              621
+            ],
+            "kind": "VALUE",
+            "surface": "9773782639"
+          },
+          {
+            "char_span": [
+              674,
+              684
+            ],
+            "kind": "VALUE",
+            "surface": "9773782639"
+          },
+          {
+            "char_span": [
+              772,
+              782
+            ],
+            "kind": "VALUE",
+            "surface": "9773782639"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9773782639"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          706,
+          721
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              706,
+              721
+            ],
+            "kind": "VALUE",
+            "surface": "921465840449970"
+          }
+        ],
+        "type": "IMEI",
+        "value": "921465840449970"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          818,
+          828
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              818,
+              828
+            ],
+            "kind": "VALUE",
+            "surface": "6679740344"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6679740344"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          948,
+          964
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              948,
+              964
+            ],
+            "kind": "VALUE",
+            "surface": "7909670546688937"
+          },
+          {
+            "char_span": [
+              1013,
+              1029
+            ],
+            "kind": "VALUE",
+            "surface": "7909670546688937"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "7909670546688937"
+      },
+      {
+        "ai_confidence": 0.999679,
+        "canonical_name": "Mukhtar Ansari",
+        "char_span": [
+          1051,
+          1065
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999679,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              1051,
+              1065
+            ],
+            "kind": "NAME",
+            "surface": "Mukhtar Ansari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          531,
+          641
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "recovred"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          642,
+          735
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          736,
+          843
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_06",
+        "trigger": "seedha"
+      },
+      {
+        "amount": 128800.0,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          844,
+          976
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_07",
+        "trigger": "bheja"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          977,
+          1080
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_08",
+        "target": "ent_07",
+        "trigger": "authorized signatory"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_37"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1178,
+    "document_hash": "053fe472ef4b5ae681bd1a4f95c7bf0cbd9a35cc8b2c9d5ae0f92cd32d5664e9",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 3,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

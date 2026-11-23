@@ -1,0 +1,346 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 455,
+        "start": 443,
+        "surface": "INR 5,00,000",
+        "value": 500000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 1
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.999446,
+        "aliases": [
+          "Bicky"
+        ],
+        "canonical_name": "Vikas Kumar",
+        "char_span": [
+          73,
+          84
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999446,
+          "validator": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_ALIAS"
+        ],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              73,
+              84
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Kumar"
+          },
+          {
+            "char_span": [
+              89,
+              94
+            ],
+            "kind": "ALIAS",
+            "surface": "Bicky"
+          },
+          {
+            "char_span": [
+              428,
+              433
+            ],
+            "kind": "NAME",
+            "surface": "Vikas"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          209,
+          219
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              209,
+              219
+            ],
+            "kind": "VALUE",
+            "surface": "9876543210"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9876543210"
+      },
+      {
+        "ai_confidence": 0.6,
+        "char_span": [
+          227,
+          242
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.6
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              227,
+              242
+            ],
+            "kind": "VALUE",
+            "surface": "864201948201948"
+          }
+        ],
+        "type": "IMEI",
+        "value": "864201948201948"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          355,
+          365
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              355,
+              365
+            ],
+            "kind": "VALUE",
+            "surface": "9123456789"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9123456789"
+      },
+      {
+        "ai_confidence": 0.6,
+        "char_span": [
+          373,
+          388
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.6
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              373,
+              388
+            ],
+            "kind": "VALUE",
+            "surface": "359876102938475"
+          }
+        ],
+        "type": "IMEI",
+        "value": "359876102938475"
+      },
+      {
+        "ai_confidence": 0.99,
+        "bank": "SBI",
+        "char_span": [
+          488,
+          499
+        ],
+        "confidence_breakdown": {
+          "context": 1.0,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              488,
+              499
+            ],
+            "kind": "VALUE",
+            "surface": "30291827465"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "30291827465"
+      },
+      {
+        "ai_confidence": 0.999395,
+        "aliases": [
+          "Raju Bhai"
+        ],
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          528,
+          542
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999395,
+          "validator": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              528,
+              542
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              545,
+              554
+            ],
+            "kind": "ALIAS",
+            "surface": "Raju Bhai"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          155,
+          256
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_01",
+        "target": "ent_02",
+        "trigger": "paas se"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          155,
+          256
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          257,
+          390
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "IMEI"
+      },
+      {
+        "amount": 500000.0,
+        "confidence": 0.6,
+        "evidence_char_span": [
+          392,
+          594
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_01",
+        "target": "ent_06",
+        "trigger": "ROLE_CUE"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          392,
+          594
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_07",
+        "target": "ent_06",
+        "trigger": "ROLE_CUE"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          257,
+          390
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "ANAPHORA"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "GOLDEN_DEMO"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 596,
+    "document_hash": "a36dbf5a8cf638f90d38896a586bea19552159892629fe9c4e0993b88e5bbc23",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 2,
+      "PERSON": 2,
+      "PHONE": 2
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 2,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 6
+    },
+    "warnings": []
+  }
+}

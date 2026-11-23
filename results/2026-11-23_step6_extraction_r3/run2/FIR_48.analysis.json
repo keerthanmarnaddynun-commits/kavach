@@ -1,0 +1,158 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          160,
+          173
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              160,
+              173
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-8449"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB8449"
+      },
+      {
+        "ai_confidence": 0.999763,
+        "aliases": [
+          "विक्की",
+          "विकू",
+          "कल्लू"
+        ],
+        "canonical_name": "विकास शर्मा",
+        "char_span": [
+          192,
+          203
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999763,
+          "validator": null
+        },
+        "father_name": "हरीश शर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              192,
+              203
+            ],
+            "kind": "NAME",
+            "surface": "विकास शर्मा"
+          },
+          {
+            "char_span": [
+              209,
+              215
+            ],
+            "kind": "ALIAS",
+            "surface": "विक्की"
+          },
+          {
+            "char_span": [
+              221,
+              225
+            ],
+            "kind": "ALIAS",
+            "surface": "विकू"
+          },
+          {
+            "char_span": [
+              231,
+              236
+            ],
+            "kind": "ALIAS",
+            "surface": "कल्लू"
+          },
+          {
+            "char_span": [
+              248,
+              258
+            ],
+            "kind": "FATHER",
+            "surface": "हरीश शर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999811,
+        "canonical_name": "रामेश्वर दयाल",
+        "char_span": [
+          314,
+          327
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999811,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              314,
+              327
+            ],
+            "kind": "NAME",
+            "surface": "रामेश्वर दयाल"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_48"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 526,
+    "document_hash": "c19cf3eb887e58144c884c257aaf40ee4fc7aeee0219c111bc5fda8397f29c61",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

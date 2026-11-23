@@ -1,0 +1,140 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-9565"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB9565"
+      },
+      {
+        "ai_confidence": 0.999546,
+        "aliases": [
+          "Shooter"
+        ],
+        "canonical_name": "Rashid Khan",
+        "char_span": [
+          214,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999546,
+          "validator": null
+        },
+        "father_name": "Asif Khan",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Rashid Khan"
+          },
+          {
+            "char_span": [
+              230,
+              237
+            ],
+            "kind": "ALIAS",
+            "surface": "Shooter"
+          },
+          {
+            "char_span": [
+              247,
+              256
+            ],
+            "kind": "FATHER",
+            "surface": "Asif Khan"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.98639,
+        "canonical_name": "Rameshwar Dayal",
+        "char_span": [
+          315,
+          330
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.98639,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              315,
+              330
+            ],
+            "kind": "NAME",
+            "surface": "Rameshwar Dayal"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_24"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 571,
+    "document_hash": "97fd6a95d5a86ad5b349eaf2081e85348f6d644bc815e2e9bd01698d0e1e3373",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

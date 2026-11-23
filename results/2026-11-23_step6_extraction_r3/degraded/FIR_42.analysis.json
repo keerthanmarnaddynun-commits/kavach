@@ -1,0 +1,431 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 801,
+        "start": 796,
+        "surface": "2 लाख",
+        "value": 200000.0
+      },
+      {
+        "end": 937,
+        "start": 924,
+        "surface": "INR 49,000.00",
+        "value": 49000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          155,
+          168
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              155,
+              168
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-3881"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB3881"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "विक्की",
+          "विकू",
+          "कल्लू"
+        ],
+        "canonical_name": "विकास शर्मा",
+        "char_span": [
+          187,
+          198
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "हरीश शर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              187,
+              198
+            ],
+            "kind": "NAME",
+            "surface": "विकास शर्मा"
+          },
+          {
+            "char_span": [
+              204,
+              210
+            ],
+            "kind": "ALIAS",
+            "surface": "विक्की"
+          },
+          {
+            "char_span": [
+              216,
+              220
+            ],
+            "kind": "ALIAS",
+            "surface": "विकू"
+          },
+          {
+            "char_span": [
+              226,
+              231
+            ],
+            "kind": "ALIAS",
+            "surface": "कल्लू"
+          },
+          {
+            "char_span": [
+              243,
+              253
+            ],
+            "kind": "FATHER",
+            "surface": "हरीश शर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "बीकू"
+        ],
+        "canonical_name": "बिकास शर्मा",
+        "char_span": [
+          319,
+          330
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "गिरीश शर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              319,
+              330
+            ],
+            "kind": "NAME",
+            "surface": "बिकास शर्मा"
+          },
+          {
+            "char_span": [
+              336,
+              340
+            ],
+            "kind": "ALIAS",
+            "surface": "बीकू"
+          },
+          {
+            "char_span": [
+              352,
+              363
+            ],
+            "kind": "FATHER",
+            "surface": "गिरीश शर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "राम अवतार",
+        "char_span": [
+          408,
+          417
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              408,
+              417
+            ],
+            "kind": "NAME",
+            "surface": "राम अवतार"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          536,
+          546
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              536,
+              546
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          },
+          {
+            "char_span": [
+              583,
+              593
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          },
+          {
+            "char_span": [
+              682,
+              692
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          613,
+          628
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              613,
+              628
+            ],
+            "kind": "VALUE",
+            "surface": "837631165667016"
+          }
+        ],
+        "type": "IMEI",
+        "value": "837631165667016"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          709,
+          719
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              709,
+              719
+            ],
+            "kind": "VALUE",
+            "surface": "6604817549"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6604817549"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          899,
+          913
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              899,
+              913
+            ],
+            "kind": "VALUE",
+            "surface": "88236910997872"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "88236910997872"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          948,
+          964
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              948,
+              964
+            ],
+            "kind": "VALUE",
+            "surface": "6869261796405377"
+          },
+          {
+            "char_span": [
+              1020,
+              1036
+            ],
+            "kind": "VALUE",
+            "surface": "6869261796405377"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "6869261796405377"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          470,
+          567
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_03",
+        "target": "ent_05",
+        "trigger": "अपना प्रयुक्त"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          568,
+          644
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "हैंडसेट आईएमईआई"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          645,
+          746
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_07",
+        "trigger": "के मध्य"
+      },
+      {
+        "amount": 49000.0,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          857,
+          982
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_08",
+        "target": "ent_09",
+        "trigger": "अंतरित"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_42"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1171,
+    "document_hash": "624360fa8370b601354a8a50d41a2f1e6923cd4a420333a632307ed24be800a9",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 3,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 4
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

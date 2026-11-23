@@ -1,0 +1,458 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 553,
+        "start": 547,
+        "surface": "18,500",
+        "value": 18500.0
+      },
+      {
+        "end": 1021,
+        "start": 1012,
+        "surface": "14,039.48",
+        "value": 14039.48
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-2C-AB-9797"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL2CAB9797"
+      },
+      {
+        "ai_confidence": 0.987213,
+        "aliases": [
+          "Biku"
+        ],
+        "canonical_name": "Bikas Sharma",
+        "char_span": [
+          213,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.987213,
+          "validator": null
+        },
+        "father_name": "Girish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Bikas Sharma"
+          },
+          {
+            "char_span": [
+              230,
+              234
+            ],
+            "kind": "ALIAS",
+            "surface": "Biku"
+          },
+          {
+            "char_span": [
+              244,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Girish Sharma"
+          },
+          {
+            "char_span": [
+              335,
+              347
+            ],
+            "kind": "NAME",
+            "surface": "Bikas Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          375,
+          385
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              375,
+              385
+            ],
+            "kind": "VALUE",
+            "surface": "9014363495"
+          },
+          {
+            "char_span": [
+              434,
+              444
+            ],
+            "kind": "VALUE",
+            "surface": "9014363495"
+          },
+          {
+            "char_span": [
+              751,
+              761
+            ],
+            "kind": "VALUE",
+            "surface": "9014363495"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9014363495"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          466,
+          481
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              466,
+              481
+            ],
+            "kind": "VALUE",
+            "surface": "888568557444315"
+          }
+        ],
+        "type": "IMEI",
+        "value": "888568557444315"
+      },
+      {
+        "ai_confidence": 0.998987,
+        "canonical_name": "Kishore Sen",
+        "char_span": [
+          630,
+          641
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998987,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              630,
+              641
+            ],
+            "kind": "NAME",
+            "surface": "Kishore Sen"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          779,
+          789
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              779,
+              789
+            ],
+            "kind": "VALUE",
+            "surface": "6531003309"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6531003309"
+      },
+      {
+        "ai_confidence": 0.999237,
+        "aliases": [
+          "Don"
+        ],
+        "canonical_name": "Nadeem Qureshi",
+        "char_span": [
+          842,
+          856
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999237,
+          "validator": null
+        },
+        "father_name": "Yusuf Qureshi",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              842,
+              856
+            ],
+            "kind": "NAME",
+            "surface": "Nadeem Qureshi"
+          },
+          {
+            "char_span": [
+              861,
+              864
+            ],
+            "kind": "ALIAS",
+            "surface": "Don"
+          },
+          {
+            "char_span": [
+              874,
+              887
+            ],
+            "kind": "FATHER",
+            "surface": "Yusuf Qureshi"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          987,
+          1001
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              987,
+              1001
+            ],
+            "kind": "VALUE",
+            "surface": "23600843800639"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "23600843800639"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1040,
+          1056
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              1040,
+              1056
+            ],
+            "kind": "VALUE",
+            "surface": "1075079752217806"
+          },
+          {
+            "char_span": [
+              1103,
+              1119
+            ],
+            "kind": "VALUE",
+            "surface": "1075079752217806"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "1075079752217806"
+      },
+      {
+        "ai_confidence": 0.999716,
+        "canonical_name": "Mukhtar Ansari",
+        "char_span": [
+          1133,
+          1147
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999716,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_10",
+        "mentions": [
+          {
+            "char_span": [
+              1133,
+              1147
+            ],
+            "kind": "NAME",
+            "surface": "Mukhtar Ansari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          300,
+          401
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "personal mobile"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          402,
+          495
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          715,
+          820
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "voice calls"
+      },
+      {
+        "amount": 14039.48,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          938,
+          1092
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_08",
+        "target": "ent_09",
+        "trigger": "bhej diya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1093,
+          1179
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_10",
+        "target": "ent_09",
+        "trigger": "handler"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_11"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1279,
+    "document_hash": "dfc986a7857ba2beb17b42ef3dda43223896a890d88ce21d41cb26d1d71499d6",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 4,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

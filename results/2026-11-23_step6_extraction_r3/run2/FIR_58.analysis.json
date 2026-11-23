@@ -1,0 +1,243 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 530,
+        "start": 524,
+        "surface": "5 lakh",
+        "value": 500000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-5C-AB-7046"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL5CAB7046"
+      },
+      {
+        "ai_confidence": 0.999696,
+        "aliases": [
+          "Kabira"
+        ],
+        "canonical_name": "Imran Sheikh",
+        "char_span": [
+          210,
+          222
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999696,
+          "validator": null
+        },
+        "father_name": "Mustaq Sheikh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              210,
+              222
+            ],
+            "kind": "NAME",
+            "surface": "Imran Sheikh"
+          },
+          {
+            "char_span": [
+              229,
+              235
+            ],
+            "kind": "ALIAS",
+            "surface": "Kabira"
+          },
+          {
+            "char_span": [
+              245,
+              258
+            ],
+            "kind": "FATHER",
+            "surface": "Mustaq Sheikh"
+          },
+          {
+            "char_span": [
+              331,
+              343
+            ],
+            "kind": "NAME",
+            "surface": "Imran Sheikh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          369,
+          379
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              369,
+              379
+            ],
+            "kind": "VALUE",
+            "surface": "7710947775"
+          },
+          {
+            "char_span": [
+              424,
+              434
+            ],
+            "kind": "VALUE",
+            "surface": "7710947775"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7710947775"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          457,
+          472
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              457,
+              472
+            ],
+            "kind": "VALUE",
+            "surface": "304711671902299"
+          }
+        ],
+        "type": "IMEI",
+        "value": "304711671902299"
+      },
+      {
+        "ai_confidence": 0.999635,
+        "canonical_name": "Mohan Lal",
+        "char_span": [
+          581,
+          590
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999635,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              581,
+              590
+            ],
+            "kind": "NAME",
+            "surface": "Mohan Lal"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          280,
+          380
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "secured mobile"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          381,
+          473
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "hardware IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_58"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 756,
+    "document_hash": "c6526fa153cf0782b8268d2ea440c8c98e688bf1d4f0081cdf7b73ddf25a55b4",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 1,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

@@ -648,8 +648,8 @@
 
 ### Results Card
 - **Purpose**: Evaluation of the end-to-end multilingual extraction pipeline from raw narrative text using the cached offline transformer model, degraded heuristic mode, negative input validation, and the golden demo paragraph.
-- **Exact Command**: `python scripts/report/step6_extraction.py --run-id step6_extraction_r2`
-- **Exact Pytest Command**: `C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe -m pytest -v tests`
+- **Exact Command**: `python scripts/report/step6_extraction.py --run-id step6_extraction_r3`
+- **Exact Pytest Command**: `python -m pytest -v tests`
 - **Environment**: Python `3.11.9`, PyTorch `2.1.0+cpu`, Transformers `4.35.2`
 - **Input Files**:
   - `ai_pipeline/normalizer.py` (`SHA-256`: `d1cfa0fa1c8480c9d55f7b0ccb6dbc31f0305deb73b7343a2c039d6a7d3a4123`)
@@ -664,21 +664,21 @@
   - `contracts/v1_1/validate.py` (`SHA-256`: `8409624416a232f5a25ceceafd838432ac98c7181b048965b9956bdbff37e31b`)
   - `contracts/v1_1/ai_output_schema.json` (`SHA-256`: `66f7e45266481f4f565d57635795c90dd8cefe115785596d9a2ced5199bbcbbb`)
   - `contracts/v1_1/graph_render_schema.json` (`SHA-256`: `94ca18cb963632b14e3f562df8f47e07323fb01b83722717254ddf6604c3210a`)
-  - `tests/` combined (`SHA-256`: `91c89579cc8ae0891c39827e96d9404a5f5e0795702b409a648370600a1ddf54`)
+  - `tests/` combined (`SHA-256`: `e309e8cf5290dc24425d777d948cc0bdcf7c0e434b23389a381c893aee844ff5`)
   - `data/synthetic/out/firs_v5` combined (`SHA-256`: `4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949`)
   - `data/synthetic/out/firs_v5_contract` combined (`SHA-256`: `1bdd407a3c3e0b6acc399bb4c31602e6bd01ac0325fa6acaffc453c8709869cc`)
   - `contracts/sample_input.txt` (`SHA-256`: `4873f879929b94cbb72ccc38a94ddb42a45b06880131c90f1934819b5f175ac5`)
   - `contracts/v1_1/examples/ai_golden_fir45.json` (`SHA-256`: `d4f1ec4a556510619d6b2d185aa1a4c7adf20003070dbdd888e8e2edfe5ad00c`)
 - **Output Files**:
-  - `metrics.json` (`SHA-256`: `e9be761f1139c0cddc66d5c34888951097ca574204561c7fbbd761d0ff895d95`)
-  - `pytest_raw.txt` (`SHA-256`: `d792ba80e52ed8f6cedc75912d7ab553db2f7011f61f341b87d1b50c7b1047be`)
+  - `metrics.json` (`SHA-256`: `926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be`)
+  - `pytest_raw.txt` (`SHA-256`: `750f4d5f007839bbffe07c85c2df5bc411b9e1c858bef216f10e53f752be9601`)
   - `golden_analysis.json` (`SHA-256`: `9daeead72bf5f9ecc745856c29133ab53a1a4ac7bbb9ab0e777f87ba7c1a058c`)
-  - `timings_run1.json` (`SHA-256`: `b966f6d27cabfefafcc78c0b54198121ab9d5332eaff1a7b30446774d928745e`)
-  - `timings_run2.json` (`SHA-256`: `79329a16a8b169411bb93088d74b28ad65a8b6dab16490c607ba07453c2d9586`)
+  - `timings_run1.json` (`SHA-256`: `a3f43e234c857ff604133b0473356a30abd37287ce042f923266c9f812261b46`)
+  - `timings_run2.json` (`SHA-256`: `d6c08992289a5ed55823174e029adaf6f61cb22486c2e52784863ff314782cab`)
   - `run1/` combined (`SHA-256`: `1efd8259d309d99eb90c63b03084d3128403635112bf6f7a89a114e1ca98fc9a`)
   - `run2/` combined (`SHA-256`: `1efd8259d309d99eb90c63b03084d3128403635112bf6f7a89a114e1ca98fc9a`)
   - `degraded/` combined (`SHA-256`: `9ec32098a3a3f186af4fe5938c2a1ddae092b4f0d1f83ac5334beccdd549c538`)
-  - `SHA256SUMS.txt` (`SHA-256`: `40de40c30741999df63c7f7bf77cf57acf931bfe12fb8501f9d2ece1a2c9b691`)
+  - `SHA256SUMS.txt` (`SHA-256`: `b0c4002b9c747327d687ddf0c2327ab2208978c7a0d831b3c06e85c9335e1458`)
 - **Key Numbers**:
   - `metrics.json` (`determinism.exact_matches`): 100 byte-identical files between first and second offline runs
   - `metrics.json` (`mentions.overall.PERSON.strict.f1`): 0.9974 mention strict score for persons
@@ -703,12 +703,12 @@
   - `metrics.json` (`golden.scores.CUE.all_gold.f1`): 0.6000 golden paragraph cue score against full gold set
   - `metrics.json` (`golden.scores.HYBRID.all_gold.f1`): 0.9231 golden paragraph hybrid score against full gold set
   - `metrics.json` (`golden.scores.HYBRID.explicit_subset.f1`): 1.0000 golden paragraph hybrid score against explicit subset
-  - `metrics.json` (`latency.model_load_ms`): 10230.0380 cold offline model load duration in milliseconds
-  - `metrics.json` (`latency.run2.total.mean_ms`): 292.0000 mean per-document runtime in milliseconds during cached run
-  - `metrics.json` (`latency.run2.total.p95_ms`): 547.3420 high percentile per-document runtime in milliseconds during cached run
+  - `metrics.json` (`latency.model_load_ms`): 11854.8250 cold offline model load duration in milliseconds
+  - `metrics.json` (`latency.run2.total.mean_ms`): 684.9470 mean per-document runtime in milliseconds during cached run
+  - `metrics.json` (`latency.run2.total.p95_ms`): 965.1720 high percentile per-document runtime in milliseconds during cached run
   - `metrics.json` (`robustness.run1.valid_docs`): 100 documents passing schema validation in first live run
   - `metrics.json` (`robustness.degraded.valid_docs`): 100 documents passing schema validation in degraded mode
-  - `metrics.json` (`tests_summary.total_passed`): 356 unit tests passing across full test folder
+  - `metrics.json` (`tests_summary.total_passed`): 631 unit tests passing across full test folder
 
 ### Tables
 
@@ -873,14 +873,14 @@
 #### Table M: Stage and Total Runtime Latency (Run Two, Milliseconds)
 | Stage | Mean (ms) | Percentile (ms) |
 | :--- | :--- | :--- |
-| model_load | 10230.038 | — |
-| model | 278.267 | 531.267 |
-| postprocess | 0.021 | 0.033 |
-| names_identifiers | 1.047 | 2.027 |
-| assemble | 2.973 | 5.197 |
-| relations | 7.700 | 13.663 |
-| validate | 1.989 | 3.705 |
-| total | 292.000 | 547.342 |
+| model_load | 11854.825 | — |
+| model | 659.610 | 926.236 |
+| postprocess | 0.040 | 0.060 |
+| names_identifiers | 1.875 | 3.668 |
+| assemble | 5.578 | 9.397 |
+| relations | 14.103 | 23.252 |
+| validate | 3.731 | 6.003 |
+| total | 684.947 | 965.172 |
 
 #### Table N: Bitwise Determinism Comparison Between Runs
 | Comparison Scope | Run One SHA-256 | Run Two SHA-256 | Exact Matches | Total Docs | All Identical |
@@ -918,7 +918,7 @@
 | `contracts/v1_1/validate.py` | `8409624416a232f5a25ceceafd838432ac98c7181b048965b9956bdbff37e31b` | Contract Validator |
 | `contracts/v1_1/ai_output_schema.json` | `66f7e45266481f4f565d57635795c90dd8cefe115785596d9a2ced5199bbcbbb` | Output Schema |
 | `contracts/v1_1/graph_render_schema.json` | `94ca18cb963632b14e3f562df8f47e07323fb01b83722717254ddf6604c3210a` | Render Schema |
-| `tests/` (combined) | `91c89579cc8ae0891c39827e96d9404a5f5e0795702b409a648370600a1ddf54` | Test Suite |
+| `tests/` (combined) | `e309e8cf5290dc24425d777d948cc0bdcf7c0e434b23389a381c893aee844ff5` | Test Suite |
 | `data/synthetic/out/firs_v5` (combined) | `4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949` | Narratives and Keys |
 | `data/synthetic/out/firs_v5_contract` (combined) | `1bdd407a3c3e0b6acc399bb4c31602e6bd01ac0325fa6acaffc453c8709869cc` | Gold Contracts |
 | `contracts/sample_input.txt` | `4873f879929b94cbb72ccc38a94ddb42a45b06880131c90f1934819b5f175ac5` | Golden Input |
@@ -933,19 +933,48 @@
 | Test File | Passed | Failed | Skipped | Errors |
 | :--- | :--- | :--- | :--- | :--- |
 | `tests/test_answer_key_converter.py` | 9 | 0 | 0 | 0 |
+| `tests/test_api_analytics.py` | 7 | 0 | 0 | 0 |
+| `tests/test_api_atomic.py` | 5 | 0 | 0 | 0 |
+| `tests/test_api_audit.py` | 5 | 0 | 0 | 0 |
+| `tests/test_api_auth_http.py` | 6 | 0 | 0 | 0 |
+| `tests/test_api_demo_e2e.py` | 3 | 0 | 0 | 0 |
+| `tests/test_api_demo_e2e_full.py` | 9 | 0 | 0 | 0 |
+| `tests/test_api_evidence.py` | 5 | 0 | 0 | 0 |
+| `tests/test_api_extract.py` | 4 | 0 | 1 | 0 |
+| `tests/test_api_followup.py` | 5 | 0 | 0 | 0 |
+| `tests/test_api_graph.py` | 7 | 0 | 0 | 0 |
+| `tests/test_api_http_read.py` | 14 | 0 | 0 | 0 |
+| `tests/test_api_http_write.py` | 8 | 0 | 0 | 0 |
+| `tests/test_api_ingest.py` | 13 | 0 | 0 | 0 |
+| `tests/test_api_jobs.py` | 5 | 0 | 0 | 0 |
+| `tests/test_api_security.py` | 10 | 0 | 0 | 0 |
+| `tests/test_api_security_http.py` | 14 | 0 | 0 | 0 |
+| `tests/test_api_settings_storage.py` | 11 | 0 | 0 | 0 |
 | `tests/test_assemble.py` | 15 | 0 | 0 | 0 |
+| `tests/test_case_analytics.py` | 9 | 0 | 0 | 0 |
+| `tests/test_case_detectors.py` | 14 | 0 | 0 | 0 |
+| `tests/test_case_graph.py` | 11 | 0 | 0 | 0 |
 | `tests/test_contracts_v1_1.py` | 18 | 0 | 0 | 0 |
+| `tests/test_cut_calls.py` | 10 | 0 | 0 | 0 |
+| `tests/test_frontend_static.py` | 2 | 0 | 0 | 0 |
 | `tests/test_generate_case.py` | 18 | 0 | 0 | 0 |
 | `tests/test_generate_firs.py` | 22 | 0 | 0 | 0 |
 | `tests/test_identifiers.py` | 36 | 0 | 0 | 0 |
+| `tests/test_llm_fir_converter.py` | 33 | 0 | 0 | 0 |
 | `tests/test_names.py` | 16 | 0 | 0 | 0 |
 | `tests/test_ner_baseline.py` | 9 | 0 | 0 | 0 |
 | `tests/test_normalizer.py` | 8 | 0 | 0 | 0 |
+| `tests/test_person_merge.py` | 9 | 0 | 0 | 0 |
 | `tests/test_pipeline.py` | 11 | 0 | 0 | 0 |
+| `tests/test_planted_eval.py` | 9 | 0 | 0 | 0 |
+| `tests/test_planted_eval_v2.py` | 13 | 0 | 0 | 0 |
 | `tests/test_relations.py` | 24 | 0 | 0 | 0 |
+| `tests/test_runbook_step_tool.py` | 20 | 0 | 0 | 0 |
 | `tests/test_scoring.py` | 14 | 0 | 0 | 0 |
+| `tests/test_step7_report.py` | 7 | 0 | 0 | 0 |
+| `tests/test_step7b_gap.py` | 7 | 0 | 0 | 0 |
 | `tests/test_validators.py` | 156 | 0 | 0 | 0 |
-| TOTAL | 356 | 0 | 0 | 0 |
+| TOTAL | 631 | 0 | 1 | 0 |
 
 - **Test Failures**: None
 

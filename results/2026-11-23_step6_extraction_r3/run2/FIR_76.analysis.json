@@ -1,0 +1,262 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 363,
+        "start": 354,
+        "surface": "20,188.01",
+        "value": 20188.01
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          160,
+          173
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              160,
+              173
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-3434"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB3434"
+      },
+      {
+        "ai_confidence": 0.999739,
+        "aliases": [
+          "दीपू"
+        ],
+        "canonical_name": "दीपक चौहान",
+        "char_span": [
+          192,
+          202
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999739,
+          "validator": null
+        },
+        "father_name": "सरदार चौहान",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              192,
+              202
+            ],
+            "kind": "NAME",
+            "surface": "दीपक चौहान"
+          },
+          {
+            "char_span": [
+              208,
+              212
+            ],
+            "kind": "ALIAS",
+            "surface": "दीपू"
+          },
+          {
+            "char_span": [
+              224,
+              235
+            ],
+            "kind": "FATHER",
+            "surface": "सरदार चौहान"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          318,
+          329
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              318,
+              329
+            ],
+            "kind": "VALUE",
+            "surface": "२८३८४२५१३५४"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "28384251354"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          369,
+          380
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              369,
+              380
+            ],
+            "kind": "VALUE",
+            "surface": "७०७३३७५४३३०"
+          },
+          {
+            "char_span": [
+              437,
+              448
+            ],
+            "kind": "VALUE",
+            "surface": "७०७३३७५४३३०"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "70733754330"
+      },
+      {
+        "ai_confidence": 0.999766,
+        "canonical_name": "मनोज रावत",
+        "char_span": [
+          465,
+          474
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999766,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              465,
+              474
+            ],
+            "kind": "NAME",
+            "surface": "मनोज रावत"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99964,
+        "canonical_name": "अमित तोमर",
+        "char_span": [
+          507,
+          516
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.99964,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              507,
+              516
+            ],
+            "kind": "NAME",
+            "surface": "अमित तोमर"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 20188.01,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          277,
+          399
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "प्रेषित"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          400,
+          493
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_05",
+        "target": "ent_04",
+        "trigger": "देखरेख"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_76"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 660,
+    "document_hash": "00876c192d0b03e5a682a04fc07315e2c2953b4eb3f45b8a2d780824bdfafbfb",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "PERSON": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

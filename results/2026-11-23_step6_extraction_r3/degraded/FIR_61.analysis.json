@@ -1,0 +1,357 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 574,
+        "start": 560,
+        "surface": "Rs. 4,212.87/-",
+        "value": 4212.87
+      },
+      {
+        "end": 1016,
+        "start": 1003,
+        "surface": "INR 22,000.00",
+        "value": 22000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-1C-AB-1893"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL1CAB1893"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Shooter"
+        ],
+        "canonical_name": "Rashid Khan",
+        "char_span": [
+          213,
+          224
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Asif Khan",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              224
+            ],
+            "kind": "NAME",
+            "surface": "Rashid Khan"
+          },
+          {
+            "char_span": [
+              229,
+              236
+            ],
+            "kind": "ALIAS",
+            "surface": "Shooter"
+          },
+          {
+            "char_span": [
+              246,
+              255
+            ],
+            "kind": "FATHER",
+            "surface": "Asif Khan"
+          },
+          {
+            "char_span": [
+              541,
+              552
+            ],
+            "kind": "NAME",
+            "surface": "Rashid Khan"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          372,
+          386
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              372,
+              386
+            ],
+            "kind": "VALUE",
+            "surface": "+91-9165726284"
+          },
+          {
+            "char_span": [
+              418,
+              432
+            ],
+            "kind": "VALUE",
+            "surface": "+91-9165726284"
+          },
+          {
+            "char_span": [
+              777,
+              791
+            ],
+            "kind": "VALUE",
+            "surface": "+91-9165726284"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9165726284"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          446,
+          461
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              446,
+              461
+            ],
+            "kind": "VALUE",
+            "surface": "977694531473790"
+          }
+        ],
+        "type": "IMEI",
+        "value": "977694531473790"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          595,
+          609
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              595,
+              609
+            ],
+            "kind": "VALUE",
+            "surface": "71891355965727"
+          },
+          {
+            "char_span": [
+              654,
+              668
+            ],
+            "kind": "VALUE",
+            "surface": "71891355965727"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "71891355965727"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          801,
+          811
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              801,
+              811
+            ],
+            "kind": "VALUE",
+            "surface": "6531003309"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6531003309"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Arvind Swaminathan",
+        "char_span": [
+          860,
+          878
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              860,
+              878
+            ],
+            "kind": "NAME",
+            "surface": "Arvind Swaminathan"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          298,
+          402
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "personal mobile"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          403,
+          491
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "handset IMEI"
+      },
+      {
+        "amount": 4212.87,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          492,
+          630
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_05",
+        "trigger": "credit karwaya"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          631,
+          729
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_05",
+        "trigger": "operate kiya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          730,
+          846
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "calling traffic"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_61"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1177,
+    "document_hash": "fdd8176759a30a4bfccd5f747b5b01dd28f142e3ca2206cbeb3ea59a062fa2cf",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

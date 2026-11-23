@@ -1,0 +1,1763 @@
+{
+  "meta": {
+    "run_id": "step6_extraction_r3",
+    "created_at": "2026-11-23T17:36:42.934667+00:00",
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "python_version_short": "3.11.9",
+    "torch_version": "2.1.0+cpu",
+    "transformers_version": "4.35.2",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "command": "python scripts/report/step6_extraction.py --run-id step6_extraction_r3",
+    "pytest_command": "python -m pytest -v tests"
+  },
+  "input_hashes": {
+    "ai_pipeline_modules": {
+      "normalizer.py": "d1cfa0fa1c8480c9d55f7b0ccb6dbc31f0305deb73b7343a2c039d6a7d3a4123",
+      "validators.py": "e1413ab1e636514c74041490eed35ebaebaa17d6d2c8e4891e890e612c3a2c99",
+      "identifiers.py": "3dc5b861b5f048ae675608915853b78fa745ded9c9f900604930ac7abdf01d99",
+      "names.py": "50476b26268c22e676e223b22072e1ba6dcb0aa8857ef27ae6b19b3445caac72",
+      "ner_baseline.py": "fce2f5061807bf99e4ac69a0f121c609dc7783b1ee023ec86be6bd436c73465b",
+      "assemble.py": "11b00bb78c3773d280af2b0d0a97102370e9d3a42c10acb1fee3c048bb10c4e0",
+      "relations.py": "22628af79080c42ac1e1e53ebda39a228770d28c13572400bdf4d2463c8c5770",
+      "pipeline.py": "6aca2a9861790d6482d4837cda892e9ae629aca713bd2e49b61fb0888daf92e5",
+      "scoring.py": "f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b"
+    },
+    "validate_py": "8409624416a232f5a25ceceafd838432ac98c7181b048965b9956bdbff37e31b",
+    "ai_output_schema_json": "66f7e45266481f4f565d57635795c90dd8cefe115785596d9a2ced5199bbcbbb",
+    "graph_render_schema_json": "94ca18cb963632b14e3f562df8f47e07323fb01b83722717254ddf6604c3210a",
+    "tests_combined": "e309e8cf5290dc24425d777d948cc0bdcf7c0e434b23389a381c893aee844ff5",
+    "firs_v5_combined": "4d6dc4b3fe3c4bd50040f797fb65ebd7e684f813f6d7ada946760e66e4ac8949",
+    "firs_v5_contract_combined": "1bdd407a3c3e0b6acc399bb4c31602e6bd01ac0325fa6acaffc453c8709869cc",
+    "sample_input_txt": "4873f879929b94cbb72ccc38a94ddb42a45b06880131c90f1934819b5f175ac5",
+    "ai_golden_fir45_json": "d4f1ec4a556510619d6b2d185aa1a4c7adf20003070dbdd888e8e2edfe5ad00c"
+  },
+  "determinism": {
+    "total_docs": 100,
+    "exact_matches": 100,
+    "all_match": true,
+    "run1_combined_sha256": "1efd8259d309d99eb90c63b03084d3128403635112bf6f7a89a114e1ca98fc9a",
+    "run2_combined_sha256": "1efd8259d309d99eb90c63b03084d3128403635112bf6f7a89a114e1ca98fc9a",
+    "per_file_match": {
+      "FIR_01": true,
+      "FIR_02": true,
+      "FIR_03": true,
+      "FIR_04": true,
+      "FIR_05": true,
+      "FIR_06": true,
+      "FIR_07": true,
+      "FIR_08": true,
+      "FIR_09": true,
+      "FIR_10": true,
+      "FIR_100": true,
+      "FIR_11": true,
+      "FIR_12": true,
+      "FIR_13": true,
+      "FIR_14": true,
+      "FIR_15": true,
+      "FIR_16": true,
+      "FIR_17": true,
+      "FIR_18": true,
+      "FIR_19": true,
+      "FIR_20": true,
+      "FIR_21": true,
+      "FIR_22": true,
+      "FIR_23": true,
+      "FIR_24": true,
+      "FIR_25": true,
+      "FIR_26": true,
+      "FIR_27": true,
+      "FIR_28": true,
+      "FIR_29": true,
+      "FIR_30": true,
+      "FIR_31": true,
+      "FIR_32": true,
+      "FIR_33": true,
+      "FIR_34": true,
+      "FIR_35": true,
+      "FIR_36": true,
+      "FIR_37": true,
+      "FIR_38": true,
+      "FIR_39": true,
+      "FIR_40": true,
+      "FIR_41": true,
+      "FIR_42": true,
+      "FIR_43": true,
+      "FIR_44": true,
+      "FIR_45": true,
+      "FIR_46": true,
+      "FIR_47": true,
+      "FIR_48": true,
+      "FIR_49": true,
+      "FIR_50": true,
+      "FIR_51": true,
+      "FIR_52": true,
+      "FIR_53": true,
+      "FIR_54": true,
+      "FIR_55": true,
+      "FIR_56": true,
+      "FIR_57": true,
+      "FIR_58": true,
+      "FIR_59": true,
+      "FIR_60": true,
+      "FIR_61": true,
+      "FIR_62": true,
+      "FIR_63": true,
+      "FIR_64": true,
+      "FIR_65": true,
+      "FIR_66": true,
+      "FIR_67": true,
+      "FIR_68": true,
+      "FIR_69": true,
+      "FIR_70": true,
+      "FIR_71": true,
+      "FIR_72": true,
+      "FIR_73": true,
+      "FIR_74": true,
+      "FIR_75": true,
+      "FIR_76": true,
+      "FIR_77": true,
+      "FIR_78": true,
+      "FIR_79": true,
+      "FIR_80": true,
+      "FIR_81": true,
+      "FIR_82": true,
+      "FIR_83": true,
+      "FIR_84": true,
+      "FIR_85": true,
+      "FIR_86": true,
+      "FIR_87": true,
+      "FIR_88": true,
+      "FIR_89": true,
+      "FIR_90": true,
+      "FIR_91": true,
+      "FIR_92": true,
+      "FIR_93": true,
+      "FIR_94": true,
+      "FIR_95": true,
+      "FIR_96": true,
+      "FIR_97": true,
+      "FIR_98": true,
+      "FIR_99": true
+    }
+  },
+  "mentions": {
+    "overall": {
+      "PERSON": {
+        "strict": {
+          "tp": 382,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.9973890339425587,
+          "recall": 0.9973890339425587,
+          "f1": 0.9973890339425587
+        },
+        "lenient": {
+          "tp": 383,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "ALIAS": {
+        "strict": {
+          "tp": 155,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 155,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "FATHER": {
+        "strict": {
+          "tp": 127,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 127,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "PHONE": {
+        "strict": {
+          "tp": 255,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 255,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "IMEI": {
+        "strict": {
+          "tp": 74,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 74,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "ACCOUNT": {
+        "strict": {
+          "tp": 134,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 134,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "AMOUNT": {
+        "strict": {
+          "tp": 107,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lenient": {
+          "tp": 107,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      }
+    },
+    "vehicle_mentions_found": 100,
+    "vehicle_entities_found": 100
+  },
+  "entities": {
+    "overall": {
+      "PERSON": {
+        "tp": 271,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.9963235294117647,
+        "recall": 1.0,
+        "f1": 0.998158379373849
+      },
+      "PHONE": {
+        "tp": 130,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "IMEI": {
+        "tp": 69,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ACCOUNT": {
+        "tp": 80,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "by_split": {
+      "train": {
+        "PERSON": {
+          "tp": 161,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PHONE": {
+          "tp": 80,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IMEI": {
+          "tp": 43,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCOUNT": {
+          "tp": 48,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "dev": {
+        "PERSON": {
+          "tp": 55,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PHONE": {
+          "tp": 25,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IMEI": {
+          "tp": 13,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCOUNT": {
+          "tp": 16,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "test": {
+        "PERSON": {
+          "tp": 55,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.9821428571428571,
+          "recall": 1.0,
+          "f1": 0.9909909909909909
+        },
+        "PHONE": {
+          "tp": 25,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IMEI": {
+          "tp": 13,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCOUNT": {
+          "tp": 16,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      }
+    },
+    "by_language": {
+      "hinglish": {
+        "PERSON": {
+          "tp": 177,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.9943820224719101,
+          "recall": 1.0,
+          "f1": 0.9971830985915493
+        },
+        "PHONE": {
+          "tp": 86,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IMEI": {
+          "tp": 46,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCOUNT": {
+          "tp": 54,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "hindi": {
+        "PERSON": {
+          "tp": 48,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PHONE": {
+          "tp": 27,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IMEI": {
+          "tp": 14,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCOUNT": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "english": {
+        "PERSON": {
+          "tp": 46,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PHONE": {
+          "tp": 17,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IMEI": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "ACCOUNT": {
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      }
+    }
+  },
+  "attributes": {
+    "overall": {
+      "aligned_persons": 271,
+      "aliases": {
+        "matches": 271,
+        "total": 271,
+        "rate": 1.0
+      },
+      "father_name": {
+        "matches": 271,
+        "total": 271,
+        "rate": 1.0,
+        "with_gold_father_matches": 126,
+        "with_gold_father_total": 126
+      },
+      "role": {
+        "matches": 269,
+        "total": 271,
+        "rate": 0.992619926199262
+      }
+    },
+    "hinglish": {
+      "aligned_persons": 177,
+      "aliases": {
+        "matches": 177,
+        "total": 177,
+        "rate": 1.0
+      },
+      "father_name": {
+        "matches": 177,
+        "total": 177,
+        "rate": 1.0,
+        "with_gold_father_matches": 80,
+        "with_gold_father_total": 80
+      },
+      "role": {
+        "matches": 177,
+        "total": 177,
+        "rate": 1.0
+      }
+    },
+    "hindi": {
+      "aligned_persons": 48,
+      "aliases": {
+        "matches": 48,
+        "total": 48,
+        "rate": 1.0
+      },
+      "father_name": {
+        "matches": 48,
+        "total": 48,
+        "rate": 1.0,
+        "with_gold_father_matches": 23,
+        "with_gold_father_total": 23
+      },
+      "role": {
+        "matches": 48,
+        "total": 48,
+        "rate": 1.0
+      }
+    },
+    "english": {
+      "aligned_persons": 46,
+      "aliases": {
+        "matches": 46,
+        "total": 46,
+        "rate": 1.0
+      },
+      "father_name": {
+        "matches": 46,
+        "total": 46,
+        "rate": 1.0,
+        "with_gold_father_matches": 23,
+        "with_gold_father_total": 23
+      },
+      "role": {
+        "matches": 44,
+        "total": 46,
+        "rate": 0.9565217391304348
+      }
+    }
+  },
+  "relations": {
+    "CUE": {
+      "overall": {
+        "by_label": {
+          "OWNS_DEVICE": {
+            "tp": 65,
+            "fp": 1,
+            "fn": 9,
+            "precision": 0.9848484848484849,
+            "recall": 0.8783783783783784,
+            "f1": 0.9285714285714285
+          },
+          "ASSOCIATED_IMEI": {
+            "tp": 74,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "COMMUNICATED_WITH": {
+            "tp": 54,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.9642857142857143,
+            "f1": 0.9818181818181818
+          },
+          "CONTROLS_ACCOUNT": {
+            "tp": 51,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.9444444444444444,
+            "f1": 0.9714285714285714
+          },
+          "TRANSFERRED_FUNDS": {
+            "tp": 53,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.9814814814814815,
+            "recall": 0.9814814814814815,
+            "f1": 0.9814814814814815
+          }
+        },
+        "micro": {
+          "tp": 297,
+          "fp": 2,
+          "fn": 15,
+          "precision": 0.9933110367892977,
+          "recall": 0.9519230769230769,
+          "f1": 0.972176759410802
+        }
+      },
+      "by_split": {
+        "train": {
+          "micro": {
+            "tp": 188,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.9894736842105263,
+            "f1": 0.9947089947089947
+          }
+        },
+        "dev": {
+          "micro": {
+            "tp": 61,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "test": {
+          "micro": {
+            "tp": 48,
+            "fp": 2,
+            "fn": 13,
+            "precision": 0.96,
+            "recall": 0.7868852459016393,
+            "f1": 0.8648648648648649
+          }
+        }
+      },
+      "by_language": {
+        "hinglish": {
+          "micro": {
+            "tp": 197,
+            "fp": 2,
+            "fn": 10,
+            "precision": 0.9899497487437185,
+            "recall": 0.9516908212560387,
+            "f1": 0.9704433497536946
+          }
+        },
+        "hindi": {
+          "micro": {
+            "tp": 60,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.967741935483871,
+            "f1": 0.9836065573770492
+          }
+        },
+        "english": {
+          "micro": {
+            "tp": 40,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.9302325581395349,
+            "f1": 0.963855421686747
+          }
+        }
+      }
+    },
+    "HYBRID": {
+      "overall": {
+        "by_label": {
+          "OWNS_DEVICE": {
+            "tp": 73,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.9864864864864865,
+            "recall": 0.9864864864864865,
+            "f1": 0.9864864864864865
+          },
+          "ASSOCIATED_IMEI": {
+            "tp": 74,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "COMMUNICATED_WITH": {
+            "tp": 56,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "CONTROLS_ACCOUNT": {
+            "tp": 52,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.9629629629629629,
+            "f1": 0.9811320754716981
+          },
+          "TRANSFERRED_FUNDS": {
+            "tp": 53,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.9814814814814815,
+            "recall": 0.9814814814814815,
+            "f1": 0.9814814814814815
+          }
+        },
+        "micro": {
+          "tp": 308,
+          "fp": 2,
+          "fn": 4,
+          "precision": 0.9935483870967742,
+          "recall": 0.9871794871794872,
+          "f1": 0.990353697749196
+        }
+      },
+      "by_split": {
+        "train": {
+          "micro": {
+            "tp": 188,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.9894736842105263,
+            "f1": 0.9947089947089947
+          }
+        },
+        "dev": {
+          "micro": {
+            "tp": 61,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "test": {
+          "micro": {
+            "tp": 59,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.9672131147540983,
+            "recall": 0.9672131147540983,
+            "f1": 0.9672131147540983
+          }
+        }
+      },
+      "by_language": {
+        "hinglish": {
+          "micro": {
+            "tp": 205,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.9903381642512077,
+            "recall": 0.9903381642512077,
+            "f1": 0.9903381642512077
+          }
+        },
+        "hindi": {
+          "micro": {
+            "tp": 62,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "english": {
+          "micro": {
+            "tp": 41,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.9534883720930233,
+            "f1": 0.9761904761904763
+          }
+        }
+      }
+    },
+    "CONTRAST": {
+      "overall": {
+        "by_label": {
+          "OWNS_DEVICE": {
+            "tp": 73,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.9864864864864865,
+            "recall": 0.9864864864864865,
+            "f1": 0.9864864864864865
+          },
+          "ASSOCIATED_IMEI": {
+            "tp": 74,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "COMMUNICATED_WITH": {
+            "tp": 56,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "CONTROLS_ACCOUNT": {
+            "tp": 54,
+            "fp": 25,
+            "fn": 0,
+            "precision": 0.6835443037974683,
+            "recall": 1.0,
+            "f1": 0.8120300751879699
+          },
+          "TRANSFERRED_FUNDS": {
+            "tp": 53,
+            "fp": 52,
+            "fn": 1,
+            "precision": 0.5047619047619047,
+            "recall": 0.9814814814814815,
+            "f1": 0.6666666666666667
+          }
+        },
+        "micro": {
+          "tp": 310,
+          "fp": 78,
+          "fn": 2,
+          "precision": 0.7989690721649485,
+          "recall": 0.9935897435897436,
+          "f1": 0.8857142857142858
+        }
+      },
+      "by_split": {
+        "train": {
+          "micro": {
+            "tp": 190,
+            "fp": 44,
+            "fn": 0,
+            "precision": 0.811965811965812,
+            "recall": 1.0,
+            "f1": 0.8962264150943396
+          }
+        },
+        "dev": {
+          "micro": {
+            "tp": 61,
+            "fp": 15,
+            "fn": 0,
+            "precision": 0.8026315789473685,
+            "recall": 1.0,
+            "f1": 0.8905109489051095
+          }
+        },
+        "test": {
+          "micro": {
+            "tp": 59,
+            "fp": 19,
+            "fn": 2,
+            "precision": 0.7564102564102564,
+            "recall": 0.9672131147540983,
+            "f1": 0.8489208633093525
+          }
+        }
+      },
+      "by_language": {
+        "hinglish": {
+          "micro": {
+            "tp": 205,
+            "fp": 52,
+            "fn": 2,
+            "precision": 0.7976653696498055,
+            "recall": 0.9903381642512077,
+            "f1": 0.8836206896551724
+          }
+        },
+        "hindi": {
+          "micro": {
+            "tp": 62,
+            "fp": 15,
+            "fn": 0,
+            "precision": 0.8051948051948052,
+            "recall": 1.0,
+            "f1": 0.8920863309352518
+          }
+        },
+        "english": {
+          "micro": {
+            "tp": 43,
+            "fp": 11,
+            "fn": 0,
+            "precision": 0.7962962962962963,
+            "recall": 1.0,
+            "f1": 0.8865979381443299
+          }
+        }
+      }
+    }
+  },
+  "origins": {
+    "train": {
+      "lexicon_cue": 188,
+      "ANAPHORA": 0,
+      "ROLE_CUE": 0,
+      "STRUCTURE": 0,
+      "total": 188
+    },
+    "dev": {
+      "lexicon_cue": 61,
+      "ANAPHORA": 0,
+      "ROLE_CUE": 0,
+      "STRUCTURE": 0,
+      "total": 61
+    },
+    "test": {
+      "lexicon_cue": 50,
+      "ANAPHORA": 0,
+      "ROLE_CUE": 0,
+      "STRUCTURE": 11,
+      "total": 61
+    },
+    "overall": {
+      "lexicon_cue": 299,
+      "ANAPHORA": 0,
+      "ROLE_CUE": 0,
+      "STRUCTURE": 11,
+      "total": 310
+    }
+  },
+  "dev_vs_test": {
+    "CUE": {
+      "dev_micro_f1": 1.0,
+      "test_micro_f1": 0.8648648648648649,
+      "diff_test_minus_dev": -0.135135
+    },
+    "HYBRID": {
+      "dev_micro_f1": 1.0,
+      "test_micro_f1": 0.9672131147540983,
+      "diff_test_minus_dev": -0.032787
+    },
+    "CONTRAST": {
+      "dev_micro_f1": 0.8905109489051095,
+      "test_micro_f1": 0.8489208633093525,
+      "diff_test_minus_dev": -0.04159
+    }
+  },
+  "degraded": {
+    "entities": {
+      "PERSON": {
+        "tp": 187,
+        "fp": 0,
+        "fn": 84,
+        "precision": 1.0,
+        "recall": 0.6900369003690037,
+        "f1": 0.8165938864628821
+      },
+      "PHONE": {
+        "tp": 130,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "IMEI": {
+        "tp": 69,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ACCOUNT": {
+        "tp": 80,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "relations": {
+      "overall": {
+        "micro": {
+          "tp": 223,
+          "fp": 25,
+          "fn": 89,
+          "precision": 0.8991935483870968,
+          "recall": 0.7147435897435898,
+          "f1": 0.7964285714285715
+        }
+      },
+      "train": {
+        "micro": {
+          "tp": 136,
+          "fp": 13,
+          "fn": 54,
+          "precision": 0.912751677852349,
+          "recall": 0.7157894736842105,
+          "f1": 0.8023598820058997
+        }
+      },
+      "dev": {
+        "micro": {
+          "tp": 45,
+          "fp": 4,
+          "fn": 16,
+          "precision": 0.9183673469387755,
+          "recall": 0.7377049180327869,
+          "f1": 0.8181818181818182
+        }
+      },
+      "test": {
+        "micro": {
+          "tp": 42,
+          "fp": 8,
+          "fn": 19,
+          "precision": 0.84,
+          "recall": 0.6885245901639344,
+          "f1": 0.7567567567567568
+        }
+      }
+    }
+  },
+  "golden": {
+    "entities": [
+      {
+        "ai_confidence": 0.999446,
+        "aliases": [
+          "Bicky"
+        ],
+        "canonical_name": "Vikas Kumar",
+        "char_span": [
+          73,
+          84
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999446,
+          "validator": null
+        },
+        "flags": [
+          "SHORT_NAME_MERGE",
+          "RULE_ALIAS"
+        ],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              73,
+              84
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Kumar"
+          },
+          {
+            "char_span": [
+              89,
+              94
+            ],
+            "kind": "ALIAS",
+            "surface": "Bicky"
+          },
+          {
+            "char_span": [
+              428,
+              433
+            ],
+            "kind": "NAME",
+            "surface": "Vikas"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          209,
+          219
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              209,
+              219
+            ],
+            "kind": "VALUE",
+            "surface": "9876543210"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9876543210"
+      },
+      {
+        "ai_confidence": 0.6,
+        "char_span": [
+          227,
+          242
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.6
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              227,
+              242
+            ],
+            "kind": "VALUE",
+            "surface": "864201948201948"
+          }
+        ],
+        "type": "IMEI",
+        "value": "864201948201948"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          355,
+          365
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              355,
+              365
+            ],
+            "kind": "VALUE",
+            "surface": "9123456789"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9123456789"
+      },
+      {
+        "ai_confidence": 0.6,
+        "char_span": [
+          373,
+          388
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.6
+        },
+        "flags": [
+          "CHECKSUM_INVALID"
+        ],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              373,
+              388
+            ],
+            "kind": "VALUE",
+            "surface": "359876102938475"
+          }
+        ],
+        "type": "IMEI",
+        "value": "359876102938475"
+      },
+      {
+        "ai_confidence": 0.99,
+        "bank": "SBI",
+        "char_span": [
+          488,
+          499
+        ],
+        "confidence_breakdown": {
+          "context": 1.0,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [
+          "BANK_CONTEXT"
+        ],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              488,
+              499
+            ],
+            "kind": "VALUE",
+            "surface": "30291827465"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "30291827465"
+      },
+      {
+        "ai_confidence": 0.999395,
+        "aliases": [
+          "Raju Bhai"
+        ],
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          528,
+          542
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999395,
+          "validator": null
+        },
+        "flags": [
+          "RULE_ALIAS"
+        ],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              528,
+              542
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              545,
+              554
+            ],
+            "kind": "ALIAS",
+            "surface": "Raju Bhai"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "extractor": "CUE",
+        "relation": "ASSOCIATED_IMEI",
+        "source_label": "9876543210",
+        "target_label": "864201948201948",
+        "trigger": "IMEI",
+        "confidence": 0.9
+      },
+      {
+        "extractor": "CUE",
+        "relation": "ASSOCIATED_IMEI",
+        "source_label": "9123456789",
+        "target_label": "359876102938475",
+        "trigger": "IMEI",
+        "confidence": 0.9
+      },
+      {
+        "extractor": "CUE",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_label": "Rajendra Singh",
+        "target_label": "30291827465",
+        "trigger": "control",
+        "confidence": 0.9
+      },
+      {
+        "extractor": "HYBRID",
+        "relation": "OWNS_DEVICE",
+        "source_label": "Vikas Kumar",
+        "target_label": "9876543210",
+        "trigger": "paas se",
+        "confidence": 0.5
+      },
+      {
+        "extractor": "HYBRID",
+        "relation": "ASSOCIATED_IMEI",
+        "source_label": "9876543210",
+        "target_label": "864201948201948",
+        "trigger": "IMEI",
+        "confidence": 0.9
+      },
+      {
+        "extractor": "HYBRID",
+        "relation": "ASSOCIATED_IMEI",
+        "source_label": "9123456789",
+        "target_label": "359876102938475",
+        "trigger": "IMEI",
+        "confidence": 0.9
+      },
+      {
+        "extractor": "HYBRID",
+        "relation": "TRANSFERRED_FUNDS",
+        "source_label": "Vikas Kumar",
+        "target_label": "30291827465",
+        "trigger": "ROLE_CUE",
+        "confidence": 0.6,
+        "amount": 500000.0
+      },
+      {
+        "extractor": "HYBRID",
+        "relation": "CONTROLS_ACCOUNT",
+        "source_label": "Rajendra Singh",
+        "target_label": "30291827465",
+        "trigger": "ROLE_CUE",
+        "confidence": 0.6
+      },
+      {
+        "extractor": "HYBRID",
+        "relation": "COMMUNICATED_WITH",
+        "source_label": "9876543210",
+        "target_label": "9123456789",
+        "trigger": "ANAPHORA",
+        "confidence": 0.6
+      }
+    ],
+    "scores": {
+      "CUE": {
+        "all_gold": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 4,
+          "precision": 1.0,
+          "recall": 0.42857142857142855,
+          "f1": 0.6,
+          "gold_count": 7
+        },
+        "explicit_subset": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 3,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "gold_count": 6
+        }
+      },
+      "HYBRID": {
+        "all_gold": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.8571428571428571,
+          "f1": 0.923076923076923,
+          "gold_count": 7
+        },
+        "explicit_subset": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "gold_count": 6
+        }
+      }
+    }
+  },
+  "latency": {
+    "model_load_ms": 11854.825,
+    "run2": {
+      "model": {
+        "mean_ms": 659.61,
+        "p95_ms": 926.236
+      },
+      "postprocess": {
+        "mean_ms": 0.04,
+        "p95_ms": 0.06
+      },
+      "names_identifiers": {
+        "mean_ms": 1.875,
+        "p95_ms": 3.668
+      },
+      "assemble": {
+        "mean_ms": 5.578,
+        "p95_ms": 9.397
+      },
+      "relations": {
+        "mean_ms": 14.103,
+        "p95_ms": 23.252
+      },
+      "validate": {
+        "mean_ms": 3.731,
+        "p95_ms": 6.003
+      },
+      "total": {
+        "mean_ms": 684.947,
+        "p95_ms": 965.172
+      }
+    }
+  },
+  "robustness": {
+    "run1": {
+      "total_docs": 100,
+      "valid_docs": 100,
+      "exceptions_by_class": {}
+    },
+    "run2": {
+      "total_docs": 100,
+      "valid_docs": 100,
+      "exceptions_by_class": {}
+    },
+    "degraded": {
+      "total_docs": 100,
+      "valid_docs": 100,
+      "exceptions_by_class": {}
+    },
+    "negative_inputs": {
+      "empty_string": {
+        "raised": true,
+        "exception_class": "EmptyText"
+      },
+      "whitespace": {
+        "raised": true,
+        "exception_class": "EmptyText"
+      },
+      "too_long_5001": {
+        "raised": true,
+        "exception_class": "TextTooLong"
+      },
+      "no_entities": {
+        "raised": true,
+        "exception_class": "NoEntitiesFound"
+      },
+      "non_string_int_42": {
+        "raised": true,
+        "exception_class": "EmptyText"
+      }
+    }
+  },
+  "tests_summary": {
+    "by_file": {
+      "tests/test_answer_key_converter.py": {
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_analytics.py": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_atomic.py": {
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_audit.py": {
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_auth_http.py": {
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_demo_e2e.py": {
+        "passed": 3,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_demo_e2e_full.py": {
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_evidence.py": {
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_extract.py": {
+        "passed": 4,
+        "failed": 0,
+        "skipped": 1,
+        "errors": 0
+      },
+      "tests/test_api_followup.py": {
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_graph.py": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_http_read.py": {
+        "passed": 14,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_http_write.py": {
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_ingest.py": {
+        "passed": 13,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_jobs.py": {
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_security.py": {
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_security_http.py": {
+        "passed": 14,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_api_settings_storage.py": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_assemble.py": {
+        "passed": 15,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_case_analytics.py": {
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_case_detectors.py": {
+        "passed": 14,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_case_graph.py": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_contracts_v1_1.py": {
+        "passed": 18,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_cut_calls.py": {
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_frontend_static.py": {
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_generate_case.py": {
+        "passed": 18,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_generate_firs.py": {
+        "passed": 22,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_identifiers.py": {
+        "passed": 36,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_llm_fir_converter.py": {
+        "passed": 33,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_names.py": {
+        "passed": 16,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_ner_baseline.py": {
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_normalizer.py": {
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_person_merge.py": {
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_pipeline.py": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_planted_eval.py": {
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_planted_eval_v2.py": {
+        "passed": 13,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_relations.py": {
+        "passed": 24,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_runbook_step_tool.py": {
+        "passed": 20,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_scoring.py": {
+        "passed": 14,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_step7_report.py": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_step7b_gap.py": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "tests/test_validators.py": {
+        "passed": 156,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      }
+    },
+    "total_passed": 631,
+    "total_failed": 0,
+    "total_skipped": 1,
+    "total_errors": 0,
+    "total_collected": 632,
+    "failures": []
+  }
+}

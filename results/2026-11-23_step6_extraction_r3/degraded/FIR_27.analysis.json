@@ -1,0 +1,237 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 396,
+        "start": 387,
+        "surface": "30,852.58",
+        "value": 30852.58
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-5905"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB5905"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Raju Bhai"
+        ],
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          214,
+          228
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Maheshwar Singh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              228
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              233,
+              242
+            ],
+            "kind": "ALIAS",
+            "surface": "Raju Bhai"
+          },
+          {
+            "char_span": [
+              252,
+              267
+            ],
+            "kind": "FATHER",
+            "surface": "Maheshwar Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          368,
+          379
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              368,
+              379
+            ],
+            "kind": "VALUE",
+            "surface": "97890052994"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "97890052994"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          417,
+          433
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              417,
+              433
+            ],
+            "kind": "VALUE",
+            "surface": "1273226992728702"
+          },
+          {
+            "char_span": [
+              479,
+              495
+            ],
+            "kind": "VALUE",
+            "surface": "1273226992728702"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "1273226992728702"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Vikram Rathore",
+        "char_span": [
+          566,
+          580
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              566,
+              580
+            ],
+            "kind": "NAME",
+            "surface": "Vikram Rathore"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 30852.58,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          310,
+          458
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "transfer kiya"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          459,
+          552
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "control"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_27"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 751,
+    "document_hash": "1b2c774ec0c31c57f67e4df137bc0feaef3857325be9388693a6ce8b8595ebfc",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

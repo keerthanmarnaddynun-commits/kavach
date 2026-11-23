@@ -1,0 +1,244 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 381,
+        "start": 373,
+        "surface": "4,325.43",
+        "value": 4325.43
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-5712"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB5712"
+      },
+      {
+        "ai_confidence": 0.999482,
+        "aliases": [
+          "Andy"
+        ],
+        "canonical_name": "Anand Verma",
+        "char_span": [
+          214,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999482,
+          "validator": null
+        },
+        "father_name": "Shyam Verma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Anand Verma"
+          },
+          {
+            "char_span": [
+              230,
+              234
+            ],
+            "kind": "ALIAS",
+            "surface": "Andy"
+          },
+          {
+            "char_span": [
+              244,
+              255
+            ],
+            "kind": "FATHER",
+            "surface": "Shyam Verma"
+          },
+          {
+            "char_span": [
+              344,
+              355
+            ],
+            "kind": "NAME",
+            "surface": "Anand Verma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          401,
+          412
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              401,
+              412
+            ],
+            "kind": "VALUE",
+            "surface": "44352408240"
+          },
+          {
+            "char_span": [
+              458,
+              469
+            ],
+            "kind": "VALUE",
+            "surface": "44352408240"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "44352408240"
+      },
+      {
+        "ai_confidence": 0.997083,
+        "canonical_name": "Bikas Sharma",
+        "char_span": [
+          487,
+          499
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.997083,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              487,
+              499
+            ],
+            "kind": "NAME",
+            "surface": "Bikas Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.983599,
+        "canonical_name": "Rameshwar Dayal",
+        "char_span": [
+          544,
+          559
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.983599,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              544,
+              559
+            ],
+            "kind": "NAME",
+            "surface": "Rameshwar Dayal"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 4325.43,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          299,
+          434
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "deposit"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          435,
+          528
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_04",
+        "target": "ent_03",
+        "trigger": "operate kiya"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_84"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 730,
+    "document_hash": "a45416b7ad699dff5c8ad2b3d08627dc83b3d524f2651ba22a6b5829a245a73b",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

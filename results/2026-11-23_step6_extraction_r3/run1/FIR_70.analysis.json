@@ -1,0 +1,225 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 476,
+        "start": 464,
+        "surface": "INR 9,776.11",
+        "value": 9776.11
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-9117"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB9117"
+      },
+      {
+        "ai_confidence": 0.999056,
+        "aliases": [
+          "Raju Bhai"
+        ],
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          203,
+          217
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999056,
+          "validator": null
+        },
+        "father_name": "Maheshwar Singh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              217
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              222,
+              231
+            ],
+            "kind": "ALIAS",
+            "surface": "Raju Bhai"
+          },
+          {
+            "char_span": [
+              241,
+              256
+            ],
+            "kind": "FATHER",
+            "surface": "Maheshwar Singh"
+          },
+          {
+            "char_span": [
+              439,
+              453
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              579,
+              593
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999568,
+        "canonical_name": "Mohan Lal",
+        "char_span": [
+          315,
+          324
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999568,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              315,
+              324
+            ],
+            "kind": "NAME",
+            "surface": "Mohan Lal"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          495,
+          509
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              495,
+              509
+            ],
+            "kind": "VALUE",
+            "surface": "88236910997872"
+          },
+          {
+            "char_span": [
+              551,
+              565
+            ],
+            "kind": "VALUE",
+            "surface": "88236910997872"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "88236910997872"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 9776.11,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          398,
+          540
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "bhej diya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          541,
+          625
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "handler"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_70"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 728,
+    "document_hash": "e22e0d2df6d8106a00c58d3a2ae3f4a2df2b181f4bfdebbea97e1f2edd159595",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

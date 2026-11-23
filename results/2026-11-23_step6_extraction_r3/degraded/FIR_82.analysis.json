@@ -1,0 +1,398 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 383,
+        "start": 370,
+        "surface": "INR 24,098.84",
+        "value": 24098.84
+      },
+      {
+        "end": 1145,
+        "start": 1139,
+        "surface": "5 lakh",
+        "value": 500000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-5C-AB-6873"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL5CAB6873"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Pandit"
+        ],
+        "canonical_name": "Pankaj Tiwari",
+        "char_span": [
+          203,
+          216
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Madan Tiwari",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              216
+            ],
+            "kind": "NAME",
+            "surface": "Pankaj Tiwari"
+          },
+          {
+            "char_span": [
+              221,
+              227
+            ],
+            "kind": "ALIAS",
+            "surface": "Pandit"
+          },
+          {
+            "char_span": [
+              237,
+              249
+            ],
+            "kind": "FATHER",
+            "surface": "Madan Tiwari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          340,
+          354
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              340,
+              354
+            ],
+            "kind": "VALUE",
+            "surface": "17667400184766"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "17667400184766"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          397,
+          408
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              397,
+              408
+            ],
+            "kind": "VALUE",
+            "surface": "53839750530"
+          },
+          {
+            "char_span": [
+              467,
+              478
+            ],
+            "kind": "VALUE",
+            "surface": "53839750530"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "53839750530"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          581,
+          595
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              581,
+              595
+            ],
+            "kind": "VALUE",
+            "surface": "+91-8980841241"
+          },
+          {
+            "char_span": [
+              958,
+              972
+            ],
+            "kind": "VALUE",
+            "surface": "+91-8980841241"
+          },
+          {
+            "char_span": [
+              1025,
+              1039
+            ],
+            "kind": "VALUE",
+            "surface": "+91-8980841241"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8980841241"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          613,
+          623
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              613,
+              623
+            ],
+            "kind": "VALUE",
+            "surface": "6604817549"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6604817549"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Deepu"
+        ],
+        "canonical_name": "Deepak Chauhan",
+        "char_span": [
+          685,
+          699
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Sardar Chauhan",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              685,
+              699
+            ],
+            "kind": "NAME",
+            "surface": "Deepak Chauhan"
+          },
+          {
+            "char_span": [
+              704,
+              709
+            ],
+            "kind": "ALIAS",
+            "surface": "Deepu"
+          },
+          {
+            "char_span": [
+              719,
+              733
+            ],
+            "kind": "FATHER",
+            "surface": "Sardar Chauhan"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1055,
+          1070
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              1055,
+              1070
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          }
+        ],
+        "type": "IMEI",
+        "value": "204332181960015"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 24098.84,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          292,
+          425
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "credit hui"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          536,
+          663
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "ke beech"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          991,
+          1087
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_08",
+        "trigger": "apparatus IMEI"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          426,
+          535
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "STRUCTURE"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          882,
+          990
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_07",
+        "target": "ent_05",
+        "trigger": "STRUCTURE"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_82"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1309,
+    "document_hash": "0295536f9183e36d73c15d055087ecaf9c2c26afc6ad88d2ca0cfe4e137fb886",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 2,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

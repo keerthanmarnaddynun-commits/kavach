@@ -1,0 +1,210 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 651,
+        "start": 643,
+        "surface": "2.5 lakh",
+        "value": 250000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-6378"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB6378"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Chhota Raju"
+        ],
+        "canonical_name": "Devendra Yadav",
+        "char_span": [
+          214,
+          228
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Ramakant Yadav",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              228
+            ],
+            "kind": "NAME",
+            "surface": "Devendra Yadav"
+          },
+          {
+            "char_span": [
+              233,
+              244
+            ],
+            "kind": "ALIAS",
+            "surface": "Chhota Raju"
+          },
+          {
+            "char_span": [
+              254,
+              268
+            ],
+            "kind": "FATHER",
+            "surface": "Ramakant Yadav"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          389,
+          399
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              389,
+              399
+            ],
+            "kind": "VALUE",
+            "surface": "8255341928"
+          },
+          {
+            "char_span": [
+              434,
+              444
+            ],
+            "kind": "VALUE",
+            "surface": "8255341928"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8255341928"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          462,
+          477
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              462,
+              477
+            ],
+            "kind": "VALUE",
+            "surface": "427648350305646"
+          }
+        ],
+        "type": "IMEI",
+        "value": "427648350305646"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          312,
+          415
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "personal mobile"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          416,
+          493
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "hardware IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_34"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 808,
+    "document_hash": "f8d7131367c406a960511d31b8c6fccbee3d90e8ef5e77ce62594a4498a344b9",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 1,
+      "PHONE": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

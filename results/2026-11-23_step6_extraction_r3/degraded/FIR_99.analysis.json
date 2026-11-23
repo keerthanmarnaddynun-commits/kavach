@@ -1,0 +1,382 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 643,
+        "start": 637,
+        "surface": "15,000",
+        "value": 15000.0
+      },
+      {
+        "end": 983,
+        "start": 974,
+        "surface": "19,556.98",
+        "value": 19556.98
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          169,
+          182
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              169,
+              182
+            ],
+            "kind": "VALUE",
+            "surface": "DL-5C-AB-1858"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL5CAB1858"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Shooter"
+        ],
+        "canonical_name": "Rashid Khan",
+        "char_span": [
+          207,
+          218
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Asif Khan",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              207,
+              218
+            ],
+            "kind": "NAME",
+            "surface": "Rashid Khan"
+          },
+          {
+            "char_span": [
+              225,
+              232
+            ],
+            "kind": "ALIAS",
+            "surface": "Shooter"
+          },
+          {
+            "char_span": [
+              242,
+              251
+            ],
+            "kind": "FATHER",
+            "surface": "Asif Khan"
+          },
+          {
+            "char_span": [
+              323,
+              334
+            ],
+            "kind": "NAME",
+            "surface": "Rashid Khan"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          366,
+          376
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              366,
+              376
+            ],
+            "kind": "VALUE",
+            "surface": "9165726284"
+          },
+          {
+            "char_span": [
+              425,
+              435
+            ],
+            "kind": "VALUE",
+            "surface": "9165726284"
+          },
+          {
+            "char_span": [
+              771,
+              781
+            ],
+            "kind": "VALUE",
+            "surface": "9165726284"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9165726284"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          467,
+          482
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              467,
+              482
+            ],
+            "kind": "VALUE",
+            "surface": "977694531473790"
+          }
+        ],
+        "type": "IMEI",
+        "value": "977694531473790"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Postman"
+        ],
+        "canonical_name": "Ramesh Chand",
+        "char_span": [
+          499,
+          511
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Kishan Chand",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              499,
+              511
+            ],
+            "kind": "NAME",
+            "surface": "Ramesh Chand"
+          },
+          {
+            "char_span": [
+              518,
+              525
+            ],
+            "kind": "ALIAS",
+            "surface": "Postman"
+          },
+          {
+            "char_span": [
+              535,
+              547
+            ],
+            "kind": "FATHER",
+            "surface": "Kishan Chand"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          786,
+          796
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              786,
+              796
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7963605766"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Vikram Rathore",
+        "char_span": [
+          820,
+          834
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              820,
+              834
+            ],
+            "kind": "NAME",
+            "surface": "Vikram Rathore"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1007,
+          1019
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              1007,
+              1019
+            ],
+            "kind": "VALUE",
+            "surface": "693103413164"
+          },
+          {
+            "char_span": [
+              1043,
+              1055
+            ],
+            "kind": "VALUE",
+            "surface": "693103413164"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "693103413164"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          274,
+          377
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "operated communication handset"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          378,
+          483
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          686,
+          797
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "calling sessions"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_99"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1219,
+    "document_hash": "78a159f57858c0bae8171baa318cdc4162530c5ba47a1daf21697122c9f03c41",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 3,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

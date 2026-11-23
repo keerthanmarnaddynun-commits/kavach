@@ -1,0 +1,262 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 500,
+        "start": 491,
+        "surface": "32,665.93",
+        "value": 32665.93
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-6C-AB-8618"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL6CAB8618"
+      },
+      {
+        "ai_confidence": 0.9996,
+        "aliases": [
+          "Sallu"
+        ],
+        "canonical_name": "Salman Mirza",
+        "char_span": [
+          214,
+          226
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.9996,
+          "validator": null
+        },
+        "father_name": "Feroz Mirza",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              226
+            ],
+            "kind": "NAME",
+            "surface": "Salman Mirza"
+          },
+          {
+            "char_span": [
+              231,
+              236
+            ],
+            "kind": "ALIAS",
+            "surface": "Sallu"
+          },
+          {
+            "char_span": [
+              246,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Feroz Mirza"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.998863,
+        "canonical_name": "Vikram Rathore",
+        "char_span": [
+          314,
+          328
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998863,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              314,
+              328
+            ],
+            "kind": "NAME",
+            "surface": "Vikram Rathore"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          461,
+          473
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              461,
+              473
+            ],
+            "kind": "VALUE",
+            "surface": "459607124084"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "459607124084"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          516,
+          527
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              516,
+              527
+            ],
+            "kind": "VALUE",
+            "surface": "53839750530"
+          },
+          {
+            "char_span": [
+              557,
+              568
+            ],
+            "kind": "VALUE",
+            "surface": "53839750530"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "53839750530"
+      },
+      {
+        "ai_confidence": 0.999229,
+        "canonical_name": "Mukhtar Ansari",
+        "char_span": [
+          582,
+          596
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999229,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              582,
+              596
+            ],
+            "kind": "NAME",
+            "surface": "Mukhtar Ansari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 32665.93,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          402,
+          546
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "transfer hua"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          547,
+          628
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_06",
+        "target": "ent_05",
+        "trigger": "handler"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_39"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 724,
+    "document_hash": "3cbcf5c067c2b19823f10903256a20a4623cedea6d77f4b77fcb88dad7d479cc",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "PERSON": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          164,
+          177
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              164,
+              177
+            ],
+            "kind": "VALUE",
+            "surface": "DL-5C-AB-4109"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL5CAB4109"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "एंडी"
+        ],
+        "canonical_name": "आनंद वर्मा",
+        "char_span": [
+          196,
+          206
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "श्याम वर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              196,
+              206
+            ],
+            "kind": "NAME",
+            "surface": "आनंद वर्मा"
+          },
+          {
+            "char_span": [
+              212,
+              216
+            ],
+            "kind": "ALIAS",
+            "surface": "एंडी"
+          },
+          {
+            "char_span": [
+              228,
+              239
+            ],
+            "kind": "FATHER",
+            "surface": "श्याम वर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          329,
+          339
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              329,
+              339
+            ],
+            "kind": "VALUE",
+            "surface": "6647468723"
+          },
+          {
+            "char_span": [
+              470,
+              480
+            ],
+            "kind": "VALUE",
+            "surface": "6647468723"
+          },
+          {
+            "char_span": [
+              523,
+              533
+            ],
+            "kind": "VALUE",
+            "surface": "6647468723"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6647468723"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          355,
+          365
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              355,
+              365
+            ],
+            "kind": "VALUE",
+            "surface": "7081219136"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7081219136"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          561,
+          576
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              561,
+              576
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          }
+        ],
+        "type": "IMEI",
+        "value": "204332181960015"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          282,
+          388
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "संपर्क"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          487,
+          591
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_05",
+        "trigger": "दर्ज किया"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          389,
+          486
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "STRUCTURE"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_95"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 747,
+    "document_hash": "f2d9701f650512ec9b126f2fa77695b715f34c1ad672812ba635ae110403f13c",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 1,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 1,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

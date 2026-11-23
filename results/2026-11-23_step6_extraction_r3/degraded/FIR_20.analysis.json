@@ -1,0 +1,264 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-3724"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB3724"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Hawai"
+        ],
+        "canonical_name": "Suresh Pal",
+        "char_span": [
+          203,
+          213
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Mohan Pal",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              213
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Pal"
+          },
+          {
+            "char_span": [
+              218,
+              223
+            ],
+            "kind": "ALIAS",
+            "surface": "Hawai"
+          },
+          {
+            "char_span": [
+              233,
+              242
+            ],
+            "kind": "FATHER",
+            "surface": "Mohan Pal"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Pawan Verma",
+        "char_span": [
+          303,
+          314
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              303,
+              314
+            ],
+            "kind": "NAME",
+            "surface": "Pawan Verma"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          435,
+          445
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              435,
+              445
+            ],
+            "kind": "VALUE",
+            "surface": "8406409097"
+          },
+          {
+            "char_span": [
+              575,
+              585
+            ],
+            "kind": "VALUE",
+            "surface": "8406409097"
+          },
+          {
+            "char_span": [
+              633,
+              643
+            ],
+            "kind": "VALUE",
+            "surface": "8406409097"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8406409097"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          455,
+          465
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              455,
+              465
+            ],
+            "kind": "VALUE",
+            "surface": "7691669784"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7691669784"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          659,
+          674
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              659,
+              674
+            ],
+            "kind": "VALUE",
+            "surface": "539533942104704"
+          }
+        ],
+        "type": "IMEI",
+        "value": "539533942104704"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          388,
+          500
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "calling traffic"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          599,
+          691
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_06",
+        "trigger": "apparatus IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_20"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 794,
+    "document_hash": "3f2970446a2ac15a133260ac8609fff1b6b299f5b2776a475ff25942783afdfb",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

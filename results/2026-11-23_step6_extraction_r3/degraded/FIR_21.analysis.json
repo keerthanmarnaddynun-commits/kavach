@@ -1,0 +1,184 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 392,
+        "start": 377,
+        "surface": "Rs. 18,694.32/-",
+        "value": 18694.32
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-5345"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB5345"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Pandit"
+        ],
+        "canonical_name": "Pankaj Tiwari",
+        "char_span": [
+          213,
+          226
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Madan Tiwari",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              226
+            ],
+            "kind": "NAME",
+            "surface": "Pankaj Tiwari"
+          },
+          {
+            "char_span": [
+              231,
+              237
+            ],
+            "kind": "ALIAS",
+            "surface": "Pandit"
+          },
+          {
+            "char_span": [
+              247,
+              259
+            ],
+            "kind": "FATHER",
+            "surface": "Madan Tiwari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          408,
+          422
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              408,
+              422
+            ],
+            "kind": "VALUE",
+            "surface": "35543349232124"
+          },
+          {
+            "char_span": [
+              471,
+              485
+            ],
+            "kind": "VALUE",
+            "surface": "35543349232124"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "35543349232124"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 18694.32,
+        "confidence": 0.5,
+        "evidence_char_span": [
+          302,
+          434
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "bheja"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          435,
+          536
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "authorized signatory"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_21"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 737,
+    "document_hash": "2343587401153702dda43603f2d83e6bc4ef2e3abaa22f3712de3ea2d5175ad6",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

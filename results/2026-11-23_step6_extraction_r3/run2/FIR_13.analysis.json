@@ -1,0 +1,371 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 507,
+        "start": 492,
+        "surface": "Rs. 18,306.42/-",
+        "value": 18306.42
+      },
+      {
+        "end": 730,
+        "start": 717,
+        "surface": "INR 22,000.00",
+        "value": 22000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-1009"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB1009"
+      },
+      {
+        "ai_confidence": 0.997269,
+        "aliases": [
+          "Raju Bhai"
+        ],
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          220,
+          234
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.997269,
+          "validator": null
+        },
+        "father_name": "Maheshwar Singh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              234
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              239,
+              248
+            ],
+            "kind": "ALIAS",
+            "surface": "Raju Bhai"
+          },
+          {
+            "char_span": [
+              258,
+              273
+            ],
+            "kind": "FATHER",
+            "surface": "Maheshwar Singh"
+          },
+          {
+            "char_span": [
+              470,
+              484
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              636,
+              650
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              827,
+              841
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999657,
+        "canonical_name": "Arvind Swaminathan",
+        "char_span": [
+          329,
+          347
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999657,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              329,
+              347
+            ],
+            "kind": "NAME",
+            "surface": "Arvind Swaminathan"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          528,
+          542
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              528,
+              542
+            ],
+            "kind": "VALUE",
+            "surface": "45784370118033"
+          },
+          {
+            "char_span": [
+              600,
+              614
+            ],
+            "kind": "VALUE",
+            "surface": "45784370118033"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "45784370118033"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          869,
+          879
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              869,
+              879
+            ],
+            "kind": "VALUE",
+            "surface": "7389083863"
+          },
+          {
+            "char_span": [
+              930,
+              940
+            ],
+            "kind": "VALUE",
+            "surface": "7389083863"
+          },
+          {
+            "char_span": [
+              1025,
+              1035
+            ],
+            "kind": "VALUE",
+            "surface": "7389083863"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7389083863"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          956,
+          971
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              956,
+              971
+            ],
+            "kind": "VALUE",
+            "surface": "894026542351162"
+          }
+        ],
+        "type": "IMEI",
+        "value": "894026542351162"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1053,
+          1063
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              1053,
+              1063
+            ],
+            "kind": "VALUE",
+            "surface": "7691669784"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7691669784"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 18306.42,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          421,
+          563
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "credit karwaya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          564,
+          665
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "authorized signatory"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          792,
+          895
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_05",
+        "trigger": "personal mobile"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          896,
+          988
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "apparatus IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          989,
+          1094
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_07",
+        "trigger": "voice calls"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_13"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1189,
+    "document_hash": "945271532754e2eb2d9f900036a9a6c84daa10d335635b68e016f6ed1dba349b",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

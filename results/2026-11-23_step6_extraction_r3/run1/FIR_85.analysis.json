@@ -1,0 +1,476 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 609,
+        "start": 596,
+        "surface": "INR 15,000.00",
+        "value": 15000.0
+      },
+      {
+        "end": 895,
+        "start": 883,
+        "surface": "Rs. 48,500/-",
+        "value": 48500.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-5097"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB5097"
+      },
+      {
+        "ai_confidence": 0.998056,
+        "aliases": [
+          "Bicky",
+          "Viku",
+          "Kallu"
+        ],
+        "canonical_name": "Vikas Sharma",
+        "char_span": [
+          220,
+          232
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998056,
+          "validator": null
+        },
+        "father_name": "Harish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              232
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          },
+          {
+            "char_span": [
+              237,
+              242
+            ],
+            "kind": "ALIAS",
+            "surface": "Bicky"
+          },
+          {
+            "char_span": [
+              245,
+              249
+            ],
+            "kind": "ALIAS",
+            "surface": "Viku"
+          },
+          {
+            "char_span": [
+              252,
+              257
+            ],
+            "kind": "ALIAS",
+            "surface": "Kallu"
+          },
+          {
+            "char_span": [
+              267,
+              280
+            ],
+            "kind": "FATHER",
+            "surface": "Harish Sharma"
+          },
+          {
+            "char_span": [
+              1053,
+              1065
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.993996,
+        "aliases": [
+          "Biku"
+        ],
+        "canonical_name": "Bikas Sharma",
+        "char_span": [
+          345,
+          357
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.993996,
+          "validator": null
+        },
+        "father_name": "Girish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              345,
+              357
+            ],
+            "kind": "NAME",
+            "surface": "Bikas Sharma"
+          },
+          {
+            "char_span": [
+              362,
+              366
+            ],
+            "kind": "ALIAS",
+            "surface": "Biku"
+          },
+          {
+            "char_span": [
+              376,
+              389
+            ],
+            "kind": "FATHER",
+            "surface": "Girish Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999472,
+        "canonical_name": "Arvind Swaminathan",
+        "char_span": [
+          453,
+          471
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999472,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              453,
+              471
+            ],
+            "kind": "NAME",
+            "surface": "Arvind Swaminathan"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          716,
+          726
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              716,
+              726
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          },
+          {
+            "char_span": [
+              1098,
+              1108
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          },
+          {
+            "char_span": [
+              1159,
+              1169
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          744,
+          754
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              744,
+              754
+            ],
+            "kind": "VALUE",
+            "surface": "7081219136"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7081219136"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          854,
+          865
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              854,
+              865
+            ],
+            "kind": "VALUE",
+            "surface": "72314387443"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "72314387443"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          911,
+          923
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              911,
+              923
+            ],
+            "kind": "VALUE",
+            "surface": "258506431713"
+          },
+          {
+            "char_span": [
+              953,
+              965
+            ],
+            "kind": "VALUE",
+            "surface": "258506431713"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "258506431713"
+      },
+      {
+        "ai_confidence": 0.999577,
+        "canonical_name": "Sunil Kumar",
+        "char_span": [
+          979,
+          990
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999577,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              979,
+              990
+            ],
+            "kind": "NAME",
+            "surface": "Sunil Kumar"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1191,
+          1206
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_10",
+        "mentions": [
+          {
+            "char_span": [
+              1191,
+              1206
+            ],
+            "kind": "VALUE",
+            "surface": "837631165667016"
+          }
+        ],
+        "type": "IMEI",
+        "value": "837631165667016"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          671,
+          794
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "ke beech"
+      },
+      {
+        "amount": 48500.0,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          795,
+          942
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_07",
+        "target": "ent_08",
+        "trigger": "transfer hua"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          943,
+          1022
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_09",
+        "target": "ent_08",
+        "trigger": "handler"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1127,
+          1220
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_10",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          1023,
+          1126
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_05",
+        "trigger": "STRUCTURE"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_85"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1315,
+    "document_hash": "f4aec127b9968e771071a547a94454dcd085c93feecba8806b674f53d332bdf0",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 4,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 1,
+      "cue": 4
+    },
+    "warnings": []
+  }
+}

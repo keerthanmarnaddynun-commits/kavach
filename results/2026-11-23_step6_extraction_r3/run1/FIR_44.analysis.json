@@ -1,0 +1,282 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          165,
+          178
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              165,
+              178
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-2320"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB2320"
+      },
+      {
+        "ai_confidence": 0.992207,
+        "aliases": [
+          "शूटर"
+        ],
+        "canonical_name": "राशिद खान",
+        "char_span": [
+          197,
+          206
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.992207,
+          "validator": null
+        },
+        "father_name": "आसिफ खान",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              197,
+              206
+            ],
+            "kind": "NAME",
+            "surface": "राशिद खान"
+          },
+          {
+            "char_span": [
+              212,
+              216
+            ],
+            "kind": "ALIAS",
+            "surface": "शूटर"
+          },
+          {
+            "char_span": [
+              228,
+              236
+            ],
+            "kind": "FATHER",
+            "surface": "आसिफ खान"
+          },
+          {
+            "char_span": [
+              374,
+              383
+            ],
+            "kind": "NAME",
+            "surface": "राशिद खान"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.998911,
+        "canonical_name": "पवन वर्मा",
+        "char_span": [
+          296,
+          305
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998911,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              296,
+              305
+            ],
+            "kind": "NAME",
+            "surface": "पवन वर्मा"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          413,
+          423
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              413,
+              423
+            ],
+            "kind": "VALUE",
+            "surface": "9165726284"
+          },
+          {
+            "char_span": [
+              464,
+              474
+            ],
+            "kind": "VALUE",
+            "surface": "9165726284"
+          },
+          {
+            "char_span": [
+              561,
+              571
+            ],
+            "kind": "VALUE",
+            "surface": "9165726284"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9165726284"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          490,
+          505
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              490,
+              505
+            ],
+            "kind": "VALUE",
+            "surface": "977694531473790"
+          }
+        ],
+        "type": "IMEI",
+        "value": "977694531473790"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          588,
+          598
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              588,
+              598
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7963605766"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          358,
+          438
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "जब्त"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          439,
+          523
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "डिवाइस आईएमईआई"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          524,
+          625
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_06",
+        "trigger": "के मध्य"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_44"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 716,
+    "document_hash": "599acb127053a064bddf3ad57165f198fc83ce26fcbe387bbc7d6b24786bb462",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

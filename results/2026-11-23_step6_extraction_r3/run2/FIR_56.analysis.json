@@ -1,0 +1,282 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          169,
+          182
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              169,
+              182
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-4130"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB4130"
+      },
+      {
+        "ai_confidence": 0.972112,
+        "aliases": [
+          "Deepu"
+        ],
+        "canonical_name": "Deepak Chauhan",
+        "char_span": [
+          207,
+          221
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.972112,
+          "validator": null
+        },
+        "father_name": "Sardar Chauhan",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              207,
+              221
+            ],
+            "kind": "NAME",
+            "surface": "Deepak Chauhan"
+          },
+          {
+            "char_span": [
+              228,
+              233
+            ],
+            "kind": "ALIAS",
+            "surface": "Deepu"
+          },
+          {
+            "char_span": [
+              243,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Sardar Chauhan"
+          },
+          {
+            "char_span": [
+              399,
+              413
+            ],
+            "kind": "NAME",
+            "surface": "Deepak Chauhan"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.998244,
+        "canonical_name": "Pawan Verma",
+        "char_span": [
+          296,
+          307
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998244,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              296,
+              307
+            ],
+            "kind": "NAME",
+            "surface": "Pawan Verma"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          456,
+          466
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              456,
+              466
+            ],
+            "kind": "VALUE",
+            "surface": "8414586850"
+          },
+          {
+            "char_span": [
+              490,
+              500
+            ],
+            "kind": "VALUE",
+            "surface": "8414586850"
+          },
+          {
+            "char_span": [
+              643,
+              653
+            ],
+            "kind": "VALUE",
+            "surface": "8414586850"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8414586850"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          541,
+          556
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              541,
+              556
+            ],
+            "kind": "VALUE",
+            "surface": "242940196556984"
+          }
+        ],
+        "type": "IMEI",
+        "value": "242940196556984"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          658,
+          668
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              658,
+              668
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6112805982"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          369,
+          467
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "in possession of"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          468,
+          557
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "hardware IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          558,
+          669
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_06",
+        "trigger": "calling sessions"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_56"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 768,
+    "document_hash": "0654fc5d827f3f49276d4f3de8e87261556d0f16ab5e680089bcddc9acfa0110",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-5951"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB5951"
+      },
+      {
+        "ai_confidence": 0.998926,
+        "aliases": [
+          "Vicky"
+        ],
+        "canonical_name": "Wasim Akram",
+        "char_span": [
+          203,
+          214
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998926,
+          "validator": null
+        },
+        "father_name": "Shabir Akram",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              214
+            ],
+            "kind": "NAME",
+            "surface": "Wasim Akram"
+          },
+          {
+            "char_span": [
+              219,
+              224
+            ],
+            "kind": "ALIAS",
+            "surface": "Vicky"
+          },
+          {
+            "char_span": [
+              234,
+              246
+            ],
+            "kind": "FATHER",
+            "surface": "Shabir Akram"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.997731,
+        "canonical_name": "Pawan Verma",
+        "char_span": [
+          382,
+          393
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.997731,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              382,
+              393
+            ],
+            "kind": "NAME",
+            "surface": "Pawan Verma"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_92"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 569,
+    "document_hash": "6f535646989aec68b3f54aec8287dcb00c23ced56d18a309d2723b20a103cd1b",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

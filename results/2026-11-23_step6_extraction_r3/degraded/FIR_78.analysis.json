@@ -1,0 +1,142 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          169,
+          182
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              169,
+              182
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-7246"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB7246"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Kabira"
+        ],
+        "canonical_name": "Imran Sheikh",
+        "char_span": [
+          207,
+          219
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Mustaq Sheikh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              207,
+              219
+            ],
+            "kind": "NAME",
+            "surface": "Imran Sheikh"
+          },
+          {
+            "char_span": [
+              226,
+              232
+            ],
+            "kind": "ALIAS",
+            "surface": "Kabira"
+          },
+          {
+            "char_span": [
+              242,
+              255
+            ],
+            "kind": "FATHER",
+            "surface": "Mustaq Sheikh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Ram Avatar",
+        "char_span": [
+          369,
+          379
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              369,
+              379
+            ],
+            "kind": "NAME",
+            "surface": "Ram Avatar"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_78"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 539,
+    "document_hash": "d14bd20ca2bd50868af74c97efc37bdd25735d08a6decd6ba3b8fcf2f9053703",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

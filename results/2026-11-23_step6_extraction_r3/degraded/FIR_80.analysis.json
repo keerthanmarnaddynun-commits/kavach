@@ -1,0 +1,142 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-6C-AB-9742"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL6CAB9742"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Hawai"
+        ],
+        "canonical_name": "Suresh Pal",
+        "char_span": [
+          210,
+          220
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Mohan Pal",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              210,
+              220
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Pal"
+          },
+          {
+            "char_span": [
+              227,
+              232
+            ],
+            "kind": "ALIAS",
+            "surface": "Hawai"
+          },
+          {
+            "char_span": [
+              242,
+              251
+            ],
+            "kind": "FATHER",
+            "surface": "Mohan Pal"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Pawan Verma",
+        "char_span": [
+          291,
+          302
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              291,
+              302
+            ],
+            "kind": "NAME",
+            "surface": "Pawan Verma"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_80"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 543,
+    "document_hash": "62bd15bb218e54039fe57b19debe4049960880082ea90e96fd007bca23481efb",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

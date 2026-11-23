@@ -1,0 +1,245 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 529,
+        "start": 516,
+        "surface": "INR 18,500.00",
+        "value": 18500.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          171,
+          184
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              171,
+              184
+            ],
+            "kind": "VALUE",
+            "surface": "DL-3C-AB-1046"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL3CAB1046"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Tiger"
+        ],
+        "canonical_name": "Farooq Ahmed",
+        "char_span": [
+          209,
+          221
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Zahid Ahmed",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              209,
+              221
+            ],
+            "kind": "NAME",
+            "surface": "Farooq Ahmed"
+          },
+          {
+            "char_span": [
+              228,
+              233
+            ],
+            "kind": "ALIAS",
+            "surface": "Tiger"
+          },
+          {
+            "char_span": [
+              243,
+              254
+            ],
+            "kind": "FATHER",
+            "surface": "Zahid Ahmed"
+          },
+          {
+            "char_span": [
+              305,
+              317
+            ],
+            "kind": "NAME",
+            "surface": "Farooq Ahmed"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          364,
+          374
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              364,
+              374
+            ],
+            "kind": "VALUE",
+            "surface": "9065627298"
+          },
+          {
+            "char_span": [
+              398,
+              408
+            ],
+            "kind": "VALUE",
+            "surface": "9065627298"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9065627298"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          449,
+          464
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              449,
+              464
+            ],
+            "kind": "VALUE",
+            "surface": "169901627204650"
+          }
+        ],
+        "type": "IMEI",
+        "value": "169901627204650"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Arvind Swaminathan",
+        "char_span": [
+          594,
+          612
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              594,
+              612
+            ],
+            "kind": "NAME",
+            "surface": "Arvind Swaminathan"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          376,
+          465
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "hardware IMEI"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          276,
+          375
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "STRUCTURE"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_97"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 788,
+    "document_hash": "8eb17851db2ca9268ff47f1bbcd7b56e87ed1edb27feccb6ba9f0c7caa1c192b",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 1,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 1,
+      "cue": 1
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

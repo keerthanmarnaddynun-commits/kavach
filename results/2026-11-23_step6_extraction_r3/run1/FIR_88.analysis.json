@@ -1,0 +1,522 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 612,
+        "start": 603,
+        "surface": "26,928.26",
+        "value": 26928.26
+      },
+      {
+        "end": 945,
+        "start": 933,
+        "surface": "Rs. 18,500/-",
+        "value": 18500.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-3C-AB-2476"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL3CAB2476"
+      },
+      {
+        "ai_confidence": 0.999523,
+        "aliases": [
+          "Andy"
+        ],
+        "canonical_name": "Anand Verma",
+        "char_span": [
+          213,
+          224
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999523,
+          "validator": null
+        },
+        "father_name": "Shyam Verma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              224
+            ],
+            "kind": "NAME",
+            "surface": "Anand Verma"
+          },
+          {
+            "char_span": [
+              229,
+              233
+            ],
+            "kind": "ALIAS",
+            "surface": "Andy"
+          },
+          {
+            "char_span": [
+              243,
+              254
+            ],
+            "kind": "FATHER",
+            "surface": "Shyam Verma"
+          },
+          {
+            "char_span": [
+              1037,
+              1048
+            ],
+            "kind": "NAME",
+            "surface": "Anand Verma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999303,
+        "aliases": [
+          "Pandit"
+        ],
+        "canonical_name": "Pankaj Tiwari",
+        "char_span": [
+          318,
+          331
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999303,
+          "validator": null
+        },
+        "father_name": "Madan Tiwari",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              318,
+              331
+            ],
+            "kind": "NAME",
+            "surface": "Pankaj Tiwari"
+          },
+          {
+            "char_span": [
+              336,
+              342
+            ],
+            "kind": "ALIAS",
+            "surface": "Pandit"
+          },
+          {
+            "char_span": [
+              352,
+              364
+            ],
+            "kind": "FATHER",
+            "surface": "Madan Tiwari"
+          },
+          {
+            "char_span": [
+              1215,
+              1228
+            ],
+            "kind": "NAME",
+            "surface": "Pankaj Tiwari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999656,
+        "canonical_name": "Amit Tomar",
+        "char_span": [
+          428,
+          438
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999656,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              428,
+              438
+            ],
+            "kind": "NAME",
+            "surface": "Amit Tomar"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          571,
+          585
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              571,
+              585
+            ],
+            "kind": "VALUE",
+            "surface": "11482923792599"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "11482923792599"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          628,
+          644
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              628,
+              644
+            ],
+            "kind": "VALUE",
+            "surface": "9184147623802670"
+          },
+          {
+            "char_span": [
+              684,
+              700
+            ],
+            "kind": "VALUE",
+            "surface": "9184147623802670"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "9184147623802670"
+      },
+      {
+        "ai_confidence": 0.999434,
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          729,
+          743
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999434,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              729,
+              743
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          803,
+          813
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              803,
+              813
+            ],
+            "kind": "VALUE",
+            "surface": "6647468723"
+          },
+          {
+            "char_span": [
+              1081,
+              1091
+            ],
+            "kind": "VALUE",
+            "surface": "6647468723"
+          },
+          {
+            "char_span": [
+              1142,
+              1152
+            ],
+            "kind": "VALUE",
+            "surface": "6647468723"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6647468723"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          826,
+          836
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              826,
+              836
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1174,
+          1189
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_10",
+        "mentions": [
+          {
+            "char_span": [
+              1174,
+              1189
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          },
+          {
+            "char_span": [
+              1302,
+              1317
+            ],
+            "kind": "VALUE",
+            "surface": "204332181960015"
+          }
+        ],
+        "type": "IMEI",
+        "value": "204332181960015"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1259,
+          1269
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_11",
+        "mentions": [
+          {
+            "char_span": [
+              1259,
+              1269
+            ],
+            "kind": "VALUE",
+            "surface": "8980841241"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8980841241"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 26928.26,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          512,
+          663
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "transfer hua"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          664,
+          757
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_07",
+        "target": "ent_06",
+        "trigger": "control"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1110,
+          1203
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_08",
+        "target": "ent_10",
+        "trigger": "IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1204,
+          1335
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_03",
+        "target": "ent_11",
+        "trigger": "possession"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1204,
+          1335
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_11",
+        "target": "ent_10",
+        "trigger": "hardware IMEI"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          758,
+          881
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_08",
+        "target": "ent_09",
+        "trigger": "STRUCTURE"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          1007,
+          1109
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_08",
+        "trigger": "STRUCTURE"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_88"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1435,
+    "document_hash": "592f19f9e630b693d6c209ed63623b9105246d794f7753d741d74c8579f2041a",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 4,
+      "PHONE": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 2,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 2,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 2,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

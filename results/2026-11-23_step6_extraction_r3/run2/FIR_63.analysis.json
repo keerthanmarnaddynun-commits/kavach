@@ -1,0 +1,282 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-9561"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB9561"
+      },
+      {
+        "ai_confidence": 0.999631,
+        "aliases": [
+          "Sunny"
+        ],
+        "canonical_name": "Sunil Kumar",
+        "char_span": [
+          220,
+          231
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999631,
+          "validator": null
+        },
+        "father_name": "Bhagwan Kumar",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              231
+            ],
+            "kind": "NAME",
+            "surface": "Sunil Kumar"
+          },
+          {
+            "char_span": [
+              236,
+              241
+            ],
+            "kind": "ALIAS",
+            "surface": "Sunny"
+          },
+          {
+            "char_span": [
+              251,
+              264
+            ],
+            "kind": "FATHER",
+            "surface": "Bhagwan Kumar"
+          },
+          {
+            "char_span": [
+              333,
+              344
+            ],
+            "kind": "NAME",
+            "surface": "Sunil Kumar"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          382,
+          392
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              382,
+              392
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          },
+          {
+            "char_span": [
+              440,
+              450
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          },
+          {
+            "char_span": [
+              647,
+              657
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7148951343"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          466,
+          481
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              466,
+              481
+            ],
+            "kind": "VALUE",
+            "surface": "420037917693677"
+          }
+        ],
+        "type": "IMEI",
+        "value": "420037917693677"
+      },
+      {
+        "ai_confidence": 0.991563,
+        "canonical_name": "Vikram Rathore",
+        "char_span": [
+          512,
+          526
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.991563,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              512,
+              526
+            ],
+            "kind": "NAME",
+            "surface": "Vikram Rathore"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          667,
+          677
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              667,
+              677
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          307,
+          405
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "baramad"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          406,
+          498
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "apparatus IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          600,
+          712
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "calling traffic"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_63"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 807,
+    "document_hash": "6aa8bafc447e23becf6e31eec2e9722e0de0259ada35fcc494c296edd6e31fd7",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

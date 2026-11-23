@@ -1,0 +1,249 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-4C-AB-9153"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL4CAB9153"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Sunny"
+        ],
+        "canonical_name": "Sunil Kumar",
+        "char_span": [
+          213,
+          224
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Bhagwan Kumar",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              213,
+              224
+            ],
+            "kind": "NAME",
+            "surface": "Sunil Kumar"
+          },
+          {
+            "char_span": [
+              229,
+              234
+            ],
+            "kind": "ALIAS",
+            "surface": "Sunny"
+          },
+          {
+            "char_span": [
+              244,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Bhagwan Kumar"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          377,
+          387
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              377,
+              387
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          },
+          {
+            "char_span": [
+              433,
+              443
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          },
+          {
+            "char_span": [
+              550,
+              560
+            ],
+            "kind": "VALUE",
+            "surface": "7148951343"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7148951343"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          457,
+          472
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              457,
+              472
+            ],
+            "kind": "VALUE",
+            "surface": "420037917693677"
+          }
+        ],
+        "type": "IMEI",
+        "value": "420037917693677"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          570,
+          580
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              570,
+              580
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          300,
+          417
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "istemal"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          418,
+          502
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "handset IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          503,
+          615
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_05",
+        "trigger": "calling traffic"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_83"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 815,
+    "document_hash": "ac2b022e02689529870cf35716edaef4a5e868a8d66df5bf224323a2fa4fa056",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 1,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

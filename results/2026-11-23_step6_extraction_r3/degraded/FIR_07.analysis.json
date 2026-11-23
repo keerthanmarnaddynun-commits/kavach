@@ -1,0 +1,351 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 595,
+        "start": 589,
+        "surface": "25,000",
+        "value": 25000.0
+      },
+      {
+        "end": 930,
+        "start": 921,
+        "surface": "18,852.72",
+        "value": 18852.72
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-4598"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB4598"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "Raju Bhai"
+        ],
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          214,
+          228
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "Maheshwar Singh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              228
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              233,
+              242
+            ],
+            "kind": "ALIAS",
+            "surface": "Raju Bhai"
+          },
+          {
+            "char_span": [
+              252,
+              267
+            ],
+            "kind": "FATHER",
+            "surface": "Maheshwar Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.5,
+        "canonical_name": "Suresh Bansal",
+        "char_span": [
+          327,
+          340
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              327,
+              340
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Bansal"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          459,
+          469
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              459,
+              469
+            ],
+            "kind": "VALUE",
+            "surface": "7389083863"
+          },
+          {
+            "char_span": [
+              734,
+              744
+            ],
+            "kind": "VALUE",
+            "surface": "7389083863"
+          },
+          {
+            "char_span": [
+              779,
+              789
+            ],
+            "kind": "VALUE",
+            "surface": "7389083863"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7389083863"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          487,
+          497
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              487,
+              497
+            ],
+            "kind": "VALUE",
+            "surface": "8255341928"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8255341928"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          807,
+          822
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              807,
+              822
+            ],
+            "kind": "VALUE",
+            "surface": "894026542351162"
+          }
+        ],
+        "type": "IMEI",
+        "value": "894026542351162"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          897,
+          913
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              897,
+              913
+            ],
+            "kind": "VALUE",
+            "surface": "2363750605033511"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "2363750605033511"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          951,
+          962
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              951,
+              962
+            ],
+            "kind": "VALUE",
+            "surface": "26309165168"
+          },
+          {
+            "char_span": [
+              1024,
+              1035
+            ],
+            "kind": "VALUE",
+            "surface": "26309165168"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "26309165168"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          414,
+          537
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "ke beech"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          761,
+          838
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_06",
+        "trigger": "hardware IMEI"
+      },
+      {
+        "amount": 18852.72,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          839,
+          987
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_07",
+        "target": "ent_08",
+        "trigger": "transfer kiya"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_07"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1184,
+    "document_hash": "2ce31d86d423fae9f32e8160ec0250b050b7441f605322a42c4967cf110d3973",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 343,
+        "start": 330,
+        "surface": "INR २५,०००.००",
+        "value": 25000.0
+      },
+      {
+        "end": 945,
+        "start": 930,
+        "surface": "Rs. 19,765.62/-",
+        "value": 19765.62
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          164,
+          177
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              164,
+              177
+            ],
+            "kind": "VALUE",
+            "surface": "DL-1C-AB-5011"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL1CAB5011"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "सनी"
+        ],
+        "canonical_name": "सुनील कुमार",
+        "char_span": [
+          196,
+          207
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "भगवान कुमार",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              196,
+              207
+            ],
+            "kind": "NAME",
+            "surface": "सुनील कुमार"
+          },
+          {
+            "char_span": [
+              213,
+              216
+            ],
+            "kind": "ALIAS",
+            "surface": "सनी"
+          },
+          {
+            "char_span": [
+              228,
+              239
+            ],
+            "kind": "FATHER",
+            "surface": "भगवान कुमार"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          436,
+          446
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              436,
+              446
+            ],
+            "kind": "VALUE",
+            "surface": "७१४८९५१३४३"
+          },
+          {
+            "char_span": [
+              667,
+              677
+            ],
+            "kind": "VALUE",
+            "surface": "७१४८९५१३४३"
+          },
+          {
+            "char_span": [
+              714,
+              724
+            ],
+            "kind": "VALUE",
+            "surface": "७१४८९५१३४३"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7148951343"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          464,
+          474
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              464,
+              474
+            ],
+            "kind": "VALUE",
+            "surface": "६११२८०५९८२"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6112805982"
+      },
+      {
+        "ai_confidence": 0.5,
+        "aliases": [
+          "एंडी"
+        ],
+        "canonical_name": "आनंद वर्मा",
+        "char_span": [
+          530,
+          540
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.5,
+          "validator": null
+        },
+        "father_name": "श्याम वर्मा",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              530,
+              540
+            ],
+            "kind": "NAME",
+            "surface": "आनंद वर्मा"
+          },
+          {
+            "char_span": [
+              546,
+              550
+            ],
+            "kind": "ALIAS",
+            "surface": "एंडी"
+          },
+          {
+            "char_span": [
+              562,
+              573
+            ],
+            "kind": "FATHER",
+            "surface": "श्याम वर्मा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          744,
+          759
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              744,
+              759
+            ],
+            "kind": "VALUE",
+            "surface": "४२००३७९१७६९३६७७"
+          }
+        ],
+        "type": "IMEI",
+        "value": "420037917693677"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          951,
+          967
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              951,
+              967
+            ],
+            "kind": "VALUE",
+            "surface": "७५२०५६२२४७१८०३८८"
+          },
+          {
+            "char_span": [
+              1023,
+              1039
+            ],
+            "kind": "VALUE",
+            "surface": "७५२०५६२२४७१८०३८८"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "7520562247180388"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          399,
+          505
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "वार्तालाप"
+      },
+      {
+        "confidence": 0.5,
+        "evidence_char_span": [
+          601,
+          698
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_05",
+        "target": "ent_03",
+        "trigger": "अपना प्रयुक्त"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          699,
+          775
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_06",
+        "trigger": "हैंडसेट आईएमईआई"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_41"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1170,
+    "document_hash": "75d18cd57c655afa6cc54c80caa4c64b219b7f2f160fcf4b1b337914f5fe97a1",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "DEGRADED_NO_MODEL",
+    "model_name": null,
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": [
+      "DEGRADED_NO_MODEL mode: persons come from heuristics (use_model=False)."
+    ]
+  }
+}

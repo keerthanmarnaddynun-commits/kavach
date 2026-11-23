@@ -1,0 +1,16 @@
+COMMAND: PY scripts/report/step6_extraction.py --run-id step6_extraction_r3
+EXIT: 0
+SECONDS: 662.4
+--- OUTPUT ---
+New folder: C:\Users\Kirthan\Desktop\crimi-nex\results\2026-11-23_step6_extraction_r3
+Determinism: 100/100 exact byte matches
+STEP1_BEFORE: 741f5305847741679ee03cebaf70ad0e7a48a78355aeb1c1e0c27358dd9d369f
+STEP1_AFTER:  741f5305847741679ee03cebaf70ad0e7a48a78355aeb1c1e0c27358dd9d369f
+STEP2_BEFORE: 7d46c0c4fc9a736432f0d701e1b308180754543746bdfb7f2a374afe917e0021
+STEP2_AFTER:  7d46c0c4fc9a736432f0d701e1b308180754543746bdfb7f2a374afe917e0021
+STEP5A_BEFORE: 4d3508f8c57ad84b33f20aca2783624cf12d42ae1800937892739eecbeec269c
+STEP5A_AFTER:  4d3508f8c57ad84b33f20aca2783624cf12d42ae1800937892739eecbeec269c
+STEP5B_BEFORE: 0e8faf7288da118a95a6ab0fc87ee1d2db5bc292d46ebd69523f5ed39bfd0e4c
+STEP5B_AFTER:  0e8faf7288da118a95a6ab0fc87ee1d2db5bc292d46ebd69523f5ed39bfd0e4c
+C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Lib\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(

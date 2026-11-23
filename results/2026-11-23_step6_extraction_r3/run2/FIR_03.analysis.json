@@ -1,0 +1,262 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 493,
+        "start": 484,
+        "surface": "13,387.07",
+        "value": 13387.07
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-3C-AB-4527"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL3CAB4527"
+      },
+      {
+        "ai_confidence": 0.998686,
+        "aliases": [
+          "Sunny"
+        ],
+        "canonical_name": "Sunil Kumar",
+        "char_span": [
+          220,
+          231
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998686,
+          "validator": null
+        },
+        "father_name": "Bhagwan Kumar",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              231
+            ],
+            "kind": "NAME",
+            "surface": "Sunil Kumar"
+          },
+          {
+            "char_span": [
+              236,
+              241
+            ],
+            "kind": "ALIAS",
+            "surface": "Sunny"
+          },
+          {
+            "char_span": [
+              251,
+              264
+            ],
+            "kind": "FATHER",
+            "surface": "Bhagwan Kumar"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.998742,
+        "canonical_name": "Vikram Rathore",
+        "char_span": [
+          320,
+          334
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998742,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              320,
+              334
+            ],
+            "kind": "NAME",
+            "surface": "Vikram Rathore"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          457,
+          473
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              457,
+              473
+            ],
+            "kind": "VALUE",
+            "surface": "8481893016368426"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "8481893016368426"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          512,
+          524
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              512,
+              524
+            ],
+            "kind": "VALUE",
+            "surface": "880913431611"
+          },
+          {
+            "char_span": [
+              584,
+              596
+            ],
+            "kind": "VALUE",
+            "surface": "880913431611"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "880913431611"
+      },
+      {
+        "ai_confidence": 0.999281,
+        "canonical_name": "Aslam Parvez",
+        "char_span": [
+          614,
+          626
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999281,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              614,
+              626
+            ],
+            "kind": "NAME",
+            "surface": "Aslam Parvez"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 13387.07,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          408,
+          560
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "bhej diya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          561,
+          655
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_06",
+        "target": "ent_05",
+        "trigger": "operate kiya"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_03"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 750,
+    "document_hash": "db11798c6a5dea99c2cb5d3ff1b35cbd7a17484820885e8f9db5f3b01d0c0054",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "PERSON": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}
