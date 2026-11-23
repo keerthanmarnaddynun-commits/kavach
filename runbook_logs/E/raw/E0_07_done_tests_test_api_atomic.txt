@@ -1,0 +1,5 @@
+COMMAND: PY -m pytest -q tests/test_api_atomic.py
+EXIT: 0
+--- OUTPUT ---
+.....                                                                    [100%]
+5 passed in 17.53s

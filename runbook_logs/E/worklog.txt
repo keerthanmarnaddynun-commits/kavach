@@ -1,0 +1,8 @@
+2026-11-23 11:42:53 [E0] BEGIN: Retry on replace (Windows file lock) in job, storage and security writers, with tests
+2026-11-23 11:50:49 [E0] RUN PY -m pytest -q tests/test_api_atomic.py -> exit 1 (E0_01_atomic.txt)
+2026-11-23 11:53:17 [E0] RUN PY -m pytest -q tests/test_api_atomic.py -> exit 0 (E0_02_atomic_fixed.txt)
+2026-11-23 11:57:01 [E0] RUN PY -m pytest -q tests/test_api_jobs.py -> exit 0 (E0_03_test_jobs.txt)
+2026-11-23 11:57:20 [E0] RUN PY -m pytest -q tests/test_api_settings_storage.py -> exit 0 (E0_04_test_storage.txt)
+2026-11-23 11:57:37 [E0] RUN PY -m pytest -q tests/test_api_security.py -> exit 0 (E0_05_test_security.txt)
+2026-11-23 11:58:13 [E0] Implemented replace_with_retry in kavach_api/atomic.py and updated os.replace calls in jobs.py, storage.py, and security.py. Created tests/test_api_atomic.py covering items a through e. In step D2, test tests/test_api_security_http.py::test_g5_concurrency_audit_duplicate_checks failed with PermissionError: [WinError 5] Access is denied in log runbook_logs/D/raw/D2_01_python_suite.txt; step D2 did not log this failure. Initial run of test_api_atomic.py failed in test d due to invalid job kind, logged in runbook_logs/E/raw/E0_01_atomic.txt; fixed and re-run in E0_02_atomic_fixed.txt. Ran test_jobs in E0_03_test_jobs.txt, test_storage in E0_04_test_storage.txt, and test_security in E0_05_test_security.txt.
+2026-11-23 12:07:18 [E0] GATE E0: PASS

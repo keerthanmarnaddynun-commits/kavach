@@ -24,3 +24,4 @@
 2026-11-23 10:29:54 [D2] RUN PY -c import subprocess, shutil; npm = shutil.which('npm'); res = subprocess.run([npm, 'test'], cwd='web', capture_output=True, text=True, shell=True); print(res.stdout); print(res.stderr) -> exit 0 (D2_06_vitest_summary.txt)
 2026-11-23 10:31:36 [D2] Recorded raw logs for Python test suite (631 passed, 1 skipped, 1 warning), web build (BUILD OK), web unit tests (TESTS OK), dist size (755,508 bytes, 0.72 MB), and vitest summary (16 test files, 110 passed). Documented dossier page capabilities, routes, endpoints, PDF export instructions, and omissions in docs/web/DOSSIER.md. Created runbook_logs/D/SUMMARY_FOR_USER.txt covering all steps, test results, state limitations, failure and retry records, and questions.
 2026-11-23 10:36:34 [D2] GATE D2: PASS
+2026-11-23 10:46:22 [D2] COMMIT aeaf3453f3 pushed=True

@@ -1,0 +1,36 @@
+COMMAND: PY -m pytest -q tests/test_api_atomic.py
+EXIT: 1
+SECONDS: 10.3
+--- OUTPUT ---
+...F.                                                                    [100%]
+================================== FAILURES ===================================
+_______________ test_jobstore_stress_concurrent_update_and_get ________________
+
+tmp_path = WindowsPath('C:/Users/Kirthan/AppData/Local/Temp/pytest-of-Kirthan/pytest-230/test_jobstore_stress_concurren0')
+
+    def test_jobstore_stress_concurrent_update_and_get(tmp_path: Path) -> None:
+        """(d) Stress: one thread calls JobStore.update 300 times on one job
+        while another thread calls JobStore.get for the same job in a loop
+        until the writer is done; no exception in either thread and the last
+        read equals the last write.
+        """
+        store = JobStore(tmp_path)
+>       job = store.create(kind="nlp", case_id="C-0123456789", total=300)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_api_atomic.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <kavach_api.jobs.JobStore object at 0x000001E8AD673450>, kind = 'nlp'
+case_id = 'C-0123456789', total = 300
+
+    def create(self, kind: str, case_id: str, total: int = 0) -> dict[str, Any]:
+        """Create a new job entry with status 'queued'."""
+        if kind not in VALID_KINDS:
+>           raise ValueError(f"Invalid job kind '{kind}', must be one of {sorted(VALID_KINDS)}")
+E           ValueError: Invalid job kind 'nlp', must be one of ['analyze', 'extract']
+
+kavach_api\jobs.py:78: ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_api_atomic.py::test_jobstore_stress_concurrent_update_and_get
+1 failed, 4 passed in 8.46s

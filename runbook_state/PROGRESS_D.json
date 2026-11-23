@@ -23,7 +23,10 @@
     "D2": {
       "attempts": 0,
       "begin_head": "3d14e76889981aedf3db60d59846af4a091107ad",
-      "status": "gated",
+      "commit": "aeaf3453f3e1d36972b021c7b11d8a16631c137b",
+      "done_at": "2026-11-23 10:46:22",
+      "pushed": true,
+      "status": "done",
       "tests_passed": 631
     }
   }

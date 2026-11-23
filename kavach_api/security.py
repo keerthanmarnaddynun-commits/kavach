@@ -14,6 +14,8 @@ import threading
 import time
 from typing import Any, Mapping
 
+from kavach_api.atomic import replace_with_retry
+
 ROLES = ("viewer", "analyst", "admin")
 ROLE_LEVELS: dict[str, int] = {
     "viewer": 1,
@@ -207,7 +209,7 @@ class UserStore:
         try:
             content = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
             temp_path.write_text(content, encoding="utf-8")
-            os.replace(temp_path, self.path)
+            replace_with_retry(temp_path, self.path)
         finally:
             if temp_path.exists():
                 try:
@@ -357,7 +359,7 @@ def load_or_create_secret(path: str | Path) -> str:
             temp_path.chmod(stat.S_IRUSR | stat.S_IWUSR)
         except OSError:
             pass
-        os.replace(temp_path, target)
+        replace_with_retry(temp_path, target)
     finally:
         if temp_path.exists():
             try:

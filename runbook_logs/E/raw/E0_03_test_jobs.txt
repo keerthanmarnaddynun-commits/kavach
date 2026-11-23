@@ -1,0 +1,6 @@
+COMMAND: PY -m pytest -q tests/test_api_jobs.py
+EXIT: 0
+SECONDS: 16.2
+--- OUTPUT ---
+.....                                                                    [100%]
+5 passed in 0.42s

@@ -1,0 +1,52 @@
+{
+  "files": [
+    "kavach_api/atomic.py",
+    "tests/test_api_atomic.py",
+    "kavach_api/jobs.py",
+    "kavach_api/security.py",
+    "kavach_api/storage.py"
+  ],
+  "fingerprint": "19e07c7d551fee6e3ec2d1983ea527132b4410368d278ce438f7d192ef7a9e5a",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 636, baseline 0, log E0_06_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_api_atomic",
+      "detail": [
+        "exit 0, log E0_07_done_tests_test_api_atomic.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: imports",
+      "detail": [
+        "exit 0, log E0_08_done_imports.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "E0",
+  "tests_passed": 636,
+  "time": "2026-11-23 12:07:18"
+}

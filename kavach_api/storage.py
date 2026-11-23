@@ -12,6 +12,7 @@ import threading
 import time
 from typing import Any, Mapping
 
+from kavach_api.atomic import replace_with_retry
 from kavach_api.settings import Settings
 
 
@@ -78,7 +79,7 @@ def _atomic_write_json(path: Path, data: Any) -> None:
     try:
         content = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
         temp_path.write_text(content, encoding="utf-8")
-        os.replace(temp_path, path)
+        replace_with_retry(temp_path, path)
     finally:
         if temp_path.exists():
             try:
@@ -93,7 +94,7 @@ def _atomic_write_bytes(path: Path, data: bytes) -> None:
     temp_path = path.with_suffix(f"{path.suffix}.tmp_{secrets.token_hex(4)}")
     try:
         temp_path.write_bytes(data)
-        os.replace(temp_path, path)
+        replace_with_retry(temp_path, path)
     finally:
         if temp_path.exists():
             try:

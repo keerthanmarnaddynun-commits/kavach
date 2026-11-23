@@ -14,6 +14,8 @@ import threading
 import time
 from typing import Any, Callable, Mapping, Sequence
 
+from kavach_api.atomic import replace_with_retry
+
 logger = logging.getLogger(__name__)
 
 JOB_ID_PATTERN = re.compile(r"^J-[0-9a-f]{12}\Z")
@@ -52,7 +54,7 @@ def _atomic_write_json(path: Path, data: Any) -> None:
     try:
         content = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
         temp_path.write_text(content, encoding="utf-8")
-        os.replace(temp_path, path)
+        replace_with_retry(temp_path, path)
     finally:
         if temp_path.exists():
             try:
