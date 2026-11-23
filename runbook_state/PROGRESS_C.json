@@ -77,7 +77,10 @@
     "C8": {
       "attempts": 0,
       "begin_head": "e303ef34b0bfefe7e742263014a8c77130550c78",
-      "status": "gated",
+      "commit": "cec60b12506d433e4a9bc2d35c045bcbf9a72477",
+      "done_at": "2026-11-22 22:36:46",
+      "pushed": true,
+      "status": "done",
       "tests_passed": 631
     }
   }

@@ -1,0 +1,70 @@
+{
+  "files": [
+    "web/src/lib/dossier.js",
+    "web/src/lib/dossier.test.js"
+  ],
+  "fingerprint": "9833871f98932d1248eec0bb91b315352d5184f7e08130b5034035b1a1c1f92a",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 0, log D0_05_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log D0_06_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log D0_07_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log D0_08_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: dossier_lib",
+      "detail": [
+        "exit 0, log D0_09_done_dossier_lib.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: dossier_test",
+      "detail": [
+        "exit 0, log D0_10_done_dossier_test.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "D0",
+  "tests_passed": 631,
+  "time": "2026-11-23 10:03:41"
+}
