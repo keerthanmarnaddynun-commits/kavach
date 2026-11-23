@@ -1,0 +1,5 @@
+COMMAND: PY scripts/web_check.py size
+EXIT: 0
+SECONDS: 0.1
+--- OUTPUT ---
+SIZE OK

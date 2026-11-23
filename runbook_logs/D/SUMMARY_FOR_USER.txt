@@ -1,0 +1,67 @@
+STEPS
+D0: done, commit 95f9e79b52 (Dossier view model: pure functions and tests)
+D1: done, commit 3d14e76889 (Dossier page, route, navigation, print styles)
+D2: in-progress (Chunk end: dossier doc, summary for the user and log bundle)
+
+TEST COUNTS
+The Python test suite recorded in raw log D2_02_python_suite.txt shows:
+631 passed, 1 skipped, 1 warning in 267.45s (0:04:27).
+The web unit test suite recorded in raw log D2_06_vitest_summary.txt shows:
+16 test files passed, 110 passed (110) in 2.38s.
+The production bundle size recorded in raw log D2_05_web_size.txt shows:
+SIZE OK (total web/dist size is 755,508 bytes / 0.72 MB, within the 3 MB limit).
+
+LIMITS TO STATE
+The limits that apply (copied from docs/api/CHUNK_A_CORRECTIONS.md item 1):
+- Relation extraction from FIR text measured F1 0.32 on an independent held-out set.
+- Identifiers (phone, Aadhaar, PAN, UPI, vehicle) were strong.
+- IFSC codes are not extracted.
+- There is no OCR (typed text only).
+- CDR and bank CSV files must use the exact column names.
+- All tuning data was synthetic.
+- The 0.70 chip threshold was chosen after looking at one case and is labelled not evaluated.
+- Break results ignore unobserved links.
+- The audit hash chain is unkeyed (a person with file access can rewrite it, and removal of the last entries is not detectable).
+- The login limiter counts failures per user name.
+- File permissions on the secret key are not enforced on Windows.
+- The live event-stream keepalive was not tested against a running server.
+Additional Chunk C limits:
+- The web unit tests cover pure functions and server-side rendering of views, not a real browser.
+- The layout was not checked on any screen size other than 1366x768.
+- npm reported vulnerabilities in development dependencies (not production runtime).
+Additional Chunk D limits:
+- The certificate is a draft template, not legal advice.
+- The dossier is only as complete as the API data.
+
+PAGES
+- #/case/<id>/dossier: Printable case dossier document providing title block with 64-character fingerprint, disclaimer, case facts, graph summary by node type, priority leads ordered by money flow, flagged detector leads (mules and burners), evidence inventory hash table (sha256_raw, sha256_text, character counts, file rows), system limitations, and Bharatiya Sakshya Adhiniyam 2023 Section 63(4)(c) Certificate Part A draft template with signatory blanks and Part B expert disclaimer. Includes Print / Save as PDF button triggering window.print() with A4 print styling.
+
+DEVIATIONS
+- None in Chunk D. All code is contained under web/ and docs/web/ without backend or package changes.
+
+FAILURES AND WHAT YOU DID
+- Step D0: Gate passed on attempt 1. No failed gate attempts and no commit retries.
+- Step D1: Gate passed on attempt 1. Prior to running the gate, the first vitest run flagged that graphFixture was missing from imports in web/src/pages/views.test.jsx; imported the fixture, re-ran tests cleanly, and gate passed on attempt 1. No commit retries.
+- Step D2: During initial raw test execution, pytest reported a transient Windows file locking error (PermissionError WinError 5 on os.replace in jobs.py) in test_g5_concurrency_audit_duplicate_checks due to concurrent background thread access; re-ran the full test suite and all 631 tests passed without failure.
+
+THINGS I COULD NOT CHECK
+- Physical printer output on A4 paper (evaluated via headless Chrome Page.printToPDF export in scratch/dossier_preview.pdf).
+- Visual rendering in proprietary third-party PDF reader applications.
+- Case dossier generation on cases containing more than 25 priority leads or more than 500 documents.
+
+QUESTIONS FOR THE USER
+- Would investigators prefer configurable section selection checkboxes before triggering print (e.g. omitting detector leads or certificate block)?
+- Should the dossier support custom agency seal or badge image headers when deployed in production?
+
+HOW TO START THE SERVER
+1. Load synthetic demo case:
+   .\.venv311\Scripts\python.exe scripts/load_demo_case.py
+
+2. Start backend API service on port 8000:
+   .\.venv311\Scripts\python.exe scripts/run_api.py --port 8000
+
+3. Start frontend development server on port 5173:
+   npm --prefix web run dev
+
+4. Open web user interface:
+   http://localhost:5173

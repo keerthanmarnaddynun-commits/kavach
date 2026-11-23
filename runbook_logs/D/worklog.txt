@@ -14,3 +14,13 @@
 2026-11-23 10:09:03 [D1] RUN PY scripts/web_check.py build -> exit 0 (D1_05_build.txt)
 2026-11-23 10:10:59 [D1] Implemented Dossier page at web/src/pages/Dossier.jsx with loading wrapper (fetching cases, leads, graph) and presentational DossierView. Registered route #/case/:caseId/dossier in App.jsx and added Dossier navigation link in CaseRail.jsx. Added A4 print CSS rules under @media print in web/src/styles/app.css using CSS variables only (zero raw colors). Added SSR renderToString smoke tests for analyzed and unanalyzed cases in web/src/pages/views.test.jsx (16 test files, 110 passed). Ran headless Chrome against demo case to generate print preview at scratch/dossier_preview.pdf (446,815 bytes). Could check: PDF preview generated cleanly without errors, sections render in required sequence, all child processes stopped. Could not check: physical printer output or visual rendering in third-party PDF viewers.
 2026-11-23 10:15:20 [D1] GATE D1: PASS
+2026-11-23 10:16:18 [D1] COMMIT 3d14e76889 pushed=True
+2026-11-23 10:16:36 [D2] BEGIN: Chunk end: dossier doc, summary for the user and log bundle
+2026-11-23 10:22:48 [D2] RUN PY -m pytest -q --ignore=scratch -o faulthandler_timeout=900 -> exit 1 (D2_01_python_suite.txt)
+2026-11-23 10:28:37 [D2] RUN PY -m pytest -q --ignore=scratch -o faulthandler_timeout=900 -> exit 0 (D2_02_python_suite.txt)
+2026-11-23 10:29:03 [D2] RUN PY scripts/web_check.py build -> exit 0 (D2_03_web_build.txt)
+2026-11-23 10:29:25 [D2] RUN PY scripts/web_check.py test -> exit 0 (D2_04_web_tests.txt)
+2026-11-23 10:29:41 [D2] RUN PY scripts/web_check.py size -> exit 0 (D2_05_web_size.txt)
+2026-11-23 10:29:54 [D2] RUN PY -c import subprocess, shutil; npm = shutil.which('npm'); res = subprocess.run([npm, 'test'], cwd='web', capture_output=True, text=True, shell=True); print(res.stdout); print(res.stderr) -> exit 0 (D2_06_vitest_summary.txt)
+2026-11-23 10:31:36 [D2] Recorded raw logs for Python test suite (631 passed, 1 skipped, 1 warning), web build (BUILD OK), web unit tests (TESTS OK), dist size (755,508 bytes, 0.72 MB), and vitest summary (16 test files, 110 passed). Documented dossier page capabilities, routes, endpoints, PDF export instructions, and omissions in docs/web/DOSSIER.md. Created runbook_logs/D/SUMMARY_FOR_USER.txt covering all steps, test results, state limitations, failure and retry records, and questions.
+2026-11-23 10:36:34 [D2] GATE D2: PASS

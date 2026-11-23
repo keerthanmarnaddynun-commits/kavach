@@ -1,0 +1,69 @@
+{
+  "files": [
+    "docs/web/DOSSIER.md"
+  ],
+  "fingerprint": "a3ac08a654e7f7812b27ff0af261c341012926dce38fd5e0705e75eb59e41e7f",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 631, baseline 631, log D2_07_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log D2_08_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log D2_09_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_size",
+      "detail": [
+        "exit 0, log D2_10_done_web_size.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: dossier_doc",
+      "detail": [
+        "exit 0, log D2_11_done_dossier_doc.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: summary_written",
+      "detail": [
+        "exit 0, log D2_12_done_summary_written.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "D2",
+  "tests_passed": 631,
+  "time": "2026-11-23 10:36:34"
+}

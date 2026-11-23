@@ -1,0 +1,148 @@
+COMMAND: PY -m pytest -q --ignore=scratch -o faulthandler_timeout=900
+EXIT: 1
+SECONDS: 336.3
+--- OUTPUT ---
+.....................................................s.................. [ 11%]
+.......................................................F................ [ 22%]
+........................................................................ [ 34%]
+........................................................................ [ 45%]
+........................................................................ [ 56%]
+........................................................................ [ 68%]
+........................................................................ [ 79%]
+........................................................................ [ 91%]
+........................................................                 [100%]
+================================== FAILURES ===================================
+_________________ test_g5_concurrency_audit_duplicate_checks __________________
+
+sec_env = {'admin_headers': {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl91c2VyIiwicm9sZSI6I...wob0J2HsRzoVtREk'}, 'app': <fastapi.applications.FastAPI object at 0x0000022EE97D7E10>, 'case_id': 'C-8c97e5490c', ...}
+
+    def test_g5_concurrency_audit_duplicate_checks(sec_env):
+        """G5: Test concurrent analyze race guard, extract audit entry, and atomic duplicate check."""
+        import concurrent.futures
+        import time
+        client: TestClient = sec_env["client"]
+        a_headers = sec_env["analyst_headers"]
+        case_id = sec_env["case_id"]
+        store: Storage = sec_env["app"].state.store
+    
+        # 1. G5(c, d): Multi-file upload where second file is duplicate of existing FIR_01
+        existing_meta = store.list_documents(case_id)[0]
+        existing_doc_id = existing_meta["doc_id"]
+        _meta, existing_text = store.get_document(case_id, existing_doc_id)
+    
+        new_text = "LANG: english\n[[PERSON:P99:S|New Person]] walked in.\n"
+        initial_docs_count = len(store.list_documents(case_id))
+    
+        r_dup = client.post(
+            f"/api/cases/{case_id}/documents",
+            files=[
+                ("files", ("FIR_new.txt", new_text.encode("utf-8"), "text/plain")),
+                ("files", ("FIR_dup.txt", existing_text.encode("utf-8"), "text/plain")),
+            ],
+            headers=a_headers,
+        )
+        assert r_dup.status_code == 409
+        err_body = r_dup.json()
+        assert err_body["error"]["code"] == "duplicate_document"
+        # G5(d): 409 error message must contain the existing doc id
+        assert existing_doc_id in err_body["error"]["message"]
+        # G5(c): store nothing on duplicate
+        assert len(store.list_documents(case_id)) == initial_docs_count
+        assert not (store.case_dir(case_id) / "documents" / "FIR_new").exists()
+    
+        # Batch internal duplicate check
+        r_batch_dup = client.post(
+            f"/api/cases/{case_id}/documents",
+            files=[
+                ("files", ("FIR_b1.txt", new_text.encode("utf-8"), "text/plain")),
+                ("files", ("FIR_b2.txt", new_text.encode("utf-8"), "text/plain")),
+            ],
+            headers=a_headers,
+        )
+        assert r_batch_dup.status_code == 409
+        assert len(store.list_documents(case_id)) == initial_docs_count
+    
+        # 2. G5(b): Successful upload creates extract job and writes job_finished audit entry
+        r_ok = client.post(
+            f"/api/cases/{case_id}/documents",
+            files=[("files", ("FIR_new.txt", new_text.encode("utf-8"), "text/plain"))],
+            headers=a_headers,
+        )
+        assert r_ok.status_code == 200
+        job_id = r_ok.json()["job_id"]
+    
+        # Wait for extract job to finish
+        for _ in range(50):
+            j_state = client.get(f"/api/jobs/{job_id}", headers=sec_env["viewer_headers"]).json()
+            if j_state.get("status") in ("done", "failed"):
+                break
+            time.sleep(0.05)
+    
+        entries = sec_env["app"].state.audit_log.read(limit=100)
+        finished_entries = [
+            e for e in entries
+            if e.get("action") == "job_finished" and e.get("detail", {}).get("job_id") == job_id
+        ]
+        assert len(finished_entries) >= 1
+        fin_detail = finished_entries[0]["detail"]
+        assert "status" in fin_detail
+>       assert "counts" in fin_detail
+E       AssertionError: assert 'counts' in {'job_id': 'J-d622786bfe34', 'kind': 'extract', 'status': 'failed'}
+
+tests\test_api_security_http.py:479: AssertionError
+------------------------------ Captured log call ------------------------------
+ERROR    kavach_api.extract_service:extract_service.py:99 Contract validation failed on doc FIR_new
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\contracts\v1_1\validate.py", line 37, in validate_ai_output
+    _AI_OUTPUT_VALIDATOR.validate(doc)
+  File "C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Lib\site-packages\jsonschema\validators.py", line 435, in validate
+    raise error
+jsonschema.exceptions.ValidationError: 'kind' is a required property
+
+Failed validating 'required' in schema['properties']['entities']['items']['properties']['mentions']['items']:
+    {'additionalProperties': False,
+     'properties': {'char_span': {'items': {'minimum': 0,
+                                            'type': 'integer'},
+                                  'maxItems': 2,
+                                  'minItems': 2,
+                                  'type': 'array'},
+                    'kind': {'enum': ['NAME', 'ALIAS', 'FATHER', 'VALUE'],
+                             'type': 'string'},
+                    'surface': {'type': 'string'}},
+     'required': ['char_span', 'surface', 'kind'],
+     'type': 'object'}
+
+On instance['entities'][0]['mentions'][0]:
+    {'char_span': [14, 27], 'surface': 'Target Person'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\kavach_api\extract_service.py", line 97, in extract_document
+    validate_ai_output(result["doc"])
+  File "C:\Users\Kirthan\Desktop\crimi-nex\contracts\v1_1\validate.py", line 39, in validate_ai_output
+    raise ValueError(f"AI output schema validation error: {e.message}") from e
+ValueError: AI output schema validation error: 'kind' is a required property
+ERROR    kavach_api.jobs:jobs.py:177 Job J-d622786bfe34 encountered unhandled error
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\kavach_api\jobs.py", line 175, in _worker_loop
+    fn()
+  File "C:\Users\Kirthan\Desktop\crimi-nex\kavach_api\app.py", line 951, in <lambda>
+    lambda: run_extract_job(
+            ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kirthan\Desktop\crimi-nex\kavach_api\extract_service.py", line 148, in run_extract_job
+    job_store.update(
+  File "C:\Users\Kirthan\Desktop\crimi-nex\kavach_api\jobs.py", line 136, in update
+    _atomic_write_json(path, data)
+  File "C:\Users\Kirthan\Desktop\crimi-nex\kavach_api\jobs.py", line 55, in _atomic_write_json
+    os.replace(temp_path, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Kirthan\\AppData\\Local\\Temp\\pytest-of-Kirthan\\pytest-226\\runtime_sec0\\jobs\\J-d622786bfe34.json.tmp_547d0981' -> 'C:\\Users\\Kirthan\\AppData\\Local\\Temp\\pytest-of-Kirthan\\pytest-226\\runtime_sec0\\jobs\\J-d622786bfe34.json'
+============================== warnings summary ===============================
+test_nlp_pipeline.py::TestNLPPipeline::test_entity_extraction_count
+  C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Lib\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_api_security_http.py::test_g5_concurrency_audit_duplicate_checks
+1 failed, 630 passed, 1 skipped, 1 warning in 326.45s (0:05:26)

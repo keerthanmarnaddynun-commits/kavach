@@ -1,0 +1,5 @@
+COMMAND: PY scripts/web_check.py build
+EXIT: 0
+SECONDS: 8.5
+--- OUTPUT ---
+BUILD OK
