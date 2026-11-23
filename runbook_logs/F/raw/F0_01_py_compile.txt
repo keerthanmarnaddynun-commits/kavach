@@ -1,0 +1,4 @@
+COMMAND: PY -m py_compile scripts/report/step1_results.py scripts/report/step2_results.py scripts/report/step5_baseline.py scripts/report/step5b_ner_baseline.py scripts/report/step6_extraction.py scripts/report/step7b_gap_analysis.py scripts/check_results_docs.py
+EXIT: 0
+SECONDS: 0.3
+--- OUTPUT ---

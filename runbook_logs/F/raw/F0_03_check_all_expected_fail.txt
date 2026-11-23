@@ -1,0 +1,16 @@
+COMMAND: PY scripts/check_results_docs.py docs/RESULTS.md
+EXIT: 1
+SECONDS: 0.2
+--- OUTPUT ---
+docs\RESULTS.md:9: machine path fragment 'C:\' found
+docs\RESULTS.md:9: machine path fragment 'Kirthan' found
+docs\RESULTS.md:134: machine path fragment 'C:\' found
+docs\RESULTS.md:134: machine path fragment 'Kirthan' found
+docs\RESULTS.md:167: table row has 12 columns, expected 11 (table header at line 166)
+docs\RESULTS.md:182: table row has 9 columns, expected 8 (table header at line 181)
+docs\RESULTS.md:324: machine path fragment 'C:\' found
+docs\RESULTS.md:324: machine path fragment 'Kirthan' found
+docs\RESULTS.md:465: machine path fragment 'C:\' found
+docs\RESULTS.md:465: machine path fragment 'Kirthan' found
+docs\RESULTS.md:652: machine path fragment 'C:\' found
+docs\RESULTS.md:652: machine path fragment 'Kirthan' found

@@ -28,6 +28,9 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Set, Tuple
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+from scripts.check_results_docs import ALL_BANNED
+
 
 def compute_sha256(filepath: Path) -> str:
     """Computes standard hex SHA-256 hash for a file."""
@@ -593,7 +596,7 @@ def build_markdown_section(
 
 #### Table 3: Corpus Partition and Typology Distribution
 | Partition Split | Total FIRs | Hinglish | Hindi | English | FULL | CALLS_ONLY | MONEY_ONLY | DEVICE_ONLY | MULTI_SUSPECT | ALIAS_ONLY |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 {part_table_body}
 
 #### Table 4: Document Length and Entity Density per Partition Split
@@ -603,7 +606,7 @@ def build_markdown_section(
 
 #### Table 5: Entity Mention Counts by Classification Type
 | Partition Split | PERSON | ALIAS | PHONE | IMEI | ACCOUNT | AMOUNT | Total Mentions |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 {mention_table_body}
 
 #### Table 6: Financial Transfers by Type per Partition Split
@@ -681,8 +684,8 @@ def build_markdown_section(
 
     # Check for banned words
     banned_regex = re.compile(
-        r"\b(verified|confirmed|audited|optimal|robust|proves|guarantees|decisively)\b",
-        re.IGNORECASE
+        r"\b(" + "|".join(re.escape(w) for w in ALL_BANNED) + r")\b",
+        re.IGNORECASE,
     )
     banned_hits = banned_regex.findall(section)
     if banned_hits:
@@ -746,8 +749,8 @@ def main():
 
     # 3. Run pytest -v on tests/test_generate_firs.py and save raw output
     test_file = repo_root / "tests" / "test_generate_firs.py"
-    pytest_cmd = f"{sys.executable} -m pytest -v tests/test_generate_firs.py"
-    res = subprocess.run(pytest_cmd, cwd=repo_root, capture_output=True, text=True, shell=True)
+    pytest_cmd = "python -m pytest -v tests/test_generate_firs.py"
+    res = subprocess.run([sys.executable, "-m", "pytest", "-v", "tests/test_generate_firs.py"], cwd=repo_root, capture_output=True, text=True)
     pytest_raw_file = results_dir / "pytest_raw.txt"
     raw_output = res.stdout + (("\n" + res.stderr) if res.stderr else "")
     pytest_raw_file.write_text(raw_output, encoding="utf-8")

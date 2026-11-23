@@ -1,0 +1,61 @@
+{
+  "files": [
+    "scripts/check_results_docs.py",
+    "scripts/report/step1_results.py",
+    "scripts/report/step2_results.py",
+    "scripts/report/step5_baseline.py",
+    "scripts/report/step5b_ner_baseline.py",
+    "scripts/report/step6_extraction.py",
+    "scripts/report/step7b_gap_analysis.py"
+  ],
+  "fingerprint": "f8c023936562a544791d0873d703eecb381e9b0ff40c59096cd88e1cec8ff4cc",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 636, baseline 0, log F0_16_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: checker_exists",
+      "detail": [
+        "exit 0, log F0_17_done_checker_exists.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: step7_block_ok",
+      "detail": [
+        "exit 0, log F0_18_done_step7_block_ok.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: no_interpreter_path_in_display",
+      "detail": [
+        "exit 0, log F0_19_done_no_interpreter_path_in_display.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "F0",
+  "tests_passed": 636,
+  "time": "2026-11-23 18:22:32"
+}

@@ -23,7 +23,10 @@
     "E2": {
       "attempts": 0,
       "begin_head": "9965e5b3b77d1ff980df6e4f7a8e310a6f63689f",
-      "status": "gated",
+      "commit": "d5f2512734b2fe90f6b8c4e9f659855d7ae1ae66",
+      "done_at": "2026-11-23 13:36:21",
+      "pushed": true,
+      "status": "done",
       "tests_passed": 636
     }
   }

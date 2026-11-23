@@ -1,0 +1,4 @@
+COMMAND: PY -c import pathlib; t=''.join(p.read_text(encoding='utf-8') for p in pathlib.Path('scripts/report').glob('*.py')); assert '{sys.executable} -m pytest' not in t; print('path ok')
+EXIT: 0
+--- OUTPUT ---
+path ok

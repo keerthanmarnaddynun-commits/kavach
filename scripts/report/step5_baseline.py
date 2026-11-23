@@ -25,6 +25,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from ai_pipeline.identifiers import find_all_identifiers
+from scripts.check_results_docs import ALL_BANNED
 from ai_pipeline.scoring import (
     _load_contract_docs,
     load_doc_meta,
@@ -258,12 +259,8 @@ def assert_tables_match_metrics(section_md: str, metrics: dict[str, Any]) -> Non
 
 def validate_markdown_tables_and_rules(content: str) -> None:
     """Assert table column counts match, check forbidden words, and enforce prose rules."""
-    forbidden_words = [
-        "verified", "confirmed", "audited", "optimal",
-        "robust", "proves", "guarantees", "decisively",
-    ]
-    for w in forbidden_words:
-        if re.search(rf"\b{w}\b", content, re.IGNORECASE):
+    for w in ALL_BANNED:
+        if re.search(rf"\b{re.escape(w)}\b", content, re.IGNORECASE):
             raise ValueError(f"Forbidden word {w!r} found in generated markdown.")
 
     # Validate table column counts
@@ -521,7 +518,7 @@ def main() -> None:
 
     # 2. Run pytest on tests/test_scoring.py and save raw output
     pytest_raw_file = results_dir / "pytest_raw.txt"
-    pytest_cmd = f"{sys.executable} -m pytest -v tests/test_scoring.py"
+    pytest_cmd = "python -m pytest -v tests/test_scoring.py"
     proc = subprocess.run(
         [sys.executable, "-m", "pytest", "-v", "tests/test_scoring.py"],
         cwd=str(REPO_ROOT),

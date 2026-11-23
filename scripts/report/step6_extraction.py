@@ -37,6 +37,7 @@ import transformers
 from ai_pipeline import ner_baseline
 from ai_pipeline.pipeline import analyze_text
 from ai_pipeline.relations import extract_relations, split_sentences
+from scripts.check_results_docs import ALL_BANNED
 from ai_pipeline.scoring import (
     _load_contract_docs,
     load_doc_meta,
@@ -80,16 +81,7 @@ PIPELINE_MODULES: tuple[str, ...] = (
     "scoring.py",
 )
 
-FORBIDDEN_PROSE_WORDS: tuple[str, ...] = (
-    "verified",
-    "confirmed",
-    "audited",
-    "optimal",
-    "robust",
-    "proves",
-    "guarantees",
-    "decisively",
-)
+FORBIDDEN_PROSE_WORDS: tuple[str, ...] = ALL_BANNED
 
 
 def compute_sha256(filepath: Path) -> str:
@@ -1241,7 +1233,7 @@ def main() -> None:
 
     # 2. Run pytest -v across the entire tests folder
     pytest_cmd_list = [sys.executable, "-m", "pytest", "-v", "tests"]
-    pytest_cmd_str = " ".join(pytest_cmd_list)
+    pytest_cmd_str = "python -m pytest -v tests"
     env = os.environ.copy()
     env["HF_HUB_OFFLINE"] = "1"
     proc = subprocess.run(

@@ -31,6 +31,8 @@ if str(REPO_ROOT) not in sys.path:
 import torch
 import transformers
 
+from scripts.check_results_docs import ALL_BANNED
+
 from ai_pipeline.ner_baseline import (
     MODELS,
     decoded_word_check,
@@ -228,12 +230,8 @@ def assert_tables_match_metrics(section_md: str, metrics: dict[str, Any]) -> Non
 
 def validate_markdown_tables_and_rules(content: str) -> None:
     """Assert table column counts match, check forbidden words, and enforce prose rules."""
-    forbidden_words = [
-        "verified", "confirmed", "audited", "optimal",
-        "robust", "proves", "guarantees", "decisively",
-    ]
-    for w in forbidden_words:
-        if re.search(rf"\b{w}\b", content, re.IGNORECASE):
+    for w in ALL_BANNED:
+        if re.search(rf"\b{re.escape(w)}\b", content, re.IGNORECASE):
             raise ValueError(f"Forbidden word {w!r} found in generated markdown.")
 
     # Validate table column counts
@@ -533,7 +531,7 @@ def main() -> None:
 
     # 2. Run pytest on tests/test_ner_baseline.py and save raw output
     pytest_raw_file = results_dir / "pytest_raw.txt"
-    pytest_cmd = f"{sys.executable} -m pytest -v tests/test_ner_baseline.py"
+    pytest_cmd = "python -m pytest -v tests/test_ner_baseline.py"
     proc = subprocess.run(
         [sys.executable, "-m", "pytest", "-v", "tests/test_ner_baseline.py"],
         cwd=str(REPO_ROOT),

@@ -27,6 +27,9 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Set, Tuple
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+from scripts.check_results_docs import ALL_BANNED
+
 
 def compute_sha256(filepath: Path) -> str:
     """Computes standard hex SHA-256 hash for a file."""
@@ -398,21 +401,21 @@ def build_markdown_section(
 - **Exact Command**: `python data/synthetic/generate_case.py --seed 42 --days 30 --out {results_rel_path}/run1`
 - **Exact Pytest Command**: `{pytest_cmd}`
 - **Input Files**:
-- `data/synthetic/generate_case.py` (SHA-256: `{gen_hash}`)
-- `tests/test_generate_case.py` (SHA-256: `{test_hash}`)
+  - `data/synthetic/generate_case.py` (SHA-256: `{gen_hash}`)
+  - `tests/test_generate_case.py` (SHA-256: `{test_hash}`)
 - **Output Files (Run 1)**:
-- `run1/truth.json` (SHA-256: `{run1_h['truth_json']}`)
-- `run1/cdr.csv` (SHA-256: `{run1_h['cdr_csv']}`)
-- `run1/bank.csv` (SHA-256: `{run1_h['bank_csv']}`)
+  - `run1/truth.json` (SHA-256: `{run1_h['truth_json']}`)
+  - `run1/cdr.csv` (SHA-256: `{run1_h['cdr_csv']}`)
+  - `run1/bank.csv` (SHA-256: `{run1_h['bank_csv']}`)
 - **Key Numbers**:
-- `run1/cdr.csv`: {metrics['row_counts']['cdr_csv']} rows (columns: `a_party`, `b_party`, `imei_a`, `imsi_a`, `start_time`, `duration_sec`, `call_type`, `tower_id`, `lat`, `lon`)
-- `run1/bank.csv`: {metrics['row_counts']['bank_csv']} rows (columns: `txn_id`, `datetime`, `from_acct`, `to_acct`, `amount`, `mode`, `ifsc`, `narration`)
-- `run1/truth.json`: {metrics['entity_counts']['people']} people (key: `people`), {metrics['entity_counts']['phones']} phones (key: `phones`), {metrics['entity_counts']['accounts']} accounts (key: `accounts`), {metrics['entity_counts']['imeis']} IMEIs (key: `imeis`)
-- `run1/bank.csv` account lengths: `from_acct` counts by digit length: {from_lens_str}; `to_acct` counts by digit length: {to_lens_str}
-- `run1/bank.csv` rows whose ifsc does not match `^[A-Z]{{4}}0[A-Z0-9]{{6}}$`: {invalid_ifsc_cnt}
-- `run1/bank.csv` rows whose to_acct is in truth.json and whose ifsc differs from that account's ifsc: {ifsc_diff_cnt}
-- `run1/bank.csv` rows whose to_acct is not in truth.json: {to_not_in_truth_cnt}
-- Account numbers (truth.json and bank.csv) that equal any phone number or IMEI value: {collisions_cnt}
+  - `run1/cdr.csv`: {metrics['row_counts']['cdr_csv']} rows (columns: `a_party`, `b_party`, `imei_a`, `imsi_a`, `start_time`, `duration_sec`, `call_type`, `tower_id`, `lat`, `lon`)
+  - `run1/bank.csv`: {metrics['row_counts']['bank_csv']} rows (columns: `txn_id`, `datetime`, `from_acct`, `to_acct`, `amount`, `mode`, `ifsc`, `narration`)
+  - `run1/truth.json`: {metrics['entity_counts']['people']} people (key: `people`), {metrics['entity_counts']['phones']} phones (key: `phones`), {metrics['entity_counts']['accounts']} accounts (key: `accounts`), {metrics['entity_counts']['imeis']} IMEIs (key: `imeis`)
+  - `run1/bank.csv` account lengths: `from_acct` counts by digit length: {from_lens_str}; `to_acct` counts by digit length: {to_lens_str}
+  - `run1/bank.csv` rows whose ifsc does not match `^[A-Z]{{4}}0[A-Z0-9]{{6}}$`: {invalid_ifsc_cnt}
+  - `run1/bank.csv` rows whose to_acct is in truth.json and whose ifsc differs from that account's ifsc: {ifsc_diff_cnt}
+  - `run1/bank.csv` rows whose to_acct is not in truth.json: {to_not_in_truth_cnt}
+  - Account numbers (truth.json and bank.csv) that equal any phone number or IMEI value: {collisions_cnt}
 
 ### Tables
 
@@ -491,8 +494,8 @@ def build_markdown_section(
 
     # Check for banned words
     banned_regex = re.compile(
-        r"\b(verified|confirmed|audited|optimal|robust|proves|guarantees|decisively)\b",
-        re.IGNORECASE
+        r"\b(" + "|".join(re.escape(w) for w in ALL_BANNED) + r")\b",
+        re.IGNORECASE,
     )
     banned_hits = banned_regex.findall(section)
     if banned_hits:
@@ -541,8 +544,8 @@ def main():
 
     # 3. Run pytest -v on tests/test_generate_case.py and save raw output
     test_file = repo_root / "tests" / "test_generate_case.py"
-    pytest_cmd = f"{sys.executable} -m pytest -v tests/test_generate_case.py"
-    res = subprocess.run(pytest_cmd, cwd=repo_root, capture_output=True, text=True)
+    pytest_cmd = "python -m pytest -v tests/test_generate_case.py"
+    res = subprocess.run([sys.executable, "-m", "pytest", "-v", "tests/test_generate_case.py"], cwd=repo_root, capture_output=True, text=True)
     pytest_raw_file = results_dir / "pytest_raw.txt"
     raw_output = res.stdout + (("\n" + res.stderr) if res.stderr else "")
     pytest_raw_file.write_text(raw_output, encoding="utf-8")

@@ -200,8 +200,28 @@ def classify_person_mentions(
                         paired_gold_ent = ge
                         break
 
+            diagnostic_note = None
             if cls is None:
                 cls = "OTHER"
+                overlap_alias = False
+                overlap_father = False
+                for ge in g_doc.get("entities", []):
+                    gs = ge.get("char_span")
+                    if not gs or len(gs) != 2:
+                        continue
+                    if max(fp_start, gs[0]) < min(fp_end, gs[1]):
+                        lbl = ge.get("label") or ge.get("type")
+                        role = ge.get("role")
+                        if lbl == "ALIAS" or role == "ALIAS":
+                            overlap_alias = True
+                        elif lbl == "FATHER" or role == "FATHER":
+                            overlap_father = True
+                if overlap_alias:
+                    diagnostic_note = "overlaps a gold ALIAS mention"
+                elif overlap_father:
+                    diagnostic_note = "overlaps a gold FATHER mention"
+                else:
+                    diagnostic_note = "overlaps no gold mention"
 
             fp_counts[cls] += 1
             item = {
@@ -210,6 +230,7 @@ def classify_person_mentions(
                 "char_span": fp["char_span"],
                 "class": cls,
                 "paired_gold_span": paired_gold_ent["char_span"] if paired_gold_ent else None,
+                "diagnostic_note": diagnostic_note,
             }
             classified_fps.append(item)
             fps_with_class_by_file.setdefault(stem, []).append(item)
@@ -627,10 +648,16 @@ def build_step7b_markdown(gap_data: dict[str, Any]) -> str:
     # Table 3: OTHER False Positives Listing
     other_fps = gap_data["mention_classes"]["other_fps"]
     other_rel_fps = gap_data["relation_classes"]["other_fps"]
+    c_alias = sum(1 for fp in other_fps if fp.get("diagnostic_note") == "overlaps a gold ALIAS mention")
+    c_father = sum(1 for fp in other_fps if fp.get("diagnostic_note") == "overlaps a gold FATHER mention")
+    c_none = sum(1 for fp in other_fps if fp.get("diagnostic_note") == "overlaps no gold mention")
+    table_3_intro = f"Of the {len(other_fps)} unclassified PERSON false positives, {c_alias} overlap a gold ALIAS mention, {c_father} overlap a gold FATHER mention, and {c_none} overlap no gold mention."
+
     table_3_rows = []
     for fp in other_fps:
+        note = fp.get("diagnostic_note") or "overlaps no gold mention"
         table_3_rows.append(
-            f"| Mention | {fp['file']} | PERSON | {fp['surface']} | {fp['char_span'][0]}-{fp['char_span'][1]} | Non-overlapping name string not matching gold entity surface |"
+            f"| Mention | {fp['file']} | PERSON | {fp['surface']} | {fp['char_span'][0]}-{fp['char_span'][1]} | {note} |"
         )
     for fp in other_rel_fps:
         s_surf = fp.get("source_surface") or "—"
@@ -673,7 +700,7 @@ and token containment without semantic or lexical rule lists.
 - **Repeat Short Form Mentions**: {m_counts['REPEAT_SHORT_FORM']} of 72 person false positives match subsequent untagged mentions of individuals established earlier in the text.
 - **Boundary Span Variations**: {m_counts['INSIDE_GOLD_RIGHT']} person false positives match reference persons with preceding rank or title annotations included in gold spans.
 - **Relation Name Surface Variations**: {r_counts['NAME_FORM_MISMATCH']} of 23 relation false positives match reference relations where person entity endpoints reflect surface name variations.
-- **Amount Verification**: Exact concordance between re-scored amount extraction and recorded evaluation metrics ({gap_data['amount_errors']['fp']} false positives, {gap_data['amount_errors']['fn']} false negative).
+- **Amount re-scoring check**: Exact concordance between re-scored amount extraction and recorded evaluation metrics ({gap_data['amount_errors']['fp']} false positives, {gap_data['amount_errors']['fn']} false negative).
 - **Uncontracted Identifiers**: {gap_data['ifsc_gold']['gold_count']} gold IFSC codes recorded in reference data; zero extracted under contract schemas.
 
 ### Key Numbers
@@ -692,6 +719,8 @@ and token containment without semantic or lexical rule lists.
 {table_2}
 
 #### Table 3: Unclassified False Positives (Category OTHER)
+{table_3_intro}
+
 | Anomaly Type | Document Identifier | Entity or Relation | Surface Text | Character Span or Endpoints | Diagnostic Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 {table_3}
@@ -701,12 +730,14 @@ and token containment without semantic or lexical rule lists.
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 {table_4}
 
+These adjusted numbers use knowledge of the labelling gaps and are optimistic; they are not held-out results.
+
 ### Disclosed Diagnostic Facts
 - **Post-Hoc Status**: This analysis examines discrepancies retrospectively using character span and token coordinates after frozen evaluation completion.
-- **Reference Tagging Density**: In 48 instances, reference annotations omitted repeated mentions of established persons, causing correct textual recognitions to register as false positives under strict offset evaluation.
-- **Title Inclusion Shift**: In 8 instances, reference annotations enclosed police ranks or courtesy titles within person spans, whereas the pipeline consistently isolated the core name tokens.
+- **Reference Tagging Density**: In {m_counts['REPEAT_SHORT_FORM']} instances, reference annotations omitted repeated mentions of established persons, causing repeat mentions of persons that the reference did not tag to register as false positives under strict offset evaluation.
+- **Title Inclusion Shift**: In {m_counts['INSIDE_GOLD_RIGHT']} instances, reference annotations enclosed police ranks or courtesy titles within person spans, whereas the pipeline consistently isolated the core name tokens.
 - **Endpoint Alignment Impact**: In 12 instances, valid relationships linked entities whose name surfaces reflected short-form variants, preventing strict endpoint alignment under Contract v1.1.
-- **Amount Consistency**: Exactly 8 amount false positives represent subsequent mentions of transaction sums untagged in the reference data, while 1 amount discrepancy reflects character normalization across orthographic variants.
+- **Amount Consistency**: Exactly {gap_data['amount_errors']['fp']} amount false positives and {gap_data['amount_errors']['fn']} amount false negative were recorded; causes were not analysed.
 
 ### Glossary
 - structural category = classification defined exclusively by character offset containment, token subsequence match, or endpoint identifier equality without lexical word lists
@@ -758,7 +789,7 @@ def main() -> None:
         if p.is_file():
             rel_name = p.relative_to(r2_dir).as_posix()
             initial_r2_hashes[rel_name] = compute_sha256(p)
-    print(f"Verified {len(initial_r2_hashes)} files in r2 before starting.")
+    print(f"Checked {len(initial_r2_hashes)} files in r2 before starting.")
 
     # 1. Load inputs
     print("Loading gold and error registries...")
@@ -901,7 +932,7 @@ def main() -> None:
         actual_hash = compute_sha256(r2_dir / rel_name)
         if actual_hash != exp_hash:
             raise RuntimeError(f"FATAL: file {rel_name} in r2 was modified during gap analysis run!")
-    print("Integrity check confirmed: All 83 files in r2 remain completely untouched!")
+    print("Integrity check passed: All 83 files in r2 remain completely untouched!")
     print("Step 7b gap analysis complete!")
 
 
