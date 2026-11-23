@@ -6,3 +6,11 @@
 2026-11-23 11:57:37 [E0] RUN PY -m pytest -q tests/test_api_security.py -> exit 0 (E0_05_test_security.txt)
 2026-11-23 11:58:13 [E0] Implemented replace_with_retry in kavach_api/atomic.py and updated os.replace calls in jobs.py, storage.py, and security.py. Created tests/test_api_atomic.py covering items a through e. In step D2, test tests/test_api_security_http.py::test_g5_concurrency_audit_duplicate_checks failed with PermissionError: [WinError 5] Access is denied in log runbook_logs/D/raw/D2_01_python_suite.txt; step D2 did not log this failure. Initial run of test_api_atomic.py failed in test d due to invalid job kind, logged in runbook_logs/E/raw/E0_01_atomic.txt; fixed and re-run in E0_02_atomic_fixed.txt. Ran test_jobs in E0_03_test_jobs.txt, test_storage in E0_04_test_storage.txt, and test_security in E0_05_test_security.txt.
 2026-11-23 12:07:18 [E0] GATE E0: PASS
+2026-11-23 12:10:32 [E0] PUSH FAILED: fatal: unable to access 'https://github.com/keerthanmarnaddynun-commits/kavach.git/': Could not resolve host: github.com
+2026-11-23 12:10:32 [E0] COMMIT 45aaa1bc56 pushed=False
+2026-11-23 12:18:16 [E1] BEGIN: Dossier: FIR documents per lead, honest CSV file labels
+2026-11-23 12:57:28 [E1] RUN PY -m pytest -q tests/test_frontend_static.py -> exit 0 (E1_01_test_frontend_static.txt)
+2026-11-23 12:58:01 [E1] RUN PY scripts/web_check.py test -> exit 0 (E1_02_web_test.txt)
+2026-11-23 12:58:27 [E1] RUN PY scripts/web_check.py build -> exit 0 (E1_03_web_build.txt)
+2026-11-23 12:59:01 [E1] Updated Dossier page loader to fetch /api/cases/{id}/people and pass people to buildDossier. Updated buildDossier to resolve FIR documents per priority lead up to 10 entries with total count, falling back to empty list and total 0. Displayed FIR documents in evidence column before accounts and paise flow. Corrected CDR and Bank file labels in hash table to 'uploaded file name not recorded'. Updated unit tests in dossier.test.js and views.test.jsx using real fixtures. Updated docs/web/DOSSIER.md. Executed E1_01_test_frontend_static.txt, E1_02_web_test.txt, and E1_03_web_build.txt.
+2026-11-23 13:03:43 [E1] GATE E1: PASS

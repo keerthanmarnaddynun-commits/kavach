@@ -5,6 +5,7 @@ import { buildDossier, formatEvidenceRefs } from "./dossier.js";
 import caseDetailFixture from "../fixtures/case_detail.json";
 import leadsFixture from "../fixtures/leads.json";
 import graphFixture from "../fixtures/graph.json";
+import peopleFixture from "../fixtures/people.json";
 
 describe("buildDossier view model", () => {
   const dummyUser = { username: "officer_1", role: "analyst" };
@@ -82,6 +83,12 @@ describe("buildDossier view model", () => {
     expect(ht.cdr.sha256.length).toBe(64);
     expect(ht.bank.sha256).toBe(caseDetailFixture.files.bank.sha256);
     expect(ht.bank.sha256.length).toBe(64);
+
+    // Honest CSV file labels
+    expect(ht.cdr.fileName).toBe("uploaded file name not recorded");
+    expect(ht.bank.fileName).toBe("uploaded file name not recorded");
+    expect(ht.cdr.fileName).not.toContain("cdr.csv");
+    expect(ht.bank.fileName).not.toContain("bank.csv");
 
     // Full 64-character fingerprint with zero shortening
     expect(ht.fingerprint).toBe(leadsFixture.document_hash);
@@ -172,5 +179,58 @@ describe("buildDossier view model", () => {
     // Assert that no clock calls were made by buildDossier
     expect(dateSpy).not.toHaveBeenCalled();
     dateSpy.mockRestore();
+  });
+
+  it("populates firDocuments for known persons in fixture order up to 10 and sets firDocumentTotal", () => {
+    const dossier = buildDossier({
+      caseDetail: caseDetailFixture,
+      leads: leadsFixture,
+      graph: graphFixture,
+      people: peopleFixture,
+      user: dummyUser,
+      generatedAt: dummyTime,
+    });
+
+    expect(dossier.priorityLeads.length).toBeGreaterThan(0);
+    for (const lead of dossier.priorityLeads) {
+      const match = peopleFixture.find((p) => (p.person_id || p.id) === lead.personId);
+      if (match) {
+        const expectedRefs = match.document_references || [];
+        expect(lead.firDocuments).toEqual(expectedRefs.slice(0, 10));
+        expect(lead.firDocumentTotal).toBe(expectedRefs.length);
+        expect(lead.firDocuments.length).toBeLessThanOrEqual(10);
+      } else {
+        expect(lead.firDocuments).toEqual([]);
+        expect(lead.firDocumentTotal).toBe(0);
+      }
+    }
+  });
+
+  it("handles missing person or missing people list with empty firDocuments and total 0", () => {
+    const dossierWithoutPeople = buildDossier({
+      caseDetail: caseDetailFixture,
+      leads: leadsFixture,
+      graph: graphFixture,
+      user: dummyUser,
+      generatedAt: dummyTime,
+    });
+    for (const lead of dossierWithoutPeople.priorityLeads) {
+      expect(lead.firDocuments).toEqual([]);
+      expect(lead.firDocumentTotal).toBe(0);
+    }
+
+    const nonExistentPeople = [{ person_id: "PERSON:nonexistent", document_references: ["FIR_99"] }];
+    const dossierWithOtherPeople = buildDossier({
+      caseDetail: caseDetailFixture,
+      leads: leadsFixture,
+      graph: graphFixture,
+      people: nonExistentPeople,
+      user: dummyUser,
+      generatedAt: dummyTime,
+    });
+    for (const lead of dossierWithOtherPeople.priorityLeads) {
+      expect(lead.firDocuments).toEqual([]);
+      expect(lead.firDocumentTotal).toBe(0);
+    }
   });
 });

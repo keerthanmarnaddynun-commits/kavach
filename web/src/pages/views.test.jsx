@@ -324,6 +324,7 @@ describe("Render Smoke Tests (Repair 1)", () => {
       caseDetail: caseDetailFixture,
       leads: leadsFixture,
       graph: graphFixture,
+      people: peopleFixture,
       user: { username: "officer", role: "analyst" },
       generatedAt: "2026-11-23 10:00:00 UTC",
     });
@@ -332,6 +333,13 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).toContain("Priority Leads");
     expect(html).toContain("Certificate under Section 63(4)(c)");
     expect(html).toContain("Evidence Inventory &amp; Hashes");
+    expect(html).toContain("FIR documents naming this person");
+    expect(html).toContain("uploaded file name not recorded");
+    const hashSection = html.slice(html.indexOf("dossier-part-7"));
+    const endHashSection = hashSection.indexOf("dossier-section", 20);
+    const tableText = endHashSection > 0 ? hashSection.slice(0, endHashSection) : hashSection;
+    expect(tableText).not.toContain("cdr.csv");
+    expect(tableText).not.toContain("bank.csv");
   });
 
   it("renders DossierView for unanalyzed case showing limited sections", () => {

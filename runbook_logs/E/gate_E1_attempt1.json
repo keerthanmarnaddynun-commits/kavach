@@ -1,0 +1,59 @@
+{
+  "files": [
+    "docs/web/DOSSIER.md",
+    "web/src/lib/dossier.js",
+    "web/src/lib/dossier.test.js",
+    "web/src/pages/Dossier.jsx",
+    "web/src/pages/views.test.jsx"
+  ],
+  "fingerprint": "d8dd5de5988b2d450ed5bb518568731c6fad288642d953282ef084f5504e51d6",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 636, baseline 636, log E1_04_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: tests_test_frontend_static",
+      "detail": [
+        "exit 0, log E1_05_done_tests_test_frontend_static.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_build",
+      "detail": [
+        "exit 0, log E1_06_done_web_build.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: web_unit_tests",
+      "detail": [
+        "exit 0, log E1_07_done_web_unit_tests.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "E1",
+  "tests_passed": 636,
+  "time": "2026-11-23 13:03:43"
+}

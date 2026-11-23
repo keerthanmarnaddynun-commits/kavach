@@ -97,7 +97,7 @@ export function formatEvidenceRefs(evidence) {
  * Builds the complete dossier view model from raw API response shapes.
  * Pure function with no clock access, no network calls, and deterministic output.
  */
-export function buildDossier({ caseDetail, leads, graph, user, generatedAt } = {}) {
+export function buildDossier({ caseDetail, leads, graph, people, user, generatedAt } = {}) {
   const isCaseAnalyzed = Boolean(caseDetail?.case?.analyzed);
   const analyzed = Boolean(isCaseAnalyzed && leads);
 
@@ -160,10 +160,24 @@ export function buildDossier({ caseDetail, leads, graph, user, generatedAt } = {
 
   let priorityLeads = [];
   if (analyzed && leads && Array.isArray(leads.money_flow)) {
+    const peopleList = Array.isArray(people) ? people : [];
+    const peopleById = new Map();
+    for (const p of peopleList) {
+      const pid = p?.person_id || p?.id;
+      if (pid) {
+        peopleById.set(pid, p);
+      }
+    }
+
     const rawLeads = leads.money_flow.slice(0, 10);
     priorityLeads = rawLeads.map((item) => {
       const rawChips = leads.role_chips?.[item.person_id] || [];
       const chips = rawChips.map(chipLabel).filter(Boolean);
+      const person = peopleById.get(item.person_id);
+      const docRefs = Array.isArray(person?.document_references) ? person.document_references : [];
+      const firDocuments = docRefs.slice(0, 10);
+      const firDocumentTotal = docRefs.length;
+
       return {
         rank: item.rank,
         name: item.name,
@@ -174,6 +188,8 @@ export function buildDossier({ caseDetail, leads, graph, user, generatedAt } = {
         reasons: item.reasons || [],
         evidenceRefs: formatEvidenceRefs(item.evidence),
         evidence: item.evidence,
+        firDocuments,
+        firDocumentTotal,
       };
     });
   }
@@ -229,14 +245,14 @@ export function buildDossier({ caseDetail, leads, graph, user, generatedAt } = {
 
   const cdrFile = {
     name: "CDR",
-    fileName: "cdr.csv",
+    fileName: "uploaded file name not recorded",
     rows: caseDetail?.files?.cdr?.rows || 0,
     sha256: caseDetail?.files?.cdr?.sha256 || "",
   };
 
   const bankFile = {
     name: "Bank Transactions",
-    fileName: "bank.csv",
+    fileName: "uploaded file name not recorded",
     rows: caseDetail?.files?.bank?.rows || 0,
     sha256: caseDetail?.files?.bank?.sha256 || "",
   };

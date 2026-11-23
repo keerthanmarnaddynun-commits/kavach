@@ -12,9 +12,9 @@ The page consists of up to nine numbered sections rendered in sequential order:
 2. **Disclaimer**: The disclaimer string returned by the API leads endpoint rendered verbatim.
 3. **Case Facts**: Count of case documents, total CDR record rows, and total bank record rows.
 4. **Graph Summary**: Total nodes, total edges, schema version string, and a tabular breakdown of node counts per entity type (PERSON, PHONE, IMEI, ACCOUNT, VEHICLE) sorted alphabetically.
-5. **Priority Leads**: The top 10 leads ordered strictly by money flow from the server (never re-ordered). Each entry includes rank, name, person ID, money-flow score, controlled accounts, role chips, verbatim reasons, and plain-text evidence references (FIR document ID with character span, or CSV filename with sample rows and total count). Includes the note: "Ordered by money flow; structural scores are explanation only".
+5. **Priority Leads**: The top 10 leads ordered strictly by money flow from the server (never re-ordered). Each entry includes rank, name, person ID, money-flow score, controlled accounts, role chips, verbatim reasons, and plain-text evidence references (FIR documents naming this person: list of up to 10 document IDs with total count, or "none recorded", followed by accounts and paise flow). Includes the note: "Ordered by money flow; structural scores are explanation only".
 6. **Flagged Detector Leads**: Accounts and phones flagged by mule and burner detectors with `flagged: true`, displaying identifier, detector score, reasons, and evidence row references. When no items are flagged, displays "No flagged items."
-7. **Evidence Inventory & Hashes**: Hash table listing all case documents with raw upload SHA-256, stored text SHA-256, and character count; CDR file rows and SHA-256; bank transactions file rows and SHA-256; and the 64-character case fingerprint. All hashes are rendered in monospace with word wrapping. Includes explanation note regarding raw bytes and stored text hashes.
+7. **Evidence Inventory & Hashes**: Hash table listing all case documents with raw upload SHA-256, stored text SHA-256, and character count; CDR file rows and SHA-256; bank transactions file rows and SHA-256; and the 64-character case fingerprint. CDR and Bank rows display the label "uploaded file name not recorded" instead of fixed filenames. All hashes are rendered in monospace with word wrapping. Includes explanation note regarding raw bytes and stored text hashes.
 8. **System Limitations**: The verbatim limitations strings from the leads endpoint, supplemented by notes on typed text only (no OCR) and multi-entry name variations.
 9. **Certificate Block**: Draft template for Certificate under Section 63(4)(c) of the Bharatiya Sakshya Adhiniyam, 2023 (Part A) with signatory blanks represented by underscores, followed by the statement: "Part B (expert) is not completed by this system."
 
@@ -24,6 +24,7 @@ The page consumes existing backend endpoints without requiring specialized repor
 
 - `GET /api/cases/{case_id}`: Supplies case metadata, document lists with hashes, and CSV file statistics.
 - `GET /api/cases/{case_id}/leads`: Supplies money-flow priority leads, detector outputs, disclaimer, and case fingerprint.
+- `GET /api/cases/{case_id}/people`: Supplies entity records with document references naming each person.
 - `GET /api/cases/{case_id}/graph`: Supplies graph summary metrics and node elements for type counting.
 
 ## 4. How to Open and Save as PDF

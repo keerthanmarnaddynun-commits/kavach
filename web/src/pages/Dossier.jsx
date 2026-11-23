@@ -12,6 +12,7 @@ export function Dossier({ caseId, user }) {
   const [caseDetail, setCaseDetail] = useState(null);
   const [leads, setLeads] = useState(null);
   const [graph, setGraph] = useState(null);
+  const [people, setPeople] = useState(null);
   const [generatedAt, setGeneratedAt] = useState("");
 
   useEffect(() => {
@@ -33,12 +34,14 @@ export function Dossier({ caseId, user }) {
 
         if (detail?.case?.analyzed) {
           try {
-            const [leadsData, graphData] = await Promise.all([
+            const [leadsData, graphData, peopleData] = await Promise.all([
               request(`/cases/${caseId}/leads`),
               request(`/cases/${caseId}/graph`),
+              request(`/cases/${caseId}/people`),
             ]);
             setLeads(leadsData);
             setGraph(graphData);
+            setPeople(peopleData);
           } catch (analysisErr) {
             // Case marked analyzed but leads/graph request failed
             setErrorText(analysisErr.message || "Failed to load case analysis");
@@ -79,6 +82,7 @@ export function Dossier({ caseId, user }) {
     caseDetail,
     leads,
     graph,
+    people,
     user,
     generatedAt,
   });
@@ -278,13 +282,16 @@ export function DossierView({ dossier, onPrint }) {
                         ))}
                       </td>
                       <td style={{ verticalAlign: "top", fontSize: "11px" }}>
+                        <div style={{ marginBottom: lead.evidenceRefs && lead.evidenceRefs.length > 0 ? "4px" : "0" }}>
+                          {lead.firDocumentTotal > 0
+                            ? `FIR documents naming this person: ${lead.firDocuments.join(", ")} (${lead.firDocumentTotal} total)`
+                            : "FIR documents naming this person: none recorded"}
+                        </div>
                         {lead.evidenceRefs && lead.evidenceRefs.length > 0 ? (
                           lead.evidenceRefs.map((ref, idx) => (
                             <div key={idx} className="mono">{ref}</div>
                           ))
-                        ) : (
-                          <span style={{ color: "var(--muted)" }}>-</span>
-                        )}
+                        ) : null}
                       </td>
                     </tr>
                   ))}
