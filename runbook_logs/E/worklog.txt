@@ -14,3 +14,11 @@
 2026-11-23 12:58:27 [E1] RUN PY scripts/web_check.py build -> exit 0 (E1_03_web_build.txt)
 2026-11-23 12:59:01 [E1] Updated Dossier page loader to fetch /api/cases/{id}/people and pass people to buildDossier. Updated buildDossier to resolve FIR documents per priority lead up to 10 entries with total count, falling back to empty list and total 0. Displayed FIR documents in evidence column before accounts and paise flow. Corrected CDR and Bank file labels in hash table to 'uploaded file name not recorded'. Updated unit tests in dossier.test.js and views.test.jsx using real fixtures. Updated docs/web/DOSSIER.md. Executed E1_01_test_frontend_static.txt, E1_02_web_test.txt, and E1_03_web_build.txt.
 2026-11-23 13:03:43 [E1] GATE E1: PASS
+2026-11-23 13:19:54 [E1] COMMIT 9965e5b3b7 pushed=True
+2026-11-23 13:20:08 [E2] BEGIN: Chunk end: summary for the user and log bundle
+2026-11-23 13:26:34 [E2] RUN PY -m pytest -q --ignore=scratch -o faulthandler_timeout=900 -> exit 0 (E2_01_python_suite.txt)
+2026-11-23 13:27:05 [E2] RUN PY scripts/web_check.py build -> exit 0 (E2_02_web_build.txt)
+2026-11-23 13:27:25 [E2] RUN PY scripts/web_check.py test -> exit 0 (E2_03_web_test.txt)
+2026-11-23 13:27:37 [E2] RUN PY scripts/web_check.py size -> exit 0 (E2_04_web_size.txt)
+2026-11-23 13:29:08 [E2] Executed full python test suite (runbook_logs/E/raw/E2_01_python_suite.txt) with 636 passed, 1 skipped. Executed scripts/web_check.py build (E2_02_web_build.txt), test (E2_03_web_test.txt), and size (E2_04_web_size.txt). Authored runbook_logs/E/SUMMARY_FOR_USER.txt covering steps, test metrics, deviations, failures, and limitations.
+2026-11-23 13:35:11 [E2] GATE E2: PASS

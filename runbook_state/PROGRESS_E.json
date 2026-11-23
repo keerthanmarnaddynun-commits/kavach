@@ -14,6 +14,15 @@
     "E1": {
       "attempts": 0,
       "begin_head": "45aaa1bc56d95c9661761e0897448b5ee357af8a",
+      "commit": "9965e5b3b77d1ff980df6e4f7a8e310a6f63689f",
+      "done_at": "2026-11-23 13:19:54",
+      "pushed": true,
+      "status": "done",
+      "tests_passed": 636
+    },
+    "E2": {
+      "attempts": 0,
+      "begin_head": "9965e5b3b77d1ff980df6e4f7a8e310a6f63689f",
       "status": "gated",
       "tests_passed": 636
     }

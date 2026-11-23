@@ -1,0 +1,36 @@
+STEPS
+- Step E0: Added replace_with_retry in kavach_api/atomic.py to handle transient Windows file locking collisions (PermissionError [WinError 5]). Updated atomic replacement calls in kavach_api/jobs.py, kavach_api/storage.py, and kavach_api/security.py. Added new test suite tests/test_api_atomic.py covering retry on PermissionError, non-PermissionError propagation, temporary file cleanup, and concurrent read/write stress scenarios.
+- Step E1: Updated Dossier page loader (web/src/pages/Dossier.jsx) to fetch /api/cases/{id}/people. Updated buildDossier in web/src/lib/dossier.js to resolve FIR document references per priority lead (up to 10 document IDs with total count, or empty list with total 0). Updated evidence presentation in DossierView to list FIR documents naming each person before accounts and paise flow. Corrected CSV file labels in the hash table from fixed filenames cdr.csv and bank.csv to "uploaded file name not recorded". Updated unit tests in web/src/lib/dossier.test.js and web/src/pages/views.test.jsx with real fixtures. Updated docs/web/DOSSIER.md.
+- Step E2: Executed complete test suite validations across Python backend and web frontend, recorded metrics, and generated final summary.
+
+TEST COUNTS
+- Python test suite: 636 passed, 1 skipped, 1 warning in 339.69s (quoted from runbook_logs/E/raw/E2_01_python_suite.txt)
+- Atomic tests: 5 passed in 12.10s (quoted from runbook_logs/E/raw/E0_02_atomic_fixed.txt)
+- Jobs tests: 5 passed in 0.42s (quoted from runbook_logs/E/raw/E0_03_test_jobs.txt)
+- Settings storage tests: 11 passed in 1.48s (quoted from runbook_logs/E/raw/E0_04_test_storage.txt)
+- Security tests: 10 passed in 0.29s (quoted from runbook_logs/E/raw/E0_05_test_security.txt)
+- Frontend static check: 2 passed in 0.37s (quoted from runbook_logs/E/raw/E1_01_test_frontend_static.txt)
+- Web unit tests: TESTS OK in 8.1s (quoted from runbook_logs/E/raw/E2_03_web_test.txt)
+- Web build: BUILD OK in 8.5s (quoted from runbook_logs/E/raw/E2_02_web_build.txt)
+- Web bundle size: SIZE OK in 0.1s (quoted from runbook_logs/E/raw/E2_04_web_size.txt)
+
+DEVIATIONS
+- None. All implementations strictly adhered to step contracts and specifications in docs/runbook/chunk_E.md.
+
+FAILURES AND WHAT YOU DID
+- runbook_logs/E/raw/E0_01_atomic.txt: Test tests/test_api_atomic.py::test_jobstore_stress_concurrent_update_and_get failed with ValueError: Invalid job kind 'nlp', must be one of ['analyze', 'extract']. Changed kind parameter to 'analyze'. Re-ran suite in runbook_logs/E/raw/E0_02_atomic_fixed.txt where all 5 tests passed.
+- Historical failure from Step D2 recorded per E0 specification: In step D2, test tests/test_api_security_http.py::test_g5_concurrency_audit_duplicate_checks failed with PermissionError: [WinError 5] Access is denied in runbook_logs/D/raw/D2_01_python_suite.txt during os.replace; step D2 did not log this failure. Step E0 addressed the root cause by adding retry logic in kavach_api/atomic.py.
+- Commit push retry: The commit for step E0 completed locally (pushed=False); changes were successfully pushed to remote alongside step E1 commit (pushed=True).
+
+THINGS I COULD NOT CHECK
+- Behavior when file locking is held continuously beyond the 20-attempt (approx 0.20-second) retry window.
+- Physical print appearance on actual paper printers or non-Chromium browser print dialogs.
+
+LIMITS TO STATE
+- The lead evidence column lists documents and accounts, not text spans.
+- The retry fixes the observed Windows failure but a lock held longer than the retry window still fails.
+- Part B of the BSA 2023 Section 63(4)(c) certificate template is not completed by this system and requires completion by a forensic examiner.
+
+QUESTIONS FOR THE USER
+- Should the retry parameters (attempts=20, delay=0.01) for atomic replacements be configurable via runtime settings?
+- Should future iterations provide pagination or expandable views for cases where a person has more than 10 FIR document references?
