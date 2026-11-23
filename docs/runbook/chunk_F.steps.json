@@ -104,7 +104,8 @@
         "results/*"
       ],
       "allow_edit": [
-        "docs/RESULTS.md"
+        "docs/RESULTS.md",
+        "scripts/report/*"
       ],
       "done_when": [
         {
@@ -128,7 +129,8 @@
         "results/*"
       ],
       "allow_edit": [
-        "docs/RESULTS.md"
+        "docs/RESULTS.md",
+        "scripts/report/*"
       ],
       "done_when": [
         {
@@ -152,7 +154,8 @@
         "results/*"
       ],
       "allow_edit": [
-        "docs/RESULTS.md"
+        "docs/RESULTS.md",
+        "scripts/report/*"
       ],
       "done_when": [
         {
@@ -176,7 +179,8 @@
         "tests/test_results_docs_lint.py"
       ],
       "allow_edit": [
-        "docs/RESULTS_PART2.md"
+        "docs/RESULTS_PART2.md",
+        "scripts/report/*"
       ],
       "done_when": [
         {
