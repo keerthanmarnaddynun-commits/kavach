@@ -1,0 +1,220 @@
+{
+  "chunk": "D",
+  "branch": "phase-d-ag",
+  "global": {
+    "max_attempts": 2,
+    "test_command": [
+      "PY",
+      "-m",
+      "pytest",
+      "-q",
+      "--ignore=scratch",
+      "-o",
+      "faulthandler_timeout=900"
+    ],
+    "banned_all": [
+      "optimal",
+      "sweet spot",
+      "robust",
+      "decisively",
+      "catastrophic",
+      "proves",
+      "guarantees",
+      "perfect",
+      "excellent",
+      "state-of-the-art"
+    ],
+    "banned_docs": [
+      "verified",
+      "confirmed",
+      "audited"
+    ],
+    "scan_exclude": [
+      "docs/runbook/*",
+      "scripts/runbook/*",
+      "tests/test_runbook_step_tool.py",
+      "runbook_logs/*",
+      "runbook_state/*",
+      "web/package-lock.json"
+    ],
+    "forbidden_path_fragments": [
+      "C:\\Users",
+      "C:/Users",
+      "/home/",
+      "/Users/",
+      "Kirthan",
+      "kirthan"
+    ]
+  },
+  "steps": [
+    {
+      "id": "D0",
+      "title": "Dossier view model: pure functions and tests",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        },
+        {
+          "name": "dossier_lib",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; n=len(list(pathlib.Path('web/src').rglob('dossier.js'))); assert n>=1, 'dossier.js'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        },
+        {
+          "name": "dossier_test",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; n=len(list(pathlib.Path('web/src').rglob('dossier.test.js'))); assert n>=1, 'dossier.test.js'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook D0: dossier view model with tests from real fixtures"
+    },
+    {
+      "id": "D1",
+      "title": "Dossier page, route, navigation, print styles",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        },
+        {
+          "name": "dossier_page",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; n=len(list(pathlib.Path('web/src').rglob('Dossier*.jsx'))); assert n>=1, 'Dossier*.jsx'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook D1: dossier page with print styles and certificate Part A draft template"
+    },
+    {
+      "id": "D2",
+      "title": "Chunk end: dossier doc, summary for the user and log bundle",
+      "allow_create": [
+        "docs/web/*"
+      ],
+      "allow_edit": [
+        "docs/web/*"
+      ],
+      "done_when": [
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        },
+        {
+          "name": "web_size",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "size"
+          ],
+          "must_contain": "SIZE OK"
+        },
+        {
+          "name": "dossier_doc",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('docs/web/DOSSIER.md'); assert p.exists() and p.stat().st_size>=400, 'docs/web/DOSSIER.md'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        },
+        {
+          "name": "summary_written",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('runbook_logs/D/SUMMARY_FOR_USER.txt'); assert p.exists() and p.stat().st_size>=800, 'runbook_logs/D/SUMMARY_FOR_USER.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook D2: dossier doc, chunk D summary and bundle"
+    }
+  ]
+}
