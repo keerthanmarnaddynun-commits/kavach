@@ -1,0 +1,39 @@
+{
+  "files": [],
+  "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "ok": true,
+  "results": [
+    {
+      "check": "allow-list and no deletions",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "banned words / machine paths",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "python files compile",
+      "detail": [],
+      "ok": true
+    },
+    {
+      "check": "full test suite",
+      "detail": [
+        "exit 0, passed 640, baseline 640, log F5_02_gate_full_suite.txt"
+      ],
+      "ok": true
+    },
+    {
+      "check": "done_when: summary_written",
+      "detail": [
+        "exit 0, log F5_03_done_summary_written.txt"
+      ],
+      "ok": true
+    }
+  ],
+  "step": "F5",
+  "tests_passed": 640,
+  "time": "2026-11-24 00:04:05"
+}

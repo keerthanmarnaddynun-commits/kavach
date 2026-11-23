@@ -1,0 +1,4 @@
+COMMAND: PY -c import pathlib; p=pathlib.Path('runbook_logs/F/SUMMARY_FOR_USER.txt'); assert p.exists() and p.stat().st_size>=800, 'runbook_logs/F/SUMMARY_FOR_USER.txt'; print('file ok')
+EXIT: 0
+--- OUTPUT ---
+file ok
