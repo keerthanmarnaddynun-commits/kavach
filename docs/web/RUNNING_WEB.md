@@ -30,6 +30,15 @@ To load the pre-configured synthetic demo case into the active runtime:
 
 Stop any running backend API instance prior to running `load_demo_case.py` to prevent concurrent audit-log access.
 
+## 3b. Creating a User
+
+The login page needs an account. Create one before starting the backend (the script asks for the password, at least 10 characters):
+
+```powershell
+.\.venv311\Scripts\python.exe scripts/create_user.py --username <name> --role admin
+```
+
+Roles are viewer, analyst and admin. Uploads, analysis and break analysis need analyst or admin.
 ## 4. Starting the Frontend Development Server
 
 To launch the local Vite development server:
