@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_14",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_02",
+    "T_IMEI_HG_04",
+    "T_CALL_HG_02"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Devendra Yadav",
+      "surface": "Devendra Yadav",
+      "start": 214,
+      "end": 228,
+      "char_span": [
+        214,
+        228
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": [
+        "Chhota Raju"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_LT_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Chhota Raju",
+      "surface": "Chhota Raju",
+      "start": 233,
+      "end": 244,
+      "char_span": [
+        233,
+        244
+      ],
+      "role": null,
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Ramakant Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ramakant Yadav",
+      "surface": "Ramakant Yadav",
+      "start": 254,
+      "end": 268,
+      "char_span": [
+        254,
+        268
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Ramakant Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Devendra Yadav",
+      "surface": "Devendra Yadav",
+      "start": 320,
+      "end": 334,
+      "char_span": [
+        320,
+        334
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": [
+        "Chhota Raju"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "8255341928",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8255341928",
+      "surface": "8255341928",
+      "start": 376,
+      "end": 386,
+      "char_span": [
+        376,
+        386
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8255341928",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "8255341928",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8255341928",
+      "surface": "8255341928",
+      "start": 443,
+      "end": 453,
+      "char_span": [
+        443,
+        453
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8255341928",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "427648350305646",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "427648350305646",
+      "surface": "427648350305646",
+      "start": 469,
+      "end": 484,
+      "char_span": [
+        469,
+        484
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "427648350305646",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "OFFICER:Rajesh Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajesh Kumar",
+      "surface": "Rajesh Kumar",
+      "start": 515,
+      "end": 527,
+      "char_span": [
+        515,
+        527
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Rajesh Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "8255341928",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8255341928",
+      "surface": "8255341928",
+      "start": 646,
+      "end": 656,
+      "char_span": [
+        646,
+        656
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8255341928",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "6834738299",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6834738299",
+      "surface": "6834738299",
+      "start": 674,
+      "end": 684,
+      "char_span": [
+        674,
+        684
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6834738299",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_LT_01",
+      "target_key": "8255341928",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        312,
+        501
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8255341928",
+      "target_key": "427648350305646",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        312,
+        501
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "8255341928",
+      "target_key": "6834738299",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        601,
+        724
+      ]
+    }
+  ]
+}

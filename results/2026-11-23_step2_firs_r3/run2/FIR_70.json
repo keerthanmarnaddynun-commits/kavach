@@ -1,0 +1,213 @@
+{
+  "source_doc_id": "FIR_70",
+  "split": "dev",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXN_HG_03",
+    "T_CTRL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 203,
+      "end": 217,
+      "char_span": [
+        203,
+        217
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_KP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Raju Bhai",
+      "surface": "Raju Bhai",
+      "start": 222,
+      "end": 231,
+      "char_span": [
+        222,
+        231
+      ],
+      "role": null,
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Maheshwar Singh",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Maheshwar Singh",
+      "surface": "Maheshwar Singh",
+      "start": 241,
+      "end": 256,
+      "char_span": [
+        241,
+        256
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Maheshwar Singh",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "WITNESS:Mohan Lal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Lal",
+      "surface": "Mohan Lal",
+      "start": 315,
+      "end": 324,
+      "char_span": [
+        315,
+        324
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Mohan Lal",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 439,
+      "end": 453,
+      "char_span": [
+        439,
+        453
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    },
+    {
+      "id": "E6",
+      "entity_key": "AMOUNT:9776.11",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 9,776.11",
+      "surface": "INR 9,776.11",
+      "start": 464,
+      "end": 476,
+      "char_span": [
+        464,
+        476
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 9776.11,
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "88236910997872",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "88236910997872",
+      "surface": "88236910997872",
+      "start": 495,
+      "end": 509,
+      "char_span": [
+        495,
+        509
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "88236910997872",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "88236910997872",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "88236910997872",
+      "surface": "88236910997872",
+      "start": 551,
+      "end": 565,
+      "char_span": [
+        551,
+        565
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "88236910997872",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 579,
+      "end": 593,
+      "char_span": [
+        579,
+        593
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_A_KP_01",
+      "target_key": "88236910997872",
+      "source_mention": "E5",
+      "target_mention": "E7",
+      "source": "E5",
+      "target": "E7",
+      "amount": 9776.11,
+      "evidence_char_span": [
+        398,
+        625
+      ],
+      "txn_id": "TXN000792"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "88236910997872",
+      "source_mention": "E9",
+      "target_mention": "E8",
+      "source": "E9",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        398,
+        625
+      ]
+    }
+  ]
+}

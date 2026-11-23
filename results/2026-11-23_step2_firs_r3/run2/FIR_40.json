@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_40",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_03",
+    "T_IMEI_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_CR_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Pal",
+      "surface": "Suresh Pal",
+      "start": 203,
+      "end": 213,
+      "char_span": [
+        203,
+        213
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_CR_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Hawai",
+      "surface": "Hawai",
+      "start": 218,
+      "end": 223,
+      "char_span": [
+        218,
+        223
+      ],
+      "role": null,
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mohan Pal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Pal",
+      "surface": "Mohan Pal",
+      "start": 233,
+      "end": 242,
+      "char_span": [
+        233,
+        242
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mohan Pal",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Amit Tomar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Amit Tomar",
+      "surface": "Amit Tomar",
+      "start": 299,
+      "end": 309,
+      "char_span": [
+        299,
+        309
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Amit Tomar",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:15000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 15,000/-",
+      "surface": "Rs. 15,000/-",
+      "start": 434,
+      "end": 446,
+      "char_span": [
+        434,
+        446
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 15000.0,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_CR_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Pal",
+      "surface": "Suresh Pal",
+      "start": 543,
+      "end": 553,
+      "char_span": [
+        543,
+        553
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "8406409097",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-8406409097",
+      "surface": "+91-8406409097",
+      "start": 581,
+      "end": 595,
+      "char_span": [
+        581,
+        595
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8406409097",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "8406409097",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-8406409097",
+      "surface": "+91-8406409097",
+      "start": 644,
+      "end": 658,
+      "char_span": [
+        644,
+        658
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8406409097",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "539533942104704",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "539533942104704",
+      "surface": "539533942104704",
+      "start": 680,
+      "end": 695,
+      "char_span": [
+        680,
+        695
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "539533942104704",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_CR_02",
+      "target_key": "8406409097",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        508,
+        709
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8406409097",
+      "target_key": "539533942104704",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        508,
+        709
+      ]
+    }
+  ]
+}

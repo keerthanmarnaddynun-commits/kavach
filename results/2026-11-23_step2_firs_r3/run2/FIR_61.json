@@ -1,0 +1,389 @@
+{
+  "source_doc_id": "FIR_61",
+  "split": "dev",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_03",
+    "T_IMEI_HG_02",
+    "T_CALL_HG_04",
+    "T_TXN_HG_01",
+    "T_CTRL_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rashid Khan",
+      "surface": "Rashid Khan",
+      "start": 213,
+      "end": 224,
+      "char_span": [
+        213,
+        224
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": [
+        "Shooter"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_LT_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Shooter",
+      "surface": "Shooter",
+      "start": 229,
+      "end": 236,
+      "char_span": [
+        229,
+        236
+      ],
+      "role": null,
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Asif Khan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Asif Khan",
+      "surface": "Asif Khan",
+      "start": 246,
+      "end": 255,
+      "char_span": [
+        246,
+        255
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Asif Khan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rashid Khan",
+      "surface": "Rashid Khan",
+      "start": 333,
+      "end": 344,
+      "char_span": [
+        333,
+        344
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": [
+        "Shooter"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "9165726284",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-9165726284",
+      "surface": "+91-9165726284",
+      "start": 372,
+      "end": 386,
+      "char_span": [
+        372,
+        386
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9165726284",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "9165726284",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-9165726284",
+      "surface": "+91-9165726284",
+      "start": 418,
+      "end": 432,
+      "char_span": [
+        418,
+        432
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9165726284",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "977694531473790",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "977694531473790",
+      "surface": "977694531473790",
+      "start": 446,
+      "end": 461,
+      "char_span": [
+        446,
+        461
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "977694531473790",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_B_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rashid Khan",
+      "surface": "Rashid Khan",
+      "start": 541,
+      "end": 552,
+      "char_span": [
+        541,
+        552
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": [
+        "Shooter"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "AMOUNT:4212.87",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 4,212.87/-",
+      "surface": "Rs. 4,212.87/-",
+      "start": 560,
+      "end": 574,
+      "char_span": [
+        560,
+        574
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 4212.87,
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "71891355965727",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "71891355965727",
+      "surface": "71891355965727",
+      "start": 595,
+      "end": 609,
+      "char_span": [
+        595,
+        609
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "71891355965727",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "71891355965727",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "71891355965727",
+      "surface": "71891355965727",
+      "start": 654,
+      "end": 668,
+      "char_span": [
+        654,
+        668
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "71891355965727",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 686,
+      "end": 700,
+      "char_span": [
+        686,
+        700
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    },
+    {
+      "id": "E13",
+      "entity_key": "9165726284",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-9165726284",
+      "surface": "+91-9165726284",
+      "start": 777,
+      "end": 791,
+      "char_span": [
+        777,
+        791
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9165726284",
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "6531003309",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6531003309",
+      "surface": "6531003309",
+      "start": 801,
+      "end": 811,
+      "char_span": [
+        801,
+        811
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6531003309",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "OFFICER:Arvind Swaminathan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Arvind Swaminathan",
+      "surface": "Arvind Swaminathan",
+      "start": 860,
+      "end": 878,
+      "char_span": [
+        860,
+        878
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Arvind Swaminathan",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "AMOUNT:22000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 22,000.00",
+      "surface": "INR 22,000.00",
+      "start": 1003,
+      "end": 1016,
+      "char_span": [
+        1003,
+        1016
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 22000.0,
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_LT_02",
+      "target_key": "9165726284",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        298,
+        491
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9165726284",
+      "target_key": "977694531473790",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        298,
+        491
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_B_LT_02",
+      "target_key": "71891355965727",
+      "source_mention": "E8",
+      "target_mention": "E10",
+      "source": "E8",
+      "target": "E10",
+      "amount": 4212.87,
+      "evidence_char_span": [
+        492,
+        729
+      ],
+      "txn_id": "TXN000274"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_KP_01",
+      "target_key": "71891355965727",
+      "source_mention": "E12",
+      "target_mention": "E11",
+      "source": "E12",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        492,
+        729
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9165726284",
+      "target_key": "6531003309",
+      "source_mention": "E13",
+      "target_mention": "E14",
+      "source": "E13",
+      "target": "E14",
+      "amount": null,
+      "evidence_char_span": [
+        730,
+        846
+      ]
+    }
+  ]
+}

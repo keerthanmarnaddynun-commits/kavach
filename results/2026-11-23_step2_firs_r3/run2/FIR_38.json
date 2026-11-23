@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_38",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_04",
+    "T_IMEI_HG_01",
+    "T_CALL_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 220,
+      "end": 232,
+      "char_span": [
+        220,
+        232
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Kabira",
+      "surface": "Kabira",
+      "start": 237,
+      "end": 243,
+      "char_span": [
+        237,
+        243
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mustaq Sheikh",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mustaq Sheikh",
+      "surface": "Mustaq Sheikh",
+      "start": 253,
+      "end": 266,
+      "char_span": [
+        253,
+        266
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mustaq Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Rajesh Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajesh Kumar",
+      "surface": "Rajesh Kumar",
+      "start": 322,
+      "end": 334,
+      "char_span": [
+        322,
+        334
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Rajesh Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 434,
+      "end": 446,
+      "char_span": [
+        434,
+        446
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E6",
+      "entity_key": "7710947775",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "77109 47775",
+      "surface": "77109 47775",
+      "start": 484,
+      "end": 495,
+      "char_span": [
+        484,
+        495
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7710947775",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "7710947775",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "77109 47775",
+      "surface": "77109 47775",
+      "start": 527,
+      "end": 538,
+      "char_span": [
+        527,
+        538
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7710947775",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "304711671902299",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "304711671902299",
+      "surface": "304711671902299",
+      "start": 556,
+      "end": 571,
+      "char_span": [
+        556,
+        571
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "304711671902299",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "7710947775",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "77109 47775",
+      "surface": "77109 47775",
+      "start": 624,
+      "end": 635,
+      "char_span": [
+        624,
+        635
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7710947775",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7963605766",
+      "surface": "7963605766",
+      "start": 671,
+      "end": 681,
+      "char_span": [
+        671,
+        681
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_02",
+      "target_key": "7710947775",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        408,
+        587
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7710947775",
+      "target_key": "304711671902299",
+      "source_mention": "E7",
+      "target_mention": "E8",
+      "source": "E7",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        408,
+        587
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "7710947775",
+      "target_key": "7963605766",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        588,
+        696
+      ]
+    }
+  ]
+}

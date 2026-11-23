@@ -1,0 +1,2048 @@
+[
+  {
+    "doc_id": "FIR_01",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_01.txt",
+    "json_file": "FIR_01.json",
+    "char_length": 1268,
+    "sentence_count": 12,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_01",
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_02",
+      "T_CALL_HG_01",
+      "T_TXN_HG_01",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_02",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_02.txt",
+    "json_file": "FIR_02.json",
+    "char_length": 796,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_03"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_03",
+    "split": "train",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_03.txt",
+    "json_file": "FIR_03.json",
+    "char_length": 750,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_06"
+    ],
+    "template_ids": [
+      "T_TXNA_HG_03",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_04",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_04.txt",
+    "json_file": "FIR_04.json",
+    "char_length": 794,
+    "sentence_count": 8,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_LT_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_04",
+      "T_IMEI_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_05",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_05.txt",
+    "json_file": "FIR_05.json",
+    "char_length": 1393,
+    "sentence_count": 13,
+    "entities_count": 22,
+    "relationships_count": 7,
+    "suspect_ids": [
+      "PER_A_OP_02",
+      "PER_A_OP_03"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_01",
+      "T_TXN_HG_02",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_06",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_06.txt",
+    "json_file": "FIR_06.json",
+    "char_length": 572,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_06"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_07",
+    "split": "train",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_07.txt",
+    "json_file": "FIR_07.json",
+    "char_length": 1184,
+    "sentence_count": 10,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_KP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_01",
+      "T_CALL_HG_02",
+      "T_TXNA_HG_01",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_08",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_08.txt",
+    "json_file": "FIR_08.json",
+    "char_length": 830,
+    "sentence_count": 7,
+    "entities_count": 12,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_02",
+      "T_CALL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_09",
+    "split": "train",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_09.txt",
+    "json_file": "FIR_09.json",
+    "char_length": 713,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_05"
+    ],
+    "template_ids": [
+      "T_TXN_HG_02",
+      "T_CTRL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_10",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_10.txt",
+    "json_file": "FIR_10.json",
+    "char_length": 825,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_KP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_01",
+      "T_IMEI_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_11",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_11.txt",
+    "json_file": "FIR_11.json",
+    "char_length": 1279,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_01",
+      "PER_B_OP_03"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_01",
+      "T_TXNA_HG_03",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_12",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_12.txt",
+    "json_file": "FIR_12.json",
+    "char_length": 572,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_04"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_13",
+    "split": "train",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_13.txt",
+    "json_file": "FIR_13.json",
+    "char_length": 1189,
+    "sentence_count": 11,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_KP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_01",
+      "T_TXN_HG_01",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_14",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_14.txt",
+    "json_file": "FIR_14.json",
+    "char_length": 820,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_LT_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_15",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_15.txt",
+    "json_file": "FIR_15.json",
+    "char_length": 1303,
+    "sentence_count": 11,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_01",
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_04",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_04",
+      "T_TXNA_HG_04",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_16",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_16.txt",
+    "json_file": "FIR_16.json",
+    "char_length": 816,
+    "sentence_count": 8,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_05"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_01",
+      "T_IMEI_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_17",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_17.txt",
+    "json_file": "FIR_17.json",
+    "char_length": 1263,
+    "sentence_count": 12,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_01",
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_04",
+      "T_TXN_HG_02",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_18",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_18.txt",
+    "json_file": "FIR_18.json",
+    "char_length": 575,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_02"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_19",
+    "split": "train",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_19.txt",
+    "json_file": "FIR_19.json",
+    "char_length": 1178,
+    "sentence_count": 10,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_05"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_02",
+      "T_TXNA_HG_03",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_20",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_20.txt",
+    "json_file": "FIR_20.json",
+    "char_length": 794,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_CR_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_04",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_21",
+    "split": "train",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_21.txt",
+    "json_file": "FIR_21.json",
+    "char_length": 737,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_03"
+    ],
+    "template_ids": [
+      "T_TXN_HG_04",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_22",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_22.txt",
+    "json_file": "FIR_22.json",
+    "char_length": 807,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_03"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_23",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_23.txt",
+    "json_file": "FIR_23.json",
+    "char_length": 1244,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_06",
+      "PER_B_LT_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_01",
+      "T_CALL_HG_01",
+      "T_TXNA_HG_02",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_24",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_24.txt",
+    "json_file": "FIR_24.json",
+    "char_length": 571,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_LT_02"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_25",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_25.txt",
+    "json_file": "FIR_25.json",
+    "char_length": 1291,
+    "sentence_count": 12,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_01",
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_03",
+      "T_TXN_HG_01",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_26",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_26.txt",
+    "json_file": "FIR_26.json",
+    "char_length": 831,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_B_OP_06"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_27",
+    "split": "train",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_27.txt",
+    "json_file": "FIR_27.json",
+    "char_length": 751,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_KP_01"
+    ],
+    "template_ids": [
+      "T_TXNA_HG_01",
+      "T_CTRL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_28",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_28.txt",
+    "json_file": "FIR_28.json",
+    "char_length": 826,
+    "sentence_count": 8,
+    "entities_count": 11,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_29",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_29.txt",
+    "json_file": "FIR_29.json",
+    "char_length": 1256,
+    "sentence_count": 12,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_LT_01",
+      "PER_A_OP_06"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_01",
+      "T_CALL_HG_01",
+      "T_TXN_HG_03",
+      "T_CTRL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_30",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_30.txt",
+    "json_file": "FIR_30.json",
+    "char_length": 573,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_KP_01"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_31",
+    "split": "train",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_31.txt",
+    "json_file": "FIR_31.json",
+    "char_length": 1179,
+    "sentence_count": 10,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_02",
+      "T_CALL_HG_02",
+      "T_TXNA_HG_01",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_32",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_32.txt",
+    "json_file": "FIR_32.json",
+    "char_length": 811,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_B_OP_04"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_33",
+    "split": "train",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_33.txt",
+    "json_file": "FIR_33.json",
+    "char_length": 755,
+    "sentence_count": 7,
+    "entities_count": 11,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_01"
+    ],
+    "template_ids": [
+      "T_TXN_HG_03",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_34",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_34.txt",
+    "json_file": "FIR_34.json",
+    "char_length": 808,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_LT_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_35",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_35.txt",
+    "json_file": "FIR_35.json",
+    "char_length": 1248,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_02",
+      "PER_A_OP_04"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_01",
+      "T_TXNA_HG_01",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_36",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_36.txt",
+    "json_file": "FIR_36.json",
+    "char_length": 569,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_A_OP_05"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_37",
+    "split": "train",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_37.txt",
+    "json_file": "FIR_37.json",
+    "char_length": 1178,
+    "sentence_count": 11,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_05"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_01",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_03",
+      "T_TXN_HG_04",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_38",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_38.txt",
+    "json_file": "FIR_38.json",
+    "char_length": 791,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_B_OP_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_04",
+      "T_IMEI_HG_01",
+      "T_CALL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_39",
+    "split": "train",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_39.txt",
+    "json_file": "FIR_39.json",
+    "char_length": 724,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_OP_05"
+    ],
+    "template_ids": [
+      "T_TXNA_HG_04",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_40",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_40.txt",
+    "json_file": "FIR_40.json",
+    "char_length": 812,
+    "sentence_count": 8,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_CR_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_41",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hindi",
+    "txt_file": "FIR_41.txt",
+    "json_file": "FIR_41.json",
+    "char_length": 1170,
+    "sentence_count": 12,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_06",
+      "PER_A_OP_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_04",
+      "T_IMEI_HI_01",
+      "T_CALL_HI_04",
+      "T_TXN_HI_04",
+      "T_CTRL_HI_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_42",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hindi",
+    "txt_file": "FIR_42.txt",
+    "json_file": "FIR_42.json",
+    "char_length": 1171,
+    "sentence_count": 11,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_01",
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_04",
+      "T_IMEI_HI_01",
+      "T_CALL_HI_02",
+      "T_TXNA_HI_01",
+      "T_CTRL_HI_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_43",
+    "split": "train",
+    "fir_type": "FULL",
+    "language": "hindi",
+    "txt_file": "FIR_43.txt",
+    "json_file": "FIR_43.json",
+    "char_length": 1038,
+    "sentence_count": 10,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_04"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_03",
+      "T_IMEI_HI_02",
+      "T_CALL_HI_03",
+      "T_TXN_HI_04",
+      "T_CTRL_HI_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_44",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_44.txt",
+    "json_file": "FIR_44.json",
+    "char_length": 716,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_B_LT_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_02",
+      "T_IMEI_HI_02",
+      "T_CALL_HI_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_45",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hindi",
+    "txt_file": "FIR_45.txt",
+    "json_file": "FIR_45.json",
+    "char_length": 1312,
+    "sentence_count": 13,
+    "entities_count": 22,
+    "relationships_count": 7,
+    "suspect_ids": [
+      "PER_A_OP_02",
+      "PER_A_OP_03"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_04",
+      "T_IMEI_HI_04",
+      "T_CALL_HI_01",
+      "T_TXNA_HI_02",
+      "T_CTRL_HI_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_46",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_46.txt",
+    "json_file": "FIR_46.json",
+    "char_length": 734,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_OP_06"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_02",
+      "T_IMEI_HI_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_47",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hindi",
+    "txt_file": "FIR_47.txt",
+    "json_file": "FIR_47.json",
+    "char_length": 1155,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_05",
+      "PER_A_LT_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_04",
+      "T_IMEI_HI_02",
+      "T_CALL_HI_01",
+      "T_TXN_HI_04",
+      "T_CTRL_HI_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_48",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_48.txt",
+    "json_file": "FIR_48.json",
+    "char_length": 526,
+    "sentence_count": 5,
+    "entities_count": 6,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_A_OP_01"
+    ],
+    "template_ids": [
+      "T_ALREC_HI_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_49",
+    "split": "train",
+    "fir_type": "FULL",
+    "language": "hindi",
+    "txt_file": "FIR_49.txt",
+    "json_file": "FIR_49.json",
+    "char_length": 1083,
+    "sentence_count": 11,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_04"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_01",
+      "T_IMEI_HI_04",
+      "T_CALL_HI_01",
+      "T_TXNA_HI_01",
+      "T_CTRL_HI_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_50",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_50.txt",
+    "json_file": "FIR_50.json",
+    "char_length": 745,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_B_KP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_04",
+      "T_IMEI_HI_01",
+      "T_CALL_HI_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_51",
+    "split": "train",
+    "fir_type": "MONEY_ONLY",
+    "language": "english",
+    "txt_file": "FIR_51.txt",
+    "json_file": "FIR_51.json",
+    "char_length": 719,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_KP_01"
+    ],
+    "template_ids": [
+      "T_TXN_EN_03",
+      "T_CTRL_EN_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_52",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "english",
+    "txt_file": "FIR_52.txt",
+    "json_file": "FIR_52.json",
+    "char_length": 1240,
+    "sentence_count": 12,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_01",
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_01",
+      "T_IMEI_EN_02",
+      "T_CALL_EN_01",
+      "T_TXNA_EN_03",
+      "T_CTRL_EN_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_53",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "english",
+    "txt_file": "FIR_53.txt",
+    "json_file": "FIR_53.json",
+    "char_length": 1246,
+    "sentence_count": 12,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_04",
+      "PER_A_KP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_04",
+      "T_IMEI_EN_01",
+      "T_CALL_EN_04",
+      "T_TXN_EN_03",
+      "T_CTRL_EN_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_54",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "english",
+    "txt_file": "FIR_54.txt",
+    "json_file": "FIR_54.json",
+    "char_length": 565,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_A_LT_01"
+    ],
+    "template_ids": [
+      "T_ALREC_EN_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_55",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "english",
+    "txt_file": "FIR_55.txt",
+    "json_file": "FIR_55.json",
+    "char_length": 1351,
+    "sentence_count": 12,
+    "entities_count": 22,
+    "relationships_count": 7,
+    "suspect_ids": [
+      "PER_A_OP_02",
+      "PER_A_OP_03"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_03",
+      "T_IMEI_EN_01",
+      "T_CALL_EN_04",
+      "T_TXNA_EN_03",
+      "T_CTRL_EN_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_56",
+    "split": "train",
+    "fir_type": "CALLS_ONLY",
+    "language": "english",
+    "txt_file": "FIR_56.txt",
+    "json_file": "FIR_56.json",
+    "char_length": 768,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_05"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_01",
+      "T_IMEI_EN_02",
+      "T_CALL_EN_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_57",
+    "split": "train",
+    "fir_type": "MONEY_ONLY",
+    "language": "english",
+    "txt_file": "FIR_57.txt",
+    "json_file": "FIR_57.json",
+    "char_length": 669,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_CR_02"
+    ],
+    "template_ids": [
+      "T_TXN_EN_01",
+      "T_CTRL_EN_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_58",
+    "split": "train",
+    "fir_type": "DEVICE_ONLY",
+    "language": "english",
+    "txt_file": "FIR_58.txt",
+    "json_file": "FIR_58.json",
+    "char_length": 756,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_OP_02"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_04",
+      "T_IMEI_EN_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_59",
+    "split": "train",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "english",
+    "txt_file": "FIR_59.txt",
+    "json_file": "FIR_59.json",
+    "char_length": 1207,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_05",
+      "PER_CR_01"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_01",
+      "T_IMEI_EN_02",
+      "T_CALL_EN_03",
+      "T_TXNA_EN_01",
+      "T_CTRL_EN_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_60",
+    "split": "train",
+    "fir_type": "ALIAS_ONLY",
+    "language": "english",
+    "txt_file": "FIR_60.txt",
+    "json_file": "FIR_60.json",
+    "char_length": 551,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_CR_02"
+    ],
+    "template_ids": [
+      "T_ALREC_EN_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_61",
+    "split": "dev",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_61.txt",
+    "json_file": "FIR_61.json",
+    "char_length": 1177,
+    "sentence_count": 11,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_LT_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_02",
+      "T_CALL_HG_04",
+      "T_TXN_HG_01",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_62",
+    "split": "dev",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_62.txt",
+    "json_file": "FIR_62.json",
+    "char_length": 1277,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_03",
+      "PER_A_OP_05"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_04",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_01",
+      "T_TXNA_HG_01",
+      "T_CTRL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_63",
+    "split": "dev",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_63.txt",
+    "json_file": "FIR_63.json",
+    "char_length": 807,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_06"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_04",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_64",
+    "split": "dev",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_64.txt",
+    "json_file": "FIR_64.json",
+    "char_length": 717,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_LT_01"
+    ],
+    "template_ids": [
+      "T_TXN_HG_02",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_65",
+    "split": "dev",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_65.txt",
+    "json_file": "FIR_65.json",
+    "char_length": 1332,
+    "sentence_count": 12,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_01",
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_01",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_04",
+      "T_TXNA_HG_04",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_66",
+    "split": "dev",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_66.txt",
+    "json_file": "FIR_66.json",
+    "char_length": 563,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_06"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_67",
+    "split": "dev",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_67.txt",
+    "json_file": "FIR_67.json",
+    "char_length": 1139,
+    "sentence_count": 10,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_LT_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_02",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_03",
+      "T_TXN_HG_04",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_68",
+    "split": "dev",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_68.txt",
+    "json_file": "FIR_68.json",
+    "char_length": 1406,
+    "sentence_count": 13,
+    "entities_count": 22,
+    "relationships_count": 7,
+    "suspect_ids": [
+      "PER_A_OP_02",
+      "PER_A_OP_03"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_03",
+      "T_IMEI_HG_01",
+      "T_CALL_HG_01",
+      "T_TXNA_HG_02",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_69",
+    "split": "dev",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_69.txt",
+    "json_file": "FIR_69.json",
+    "char_length": 804,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_04"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_04",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_70",
+    "split": "dev",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_70.txt",
+    "json_file": "FIR_70.json",
+    "char_length": 728,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_KP_01"
+    ],
+    "template_ids": [
+      "T_TXN_HG_03",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_71",
+    "split": "dev",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_71.txt",
+    "json_file": "FIR_71.json",
+    "char_length": 796,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_04",
+      "T_IMEI_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_72",
+    "split": "dev",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_72.txt",
+    "json_file": "FIR_72.json",
+    "char_length": 563,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_04"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_73",
+    "split": "dev",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_73.txt",
+    "json_file": "FIR_73.json",
+    "char_length": 1192,
+    "sentence_count": 11,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_CR_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_01",
+      "T_IMEI_HG_01",
+      "T_CALL_HG_02",
+      "T_TXNA_HG_02",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_74",
+    "split": "dev",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hindi",
+    "txt_file": "FIR_74.txt",
+    "json_file": "FIR_74.json",
+    "char_length": 1177,
+    "sentence_count": 11,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_01",
+      "PER_A_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_03",
+      "T_IMEI_HI_03",
+      "T_CALL_HI_04",
+      "T_TXN_HI_04",
+      "T_CTRL_HI_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_75",
+    "split": "dev",
+    "fir_type": "CALLS_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_75.txt",
+    "json_file": "FIR_75.json",
+    "char_length": 718,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_04",
+      "T_IMEI_HI_03",
+      "T_CALL_HI_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_76",
+    "split": "dev",
+    "fir_type": "MONEY_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_76.txt",
+    "json_file": "FIR_76.json",
+    "char_length": 660,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_05"
+    ],
+    "template_ids": [
+      "T_TXNA_HI_04",
+      "T_CTRL_HI_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_77",
+    "split": "dev",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_77.txt",
+    "json_file": "FIR_77.json",
+    "char_length": 736,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_LT_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_03",
+      "T_IMEI_HI_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_78",
+    "split": "dev",
+    "fir_type": "ALIAS_ONLY",
+    "language": "english",
+    "txt_file": "FIR_78.txt",
+    "json_file": "FIR_78.json",
+    "char_length": 539,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_02"
+    ],
+    "template_ids": [
+      "T_ALREC_EN_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_79",
+    "split": "dev",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "english",
+    "txt_file": "FIR_79.txt",
+    "json_file": "FIR_79.json",
+    "char_length": 1202,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_06",
+      "PER_CR_01"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_04",
+      "T_IMEI_EN_01",
+      "T_CALL_EN_04",
+      "T_TXN_EN_01",
+      "T_CTRL_EN_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_80",
+    "split": "dev",
+    "fir_type": "ALIAS_ONLY",
+    "language": "english",
+    "txt_file": "FIR_80.txt",
+    "json_file": "FIR_80.json",
+    "char_length": 543,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_CR_02"
+    ],
+    "template_ids": [
+      "T_ALREC_EN_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_81",
+    "split": "test",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_81.txt",
+    "json_file": "FIR_81.json",
+    "char_length": 1163,
+    "sentence_count": 11,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_04"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_06",
+      "T_IMEI_HG_02",
+      "T_CALL_HG_06",
+      "T_TXN_HG_01",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_82",
+    "split": "test",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_82.txt",
+    "json_file": "FIR_82.json",
+    "char_length": 1309,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_03",
+      "PER_A_OP_05"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_06",
+      "T_IMEI_HG_04",
+      "T_CALL_HG_02",
+      "T_TXNA_HG_02",
+      "T_CTRL_HG_05"
+    ]
+  },
+  {
+    "doc_id": "FIR_83",
+    "split": "test",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_83.txt",
+    "json_file": "FIR_83.json",
+    "char_length": 815,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_06"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_05",
+      "T_IMEI_HG_02",
+      "T_CALL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_84",
+    "split": "test",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_84.txt",
+    "json_file": "FIR_84.json",
+    "char_length": 730,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_02"
+    ],
+    "template_ids": [
+      "T_TXN_HG_05",
+      "T_CTRL_HG_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_85",
+    "split": "test",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_85.txt",
+    "json_file": "FIR_85.json",
+    "char_length": 1315,
+    "sentence_count": 12,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_A_OP_01",
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_06",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_02",
+      "T_TXNA_HG_04",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_86",
+    "split": "test",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_86.txt",
+    "json_file": "FIR_86.json",
+    "char_length": 567,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_06"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_05"
+    ]
+  },
+  {
+    "doc_id": "FIR_87",
+    "split": "test",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_87.txt",
+    "json_file": "FIR_87.json",
+    "char_length": 1195,
+    "sentence_count": 10,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_05",
+      "T_IMEI_HG_06",
+      "T_CALL_HG_02",
+      "T_TXN_HG_05",
+      "T_CTRL_HG_03"
+    ]
+  },
+  {
+    "doc_id": "FIR_88",
+    "split": "test",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hinglish",
+    "txt_file": "FIR_88.txt",
+    "json_file": "FIR_88.json",
+    "char_length": 1435,
+    "sentence_count": 13,
+    "entities_count": 22,
+    "relationships_count": 7,
+    "suspect_ids": [
+      "PER_A_OP_02",
+      "PER_A_OP_03"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_06",
+      "T_IMEI_HG_03",
+      "T_CALL_HG_06",
+      "T_TXNA_HG_04",
+      "T_CTRL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_89",
+    "split": "test",
+    "fir_type": "CALLS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_89.txt",
+    "json_file": "FIR_89.json",
+    "char_length": 816,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_04"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_06",
+      "T_IMEI_HG_01",
+      "T_CALL_HG_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_90",
+    "split": "test",
+    "fir_type": "MONEY_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_90.txt",
+    "json_file": "FIR_90.json",
+    "char_length": 740,
+    "sentence_count": 6,
+    "entities_count": 11,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_01"
+    ],
+    "template_ids": [
+      "T_TXN_HG_05",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_91",
+    "split": "test",
+    "fir_type": "DEVICE_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_91.txt",
+    "json_file": "FIR_91.json",
+    "char_length": 831,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_05",
+      "T_IMEI_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_92",
+    "split": "test",
+    "fir_type": "ALIAS_ONLY",
+    "language": "hinglish",
+    "txt_file": "FIR_92.txt",
+    "json_file": "FIR_92.json",
+    "char_length": 569,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_04"
+    ],
+    "template_ids": [
+      "T_ALREC_HG_06"
+    ]
+  },
+  {
+    "doc_id": "FIR_93",
+    "split": "test",
+    "fir_type": "FULL",
+    "language": "hinglish",
+    "txt_file": "FIR_93.txt",
+    "json_file": "FIR_93.json",
+    "char_length": 1190,
+    "sentence_count": 11,
+    "entities_count": 16,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_CR_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HG_05",
+      "T_IMEI_HG_02",
+      "T_CALL_HG_05",
+      "T_TXNA_HG_02",
+      "T_CTRL_HG_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_94",
+    "split": "test",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "hindi",
+    "txt_file": "FIR_94.txt",
+    "json_file": "FIR_94.json",
+    "char_length": 1199,
+    "sentence_count": 11,
+    "entities_count": 21,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_OP_05",
+      "PER_A_OP_01"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_05",
+      "T_IMEI_HI_06",
+      "T_CALL_HI_03",
+      "T_TXN_HI_02",
+      "T_CTRL_HI_04"
+    ]
+  },
+  {
+    "doc_id": "FIR_95",
+    "split": "test",
+    "fir_type": "CALLS_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_95.txt",
+    "json_file": "FIR_95.json",
+    "char_length": 747,
+    "sentence_count": 7,
+    "entities_count": 10,
+    "relationships_count": 3,
+    "suspect_ids": [
+      "PER_A_OP_02"
+    ],
+    "template_ids": [
+      "T_OWNS_HI_05",
+      "T_IMEI_HI_04",
+      "T_CALL_HI_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_96",
+    "split": "test",
+    "fir_type": "MONEY_ONLY",
+    "language": "hindi",
+    "txt_file": "FIR_96.txt",
+    "json_file": "FIR_96.json",
+    "char_length": 658,
+    "sentence_count": 6,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_A_OP_05"
+    ],
+    "template_ids": [
+      "T_TXNA_HI_05",
+      "T_CTRL_HI_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_97",
+    "split": "test",
+    "fir_type": "DEVICE_ONLY",
+    "language": "english",
+    "txt_file": "FIR_97.txt",
+    "json_file": "FIR_97.json",
+    "char_length": 788,
+    "sentence_count": 7,
+    "entities_count": 9,
+    "relationships_count": 2,
+    "suspect_ids": [
+      "PER_B_LT_01"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_06",
+      "T_IMEI_EN_02"
+    ]
+  },
+  {
+    "doc_id": "FIR_98",
+    "split": "test",
+    "fir_type": "ALIAS_ONLY",
+    "language": "english",
+    "txt_file": "FIR_98.txt",
+    "json_file": "FIR_98.json",
+    "char_length": 569,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_B_OP_02"
+    ],
+    "template_ids": [
+      "T_ALREC_EN_06"
+    ]
+  },
+  {
+    "doc_id": "FIR_99",
+    "split": "test",
+    "fir_type": "MULTI_SUSPECT",
+    "language": "english",
+    "txt_file": "FIR_99.txt",
+    "json_file": "FIR_99.json",
+    "char_length": 1219,
+    "sentence_count": 11,
+    "entities_count": 19,
+    "relationships_count": 5,
+    "suspect_ids": [
+      "PER_B_LT_02",
+      "PER_CR_01"
+    ],
+    "template_ids": [
+      "T_OWNS_EN_05",
+      "T_IMEI_EN_06",
+      "T_CALL_EN_04",
+      "T_TXN_EN_05",
+      "T_CTRL_EN_01"
+    ]
+  },
+  {
+    "doc_id": "FIR_100",
+    "split": "test",
+    "fir_type": "ALIAS_ONLY",
+    "language": "english",
+    "txt_file": "FIR_100.txt",
+    "json_file": "FIR_100.json",
+    "char_length": 539,
+    "sentence_count": 5,
+    "entities_count": 4,
+    "relationships_count": 0,
+    "suspect_ids": [
+      "PER_CR_02"
+    ],
+    "template_ids": [
+      "T_ALREC_EN_06"
+    ]
+  }
+]

@@ -5,24 +5,24 @@
 
 ### Results Card
 - **Purpose**: Generation of synthetic criminal syndicate communication records, financial transaction ledgers, and reference ground truth metadata for benchmarking intelligence extraction pipelines.
-- **Exact Command**: `python data/synthetic/generate_case.py --seed 42 --days 30 --out results/2026-11-07_step1_synthetic_r3/run1`
-- **Exact Pytest Command**: `C:\Users\Kirthan\AppData\Local\Programs\Python\Python313\python.exe -m pytest -v tests/test_generate_case.py`
+- **Exact Command**: `python data/synthetic/generate_case.py --seed 42 --days 30 --out results/2026-11-23_step1_synthetic_r5/run1`
+- **Exact Pytest Command**: `python -m pytest -v tests/test_generate_case.py`
 - **Input Files**:
-- `data/synthetic/generate_case.py` (SHA-256: `1d08790ca5109fce8196106a3a5703eb4838664b6e594452113265df5cc47f8e`)
-- `tests/test_generate_case.py` (SHA-256: `e5e18539d55db30924546dc2b8859e6f9d1a9e95d3643760567139c432334e60`)
+  - `data/synthetic/generate_case.py` (SHA-256: `1d08790ca5109fce8196106a3a5703eb4838664b6e594452113265df5cc47f8e`)
+  - `tests/test_generate_case.py` (SHA-256: `e5e18539d55db30924546dc2b8859e6f9d1a9e95d3643760567139c432334e60`)
 - **Output Files (Run 1)**:
-- `run1/truth.json` (SHA-256: `0a9fe54a0f13801e1cf042fe198c8bbfca57a974ef039ea01df2ce681996aa99`)
-- `run1/cdr.csv` (SHA-256: `60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94`)
-- `run1/bank.csv` (SHA-256: `c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5`)
+  - `run1/truth.json` (SHA-256: `0a9fe54a0f13801e1cf042fe198c8bbfca57a974ef039ea01df2ce681996aa99`)
+  - `run1/cdr.csv` (SHA-256: `60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94`)
+  - `run1/bank.csv` (SHA-256: `c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5`)
 - **Key Numbers**:
-- `run1/cdr.csv`: 7483 rows (columns: `a_party`, `b_party`, `imei_a`, `imsi_a`, `start_time`, `duration_sec`, `call_type`, `tower_id`, `lat`, `lon`)
-- `run1/bank.csv`: 1489 rows (columns: `txn_id`, `datetime`, `from_acct`, `to_acct`, `amount`, `mode`, `ifsc`, `narration`)
-- `run1/truth.json`: 21 people (key: `people`), 50 phones (key: `phones`), 21 accounts (key: `accounts`), 49 IMEIs (key: `imeis`)
-- `run1/bank.csv` account lengths: `from_acct` counts by digit length: 11 digits: 386, 12 digits: 281, 14 digits: 499, 16 digits: 323; `to_acct` counts by digit length: 11 digits: 352, 12 digits: 323, 14 digits: 491, 16 digits: 323
-- `run1/bank.csv` rows whose ifsc does not match `^[A-Z]{4}0[A-Z0-9]{6}$`: 0
-- `run1/bank.csv` rows whose to_acct is in truth.json and whose ifsc differs from that account's ifsc: 0
-- `run1/bank.csv` rows whose to_acct is not in truth.json: 942
-- Account numbers (truth.json and bank.csv) that equal any phone number or IMEI value: 0
+  - `run1/cdr.csv`: 7483 rows (columns: `a_party`, `b_party`, `imei_a`, `imsi_a`, `start_time`, `duration_sec`, `call_type`, `tower_id`, `lat`, `lon`)
+  - `run1/bank.csv`: 1489 rows (columns: `txn_id`, `datetime`, `from_acct`, `to_acct`, `amount`, `mode`, `ifsc`, `narration`)
+  - `run1/truth.json`: 21 people (key: `people`), 50 phones (key: `phones`), 21 accounts (key: `accounts`), 49 IMEIs (key: `imeis`)
+  - `run1/bank.csv` account lengths: `from_acct` counts by digit length: 11 digits: 386, 12 digits: 281, 14 digits: 499, 16 digits: 323; `to_acct` counts by digit length: 11 digits: 352, 12 digits: 323, 14 digits: 491, 16 digits: 323
+  - `run1/bank.csv` rows whose ifsc does not match `^[A-Z]{4}0[A-Z0-9]{6}$`: 0
+  - `run1/bank.csv` rows whose to_acct is in truth.json and whose ifsc differs from that account's ifsc: 0
+  - `run1/bank.csv` rows whose to_acct is not in truth.json: 942
+  - Account numbers (truth.json and bank.csv) that equal any phone number or IMEI value: 0
 
 ### Tables
 
@@ -115,7 +115,7 @@
 - data is synthetic
 - fixed 2-gang structure
 - The call-count ranks of the pizza shop and the kingpins are set by the generator's design, not discovered from the data.
-- runs used Python 3.13.7
+- runs used Python 3.11.9
 
 ### What This Does Not Show
 - Detection performance: These results show only that the generator produces the designed structure. They do not show that any extraction or analysis method works on it.
@@ -130,8 +130,8 @@
 
 ### Results Card
 - **Purpose**: Generation of synthetic First Information Report (FIR) narrative texts across multiple languages and investigation typologies, paired with exact span annotations and relational answer keys for intelligence extraction benchmarking.
-- **Exact Command**: `python data/synthetic/generate_firs.py --case-dir data/synthetic/out/case_demo_v2 --seed 42 --count 100 --out results/2026-11-07_step2_firs_r2/run1`
-- **Exact Pytest Command**: `C:\Users\Kirthan\AppData\Local\Programs\Python\Python313\python.exe -m pytest -v tests/test_generate_firs.py`
+- **Exact Command**: `python data/synthetic/generate_firs.py --case-dir data/synthetic/out/case_demo_v2 --seed 42 --count 100 --out results/2026-11-23_step2_firs_r3/run1`
+- **Exact Pytest Command**: `python -m pytest -v tests/test_generate_firs.py`
 - **Input Files**:
   - `data/synthetic/generate_firs.py` (SHA-256: `7957cfb5674c62da8826f98d7203fa9a890447fbeff42344b5123ec9495735d2`)
   - `tests/test_generate_firs.py` (SHA-256: `5680a51b5f730028fb132153c011bd488e0145bc61d7a4edfb4e4fc51758967f`)
@@ -146,7 +146,7 @@
   - `run1/` answer keys: 1235 total entity mentions (keys: `id`, `entity_key`, `label`, `text`, `char_span`, `role`)
   - `run1/` answer keys: 54 total financial transfers (keys: `type`, `source_key`, `target_key`, `source_mention`, `target_mention`, `amount`)
   - `run1/texts`: 100 documents containing BNS and 0 containing IPC
-- **Environment**: Python 3.13.7
+- **Environment**: Python 3.11.9
 
 ### Tables
 
@@ -164,7 +164,7 @@
 
 #### Table 3: Corpus Partition and Typology Distribution
 | Partition Split | Total FIRs | Hinglish | Hindi | English | FULL | CALLS_ONLY | MONEY_ONLY | DEVICE_ONLY | MULTI_SUSPECT | ALIAS_ONLY |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `train` | 60 | 40 | 10 | 10 | 7 | 10 | 8 | 9 | 17 | 9 |
 | `dev` | 20 | 13 | 4 | 3 | 3 | 3 | 3 | 2 | 5 | 4 |
 | `test` | 20 | 13 | 3 | 4 | 3 | 3 | 3 | 2 | 5 | 4 |
@@ -179,7 +179,7 @@
 
 #### Table 5: Entity Mention Counts by Classification Type
 | Partition Split | PERSON | ALIAS | PHONE | IMEI | ACCOUNT | AMOUNT | Total Mentions |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `train` | 308 | 95 | 157 | 46 | 80 | 65 | 751 |
 | `dev` | 101 | 29 | 49 | 14 | 27 | 21 | 241 |
 | `test` | 101 | 31 | 49 | 14 | 27 | 21 | 243 |
@@ -252,8 +252,8 @@
 | :--- | :--- | :--- |
 | 1 | 14 | Police Station Special Staff ke tahat FIR No.201/2026 u/s 318(4)/61(2) BNS ke antargat mukadma darj kiya gaya |
 | 2 | 14 | Zabt shuda material ko sealed pullanda mein safe custody hetu police malkhana mein jamah kiya gaya |
-| 3 | 13 | Baramad shuda sabooton ko seal-bandh karke aage ki legal proceeding ke liye safe store kiya gaya |
-| 4 | 13 | Crime branch investigation unit dwara ukt FIR No.302/2026 u/s 318(4)/61(2) BNS ke tahat prathmiki register hui |
+| 3 | 13 | Crime branch investigation unit dwara ukt FIR No.302/2026 u/s 318(4)/61(2) BNS ke tahat prathmiki register hui |
+| 4 | 13 | Baramad shuda sabooton ko seal-bandh karke aage ki legal proceeding ke liye safe store kiya gaya |
 | 5 | 13 | Maukai baramadgi ke tamam items ko proper seizure memo ke sath police custody mein rakha gaya |
 
 #### Table 13: Statutory Terminology Incidence

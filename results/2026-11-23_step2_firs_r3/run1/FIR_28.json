@@ -1,0 +1,250 @@
+{
+  "source_doc_id": "FIR_28",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_03",
+    "T_IMEI_HG_02"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Vikas Sharma",
+      "surface": "Vikas Sharma",
+      "start": 220,
+      "end": 232,
+      "char_span": [
+        220,
+        232
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": [
+        "Bicky",
+        "Viku",
+        "Kallu"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Bicky",
+      "surface": "Bicky",
+      "start": 237,
+      "end": 242,
+      "char_span": [
+        237,
+        242
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Viku",
+      "surface": "Viku",
+      "start": 245,
+      "end": 249,
+      "char_span": [
+        245,
+        249
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Kallu",
+      "surface": "Kallu",
+      "start": 252,
+      "end": 257,
+      "char_span": [
+        252,
+        257
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "FATHER:Harish Sharma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Harish Sharma",
+      "surface": "Harish Sharma",
+      "start": 267,
+      "end": 280,
+      "char_span": [
+        267,
+        280
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Harish Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "OFFICER:Amit Tomar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Amit Tomar",
+      "surface": "Amit Tomar",
+      "start": 336,
+      "end": 346,
+      "char_span": [
+        336,
+        346
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Amit Tomar",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "AMOUNT:22000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 22,000/-",
+      "surface": "Rs. 22,000/-",
+      "start": 471,
+      "end": 483,
+      "char_span": [
+        471,
+        483
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 22000.0,
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_A_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Vikas Sharma",
+      "surface": "Vikas Sharma",
+      "start": 580,
+      "end": 592,
+      "char_span": [
+        580,
+        592
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_01",
+      "value": "Vikas Sharma",
+      "aliases": [
+        "Bicky",
+        "Viku",
+        "Kallu"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "6834738299",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6834738299",
+      "surface": "6834738299",
+      "start": 620,
+      "end": 630,
+      "char_span": [
+        620,
+        630
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6834738299",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "6834738299",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6834738299",
+      "surface": "6834738299",
+      "start": 662,
+      "end": 672,
+      "char_span": [
+        662,
+        672
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6834738299",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "837631165667016",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "837631165667016",
+      "surface": "837631165667016",
+      "start": 686,
+      "end": 701,
+      "char_span": [
+        686,
+        701
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "837631165667016",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_01",
+      "target_key": "6834738299",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        545,
+        731
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "6834738299",
+      "target_key": "837631165667016",
+      "source_mention": "E10",
+      "target_mention": "E11",
+      "source": "E10",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        545,
+        731
+      ]
+    }
+  ]
+}

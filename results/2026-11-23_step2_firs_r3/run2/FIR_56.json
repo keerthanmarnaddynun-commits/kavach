@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_56",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_EN_01",
+    "T_IMEI_EN_02",
+    "T_CALL_EN_04"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Deepak Chauhan",
+      "surface": "Deepak Chauhan",
+      "start": 207,
+      "end": 221,
+      "char_span": [
+        207,
+        221
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "Deepu"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Deepu",
+      "surface": "Deepu",
+      "start": 228,
+      "end": 233,
+      "char_span": [
+        228,
+        233
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Sardar Chauhan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sardar Chauhan",
+      "surface": "Sardar Chauhan",
+      "start": 243,
+      "end": 257,
+      "char_span": [
+        243,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Sardar Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "COMPLAINANT:Pawan Verma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pawan Verma",
+      "surface": "Pawan Verma",
+      "start": 296,
+      "end": 307,
+      "char_span": [
+        296,
+        307
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Pawan Verma",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Deepak Chauhan",
+      "surface": "Deepak Chauhan",
+      "start": 399,
+      "end": 413,
+      "char_span": [
+        399,
+        413
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "Deepu"
+      ]
+    },
+    {
+      "id": "E6",
+      "entity_key": "8414586850",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8414586850",
+      "surface": "8414586850",
+      "start": 456,
+      "end": 466,
+      "char_span": [
+        456,
+        466
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8414586850",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "8414586850",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8414586850",
+      "surface": "8414586850",
+      "start": 490,
+      "end": 500,
+      "char_span": [
+        490,
+        500
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8414586850",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "242940196556984",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "242940196556984",
+      "surface": "242940196556984",
+      "start": 541,
+      "end": 556,
+      "char_span": [
+        541,
+        556
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "242940196556984",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "8414586850",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8414586850",
+      "surface": "8414586850",
+      "start": 643,
+      "end": 653,
+      "char_span": [
+        643,
+        653
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8414586850",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6112805982",
+      "surface": "6112805982",
+      "start": 658,
+      "end": 668,
+      "char_span": [
+        658,
+        668
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_05",
+      "target_key": "8414586850",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        369,
+        557
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8414586850",
+      "target_key": "242940196556984",
+      "source_mention": "E7",
+      "target_mention": "E8",
+      "source": "E7",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        369,
+        557
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "8414586850",
+      "target_key": "6112805982",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        558,
+        669
+      ]
+    }
+  ]
+}

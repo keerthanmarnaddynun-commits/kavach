@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_36",
+  "split": "train",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Deepak Chauhan",
+      "surface": "Deepak Chauhan",
+      "start": 213,
+      "end": 227,
+      "char_span": [
+        213,
+        227
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "Deepu"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Deepu",
+      "surface": "Deepu",
+      "start": 232,
+      "end": 237,
+      "char_span": [
+        232,
+        237
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Sardar Chauhan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sardar Chauhan",
+      "surface": "Sardar Chauhan",
+      "start": 247,
+      "end": 261,
+      "char_span": [
+        247,
+        261
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Sardar Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "WITNESS:Rameshwar Dayal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rameshwar Dayal",
+      "surface": "Rameshwar Dayal",
+      "start": 381,
+      "end": 396,
+      "char_span": [
+        381,
+        396
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Rameshwar Dayal",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}

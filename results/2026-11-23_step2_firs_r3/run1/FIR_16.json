@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_16",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_01",
+    "T_IMEI_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Deepak Chauhan",
+      "surface": "Deepak Chauhan",
+      "start": 213,
+      "end": 227,
+      "char_span": [
+        213,
+        227
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "Deepu"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Deepu",
+      "surface": "Deepu",
+      "start": 232,
+      "end": 237,
+      "char_span": [
+        232,
+        237
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Sardar Chauhan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sardar Chauhan",
+      "surface": "Sardar Chauhan",
+      "start": 247,
+      "end": 261,
+      "char_span": [
+        247,
+        261
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Sardar Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "AMOUNT:22000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 22,000/-",
+      "surface": "Rs. 22,000/-",
+      "start": 355,
+      "end": 367,
+      "char_span": [
+        355,
+        367
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 22000.0,
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "OFFICER:Amit Tomar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Amit Tomar",
+      "surface": "Amit Tomar",
+      "start": 442,
+      "end": 452,
+      "char_span": [
+        442,
+        452
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Amit Tomar",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Deepak Chauhan",
+      "surface": "Deepak Chauhan",
+      "start": 561,
+      "end": 575,
+      "char_span": [
+        561,
+        575
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "Deepu"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "8414586850",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8414586850",
+      "surface": "8414586850",
+      "start": 608,
+      "end": 618,
+      "char_span": [
+        608,
+        618
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8414586850",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "8414586850",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8414586850",
+      "surface": "8414586850",
+      "start": 657,
+      "end": 667,
+      "char_span": [
+        657,
+        667
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8414586850",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "242940196556984",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "242940196556984",
+      "surface": "242940196556984",
+      "start": 685,
+      "end": 700,
+      "char_span": [
+        685,
+        700
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "242940196556984",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_05",
+      "target_key": "8414586850",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        526,
+        716
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8414586850",
+      "target_key": "242940196556984",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        526,
+        716
+      ]
+    }
+  ]
+}

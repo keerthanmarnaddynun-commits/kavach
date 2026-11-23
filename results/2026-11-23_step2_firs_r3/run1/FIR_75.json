@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_75",
+  "split": "dev",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HI_04",
+    "T_IMEI_HI_03",
+    "T_CALL_HI_03"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "आनंद वर्मा",
+      "surface": "आनंद वर्मा",
+      "start": 187,
+      "end": 197,
+      "char_span": [
+        187,
+        197
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": [
+        "एंडी"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "एंडी",
+      "surface": "एंडी",
+      "start": 203,
+      "end": 207,
+      "char_span": [
+        203,
+        207
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Shyam Verma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "श्याम वर्मा",
+      "surface": "श्याम वर्मा",
+      "start": 219,
+      "end": 230,
+      "char_span": [
+        219,
+        230
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Shyam Verma",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Vikram Rathore",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "विक्रम राठौड़",
+      "surface": "विक्रम राठौड़",
+      "start": 286,
+      "end": 299,
+      "char_span": [
+        286,
+        299
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Vikram Rathore",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "6647468723",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-6647468723",
+      "surface": "+91-6647468723",
+      "start": 382,
+      "end": 396,
+      "char_span": [
+        382,
+        396
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6647468723",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7081219136",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7081219136",
+      "surface": "7081219136",
+      "start": 411,
+      "end": 421,
+      "char_span": [
+        411,
+        421
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7081219136",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "PER_A_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "आनंद वर्मा",
+      "surface": "आनंद वर्मा",
+      "start": 469,
+      "end": 479,
+      "char_span": [
+        469,
+        479
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": [
+        "एंडी"
+      ]
+    },
+    {
+      "id": "E8",
+      "entity_key": "6647468723",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-6647468723",
+      "surface": "+91-6647468723",
+      "start": 505,
+      "end": 519,
+      "char_span": [
+        505,
+        519
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6647468723",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "6647468723",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-6647468723",
+      "surface": "+91-6647468723",
+      "start": 572,
+      "end": 586,
+      "char_span": [
+        572,
+        586
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6647468723",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "204332181960015",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "204332181960015",
+      "surface": "204332181960015",
+      "start": 604,
+      "end": 619,
+      "char_span": [
+        604,
+        619
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "204332181960015",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "6647468723",
+      "target_key": "7081219136",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        352,
+        439
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_02",
+      "target_key": "6647468723",
+      "source_mention": "E7",
+      "target_mention": "E8",
+      "source": "E7",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        440,
+        629
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "6647468723",
+      "target_key": "204332181960015",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        440,
+        629
+      ]
+    }
+  ]
+}

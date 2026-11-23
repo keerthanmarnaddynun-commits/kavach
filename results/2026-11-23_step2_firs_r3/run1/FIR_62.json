@@ -1,0 +1,443 @@
+{
+  "source_doc_id": "FIR_62",
+  "split": "dev",
+  "fir_type": "MULTI_SUSPECT",
+  "template_ids": [
+    "T_OWNS_HG_04",
+    "T_IMEI_HG_04",
+    "T_CALL_HG_01",
+    "T_TXNA_HG_01",
+    "T_CTRL_HG_02"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 214,
+      "end": 227,
+      "char_span": [
+        214,
+        227
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_03",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Pandit",
+      "surface": "Pandit",
+      "start": 232,
+      "end": 238,
+      "char_span": [
+        232,
+        238
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Madan Tiwari",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Madan Tiwari",
+      "surface": "Madan Tiwari",
+      "start": 248,
+      "end": 260,
+      "char_span": [
+        248,
+        260
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Madan Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 329,
+      "end": 342,
+      "char_span": [
+        329,
+        342
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 380,
+      "end": 390,
+      "char_span": [
+        380,
+        390
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 438,
+      "end": 448,
+      "char_span": [
+        438,
+        448
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "204332181960015",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "204332181960015",
+      "surface": "204332181960015",
+      "start": 464,
+      "end": 479,
+      "char_span": [
+        464,
+        479
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "204332181960015",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "OFFICER:Rajesh Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajesh Kumar",
+      "surface": "Rajesh Kumar",
+      "start": 510,
+      "end": 522,
+      "char_span": [
+        510,
+        522
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Rajesh Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "65581800660567",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "65581800660567",
+      "surface": "65581800660567",
+      "start": 654,
+      "end": 668,
+      "char_span": [
+        654,
+        668
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "65581800660567",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "AMOUNT:4559.62",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 4,559.62",
+      "surface": "INR 4,559.62",
+      "start": 676,
+      "end": 688,
+      "char_span": [
+        676,
+        688
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 4559.62,
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "23472096738",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "23472096738",
+      "surface": "23472096738",
+      "start": 709,
+      "end": 720,
+      "char_span": [
+        709,
+        720
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "23472096738",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "23472096738",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "23472096738",
+      "surface": "23472096738",
+      "start": 766,
+      "end": 777,
+      "char_span": [
+        766,
+        777
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "23472096738",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 806,
+      "end": 820,
+      "char_span": [
+        806,
+        820
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    },
+    {
+      "id": "E14",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Deepak Chauhan",
+      "surface": "Deepak Chauhan",
+      "start": 856,
+      "end": 870,
+      "char_span": [
+        856,
+        870
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "Deepu"
+      ]
+    },
+    {
+      "id": "E15",
+      "entity_key": "PER_A_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Deepu",
+      "surface": "Deepu",
+      "start": 875,
+      "end": 880,
+      "char_span": [
+        875,
+        880
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "FATHER:Sardar Chauhan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sardar Chauhan",
+      "surface": "Sardar Chauhan",
+      "start": 890,
+      "end": 904,
+      "char_span": [
+        890,
+        904
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Sardar Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E17",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 991,
+      "end": 1001,
+      "char_span": [
+        991,
+        1001
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E18",
+      "entity_key": "6604817549",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6604817549",
+      "surface": "6604817549",
+      "start": 1019,
+      "end": 1029,
+      "char_span": [
+        1019,
+        1029
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6604817549",
+      "aliases": []
+    },
+    {
+      "id": "E19",
+      "entity_key": "AMOUNT:200000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "2 lakh",
+      "surface": "2 lakh",
+      "start": 1112,
+      "end": 1118,
+      "char_span": [
+        1112,
+        1118
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 200000.0,
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_03",
+      "target_key": "8980841241",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        303,
+        496
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8980841241",
+      "target_key": "204332181960015",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        303,
+        496
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "65581800660567",
+      "target_key": "23472096738",
+      "source_mention": "E9",
+      "target_mention": "E11",
+      "source": "E9",
+      "target": "E11",
+      "amount": 4559.62,
+      "evidence_char_span": [
+        596,
+        834
+      ],
+      "txn_id": "TXN000921"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "23472096738",
+      "source_mention": "E13",
+      "target_mention": "E12",
+      "source": "E13",
+      "target": "E12",
+      "amount": null,
+      "evidence_char_span": [
+        596,
+        834
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "8980841241",
+      "target_key": "6604817549",
+      "source_mention": "E17",
+      "target_mention": "E18",
+      "source": "E17",
+      "target": "E18",
+      "amount": null,
+      "evidence_char_span": [
+        955,
+        1060
+      ]
+    }
+  ]
+}

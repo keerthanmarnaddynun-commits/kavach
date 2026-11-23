@@ -501,11 +501,11 @@ def build_markdown_section(
     if banned_hits:
         raise ValueError(f"Banned words detected in generated section: {set(banned_hits)}")
 
-    # Check that every bullet line starts with "- " (dash plus exactly one space)
+    # Check that every bullet line starts with "- " or "  - "
     for line in section.splitlines():
         if line.strip().startswith("-"):
-            if not line.startswith("- "):
-                raise ValueError(f"Bullet line does not start with '- ': {line!r}")
+            if not (line.startswith("- ") or line.startswith("  - ")):
+                raise ValueError(f"Bullet line does not start with '- ' or '  - ': {line!r}")
 
     return section
 

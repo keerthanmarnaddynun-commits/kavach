@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_10",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_01",
+    "T_IMEI_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 203,
+      "end": 217,
+      "char_span": [
+        203,
+        217
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_KP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Bade Miyan",
+      "surface": "Bade Miyan",
+      "start": 222,
+      "end": 232,
+      "char_span": [
+        222,
+        232
+      ],
+      "role": null,
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Iqbal Ansari",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Iqbal Ansari",
+      "surface": "Iqbal Ansari",
+      "start": 242,
+      "end": 254,
+      "char_span": [
+        242,
+        254
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Iqbal Ansari",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 333,
+      "end": 347,
+      "char_span": [
+        333,
+        347
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "9277434873",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "92774 34873",
+      "surface": "92774 34873",
+      "start": 380,
+      "end": 391,
+      "char_span": [
+        380,
+        391
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9277434873",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "9277434873",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "92774 34873",
+      "surface": "92774 34873",
+      "start": 446,
+      "end": 457,
+      "char_span": [
+        446,
+        457
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9277434873",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "571434558122362",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "571434558122362",
+      "surface": "571434558122362",
+      "start": 473,
+      "end": 488,
+      "char_span": [
+        473,
+        488
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "571434558122362",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "AMOUNT:500000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "5 lakh",
+      "surface": "5 lakh",
+      "start": 557,
+      "end": 563,
+      "char_span": [
+        557,
+        563
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 500000.0,
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "WITNESS:Mohan Lal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Lal",
+      "surface": "Mohan Lal",
+      "start": 640,
+      "end": 649,
+      "char_span": [
+        640,
+        649
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Mohan Lal",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_KP_01",
+      "target_key": "9277434873",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        298,
+        505
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9277434873",
+      "target_key": "571434558122362",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        298,
+        505
+      ]
+    }
+  ]
+}

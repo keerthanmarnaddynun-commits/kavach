@@ -1,0 +1,13 @@
+COMMAND: PY scripts/report/step1_results.py --run-id step1_synthetic_r4
+EXIT: 1
+SECONDS: 11.1
+--- OUTPUT ---
+Traceback (most recent call last):
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scripts\report\step1_results.py", line 610, in <module>
+    main()
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scripts\report\step1_results.py", line 589, in main
+    step1_md_content = build_markdown_section(results_rel_path, metrics, pytest_tests)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kirthan\Desktop\crimi-nex\scripts\report\step1_results.py", line 508, in build_markdown_section
+    raise ValueError(f"Bullet line does not start with '- ': {line!r}")
+ValueError: Bullet line does not start with '- ': '  - `data/synthetic/generate_case.py` (SHA-256: `1d08790ca5109fce8196106a3a5703eb4838664b6e594452113265df5cc47f8e`)'

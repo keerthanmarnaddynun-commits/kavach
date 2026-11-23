@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_46",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HI_02",
+    "T_IMEI_HI_04"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "असलम परवेज़",
+      "surface": "असलम परवेज़",
+      "start": 196,
+      "end": 207,
+      "char_span": [
+        196,
+        207
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": [
+        "चाचा"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_06",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "चाचा",
+      "surface": "चाचा",
+      "start": 213,
+      "end": 217,
+      "char_span": [
+        213,
+        217
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Latif Parvez",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "लतीफ परवेज़",
+      "surface": "लतीफ परवेज़",
+      "start": 229,
+      "end": 240,
+      "char_span": [
+        229,
+        240
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Latif Parvez",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "असलम परवेज़",
+      "surface": "असलम परवेज़",
+      "start": 298,
+      "end": 309,
+      "char_span": [
+        298,
+        309
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": [
+        "चाचा"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7963605766",
+      "surface": "7963605766",
+      "start": 339,
+      "end": 349,
+      "char_span": [
+        339,
+        349
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7963605766",
+      "surface": "7963605766",
+      "start": 401,
+      "end": 411,
+      "char_span": [
+        401,
+        411
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "370289517187028",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "370289517187028",
+      "surface": "370289517187028",
+      "start": 439,
+      "end": 454,
+      "char_span": [
+        439,
+        454
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "370289517187028",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "WITNESS:Mohan Lal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "मोहन लाल",
+      "surface": "मोहन लाल",
+      "start": 484,
+      "end": 492,
+      "char_span": [
+        484,
+        492
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Mohan Lal",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "AMOUNT:200000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "2 लाख",
+      "surface": "2 लाख",
+      "start": 594,
+      "end": 599,
+      "char_span": [
+        594,
+        599
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 200000.0,
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_06",
+      "target_key": "7963605766",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        282,
+        469
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7963605766",
+      "target_key": "370289517187028",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        282,
+        469
+      ]
+    }
+  ]
+}

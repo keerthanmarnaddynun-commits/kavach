@@ -1,0 +1,31 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 22 items
+
+tests/test_generate_firs.py::test_entity_surface_exact_offset PASSED     [  4%]
+tests/test_generate_firs.py::test_no_overlapping_spans PASSED            [  9%]
+tests/test_generate_firs.py::test_relation_types_and_labels_valid PASSED [ 13%]
+tests/test_generate_firs.py::test_same_entity_key_same_normalized_value PASSED [ 18%]
+tests/test_generate_firs.py::test_relation_mentions_inside_evidence_span_and_match_keys PASSED [ 22%]
+tests/test_generate_firs.py::test_aliases_and_father_name_labelled PASSED [ 27%]
+tests/test_generate_firs.py::test_transfers_match_bank_row PASSED        [ 31%]
+tests/test_generate_firs.py::test_amount_surface_parses_to_numeric_value PASSED [ 36%]
+tests/test_generate_firs.py::test_amount_parser_known_pairs PASSED       [ 40%]
+tests/test_generate_firs.py::test_no_ipc_and_bns_present PASSED          [ 45%]
+tests/test_generate_firs.py::test_split_counts_and_language_coverage PASSED [ 50%]
+tests/test_generate_firs.py::test_held_out_templates_only_in_test PASSED [ 54%]
+tests/test_generate_firs.py::test_fir_types_and_entity_count_extremes PASSED [ 59%]
+tests/test_generate_firs.py::test_no_golden_fir_8word_sequences PASSED   [ 63%]
+tests/test_generate_firs.py::test_decoys_not_labelled PASSED             [ 68%]
+tests/test_generate_firs.py::test_person_roles_present PASSED            [ 72%]
+tests/test_generate_firs.py::test_vikas_and_bikas_never_linked PASSED    [ 77%]
+tests/test_generate_firs.py::test_determinism_by_seed PASSED             [ 81%]
+tests/test_generate_firs.py::test_transfers_per_split_counts PASSED      [ 86%]
+tests/test_generate_firs.py::test_fir_types_per_split_coverage PASSED    [ 90%]
+tests/test_generate_firs.py::test_fir_length_and_short_firs PASSED       [ 95%]
+tests/test_generate_firs.py::test_boilerplate_opening_closing_diversity PASSED [100%]
+
+============================= 22 passed in 5.78s ==============================

@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_22",
+  "split": "train",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_02",
+    "T_IMEI_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 214,
+      "end": 227,
+      "char_span": [
+        214,
+        227
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_03",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Pandit",
+      "surface": "Pandit",
+      "start": 232,
+      "end": 238,
+      "char_span": [
+        232,
+        238
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Madan Tiwari",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Madan Tiwari",
+      "surface": "Madan Tiwari",
+      "start": 248,
+      "end": 260,
+      "char_span": [
+        248,
+        260
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Madan Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "AMOUNT:200000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "2 lakh",
+      "surface": "2 lakh",
+      "start": 354,
+      "end": 360,
+      "char_span": [
+        354,
+        360
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 200000.0,
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "WITNESS:Mohan Lal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Lal",
+      "surface": "Mohan Lal",
+      "start": 437,
+      "end": 446,
+      "char_span": [
+        437,
+        446
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Mohan Lal",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 528,
+      "end": 541,
+      "char_span": [
+        528,
+        541
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 583,
+      "end": 593,
+      "char_span": [
+        583,
+        593
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 648,
+      "end": 658,
+      "char_span": [
+        648,
+        658
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "204332181960015",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "204332181960015",
+      "surface": "204332181960015",
+      "start": 680,
+      "end": 695,
+      "char_span": [
+        680,
+        695
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "204332181960015",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_03",
+      "target_key": "8980841241",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        520,
+        709
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8980841241",
+      "target_key": "204332181960015",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        520,
+        709
+      ]
+    }
+  ]
+}

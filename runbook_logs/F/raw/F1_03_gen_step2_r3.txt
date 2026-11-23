@@ -1,0 +1,6 @@
+COMMAND: PY scripts/report/step2_results.py --run-id step2_firs_r3
+EXIT: 0
+SECONDS: 16.0
+--- OUTPUT ---
+Step 2 evaluation completed successfully.
+Results Directory: C:\Users\Kirthan\Desktop\crimi-nex\results\2026-11-23_step2_firs_r3

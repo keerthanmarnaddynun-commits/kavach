@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_26",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_03",
+    "T_IMEI_HG_03",
+    "T_CALL_HG_02"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Aslam Parvez",
+      "surface": "Aslam Parvez",
+      "start": 213,
+      "end": 225,
+      "char_span": [
+        213,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": [
+        "Chacha"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_06",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Chacha",
+      "surface": "Chacha",
+      "start": 230,
+      "end": 236,
+      "char_span": [
+        230,
+        236
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Latif Parvez",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Latif Parvez",
+      "surface": "Latif Parvez",
+      "start": 246,
+      "end": 258,
+      "char_span": [
+        246,
+        258
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Latif Parvez",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Aslam Parvez",
+      "surface": "Aslam Parvez",
+      "start": 336,
+      "end": 348,
+      "char_span": [
+        336,
+        348
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": [
+        "Chacha"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-7963605766",
+      "surface": "+91-7963605766",
+      "start": 376,
+      "end": 390,
+      "char_span": [
+        376,
+        390
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-7963605766",
+      "surface": "+91-7963605766",
+      "start": 439,
+      "end": 453,
+      "char_span": [
+        439,
+        453
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "370289517187028",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "370289517187028",
+      "surface": "370289517187028",
+      "start": 475,
+      "end": 490,
+      "char_span": [
+        475,
+        490
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "370289517187028",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "OFFICER:Rajesh Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajesh Kumar",
+      "surface": "Rajesh Kumar",
+      "start": 518,
+      "end": 530,
+      "char_span": [
+        518,
+        530
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Rajesh Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "7963605766",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "+91-7963605766",
+      "surface": "+91-7963605766",
+      "start": 649,
+      "end": 663,
+      "char_span": [
+        649,
+        663
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7963605766",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "6531003309",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6531003309",
+      "surface": "6531003309",
+      "start": 681,
+      "end": 691,
+      "char_span": [
+        681,
+        691
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6531003309",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_06",
+      "target_key": "7963605766",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        301,
+        504
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7963605766",
+      "target_key": "370289517187028",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        301,
+        504
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "7963605766",
+      "target_key": "6531003309",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        604,
+        731
+      ]
+    }
+  ]
+}

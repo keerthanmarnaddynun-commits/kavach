@@ -1,0 +1,211 @@
+{
+  "source_doc_id": "FIR_76",
+  "split": "dev",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXNA_HI_04",
+    "T_CTRL_HI_04"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "दीपक चौहान",
+      "surface": "दीपक चौहान",
+      "start": 192,
+      "end": 202,
+      "char_span": [
+        192,
+        202
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "दीपू"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "दीपू",
+      "surface": "दीपू",
+      "start": 208,
+      "end": 212,
+      "char_span": [
+        208,
+        212
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Sardar Chauhan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सरदार चौहान",
+      "surface": "सरदार चौहान",
+      "start": 224,
+      "end": 235,
+      "char_span": [
+        224,
+        235
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Sardar Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "28384251354",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "२८३८४२५१३५४",
+      "surface": "२८३८४२५१३५४",
+      "start": 318,
+      "end": 329,
+      "char_span": [
+        318,
+        329
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "28384251354",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:20188.01",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "20,188.01",
+      "surface": "20,188.01",
+      "start": 354,
+      "end": 363,
+      "char_span": [
+        354,
+        363
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 20188.01,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "70733754330",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "७०७३३७५४३३०",
+      "surface": "७०७३३७५४३३०",
+      "start": 369,
+      "end": 380,
+      "char_span": [
+        369,
+        380
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "70733754330",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "70733754330",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "७०७३३७५४३३०",
+      "surface": "७०७३३७५४३३०",
+      "start": 437,
+      "end": 448,
+      "char_span": [
+        437,
+        448
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "70733754330",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "मनोज रावत",
+      "surface": "मनोज रावत",
+      "start": 465,
+      "end": 474,
+      "char_span": [
+        465,
+        474
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "मुन्ना"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "OFFICER:Amit Tomar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "अमित तोमर",
+      "surface": "अमित तोमर",
+      "start": 507,
+      "end": 516,
+      "char_span": [
+        507,
+        516
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Amit Tomar",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "28384251354",
+      "target_key": "70733754330",
+      "source_mention": "E4",
+      "target_mention": "E6",
+      "source": "E4",
+      "target": "E6",
+      "amount": 20188.01,
+      "evidence_char_span": [
+        277,
+        493
+      ],
+      "txn_id": "TXN001082"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_OP_04",
+      "target_key": "70733754330",
+      "source_mention": "E8",
+      "target_mention": "E7",
+      "source": "E8",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        277,
+        493
+      ]
+    }
+  ]
+}

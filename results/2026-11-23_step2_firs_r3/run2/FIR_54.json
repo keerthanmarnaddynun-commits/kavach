@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_54",
+  "split": "train",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_EN_02"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Devendra Yadav",
+      "surface": "Devendra Yadav",
+      "start": 209,
+      "end": 223,
+      "char_span": [
+        209,
+        223
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": [
+        "Chhota Raju"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_LT_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Chhota Raju",
+      "surface": "Chhota Raju",
+      "start": 230,
+      "end": 241,
+      "char_span": [
+        230,
+        241
+      ],
+      "role": null,
+      "truth_id": "PER_A_LT_01",
+      "value": "Devendra Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Ramakant Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ramakant Yadav",
+      "surface": "Ramakant Yadav",
+      "start": 251,
+      "end": 265,
+      "char_span": [
+        251,
+        265
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Ramakant Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "COMPLAINANT:Ram Avatar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ram Avatar",
+      "surface": "Ram Avatar",
+      "start": 379,
+      "end": 389,
+      "char_span": [
+        379,
+        389
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Ram Avatar",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}

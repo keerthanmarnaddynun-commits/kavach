@@ -1,0 +1,211 @@
+{
+  "source_doc_id": "FIR_39",
+  "split": "train",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXNA_HG_04",
+    "T_CTRL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Salman Mirza",
+      "surface": "Salman Mirza",
+      "start": 214,
+      "end": 226,
+      "char_span": [
+        214,
+        226
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "Sallu"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Sallu",
+      "surface": "Sallu",
+      "start": 231,
+      "end": 236,
+      "char_span": [
+        231,
+        236
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Feroz Mirza",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Feroz Mirza",
+      "surface": "Feroz Mirza",
+      "start": 246,
+      "end": 257,
+      "char_span": [
+        246,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Feroz Mirza",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Vikram Rathore",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Vikram Rathore",
+      "surface": "Vikram Rathore",
+      "start": 314,
+      "end": 328,
+      "char_span": [
+        314,
+        328
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Vikram Rathore",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "459607124084",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "459607124084",
+      "surface": "459607124084",
+      "start": 461,
+      "end": 473,
+      "char_span": [
+        461,
+        473
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "459607124084",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "AMOUNT:32665.93",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "32,665.93",
+      "surface": "32,665.93",
+      "start": 491,
+      "end": 500,
+      "char_span": [
+        491,
+        500
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 32665.93,
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "53839750530",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "53839750530",
+      "surface": "53839750530",
+      "start": 516,
+      "end": 527,
+      "char_span": [
+        516,
+        527
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "53839750530",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "53839750530",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "53839750530",
+      "surface": "53839750530",
+      "start": 557,
+      "end": 568,
+      "char_span": [
+        557,
+        568
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "53839750530",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 582,
+      "end": 596,
+      "char_span": [
+        582,
+        596
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "459607124084",
+      "target_key": "53839750530",
+      "source_mention": "E5",
+      "target_mention": "E7",
+      "source": "E5",
+      "target": "E7",
+      "amount": 32665.93,
+      "evidence_char_span": [
+        402,
+        628
+      ],
+      "txn_id": "TXN000642"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_KP_01",
+      "target_key": "53839750530",
+      "source_mention": "E9",
+      "target_mention": "E8",
+      "source": "E9",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        402,
+        628
+      ]
+    }
+  ]
+}

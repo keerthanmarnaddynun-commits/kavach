@@ -1,0 +1,5 @@
+COMMAND: PY scripts/check_results_docs.py docs/RESULTS.md STEP1 STEP2
+EXIT: 0
+SECONDS: 0.2
+--- OUTPUT ---
+DOCS OK

@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_97",
+  "split": "test",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_EN_06",
+    "T_IMEI_EN_02"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Farooq Ahmed",
+      "surface": "Farooq Ahmed",
+      "start": 209,
+      "end": 221,
+      "char_span": [
+        209,
+        221
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": [
+        "Tiger"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_LT_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Tiger",
+      "surface": "Tiger",
+      "start": 228,
+      "end": 233,
+      "char_span": [
+        228,
+        233
+      ],
+      "role": null,
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Zahid Ahmed",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Zahid Ahmed",
+      "surface": "Zahid Ahmed",
+      "start": 243,
+      "end": 254,
+      "char_span": [
+        243,
+        254
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Zahid Ahmed",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Farooq Ahmed",
+      "surface": "Farooq Ahmed",
+      "start": 305,
+      "end": 317,
+      "char_span": [
+        305,
+        317
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": [
+        "Tiger"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "9065627298",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9065627298",
+      "surface": "9065627298",
+      "start": 364,
+      "end": 374,
+      "char_span": [
+        364,
+        374
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9065627298",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "9065627298",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9065627298",
+      "surface": "9065627298",
+      "start": 398,
+      "end": 408,
+      "char_span": [
+        398,
+        408
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9065627298",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "169901627204650",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "169901627204650",
+      "surface": "169901627204650",
+      "start": 449,
+      "end": 464,
+      "char_span": [
+        449,
+        464
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "169901627204650",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "AMOUNT:18500.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 18,500.00",
+      "surface": "INR 18,500.00",
+      "start": 516,
+      "end": 529,
+      "char_span": [
+        516,
+        529
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 18500.0,
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "OFFICER:Arvind Swaminathan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Arvind Swaminathan",
+      "surface": "Arvind Swaminathan",
+      "start": 594,
+      "end": 612,
+      "char_span": [
+        594,
+        612
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Arvind Swaminathan",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_LT_01",
+      "target_key": "9065627298",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        276,
+        465
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9065627298",
+      "target_key": "169901627204650",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        276,
+        465
+      ]
+    }
+  ]
+}

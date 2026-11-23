@@ -1,0 +1,213 @@
+{
+  "source_doc_id": "FIR_21",
+  "split": "train",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXN_HG_04",
+    "T_CTRL_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 213,
+      "end": 226,
+      "char_span": [
+        213,
+        226
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_03",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Pandit",
+      "surface": "Pandit",
+      "start": 231,
+      "end": 237,
+      "char_span": [
+        231,
+        237
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Madan Tiwari",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Madan Tiwari",
+      "surface": "Madan Tiwari",
+      "start": 247,
+      "end": 259,
+      "char_span": [
+        247,
+        259
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Madan Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 346,
+      "end": 359,
+      "char_span": [
+        346,
+        359
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:18694.32",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 18,694.32/-",
+      "surface": "Rs. 18,694.32/-",
+      "start": 377,
+      "end": 392,
+      "char_span": [
+        377,
+        392
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 18694.32,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "35543349232124",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "35543349232124",
+      "surface": "35543349232124",
+      "start": 408,
+      "end": 422,
+      "char_span": [
+        408,
+        422
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "35543349232124",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "35543349232124",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "35543349232124",
+      "surface": "35543349232124",
+      "start": 471,
+      "end": 485,
+      "char_span": [
+        471,
+        485
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "35543349232124",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 507,
+      "end": 521,
+      "char_span": [
+        507,
+        521
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "WITNESS:Dinesh Joshi",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Dinesh Joshi",
+      "surface": "Dinesh Joshi",
+      "start": 552,
+      "end": 564,
+      "char_span": [
+        552,
+        564
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Dinesh Joshi",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_A_OP_03",
+      "target_key": "35543349232124",
+      "source_mention": "E4",
+      "target_mention": "E6",
+      "source": "E4",
+      "target": "E6",
+      "amount": 18694.32,
+      "evidence_char_span": [
+        302,
+        536
+      ],
+      "txn_id": "TXN000716"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "35543349232124",
+      "source_mention": "E8",
+      "target_mention": "E7",
+      "source": "E8",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        302,
+        536
+      ]
+    }
+  ]
+}

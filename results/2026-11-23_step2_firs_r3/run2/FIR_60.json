@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_60",
+  "split": "train",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_EN_03"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_CR_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Pal",
+      "surface": "Suresh Pal",
+      "start": 212,
+      "end": 222,
+      "char_span": [
+        212,
+        222
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_CR_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Hawai",
+      "surface": "Hawai",
+      "start": 229,
+      "end": 234,
+      "char_span": [
+        229,
+        234
+      ],
+      "role": null,
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mohan Pal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Pal",
+      "surface": "Mohan Pal",
+      "start": 244,
+      "end": 253,
+      "char_span": [
+        244,
+        253
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mohan Pal",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "WITNESS:Rameshwar Dayal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rameshwar Dayal",
+      "surface": "Rameshwar Dayal",
+      "start": 359,
+      "end": 374,
+      "char_span": [
+        359,
+        374
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Rameshwar Dayal",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}

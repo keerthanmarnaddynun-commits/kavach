@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_78",
+  "split": "dev",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_EN_04"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 207,
+      "end": 219,
+      "char_span": [
+        207,
+        219
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Kabira",
+      "surface": "Kabira",
+      "start": 226,
+      "end": 232,
+      "char_span": [
+        226,
+        232
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mustaq Sheikh",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mustaq Sheikh",
+      "surface": "Mustaq Sheikh",
+      "start": 242,
+      "end": 255,
+      "char_span": [
+        242,
+        255
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mustaq Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "COMPLAINANT:Ram Avatar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ram Avatar",
+      "surface": "Ram Avatar",
+      "start": 369,
+      "end": 379,
+      "char_span": [
+        369,
+        379
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Ram Avatar",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}

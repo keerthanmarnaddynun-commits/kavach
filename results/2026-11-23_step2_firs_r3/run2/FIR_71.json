@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_71",
+  "split": "dev",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_04",
+    "T_IMEI_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 213,
+      "end": 225,
+      "char_span": [
+        213,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Biku",
+      "surface": "Biku",
+      "start": 230,
+      "end": 234,
+      "char_span": [
+        230,
+        234
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Girish Sharma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Girish Sharma",
+      "surface": "Girish Sharma",
+      "start": 244,
+      "end": 257,
+      "char_span": [
+        244,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Girish Sharma",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "WITNESS:Kishore Sen",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Kishore Sen",
+      "surface": "Kishore Sen",
+      "start": 315,
+      "end": 326,
+      "char_span": [
+        315,
+        326
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Kishore Sen",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 426,
+      "end": 438,
+      "char_span": [
+        426,
+        438
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E6",
+      "entity_key": "9014363495",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9014363495",
+      "surface": "9014363495",
+      "start": 476,
+      "end": 486,
+      "char_span": [
+        476,
+        486
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9014363495",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "9014363495",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9014363495",
+      "surface": "9014363495",
+      "start": 518,
+      "end": 528,
+      "char_span": [
+        518,
+        528
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9014363495",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "888568557444315",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "888568557444315",
+      "surface": "888568557444315",
+      "start": 546,
+      "end": 561,
+      "char_span": [
+        546,
+        561
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "888568557444315",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "25,000",
+      "surface": "25,000",
+      "start": 629,
+      "end": 635,
+      "char_span": [
+        629,
+        635
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_01",
+      "target_key": "9014363495",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        400,
+        577
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9014363495",
+      "target_key": "888568557444315",
+      "source_mention": "E7",
+      "target_mention": "E8",
+      "source": "E7",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        400,
+        577
+      ]
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "source_doc_id": "FIR_67",
+  "split": "dev",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_02",
+    "T_IMEI_HG_03",
+    "T_CALL_HG_03",
+    "T_TXN_HG_04",
+    "T_CTRL_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Farooq Ahmed",
+      "surface": "Farooq Ahmed",
+      "start": 214,
+      "end": 226,
+      "char_span": [
+        214,
+        226
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": [
+        "Tiger"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_LT_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Tiger",
+      "surface": "Tiger",
+      "start": 231,
+      "end": 236,
+      "char_span": [
+        231,
+        236
+      ],
+      "role": null,
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Zahid Ahmed",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Zahid Ahmed",
+      "surface": "Zahid Ahmed",
+      "start": 246,
+      "end": 257,
+      "char_span": [
+        246,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Zahid Ahmed",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Farooq Ahmed",
+      "surface": "Farooq Ahmed",
+      "start": 308,
+      "end": 320,
+      "char_span": [
+        308,
+        320
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": [
+        "Tiger"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "9065627298",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9065627298",
+      "surface": "9065627298",
+      "start": 362,
+      "end": 372,
+      "char_span": [
+        362,
+        372
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9065627298",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "9065627298",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9065627298",
+      "surface": "9065627298",
+      "start": 427,
+      "end": 437,
+      "char_span": [
+        427,
+        437
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9065627298",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "169901627204650",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "169901627204650",
+      "surface": "169901627204650",
+      "start": 459,
+      "end": 474,
+      "char_span": [
+        459,
+        474
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "169901627204650",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "COMPLAINANT:Suresh Bansal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Bansal",
+      "surface": "Suresh Bansal",
+      "start": 506,
+      "end": 519,
+      "char_span": [
+        506,
+        519
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Suresh Bansal",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "9065627298",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9065627298",
+      "surface": "9065627298",
+      "start": 629,
+      "end": 639,
+      "char_span": [
+        629,
+        639
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9065627298",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "6679740344",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6679740344",
+      "surface": "6679740344",
+      "start": 675,
+      "end": 685,
+      "char_span": [
+        675,
+        685
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6679740344",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "25,000",
+      "surface": "25,000",
+      "start": 752,
+      "end": 758,
+      "char_span": [
+        752,
+        758
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "PER_B_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Farooq Ahmed",
+      "surface": "Farooq Ahmed",
+      "start": 864,
+      "end": 876,
+      "char_span": [
+        864,
+        876
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": [
+        "Tiger"
+      ]
+    },
+    {
+      "id": "E13",
+      "entity_key": "AMOUNT:28817.94",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "28,817.94",
+      "surface": "28,817.94",
+      "start": 894,
+      "end": 903,
+      "char_span": [
+        894,
+        903
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 28817.94,
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "34808613171274",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "34808613171274",
+      "surface": "34808613171274",
+      "start": 919,
+      "end": 933,
+      "char_span": [
+        919,
+        933
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "34808613171274",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "34808613171274",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "34808613171274",
+      "surface": "34808613171274",
+      "start": 969,
+      "end": 983,
+      "char_span": [
+        969,
+        983
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "34808613171274",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "PER_B_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Wasim Akram",
+      "surface": "Wasim Akram",
+      "start": 1001,
+      "end": 1012,
+      "char_span": [
+        1001,
+        1012
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_04",
+      "value": "Wasim Akram",
+      "aliases": [
+        "Vicky"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_LT_01",
+      "target_key": "9065627298",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        300,
+        488
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9065627298",
+      "target_key": "169901627204650",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        300,
+        488
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9065627298",
+      "target_key": "6679740344",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        593,
+        700
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_B_LT_01",
+      "target_key": "34808613171274",
+      "source_mention": "E12",
+      "target_mention": "E14",
+      "source": "E12",
+      "target": "E14",
+      "amount": 28817.94,
+      "evidence_char_span": [
+        820,
+        1041
+      ],
+      "txn_id": "TXN000759"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_OP_04",
+      "target_key": "34808613171274",
+      "source_mention": "E16",
+      "target_mention": "E15",
+      "source": "E16",
+      "target": "E15",
+      "amount": null,
+      "evidence_char_span": [
+        820,
+        1041
+      ]
+    }
+  ]
+}

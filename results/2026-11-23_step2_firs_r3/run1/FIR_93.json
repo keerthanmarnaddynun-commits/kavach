@@ -1,0 +1,387 @@
+{
+  "source_doc_id": "FIR_93",
+  "split": "test",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_05",
+    "T_IMEI_HG_02",
+    "T_CALL_HG_05",
+    "T_TXNA_HG_02",
+    "T_CTRL_HG_04"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_CR_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ramesh Chand",
+      "surface": "Ramesh Chand",
+      "start": 213,
+      "end": 225,
+      "char_span": [
+        213,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_01",
+      "value": "Ramesh Chand",
+      "aliases": [
+        "Postman"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_CR_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Postman",
+      "surface": "Postman",
+      "start": 230,
+      "end": 237,
+      "char_span": [
+        230,
+        237
+      ],
+      "role": null,
+      "truth_id": "PER_CR_01",
+      "value": "Ramesh Chand",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Kishan Chand",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Kishan Chand",
+      "surface": "Kishan Chand",
+      "start": 247,
+      "end": 259,
+      "char_span": [
+        247,
+        259
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Kishan Chand",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "7400504556",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7400504556",
+      "surface": "7400504556",
+      "start": 353,
+      "end": 363,
+      "char_span": [
+        353,
+        363
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7400504556",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "8255341928",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8255341928",
+      "surface": "8255341928",
+      "start": 378,
+      "end": 388,
+      "char_span": [
+        378,
+        388
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8255341928",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_CR_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ramesh Chand",
+      "surface": "Ramesh Chand",
+      "start": 470,
+      "end": 482,
+      "char_span": [
+        470,
+        482
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_01",
+      "value": "Ramesh Chand",
+      "aliases": [
+        "Postman"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "7400504556",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7400504556",
+      "surface": "7400504556",
+      "start": 516,
+      "end": 526,
+      "char_span": [
+        516,
+        526
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7400504556",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "7400504556",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7400504556",
+      "surface": "7400504556",
+      "start": 572,
+      "end": 582,
+      "char_span": [
+        572,
+        582
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7400504556",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "338692221969378",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "338692221969378",
+      "surface": "338692221969378",
+      "start": 596,
+      "end": 611,
+      "char_span": [
+        596,
+        611
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "338692221969378",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "WITNESS:Dinesh Joshi",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Dinesh Joshi",
+      "surface": "Dinesh Joshi",
+      "start": 657,
+      "end": 669,
+      "char_span": [
+        657,
+        669
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Dinesh Joshi",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 25,000.00",
+      "surface": "INR 25,000.00",
+      "start": 794,
+      "end": 807,
+      "char_span": [
+        794,
+        807
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "72314387443",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "72314387443",
+      "surface": "72314387443",
+      "start": 917,
+      "end": 928,
+      "char_span": [
+        917,
+        928
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "72314387443",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "AMOUNT:608.15",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 608.15/-",
+      "surface": "Rs. 608.15/-",
+      "start": 944,
+      "end": 956,
+      "char_span": [
+        944,
+        956
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 608.15,
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "6066011655865115",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "6066011655865115",
+      "surface": "6066011655865115",
+      "start": 970,
+      "end": 986,
+      "char_span": [
+        970,
+        986
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6066011655865115",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "6066011655865115",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "6066011655865115",
+      "surface": "6066011655865115",
+      "start": 1014,
+      "end": 1030,
+      "char_span": [
+        1014,
+        1030
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6066011655865115",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 1044,
+      "end": 1058,
+      "char_span": [
+        1044,
+        1058
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "7400504556",
+      "target_key": "8255341928",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        302,
+        437
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_CR_01",
+      "target_key": "7400504556",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        438,
+        641
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7400504556",
+      "target_key": "338692221969378",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        438,
+        641
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "72314387443",
+      "target_key": "6066011655865115",
+      "source_mention": "E12",
+      "target_mention": "E14",
+      "source": "E12",
+      "target": "E14",
+      "amount": 608.15,
+      "evidence_char_span": [
+        869,
+        1090
+      ],
+      "txn_id": "TXN001245"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "6066011655865115",
+      "source_mention": "E16",
+      "target_mention": "E15",
+      "source": "E16",
+      "target": "E15",
+      "amount": null,
+      "evidence_char_span": [
+        869,
+        1090
+      ]
+    }
+  ]
+}

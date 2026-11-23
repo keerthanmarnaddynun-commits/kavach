@@ -1,0 +1,445 @@
+{
+  "source_doc_id": "FIR_53",
+  "split": "train",
+  "fir_type": "MULTI_SUSPECT",
+  "template_ids": [
+    "T_OWNS_EN_04",
+    "T_IMEI_EN_01",
+    "T_CALL_EN_04",
+    "T_TXN_EN_03",
+    "T_CTRL_EN_04"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Manoj Rawat",
+      "surface": "Manoj Rawat",
+      "start": 210,
+      "end": 221,
+      "char_span": [
+        210,
+        221
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "Munna"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_04",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Munna",
+      "surface": "Munna",
+      "start": 228,
+      "end": 233,
+      "char_span": [
+        228,
+        233
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Kishori Rawat",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Kishori Rawat",
+      "surface": "Kishori Rawat",
+      "start": 243,
+      "end": 256,
+      "char_span": [
+        243,
+        256
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Kishori Rawat",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 293,
+      "end": 307,
+      "char_span": [
+        293,
+        307
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_A_KP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Raju Bhai",
+      "surface": "Raju Bhai",
+      "start": 314,
+      "end": 323,
+      "char_span": [
+        314,
+        323
+      ],
+      "role": null,
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "FATHER:Maheshwar Singh",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Maheshwar Singh",
+      "surface": "Maheshwar Singh",
+      "start": 333,
+      "end": 348,
+      "char_span": [
+        333,
+        348
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Maheshwar Singh",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "AMOUNT:18500.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 18,500.00",
+      "surface": "INR 18,500.00",
+      "start": 438,
+      "end": 451,
+      "char_span": [
+        438,
+        451
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 18500.0,
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "OFFICER:Kuldeep Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Kuldeep Yadav",
+      "surface": "Kuldeep Yadav",
+      "start": 516,
+      "end": 529,
+      "char_span": [
+        516,
+        529
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Kuldeep Yadav",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6112805982",
+      "surface": "6112805982",
+      "start": 676,
+      "end": 686,
+      "char_span": [
+        676,
+        686
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "6957015430",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6957015430",
+      "surface": "6957015430",
+      "start": 691,
+      "end": 701,
+      "char_span": [
+        691,
+        701
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6957015430",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Manoj Rawat",
+      "surface": "Manoj Rawat",
+      "start": 754,
+      "end": 765,
+      "char_span": [
+        754,
+        765
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "Munna"
+      ]
+    },
+    {
+      "id": "E12",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6112805982",
+      "surface": "6112805982",
+      "start": 791,
+      "end": 801,
+      "char_span": [
+        791,
+        801
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "6112805982",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6112805982",
+      "surface": "6112805982",
+      "start": 844,
+      "end": 854,
+      "char_span": [
+        844,
+        854
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6112805982",
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "720450533158693",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "720450533158693",
+      "surface": "720450533158693",
+      "start": 882,
+      "end": 897,
+      "char_span": [
+        882,
+        897
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "720450533158693",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "PER_A_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Manoj Rawat",
+      "surface": "Manoj Rawat",
+      "start": 944,
+      "end": 955,
+      "char_span": [
+        944,
+        955
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_04",
+      "value": "Manoj Rawat",
+      "aliases": [
+        "Munna"
+      ]
+    },
+    {
+      "id": "E16",
+      "entity_key": "AMOUNT:13388.48",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 13,388.48/-",
+      "surface": "Rs. 13,388.48/-",
+      "start": 984,
+      "end": 999,
+      "char_span": [
+        984,
+        999
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 13388.48,
+      "aliases": []
+    },
+    {
+      "id": "E17",
+      "entity_key": "53839750530",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "53839750530",
+      "surface": "53839750530",
+      "start": 1023,
+      "end": 1034,
+      "char_span": [
+        1023,
+        1034
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "53839750530",
+      "aliases": []
+    },
+    {
+      "id": "E18",
+      "entity_key": "53839750530",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "53839750530",
+      "surface": "53839750530",
+      "start": 1081,
+      "end": 1092,
+      "char_span": [
+        1081,
+        1092
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "53839750530",
+      "aliases": []
+    },
+    {
+      "id": "E19",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 1126,
+      "end": 1140,
+      "char_span": [
+        1126,
+        1140
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "6112805982",
+      "target_key": "6957015430",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        591,
+        702
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_04",
+      "target_key": "6112805982",
+      "source_mention": "E11",
+      "target_mention": "E12",
+      "source": "E11",
+      "target": "E12",
+      "amount": null,
+      "evidence_char_span": [
+        703,
+        898
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "6112805982",
+      "target_key": "720450533158693",
+      "source_mention": "E13",
+      "target_mention": "E14",
+      "source": "E13",
+      "target": "E14",
+      "amount": null,
+      "evidence_char_span": [
+        703,
+        898
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_A_OP_04",
+      "target_key": "53839750530",
+      "source_mention": "E15",
+      "target_mention": "E17",
+      "source": "E15",
+      "target": "E17",
+      "amount": 13388.48,
+      "evidence_char_span": [
+        899,
+        1141
+      ],
+      "txn_id": "TXN001198"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "53839750530",
+      "source_mention": "E19",
+      "target_mention": "E18",
+      "source": "E19",
+      "target": "E18",
+      "amount": null,
+      "evidence_char_span": [
+        899,
+        1141
+      ]
+    }
+  ]
+}

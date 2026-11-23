@@ -1,0 +1,166 @@
+{
+  "row_counts": {
+    "cdr_csv": 7483,
+    "bank_csv": 1489
+  },
+  "entity_counts": {
+    "people": 21,
+    "phones": 50,
+    "accounts": 21,
+    "imeis": 49
+  },
+  "bank_accounts_by_bank": [
+    {
+      "bank": "SBI",
+      "account_lengths": [
+        11
+      ],
+      "ifsc_prefixes": [
+        "SBIN"
+      ],
+      "account_count": 6
+    },
+    {
+      "bank": "ICICI",
+      "account_lengths": [
+        12
+      ],
+      "ifsc_prefixes": [
+        "ICIC"
+      ],
+      "account_count": 6
+    },
+    {
+      "bank": "HDFC",
+      "account_lengths": [
+        14
+      ],
+      "ifsc_prefixes": [
+        "HDFC"
+      ],
+      "account_count": 5
+    },
+    {
+      "bank": "PNB",
+      "account_lengths": [
+        16
+      ],
+      "ifsc_prefixes": [
+        "PUNB"
+      ],
+      "account_count": 4
+    }
+  ],
+  "bank_csv_metrics": {
+    "from_acct_digit_lengths": {
+      "11": 386,
+      "12": 281,
+      "14": 499,
+      "16": 323
+    },
+    "to_acct_digit_lengths": {
+      "11": 352,
+      "12": 323,
+      "14": 491,
+      "16": 323
+    },
+    "invalid_ifsc_rows_count": 0,
+    "to_acct_in_truth_ifsc_mismatch_count": 0,
+    "to_acct_not_in_truth_count": 942
+  },
+  "account_phone_imei_collisions_count": 0,
+  "top_5_phones": [
+    {
+      "rank": 1,
+      "phone": "6604817549",
+      "count": 1400,
+      "role": "DECOY_CIVILIAN",
+      "owner_name": "Harish Chawla (Royal Pizza)",
+      "distinct_contacts": 23
+    },
+    {
+      "rank": 2,
+      "phone": "9065627298",
+      "count": 914,
+      "role": "LIEUTENANT",
+      "owner_name": "Farooq Ahmed",
+      "distinct_contacts": 12
+    },
+    {
+      "rank": 3,
+      "phone": "6531003309",
+      "count": 866,
+      "role": "LIEUTENANT",
+      "owner_name": "Farooq Ahmed",
+      "distinct_contacts": 9
+    },
+    {
+      "rank": 4,
+      "phone": "9165726284",
+      "count": 864,
+      "role": "LIEUTENANT",
+      "owner_name": "Rashid Khan",
+      "distinct_contacts": 11
+    },
+    {
+      "rank": 5,
+      "phone": "8255341928",
+      "count": 858,
+      "role": "LIEUTENANT",
+      "owner_name": "Devendra Yadav",
+      "distinct_contacts": 13
+    }
+  ],
+  "kingpins": [
+    {
+      "person_id": "PER_A_KP_01",
+      "name": "Rajendra Singh",
+      "phone": "7389083863",
+      "count": 12,
+      "rank": 49,
+      "total_phones": 50,
+      "distinct_contacts": 2
+    },
+    {
+      "person_id": "PER_B_KP_01",
+      "name": "Mukhtar Ansari",
+      "phone": "9277434873",
+      "count": 12,
+      "rank": 50,
+      "total_phones": 50,
+      "distinct_contacts": 2
+    }
+  ],
+  "pizza_shop": {
+    "phone": "6604817549",
+    "name": "Harish Chawla (Royal Pizza)",
+    "role": "DECOY_CIVILIAN",
+    "rank": 1,
+    "count": 1400,
+    "distinct_contacts": 23,
+    "total_phones": 50
+  },
+  "file_hashes": {
+    "run1": {
+      "truth_json": "0a9fe54a0f13801e1cf042fe198c8bbfca57a974ef039ea01df2ce681996aa99",
+      "cdr_csv": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94",
+      "bank_csv": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+    },
+    "run2": {
+      "truth_json": "0a9fe54a0f13801e1cf042fe198c8bbfca57a974ef039ea01df2ce681996aa99",
+      "cdr_csv": "60cd24e6d69b1713f54a0ca07b6f98815462396cfcab64885e1793d8aea12c94",
+      "bank_csv": "c776b41b5ba17b868adaf425c34972471dee1c7fea6fdc321c133240b6197ba5"
+    },
+    "matches": {
+      "truth_json": true,
+      "cdr_csv": true,
+      "bank_csv": true,
+      "all_match": true
+    }
+  },
+  "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "python_version_short": "3.11.9",
+  "generator_script_sha256": "1d08790ca5109fce8196106a3a5703eb4838664b6e594452113265df5cc47f8e",
+  "test_script_sha256": "e5e18539d55db30924546dc2b8859e6f9d1a9e95d3643760567139c432334e60",
+  "pytest_command": "python -m pytest -v tests/test_generate_case.py"
+}

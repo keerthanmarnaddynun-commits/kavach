@@ -1,0 +1,213 @@
+{
+  "source_doc_id": "FIR_84",
+  "split": "test",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXN_HG_05",
+    "T_CTRL_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Anand Verma",
+      "surface": "Anand Verma",
+      "start": 214,
+      "end": 225,
+      "char_span": [
+        214,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": [
+        "Andy"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Andy",
+      "surface": "Andy",
+      "start": 230,
+      "end": 234,
+      "char_span": [
+        230,
+        234
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Shyam Verma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Shyam Verma",
+      "surface": "Shyam Verma",
+      "start": 244,
+      "end": 255,
+      "char_span": [
+        244,
+        255
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Shyam Verma",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Anand Verma",
+      "surface": "Anand Verma",
+      "start": 344,
+      "end": 355,
+      "char_span": [
+        344,
+        355
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": [
+        "Andy"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:4325.43",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "4,325.43",
+      "surface": "4,325.43",
+      "start": 373,
+      "end": 381,
+      "char_span": [
+        373,
+        381
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 4325.43,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "44352408240",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "44352408240",
+      "surface": "44352408240",
+      "start": 401,
+      "end": 412,
+      "char_span": [
+        401,
+        412
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "44352408240",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "44352408240",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "44352408240",
+      "surface": "44352408240",
+      "start": 458,
+      "end": 469,
+      "char_span": [
+        458,
+        469
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "44352408240",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_B_OP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bikas Sharma",
+      "surface": "Bikas Sharma",
+      "start": 487,
+      "end": 499,
+      "char_span": [
+        487,
+        499
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_01",
+      "value": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "WITNESS:Rameshwar Dayal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rameshwar Dayal",
+      "surface": "Rameshwar Dayal",
+      "start": 544,
+      "end": 559,
+      "char_span": [
+        544,
+        559
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Rameshwar Dayal",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_A_OP_02",
+      "target_key": "44352408240",
+      "source_mention": "E4",
+      "target_mention": "E6",
+      "source": "E4",
+      "target": "E6",
+      "amount": 4325.43,
+      "evidence_char_span": [
+        299,
+        528
+      ],
+      "txn_id": "TXN000335"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_OP_01",
+      "target_key": "44352408240",
+      "source_mention": "E8",
+      "target_mention": "E7",
+      "source": "E8",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        299,
+        528
+      ]
+    }
+  ]
+}

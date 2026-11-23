@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_02",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_02",
+    "T_IMEI_HG_04",
+    "T_CALL_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 214,
+      "end": 227,
+      "char_span": [
+        214,
+        227
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_03",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Pandit",
+      "surface": "Pandit",
+      "start": 232,
+      "end": 238,
+      "char_span": [
+        232,
+        238
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Madan Tiwari",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Madan Tiwari",
+      "surface": "Madan Tiwari",
+      "start": 248,
+      "end": 260,
+      "char_span": [
+        248,
+        260
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Madan Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 339,
+      "end": 349,
+      "char_span": [
+        339,
+        349
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "6604817549",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6604817549",
+      "surface": "6604817549",
+      "start": 385,
+      "end": 395,
+      "char_span": [
+        385,
+        395
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6604817549",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "OFFICER:Rajesh Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajesh Kumar",
+      "surface": "Rajesh Kumar",
+      "start": 424,
+      "end": 436,
+      "char_span": [
+        424,
+        436
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Rajesh Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 518,
+      "end": 531,
+      "char_span": [
+        518,
+        531
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E8",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 573,
+      "end": 583,
+      "char_span": [
+        573,
+        583
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 640,
+      "end": 650,
+      "char_span": [
+        640,
+        650
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "204332181960015",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "204332181960015",
+      "surface": "204332181960015",
+      "start": 666,
+      "end": 681,
+      "char_span": [
+        666,
+        681
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "204332181960015",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "8980841241",
+      "target_key": "6604817549",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        303,
+        410
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_03",
+      "target_key": "8980841241",
+      "source_mention": "E7",
+      "target_mention": "E8",
+      "source": "E7",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        510,
+        698
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8980841241",
+      "target_key": "204332181960015",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        510,
+        698
+      ]
+    }
+  ]
+}

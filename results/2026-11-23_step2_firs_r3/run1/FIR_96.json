@@ -1,0 +1,211 @@
+{
+  "source_doc_id": "FIR_96",
+  "split": "test",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXNA_HI_05",
+    "T_CTRL_HI_01"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "दीपक चौहान",
+      "surface": "दीपक चौहान",
+      "start": 187,
+      "end": 197,
+      "char_span": [
+        187,
+        197
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "दीपू"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "दीपू",
+      "surface": "दीपू",
+      "start": 203,
+      "end": 207,
+      "char_span": [
+        203,
+        207
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Sardar Chauhan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "सरदार चौहान",
+      "surface": "सरदार चौहान",
+      "start": 219,
+      "end": 230,
+      "char_span": [
+        219,
+        230
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Sardar Chauhan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "WITNESS:Rameshwar Dayal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "रामेश्वर दयाल",
+      "surface": "रामेश्वर दयाल",
+      "start": 286,
+      "end": 299,
+      "char_span": [
+        286,
+        299
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Rameshwar Dayal",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "97667845334",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "97667845334",
+      "surface": "97667845334",
+      "start": 396,
+      "end": 407,
+      "char_span": [
+        396,
+        407
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "97667845334",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "AMOUNT:48500.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "48,500",
+      "surface": "48,500",
+      "start": 415,
+      "end": 421,
+      "char_span": [
+        415,
+        421
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 48500.0,
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "6869261796405377",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "6869261796405377",
+      "surface": "6869261796405377",
+      "start": 434,
+      "end": 450,
+      "char_span": [
+        434,
+        450
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6869261796405377",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "6869261796405377",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "6869261796405377",
+      "surface": "6869261796405377",
+      "start": 497,
+      "end": 513,
+      "char_span": [
+        497,
+        513
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6869261796405377",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "PER_A_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "दीपक चौहान",
+      "surface": "दीपक चौहान",
+      "start": 530,
+      "end": 540,
+      "char_span": [
+        530,
+        540
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_05",
+      "value": "Deepak Chauhan",
+      "aliases": [
+        "दीपू"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "97667845334",
+      "target_key": "6869261796405377",
+      "source_mention": "E5",
+      "target_mention": "E7",
+      "source": "E5",
+      "target": "E7",
+      "amount": 48500.0,
+      "evidence_char_span": [
+        352,
+        569
+      ],
+      "txn_id": "TXN000043"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_OP_05",
+      "target_key": "6869261796405377",
+      "source_mention": "E9",
+      "target_mention": "E8",
+      "source": "E9",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        352,
+        569
+      ]
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "source_doc_id": "FIR_07",
+  "split": "train",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_03",
+    "T_IMEI_HG_01",
+    "T_CALL_HG_02",
+    "T_TXNA_HG_01",
+    "T_CTRL_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 214,
+      "end": 228,
+      "char_span": [
+        214,
+        228
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_KP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Raju Bhai",
+      "surface": "Raju Bhai",
+      "start": 233,
+      "end": 242,
+      "char_span": [
+        233,
+        242
+      ],
+      "role": null,
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Maheshwar Singh",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Maheshwar Singh",
+      "surface": "Maheshwar Singh",
+      "start": 252,
+      "end": 267,
+      "char_span": [
+        252,
+        267
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Maheshwar Singh",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "COMPLAINANT:Suresh Bansal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Bansal",
+      "surface": "Suresh Bansal",
+      "start": 327,
+      "end": 340,
+      "char_span": [
+        327,
+        340
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Suresh Bansal",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "7389083863",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7389083863",
+      "surface": "7389083863",
+      "start": 459,
+      "end": 469,
+      "char_span": [
+        459,
+        469
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7389083863",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "8255341928",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8255341928",
+      "surface": "8255341928",
+      "start": 487,
+      "end": 497,
+      "char_span": [
+        487,
+        497
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8255341928",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "25,000",
+      "surface": "25,000",
+      "start": 589,
+      "end": 595,
+      "char_span": [
+        589,
+        595
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 692,
+      "end": 706,
+      "char_span": [
+        692,
+        706
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "7389083863",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7389083863",
+      "surface": "7389083863",
+      "start": 734,
+      "end": 744,
+      "char_span": [
+        734,
+        744
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7389083863",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "7389083863",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7389083863",
+      "surface": "7389083863",
+      "start": 779,
+      "end": 789,
+      "char_span": [
+        779,
+        789
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7389083863",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "894026542351162",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "894026542351162",
+      "surface": "894026542351162",
+      "start": 807,
+      "end": 822,
+      "char_span": [
+        807,
+        822
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "894026542351162",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "2363750605033511",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "2363750605033511",
+      "surface": "2363750605033511",
+      "start": 897,
+      "end": 913,
+      "char_span": [
+        897,
+        913
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "2363750605033511",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "AMOUNT:18852.72",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "18,852.72",
+      "surface": "18,852.72",
+      "start": 921,
+      "end": 930,
+      "char_span": [
+        921,
+        930
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 18852.72,
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "26309165168",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "26309165168",
+      "surface": "26309165168",
+      "start": 951,
+      "end": 962,
+      "char_span": [
+        951,
+        962
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "26309165168",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "26309165168",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "26309165168",
+      "surface": "26309165168",
+      "start": 1024,
+      "end": 1035,
+      "char_span": [
+        1024,
+        1035
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "26309165168",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 1057,
+      "end": 1071,
+      "char_span": [
+        1057,
+        1071
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "7389083863",
+      "target_key": "8255341928",
+      "source_mention": "E5",
+      "target_mention": "E6",
+      "source": "E5",
+      "target": "E6",
+      "amount": null,
+      "evidence_char_span": [
+        414,
+        537
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_KP_01",
+      "target_key": "7389083863",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        657,
+        838
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7389083863",
+      "target_key": "894026542351162",
+      "source_mention": "E10",
+      "target_mention": "E11",
+      "source": "E10",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        657,
+        838
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "2363750605033511",
+      "target_key": "26309165168",
+      "source_mention": "E12",
+      "target_mention": "E14",
+      "source": "E12",
+      "target": "E14",
+      "amount": 18852.72,
+      "evidence_char_span": [
+        839,
+        1086
+      ],
+      "txn_id": "TXN000258"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "26309165168",
+      "source_mention": "E16",
+      "target_mention": "E15",
+      "source": "E16",
+      "target": "E15",
+      "amount": null,
+      "evidence_char_span": [
+        839,
+        1086
+      ]
+    }
+  ]
+}

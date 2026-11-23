@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_32",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HG_02",
+    "T_IMEI_HG_03",
+    "T_CALL_HG_02"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Wasim Akram",
+      "surface": "Wasim Akram",
+      "start": 214,
+      "end": 225,
+      "char_span": [
+        214,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_04",
+      "value": "Wasim Akram",
+      "aliases": [
+        "Vicky"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_04",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Vicky",
+      "surface": "Vicky",
+      "start": 230,
+      "end": 235,
+      "char_span": [
+        230,
+        235
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_04",
+      "value": "Wasim Akram",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Shabir Akram",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Shabir Akram",
+      "surface": "Shabir Akram",
+      "start": 245,
+      "end": 257,
+      "char_span": [
+        245,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Shabir Akram",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "8674680715",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8674680715",
+      "surface": "8674680715",
+      "start": 345,
+      "end": 355,
+      "char_span": [
+        345,
+        355
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8674680715",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "6679740344",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6679740344",
+      "surface": "6679740344",
+      "start": 373,
+      "end": 383,
+      "char_span": [
+        373,
+        383
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6679740344",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_B_OP_04",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Wasim Akram",
+      "surface": "Wasim Akram",
+      "start": 432,
+      "end": 443,
+      "char_span": [
+        432,
+        443
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_04",
+      "value": "Wasim Akram",
+      "aliases": [
+        "Vicky"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "8674680715",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8674680715",
+      "surface": "8674680715",
+      "start": 485,
+      "end": 495,
+      "char_span": [
+        485,
+        495
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8674680715",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "8674680715",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8674680715",
+      "surface": "8674680715",
+      "start": 550,
+      "end": 560,
+      "char_span": [
+        550,
+        560
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8674680715",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "551680876038599",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "551680876038599",
+      "surface": "551680876038599",
+      "start": 582,
+      "end": 597,
+      "char_span": [
+        582,
+        597
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "551680876038599",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "COMPLAINANT:Pawan Verma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pawan Verma",
+      "surface": "Pawan Verma",
+      "start": 629,
+      "end": 640,
+      "char_span": [
+        629,
+        640
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Pawan Verma",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "8674680715",
+      "target_key": "6679740344",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        300,
+        423
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_04",
+      "target_key": "8674680715",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        424,
+        611
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8674680715",
+      "target_key": "551680876038599",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        424,
+        611
+      ]
+    }
+  ]
+}

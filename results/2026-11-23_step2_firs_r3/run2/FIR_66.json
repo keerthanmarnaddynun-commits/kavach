@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_66",
+  "split": "dev",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Aslam Parvez",
+      "surface": "Aslam Parvez",
+      "start": 213,
+      "end": 225,
+      "char_span": [
+        213,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": [
+        "Chacha"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_06",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Chacha",
+      "surface": "Chacha",
+      "start": 230,
+      "end": 236,
+      "char_span": [
+        230,
+        236
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Latif Parvez",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Latif Parvez",
+      "surface": "Latif Parvez",
+      "start": 246,
+      "end": 258,
+      "char_span": [
+        246,
+        258
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Latif Parvez",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "COMPLAINANT:Ram Avatar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Ram Avatar",
+      "surface": "Ram Avatar",
+      "start": 380,
+      "end": 390,
+      "char_span": [
+        380,
+        390
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Ram Avatar",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}

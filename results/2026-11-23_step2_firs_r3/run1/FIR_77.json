@@ -1,0 +1,210 @@
+{
+  "source_doc_id": "FIR_77",
+  "split": "dev",
+  "fir_type": "DEVICE_ONLY",
+  "template_ids": [
+    "T_OWNS_HI_03",
+    "T_IMEI_HI_02"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "फारूक अहमद",
+      "surface": "फारूक अहमद",
+      "start": 197,
+      "end": 207,
+      "char_span": [
+        197,
+        207
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": [
+        "टाइगर"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_LT_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "टाइगर",
+      "surface": "टाइगर",
+      "start": 213,
+      "end": 218,
+      "char_span": [
+        213,
+        218
+      ],
+      "role": null,
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Zahid Ahmed",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "जाहिद अहमद",
+      "surface": "जाहिद अहमद",
+      "start": 230,
+      "end": 240,
+      "char_span": [
+        230,
+        240
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Zahid Ahmed",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_LT_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "फारूक अहमद",
+      "surface": "फारूक अहमद",
+      "start": 305,
+      "end": 315,
+      "char_span": [
+        305,
+        315
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_01",
+      "value": "Farooq Ahmed",
+      "aliases": [
+        "टाइगर"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "9065627298",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9065627298",
+      "surface": "9065627298",
+      "start": 344,
+      "end": 354,
+      "char_span": [
+        344,
+        354
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9065627298",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "9065627298",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9065627298",
+      "surface": "9065627298",
+      "start": 391,
+      "end": 401,
+      "char_span": [
+        391,
+        401
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9065627298",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "169901627204650",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "169901627204650",
+      "surface": "169901627204650",
+      "start": 417,
+      "end": 432,
+      "char_span": [
+        417,
+        432
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "169901627204650",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "AMOUNT:18500.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 18,500.00",
+      "surface": "INR 18,500.00",
+      "start": 500,
+      "end": 513,
+      "char_span": [
+        500,
+        513
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 18500.0,
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "OFFICER:Kuldeep Yadav",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "कुलदीप यादव",
+      "surface": "कुलदीप यादव",
+      "start": 582,
+      "end": 593,
+      "char_span": [
+        582,
+        593
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Kuldeep Yadav",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_LT_01",
+      "target_key": "9065627298",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        282,
+        450
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9065627298",
+      "target_key": "169901627204650",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        282,
+        450
+      ]
+    }
+  ]
+}

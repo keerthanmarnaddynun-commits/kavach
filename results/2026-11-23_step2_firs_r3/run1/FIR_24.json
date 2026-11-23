@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_24",
+  "split": "train",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_LT_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rashid Khan",
+      "surface": "Rashid Khan",
+      "start": 214,
+      "end": 225,
+      "char_span": [
+        214,
+        225
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": [
+        "Shooter"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_LT_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Shooter",
+      "surface": "Shooter",
+      "start": 230,
+      "end": 237,
+      "char_span": [
+        230,
+        237
+      ],
+      "role": null,
+      "truth_id": "PER_B_LT_02",
+      "value": "Rashid Khan",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Asif Khan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Asif Khan",
+      "surface": "Asif Khan",
+      "start": 247,
+      "end": 256,
+      "char_span": [
+        247,
+        256
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Asif Khan",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "WITNESS:Rameshwar Dayal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rameshwar Dayal",
+      "surface": "Rameshwar Dayal",
+      "start": 315,
+      "end": 330,
+      "char_span": [
+        315,
+        330
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Rameshwar Dayal",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}

@@ -1,0 +1,389 @@
+{
+  "source_doc_id": "FIR_37",
+  "split": "train",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_01",
+    "T_IMEI_HG_03",
+    "T_CALL_HG_03",
+    "T_TXN_HG_04",
+    "T_CTRL_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Salman Mirza",
+      "surface": "Salman Mirza",
+      "start": 214,
+      "end": 226,
+      "char_span": [
+        214,
+        226
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "Sallu"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_05",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Sallu",
+      "surface": "Sallu",
+      "start": 231,
+      "end": 236,
+      "char_span": [
+        231,
+        236
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Feroz Mirza",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Feroz Mirza",
+      "surface": "Feroz Mirza",
+      "start": 246,
+      "end": 257,
+      "char_span": [
+        246,
+        257
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Feroz Mirza",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Arvind Swaminathan",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Arvind Swaminathan",
+      "surface": "Arvind Swaminathan",
+      "start": 313,
+      "end": 331,
+      "char_span": [
+        313,
+        331
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Arvind Swaminathan",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "INR 25,000.00",
+      "surface": "INR 25,000.00",
+      "start": 456,
+      "end": 469,
+      "char_span": [
+        456,
+        469
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Salman Mirza",
+      "surface": "Salman Mirza",
+      "start": 566,
+      "end": 578,
+      "char_span": [
+        566,
+        578
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "Sallu"
+      ]
+    },
+    {
+      "id": "E7",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9773782639",
+      "surface": "9773782639",
+      "start": 611,
+      "end": 621,
+      "char_span": [
+        611,
+        621
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9773782639",
+      "surface": "9773782639",
+      "start": 674,
+      "end": 684,
+      "char_span": [
+        674,
+        684
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "921465840449970",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "921465840449970",
+      "surface": "921465840449970",
+      "start": 706,
+      "end": 721,
+      "char_span": [
+        706,
+        721
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "921465840449970",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "9773782639",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9773782639",
+      "surface": "9773782639",
+      "start": 772,
+      "end": 782,
+      "char_span": [
+        772,
+        782
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9773782639",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "6679740344",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6679740344",
+      "surface": "6679740344",
+      "start": 818,
+      "end": 828,
+      "char_span": [
+        818,
+        828
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6679740344",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "PER_B_OP_05",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Salman Mirza",
+      "surface": "Salman Mirza",
+      "start": 888,
+      "end": 900,
+      "char_span": [
+        888,
+        900
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_05",
+      "value": "Salman Mirza",
+      "aliases": [
+        "Sallu"
+      ]
+    },
+    {
+      "id": "E13",
+      "entity_key": "AMOUNT:128800.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 1,28,800/-",
+      "surface": "Rs. 1,28,800/-",
+      "start": 918,
+      "end": 932,
+      "char_span": [
+        918,
+        932
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 128800.0,
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "7909670546688937",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "7909670546688937",
+      "surface": "7909670546688937",
+      "start": 948,
+      "end": 964,
+      "char_span": [
+        948,
+        964
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7909670546688937",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "7909670546688937",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "7909670546688937",
+      "surface": "7909670546688937",
+      "start": 1013,
+      "end": 1029,
+      "char_span": [
+        1013,
+        1029
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7909670546688937",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 1051,
+      "end": 1065,
+      "char_span": [
+        1051,
+        1065
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_05",
+      "target_key": "9773782639",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        531,
+        735
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9773782639",
+      "target_key": "921465840449970",
+      "source_mention": "E8",
+      "target_mention": "E9",
+      "source": "E8",
+      "target": "E9",
+      "amount": null,
+      "evidence_char_span": [
+        531,
+        735
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9773782639",
+      "target_key": "6679740344",
+      "source_mention": "E10",
+      "target_mention": "E11",
+      "source": "E10",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        736,
+        843
+      ]
+    },
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_B_OP_05",
+      "target_key": "7909670546688937",
+      "source_mention": "E12",
+      "target_mention": "E14",
+      "source": "E12",
+      "target": "E14",
+      "amount": 128800.0,
+      "evidence_char_span": [
+        844,
+        1080
+      ],
+      "txn_id": "TXN000154"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_KP_01",
+      "target_key": "7909670546688937",
+      "source_mention": "E16",
+      "target_mention": "E15",
+      "source": "E16",
+      "target": "E15",
+      "amount": null,
+      "evidence_char_span": [
+        844,
+        1080
+      ]
+    }
+  ]
+}

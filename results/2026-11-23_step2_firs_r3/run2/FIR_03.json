@@ -1,0 +1,211 @@
+{
+  "source_doc_id": "FIR_03",
+  "split": "train",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXNA_HG_03",
+    "T_CTRL_HG_01"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Sunil Kumar",
+      "surface": "Sunil Kumar",
+      "start": 220,
+      "end": 231,
+      "char_span": [
+        220,
+        231
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": [
+        "Sunny"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_06",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Sunny",
+      "surface": "Sunny",
+      "start": 236,
+      "end": 241,
+      "char_span": [
+        236,
+        241
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_06",
+      "value": "Sunil Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Bhagwan Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Bhagwan Kumar",
+      "surface": "Bhagwan Kumar",
+      "start": 251,
+      "end": 264,
+      "char_span": [
+        251,
+        264
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Bhagwan Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Vikram Rathore",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Vikram Rathore",
+      "surface": "Vikram Rathore",
+      "start": 320,
+      "end": 334,
+      "char_span": [
+        320,
+        334
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Vikram Rathore",
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "8481893016368426",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "8481893016368426",
+      "surface": "8481893016368426",
+      "start": 457,
+      "end": 473,
+      "char_span": [
+        457,
+        473
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8481893016368426",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "AMOUNT:13387.07",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "13,387.07",
+      "surface": "13,387.07",
+      "start": 484,
+      "end": 493,
+      "char_span": [
+        484,
+        493
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 13387.07,
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "880913431611",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "880913431611",
+      "surface": "880913431611",
+      "start": 512,
+      "end": 524,
+      "char_span": [
+        512,
+        524
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "880913431611",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "880913431611",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "880913431611",
+      "surface": "880913431611",
+      "start": 584,
+      "end": 596,
+      "char_span": [
+        584,
+        596
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "880913431611",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "PER_B_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Aslam Parvez",
+      "surface": "Aslam Parvez",
+      "start": 614,
+      "end": 626,
+      "char_span": [
+        614,
+        626
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": [
+        "Chacha"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "8481893016368426",
+      "target_key": "880913431611",
+      "source_mention": "E5",
+      "target_mention": "E7",
+      "source": "E5",
+      "target": "E7",
+      "amount": 13387.07,
+      "evidence_char_span": [
+        408,
+        655
+      ],
+      "txn_id": "TXN000242"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_OP_06",
+      "target_key": "880913431611",
+      "source_mention": "E9",
+      "target_mention": "E8",
+      "source": "E9",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        408,
+        655
+      ]
+    }
+  ]
+}

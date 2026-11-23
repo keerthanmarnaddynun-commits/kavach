@@ -1,0 +1,27 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\Kirthan\Desktop\crimi-nex\.venv311\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Kirthan\Desktop\crimi-nex
+plugins: anyio-3.7.1
+collecting ... collected 18 items
+
+tests/test_generate_case.py::test_determinism_by_seed PASSED             [  5%]
+tests/test_generate_case.py::test_all_imeis_luhn_valid PASSED            [ 11%]
+tests/test_generate_case.py::test_phone_format PASSED                    [ 16%]
+tests/test_generate_case.py::test_kingpin_phone_not_top_by_call_count PASSED [ 22%]
+tests/test_generate_case.py::test_removing_bridge_couriers_disconnects_gang_a_from_b PASSED [ 27%]
+tests/test_generate_case.py::test_burner_life_3_to_8_days PASSED         [ 33%]
+tests/test_generate_case.py::test_row_counts_within_range PASSED         [ 38%]
+tests/test_generate_case.py::test_mule_accounts_and_structuring PASSED   [ 44%]
+tests/test_generate_case.py::test_decoys_metadata PASSED                 [ 50%]
+tests/test_generate_case.py::test_pizza_shop_at_least_20_distinct_contacts PASSED [ 55%]
+tests/test_generate_case.py::test_pizza_shop_is_top_3_by_call_count PASSED [ 61%]
+tests/test_generate_case.py::test_pizza_shop_no_contact_with_both_gangs PASSED [ 66%]
+tests/test_generate_case.py::test_ifsc_format_in_truth_and_bank PASSED   [ 72%]
+tests/test_generate_case.py::test_ifsc_prefix_matches_bank PASSED        [ 77%]
+tests/test_generate_case.py::test_account_length_matches_bank PASSED     [ 83%]
+tests/test_generate_case.py::test_no_account_has_10_or_15_digits PASSED  [ 88%]
+tests/test_generate_case.py::test_bank_csv_ifsc_equals_receiving_account_ifsc PASSED [ 94%]
+tests/test_generate_case.py::test_no_account_number_equals_any_phone_or_imei PASSED [100%]
+
+============================= 18 passed in 0.90s ==============================

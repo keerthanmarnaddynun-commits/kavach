@@ -1,0 +1,389 @@
+{
+  "source_doc_id": "FIR_87",
+  "split": "test",
+  "fir_type": "FULL",
+  "template_ids": [
+    "T_OWNS_HG_05",
+    "T_IMEI_HG_06",
+    "T_CALL_HG_02",
+    "T_TXN_HG_05",
+    "T_CTRL_HG_03"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 203,
+      "end": 215,
+      "char_span": [
+        203,
+        215
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Kabira",
+      "surface": "Kabira",
+      "start": 220,
+      "end": 226,
+      "char_span": [
+        220,
+        226
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mustaq Sheikh",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mustaq Sheikh",
+      "surface": "Mustaq Sheikh",
+      "start": 236,
+      "end": 249,
+      "char_span": [
+        236,
+        249
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mustaq Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "AMOUNT:18500.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "18,500",
+      "surface": "18,500",
+      "start": 343,
+      "end": 349,
+      "char_span": [
+        343,
+        349
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 18500.0,
+      "aliases": []
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 456,
+      "end": 468,
+      "char_span": [
+        456,
+        468
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E6",
+      "entity_key": "AMOUNT:27480.64",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "27,480.64",
+      "surface": "27,480.64",
+      "start": 486,
+      "end": 495,
+      "char_span": [
+        486,
+        495
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 27480.64,
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "17520025569318",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "17520025569318",
+      "surface": "17520025569318",
+      "start": 515,
+      "end": 529,
+      "char_span": [
+        515,
+        529
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "17520025569318",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "17520025569318",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "17520025569318",
+      "surface": "17520025569318",
+      "start": 588,
+      "end": 602,
+      "char_span": [
+        588,
+        602
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "17520025569318",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mukhtar Ansari",
+      "surface": "Mukhtar Ansari",
+      "start": 624,
+      "end": 638,
+      "char_span": [
+        624,
+        638
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ]
+    },
+    {
+      "id": "E10",
+      "entity_key": "7710947775",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "77109 47775",
+      "surface": "77109 47775",
+      "start": 699,
+      "end": 710,
+      "char_span": [
+        699,
+        710
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7710947775",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "6679740344",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6679740344",
+      "surface": "6679740344",
+      "start": 728,
+      "end": 738,
+      "char_span": [
+        728,
+        738
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6679740344",
+      "aliases": []
+    },
+    {
+      "id": "E12",
+      "entity_key": "OFFICER:Vikram Rathore",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Vikram Rathore",
+      "surface": "Vikram Rathore",
+      "start": 792,
+      "end": 806,
+      "char_span": [
+        792,
+        806
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Vikram Rathore",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 912,
+      "end": 924,
+      "char_span": [
+        912,
+        924
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E14",
+      "entity_key": "7710947775",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "77109 47775",
+      "surface": "77109 47775",
+      "start": 958,
+      "end": 969,
+      "char_span": [
+        958,
+        969
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7710947775",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "7710947775",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "77109 47775",
+      "surface": "77109 47775",
+      "start": 1034,
+      "end": 1045,
+      "char_span": [
+        1034,
+        1045
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7710947775",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "304711671902299",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "304711671902299",
+      "surface": "304711671902299",
+      "start": 1060,
+      "end": 1075,
+      "char_span": [
+        1060,
+        1075
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "304711671902299",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_B_OP_02",
+      "target_key": "17520025569318",
+      "source_mention": "E5",
+      "target_mention": "E7",
+      "source": "E5",
+      "target": "E7",
+      "amount": 27480.64,
+      "evidence_char_span": [
+        411,
+        653
+      ],
+      "txn_id": "TXN000529"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_KP_01",
+      "target_key": "17520025569318",
+      "source_mention": "E9",
+      "target_mention": "E8",
+      "source": "E9",
+      "target": "E8",
+      "amount": null,
+      "evidence_char_span": [
+        411,
+        653
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "7710947775",
+      "target_key": "6679740344",
+      "source_mention": "E10",
+      "target_mention": "E11",
+      "source": "E10",
+      "target": "E11",
+      "amount": null,
+      "evidence_char_span": [
+        654,
+        778
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_OP_02",
+      "target_key": "7710947775",
+      "source_mention": "E13",
+      "target_mention": "E14",
+      "source": "E13",
+      "target": "E14",
+      "amount": null,
+      "evidence_char_span": [
+        880,
+        1092
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "7710947775",
+      "target_key": "304711671902299",
+      "source_mention": "E15",
+      "target_mention": "E16",
+      "source": "E15",
+      "target": "E16",
+      "amount": null,
+      "evidence_char_span": [
+        880,
+        1092
+      ]
+    }
+  ]
+}

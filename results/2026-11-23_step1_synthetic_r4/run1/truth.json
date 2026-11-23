@@ -1,0 +1,1354 @@
+{
+  "incident_day": 25,
+  "structuring_threshold": 50000,
+  "kingpin_ids": [
+    "PER_A_KP_01",
+    "PER_B_KP_01"
+  ],
+  "bridge_courier_ids": [
+    "PER_CR_01",
+    "PER_CR_02"
+  ],
+  "mule_accounts": [
+    "6869261796405377",
+    "258506431713",
+    "15329318393",
+    "62904228421020"
+  ],
+  "burner_phones": [
+    "7950240268",
+    "6592124998",
+    "8527111161",
+    "8149368998"
+  ],
+  "decoy_customers": [
+    "8459910229",
+    "6034324451",
+    "6605297516",
+    "7292127799",
+    "6998679807",
+    "9590515186",
+    "8423573322",
+    "9383473597",
+    "6375060685",
+    "9143410369",
+    "6670654051",
+    "9874034505",
+    "8447962757",
+    "7755719285",
+    "9155188442",
+    "9912517785",
+    "8981829922",
+    "9773592555",
+    "7278774701",
+    "7584168784"
+  ],
+  "is_decoy": true,
+  "decoys": {
+    "pizza_shop_number": "6604817549",
+    "is_decoy": true,
+    "decoy_customers": [
+      "8459910229",
+      "6034324451",
+      "6605297516",
+      "7292127799",
+      "6998679807",
+      "9590515186",
+      "8423573322",
+      "9383473597",
+      "6375060685",
+      "9143410369",
+      "6670654051",
+      "9874034505",
+      "8447962757",
+      "7755719285",
+      "9155188442",
+      "9912517785",
+      "8981829922",
+      "9773592555",
+      "7278774701",
+      "7584168784"
+    ],
+    "similar_names": [
+      {
+        "person_id": "PER_A_OP_01",
+        "name": "Vikas Sharma",
+        "gang": "GANG_A"
+      },
+      {
+        "person_id": "PER_B_OP_01",
+        "name": "Bikas Sharma",
+        "gang": "GANG_B"
+      }
+    ],
+    "person_with_3_aliases": {
+      "person_id": "PER_A_OP_01",
+      "name": "Vikas Sharma",
+      "aliases": [
+        "Bicky",
+        "Viku",
+        "Kallu"
+      ]
+    },
+    "shared_handset_imei": {
+      "imei": "204332181960015",
+      "shared_by": [
+        "PER_A_OP_02",
+        "PER_A_OP_03"
+      ]
+    }
+  },
+  "people": [
+    {
+      "person_id": "PER_A_KP_01",
+      "name": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ],
+      "father_name": "Maheshwar Singh",
+      "role": "KINGPIN",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "7389083863",
+          "imei": "894026542351162",
+          "imsi": "404455594078161"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "693103413164",
+          "bank": "ICICI",
+          "ifsc": "ICIC0575435"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_A_LT_01",
+      "name": "Devendra Yadav",
+      "aliases": [
+        "Chhota Raju"
+      ],
+      "father_name": "Ramakant Yadav",
+      "role": "LIEUTENANT",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "8255341928",
+          "imei": "427648350305646",
+          "imsi": "404453953767242"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "98496965328710",
+          "bank": "HDFC",
+          "ifsc": "HDFC0214975"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_A_LT_02",
+      "name": "Sanjay Mehra",
+      "aliases": [
+        "Sanju"
+      ],
+      "father_name": "Prem Mehra",
+      "role": "LIEUTENANT",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "7691669784",
+          "imei": "901845146270481",
+          "imsi": "404208148932528"
+        },
+        {
+          "phone": "6957015430",
+          "imei": "491171822782483",
+          "imsi": "405703834657871"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "41509839301031",
+          "bank": "HDFC",
+          "ifsc": "HDFC0132938"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_A_OP_01",
+      "name": "Vikas Sharma",
+      "aliases": [
+        "Bicky",
+        "Viku",
+        "Kallu"
+      ],
+      "father_name": "Harish Sharma",
+      "role": "OPERATIVE",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "6834738299",
+          "imei": "837631165667016",
+          "imsi": "404456513338726"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "4178108013267736",
+          "bank": "PNB",
+          "ifsc": "PUNB0161483"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_A_OP_02",
+      "name": "Anand Verma",
+      "aliases": [
+        "Andy"
+      ],
+      "father_name": "Shyam Verma",
+      "role": "OPERATIVE",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "6647468723",
+          "imei": "204332181960015",
+          "imsi": "405853098050097"
+        },
+        {
+          "phone": "7081219136",
+          "imei": "293990916998543",
+          "imsi": "404205346247510"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "28384251354",
+          "bank": "SBI",
+          "ifsc": "SBIN0265409"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_A_OP_03",
+      "name": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ],
+      "father_name": "Madan Tiwari",
+      "role": "OPERATIVE",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "8980841241",
+          "imei": "204332181960015",
+          "imsi": "404458244935348"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "26400524278",
+          "bank": "SBI",
+          "ifsc": "SBIN0839945"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_A_OP_04",
+      "name": "Manoj Rawat",
+      "aliases": [
+        "Munna"
+      ],
+      "father_name": "Kishori Rawat",
+      "role": "OPERATIVE",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "6112805982",
+          "imei": "720450533158693",
+          "imsi": "404203226025634"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "70733754330",
+          "bank": "SBI",
+          "ifsc": "SBIN0792094"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_A_OP_05",
+      "name": "Deepak Chauhan",
+      "aliases": [
+        "Deepu"
+      ],
+      "father_name": "Sardar Chauhan",
+      "role": "OPERATIVE",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "8414586850",
+          "imei": "242940196556984",
+          "imsi": "404456934060883"
+        },
+        {
+          "phone": "8615951484",
+          "imei": "756482366299465",
+          "imsi": "404454436995777"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "6869261796405377",
+          "bank": "PNB",
+          "ifsc": "PUNB0347582",
+          "is_mule": true
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_A_OP_06",
+      "name": "Sunil Kumar",
+      "aliases": [
+        "Sunny"
+      ],
+      "father_name": "Bhagwan Kumar",
+      "role": "OPERATIVE",
+      "gang": "GANG_A",
+      "phones": [
+        {
+          "phone": "7148951343",
+          "imei": "420037917693677",
+          "imsi": "405703201632870"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "82788957986",
+          "bank": "SBI",
+          "ifsc": "SBIN0970914"
+        },
+        {
+          "account_number": "258506431713",
+          "bank": "ICICI",
+          "ifsc": "ICIC0772875",
+          "is_mule": true
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_KP_01",
+      "name": "Mukhtar Ansari",
+      "aliases": [
+        "Bade Miyan"
+      ],
+      "father_name": "Iqbal Ansari",
+      "role": "KINGPIN",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "9277434873",
+          "imei": "571434558122362",
+          "imsi": "404203166587603"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "7909670546688937",
+          "bank": "PNB",
+          "ifsc": "PUNB0330080"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_LT_01",
+      "name": "Farooq Ahmed",
+      "aliases": [
+        "Tiger"
+      ],
+      "father_name": "Zahid Ahmed",
+      "role": "LIEUTENANT",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "9065627298",
+          "imei": "169901627204650",
+          "imsi": "404207556464170"
+        },
+        {
+          "phone": "6531003309",
+          "imei": "332719374529919",
+          "imsi": "404204190496631"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "24919058651850",
+          "bank": "HDFC",
+          "ifsc": "HDFC0990844"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_LT_02",
+      "name": "Rashid Khan",
+      "aliases": [
+        "Shooter"
+      ],
+      "father_name": "Asif Khan",
+      "role": "LIEUTENANT",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "9165726284",
+          "imei": "977694531473790",
+          "imsi": "405705075273545"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "580831367837",
+          "bank": "ICICI",
+          "ifsc": "ICIC0777278"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_OP_01",
+      "name": "Bikas Sharma",
+      "aliases": [
+        "Biku"
+      ],
+      "father_name": "Girish Sharma",
+      "role": "OPERATIVE",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "9014363495",
+          "imei": "888568557444315",
+          "imsi": "404205182337498"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "44352408240",
+          "bank": "SBI",
+          "ifsc": "SBIN0157174"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_OP_02",
+      "name": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ],
+      "father_name": "Mustaq Sheikh",
+      "role": "OPERATIVE",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "7710947775",
+          "imei": "304711671902299",
+          "imsi": "405851318699938"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "5964990913341232",
+          "bank": "PNB",
+          "ifsc": "PUNB0678805"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_OP_03",
+      "name": "Nadeem Qureshi",
+      "aliases": [
+        "Don"
+      ],
+      "father_name": "Yusuf Qureshi",
+      "role": "OPERATIVE",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "6679740344",
+          "imei": "813493618324218",
+          "imsi": "404452499471746"
+        },
+        {
+          "phone": "8887719065",
+          "imei": "501399049027873",
+          "imsi": "405852967175655"
+        }
+      ],
+      "accounts": [],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_OP_04",
+      "name": "Wasim Akram",
+      "aliases": [
+        "Vicky"
+      ],
+      "father_name": "Shabir Akram",
+      "role": "OPERATIVE",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "8674680715",
+          "imei": "551680876038599",
+          "imsi": "405707034824771"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "34808613171274",
+          "bank": "HDFC",
+          "ifsc": "HDFC0633590"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_OP_05",
+      "name": "Salman Mirza",
+      "aliases": [
+        "Sallu"
+      ],
+      "father_name": "Feroz Mirza",
+      "role": "OPERATIVE",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "9773782639",
+          "imei": "921465840449970",
+          "imsi": "404207875588675"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "15329318393",
+          "bank": "SBI",
+          "ifsc": "SBIN0952547",
+          "is_mule": true
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_B_OP_06",
+      "name": "Aslam Parvez",
+      "aliases": [
+        "Chacha"
+      ],
+      "father_name": "Latif Parvez",
+      "role": "OPERATIVE",
+      "gang": "GANG_B",
+      "phones": [
+        {
+          "phone": "7963605766",
+          "imei": "370289517187028",
+          "imsi": "405702174596158"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "880913431611",
+          "bank": "ICICI",
+          "ifsc": "ICIC0565230"
+        },
+        {
+          "account_number": "62904228421020",
+          "bank": "HDFC",
+          "ifsc": "HDFC0475644",
+          "is_mule": true
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_CR_01",
+      "name": "Ramesh Chand",
+      "aliases": [
+        "Postman"
+      ],
+      "father_name": "Kishan Chand",
+      "role": "BRIDGE_COURIER",
+      "gang": "COURIER",
+      "phones": [
+        {
+          "phone": "7400504556",
+          "imei": "338692221969378",
+          "imsi": "404203747407482"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "564743671369",
+          "bank": "ICICI",
+          "ifsc": "ICIC0476395"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "PER_CR_02",
+      "name": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ],
+      "father_name": "Mohan Pal",
+      "role": "BRIDGE_COURIER",
+      "gang": "COURIER",
+      "phones": [
+        {
+          "phone": "8406409097",
+          "imei": "539533942104704",
+          "imsi": "405852145623285"
+        }
+      ],
+      "accounts": [
+        {
+          "account_number": "347451712368",
+          "bank": "ICICI",
+          "ifsc": "ICIC0483542"
+        }
+      ],
+      "is_decoy": false
+    },
+    {
+      "person_id": "DEC_PIZZA_01",
+      "name": "Harish Chawla (Royal Pizza)",
+      "aliases": [
+        "Pizza Shop"
+      ],
+      "father_name": "Kailash Chawla",
+      "role": "DECOY_CIVILIAN",
+      "gang": "CIVILIAN",
+      "phones": [
+        {
+          "phone": "6604817549",
+          "imei": "751370985931748",
+          "imsi": "405701200471138"
+        }
+      ],
+      "accounts": [],
+      "is_decoy": true
+    }
+  ],
+  "roles": [
+    "BRIDGE_COURIER",
+    "DECOY_CIVILIAN",
+    "KINGPIN",
+    "LIEUTENANT",
+    "OPERATIVE"
+  ],
+  "aliases": {
+    "PER_A_KP_01": [
+      "Raju Bhai"
+    ],
+    "PER_A_LT_01": [
+      "Chhota Raju"
+    ],
+    "PER_A_LT_02": [
+      "Sanju"
+    ],
+    "PER_A_OP_01": [
+      "Bicky",
+      "Viku",
+      "Kallu"
+    ],
+    "PER_A_OP_02": [
+      "Andy"
+    ],
+    "PER_A_OP_03": [
+      "Pandit"
+    ],
+    "PER_A_OP_04": [
+      "Munna"
+    ],
+    "PER_A_OP_05": [
+      "Deepu"
+    ],
+    "PER_A_OP_06": [
+      "Sunny"
+    ],
+    "PER_B_KP_01": [
+      "Bade Miyan"
+    ],
+    "PER_B_LT_01": [
+      "Tiger"
+    ],
+    "PER_B_LT_02": [
+      "Shooter"
+    ],
+    "PER_B_OP_01": [
+      "Biku"
+    ],
+    "PER_B_OP_02": [
+      "Kabira"
+    ],
+    "PER_B_OP_03": [
+      "Don"
+    ],
+    "PER_B_OP_04": [
+      "Vicky"
+    ],
+    "PER_B_OP_05": [
+      "Sallu"
+    ],
+    "PER_B_OP_06": [
+      "Chacha"
+    ],
+    "PER_CR_01": [
+      "Postman"
+    ],
+    "PER_CR_02": [
+      "Hawai"
+    ],
+    "DEC_PIZZA_01": [
+      "Pizza Shop"
+    ]
+  },
+  "phones": [
+    {
+      "phone": "7389083863",
+      "person_id": "PER_A_KP_01",
+      "imei": "894026542351162",
+      "imsi": "404455594078161",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "8255341928",
+      "person_id": "PER_A_LT_01",
+      "imei": "427648350305646",
+      "imsi": "404453953767242",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "7691669784",
+      "person_id": "PER_A_LT_02",
+      "imei": "901845146270481",
+      "imsi": "404208148932528",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "6957015430",
+      "person_id": "PER_A_LT_02",
+      "imei": "491171822782483",
+      "imsi": "405703834657871",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "6834738299",
+      "person_id": "PER_A_OP_01",
+      "imei": "837631165667016",
+      "imsi": "404456513338726",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "6647468723",
+      "person_id": "PER_A_OP_02",
+      "imei": "204332181960015",
+      "imsi": "405853098050097",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "7081219136",
+      "person_id": "PER_A_OP_02",
+      "imei": "293990916998543",
+      "imsi": "404205346247510",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "8980841241",
+      "person_id": "PER_A_OP_03",
+      "imei": "204332181960015",
+      "imsi": "404458244935348",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "6112805982",
+      "person_id": "PER_A_OP_04",
+      "imei": "720450533158693",
+      "imsi": "404203226025634",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "8414586850",
+      "person_id": "PER_A_OP_05",
+      "imei": "242940196556984",
+      "imsi": "404456934060883",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "8615951484",
+      "person_id": "PER_A_OP_05",
+      "imei": "756482366299465",
+      "imsi": "404454436995777",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "7148951343",
+      "person_id": "PER_A_OP_06",
+      "imei": "420037917693677",
+      "imsi": "405703201632870",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "9277434873",
+      "person_id": "PER_B_KP_01",
+      "imei": "571434558122362",
+      "imsi": "404203166587603",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "9065627298",
+      "person_id": "PER_B_LT_01",
+      "imei": "169901627204650",
+      "imsi": "404207556464170",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "6531003309",
+      "person_id": "PER_B_LT_01",
+      "imei": "332719374529919",
+      "imsi": "404204190496631",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "9165726284",
+      "person_id": "PER_B_LT_02",
+      "imei": "977694531473790",
+      "imsi": "405705075273545",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "9014363495",
+      "person_id": "PER_B_OP_01",
+      "imei": "888568557444315",
+      "imsi": "404205182337498",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "7710947775",
+      "person_id": "PER_B_OP_02",
+      "imei": "304711671902299",
+      "imsi": "405851318699938",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "6679740344",
+      "person_id": "PER_B_OP_03",
+      "imei": "813493618324218",
+      "imsi": "404452499471746",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "8887719065",
+      "person_id": "PER_B_OP_03",
+      "imei": "501399049027873",
+      "imsi": "405852967175655",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "8674680715",
+      "person_id": "PER_B_OP_04",
+      "imei": "551680876038599",
+      "imsi": "405707034824771",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "9773782639",
+      "person_id": "PER_B_OP_05",
+      "imei": "921465840449970",
+      "imsi": "404207875588675",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "7963605766",
+      "person_id": "PER_B_OP_06",
+      "imei": "370289517187028",
+      "imsi": "405702174596158",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "7400504556",
+      "person_id": "PER_CR_01",
+      "imei": "338692221969378",
+      "imsi": "404203747407482",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "8406409097",
+      "person_id": "PER_CR_02",
+      "imei": "539533942104704",
+      "imsi": "405852145623285",
+      "is_burner": false,
+      "is_decoy": false
+    },
+    {
+      "phone": "6604817549",
+      "person_id": "DEC_PIZZA_01",
+      "imei": "751370985931748",
+      "imsi": "405701200471138",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "7950240268",
+      "person_id": "PER_A_OP_01",
+      "imei": "217758917839088",
+      "imsi": "405857007661771",
+      "is_burner": true,
+      "is_decoy": false
+    },
+    {
+      "phone": "6592124998",
+      "person_id": "PER_A_OP_03",
+      "imei": "669847896118367",
+      "imsi": "405703657661565",
+      "is_burner": true,
+      "is_decoy": false
+    },
+    {
+      "phone": "8527111161",
+      "person_id": "PER_B_OP_01",
+      "imei": "628098851656047",
+      "imsi": "405855198327315",
+      "is_burner": true,
+      "is_decoy": false
+    },
+    {
+      "phone": "8149368998",
+      "person_id": "PER_B_OP_04",
+      "imei": "194024455022968",
+      "imsi": "404452018366752",
+      "is_burner": true,
+      "is_decoy": false
+    },
+    {
+      "phone": "8459910229",
+      "person_id": null,
+      "imei": "114767976438157",
+      "imsi": "405701497840369",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "6034324451",
+      "person_id": null,
+      "imei": "176226838851607",
+      "imsi": "405700715969664",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "6605297516",
+      "person_id": null,
+      "imei": "236968164535217",
+      "imsi": "404458835523124",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "7292127799",
+      "person_id": null,
+      "imei": "899552717744902",
+      "imsi": "405858147700541",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "6998679807",
+      "person_id": null,
+      "imei": "459782071518202",
+      "imsi": "404207788925546",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "9590515186",
+      "person_id": null,
+      "imei": "549251925462910",
+      "imsi": "405858652816850",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "8423573322",
+      "person_id": null,
+      "imei": "241888059296225",
+      "imsi": "404209270653794",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "9383473597",
+      "person_id": null,
+      "imei": "846886239240757",
+      "imsi": "404458141247826",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "6375060685",
+      "person_id": null,
+      "imei": "461530515220471",
+      "imsi": "404207790104328",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "9143410369",
+      "person_id": null,
+      "imei": "811798089324600",
+      "imsi": "405853962185188",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "6670654051",
+      "person_id": null,
+      "imei": "631952058527721",
+      "imsi": "404201704303054",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "9874034505",
+      "person_id": null,
+      "imei": "515667652775846",
+      "imsi": "404456169284511",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "8447962757",
+      "person_id": null,
+      "imei": "159640165820293",
+      "imsi": "405700213556909",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "7755719285",
+      "person_id": null,
+      "imei": "754310278681441",
+      "imsi": "405703947312172",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "9155188442",
+      "person_id": null,
+      "imei": "358313237058958",
+      "imsi": "405708291146786",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "9912517785",
+      "person_id": null,
+      "imei": "389226801824220",
+      "imsi": "405853584143842",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "8981829922",
+      "person_id": null,
+      "imei": "690010943969075",
+      "imsi": "405854736471027",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "9773592555",
+      "person_id": null,
+      "imei": "725881537147321",
+      "imsi": "404450469632595",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "7278774701",
+      "person_id": null,
+      "imei": "787339500479747",
+      "imsi": "404451624565060",
+      "is_burner": false,
+      "is_decoy": true
+    },
+    {
+      "phone": "7584168784",
+      "person_id": null,
+      "imei": "221655852398688",
+      "imsi": "404450025787298",
+      "is_burner": false,
+      "is_decoy": true
+    }
+  ],
+  "imeis": [
+    "114767976438157",
+    "159640165820293",
+    "169901627204650",
+    "176226838851607",
+    "194024455022968",
+    "204332181960015",
+    "217758917839088",
+    "221655852398688",
+    "236968164535217",
+    "241888059296225",
+    "242940196556984",
+    "293990916998543",
+    "304711671902299",
+    "332719374529919",
+    "338692221969378",
+    "358313237058958",
+    "370289517187028",
+    "389226801824220",
+    "420037917693677",
+    "427648350305646",
+    "459782071518202",
+    "461530515220471",
+    "491171822782483",
+    "501399049027873",
+    "515667652775846",
+    "539533942104704",
+    "549251925462910",
+    "551680876038599",
+    "571434558122362",
+    "628098851656047",
+    "631952058527721",
+    "669847896118367",
+    "690010943969075",
+    "720450533158693",
+    "725881537147321",
+    "751370985931748",
+    "754310278681441",
+    "756482366299465",
+    "787339500479747",
+    "811798089324600",
+    "813493618324218",
+    "837631165667016",
+    "846886239240757",
+    "888568557444315",
+    "894026542351162",
+    "899552717744902",
+    "901845146270481",
+    "921465840449970",
+    "977694531473790"
+  ],
+  "accounts": [
+    {
+      "account_number": "693103413164",
+      "bank": "ICICI",
+      "ifsc": "ICIC0575435",
+      "person_id": "PER_A_KP_01",
+      "is_mule": false,
+      "is_kingpin_controlled": true
+    },
+    {
+      "account_number": "98496965328710",
+      "bank": "HDFC",
+      "ifsc": "HDFC0214975",
+      "person_id": "PER_A_LT_01",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "41509839301031",
+      "bank": "HDFC",
+      "ifsc": "HDFC0132938",
+      "person_id": "PER_A_LT_02",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "4178108013267736",
+      "bank": "PNB",
+      "ifsc": "PUNB0161483",
+      "person_id": "PER_A_OP_01",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "28384251354",
+      "bank": "SBI",
+      "ifsc": "SBIN0265409",
+      "person_id": "PER_A_OP_02",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "26400524278",
+      "bank": "SBI",
+      "ifsc": "SBIN0839945",
+      "person_id": "PER_A_OP_03",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "70733754330",
+      "bank": "SBI",
+      "ifsc": "SBIN0792094",
+      "person_id": "PER_A_OP_04",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "82788957986",
+      "bank": "SBI",
+      "ifsc": "SBIN0970914",
+      "person_id": "PER_A_OP_06",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "7909670546688937",
+      "bank": "PNB",
+      "ifsc": "PUNB0330080",
+      "person_id": "PER_B_KP_01",
+      "is_mule": false,
+      "is_kingpin_controlled": true
+    },
+    {
+      "account_number": "24919058651850",
+      "bank": "HDFC",
+      "ifsc": "HDFC0990844",
+      "person_id": "PER_B_LT_01",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "580831367837",
+      "bank": "ICICI",
+      "ifsc": "ICIC0777278",
+      "person_id": "PER_B_LT_02",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "44352408240",
+      "bank": "SBI",
+      "ifsc": "SBIN0157174",
+      "person_id": "PER_B_OP_01",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "5964990913341232",
+      "bank": "PNB",
+      "ifsc": "PUNB0678805",
+      "person_id": "PER_B_OP_02",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "34808613171274",
+      "bank": "HDFC",
+      "ifsc": "HDFC0633590",
+      "person_id": "PER_B_OP_04",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "880913431611",
+      "bank": "ICICI",
+      "ifsc": "ICIC0565230",
+      "person_id": "PER_B_OP_06",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "564743671369",
+      "bank": "ICICI",
+      "ifsc": "ICIC0476395",
+      "person_id": "PER_CR_01",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "347451712368",
+      "bank": "ICICI",
+      "ifsc": "ICIC0483542",
+      "person_id": "PER_CR_02",
+      "is_mule": false,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "6869261796405377",
+      "bank": "PNB",
+      "ifsc": "PUNB0347582",
+      "person_id": "PER_A_OP_05",
+      "is_mule": true,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "258506431713",
+      "bank": "ICICI",
+      "ifsc": "ICIC0772875",
+      "person_id": "PER_A_OP_06",
+      "is_mule": true,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "15329318393",
+      "bank": "SBI",
+      "ifsc": "SBIN0952547",
+      "person_id": "PER_B_OP_05",
+      "is_mule": true,
+      "is_kingpin_controlled": false
+    },
+    {
+      "account_number": "62904228421020",
+      "bank": "HDFC",
+      "ifsc": "HDFC0475644",
+      "person_id": "PER_B_OP_06",
+      "is_mule": true,
+      "is_kingpin_controlled": false
+    }
+  ]
+}

@@ -1,0 +1,529 @@
+{
+  "source_doc_id": "FIR_55",
+  "split": "train",
+  "fir_type": "MULTI_SUSPECT",
+  "template_ids": [
+    "T_OWNS_EN_03",
+    "T_IMEI_EN_01",
+    "T_CALL_EN_04",
+    "T_TXNA_EN_03",
+    "T_CTRL_EN_02"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_A_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Anand Verma",
+      "surface": "Anand Verma",
+      "start": 212,
+      "end": 223,
+      "char_span": [
+        212,
+        223
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": [
+        "Andy"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_A_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Andy",
+      "surface": "Andy",
+      "start": 230,
+      "end": 234,
+      "char_span": [
+        230,
+        234
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Shyam Verma",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Shyam Verma",
+      "surface": "Shyam Verma",
+      "start": 244,
+      "end": 255,
+      "char_span": [
+        244,
+        255
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Shyam Verma",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 293,
+      "end": 306,
+      "char_span": [
+        293,
+        306
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "PER_A_OP_03",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Pandit",
+      "surface": "Pandit",
+      "start": 313,
+      "end": 319,
+      "char_span": [
+        313,
+        319
+      ],
+      "role": null,
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "FATHER:Madan Tiwari",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Madan Tiwari",
+      "surface": "Madan Tiwari",
+      "start": 329,
+      "end": 341,
+      "char_span": [
+        329,
+        341
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Madan Tiwari",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "7520562247180388",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "7520562247180388",
+      "surface": "7520562247180388",
+      "start": 441,
+      "end": 457,
+      "char_span": [
+        441,
+        457
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7520562247180388",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "AMOUNT:4610.39",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "4,610.39",
+      "surface": "4,610.39",
+      "start": 486,
+      "end": 494,
+      "char_span": [
+        486,
+        494
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 4610.39,
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "657663940819",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "657663940819",
+      "surface": "657663940819",
+      "start": 518,
+      "end": 530,
+      "char_span": [
+        518,
+        530
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "657663940819",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "657663940819",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "657663940819",
+      "surface": "657663940819",
+      "start": 583,
+      "end": 595,
+      "char_span": [
+        583,
+        595
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "657663940819",
+      "aliases": []
+    },
+    {
+      "id": "E11",
+      "entity_key": "PER_A_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajendra Singh",
+      "surface": "Rajendra Singh",
+      "start": 622,
+      "end": 636,
+      "char_span": [
+        622,
+        636
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_KP_01",
+      "value": "Rajendra Singh",
+      "aliases": [
+        "Raju Bhai"
+      ]
+    },
+    {
+      "id": "E12",
+      "entity_key": "COMPLAINANT:Suresh Bansal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Bansal",
+      "surface": "Suresh Bansal",
+      "start": 655,
+      "end": 668,
+      "char_span": [
+        655,
+        668
+      ],
+      "role": "COMPLAINANT",
+      "truth_id": null,
+      "value": "Suresh Bansal",
+      "aliases": []
+    },
+    {
+      "id": "E13",
+      "entity_key": "AMOUNT:25000.00",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "25,000",
+      "surface": "25,000",
+      "start": 780,
+      "end": 786,
+      "char_span": [
+        780,
+        786
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 25000.0,
+      "aliases": []
+    },
+    {
+      "id": "E14",
+      "entity_key": "6647468723",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6647468723",
+      "surface": "6647468723",
+      "start": 914,
+      "end": 924,
+      "char_span": [
+        914,
+        924
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6647468723",
+      "aliases": []
+    },
+    {
+      "id": "E15",
+      "entity_key": "7081219136",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "7081219136",
+      "surface": "7081219136",
+      "start": 929,
+      "end": 939,
+      "char_span": [
+        929,
+        939
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "7081219136",
+      "aliases": []
+    },
+    {
+      "id": "E16",
+      "entity_key": "PER_A_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Anand Verma",
+      "surface": "Anand Verma",
+      "start": 949,
+      "end": 960,
+      "char_span": [
+        949,
+        960
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_02",
+      "value": "Anand Verma",
+      "aliases": [
+        "Andy"
+      ]
+    },
+    {
+      "id": "E17",
+      "entity_key": "6647468723",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6647468723",
+      "surface": "6647468723",
+      "start": 1014,
+      "end": 1024,
+      "char_span": [
+        1014,
+        1024
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6647468723",
+      "aliases": []
+    },
+    {
+      "id": "E18",
+      "entity_key": "6647468723",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "6647468723",
+      "surface": "6647468723",
+      "start": 1067,
+      "end": 1077,
+      "char_span": [
+        1067,
+        1077
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "6647468723",
+      "aliases": []
+    },
+    {
+      "id": "E19",
+      "entity_key": "204332181960015",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "204332181960015",
+      "surface": "204332181960015",
+      "start": 1105,
+      "end": 1120,
+      "char_span": [
+        1105,
+        1120
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "204332181960015",
+      "aliases": []
+    },
+    {
+      "id": "E20",
+      "entity_key": "PER_A_OP_03",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Pankaj Tiwari",
+      "surface": "Pankaj Tiwari",
+      "start": 1137,
+      "end": 1150,
+      "char_span": [
+        1137,
+        1150
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_A_OP_03",
+      "value": "Pankaj Tiwari",
+      "aliases": [
+        "Pandit"
+      ]
+    },
+    {
+      "id": "E21",
+      "entity_key": "8980841241",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "8980841241",
+      "surface": "8980841241",
+      "start": 1176,
+      "end": 1186,
+      "char_span": [
+        1176,
+        1186
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "8980841241",
+      "aliases": []
+    },
+    {
+      "id": "E22",
+      "entity_key": "204332181960015",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "204332181960015",
+      "surface": "204332181960015",
+      "start": 1219,
+      "end": 1234,
+      "char_span": [
+        1219,
+        1234
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "204332181960015",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "7520562247180388",
+      "target_key": "657663940819",
+      "source_mention": "E7",
+      "target_mention": "E9",
+      "source": "E7",
+      "target": "E9",
+      "amount": 4610.39,
+      "evidence_char_span": [
+        381,
+        637
+      ],
+      "txn_id": "TXN000843"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_A_KP_01",
+      "target_key": "657663940819",
+      "source_mention": "E11",
+      "target_mention": "E10",
+      "source": "E11",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        381,
+        637
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "6647468723",
+      "target_key": "7081219136",
+      "source_mention": "E14",
+      "target_mention": "E15",
+      "source": "E14",
+      "target": "E15",
+      "amount": null,
+      "evidence_char_span": [
+        829,
+        940
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_02",
+      "target_key": "6647468723",
+      "source_mention": "E16",
+      "target_mention": "E17",
+      "source": "E16",
+      "target": "E17",
+      "amount": null,
+      "evidence_char_span": [
+        941,
+        1235
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "6647468723",
+      "target_key": "204332181960015",
+      "source_mention": "E18",
+      "target_mention": "E19",
+      "source": "E18",
+      "target": "E19",
+      "amount": null,
+      "evidence_char_span": [
+        941,
+        1235
+      ]
+    },
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_A_OP_03",
+      "target_key": "8980841241",
+      "source_mention": "E20",
+      "target_mention": "E21",
+      "source": "E20",
+      "target": "E21",
+      "amount": null,
+      "evidence_char_span": [
+        941,
+        1235
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "8980841241",
+      "target_key": "204332181960015",
+      "source_mention": "E21",
+      "target_mention": "E22",
+      "source": "E21",
+      "target": "E22",
+      "amount": null,
+      "evidence_char_span": [
+        941,
+        1235
+      ]
+    }
+  ]
+}

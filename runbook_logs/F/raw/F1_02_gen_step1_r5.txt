@@ -1,0 +1,6 @@
+COMMAND: PY scripts/report/step1_results.py --run-id step1_synthetic_r5
+EXIT: 0
+SECONDS: 8.3
+--- OUTPUT ---
+Step 1 evaluation completed successfully.
+Results Directory: C:\Users\Kirthan\Desktop\crimi-nex\results\2026-11-23_step1_synthetic_r5

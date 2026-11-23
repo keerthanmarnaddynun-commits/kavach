@@ -1,0 +1,244 @@
+{
+  "source_doc_id": "FIR_50",
+  "split": "train",
+  "fir_type": "CALLS_ONLY",
+  "template_ids": [
+    "T_OWNS_HI_04",
+    "T_IMEI_HI_01",
+    "T_CALL_HI_02"
+  ],
+  "language": "hindi",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "मुख्तार अंसारी",
+      "surface": "मुख्तार अंसारी",
+      "start": 200,
+      "end": 214,
+      "char_span": [
+        200,
+        214
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "बड़े मियां"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_KP_01",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "बड़े मियां",
+      "surface": "बड़े मियां",
+      "start": 220,
+      "end": 230,
+      "char_span": [
+        220,
+        230
+      ],
+      "role": null,
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Iqbal Ansari",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "इकबाल अंसारी",
+      "surface": "इकबाल अंसारी",
+      "start": 242,
+      "end": 254,
+      "char_span": [
+        242,
+        254
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Iqbal Ansari",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_B_KP_01",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "मुख्तार अंसारी",
+      "surface": "मुख्तार अंसारी",
+      "start": 326,
+      "end": 340,
+      "char_span": [
+        326,
+        340
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_KP_01",
+      "value": "Mukhtar Ansari",
+      "aliases": [
+        "बड़े मियां"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "9277434873",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9277434873",
+      "surface": "9277434873",
+      "start": 366,
+      "end": 376,
+      "char_span": [
+        366,
+        376
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9277434873",
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "9277434873",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9277434873",
+      "surface": "9277434873",
+      "start": 413,
+      "end": 423,
+      "char_span": [
+        413,
+        423
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9277434873",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "571434558122362",
+      "label": "IMEI",
+      "type": "IMEI",
+      "text": "571434558122362",
+      "surface": "571434558122362",
+      "start": 443,
+      "end": 458,
+      "char_span": [
+        443,
+        458
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "571434558122362",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "OFFICER:Rajesh Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "राजेश कुमार",
+      "surface": "राजेश कुमार",
+      "start": 488,
+      "end": 499,
+      "char_span": [
+        488,
+        499
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Rajesh Kumar",
+      "aliases": []
+    },
+    {
+      "id": "E9",
+      "entity_key": "9277434873",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9277434873",
+      "surface": "9277434873",
+      "start": 589,
+      "end": 599,
+      "char_span": [
+        589,
+        599
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9277434873",
+      "aliases": []
+    },
+    {
+      "id": "E10",
+      "entity_key": "9065627298",
+      "label": "PHONE",
+      "type": "PHONE",
+      "text": "9065627298",
+      "surface": "9065627298",
+      "start": 616,
+      "end": 626,
+      "char_span": [
+        616,
+        626
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "9065627298",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OWNS_DEVICE",
+      "relation": "OWNS_DEVICE",
+      "source_key": "PER_B_KP_01",
+      "target_key": "9277434873",
+      "source_mention": "E4",
+      "target_mention": "E5",
+      "source": "E4",
+      "target": "E5",
+      "amount": null,
+      "evidence_char_span": [
+        297,
+        474
+      ]
+    },
+    {
+      "type": "ASSOCIATED_IMEI",
+      "relation": "ASSOCIATED_IMEI",
+      "source_key": "9277434873",
+      "target_key": "571434558122362",
+      "source_mention": "E6",
+      "target_mention": "E7",
+      "source": "E6",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        297,
+        474
+      ]
+    },
+    {
+      "type": "COMMUNICATED_WITH",
+      "relation": "COMMUNICATED_WITH",
+      "source_key": "9277434873",
+      "target_key": "9065627298",
+      "source_mention": "E9",
+      "target_mention": "E10",
+      "source": "E9",
+      "target": "E10",
+      "amount": null,
+      "evidence_char_span": [
+        552,
+        653
+      ]
+    }
+  ]
+}

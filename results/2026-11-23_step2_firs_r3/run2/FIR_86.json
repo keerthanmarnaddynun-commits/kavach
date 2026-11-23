@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_86",
+  "split": "test",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_HG_05"
+  ],
+  "language": "hinglish",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Aslam Parvez",
+      "surface": "Aslam Parvez",
+      "start": 214,
+      "end": 226,
+      "char_span": [
+        214,
+        226
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": [
+        "Chacha"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_06",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Chacha",
+      "surface": "Chacha",
+      "start": 231,
+      "end": 237,
+      "char_span": [
+        231,
+        237
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Latif Parvez",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Latif Parvez",
+      "surface": "Latif Parvez",
+      "start": 247,
+      "end": 259,
+      "char_span": [
+        247,
+        259
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Latif Parvez",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Rajesh Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajesh Kumar",
+      "surface": "Rajesh Kumar",
+      "start": 386,
+      "end": 398,
+      "char_span": [
+        386,
+        398
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Rajesh Kumar",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}

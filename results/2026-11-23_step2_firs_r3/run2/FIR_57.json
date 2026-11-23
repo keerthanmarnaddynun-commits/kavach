@@ -1,0 +1,213 @@
+{
+  "source_doc_id": "FIR_57",
+  "split": "train",
+  "fir_type": "MONEY_ONLY",
+  "template_ids": [
+    "T_TXN_EN_01",
+    "T_CTRL_EN_01"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_CR_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Pal",
+      "surface": "Suresh Pal",
+      "start": 208,
+      "end": 218,
+      "char_span": [
+        208,
+        218
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_CR_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Hawai",
+      "surface": "Hawai",
+      "start": 225,
+      "end": 230,
+      "char_span": [
+        225,
+        230
+      ],
+      "role": null,
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mohan Pal",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mohan Pal",
+      "surface": "Mohan Pal",
+      "start": 240,
+      "end": 249,
+      "char_span": [
+        240,
+        249
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mohan Pal",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "PER_CR_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Suresh Pal",
+      "surface": "Suresh Pal",
+      "start": 319,
+      "end": 329,
+      "char_span": [
+        319,
+        329
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_CR_02",
+      "value": "Suresh Pal",
+      "aliases": [
+        "Hawai"
+      ]
+    },
+    {
+      "id": "E5",
+      "entity_key": "AMOUNT:4314.08",
+      "label": "AMOUNT",
+      "type": "AMOUNT",
+      "text": "Rs. 4,314.08/-",
+      "surface": "Rs. 4,314.08/-",
+      "start": 350,
+      "end": 364,
+      "char_span": [
+        350,
+        364
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": 4314.08,
+      "aliases": []
+    },
+    {
+      "id": "E6",
+      "entity_key": "880913431611",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "880913431611",
+      "surface": "880913431611",
+      "start": 378,
+      "end": 390,
+      "char_span": [
+        378,
+        390
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "880913431611",
+      "aliases": []
+    },
+    {
+      "id": "E7",
+      "entity_key": "880913431611",
+      "label": "ACCOUNT",
+      "type": "ACCOUNT",
+      "text": "880913431611",
+      "surface": "880913431611",
+      "start": 414,
+      "end": 426,
+      "char_span": [
+        414,
+        426
+      ],
+      "role": null,
+      "truth_id": null,
+      "value": "880913431611",
+      "aliases": []
+    },
+    {
+      "id": "E8",
+      "entity_key": "PER_B_OP_06",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Aslam Parvez",
+      "surface": "Aslam Parvez",
+      "start": 476,
+      "end": 488,
+      "char_span": [
+        476,
+        488
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_06",
+      "value": "Aslam Parvez",
+      "aliases": [
+        "Chacha"
+      ]
+    },
+    {
+      "id": "E9",
+      "entity_key": "WITNESS:Dinesh Joshi",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Dinesh Joshi",
+      "surface": "Dinesh Joshi",
+      "start": 498,
+      "end": 510,
+      "char_span": [
+        498,
+        510
+      ],
+      "role": "WITNESS",
+      "truth_id": null,
+      "value": "Dinesh Joshi",
+      "aliases": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "TRANSFERRED_FUNDS",
+      "relation": "TRANSFERRED_FUNDS",
+      "source_key": "PER_CR_02",
+      "target_key": "880913431611",
+      "source_mention": "E4",
+      "target_mention": "E6",
+      "source": "E4",
+      "target": "E6",
+      "amount": 4314.08,
+      "evidence_char_span": [
+        271,
+        489
+      ],
+      "txn_id": "TXN000398"
+    },
+    {
+      "type": "CONTROLS_ACCOUNT",
+      "relation": "CONTROLS_ACCOUNT",
+      "source_key": "PER_B_OP_06",
+      "target_key": "880913431611",
+      "source_mention": "E8",
+      "target_mention": "E7",
+      "source": "E8",
+      "target": "E7",
+      "amount": null,
+      "evidence_char_span": [
+        271,
+        489
+      ]
+    }
+  ]
+}

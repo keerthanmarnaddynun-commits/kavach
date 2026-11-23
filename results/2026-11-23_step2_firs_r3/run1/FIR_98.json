@@ -1,0 +1,86 @@
+{
+  "source_doc_id": "FIR_98",
+  "split": "test",
+  "fir_type": "ALIAS_ONLY",
+  "template_ids": [
+    "T_ALREC_EN_06"
+  ],
+  "language": "english",
+  "entities": [
+    {
+      "id": "E1",
+      "entity_key": "PER_B_OP_02",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Imran Sheikh",
+      "surface": "Imran Sheikh",
+      "start": 212,
+      "end": 224,
+      "char_span": [
+        212,
+        224
+      ],
+      "role": "SUSPECT",
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": [
+        "Kabira"
+      ]
+    },
+    {
+      "id": "E2",
+      "entity_key": "PER_B_OP_02",
+      "label": "ALIAS",
+      "type": "ALIAS",
+      "text": "Kabira",
+      "surface": "Kabira",
+      "start": 231,
+      "end": 237,
+      "char_span": [
+        231,
+        237
+      ],
+      "role": null,
+      "truth_id": "PER_B_OP_02",
+      "value": "Imran Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E3",
+      "entity_key": "FATHER:Mustaq Sheikh",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Mustaq Sheikh",
+      "surface": "Mustaq Sheikh",
+      "start": 247,
+      "end": 260,
+      "char_span": [
+        247,
+        260
+      ],
+      "role": "FATHER",
+      "truth_id": null,
+      "value": "Mustaq Sheikh",
+      "aliases": []
+    },
+    {
+      "id": "E4",
+      "entity_key": "OFFICER:Rajesh Kumar",
+      "label": "PERSON",
+      "type": "PERSON",
+      "text": "Rajesh Kumar",
+      "surface": "Rajesh Kumar",
+      "start": 380,
+      "end": 392,
+      "char_span": [
+        380,
+        392
+      ],
+      "role": "OFFICER",
+      "truth_id": null,
+      "value": "Rajesh Kumar",
+      "aliases": []
+    }
+  ],
+  "relationships": []
+}
