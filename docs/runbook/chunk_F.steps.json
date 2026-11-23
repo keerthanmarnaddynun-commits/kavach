@@ -37,7 +37,9 @@
       "runbook_state/*",
       "web/package-lock.json",
       "results/*",
-      "docs/RESULTS.md"
+      "docs/RESULTS.md",
+      "scripts/report/*",
+      "scripts/check_results_docs.py"
     ],
     "forbidden_path_fragments": [
       "C:\\Users",
