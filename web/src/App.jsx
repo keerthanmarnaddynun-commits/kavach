@@ -241,7 +241,7 @@ export function App() {
         )}
 
         {/* Content Pane */}
-        <main className="main-content">
+        <main className={`main-content ${subPage === "graph" ? "graph-view" : ""}`}>
           {casesError && (
             <div className="error-text" style={{ marginBottom: "12px" }}>
               {casesError}

@@ -1,0 +1,164 @@
+{
+  "chunk": "G",
+  "branch": "phase-d-ag",
+  "global": {
+    "max_attempts": 2,
+    "test_command": [
+      "PY",
+      "-m",
+      "pytest",
+      "-q",
+      "--ignore=scratch",
+      "-o",
+      "faulthandler_timeout=900"
+    ],
+    "banned_all": [
+      "optimal",
+      "sweet spot",
+      "robust",
+      "decisively",
+      "catastrophic",
+      "proves",
+      "guarantees",
+      "perfect",
+      "excellent",
+      "state-of-the-art"
+    ],
+    "banned_docs": [
+      "verified",
+      "confirmed",
+      "audited"
+    ],
+    "scan_exclude": [
+      "docs/runbook/*",
+      "scripts/runbook/*",
+      "tests/test_runbook_step_tool.py",
+      "runbook_logs/*",
+      "runbook_state/*",
+      "web/package-lock.json",
+      "results/*",
+      "docs/RESULTS.md"
+    ],
+    "forbidden_path_fragments": [
+      "C:\\Users",
+      "C:/Users",
+      "/home/",
+      "/Users/",
+      "Kirthan",
+      "kirthan"
+    ]
+  },
+  "steps": [
+    {
+      "id": "G0",
+      "title": "Diagnose graph page defects (findings only)",
+      "allow_create": [
+        "docs/web/*"
+      ],
+      "allow_edit": [],
+      "done_when": [
+        {
+          "name": "diagnosis_written",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('runbook_logs/G/G0_diagnosis.txt'); assert p.exists() and p.stat().st_size>=600, 'runbook_logs/G/G0_diagnosis.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook G0: graph page diagnosis"
+    },
+    {
+      "id": "G1",
+      "title": "Fix graph page defects",
+      "allow_create": [
+        "web/*"
+      ],
+      "allow_edit": [
+        "web/*"
+      ],
+      "done_when": [
+        {
+          "name": "tests_test_frontend_static",
+          "argv": [
+            "PY",
+            "-m",
+            "pytest",
+            "-q",
+            "tests/test_frontend_static.py"
+          ],
+          "must_contain": "passed"
+        },
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        }
+      ],
+      "commit_message": "Runbook G1: graph inspector opens on node click; isolated-nodes control corrected"
+    },
+    {
+      "id": "G2",
+      "title": "Chunk end: summary for the user and log bundle",
+      "allow_create": [
+        "docs/web/*"
+      ],
+      "allow_edit": [
+        "docs/web/*"
+      ],
+      "done_when": [
+        {
+          "name": "web_build",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "build"
+          ],
+          "must_contain": "BUILD OK"
+        },
+        {
+          "name": "web_unit_tests",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "test"
+          ],
+          "must_contain": "TESTS OK"
+        },
+        {
+          "name": "web_size",
+          "argv": [
+            "PY",
+            "scripts/web_check.py",
+            "size"
+          ],
+          "must_contain": "SIZE OK"
+        },
+        {
+          "name": "summary_written",
+          "argv": [
+            "PY",
+            "-c",
+            "import pathlib; p=pathlib.Path('runbook_logs/G/SUMMARY_FOR_USER.txt'); assert p.exists() and p.stat().st_size>=600, 'runbook_logs/G/SUMMARY_FOR_USER.txt'; print('file ok')"
+          ],
+          "must_contain": "file ok"
+        }
+      ],
+      "commit_message": "Runbook G2: chunk G summary and bundle"
+    }
+  ]
+}

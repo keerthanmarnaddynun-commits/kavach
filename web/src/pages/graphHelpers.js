@@ -188,3 +188,128 @@ export function splitExcerptHighlight(excerpt, surface) {
     after: excerpt.slice(idx + surface.length),
   };
 }
+
+/**
+ * Pure helper for formatting isolated nodes control text and visibility state.
+ * @param {number} isolatedCount - Count of isolated nodes in current filtered view
+ * @param {boolean} showIsolated - Whether user has toggled showing isolated nodes
+ * @param {boolean} leadsOnly - Whether leads-only filter is active
+ * @param {number} totalRawIsolatedCount - Total isolated nodes count in unfiltered graph
+ * @returns {{ visible: boolean, isButton: boolean, text: string }}
+ */
+export function getIsolatedNodesControlState(
+  isolatedCount,
+  showIsolated,
+  leadsOnly,
+  totalRawIsolatedCount = 0
+) {
+  if (leadsOnly) {
+    const rawCount = typeof totalRawIsolatedCount === "number" ? totalRawIsolatedCount : 0;
+    return {
+      visible: true,
+      isButton: false,
+      text: rawCount > 0
+        ? `isolated nodes hidden: ${rawCount} (leads-only view hides them)`
+        : "isolated nodes: 0 (leads-only view hides them)",
+    };
+  }
+
+  const count = typeof isolatedCount === "number" ? isolatedCount : 0;
+  if (count === 0 && !showIsolated) {
+    return {
+      visible: false,
+      isButton: false,
+      text: "0 isolated nodes",
+    };
+  }
+
+  return {
+    visible: true,
+    isButton: true,
+    text: showIsolated
+      ? `Hide ${count} isolated nodes`
+      : `Show ${count} isolated nodes`,
+  };
+}
+
+/**
+ * Pure helper for formatting inspector error message with HTTP status code.
+ * @param {Error|object|string} err
+ * @returns {string}
+ */
+export function formatInspectorError(err) {
+  if (!err) return "Failed to load details";
+  const status = typeof err === "object" ? (err.status || err.code) : null;
+  const msg = typeof err === "object" ? (err.message || "Failed to load details") : String(err);
+  if (status) {
+    return `HTTP ${status}: ${msg}`;
+  }
+  return msg;
+}
+
+/**
+ * Checks whether the currently selected item exists in the collection of visible IDs.
+ * @param {{ id: string }|null} selectedItem
+ * @param {Set<string>|Array<string>} visibleIds
+ * @returns {boolean}
+ */
+export function isSelectedItemVisible(selectedItem, visibleIds) {
+  if (!selectedItem || !selectedItem.id || !visibleIds) return false;
+  if (visibleIds instanceof Set) {
+    return visibleIds.has(selectedItem.id);
+  }
+  if (Array.isArray(visibleIds)) {
+    return visibleIds.includes(selectedItem.id);
+  }
+  return false;
+}
+
+/**
+ * Returns inspector body data if its identifier matches the selected item ID, or empty object if stale.
+ * @param {object|null} data
+ * @param {string|null} selectedId
+ * @returns {object}
+ */
+export function getMatchingInspectorData(data, selectedId) {
+  if (!data || !selectedId) return {};
+  const dataId = data.node_id || data.edge_id || data.id;
+  if (dataId && dataId !== selectedId) {
+    return {};
+  }
+  return data;
+}
+
+/**
+ * Reads the sidebar collapsed state from storage safely.
+ * @param {Storage} [storage]
+ * @returns {boolean}
+ */
+export function getStoredSidebarCollapsed(storage = null) {
+  try {
+    const s = storage || (typeof window !== "undefined" && window.localStorage ? window.localStorage : (typeof localStorage !== "undefined" ? localStorage : null));
+    if (!s) return false;
+    return s.getItem("kavach_sidebar_collapsed") === "true";
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Persists the sidebar collapsed state to storage safely.
+ * @param {boolean} collapsed
+ * @param {Storage} [storage]
+ * @returns {boolean} Whether writing succeeded
+ */
+export function setStoredSidebarCollapsed(collapsed, storage = null) {
+  try {
+    const s = storage || (typeof window !== "undefined" && window.localStorage ? window.localStorage : (typeof localStorage !== "undefined" ? localStorage : null));
+    if (!s) return false;
+    s.setItem("kavach_sidebar_collapsed", String(Boolean(collapsed)));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+
+

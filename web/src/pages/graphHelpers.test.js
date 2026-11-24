@@ -7,6 +7,12 @@ import {
   parseSelectedIdFromUrl,
   filterGraphElements,
   splitExcerptHighlight,
+  getIsolatedNodesControlState,
+  formatInspectorError,
+  isSelectedItemVisible,
+  getMatchingInspectorData,
+  getStoredSidebarCollapsed,
+  setStoredSidebarCollapsed,
 } from "./graphHelpers.js";
 
 describe("getNodeShape", () => {
@@ -139,3 +145,110 @@ describe("splitExcerptHighlight", () => {
     expect(res.surface).toBe("");
   });
 });
+
+describe("getIsolatedNodesControlState", () => {
+  it("formats informative non-button text in leads-only view with raw isolated count", () => {
+    const demoLo = getIsolatedNodesControlState(0, false, true, 205);
+    expect(demoLo.visible).toBe(true);
+    expect(demoLo.isButton).toBe(false);
+    expect(demoLo.text).toBe("isolated nodes hidden: 205 (leads-only view hides them)");
+
+    const practiceLo = getIsolatedNodesControlState(0, false, true, 0);
+    expect(practiceLo.visible).toBe(true);
+    expect(practiceLo.isButton).toBe(false);
+    expect(practiceLo.text).toBe("isolated nodes: 0 (leads-only view hides them)");
+  });
+
+  it("hides control in full view when isolated count is 0 and not shown", () => {
+    const res = getIsolatedNodesControlState(0, false, false, 0);
+    expect(res.visible).toBe(false);
+    expect(res.isButton).toBe(false);
+  });
+
+  it("shows toggle button in full view when isolated count > 0", () => {
+    const hiddenState = getIsolatedNodesControlState(205, false, false, 205);
+    expect(hiddenState.visible).toBe(true);
+    expect(hiddenState.isButton).toBe(true);
+    expect(hiddenState.text).toBe("Show 205 isolated nodes");
+
+    const shownState = getIsolatedNodesControlState(205, true, false, 205);
+    expect(shownState.visible).toBe(true);
+    expect(shownState.isButton).toBe(true);
+    expect(shownState.text).toBe("Hide 205 isolated nodes");
+  });
+});
+
+describe("formatInspectorError", () => {
+  it("formats error with HTTP status code when present", () => {
+    const errObj = { status: 404, message: "Node 'N1' not found in case graph" };
+    expect(formatInspectorError(errObj)).toBe("HTTP 404: Node 'N1' not found in case graph");
+
+    const codeObj = { code: 500, message: "Internal server error" };
+    expect(formatInspectorError(codeObj)).toBe("HTTP 500: Internal server error");
+  });
+
+  it("formats error fallback without status code", () => {
+    expect(formatInspectorError({ message: "Network connection lost" })).toBe("Network connection lost");
+    expect(formatInspectorError(null)).toBe("Failed to load details");
+  });
+});
+
+describe("isSelectedItemVisible", () => {
+  it("keeps selection when item exists in new visible IDs, clears when missing", () => {
+    const selectedItem = { type: "node", id: "P1" };
+    const visibleIdsSet = new Set(["P1", "P2", "PH1"]);
+    expect(isSelectedItemVisible(selectedItem, visibleIdsSet)).toBe(true);
+
+    const isolatedOnlySet = new Set(["P2", "PH1"]);
+    expect(isSelectedItemVisible(selectedItem, isolatedOnlySet)).toBe(false);
+
+    expect(isSelectedItemVisible(null, visibleIdsSet)).toBe(false);
+  });
+});
+
+describe("getMatchingInspectorData", () => {
+  it("returns data when ID matches selected item, empty object when response is stale", () => {
+    const freshData = { node_id: "P1", fir_evidence: [{ doc_id: "FIR_01" }] };
+    expect(getMatchingInspectorData(freshData, "P1")).toBe(freshData);
+
+    const staleData = { node_id: "P0", fir_evidence: [{ doc_id: "FIR_00" }] };
+    expect(getMatchingInspectorData(staleData, "P1")).toEqual({});
+
+    expect(getMatchingInspectorData(null, "P1")).toEqual({});
+  });
+});
+
+describe("sidebarCollapsed storage helpers", () => {
+  it("defaults to false when storage is empty or throws", () => {
+    const mockStorage = { getItem: () => null, setItem: () => {} };
+    expect(getStoredSidebarCollapsed(mockStorage)).toBe(false);
+
+    const throwingStorage = { getItem: () => { throw new Error("denied"); } };
+    expect(getStoredSidebarCollapsed(throwingStorage)).toBe(false);
+    expect(getStoredSidebarCollapsed(null)).toBe(false);
+  });
+
+  it("reads stored true value", () => {
+    const mockStorage = { getItem: () => "true", setItem: () => {} };
+    expect(getStoredSidebarCollapsed(mockStorage)).toBe(true);
+  });
+
+  it("persists collapsed state to storage safely", () => {
+    let stored = null;
+    const mockStorage = {
+      getItem: () => stored,
+      setItem: (_, v) => { stored = String(v); },
+    };
+    expect(setStoredSidebarCollapsed(true, mockStorage)).toBe(true);
+    expect(stored).toBe("true");
+    expect(setStoredSidebarCollapsed(false, mockStorage)).toBe(true);
+    expect(stored).toBe("false");
+
+    const throwingStorage = { setItem: () => { throw new Error("denied"); } };
+    expect(setStoredSidebarCollapsed(true, throwingStorage)).toBe(false);
+    expect(setStoredSidebarCollapsed(true, null)).toBe(false);
+  });
+});
+
+
+

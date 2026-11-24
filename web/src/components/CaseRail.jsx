@@ -1,12 +1,29 @@
 import React, { useState } from "react";
 import { canUpload } from "../lib/roles.js";
 import { request } from "../api/client.js";
+import { getStoredSidebarCollapsed, setStoredSidebarCollapsed } from "../pages/graphHelpers.js";
 
-export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
+export function CaseRail({ cases = [], activeCaseId, user, onCaseCreated, defaultCollapsed }) {
   const [creating, setCreating] = useState(false);
   const [newCaseName, setNewCaseName] = useState("");
   const [isSynthetic, setIsSynthetic] = useState(false);
   const [createError, setCreateError] = useState(null);
+
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
+    if (typeof defaultCollapsed === "boolean") return defaultCollapsed;
+    return getStoredSidebarCollapsed();
+  });
+
+  function toggleSidebar() {
+    const next = !sidebarCollapsed;
+    setSidebarCollapsed(next);
+    setStoredSidebarCollapsed(next);
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        window.dispatchEvent(new Event("resize"));
+      }, 0);
+    }
+  }
 
   async function handleCreateCase(e) {
     e.preventDefault();
@@ -34,17 +51,53 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
   const userCanCreate = user && canUpload(user.role);
 
   return (
-    <aside className="case-rail">
-      <div className="case-rail-header">
-        <strong>Cases</strong>
-        {userCanCreate && (
-          <button type="button" onClick={() => setCreating(!creating)}>
-            {creating ? "Cancel" : "+ New"}
+    <aside
+      className={`case-rail ${sidebarCollapsed ? "collapsed" : ""}`}
+      style={{
+        width: sidebarCollapsed ? "48px" : "200px",
+        minWidth: sidebarCollapsed ? "48px" : "200px",
+        maxWidth: sidebarCollapsed ? "48px" : "200px",
+        flexShrink: 0,
+      }}
+    >
+      <div
+        className="case-rail-header"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: sidebarCollapsed ? "center" : "space-between",
+          padding: sidebarCollapsed ? "8px 4px" : "8px 10px",
+        }}
+      >
+        {!sidebarCollapsed && <strong>Cases</strong>}
+        <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          {!sidebarCollapsed && userCanCreate && (
+            <button
+              type="button"
+              onClick={() => setCreating(!creating)}
+              style={{ fontSize: "11px", padding: "2px 6px" }}
+            >
+              {creating ? "Cancel" : "+ New"}
+            </button>
+          )}
+          <button
+            type="button"
+            className="sidebar-toggle-btn"
+            aria-label={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+            title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+            onClick={toggleSidebar}
+            style={{
+              padding: "2px 6px",
+              fontSize: "11px",
+              cursor: "pointer",
+            }}
+          >
+            {sidebarCollapsed ? "▶" : "◀"}
           </button>
-        )}
+        </div>
       </div>
 
-      {creating && (
+      {!sidebarCollapsed && creating && (
         <form onSubmit={handleCreateCase} style={{ padding: "8px 10px", borderBottom: "1px solid var(--border)" }}>
           {createError && (
             <div className="error-text" style={{ marginBottom: "6px", fontSize: "11px" }}>
@@ -81,48 +134,69 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
 
       {/* Navigation for active case */}
       {activeCaseId && (
-        <nav className="case-rail-nav">
+        <nav
+          className="case-rail-nav"
+          style={{
+            padding: sidebarCollapsed ? "8px 0" : "8px 0",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <a
             href={`#/case/${activeCaseId}/overview`}
-            className={window.location.hash.includes("/overview") ? "active" : ""}
+            className={typeof window !== "undefined" && window.location.hash.includes("/overview") ? "active" : ""}
+            title="Overview & Leads"
+            style={{ textAlign: sidebarCollapsed ? "center" : "left", padding: sidebarCollapsed ? "6px 0" : "5px 12px" }}
           >
-            Overview & Leads
+            {sidebarCollapsed ? "O" : "Overview & Leads"}
           </a>
           <a
             href={`#/case/${activeCaseId}/intake`}
-            className={window.location.hash.includes("/intake") ? "active" : ""}
+            className={typeof window !== "undefined" && window.location.hash.includes("/intake") ? "active" : ""}
+            title="Intake"
+            style={{ textAlign: sidebarCollapsed ? "center" : "left", padding: sidebarCollapsed ? "6px 0" : "5px 12px" }}
           >
-            Intake
+            {sidebarCollapsed ? "I" : "Intake"}
           </a>
           <a
             href={`#/case/${activeCaseId}/graph`}
-            className={window.location.hash.includes("/graph") ? "active" : ""}
+            className={typeof window !== "undefined" && window.location.hash.includes("/graph") ? "active" : ""}
+            title="Network Graph"
+            style={{ textAlign: sidebarCollapsed ? "center" : "left", padding: sidebarCollapsed ? "6px 0" : "5px 12px" }}
           >
-            Network Graph
+            {sidebarCollapsed ? "G" : "Network Graph"}
           </a>
           <a
             href={`#/case/${activeCaseId}/people`}
-            className={window.location.hash.includes("/people") ? "active" : ""}
+            className={typeof window !== "undefined" && window.location.hash.includes("/people") ? "active" : ""}
+            title="People"
+            style={{ textAlign: sidebarCollapsed ? "center" : "left", padding: sidebarCollapsed ? "6px 0" : "5px 12px" }}
           >
-            People
+            {sidebarCollapsed ? "P" : "People"}
           </a>
           <a
             href={`#/case/${activeCaseId}/break`}
-            className={window.location.hash.includes("/break") ? "active" : ""}
+            className={typeof window !== "undefined" && window.location.hash.includes("/break") ? "active" : ""}
+            title="Break Analysis"
+            style={{ textAlign: sidebarCollapsed ? "center" : "left", padding: sidebarCollapsed ? "6px 0" : "5px 12px" }}
           >
-            Break Analysis
+            {sidebarCollapsed ? "B" : "Break Analysis"}
           </a>
           <a
             href={`#/case/${activeCaseId}/timeline`}
-            className={window.location.hash.includes("/timeline") ? "active" : ""}
+            className={typeof window !== "undefined" && window.location.hash.includes("/timeline") ? "active" : ""}
+            title="Timeline"
+            style={{ textAlign: sidebarCollapsed ? "center" : "left", padding: sidebarCollapsed ? "6px 0" : "5px 12px" }}
           >
-            Timeline
+            {sidebarCollapsed ? "T" : "Timeline"}
           </a>
           <a
             href={`#/case/${activeCaseId}/dossier`}
-            className={window.location.hash.includes("/dossier") ? "active" : ""}
+            className={typeof window !== "undefined" && window.location.hash.includes("/dossier") ? "active" : ""}
+            title="Dossier"
+            style={{ textAlign: sidebarCollapsed ? "center" : "left", padding: sidebarCollapsed ? "6px 0" : "5px 12px" }}
           >
-            Dossier
+            {sidebarCollapsed ? "D" : "Dossier"}
           </a>
         </nav>
       )}
@@ -142,25 +216,34 @@ export function CaseRail({ cases, activeCaseId, user, onCaseCreated }) {
                 className={`case-item ${isActive ? "active" : ""}`}
                 style={{
                   width: "100%",
-                  textAlign: "left",
+                  textAlign: sidebarCollapsed ? "center" : "left",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
                   display: "block",
-                  padding: "8px 10px",
+                  padding: sidebarCollapsed ? "8px 4px" : "8px 10px",
                 }}
+                title={`${c.name || c.case_id} (${c.case_id})`}
                 onClick={() => {
                   window.location.hash = `#/case/${c.case_id}/overview`;
                 }}
               >
-                <div className="case-item-title">{c.name}</div>
-                <div className="case-item-meta">
-                  {c.synthetic ? "synthetic | " : ""}
-                  {c.analyzed ? "analyzed" : "not analyzed"}
-                </div>
-                <div className="case-item-meta mono">
-                  Docs: {docCnt} | CDR: {cdrCnt} | Bank: {bankCnt}
-                </div>
+                {sidebarCollapsed ? (
+                  <div style={{ fontWeight: 600, fontSize: "11px" }}>
+                    {c.name ? c.name.slice(0, 2).toUpperCase() : (c.case_id ? c.case_id.slice(0, 2) : "C")}
+                  </div>
+                ) : (
+                  <>
+                    <div className="case-item-title">{c.name}</div>
+                    <div className="case-item-meta">
+                      {c.synthetic ? "synthetic | " : ""}
+                      {c.analyzed ? "analyzed" : "not analyzed"}
+                    </div>
+                    <div className="case-item-meta mono">
+                      Docs: {docCnt} | CDR: {cdrCnt} | Bank: {bankCnt}
+                    </div>
+                  </>
+                )}
               </button>
             </li>
           );

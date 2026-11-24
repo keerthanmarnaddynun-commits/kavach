@@ -10,6 +10,10 @@ import {
   filterGraphElements,
   splitExcerptHighlight,
   getIsolatedNodeIds,
+  getIsolatedNodesControlState,
+  formatInspectorError,
+  isSelectedItemVisible,
+  getMatchingInspectorData,
 } from "./graphHelpers.js";
 
 // Register fcose layout plugin once
@@ -148,6 +152,9 @@ export function Graph({ caseId, route }) {
 
   // Selection & Inspector
   const [selectedItem, setSelectedItem] = useState(null); // { type: 'node' | 'edge', id: string, data: object }
+  const selectedItemRef = useRef(selectedItem);
+  selectedItemRef.current = selectedItem;
+  const lastAppliedUrlSelectRef = useRef(null);
   const [inspectorData, setInspectorData] = useState(null);
   const [inspectorLoading, setInspectorLoading] = useState(false);
   const [inspectorCollapsed, setInspectorCollapsed] = useState(false);
@@ -155,6 +162,10 @@ export function Graph({ caseId, route }) {
   // Load Graph elements and Leads
   useEffect(() => {
     if (!caseId) return;
+    lastAppliedUrlSelectRef.current = null;
+    setSelectedItem(null);
+    setInspectorData(null);
+    setInspectorCollapsed(false);
     setLoading(true);
     setErrorText(null);
 
@@ -188,6 +199,12 @@ export function Graph({ caseId, route }) {
       });
   }, [caseId]);
 
+  // Compute total raw isolated nodes across full unfiltered graph
+  const totalRawIsolatedCount = useMemo(() => {
+    if (!rawElements || !rawElements.nodes) return 0;
+    return getIsolatedNodeIds(rawElements.nodes, rawElements.edges).length;
+  }, [rawElements]);
+
   // Compute filtered elements (accounting for leadsOnly, nodeTypes, relations, and isolated nodes)
   const { filteredElements, isolatedCount } = useMemo(() => {
     if (!rawElements) return { filteredElements: { nodes: [], edges: [] }, isolatedCount: 0 };
@@ -207,27 +224,95 @@ export function Graph({ caseId, route }) {
     return { filteredElements: base, isolatedCount: count };
   }, [rawElements, nodeTypes, relations, leadsOnly, topLeadIds, showIsolated]);
 
-  // Initialise Cytoscape instance
-  useEffect(() => {
-    if (!containerRef.current || loading || !rawElements) return;
+  // Compute isolated nodes control visibility and text (Report 1)
+  const isolatedControlState = useMemo(() => {
+    return getIsolatedNodesControlState(
+      isolatedCount,
+      showIsolated,
+      leadsOnly,
+      totalRawIsolatedCount
+    );
+  }, [isolatedCount, showIsolated, leadsOnly, totalRawIsolatedCount]);
 
-    // Build elements with styling attributes
+  // Central helper to update selection and ensure inspector opens expanded
+  const updateSelection = (item) => {
+    selectedItemRef.current = item;
+    setSelectedItem(item);
+    if (item) {
+      setInspectorCollapsed(false);
+    }
+  };
+
+  const selectNode = (node) => {
+    if (!node) return;
+    const id = typeof node.id === "function" ? node.id() : node.id;
+    const data = typeof node.data === "function" ? node.data() : (node.data || {});
+    updateSelection({ type: "node", id, data });
+  };
+
+  const selectEdge = (edge) => {
+    if (!edge) return;
+    const id = typeof edge.id === "function" ? edge.id() : edge.id;
+    const data = typeof edge.data === "function" ? edge.data() : (edge.data || {});
+    updateSelection({ type: "edge", id, data });
+  };
+
+  // Initialise single Cytoscape instance for page lifetime
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const cy = cytoscape({
+      container: containerRef.current,
+      elements: [],
+      style: getCytoscapeStyles(),
+      wheelSensitivity: 0.3,
+    });
+
+    cyRef.current = cy;
+
+    // Event listeners bound ONCE to lifetime instance
+    cy.on("tap", "node", (evt) => {
+      selectNode(evt.target);
+    });
+
+    cy.on("tap", "edge", (evt) => {
+      selectEdge(evt.target);
+    });
+
+    cy.on("tap", (evt) => {
+      if (evt.target === cy) {
+        updateSelection(null);
+      }
+    });
+
+    return () => {
+      cy.destroy();
+      cyRef.current = null;
+    };
+  }, []);
+
+  // Update Cytoscape elements in-place on filter / leads changes without destroying instance
+  useEffect(() => {
+    if (!cyRef.current || loading || !rawElements) return;
+    const cy = cyRef.current;
+
     const topSet = new Set(topLeadIds);
-    const cyNodes = filteredElements.nodes.map((n) => {
+    const targetNodes = filteredElements.nodes.map((n) => {
       const d = n.data || {};
-      const isTop = topSet.has(d.id);
       return {
+        group: "nodes",
         data: {
           ...d,
           shape: getNodeShape(d.type),
-          isTopLead: isTop,
+          isTopLead: topSet.has(d.id),
         },
       };
     });
 
-    const cyEdges = filteredElements.edges.map((e) => {
+    const targetEdges = filteredElements.edges.map((e) => {
       const d = e.data || {};
       return {
+        group: "edges",
         data: {
           ...d,
           edgeWidth: getEdgeWidth(d.count),
@@ -235,51 +320,75 @@ export function Graph({ caseId, route }) {
       };
     });
 
-    const cy = cytoscape({
-      container: containerRef.current,
-      elements: [...cyNodes, ...cyEdges],
-      style: getCytoscapeStyles(),
-      wheelSensitivity: 0.3,
+    const targetElements = [...targetNodes, ...targetEdges];
+    const targetIds = new Set(targetElements.map((el) => el.data.id));
+
+    cy.batch(() => {
+      // Remove elements no longer visible
+      const toRemove = cy.elements().filter((el) => !targetIds.has(el.id()));
+      if (toRemove.length > 0) {
+        cy.remove(toRemove);
+      }
+
+      // Add new elements or update data
+      const toAdd = [];
+      for (const el of targetElements) {
+        const existing = cy.getElementById(el.data.id);
+        if (existing.length === 0) {
+          toAdd.push(el);
+        } else {
+          existing.data(el.data);
+        }
+      }
+      if (toAdd.length > 0) {
+        cy.add(toAdd);
+      }
     });
 
-    cyRef.current = cy;
-
-    // Run layout with visual fix fcose options
+    // Run layout
     runLayout(cy);
 
-    // Event listeners
-    cy.on("tap", "node", (evt) => {
-      const node = evt.target;
-      setSelectedItem({ type: "node", id: node.id(), data: node.data() });
-    });
-
-    cy.on("tap", "edge", (evt) => {
-      const edge = evt.target;
-      setSelectedItem({ type: "edge", id: edge.id(), data: edge.data() });
-    });
-
-    cy.on("tap", (evt) => {
-      if (evt.target === cy) {
-        setSelectedItem(null);
+    // Keep current selection if still visible, otherwise clear
+    if (selectedItemRef.current) {
+      if (targetIds.has(selectedItemRef.current.id)) {
+        const target = cy.getElementById(selectedItemRef.current.id);
+        if (target.length > 0) {
+          target.select();
+        }
+      } else {
+        updateSelection(null);
       }
-    });
-
-    // Check for URL selection parameter
-    const initialSelect = parseSelectedIdFromUrl(route || (typeof window !== "undefined" ? window.location.hash : ""));
-    if (initialSelect) {
-      const targetNode = cy.getElementById(initialSelect);
-      if (targetNode.length > 0) {
-        targetNode.select();
-        cy.center(targetNode);
-        setSelectedItem({ type: "node", id: targetNode.id(), data: targetNode.data() });
+    } else {
+      // Initial load URL parameter check
+      const currentUrlSelect = parseSelectedIdFromUrl(route || (typeof window !== "undefined" ? window.location.hash : ""));
+      if (currentUrlSelect && currentUrlSelect !== lastAppliedUrlSelectRef.current) {
+        lastAppliedUrlSelectRef.current = currentUrlSelect;
+        const targetNode = cy.getElementById(currentUrlSelect);
+        if (targetNode.length > 0) {
+          targetNode.select();
+          cy.center(targetNode);
+          selectNode(targetNode);
+        }
       }
     }
-
-    return () => {
-      cy.destroy();
-      cyRef.current = null;
-    };
   }, [loading, filteredElements, topLeadIds]);
+
+  // Dynamic URL selection change if route hash changes while Graph is mounted
+  useEffect(() => {
+    if (!cyRef.current || loading) return;
+    const currentUrlSelect = parseSelectedIdFromUrl(route || (typeof window !== "undefined" ? window.location.hash : ""));
+    if (currentUrlSelect && currentUrlSelect !== lastAppliedUrlSelectRef.current) {
+      lastAppliedUrlSelectRef.current = currentUrlSelect;
+      const targetNode = cyRef.current.getElementById(currentUrlSelect);
+      if (targetNode.length > 0) {
+        cyRef.current.nodes().unselect();
+        cyRef.current.edges().unselect();
+        targetNode.select();
+        cyRef.current.center(targetNode);
+        selectNode(targetNode);
+      }
+    }
+  }, [route, loading, filteredElements]);
 
   // Label policy update via Cytoscape classes
   useEffect(() => {
@@ -301,10 +410,38 @@ export function Graph({ caseId, route }) {
         }
       });
     });
-
-    // Visual Fix 1: Call fit with 30 px padding after every filter change
-    cy.fit(undefined, 30);
   }, [selectedItem, filteredElements, topLeadIds]);
+
+  // Resize cytoscape canvas whenever inspector collapses/expands or sidebar collapses/expands
+  useEffect(() => {
+    if (cyRef.current) {
+      cyRef.current.resize();
+    }
+  }, [inspectorCollapsed]);
+
+  useEffect(() => {
+    function handleResize() {
+      if (cyRef.current) {
+        cyRef.current.resize();
+      }
+    }
+    window.addEventListener("resize", handleResize);
+
+    let ro = null;
+    if (typeof ResizeObserver !== "undefined" && containerRef.current) {
+      ro = new ResizeObserver(() => {
+        if (cyRef.current) {
+          cyRef.current.resize();
+        }
+      });
+      ro.observe(containerRef.current);
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (ro) ro.disconnect();
+    };
+  }, []);
 
   function runLayout(cyInstance) {
     const cy = cyInstance || cyRef.current;
@@ -344,6 +481,7 @@ export function Graph({ caseId, route }) {
       return;
     }
 
+    let cancelled = false;
     setInspectorLoading(true);
     const endpoint = selectedItem.type === "node"
       ? `/cases/${caseId}/nodes/${selectedItem.id}`
@@ -351,14 +489,24 @@ export function Graph({ caseId, route }) {
 
     request(endpoint)
       .then((data) => {
-        setInspectorData(data);
+        if (!cancelled) {
+          setInspectorData(data);
+        }
       })
       .catch((err) => {
-        setInspectorData({ error: err.message || "Failed to load details" });
+        if (!cancelled) {
+          setInspectorData({ error: formatInspectorError(err) });
+        }
       })
       .finally(() => {
-        setInspectorLoading(false);
+        if (!cancelled) {
+          setInspectorLoading(false);
+        }
       });
+
+    return () => {
+      cancelled = true;
+    };
   }, [selectedItem, caseId]);
 
   // Search handler (instant centering without cy.animate)
@@ -383,6 +531,7 @@ export function Graph({ caseId, route }) {
       }
       const first = matches[0];
       setSelectedItem({ type: "node", id: first.id(), data: first.data() });
+      setInspectorCollapsed(false);
     }
   }
 
@@ -395,11 +544,12 @@ export function Graph({ caseId, route }) {
       target.select();
       cy.center(target);
       setSelectedItem({ type: "node", id: target.id(), data: target.data() });
+      setInspectorCollapsed(false);
     }
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "calc(100vh - 80px)", overflow: "hidden" }}>
+    <div className="graph-page" style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", minWidth: 0, overflow: "hidden" }}>
       {/* Top Filter & Toolbar */}
       <div
         style={{
@@ -438,14 +588,22 @@ export function Graph({ caseId, route }) {
           <strong>Leads only (Top 10 + Neighbours)</strong>
         </label>
 
-        {/* Visual Fix 1: Isolated nodes toggle */}
-        <button
-          type="button"
-          onClick={() => setShowIsolated(!showIsolated)}
-          style={{ fontSize: "11px", padding: "2px 8px" }}
-        >
-          {showIsolated ? `Hide ${isolatedCount} isolated nodes` : `Show ${isolatedCount} isolated nodes`}
-        </button>
+        {/* Visual Fix 1: Isolated nodes control */}
+        {isolatedControlState.visible && (
+          isolatedControlState.isButton ? (
+            <button
+              type="button"
+              onClick={() => setShowIsolated(!showIsolated)}
+              style={{ fontSize: "11px", padding: "2px 8px" }}
+            >
+              {isolatedControlState.text}
+            </button>
+          ) : (
+            <span style={{ fontSize: "11px", color: "var(--muted)", padding: "2px 4px" }}>
+              {isolatedControlState.text}
+            </span>
+          )
+        )}
 
         {/* Search */}
         <form onSubmit={handleSearch} style={{ display: "flex", gap: "4px", alignItems: "center" }}>
@@ -504,12 +662,13 @@ export function Graph({ caseId, route }) {
       </div>
 
       {/* Main Graph Area + Inspector Pane */}
-      <div style={{ display: "flex", flex: 1, position: "relative", overflow: "hidden" }}>
+      <div style={{ display: "flex", flex: 1, minWidth: 0, minHeight: 0, position: "relative", overflow: "hidden" }}>
         {/* Cytoscape Canvas */}
         <div
           ref={containerRef}
           style={{
             flex: 1,
+            minWidth: 0,
             height: "100%",
             backgroundColor: "var(--bg)",
           }}
@@ -534,63 +693,126 @@ export function Graph({ caseId, route }) {
         )}
 
         {/* Inspector Pane (340px) */}
-        {selectedItem && (
-          <aside
-            style={{
-              width: inspectorCollapsed ? "36px" : "340px",
-              borderLeft: "1px solid var(--border)",
-              backgroundColor: "var(--surface)",
-              overflowY: "auto",
-              padding: inspectorCollapsed ? "8px 4px" : "12px",
-              fontSize: "12px",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-              {!inspectorCollapsed && (
-                <strong>{selectedItem.type === "node" ? "Node Inspector" : "Edge Inspector"}</strong>
-              )}
-              <button
-                type="button"
-                onClick={() => setInspectorCollapsed(!inspectorCollapsed)}
-                style={{ fontSize: "10px", padding: "2px 6px" }}
-              >
-                {inspectorCollapsed ? "◀" : "▶"}
-              </button>
-            </div>
-
-            {!inspectorCollapsed && (
-              <div>
-                {inspectorLoading ? (
-                  <div>Loading details...</div>
-                ) : inspectorData && inspectorData.error ? (
-                  <div className="error-text">{inspectorData.error}</div>
-                ) : (
-                  <InspectorContent
-                    caseId={caseId}
-                    itemType={selectedItem.type}
-                    selectedItem={selectedItem}
-                    data={inspectorData || {}}
-                    onNeighbourClick={handleNeighbourClick}
-                  />
-                )}
-              </div>
-            )}
-          </aside>
-        )}
+        <GraphInspectorAside
+          selectedItem={selectedItem}
+          inspectorCollapsed={inspectorCollapsed}
+          setInspectorCollapsed={setInspectorCollapsed}
+          inspectorLoading={inspectorLoading}
+          inspectorData={inspectorData}
+          caseId={caseId}
+          onNeighbourClick={handleNeighbourClick}
+        />
       </div>
     </div>
   );
 }
 
+export function GraphInspectorAside({
+  selectedItem,
+  inspectorCollapsed,
+  setInspectorCollapsed,
+  inspectorLoading,
+  inspectorData,
+  caseId,
+  onNeighbourClick,
+}) {
+  if (!selectedItem) return null;
+
+  return (
+    <aside
+      className={`inspector-pane ${inspectorCollapsed ? "collapsed" : ""}`}
+      style={{
+        width: inspectorCollapsed ? "36px" : "340px",
+        minWidth: inspectorCollapsed ? "36px" : "340px",
+        maxWidth: inspectorCollapsed ? "36px" : "340px",
+        flexShrink: 0,
+        borderLeft: "1px solid var(--border)",
+        backgroundColor: "var(--surface)",
+        overflowY: inspectorCollapsed ? "visible" : "auto",
+        overflowX: "hidden",
+        padding: inspectorCollapsed ? "8px 4px" : "12px",
+        fontSize: "12px",
+        display: "flex",
+        flexDirection: "column",
+        boxSizing: "border-box",
+        position: "relative",
+        zIndex: 10,
+        pointerEvents: "auto",
+        cursor: inspectorCollapsed ? "pointer" : "default",
+      }}
+      onClick={() => {
+        if (inspectorCollapsed && setInspectorCollapsed) {
+          setInspectorCollapsed(false);
+        }
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: inspectorCollapsed ? "center" : "space-between",
+          alignItems: "center",
+          marginBottom: "8px",
+          width: "100%",
+        }}
+      >
+        {!inspectorCollapsed && (
+          <strong>{selectedItem.type === "node" ? "Node Inspector" : "Edge Inspector"}</strong>
+        )}
+        <button
+          type="button"
+          aria-label={inspectorCollapsed ? "Expand Inspector" : "Collapse Inspector"}
+          title={inspectorCollapsed ? "Expand Inspector" : "Collapse Inspector"}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (setInspectorCollapsed) {
+              setInspectorCollapsed(!inspectorCollapsed);
+            }
+          }}
+          style={{
+            fontSize: "12px",
+            padding: "2px 6px",
+            cursor: "pointer",
+            minWidth: "24px",
+            textAlign: "center",
+            zIndex: 20,
+            pointerEvents: "auto",
+          }}
+        >
+          {inspectorCollapsed ? "◀" : "▶"}
+        </button>
+      </div>
+
+      {!inspectorCollapsed && (
+        <div>
+          {inspectorLoading ? (
+            <div>Loading details...</div>
+          ) : inspectorData && inspectorData.error ? (
+            <div className="error-text" style={{ padding: "8px", color: "var(--danger)" }}>
+              {inspectorData.error}
+            </div>
+          ) : (
+            <InspectorContent
+              caseId={caseId}
+              itemType={selectedItem.type}
+              selectedItem={selectedItem}
+              data={inspectorData || {}}
+              onNeighbourClick={onNeighbourClick}
+            />
+          )}
+        </div>
+      )}
+    </aside>
+  );
+}
+
 function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourClick }) {
+  const matchingData = getMatchingInspectorData(data, selectedItem?.id);
   if (itemType === "node") {
     return (
       <NodeInspectorView
         caseId={caseId}
         selectedItem={selectedItem}
-        data={data}
+        data={matchingData}
         onNeighbourClick={onNeighbourClick}
       />
     );
@@ -599,7 +821,7 @@ function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourCli
     <EdgeInspectorView
       caseId={caseId}
       selectedItem={selectedItem}
-      data={data}
+      data={matchingData}
       onNeighbourClick={onNeighbourClick}
     />
   );

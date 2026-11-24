@@ -5,7 +5,8 @@ import { renderToString } from "react-dom/server";
 // Import Views to test
 import { OverviewView } from "./Overview.jsx";
 import { PeopleView } from "./People.jsx";
-import { NodeInspectorView, EdgeInspectorView } from "./Graph.jsx";
+import { NodeInspectorView, EdgeInspectorView, GraphInspectorAside } from "./Graph.jsx";
+import { CaseRail } from "../components/CaseRail.jsx";
 import { EvidenceDocView } from "./EvidenceDoc.jsx";
 import { EvidenceRowsView } from "./EvidenceRows.jsx";
 import { IntakeDocumentsTable, RowErrorTable } from "./Intake.jsx";
@@ -45,6 +46,18 @@ describe("Render Smoke Tests (Repair 1)", () => {
         removeItem: (k) => { delete storage[k]; },
         clear: () => { Object.keys(storage).forEach((k) => delete storage[k]); },
       };
+    }
+    if (typeof globalThis.localStorage === "undefined") {
+      const storage = {};
+      globalThis.localStorage = {
+        getItem: (k) => storage[k] || null,
+        setItem: (k, v) => { storage[k] = String(v); },
+        removeItem: (k) => { delete storage[k]; },
+        clear: () => { Object.keys(storage).forEach((k) => delete storage[k]); },
+      };
+    }
+    if (globalThis.window && !globalThis.window.localStorage) {
+      globalThis.window.localStorage = globalThis.localStorage;
     }
   });
 
@@ -179,6 +192,104 @@ describe("Render Smoke Tests (Repair 1)", () => {
     );
     expect(html).toContain("Relation");
     expect(html).toContain(eid);
+  });
+
+  it("renders GraphInspectorAside in collapsed and expanded states", () => {
+    const selectedItem = {
+      type: "node",
+      id: "P1",
+      data: { id: "P1", label: "Suspect One", type: "PERSON" },
+    };
+
+    // Collapsed state
+    const collapsedHtml = renderToString(
+      <GraphInspectorAside
+        selectedItem={selectedItem}
+        inspectorCollapsed={true}
+        setInspectorCollapsed={() => {}}
+        inspectorLoading={false}
+        inspectorData={{ node_id: "P1" }}
+        caseId="C-01"
+      />
+    );
+    expect(collapsedHtml).toContain("◀");
+    expect(collapsedHtml).toContain("inspector-pane collapsed");
+    expect(collapsedHtml).not.toContain("Suspect One");
+
+    // Expanded state with matching data
+    const expandedHtml = renderToString(
+      <GraphInspectorAside
+        selectedItem={selectedItem}
+        inspectorCollapsed={false}
+        setInspectorCollapsed={() => {}}
+        inspectorLoading={false}
+        inspectorData={{ node_id: "P1", fir_evidence: [] }}
+        caseId="C-01"
+      />
+    );
+    expect(expandedHtml).toContain("▶");
+    expect(expandedHtml).toContain("Node Inspector");
+    expect(expandedHtml).toContain("Suspect One");
+    expect(expandedHtml).toContain("inspector-pane");
+
+    // Error state with visible HTTP code
+    const errorHtml = renderToString(
+      <GraphInspectorAside
+        selectedItem={selectedItem}
+        inspectorCollapsed={false}
+        setInspectorCollapsed={() => {}}
+        inspectorLoading={false}
+        inspectorData={{ error: "HTTP 404: Node not found" }}
+        caseId="C-01"
+      />
+    );
+    expect(errorHtml).toContain("HTTP 404: Node not found");
+  });
+
+  it("renders CaseRail with collapsible left sidebar toggle", () => {
+    const cases = [
+      { case_id: "C-01", name: "Operation Alpha", analyzed: true, counts: { documents: 2, cdr_rows: 50, bank_rows: 50 } },
+    ];
+
+    const html = renderToString(
+      <CaseRail cases={cases} activeCaseId="C-01" user={{ role: "investigator", username: "analyst" }} />
+    );
+
+    expect(html).toContain("case-rail");
+    expect(html).toContain("sidebar-toggle-btn");
+    // Visible navigation links
+    expect(html).toContain("Network Graph");
+    expect(html).toContain("Operation Alpha");
+  });
+
+  it("renders CaseRail in collapsed state with single-letter icons", () => {
+    const cases = [
+      { case_id: "C-01", name: "Operation Alpha", analyzed: true, counts: { documents: 2, cdr_rows: 50, bank_rows: 50 } },
+    ];
+
+    if (typeof globalThis.localStorage === "undefined") {
+      const store = { kavach_sidebar_collapsed: "true" };
+      globalThis.localStorage = {
+        getItem: (k) => store[k] || null,
+        setItem: (k, v) => { store[k] = String(v); },
+        removeItem: (k) => { delete store[k]; },
+      };
+    } else {
+      globalThis.localStorage.setItem("kavach_sidebar_collapsed", "true");
+    }
+
+    const html = renderToString(
+      <CaseRail cases={cases} activeCaseId="C-01" user={{ role: "investigator", username: "analyst" }} />
+    );
+
+    expect(html).toContain("case-rail collapsed");
+    expect(html).toContain(">G<"); // First letter for Network Graph
+    expect(html).toContain(">O<"); // First letter for Overview
+    expect(html).toContain(">OP<"); // Initials for Operation Alpha
+    expect(html).toContain("▶"); // Toggle button points right to expand
+
+    // Clean up
+    globalThis.localStorage.removeItem("kavach_sidebar_collapsed");
   });
 
   it("renders EdgeInspectorView with real edge_detail_csv fixture without throwing", () => {
@@ -361,3 +472,4 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).not.toContain("Certificate under Section 63(4)(c)");
   });
 });
+
