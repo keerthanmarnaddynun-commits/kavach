@@ -1,0 +1,41 @@
+DIAGNOSIS REPORT FOR CHUNK G: GRAPH PAGE DEFECTS
+Date: 2026-11-24
+
+1. CASES EXAMINED
+- Case 1: Practice (case_id: C-9e20611270)
+  API Graph Stats: 177 nodes, 1414 edges, 2 priority leads.
+  Full graph isolated nodes count: 0 (all 177 nodes are connected).
+  Leads-only graph isolated nodes count: 0 (leads and immediate neighbours are connected).
+  Isolated nodes control text (leads-only default): 'Show 0 isolated nodes'
+  Isolated nodes control text (leads-only disabled): 'Show 105 isolated nodes' (due to VEHICLE node type toggle defaulting to false).
+
+- Case 2: Demo (synthetic case_demo_v2, case_id: C-927fc7de12)
+  API Graph Stats: 425 nodes, 1571 edges, 10 priority leads.
+  Full graph isolated nodes count: 205 (nodes with degree 0 in the case graph).
+  Leads-only graph isolated nodes count: 0 (all top leads and edge neighbours are connected).
+  Isolated nodes control text (leads-only default): 'Show 0 isolated nodes'
+  Isolated nodes control text (leads-only disabled): 'Show 205 isolated nodes' (or 105 when node types are filtered).
+
+2. FINDINGS FOR REPORT 1 (ISOLATED NODES FILTER BAR)
+- Observation: On initial load of the graph page in both Practice and Demo cases, the filter bar displays the button 'Show 0 isolated nodes'.
+- Investigation: In leads-only mode, the client computes filtered elements by taking top leads and their direct neighbours along existing edges. Because neighbours are selected via incident edges, disconnected nodes are excluded by definition from the leads-only subgraph. The computed count of isolated nodes in leads-only mode is 0 in both cases.
+- Root Cause: In web/src/pages/Graph.jsx (lines 442-448), the isolated-nodes toggle button is unconditionally rendered:
+    {showIsolated ? 'Hide ' + isolatedCount + ' isolated nodes' : 'Show ' + isolatedCount + ' isolated nodes'}
+  When isolatedCount is 0, rendering 'Show 0 isolated nodes' is confusing because clicking it has no effect. In addition, the label does not indicate why 0 isolated nodes are present (leads-only view filters them out).
+- Classification: Defect in web/src/pages/Graph.jsx and web/src/pages/graphHelpers.js.
+
+3. FINDINGS FOR REPORT 2 (PERSON NODE CLICK AND INSPECTOR)
+- Observation: Clicking a PERSON node in Cytoscape turns the node blue, but the inspector on the right either does not expand or displays an uninformative error.
+- Investigation:
+  a) Cytoscape node selection style (web/src/pages/Graph.jsx line 72-80) applies an accent color (blue border and background) to any node with selector 'node:selected'.
+  b) In web/src/pages/Graph.jsx (lines 153 and 538-549), inspectorCollapsed state controls whether the inspector aside panel is expanded (width: 340px) or collapsed (width: 36px). When inspectorCollapsed is true, the aside renders only a narrow 36px strip containing the expand button ('◀') and hides all inspector details.
+  c) In cy.on('tap', 'node', ...) (line 251-254), setSelectedItem is called, but setInspectorCollapsed(false) is never called. If the inspector was previously collapsed by the user or initialized in collapsed state, clicking a node selects it in Cytoscape (turning it blue) while the inspector panel remains collapsed at 36px width, showing no details.
+  d) When navigating between cases, selectedItem state is retained across caseId changes, causing a request to /api/cases/<new_case_id>/nodes/<old_node_id> which returns HTTP 404 Not Found.
+  e) When an HTTP error occurs on /nodes/<id> (lines 356-358), the error display renders raw error message without the HTTP status code, contrary to the requirement that HTTP status code be visibly shown.
+- Root Cause: In web/src/pages/Graph.jsx (lines 251-255, 150-154, 340-362, 538-581).
+- Classification: Defect in web/src/pages/Graph.jsx.
+
+4. CONCLUSION AND LOCATION
+- Both defects are located in web/src/pages/Graph.jsx and web/src/pages/graphHelpers.js.
+- No defects found in kavach_api/ or in the backend data.
+- Step G0 is complete; proceed to G1 fixes in web/.

@@ -1,0 +1,5 @@
+COMMAND: PY scratch/write_g0_diag.py
+EXIT: 0
+SECONDS: 0.2
+--- OUTPUT ---
+Wrote runbook_logs\G\G0_diagnosis.txt with size 4020 bytes.

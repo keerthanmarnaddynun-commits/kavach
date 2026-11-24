@@ -50,7 +50,10 @@
     "F5": {
       "attempts": 0,
       "begin_head": "e29ae6f9959482ed62b729124d6b62c2db047564",
-      "status": "gated",
+      "commit": "265ae974d149648303a331ef01412e7f95c27753",
+      "done_at": "2026-11-24 00:09:56",
+      "pushed": true,
+      "status": "done",
       "tests_passed": 640
     }
   }
