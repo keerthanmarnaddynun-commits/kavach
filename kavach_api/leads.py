@@ -121,6 +121,27 @@ def _extract_owner_maps(graph: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _normalize_lead_evidence_rows(data: dict[str, Any]) -> dict[str, Any]:
+    """
+    Ensure evidence_rows.rows match builder 1-based data row indexing (header not counted)
+    used by evidence.py /rows endpoint. Detectors output 1-based file lines (start=2).
+    """
+    out = dict(data)
+    for lead_key in ("mule_accounts", "burner_phones"):
+        if lead_key in out:
+            items = []
+            for item in out[lead_key]:
+                item_copy = dict(item)
+                if "evidence_rows" in item_copy and isinstance(item_copy["evidence_rows"], dict):
+                    ev = dict(item_copy["evidence_rows"])
+                    if "rows" in ev and isinstance(ev["rows"], list):
+                        ev["rows"] = [max(1, r - 1) for r in ev["rows"]]
+                    item_copy["evidence_rows"] = ev
+                items.append(item_copy)
+            out[lead_key] = items
+    return out
+
+
 def build_leads(
     store: Storage,
     case_id: str,
@@ -150,7 +171,7 @@ def build_leads(
                     cached.get("fingerprint") == fingerprint
                     and cached.get("config_sha256") == curr_cfg_sha
                 ):
-                    return cached
+                    return _normalize_lead_evidence_rows(cached)
             except Exception:
                 pass
 
@@ -268,7 +289,7 @@ def build_leads(
                     "evidence_rows": {
                         "file": "bank.csv",
                         "sha256": bank_sha256,
-                        "rows": m.get("evidence_rows", []),
+                        "rows": [max(1, r - 1) for r in m.get("evidence_rows", [])],
                     },
                     "controlled_by": ctrl_by,
                 }
@@ -292,7 +313,7 @@ def build_leads(
                     "evidence_rows": {
                         "file": "cdr.csv",
                         "sha256": cdr_sha256,
-                        "rows": b.get("evidence_rows", []),
+                        "rows": [max(1, r - 1) for r in b.get("evidence_rows", [])],
                     },
                     "owned_by": owned_by,
                 }

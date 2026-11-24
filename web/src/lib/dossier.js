@@ -32,7 +32,7 @@ export function formatEvidenceRefs(evidence) {
     const sample = rows.slice(0, 10).join(", ");
     const total = item.row_count ?? (item.total_rows ?? rows.length);
     refs.push(
-      `${file}, ${sample ? `rows ${sample}` : "rows none"} (${total} total rows)`
+      `${file}, ${sample ? `data rows ${sample}` : "rows none"} (${total} total rows)`
     );
   }
 

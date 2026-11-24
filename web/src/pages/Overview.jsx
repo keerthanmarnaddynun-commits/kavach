@@ -252,9 +252,13 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
       render: (_, row) => {
         const rows = row.evidence_rows ? row.evidence_rows.rows || [] : [];
         const fileParam = row.evidence_rows && row.evidence_rows.file && row.evidence_rows.file.includes("bank") ? "bank" : "cdr";
+        const queryParts = [];
+        if (rows.length > 0) queryParts.push(`rows=${rows.join(",")}`);
+        if (row.id) queryParts.push(`highlight=${encodeURIComponent(row.id)}`);
+        const queryStr = queryParts.length > 0 ? `?${queryParts.join("&")}` : "";
         return (
           <a
-            href={`#/case/${caseId}/evidence/rows/${fileParam}?rows=${rows.join(",")}`}
+            href={`#/case/${caseId}/evidence/rows/${fileParam}${queryStr}`}
             className="table-link"
           >
             Rows ({rows.length})
@@ -315,9 +319,13 @@ export function Overview({ caseId, activeCase, onLimitsLoaded }) {
       render: (_, row) => {
         const rows = row.evidence_rows ? row.evidence_rows.rows || [] : [];
         const fileParam = row.evidence_rows && row.evidence_rows.file && row.evidence_rows.file.includes("bank") ? "bank" : "cdr";
+        const queryParts = [];
+        if (rows.length > 0) queryParts.push(`rows=${rows.join(",")}`);
+        if (row.id) queryParts.push(`highlight=${encodeURIComponent(row.id)}`);
+        const queryStr = queryParts.length > 0 ? `?${queryParts.join("&")}` : "";
         return (
           <a
-            href={`#/case/${caseId}/evidence/rows/${fileParam}?rows=${rows.join(",")}`}
+            href={`#/case/${caseId}/evidence/rows/${fileParam}${queryStr}`}
             className="table-link"
           >
             Rows ({rows.length})

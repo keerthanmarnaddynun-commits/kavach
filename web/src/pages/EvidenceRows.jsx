@@ -2,16 +2,26 @@ import React, { useState, useEffect, useMemo } from "react";
 import { request } from "../api/client.js";
 import { Table } from "../components/Table.jsx";
 import { shortenHash, copyToClipboard } from "../lib/format.js";
-import { parseRowsQuery } from "./evidenceHelpers.js";
+import {
+  parseRowsQuery,
+  parseHighlightQuery,
+  isExactOrNormalizedMatch,
+  getEvidenceHighlightState,
+} from "./evidenceHelpers.js";
 
 export function EvidenceRows({ caseId, fileKind, route }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errorText, setErrorText] = useState(null);
   const [copyStatus, setCopyStatus] = useState(false);
+  const [currentMatchIdx, setCurrentMatchIdx] = useState(0);
 
   const queryInfo = useMemo(() => {
     return parseRowsQuery(route || (typeof window !== "undefined" ? window.location.hash : ""));
+  }, [route]);
+
+  const highlightTarget = useMemo(() => {
+    return parseHighlightQuery(route || (typeof window !== "undefined" ? window.location.hash : ""));
   }, [route]);
 
   useEffect(() => {
@@ -45,6 +55,41 @@ export function EvidenceRows({ caseId, fileKind, route }) {
 
   const rows = (data && data.rows) || [];
 
+  const highlightState = useMemo(() => {
+    return getEvidenceHighlightState({
+      rows,
+      highlightTarget,
+      storedRowRefs: queryInfo.rowNumbers,
+      fileKind,
+    });
+  }, [rows, highlightTarget, queryInfo.rowNumbers, fileKind]);
+
+  // Reset active match index when target or rows change
+  useEffect(() => {
+    setCurrentMatchIdx(0);
+  }, [highlightTarget, rows]);
+
+  // Auto-scroll to active match (first match on load, or next match on button click)
+  useEffect(() => {
+    if (highlightState.highlightedRowIndices.length === 0 || rows.length === 0) return;
+    const targetRow = rows[highlightState.highlightedRowIndices[currentMatchIdx]];
+    if (!targetRow) return;
+    const el = document.getElementById(`csv-row-${targetRow.row}`);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [currentMatchIdx, highlightState.highlightedRowIndices, rows]);
+
+  function handleNextMatch() {
+    if (highlightState.highlightedRowIndices.length <= 1) return;
+    setCurrentMatchIdx((prev) => (prev + 1) % highlightState.highlightedRowIndices.length);
+  }
+
+  const getRowProps = (row) => ({
+    id: `csv-row-${row.row}`,
+    className: highlightState.highlightedRowSet.has(row.row) ? "highlighted-row" : "",
+  });
+
   // Dynamically determine table columns from first row
   const columns = useMemo(() => {
     if (rows.length === 0) return [];
@@ -55,10 +100,10 @@ export function EvidenceRows({ caseId, fileKind, route }) {
     const cols = [
       {
         key: "row",
-        header: "Row #",
+        header: "Data Row #",
         isNumeric: true,
         align: "right",
-        headerStyle: { width: "70px" },
+        headerStyle: { width: "85px" },
         render: (r) => <span className="mono">{r}</span>,
       },
     ];
@@ -84,16 +129,34 @@ export function EvidenceRows({ caseId, fileKind, route }) {
         isIdentifier: isId,
         isNumeric: isNum,
         align: isNum ? "right" : "left",
-        render: (val) => (
-          <span className={isId ? "mono" : ""}>
-            {val !== null && val !== undefined ? String(val) : "-"}
-          </span>
-        ),
+        render: (val) => {
+          const isCellMatched = highlightTarget && isExactOrNormalizedMatch(val, highlightTarget);
+          const cellContent = val !== null && val !== undefined ? String(val) : "-";
+          return (
+            <span className={isId ? "mono" : ""}>
+              {isCellMatched ? (
+                <mark
+                  style={{
+                    backgroundColor: "var(--accent-weak)",
+                    color: "var(--accent)",
+                    fontWeight: "700",
+                    padding: "1px 4px",
+                    borderRadius: "2px",
+                  }}
+                >
+                  {cellContent}
+                </mark>
+              ) : (
+                cellContent
+              )}
+            </span>
+          );
+        },
       });
     }
 
     return cols;
-  }, [rows]);
+  }, [rows, highlightTarget]);
 
   return (
     <EvidenceRowsView
@@ -107,6 +170,11 @@ export function EvidenceRows({ caseId, fileKind, route }) {
       queryInfo={queryInfo}
       copyStatus={copyStatus}
       handleCopyHash={handleCopyHash}
+      highlightTarget={highlightTarget}
+      highlightState={highlightState}
+      currentMatchIdx={currentMatchIdx}
+      handleNextMatch={handleNextMatch}
+      getRowProps={getRowProps}
     />
   );
 }
@@ -122,6 +190,18 @@ export function EvidenceRowsView({
   queryInfo = { isOverLimit: false, totalRequested: 0 },
   copyStatus = false,
   handleCopyHash,
+  highlightTarget = "",
+  highlightState = {
+    bannerType: "none",
+    bannerText: "",
+    highlightedRowIndices: [],
+    highlightedRowSet: new Set(),
+    isEvidenceMode: false,
+    matchCount: 0,
+  },
+  currentMatchIdx = 0,
+  handleNextMatch,
+  getRowProps,
 }) {
   return (
     <div>
@@ -145,7 +225,7 @@ export function EvidenceRowsView({
             File: <strong>{data ? data.file || fileKind : fileKind}</strong>
           </span>
           <span>
-            Rows Returned: <strong>{rows.length}</strong>
+            Rows Returned: <strong>{rows.length}</strong> (data rows, header excluded)
           </span>
           {data && data.sha256 && (
             <span>
@@ -173,6 +253,70 @@ export function EvidenceRowsView({
           </span>
         </div>
       </div>
+
+      {/* Highlight Banner or No-Match Note */}
+      {highlightTarget && !loading && highlightState && highlightState.bannerType !== "none" && (
+        highlightState.bannerType === "no_matches" ? (
+          <div
+            className="no-match-note"
+            style={{
+              padding: "8px 12px",
+              backgroundColor: "var(--bg)",
+              border: "1px solid var(--border)",
+              borderRadius: "2px",
+              marginBottom: "12px",
+              fontSize: "12px",
+              color: "var(--muted)",
+            }}
+          >
+            No matching row found for <span className="mono">{highlightTarget}</span>.
+          </div>
+        ) : (
+          <div
+            className="highlight-banner"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "8px 12px",
+              backgroundColor: "var(--highlight)",
+              border: "1px solid var(--highlight-border)",
+              borderRadius: "2px",
+              marginBottom: "12px",
+              fontSize: "12px",
+            }}
+          >
+            <div>
+              <strong>{highlightState.matchCount}</strong>{" "}
+              {highlightState.isEvidenceMode ? "evidence" : "matching"} row
+              {highlightState.matchCount === 1 ? "" : "s"} highlighted for{" "}
+              <span className="mono" style={{ fontWeight: "600" }}>{highlightTarget}</span>
+              {highlightState.matchCount > 1 && (
+                <span style={{ color: "var(--muted)", marginLeft: "8px", fontSize: "11px" }}>
+                  (match {currentMatchIdx + 1} of {highlightState.matchCount})
+                </span>
+              )}
+            </div>
+            {highlightState.matchCount > 1 && (
+              <button
+                type="button"
+                className="next-match-btn"
+                onClick={handleNextMatch}
+                style={{
+                  padding: "3px 10px",
+                  fontSize: "11px",
+                  cursor: "pointer",
+                  backgroundColor: "var(--surface)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "2px",
+                }}
+              >
+                Next match ▼
+              </button>
+            )}
+          </div>
+        )
+      )}
 
       {/* Message if over 200 rows requested */}
       {queryInfo && queryInfo.isOverLimit && (
@@ -206,6 +350,7 @@ export function EvidenceRowsView({
           initialSortKey="row"
           initialSortDir="asc"
           emptyMessage="No rows found for the requested query."
+          getRowProps={getRowProps}
         />
       )}
     </div>

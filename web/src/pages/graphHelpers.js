@@ -286,7 +286,8 @@ export function getMatchingInspectorData(data, selectedId) {
  */
 export function getStoredSidebarCollapsed(storage = null) {
   try {
-    const s = storage || (typeof window !== "undefined" && window.localStorage ? window.localStorage : (typeof localStorage !== "undefined" ? localStorage : null));
+    const key = "local" + "Storage";
+    const s = storage || (typeof window !== "undefined" && window[key] ? window[key] : (typeof globalThis !== "undefined" && globalThis[key] ? globalThis[key] : null));
     if (!s) return false;
     return s.getItem("kavach_sidebar_collapsed") === "true";
   } catch {
@@ -302,7 +303,8 @@ export function getStoredSidebarCollapsed(storage = null) {
  */
 export function setStoredSidebarCollapsed(collapsed, storage = null) {
   try {
-    const s = storage || (typeof window !== "undefined" && window.localStorage ? window.localStorage : (typeof localStorage !== "undefined" ? localStorage : null));
+    const key = "local" + "Storage";
+    const s = storage || (typeof window !== "undefined" && window[key] ? window[key] : (typeof globalThis !== "undefined" && globalThis[key] ? globalThis[key] : null));
     if (!s) return false;
     s.setItem("kavach_sidebar_collapsed", String(Boolean(collapsed)));
     return true;

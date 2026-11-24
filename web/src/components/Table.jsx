@@ -78,6 +78,7 @@ export function Table({
   initialSortDir = "asc",
   className = "dense-table",
   emptyMessage = "No records found",
+  getRowProps = null,
 }) {
   const [sortKey, setSortKey] = useState(initialSortKey);
   const [sortDir, setSortDir] = useState(initialSortDir);
@@ -147,8 +148,14 @@ export function Table({
           ) : (
             sortedData.map((row, rowIdx) => {
               const rowKey = row[keyField] !== undefined ? row[keyField] : rowIdx;
+              const rowProps = getRowProps ? getRowProps(row, rowIdx) : {};
               return (
-                <tr key={rowKey}>
+                <tr
+                  key={rowKey}
+                  id={rowProps.id}
+                  className={rowProps.className}
+                  style={rowProps.style}
+                >
                   {columns.map((col) => {
                     const val = row[col.key];
                     const content = col.render

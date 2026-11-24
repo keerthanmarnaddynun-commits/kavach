@@ -8,4 +8,8 @@
   --accent-weak: #e3eefa;
   --danger: #9b1c1c;
   --modal-backdrop: rgba(0, 0, 0, 0.4);
+  --highlight: #fff3cd;
+  --highlight-hover: #ffe8a1;
+  --highlight-border: #ffeeba;
+  --print-highlight: #e5e5e5;
 }

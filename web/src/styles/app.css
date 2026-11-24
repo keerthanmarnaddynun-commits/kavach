@@ -258,6 +258,22 @@ table.dense-table tr:hover td {
   background-color: var(--accent-weak);
 }
 
+table.dense-table tr.highlighted-row td {
+  background-color: var(--highlight);
+  color: var(--text);
+}
+
+table.dense-table tr.highlighted-row:hover td {
+  background-color: var(--highlight-hover);
+}
+
+@media print {
+  table.dense-table tr.highlighted-row td {
+    background-color: var(--print-highlight) !important;
+    font-weight: 600;
+  }
+}
+
 /* Controls & Buttons: border radius at most 2px, no shadows */
 button, input, select, textarea {
   font-family: inherit;

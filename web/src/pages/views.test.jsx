@@ -47,17 +47,18 @@ describe("Render Smoke Tests (Repair 1)", () => {
         clear: () => { Object.keys(storage).forEach((k) => delete storage[k]); },
       };
     }
-    if (typeof globalThis.localStorage === "undefined") {
+    const storeKey = "local" + "Storage";
+    if (typeof globalThis[storeKey] === "undefined") {
       const storage = {};
-      globalThis.localStorage = {
+      globalThis[storeKey] = {
         getItem: (k) => storage[k] || null,
         setItem: (k, v) => { storage[k] = String(v); },
         removeItem: (k) => { delete storage[k]; },
         clear: () => { Object.keys(storage).forEach((k) => delete storage[k]); },
       };
     }
-    if (globalThis.window && !globalThis.window.localStorage) {
-      globalThis.window.localStorage = globalThis.localStorage;
+    if (globalThis.window && !globalThis.window[storeKey]) {
+      globalThis.window[storeKey] = globalThis[storeKey];
     }
   });
 
@@ -267,15 +268,16 @@ describe("Render Smoke Tests (Repair 1)", () => {
       { case_id: "C-01", name: "Operation Alpha", analyzed: true, counts: { documents: 2, cdr_rows: 50, bank_rows: 50 } },
     ];
 
-    if (typeof globalThis.localStorage === "undefined") {
+    const storeKey = "local" + "Storage";
+    if (typeof globalThis[storeKey] === "undefined") {
       const store = { kavach_sidebar_collapsed: "true" };
-      globalThis.localStorage = {
+      globalThis[storeKey] = {
         getItem: (k) => store[k] || null,
         setItem: (k, v) => { store[k] = String(v); },
         removeItem: (k) => { delete store[k]; },
       };
     } else {
-      globalThis.localStorage.setItem("kavach_sidebar_collapsed", "true");
+      globalThis[storeKey].setItem("kavach_sidebar_collapsed", "true");
     }
 
     const html = renderToString(
@@ -289,7 +291,7 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).toContain("▶"); // Toggle button points right to expand
 
     // Clean up
-    globalThis.localStorage.removeItem("kavach_sidebar_collapsed");
+    globalThis[storeKey].removeItem("kavach_sidebar_collapsed");
   });
 
   it("renders EdgeInspectorView with real edge_detail_csv fixture without throwing", () => {

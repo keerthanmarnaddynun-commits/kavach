@@ -342,8 +342,8 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
     return <EvidenceDoc caseId={caseId} docId={docId} route={route} />;
   }
 
-  // Evidence rows route: #/case/<id>/evidence/rows/<file>?rows=...
-  const rowsMatch = route.match(/^#\/case\/[^/]+\/evidence\/rows\/([^?]+)(?:\?rows=(.*))?$/);
+  // Evidence rows route: #/case/<id>/evidence/rows/<file>?...
+  const rowsMatch = route.match(/^#\/case\/[^/]+\/evidence\/rows\/([^?]+)(?:\?(.*))?$/);
   if (rowsMatch) {
     const fileKind = rowsMatch[1];
     return <EvidenceRows caseId={caseId} fileKind={fileKind} route={route} />;
