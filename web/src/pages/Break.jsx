@@ -1,7 +1,18 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { request } from "../api/client.js";
 import { canAnalyze } from "../lib/roles.js";
-import { validateBreakGroups, buildBreakViewModel, findBreakExamples } from "./breakHelpers.js";
+import {
+  validateBreakGroups,
+  buildBreakViewModel,
+  findBreakExamples,
+  breakExamplesCache,
+  inFlightExamples,
+  getCachedBreakExamples,
+  getCachedBreakState,
+  setCachedBreakState,
+  clearCachedBreakState,
+  filterValidPeopleIds,
+} from "./breakHelpers.js";
 import { saveHighlightIds } from "./graphHelpers.js";
 
 export function Break({ caseId, user }) {
@@ -9,25 +20,58 @@ export function Break({ caseId, user }) {
   const [loadingPeople, setLoadingPeople] = useState(true);
   const [peopleError, setPeopleError] = useState(null);
 
-  // Group selection state
-  const [filterTextA, setFilterTextA] = useState("");
-  const [filterTextB, setFilterTextB] = useState("");
-  const [groupA, setGroupA] = useState([]);
-  const [groupB, setGroupB] = useState([]);
+  // Group selection state restored from module-level cache
+  const cachedState = getCachedBreakState(caseId);
+  const [filterTextA, setFilterTextA] = useState(() => cachedState?.filterTextA || "");
+  const [filterTextB, setFilterTextB] = useState(() => cachedState?.filterTextB || "");
+  const [groupA, setGroupA] = useState(() => cachedState?.groupA || []);
+  const [groupB, setGroupB] = useState(() => cachedState?.groupB || []);
 
-  // Examples state
-  const [examples, setExamples] = useState([]);
-  const [loadingExamples, setLoadingExamples] = useState(false);
+  // Examples state restored from module-level cache
+  const cachedExamples = getCachedBreakExamples(caseId);
+  const [examples, setExamples] = useState(() => cachedExamples || []);
+  const [loadingExamples, setLoadingExamples] = useState(() => !cachedExamples);
 
-  // Break analysis execution state
+  // Break analysis execution state restored from module-level cache
   const [running, setRunning] = useState(false);
   const [serverError, setServerError] = useState(null);
   const [clientError, setClientError] = useState(null);
-  const [resultData, setResultData] = useState(null);
+  const [resultData, setResultData] = useState(() => cachedState?.resultData || null);
 
   const isAnalyst = user && canAnalyze(user.role);
 
-  // Load people for selection
+  // Sync state to module cache
+  useEffect(() => {
+    if (!caseId) return;
+    setCachedBreakState(caseId, {
+      groupA,
+      groupB,
+      filterTextA,
+      filterTextB,
+      resultData,
+    });
+  }, [caseId, groupA, groupB, filterTextA, filterTextB, resultData]);
+
+  // Sync if caseId prop changes
+  const currentCaseIdRef = useRef(caseId);
+  useEffect(() => {
+    if (currentCaseIdRef.current !== caseId) {
+      currentCaseIdRef.current = caseId;
+      const state = getCachedBreakState(caseId);
+      setFilterTextA(state?.filterTextA || "");
+      setFilterTextB(state?.filterTextB || "");
+      setGroupA(state?.groupA || []);
+      setGroupB(state?.groupB || []);
+      setResultData(state?.resultData || null);
+      const ex = getCachedBreakExamples(caseId);
+      setExamples(ex || []);
+      setLoadingExamples(!ex);
+      setClientError(null);
+      setServerError(null);
+    }
+  }, [caseId]);
+
+  // Load people for selection and drop any stale members from restored selection
   useEffect(() => {
     if (!caseId || !isAnalyst) return;
     setLoadingPeople(true);
@@ -35,7 +79,10 @@ export function Break({ caseId, user }) {
 
     request(`/cases/${caseId}/people`)
       .then((data) => {
-        setPeople(data || []);
+        const list = data || [];
+        setPeople(list);
+        setGroupA((prev) => filterValidPeopleIds(prev, list));
+        setGroupB((prev) => filterValidPeopleIds(prev, list));
       })
       .catch((err) => {
         setPeopleError(err.message || "Failed to load case people");
@@ -45,35 +92,67 @@ export function Break({ caseId, user }) {
       });
   }, [caseId, isAnalyst]);
 
-  // Lazily find examples once case individuals are loaded
+  // Compute example list once per case and keep it in module-level in-memory cache
   useEffect(() => {
-    if (!caseId || !isAnalyst || people.length === 0) {
-      setExamples([]);
+    if (!caseId || !isAnalyst) return;
+
+    if (breakExamplesCache.has(caseId)) {
+      setExamples(breakExamplesCache.get(caseId) || []);
       setLoadingExamples(false);
       return;
     }
-    let cancelled = false;
-    setLoadingExamples(true);
 
-    findBreakExamples(caseId, people, request, () => cancelled)
-      .then((found) => {
-        if (!cancelled) {
-          setExamples(found || []);
-        }
+    if (inFlightExamples.has(caseId)) {
+      setLoadingExamples(true);
+      let mounted = true;
+      inFlightExamples
+        .get(caseId)
+        .then((res) => {
+          if (mounted) {
+            setExamples(res || []);
+            setLoadingExamples(false);
+          }
+        })
+        .catch(() => {
+          if (mounted) {
+            setExamples([]);
+            setLoadingExamples(false);
+          }
+        });
+      return () => {
+        mounted = false;
+      };
+    }
+
+    if (people.length === 0) {
+      return;
+    }
+
+    setLoadingExamples(true);
+    let mounted = true;
+    const promise = findBreakExamples(caseId, people, request)
+      .then((res) => {
+        const list = res || [];
+        breakExamplesCache.set(caseId, list);
+        inFlightExamples.delete(caseId);
+        return list;
       })
-      .catch(() => {
-        if (!cancelled) {
-          setExamples([]);
-        }
-      })
-      .finally(() => {
-        if (!cancelled) {
-          setLoadingExamples(false);
-        }
+      .catch((err) => {
+        inFlightExamples.delete(caseId);
+        return [];
       });
 
+    inFlightExamples.set(caseId, promise);
+
+    promise.then((res) => {
+      if (mounted) {
+        setExamples(res || []);
+        setLoadingExamples(false);
+      }
+    });
+
     return () => {
-      cancelled = true;
+      mounted = false;
     };
   }, [caseId, isAnalyst, people]);
 
@@ -95,6 +174,23 @@ export function Break({ caseId, user }) {
     setClientError(null);
     setServerError(null);
     setResultData(null);
+    clearCachedBreakState(caseId, "all");
+  }
+
+  function handleClearA() {
+    setGroupA([]);
+    setResultData(null);
+    setClientError(null);
+    setServerError(null);
+    clearCachedBreakState(caseId, "A");
+  }
+
+  function handleClearB() {
+    setGroupB([]);
+    setResultData(null);
+    setClientError(null);
+    setServerError(null);
+    clearCachedBreakState(caseId, "B");
   }
 
   function handleToggleA(personId) {
@@ -171,6 +267,8 @@ export function Break({ caseId, user }) {
       loadingExamples={loadingExamples}
       onSelectExample={handleSelectExample}
       onClear={handleClear}
+      onClearA={handleClearA}
+      onClearB={handleClearB}
     />
   );
 }
@@ -190,6 +288,8 @@ export function BreakView({
   onToggleB,
   onRunBreak,
   onClear,
+  onClearA,
+  onClearB,
   running = false,
   clientError = null,
   serverError = null,
@@ -273,13 +373,23 @@ export function BreakView({
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
                 <strong>Group A ({groupA.length} selected, max 200)</strong>
-                <input
-                  type="text"
-                  placeholder="Filter Group A..."
-                  value={filterTextA}
-                  onChange={(e) => setFilterTextA && setFilterTextA(e.target.value)}
-                  style={{ width: "150px", fontSize: "11px" }}
-                />
+                <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
+                  <button
+                    type="button"
+                    className="secondary"
+                    onClick={onClearA}
+                    style={{ fontSize: "11px", padding: "2px 8px" }}
+                  >
+                    Clear A
+                  </button>
+                  <input
+                    type="text"
+                    placeholder="Filter Group A..."
+                    value={filterTextA}
+                    onChange={(e) => setFilterTextA && setFilterTextA(e.target.value)}
+                    style={{ width: "150px", fontSize: "11px" }}
+                  />
+                </div>
               </div>
 
               <div
@@ -330,13 +440,23 @@ export function BreakView({
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
                 <strong>Group B ({groupB.length} selected, max 200)</strong>
-                <input
-                  type="text"
-                  placeholder="Filter Group B..."
-                  value={filterTextB}
-                  onChange={(e) => setFilterTextB && setFilterTextB(e.target.value)}
-                  style={{ width: "150px", fontSize: "11px" }}
-                />
+                <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
+                  <button
+                    type="button"
+                    className="secondary"
+                    onClick={onClearB}
+                    style={{ fontSize: "11px", padding: "2px 8px" }}
+                  >
+                    Clear B
+                  </button>
+                  <input
+                    type="text"
+                    placeholder="Filter Group B..."
+                    value={filterTextB}
+                    onChange={(e) => setFilterTextB && setFilterTextB(e.target.value)}
+                    style={{ width: "150px", fontSize: "11px" }}
+                  />
+                </div>
               </div>
 
               <div

@@ -196,6 +196,43 @@ def test_run_break_with_disjoint_groups(temp_store: Storage) -> None:
         assert "name" in item
 
 
+def test_run_break_with_members_absent_from_call_graph(temp_store: Storage) -> None:
+    """run_break succeeds and returns valid result when group members are absent from the call graph."""
+    case_id = _setup_demo_case(temp_store)
+    graph = build_graph(temp_store, case_id)
+    person_nodes = [n["id"] for n in graph["nodes"] if n.get("type") == "PERSON"]
+    assert len(person_nodes) >= 4
+
+    # 1. Partial absent: group members from demo case
+    group_a = person_nodes[:2]
+    group_b = person_nodes[2:4]
+    res1 = run_break(temp_store, case_id, group_a, group_b)
+    assert "cut" in res1
+    assert "cut_details" in res1
+    assert isinstance(res1["cut_details"], dict)
+
+    # 2. All members absent from call graph: people without phones
+    owns_device_people = {
+        e["source"] for e in graph.get("edges", []) if e.get("label") == "OWNS_DEVICE"
+    } | {
+        e["target"] for e in graph.get("edges", []) if e.get("label") == "OWNS_DEVICE"
+    }
+    non_call_persons = [p for p in person_nodes if p not in owns_device_people]
+    if len(non_call_persons) >= 4:
+        g_absent_a = non_call_persons[:2]
+        g_absent_b = non_call_persons[2:4]
+    else:
+        g_absent_a = person_nodes[:2]
+        g_absent_b = person_nodes[2:4]
+
+    res2 = run_break(temp_store, case_id, g_absent_a, g_absent_b)
+    assert "cut" in res2
+    assert "cut_details" in res2
+    assert isinstance(res2["cut_details"], dict)
+    assert "finite" in res2
+    assert "size" in res2
+
+
 def test_run_break_rejects_invalid_groups(temp_store: Storage) -> None:
     """Empty, overlapping, unknown and oversized groups are rejected with typed errors."""
     case_id = _setup_demo_case(temp_store)

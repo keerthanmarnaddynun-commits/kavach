@@ -541,6 +541,22 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).toContain("hl=PERSON%3A1%2CPHONE%3A123");
   });
 
+  it("renders BreakView with Clear A and Clear B buttons in group headers", () => {
+    const html = renderToString(
+      <BreakView
+        caseId="C-927fc7de12"
+        people={[{ id: "P1", name: "Alice" }]}
+        groupA={["P1"]}
+        groupB={[]}
+      />
+    );
+
+    expect(html).toContain("Clear A");
+    expect(html).toContain("Clear B");
+    expect(html).toContain("Filter Group A...");
+    expect(html).toContain("Filter Group B...");
+  });
+
   it("parses highlight IDs from URL and handles storage fallback", () => {
     const hl = parseHighlightIdsFromUrl("#/case/C-01/graph?select=P1&hl=P1,PHONE:123");
     expect(hl).toEqual(["P1", "PHONE:123"]);

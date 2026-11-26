@@ -236,3 +236,78 @@ export async function findBreakExamples(caseId, people = [], requestFn, isCancel
     label: formatExampleLabel(idx + 1, item.groupA, item.groupB, item.result),
   }));
 }
+
+// Module-level in-memory caches keyed by caseId (plain JS Maps in memory)
+export const breakExamplesCache = new Map();
+export const inFlightExamples = new Map();
+export const breakStateCache = new Map();
+
+export function getCachedBreakExamples(caseId) {
+  if (!caseId) return null;
+  return breakExamplesCache.get(caseId) || null;
+}
+
+export function setCachedBreakExamples(caseId, examples) {
+  if (!caseId) return;
+  breakExamplesCache.set(caseId, examples);
+}
+
+export function clearCachedBreakExamples(caseId) {
+  if (caseId) {
+    breakExamplesCache.delete(caseId);
+    inFlightExamples.delete(caseId);
+  } else {
+    breakExamplesCache.clear();
+    inFlightExamples.clear();
+  }
+}
+
+export function getCachedBreakState(caseId) {
+  if (!caseId) return null;
+  return breakStateCache.get(caseId) || null;
+}
+
+export function setCachedBreakState(caseId, state) {
+  if (!caseId || !state) return;
+  if (
+    (!state.groupA || state.groupA.length === 0) &&
+    (!state.groupB || state.groupB.length === 0) &&
+    !state.filterTextA &&
+    !state.filterTextB &&
+    !state.resultData
+  ) {
+    breakStateCache.delete(caseId);
+    return;
+  }
+  breakStateCache.set(caseId, state);
+}
+
+export function clearCachedBreakState(caseId, part = "all") {
+  if (!caseId) return;
+  if (part === "all") {
+    breakStateCache.delete(caseId);
+  } else if (breakStateCache.has(caseId)) {
+    const curr = breakStateCache.get(caseId) || {};
+    if (part === "A") {
+      setCachedBreakState(caseId, {
+        ...curr,
+        groupA: [],
+        resultData: null,
+      });
+    } else if (part === "B") {
+      setCachedBreakState(caseId, {
+        ...curr,
+        groupB: [],
+        resultData: null,
+      });
+    }
+  }
+}
+
+export function filterValidPeopleIds(selectedIds = [], people = []) {
+  if (!Array.isArray(selectedIds) || selectedIds.length === 0) return [];
+  if (!Array.isArray(people) || people.length === 0) return selectedIds;
+  const validSet = new Set(people.map((p) => p.id || p.person_id).filter(Boolean));
+  return selectedIds.filter((id) => validSet.has(id));
+}
+

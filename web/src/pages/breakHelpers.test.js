@@ -1,10 +1,20 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import {
   validateBreakGroups,
   buildBreakViewModel,
   generateCandidateBreakPairs,
   formatExampleLabel,
   findBreakExamples,
+  breakExamplesCache,
+  inFlightExamples,
+  breakStateCache,
+  getCachedBreakExamples,
+  setCachedBreakExamples,
+  clearCachedBreakExamples,
+  getCachedBreakState,
+  setCachedBreakState,
+  clearCachedBreakState,
+  filterValidPeopleIds,
 } from "./breakHelpers.js";
 
 describe("validateBreakGroups", () => {
@@ -204,3 +214,71 @@ describe("findBreakExamples", () => {
     expect(examples).toEqual([]);
   });
 });
+
+describe("Break Page In-Memory Cache and State Management", () => {
+  beforeEach(() => {
+    breakExamplesCache.clear();
+    inFlightExamples.clear();
+    breakStateCache.clear();
+  });
+
+  it("stores and retrieves examples per caseId", () => {
+    expect(getCachedBreakExamples("case-A")).toBe(null);
+    const mockExamples = [{ label: "Ex 1", groupA: ["P1"], groupB: ["P2"] }];
+    setCachedBreakExamples("case-A", mockExamples);
+    expect(getCachedBreakExamples("case-A")).toBe(mockExamples);
+    expect(getCachedBreakExamples("case-B")).toBe(null);
+
+    clearCachedBreakExamples("case-A");
+    expect(getCachedBreakExamples("case-A")).toBe(null);
+  });
+
+  it("stores and retrieves selection state and results per caseId", () => {
+    const state = {
+      groupA: ["P1", "P2"],
+      groupB: ["P3"],
+      filterTextA: "suspect",
+      filterTextB: "",
+      resultData: { finite: true, size: 1, cut: [{ person_id: "P4" }] },
+    };
+    setCachedBreakState("case-10", state);
+    expect(getCachedBreakState("case-10")).toEqual(state);
+
+    // clearCachedBreakState 'A' clears groupA and resultData, preserves groupB and filters
+    clearCachedBreakState("case-10", "A");
+    const updatedA = getCachedBreakState("case-10");
+    expect(updatedA.groupA).toEqual([]);
+    expect(updatedA.groupB).toEqual(["P3"]);
+    expect(updatedA.filterTextA).toBe("suspect");
+    expect(updatedA.resultData).toBe(null);
+
+    // clearCachedBreakState 'B' clears groupB and resultData, preserves groupA and filters
+    setCachedBreakState("case-10", { ...state });
+    clearCachedBreakState("case-10", "B");
+    const updatedB = getCachedBreakState("case-10");
+    expect(updatedB.groupA).toEqual(["P1", "P2"]);
+    expect(updatedB.groupB).toEqual([]);
+    expect(updatedB.filterTextA).toBe("suspect");
+    expect(updatedB.resultData).toBe(null);
+
+    // clearCachedBreakState 'all' deletes cache entry completely
+    clearCachedBreakState("case-10", "all");
+    expect(getCachedBreakState("case-10")).toBe(null);
+  });
+
+  it("silently drops stale members not found in valid people list", () => {
+    const validPeople = [
+      { id: "P1", name: "Alice" },
+      { person_id: "P2", name: "Bob" },
+      { id: "P3", name: "Charlie" },
+    ];
+    const restoredSelection = ["P1", "P_DELETED_99", "P2", "P_OLD_42"];
+    const filtered = filterValidPeopleIds(restoredSelection, validPeople);
+    expect(filtered).toEqual(["P1", "P2"]);
+
+    // Handles empty or invalid inputs gracefully
+    expect(filterValidPeopleIds([], validPeople)).toEqual([]);
+    expect(filterValidPeopleIds(["P1"], [])).toEqual(["P1"]);
+  });
+});
+
