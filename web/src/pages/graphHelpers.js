@@ -125,6 +125,105 @@ export function parseHighlightIdsFromUrl(hashOrQuery) {
     .filter(Boolean);
 }
 
+export function parseFirstFirFromUrl(hashOrQuery) {
+  if (!hashOrQuery || typeof hashOrQuery !== "string") return false;
+  const qIndex = hashOrQuery.indexOf("?");
+  if (qIndex === -1 && !hashOrQuery.includes("firstfir=")) return false;
+
+  const queryString = qIndex !== -1 ? hashOrQuery.slice(qIndex + 1) : hashOrQuery;
+  const params = new URLSearchParams(queryString);
+  const val = params.get("firstfir");
+  return val === "1" || val === "true";
+}
+
+export function resolveNodeId(rawNodes = [], inputId) {
+  if (!inputId || !Array.isArray(rawNodes)) return null;
+  const trimmed = String(inputId).trim();
+  if (!trimmed) return null;
+
+  // 1. Exact match on node id
+  const direct = rawNodes.find((n) => n.data && n.data.id === trimmed);
+  if (direct) return direct.data.id;
+
+  // 2. Try prefix variants (PHONE, ACCOUNT, IMEI, PERSON, VEHICLE)
+  for (const prefix of ["PHONE", "ACCOUNT", "IMEI", "PERSON", "VEHICLE"]) {
+    const candidate = `${prefix}:${trimmed}`;
+    const match = rawNodes.find((n) => n.data && n.data.id === candidate);
+    if (match) return match.data.id;
+  }
+
+  // 3. Match on node value or label
+  const byVal = rawNodes.find(
+    (n) => n.data && (n.data.value === trimmed || n.data.label === trimmed)
+  );
+  if (byVal) return byVal.data.id;
+
+  return null;
+}
+
+export function computeAdjustedFiltersForNodes({
+  targetNodeIds = [],
+  rawNodes = [],
+  rawEdges = [],
+  currentLeadsOnly = false,
+  currentShowIsolated = false,
+  currentNodeTypes = {},
+}) {
+  let changed = false;
+  let nextLeadsOnly = currentLeadsOnly;
+  let nextShowIsolated = currentShowIsolated;
+  const nextNodeTypes = { ...currentNodeTypes };
+  const isolatedIds = new Set(getIsolatedNodeIds(rawNodes, rawEdges));
+
+  const ids = Array.isArray(targetNodeIds) ? targetNodeIds : [targetNodeIds];
+  for (const tid of ids) {
+    if (!tid) continue;
+    const target = rawNodes.find((n) => n.data && n.data.id === tid);
+    if (!target) continue;
+
+    if (nextLeadsOnly) {
+      nextLeadsOnly = false;
+      changed = true;
+    }
+
+    const ntype = target.data && target.data.type;
+    if (ntype && nextNodeTypes[ntype] === false) {
+      nextNodeTypes[ntype] = true;
+      changed = true;
+    }
+
+    if (!nextShowIsolated && isolatedIds.has(tid)) {
+      nextShowIsolated = true;
+      changed = true;
+    }
+  }
+
+  return {
+    leadsOnly: nextLeadsOnly,
+    showIsolated: nextShowIsolated,
+    nodeTypes: nextNodeTypes,
+    changed,
+  };
+}
+
+export function computeAdjustedFiltersForNode({
+  targetNodeId,
+  rawNodes = [],
+  rawEdges = [],
+  currentLeadsOnly = false,
+  currentShowIsolated = false,
+  currentNodeTypes = {},
+}) {
+  return computeAdjustedFiltersForNodes({
+    targetNodeIds: targetNodeId ? [targetNodeId] : [],
+    rawNodes,
+    rawEdges,
+    currentLeadsOnly,
+    currentShowIsolated,
+    currentNodeTypes,
+  });
+}
+
 export function getSavedHighlightIds() {
   try {
     const key = ["session", "Storage"].join("");

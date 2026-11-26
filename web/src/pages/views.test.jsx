@@ -175,6 +175,115 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).toContain(nid);
   });
 
+  it("renders NodeInspectorView with first_record activity and counterparts", () => {
+    const selectedItem = {
+      type: "node",
+      id: "PHONE:9876543210",
+      data: {
+        id: "PHONE:9876543210",
+        label: "9876543210",
+        type: "PHONE",
+        value: "9876543210",
+      },
+    };
+    const inspectorData = {
+      node_id: "PHONE:9876543210",
+      first_fir: {
+        first_fir_id: "FIR_01",
+        date: "2026-01-01",
+        related_entities: [{ id: "PERSON:1", label: "John Doe", relation: "OWNS_DEVICE" }],
+        other_entities: [],
+      },
+      first_record: {
+        file: "cdr",
+        timestamp: "2026-01-01T08:00:00",
+        rows: [1, 2],
+        counterparts: ["9876543211", "351756051523999"],
+      },
+    };
+
+    const html = renderToString(
+      <NodeInspectorView
+        caseId="C-01"
+        selectedItem={selectedItem}
+        data={inspectorData}
+        onNeighbourClick={() => {}}
+      />
+    );
+
+    expect(html).toContain("First seen in records");
+    expect(html).toContain("2026-01-01T08:00:00");
+    expect(html).toContain("9876543211");
+    expect(html).toContain("351756051523999");
+    expect(html).toContain("#/case/C-01/evidence/rows/cdr?rows=1,2&amp;highlight=9876543210");
+  });
+
+  it("renders NodeInspectorView when neither FIR nor records exist", () => {
+    const selectedItem = {
+      type: "node",
+      id: "IMEI:351756051523999",
+      data: {
+        id: "IMEI:351756051523999",
+        label: "351756051523999",
+        type: "IMEI",
+        value: "351756051523999",
+      },
+    };
+    const emptyData = {
+      node_id: "IMEI:351756051523999",
+      first_fir: null,
+      first_record: null,
+    };
+
+    const html = renderToString(
+      <NodeInspectorView
+        caseId="C-01"
+        selectedItem={selectedItem}
+        data={emptyData}
+        onNeighbourClick={() => {}}
+      />
+    );
+
+    expect(html).toContain("Not mentioned in any FIR and no activity in the records");
+  });
+
+  it("renders NodeInspectorView when only record activity exists without FIR", () => {
+    const selectedItem = {
+      type: "node",
+      id: "ACCOUNT:ACCT_100",
+      data: {
+        id: "ACCOUNT:ACCT_100",
+        label: "ACCT_100",
+        type: "ACCOUNT",
+        value: "ACCT_100",
+      },
+    };
+    const recordOnlyData = {
+      node_id: "ACCOUNT:ACCT_100",
+      first_fir: { first_fir_id: null, date: null, related_entities: [], other_entities: [] },
+      first_record: {
+        file: "bank",
+        timestamp: "2026-01-01T10:00:00",
+        rows: [5],
+        counterparts: ["ACCT_200"],
+      },
+    };
+
+    const html = renderToString(
+      <NodeInspectorView
+        caseId="C-01"
+        selectedItem={selectedItem}
+        data={recordOnlyData}
+        onNeighbourClick={() => {}}
+      />
+    );
+
+    expect(html).toContain("Not mentioned in any FIR");
+    expect(html).toContain("First seen in records");
+    expect(html).toContain("ACCT_200");
+    expect(html).toContain("#/case/C-01/evidence/rows/bank?rows=5&amp;highlight=ACCT_100");
+  });
+
   it("renders EdgeInspectorView with real edge_detail_fir fixture without throwing", () => {
     const eid = edgeDetailFirFixture.edge_id || edgeDetailFirFixture.id || "EDGE:1";
     const selectedItem = {
@@ -250,6 +359,73 @@ describe("Render Smoke Tests (Repair 1)", () => {
       />
     );
     expect(errorHtml).toContain("HTTP 404: Node not found");
+  });
+
+  it("renders NodeInspectorView with First FIR mention and related entities", () => {
+    const selectedItem = {
+      type: "node",
+      id: "ACCOUNT:95217729622",
+      data: { id: "ACCOUNT:95217729622", label: "95217729622", type: "ACCOUNT" },
+    };
+    const dataWithFirstFir = {
+      node_id: "ACCOUNT:95217729622",
+      first_fir: {
+        first_fir_id: "FIR_01",
+        date: "2026-01-05",
+        related_entities: [
+          { id: "PERSON:1", label: "Rajendra Singh", type: "PERSON", relation: "CONTROLS_ACCOUNT" },
+        ],
+        other_entities: [
+          { id: "VEHICLE:1", label: "DL-5C-AB-5012", type: "VEHICLE" },
+        ],
+      },
+    };
+
+    const html = renderToString(
+      <NodeInspectorView
+        caseId="C-01"
+        selectedItem={selectedItem}
+        data={dataWithFirstFir}
+        onShowFirstFir={() => {}}
+      />
+    );
+    expect(html).toContain("First FIR Mention");
+    expect(html).toContain("First FIR mention:");
+    expect(html).toContain("FIR_01");
+    expect(html).toContain("#/case/C-01/evidence/doc/FIR_01");
+    expect(html).toContain("Show first FIR mention");
+    expect(html).toContain("Rajendra Singh");
+    expect(html).toContain("CONTROLS_ACCOUNT");
+    expect(html).toContain("Also mentioned in this FIR (1)");
+    expect(html).toContain("DL-5C-AB-5012");
+  });
+
+  it("renders NodeInspectorView for CSV-only node saying Not mentioned in any FIR", () => {
+    const selectedItem = {
+      type: "node",
+      id: "ACCOUNT:999999",
+      data: { id: "ACCOUNT:999999", label: "999999", type: "ACCOUNT" },
+    };
+    const csvOnlyData = {
+      node_id: "ACCOUNT:999999",
+      first_fir: {
+        first_fir_id: null,
+        date: null,
+        related_entities: [],
+        other_entities: [],
+      },
+    };
+
+    const html = renderToString(
+      <NodeInspectorView
+        caseId="C-01"
+        selectedItem={selectedItem}
+        data={csvOnlyData}
+      />
+    );
+    expect(html).toContain("First FIR Mention");
+    expect(html).toContain("Not mentioned in any FIR");
+    expect(html).not.toContain("Show first FIR mention");
   });
 
   it("renders CaseRail with collapsible left sidebar toggle", () => {
@@ -579,6 +755,109 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).toContain("Activity Timeline");
     expect(html).toContain("Calls Volume");
     expect(html).toContain("Transfers Volume");
+    expect(html).toContain("First Seen Identifiers");
+    expect(html).toContain("First seen means the first time it appears in the uploaded records, not when it first existed.");
+    expect(html).toContain("Phones (");
+    expect(html).toContain("Accounts (");
+    expect(html).toContain("IMEIs (");
+  });
+
+  it("renders TimelineView with accounts and imeis tabs and links", () => {
+    const sampleData = {
+      calls: [],
+      transfers: [],
+      first_seen: [{ phone: "9876543210", t: "2026-01-01T07:00:00" }],
+      first_seen_accounts: [{ account: "ACC_998877", id: "ACC_998877", t: "2026-01-01T08:00:00" }],
+      first_seen_imeis: [{ imei: "351756051523999", id: "351756051523999", t: "2026-01-01T09:00:00" }],
+    };
+
+    // Render with activeTab="accounts" and caseId
+    const accountsHtml = renderToString(
+      <TimelineView
+        caseId="C-TEST"
+        bucket="day"
+        data={sampleData}
+        activeTab="accounts"
+      />
+    );
+    expect(accountsHtml).toContain("Accounts (1)");
+    expect(accountsHtml).toContain("ACC_998877");
+    expect(accountsHtml).toContain("#/case/C-TEST/graph?select=ACCOUNT%3AACC_998877&amp;firstfir=1");
+
+    // Render with activeTab="imeis" and caseId
+    const imeisHtml = renderToString(
+      <TimelineView
+        caseId="C-TEST"
+        bucket="day"
+        data={sampleData}
+        activeTab="imeis"
+      />
+    );
+    expect(imeisHtml).toContain("IMEIs (1)");
+    expect(imeisHtml).toContain("351756051523999");
+    expect(imeisHtml).toContain("#/case/C-TEST/graph?select=IMEI%3A351756051523999&amp;firstfir=1");
+
+    // Render with activeTab="phones" and caseId
+    const phonesHtml = renderToString(
+      <TimelineView
+        caseId="C-TEST"
+        bucket="day"
+        data={sampleData}
+        activeTab="phones"
+      />
+    );
+    expect(phonesHtml).toContain("Phones (1)");
+    expect(phonesHtml).toContain("9876543210");
+    expect(phonesHtml).toContain("#/case/C-TEST/graph?select=PHONE%3A9876543210&amp;firstfir=1");
+
+    // Render without caseId shows plain text
+    const noCaseHtml = renderToString(
+      <TimelineView
+        bucket="day"
+        data={sampleData}
+        activeTab="accounts"
+      />
+    );
+    expect(noCaseHtml).toContain("ACC_998877");
+    expect(noCaseHtml).not.toContain("graph?select=");
+  });
+
+  it("renders TimelineView with example markers and key when categories exist", () => {
+    const sampleData = {
+      calls: [],
+      transfers: [],
+      first_seen: [
+        {
+          phone: "9876543210",
+          t: "2026-01-01T07:00:00",
+          first_fir: { first_fir_id: "FIR_01", related_count: 3 },
+          first_record: { timestamp: "2026-01-01T07:00:00", counterparts: ["9876543211"] },
+        },
+        {
+          phone: "9876543211",
+          t: "2026-01-01T07:00:00",
+          first_fir: null,
+          first_record: { timestamp: "2026-01-01T07:00:00", counterparts: ["9876543210"] },
+        },
+      ],
+      first_seen_accounts: [],
+      first_seen_imeis: [],
+    };
+
+    const html = renderToString(
+      <TimelineView
+        caseId="C-TEST"
+        bucket="day"
+        data={sampleData}
+        activeTab="phones"
+      />
+    );
+
+    expect(html).toContain("Example tags:");
+    expect(html).toContain("FIR + records");
+    expect(html).toContain("Records only");
+    expect(html).toContain("#/case/C-TEST/graph?select=PHONE%3A9876543210&amp;firstfir=1");
+    expect(html).toContain("#/case/C-TEST/graph?select=PHONE%3A9876543211&amp;firstfir=1");
   });
 
   it("renders ErrorBoundaryFallback without throwing", () => {

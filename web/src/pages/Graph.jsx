@@ -8,6 +8,10 @@ import {
   getNodeLabelVisibilityMap,
   parseSelectedIdFromUrl,
   parseHighlightIdsFromUrl,
+  parseFirstFirFromUrl,
+  resolveNodeId,
+  computeAdjustedFiltersForNode,
+  computeAdjustedFiltersForNodes,
   getSavedHighlightIds,
   saveHighlightIds,
   filterGraphElements,
@@ -38,6 +42,7 @@ export function getCytoscapeStyles() {
   const muted = getComputedToken("--muted");
   const accent = getComputedToken("--accent");
   const accentWeak = getComputedToken("--accent-weak");
+  const recordAccent = getComputedToken("--record-accent");
   const surface = getComputedToken("--surface");
 
   return [
@@ -136,6 +141,16 @@ export function getCytoscapeStyles() {
       },
     },
     {
+      selector: "node.highlighted-record",
+      style: {
+        "border-color": recordAccent,
+        "border-width": 3,
+        opacity: 1,
+        "min-zoomed-font-size": 0,
+        "font-weight": "bold",
+      },
+    },
+    {
       selector: "node.dimmed",
       style: {
         opacity: 0.15,
@@ -151,6 +166,23 @@ export function getCytoscapeStyles() {
         width: 3,
         "line-color": accent,
         "target-arrow-color": accent,
+        "curve-style": "bezier",
+        "text-rotation": "autorotate",
+        "text-background-color": surface,
+        "text-background-opacity": 0.9,
+        "text-background-padding": 2,
+      },
+    },
+    {
+      selector: "edge.highlighted-record",
+      style: {
+        label: "data(label)",
+        "font-size": "10px",
+        color: recordAccent,
+        opacity: 1,
+        width: 3,
+        "line-color": recordAccent,
+        "target-arrow-color": recordAccent,
         "curve-style": "bezier",
         "text-rotation": "autorotate",
         "text-background-color": surface,
@@ -198,6 +230,7 @@ export function Graph({ caseId, route }) {
   selectedItemRef.current = selectedItem;
   const lastAppliedUrlSelectRef = useRef(null);
   const [isHighlighted, setIsHighlighted] = useState(false);
+  const [highlightLegend, setHighlightLegend] = useState(null);
   const lastAppliedHighlightRef = useRef(null);
   const lastSeenRouteRef = useRef(null);
   const highlightClearedRef = useRef(false);
@@ -397,15 +430,13 @@ export function Graph({ caseId, route }) {
     // Run layout
     runLayout(cy);
 
-    // Keep current selection if still visible, otherwise clear
+    // Keep current selection if visible
     if (selectedItemRef.current) {
       if (targetIds.has(selectedItemRef.current.id)) {
         const target = cy.getElementById(selectedItemRef.current.id);
         if (target.length > 0) {
           target.select();
         }
-      } else {
-        updateSelection(null);
       }
     }
   }, [loading, filteredElements, topLeadIds]);
@@ -418,40 +449,56 @@ export function Graph({ caseId, route }) {
     const hlFromUrl = parseHighlightIdsFromUrl(hashOrRoute);
     const hlIds = hlFromUrl.length > 0 ? hlFromUrl : getSavedHighlightIds();
 
-    const idsToCheck = [selectId, ...hlIds].filter(Boolean);
-    if (idsToCheck.length === 0) return;
-
-    const idSet = new Set(idsToCheck);
-    const rawNodes = rawElements.nodes || [];
-    const matchedRawNodes = rawNodes.filter((n) => idSet.has(n.data && n.data.id));
-    if (matchedRawNodes.length === 0) return;
-
-    if (leadsOnly) {
-      const topSet = new Set(topLeadIds);
-      const hasNonLead = matchedRawNodes.some((n) => !topSet.has(n.data && n.data.id));
-      if (hasNonLead) {
-        setLeadsOnly(false);
+    // 1. If selectId is present, ensure target node is visible
+    if (selectId) {
+      const resolvedSelectId = resolveNodeId(rawElements.nodes, selectId);
+      if (resolvedSelectId) {
+        const adj = computeAdjustedFiltersForNode({
+          targetNodeId: resolvedSelectId,
+          rawNodes: rawElements.nodes,
+          rawEdges: rawElements.edges || [],
+          currentLeadsOnly: leadsOnly,
+          currentShowIsolated: showIsolated,
+          currentNodeTypes: nodeTypes,
+        });
+        if (adj.changed) {
+          if (adj.leadsOnly !== leadsOnly) setLeadsOnly(adj.leadsOnly);
+          if (adj.showIsolated !== showIsolated) setShowIsolated(adj.showIsolated);
+          if (adj.nodeTypes !== nodeTypes) setNodeTypes(adj.nodeTypes);
+        }
       }
     }
 
-    let typesChanged = false;
-    const updatedTypes = { ...nodeTypes };
-    for (const n of matchedRawNodes) {
-      const t = n.data && n.data.type;
-      if (t && updatedTypes[t] === false) {
-        updatedTypes[t] = true;
-        typesChanged = true;
-      }
-    }
-    if (typesChanged) {
-      setNodeTypes(updatedTypes);
-    }
-
-    if (!showIsolated) {
-      const isolatedIds = new Set(getIsolatedNodeIds(rawNodes, rawElements.edges || []));
-      const hasIsolated = matchedRawNodes.some((n) => isolatedIds.has(n.data && n.data.id));
-      if (hasIsolated) {
-        setShowIsolated(true);
+    // 2. Also ensure any highlighted nodes are visible
+    if (hlIds.length > 0) {
+      const idSet = new Set(hlIds);
+      const rawNodes = rawElements.nodes || [];
+      const matchedHlNodes = rawNodes.filter((n) => idSet.has(n.data && n.data.id));
+      if (matchedHlNodes.length > 0) {
+        if (leadsOnly) {
+          const topSet = new Set(topLeadIds);
+          if (matchedHlNodes.some((n) => !topSet.has(n.data && n.data.id))) {
+            setLeadsOnly(false);
+          }
+        }
+        let typesChanged = false;
+        const updatedTypes = { ...nodeTypes };
+        for (const n of matchedHlNodes) {
+          const t = n.data && n.data.type;
+          if (t && updatedTypes[t] === false) {
+            updatedTypes[t] = true;
+            typesChanged = true;
+          }
+        }
+        if (typesChanged) {
+          setNodeTypes(updatedTypes);
+        }
+        if (!showIsolated) {
+          const isolatedIds = new Set(getIsolatedNodeIds(rawNodes, rawElements.edges || []));
+          if (matchedHlNodes.some((n) => isolatedIds.has(n.data && n.data.id))) {
+            setShowIsolated(true);
+          }
+        }
       }
     }
   }, [route, rawElements, topLeadIds, leadsOnly, showIsolated, nodeTypes]);
@@ -499,8 +546,9 @@ export function Graph({ caseId, route }) {
     }
 
     // 2. Apply Node Selection if selectId present
-    if (selectId) {
-      const targetNode = cy.getElementById(selectId);
+    if (selectId && rawElements && rawElements.nodes) {
+      const resolvedSelectId = resolveNodeId(rawElements.nodes, selectId) || selectId;
+      const targetNode = cy.getElementById(resolvedSelectId);
       if (targetNode.length > 0) {
         cy.nodes().unselect();
         cy.edges().unselect();
@@ -671,16 +719,124 @@ export function Graph({ caseId, route }) {
     }
   }
 
+  const applyEvidenceHighlight = (nodeId, firstFir, firstRecord) => {
+    if (!cyRef.current || !nodeId) return;
+    const cy = cyRef.current;
+
+    const firGroup = (firstFir && firstFir.first_fir_id && Array.isArray(firstFir.related_entities))
+      ? firstFir.related_entities.map((e) => e.id)
+      : [];
+    const firSet = new Set(firGroup);
+
+    const recordCounterpartIds = [];
+    if (firstRecord && Array.isArray(firstRecord.counterparts)) {
+      for (const cp of firstRecord.counterparts) {
+        const resolved = (rawElements && rawElements.nodes ? resolveNodeId(rawElements.nodes, cp) : null) || cp;
+        recordCounterpartIds.push(resolved);
+      }
+    }
+    const recordSet = new Set(recordCounterpartIds);
+
+    const undimmedNodeIds = new Set([nodeId, ...firSet, ...recordSet]);
+
+    cy.batch(() => {
+      cy.nodes().forEach((n) => {
+        const nid = n.id();
+        if (!undimmedNodeIds.has(nid)) {
+          n.addClass("dimmed").removeClass("highlighted highlighted-record");
+        } else if (nid === nodeId) {
+          n.addClass("highlighted").removeClass("dimmed highlighted-record");
+        } else if (firSet.has(nid)) {
+          n.addClass("highlighted").removeClass("dimmed highlighted-record");
+        } else if (recordSet.has(nid)) {
+          n.addClass("highlighted-record").removeClass("dimmed highlighted");
+        }
+      });
+
+      cy.edges().forEach((e) => {
+        const src = e.data("source");
+        const tgt = e.data("target");
+        const connectsFir =
+          (src === nodeId && firSet.has(tgt)) ||
+          (tgt === nodeId && firSet.has(src));
+        const connectsRecord =
+          (src === nodeId && recordSet.has(tgt)) ||
+          (tgt === nodeId && recordSet.has(src)) ||
+          (recordSet.has(src) && recordSet.has(tgt));
+
+        if (connectsFir) {
+          e.addClass("highlighted").removeClass("dimmed highlighted-record");
+        } else if (connectsRecord) {
+          e.addClass("highlighted-record").removeClass("dimmed highlighted");
+        } else {
+          e.addClass("dimmed").removeClass("highlighted highlighted-record");
+        }
+      });
+    });
+
+    setIsHighlighted(true);
+    setHighlightLegend({
+      hasFir: Boolean(firstFir && firstFir.first_fir_id),
+      hasRecord: Boolean(firstRecord && firstRecord.timestamp),
+      recordTimestamp: firstRecord ? firstRecord.timestamp : null,
+    });
+  };
+
+  // Ensure counterpart nodes from first_record are made visible
+  useEffect(() => {
+    if (!inspectorData || !rawElements || !rawElements.nodes) return;
+    const firstRecord = inspectorData.first_record;
+    if (!firstRecord || !Array.isArray(firstRecord.counterparts) || firstRecord.counterparts.length === 0) return;
+    const cpIds = firstRecord.counterparts.map((cp) => resolveNodeId(rawElements.nodes, cp) || cp);
+    const adj = computeAdjustedFiltersForNodes({
+      targetNodeIds: cpIds,
+      rawNodes: rawElements.nodes,
+      rawEdges: rawElements.edges || [],
+      currentLeadsOnly: leadsOnly,
+      currentShowIsolated: showIsolated,
+      currentNodeTypes: nodeTypes,
+    });
+    if (adj.changed) {
+      if (adj.leadsOnly !== leadsOnly) setLeadsOnly(adj.leadsOnly);
+      if (adj.showIsolated !== showIsolated) setShowIsolated(adj.showIsolated);
+      if (adj.nodeTypes !== nodeTypes) setNodeTypes(adj.nodeTypes);
+    }
+  }, [inspectorData, rawElements, leadsOnly, showIsolated, nodeTypes]);
+
+  const lastAppliedEvidenceRef = useRef(null);
+  useEffect(() => {
+    if (!inspectorData || !selectedItem || selectedItem.type !== "node") return;
+    const hashOrRoute = route || (typeof window !== "undefined" ? window.location.hash : "");
+    if (!parseFirstFirFromUrl(hashOrRoute)) return;
+    if (highlightClearedRef.current) return;
+    const firstFir = inspectorData.first_fir;
+    const firstRecord = inspectorData.first_record;
+    const key = `${selectedItem.id}:${firstFir?.first_fir_id || "nofir"}:${firstRecord?.timestamp || "norecord"}:${filteredElements.nodes.length}`;
+    if (lastAppliedEvidenceRef.current !== key) {
+      lastAppliedEvidenceRef.current = key;
+      applyEvidenceHighlight(selectedItem.id, firstFir, firstRecord);
+    }
+  }, [inspectorData, selectedItem, route, filteredElements]);
+
+  const handleShowEvidenceHighlight = () => {
+    if (selectedItem && selectedItem.type === "node" && inspectorData) {
+      highlightClearedRef.current = false;
+      applyEvidenceHighlight(selectedItem.id, inspectorData.first_fir, inspectorData.first_record);
+    }
+  };
+
   function handleClearHighlight() {
     if (cyRef.current) {
       cyRef.current.batch(() => {
-        cyRef.current.elements().removeClass("highlighted dimmed");
+        cyRef.current.elements().removeClass("highlighted highlighted-record dimmed");
       });
     }
     saveHighlightIds(null);
     setIsHighlighted(false);
+    setHighlightLegend(null);
     highlightClearedRef.current = true;
     lastAppliedHighlightRef.current = null;
+    lastAppliedEvidenceRef.current = null;
   }
 
   return (
@@ -757,21 +913,35 @@ export function Graph({ caseId, route }) {
         {/* Controls */}
         <div style={{ display: "flex", gap: "6px", marginLeft: "auto", alignItems: "center" }}>
           {isHighlighted && (
-            <button
-              type="button"
-              onClick={handleClearHighlight}
-              style={{
-                fontSize: "11px",
-                padding: "2px 8px",
-                backgroundColor: "var(--accent-weak)",
-                color: "var(--accent)",
-                borderColor: "var(--accent)",
-                fontWeight: "600",
-                cursor: "pointer",
-              }}
-            >
-              Clear highlight
-            </button>
+            <div style={{ display: "flex", gap: "8px", alignItems: "center", marginRight: "4px" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "11px" }}>
+                <span style={{ width: "10px", height: "10px", backgroundColor: "var(--accent)", borderRadius: "2px", display: "inline-block" }} />
+                <span>First FIR mention</span>
+              </span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "11px" }}>
+                <span style={{ width: "10px", height: "10px", backgroundColor: "var(--record-accent)", borderRadius: "2px", display: "inline-block" }} />
+                <span>
+                  {highlightLegend && highlightLegend.recordTimestamp
+                    ? `First seen in records: ${highlightLegend.recordTimestamp}`
+                    : "First seen in records"}
+                </span>
+              </span>
+              <button
+                type="button"
+                onClick={handleClearHighlight}
+                style={{
+                  fontSize: "11px",
+                  padding: "2px 8px",
+                  backgroundColor: "var(--accent-weak)",
+                  color: "var(--accent)",
+                  borderColor: "var(--accent)",
+                  fontWeight: "600",
+                  cursor: "pointer",
+                }}
+              >
+                Clear highlight
+              </button>
+            </div>
           )}
           <button type="button" onClick={() => runLayout()} disabled={layoutRunning}>
             Re-layout
@@ -853,6 +1023,8 @@ export function Graph({ caseId, route }) {
           inspectorData={inspectorData}
           caseId={caseId}
           onNeighbourClick={handleNeighbourClick}
+          onShowFirstFir={handleShowEvidenceHighlight}
+          onShowEvidenceHighlight={handleShowEvidenceHighlight}
         />
       </div>
     </div>
@@ -867,6 +1039,8 @@ export function GraphInspectorAside({
   inspectorData,
   caseId,
   onNeighbourClick,
+  onShowFirstFir,
+  onShowEvidenceHighlight,
 }) {
   if (!selectedItem) return null;
 
@@ -949,6 +1123,8 @@ export function GraphInspectorAside({
               selectedItem={selectedItem}
               data={inspectorData || {}}
               onNeighbourClick={onNeighbourClick}
+              onShowFirstFir={onShowFirstFir}
+              onShowEvidenceHighlight={onShowEvidenceHighlight}
             />
           )}
         </div>
@@ -957,7 +1133,15 @@ export function GraphInspectorAside({
   );
 }
 
-function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourClick }) {
+function InspectorContent({
+  caseId,
+  itemType,
+  selectedItem,
+  data,
+  onNeighbourClick,
+  onShowFirstFir,
+  onShowEvidenceHighlight,
+}) {
   const matchingData = getMatchingInspectorData(data, selectedItem?.id);
   if (itemType === "node") {
     return (
@@ -966,6 +1150,8 @@ function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourCli
         selectedItem={selectedItem}
         data={matchingData}
         onNeighbourClick={onNeighbourClick}
+        onShowFirstFir={onShowFirstFir}
+        onShowEvidenceHighlight={onShowEvidenceHighlight}
       />
     );
   }
@@ -979,11 +1165,23 @@ function InspectorContent({ caseId, itemType, selectedItem, data, onNeighbourCli
   );
 }
 
-export function NodeInspectorView({ caseId, selectedItem, data = {}, onNeighbourClick }) {
+export function NodeInspectorView({
+  caseId,
+  selectedItem,
+  data = {},
+  onNeighbourClick,
+  onShowFirstFir,
+  onShowEvidenceHighlight,
+}) {
   const rawData = (selectedItem && selectedItem.data) || {};
   const firEvidence = data.fir_evidence || [];
   const csvEvidence = data.csv_evidence || [];
   const neighbours = data.neighbours || [];
+  const firstFir = data.first_fir;
+  const firstRecord = data.first_record;
+
+  const hasFir = Boolean(firstFir && firstFir.first_fir_id);
+  const hasRecord = Boolean(firstRecord && firstRecord.timestamp);
 
   // Visual Fix 6: Extractor confidence calculation
   let confidence = "not recorded";
@@ -1016,6 +1214,192 @@ export function NodeInspectorView({ caseId, selectedItem, data = {}, onNeighbour
         <div style={{ color: "var(--muted)", fontSize: "10px" }}>Extractor Confidence</div>
         <div>{confidence}</div>
       </div>
+
+      {/* First FIR Mention & First Seen in Records */}
+      {!hasFir && !hasRecord ? (
+        <div>
+          <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
+            First FIR Mention & Activity
+          </div>
+          <div
+            style={{
+              padding: "8px",
+              backgroundColor: "var(--bg)",
+              border: "1px solid var(--border)",
+              fontSize: "11px",
+              color: "var(--muted)",
+            }}
+          >
+            Not mentioned in any FIR and no activity in the records
+          </div>
+        </div>
+      ) : (
+        <>
+          {/* First FIR Mention */}
+          <div>
+            <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
+              First FIR Mention
+            </div>
+            {hasFir ? (
+              <div
+                style={{
+                  padding: "8px",
+                  backgroundColor: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  fontSize: "11px",
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                  <span>
+                    First FIR mention:{" "}
+                    <a
+                      href={`#/case/${caseId}/evidence/doc/${firstFir.first_fir_id}`}
+                      className="mono table-link"
+                    >
+                      {firstFir.first_fir_id.startsWith("FIR") ? firstFir.first_fir_id : `FIR ${firstFir.first_fir_id}`}
+                    </a>
+                    {firstFir.date && (
+                      <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
+                        ({firstFir.date})
+                      </span>
+                    )}
+                  </span>
+                  {(onShowEvidenceHighlight || onShowFirstFir) && (
+                    <button
+                      type="button"
+                      onClick={onShowEvidenceHighlight || onShowFirstFir}
+                      style={{
+                        fontSize: "10px",
+                        padding: "2px 6px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Show first FIR mention
+                    </button>
+                  )}
+                </div>
+
+                {/* Group (a) Related Entities */}
+                {firstFir.related_entities && firstFir.related_entities.length > 0 && (
+                  <div style={{ marginTop: "6px" }}>
+                    <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "2px" }}>
+                      Related in this FIR:
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: "16px" }}>
+                      {firstFir.related_entities.map((relEnt, idx) => (
+                        <li key={idx} style={{ marginBottom: "2px" }}>
+                          <span className="mono">{relEnt.label || relEnt.id}</span>
+                          <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
+                            ({relEnt.relation})
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Group (b) Other Entities (collapsed by default) */}
+                {firstFir.other_entities && firstFir.other_entities.length > 0 && (
+                  <details style={{ marginTop: "6px" }}>
+                    <summary style={{ cursor: "pointer", color: "var(--muted)", fontSize: "10px" }}>
+                      {`Also mentioned in this FIR (${firstFir.other_entities.length})`}
+                    </summary>
+                    <ul style={{ margin: "4px 0 0 0", paddingLeft: "16px", fontSize: "10px" }}>
+                      {firstFir.other_entities.map((oth, idx) => (
+                        <li key={idx} style={{ marginBottom: "2px" }}>
+                          <span className="mono">{oth.label || oth.id}</span>
+                          <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
+                            ({oth.type})
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </div>
+            ) : (
+              <div style={{ fontSize: "11px", color: "var(--muted)" }}>
+                Not mentioned in any FIR
+              </div>
+            )}
+          </div>
+
+          {/* First Seen in Records */}
+          <div>
+            <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
+              First seen in records
+            </div>
+            {hasRecord ? (
+              <div
+                style={{
+                  padding: "8px",
+                  backgroundColor: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  fontSize: "11px",
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                  <span>
+                    First seen in records:{" "}
+                    <span className="mono" style={{ fontWeight: "600" }}>
+                      {firstRecord.timestamp}
+                    </span>
+                  </span>
+                  {(onShowEvidenceHighlight || onShowFirstFir) && (
+                    <button
+                      type="button"
+                      onClick={onShowEvidenceHighlight || onShowFirstFir}
+                      style={{
+                        fontSize: "10px",
+                        padding: "2px 6px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Highlight in graph
+                    </button>
+                  )}
+                </div>
+
+                {firstRecord.counterparts && firstRecord.counterparts.length > 0 && (
+                  <div style={{ marginTop: "6px" }}>
+                    <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "2px" }}>
+                      Counterparts:
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: "16px" }}>
+                      {firstRecord.counterparts.map((cp, idx) => (
+                        <li key={idx} style={{ marginBottom: "2px" }}>
+                          <span className="mono">{cp}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div style={{ marginTop: "8px" }}>
+                  {(() => {
+                    const rawVal = rawData.value || rawData.label || (selectedItem && selectedItem.id) || "";
+                    const cleanId = String(rawVal).replace(/^(PHONE|ACCOUNT|IMEI|PERSON|VEHICLE):/, "");
+                    const file = firstRecord.file || "cdr";
+                    const rowsParam = (firstRecord.rows || []).join(",");
+                    return (
+                      <a
+                        href={`#/case/${caseId}/evidence/rows/${file}?rows=${rowsParam}&highlight=${encodeURIComponent(cleanId)}`}
+                        className="mono table-link"
+                      >
+                        View row evidence ({(firstRecord.rows || []).length} {firstRecord.rows?.length === 1 ? "row" : "rows"})
+                      </a>
+                    );
+                  })()}
+                </div>
+              </div>
+            ) : (
+              <div style={{ fontSize: "11px", color: "var(--muted)" }}>
+                No activity in the records
+              </div>
+            )}
+          </div>
+        </>
+      )}
 
       {/* FIR Evidence Blocks */}
       {firEvidence.length > 0 && (

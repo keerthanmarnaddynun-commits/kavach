@@ -9,6 +9,8 @@ import pytest
 
 from kavach_api.analysis_service import build_graph
 from kavach_api.evidence import (
+    compute_first_fir_mention,
+    compute_first_record,
     document_view,
     edge_evidence,
     node_evidence,
@@ -191,3 +193,192 @@ def test_timeline_aggregation_counts_sum_to_csv_rows(temp_store: Storage) -> Non
 
     # First seen phone entries exist
     assert len(tl_day["first_seen"]) > 0
+
+
+def test_timeline_first_seen_accounts_and_imeis(temp_store: Storage) -> None:
+    """Timeline first-seen tracks earliest timestamps for accounts and IMEIs, empty on missing CSVs."""
+    # 1. Custom small case with known timestamps
+    case = temp_store.create_case("Timeline Test Case", "test_user", synthetic=True)
+    case_id = case["case_id"]
+
+    cdr_content = (
+        "a_party,b_party,imei_a,imsi_a,start_time,duration_sec,call_type,tower_id,lat,lon\n"
+        "9876543210,9876543211,351756051523999,405851318699938,2026-01-01T10:00:00,30,VOICE,T1,28.6,77.1\n"
+        "9876543210,9876543212,351756051523999,405851318699938,2026-01-01T09:00:00,45,VOICE,T1,28.6,77.1\n"
+        "9876543215,9876543216,351756051523888,405851318699939,2026-01-02T11:00:00,10,SMS,T1,28.6,77.1\n"
+    )
+    bank_content = (
+        "txn_id,datetime,from_acct,to_acct,amount,mode,ifsc,narration\n"
+        "TXN1,2026-01-01T12:00:00,ACCT_A,ACCT_B,100,NEFT,IFSC1,test1\n"
+        "TXN2,2026-01-01T08:00:00,ACCT_C,ACCT_A,200,NEFT,IFSC1,test2\n"
+        "TXN3,2026-01-02T15:00:00,ACCT_B,ACCT_D,300,IMPS,IFSC2,test3\n"
+    )
+
+    temp_store.save_csv(case_id, "cdr", cdr_content.encode("utf-8"))
+    temp_store.save_csv(case_id, "bank", bank_content.encode("utf-8"))
+
+    tl = build_timeline(temp_store, case_id, bucket="day")
+
+    # Check first_seen_accounts
+    accounts_by_id = {item["account"]: item["t"] for item in tl["first_seen_accounts"]}
+    assert accounts_by_id["ACCT_A"] == "2026-01-01T08:00:00"
+    assert accounts_by_id["ACCT_B"] == "2026-01-01T12:00:00"
+    assert accounts_by_id["ACCT_C"] == "2026-01-01T08:00:00"
+    assert accounts_by_id["ACCT_D"] == "2026-01-02T15:00:00"
+
+    # Check first_seen_imeis
+    imeis_by_id = {item["imei"]: item["t"] for item in tl["first_seen_imeis"]}
+    assert imeis_by_id["351756051523999"] == "2026-01-01T09:00:00"
+    assert imeis_by_id["351756051523888"] == "2026-01-02T11:00:00"
+
+    # Check existing fields preserved
+    assert tl["bucket"] == "day"
+    assert len(tl["calls"]) == 2
+    assert len(tl["transfers"]) == 2
+    phones_by_id = {item["phone"]: item["t"] for item in tl["first_seen"]}
+    assert phones_by_id["9876543210"] == "2026-01-01T09:00:00"
+
+    # 2. Empty case with missing CSVs returns empty lists
+    empty_case = temp_store.create_case("Empty Case", "test_user", synthetic=True)
+    tl_empty = build_timeline(temp_store, empty_case["case_id"], bucket="day")
+    assert tl_empty["calls"] == []
+    assert tl_empty["transfers"] == []
+    assert tl_empty["first_seen"] == []
+    assert tl_empty["first_seen_accounts"] == []
+    assert tl_empty["first_seen_imeis"] == []
+
+
+def test_compute_first_fir_mention_and_node_evidence(temp_store: Storage) -> None:
+    """Verify earliest FIR mention determination, Group (a) related entities, Group (b) other entities, and CSV-only fallback."""
+    case_id, graph = _populate_demo_case(temp_store)
+
+    # 1. Test node with FIR mentions
+    fir_nodes = [n for n in graph["nodes"] if n.get("evidence_spans")]
+    assert len(fir_nodes) > 0
+    test_node = fir_nodes[0]
+    nid = test_node["id"]
+
+    ev = node_evidence(temp_store, case_id, graph, nid)
+    assert "first_fir" in ev
+    first_fir = ev["first_fir"]
+    assert first_fir is not None
+    assert first_fir["first_fir_id"] is not None
+    assert first_fir["first_fir_id"].startswith("FIR_")
+    assert isinstance(first_fir["related_entities"], list)
+    assert isinstance(first_fir["other_entities"], list)
+
+    # Check direct call to compute_first_fir_mention
+    res = compute_first_fir_mention(temp_store, case_id, graph, nid)
+    assert res == first_fir
+
+    # 2. Test CSV-only node has no FIR mention
+    case = temp_store.create_case("CSV Only Case", "test_user", synthetic=True)
+    cid = case["case_id"]
+    empty_graph = {"nodes": [{"id": "ACCOUNT:CSV_ONLY", "type": "ACCOUNT", "source_firs": [], "evidence_spans": []}], "edges": []}
+    res_csv = compute_first_fir_mention(temp_store, cid, empty_graph, "ACCOUNT:CSV_ONLY")
+    assert res_csv["first_fir_id"] is None
+    assert res_csv["related_entities"] == []
+    assert res_csv["other_entities"] == []
+
+
+def test_compute_first_record_and_timeline(temp_store: Storage) -> None:
+    """Verify first_record computation for phone, account, and IMEI, 1-based indexing, counterpart extraction, and cap at 5."""
+    case = temp_store.create_case("First Record Test Case", "test_user", synthetic=True)
+    case_id = case["case_id"]
+
+    # 1. Setup CDR CSV with 6 records sharing the same timestamp for a phone to test cap at 5
+    cdr_rows = [
+        "a_party,b_party,imei_a,imsi_a,start_time,duration_sec,call_type,tower_id,lat,lon",
+        "9876543210,9876543211,351756051523999,405851318699938,2026-01-01T08:00:00,30,VOICE,T1,28.6,77.1", # row 1
+        "9876543210,9876543212,351756051523999,405851318699938,2026-01-01T08:00:00,30,VOICE,T1,28.6,77.1", # row 2
+        "9876543210,9876543213,351756051523999,405851318699938,2026-01-01T08:00:00,30,VOICE,T1,28.6,77.1", # row 3
+        "9876543210,9876543214,351756051523999,405851318699938,2026-01-01T08:00:00,30,VOICE,T1,28.6,77.1", # row 4
+        "9876543210,9876543215,351756051523999,405851318699938,2026-01-01T08:00:00,30,VOICE,T1,28.6,77.1", # row 5
+        "9876543210,9876543216,351756051523999,405851318699938,2026-01-01T08:00:00,30,VOICE,T1,28.6,77.1", # row 6 (exceeds cap of 5)
+        "9876543210,9876543217,351756051523999,405851318699938,2026-01-01T09:00:00,30,VOICE,T1,28.6,77.1", # row 7 (later time)
+    ]
+    bank_rows = [
+        "txn_id,datetime,from_acct,to_acct,amount,mode,ifsc,narration",
+        "TXN1,2026-01-01T07:00:00,ACCT_A,ACCT_B,100,NEFT,IFSC1,test1", # row 1
+        "TXN2,2026-01-01T10:00:00,ACCT_C,ACCT_A,200,NEFT,IFSC1,test2", # row 2
+    ]
+
+    temp_store.save_csv(case_id, "cdr", "\n".join(cdr_rows).encode("utf-8"))
+    temp_store.save_csv(case_id, "bank", "\n".join(bank_rows).encode("utf-8"))
+
+    graph = {
+        "nodes": [
+            {"id": "PHONE:9876543210", "type": "PHONE", "value": "9876543210"},
+            {"id": "ACCOUNT:ACCT_A", "type": "ACCOUNT", "value": "ACCT_A"},
+            {"id": "IMEI:351756051523999", "type": "IMEI", "value": "351756051523999"},
+            {"id": "PERSON:SUSPECT", "type": "PERSON", "value": "SUSPECT"},
+        ],
+        "edges": [],
+    }
+
+    # Test Phone first_record
+    p_rec = compute_first_record(temp_store, case_id, graph, "PHONE:9876543210")
+    assert p_rec is not None
+    assert p_rec["file"] == "cdr"
+    assert p_rec["timestamp"] == "2026-01-01T08:00:00"
+    # Row numbers must be 1-based and capped at 5
+    assert p_rec["rows"] == [1, 2, 3, 4, 5]
+    assert len(p_rec["records"]) == 5
+    # Counterparts: other parties + IMEI used
+    assert "9876543211" in p_rec["counterparts"]
+    assert "351756051523999" in p_rec["counterparts"]
+
+    # Verify rows endpoint retrieves exactly those row indices
+    raw_fetched = rows(temp_store, case_id, "cdr", p_rec["rows"])
+    assert len(raw_fetched) == 5
+    assert raw_fetched[0]["row"] == 1
+    assert raw_fetched[0]["a_party"] == "9876543210"
+    assert raw_fetched[0]["b_party"] == "9876543211"
+
+    # Test Account first_record
+    a_rec = compute_first_record(temp_store, case_id, graph, "ACCOUNT:ACCT_A")
+    assert a_rec is not None
+    assert a_rec["file"] == "bank"
+    assert a_rec["timestamp"] == "2026-01-01T07:00:00"
+    assert a_rec["rows"] == [1]
+    assert a_rec["counterparts"] == ["ACCT_B"]
+
+    # Test IMEI first_record
+    im_rec = compute_first_record(temp_store, case_id, graph, "IMEI:351756051523999")
+    assert im_rec is not None
+    assert im_rec["file"] == "cdr"
+    assert im_rec["timestamp"] == "2026-01-01T08:00:00"
+    assert im_rec["rows"] == [1, 2, 3, 4, 5]
+    assert im_rec["counterparts"] == ["9876543210"]
+
+    # Test node with no CSV activity returns None
+    none_rec = compute_first_record(temp_store, case_id, graph, "PERSON:SUSPECT")
+    assert none_rec is None
+
+    # Test timeline returns first_record in first_seen lists
+    tl = build_timeline(temp_store, case_id, bucket="day")
+    p_tl = [item for item in tl["first_seen"] if item["phone"] == "9876543210"][0]
+    assert "first_record" in p_tl
+    assert p_tl["first_record"]["timestamp"] == "2026-01-01T08:00:00"
+    assert p_tl["first_record"]["rows"] == [1, 2, 3, 4, 5]
+
+    a_tl = [item for item in tl["first_seen_accounts"] if item["account"] == "ACCT_A"][0]
+    assert "first_record" in a_tl
+    assert a_tl["first_record"]["timestamp"] == "2026-01-01T07:00:00"
+    assert a_tl["first_record"]["counterparts"] == ["ACCT_B"]
+
+    im_tl = [item for item in tl["first_seen_imeis"] if item["imei"] == "351756051523999"][0]
+    assert "first_record" in im_tl
+    assert im_tl["first_record"]["timestamp"] == "2026-01-01T08:00:00"
+    assert im_tl["first_record"]["counterparts"] == ["9876543210"]
+    assert "first_fir" in p_tl
+    assert p_tl["first_fir"] is None
+
+    # Test timeline with demo case that has FIR documents
+    demo_cid, _ = _populate_demo_case(temp_store)
+    demo_tl = build_timeline(temp_store, demo_cid, bucket="day")
+    p_with_fir = [item for item in demo_tl["first_seen"] if item.get("first_fir")]
+    assert len(p_with_fir) > 0
+    assert p_with_fir[0]["first_fir"]["first_fir_id"].startswith("FIR_")
+    p_without_fir = [item for item in demo_tl["first_seen"] if not item.get("first_fir")]
+    assert len(p_without_fir) > 0

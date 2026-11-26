@@ -24,6 +24,7 @@ from kavach_api.analysis_service import (
 )
 from kavach_api.evidence import (
     EvidenceError,
+    compute_first_fir_mention,
     document_view,
     edge_evidence_by_id,
     node_evidence,
@@ -669,6 +670,21 @@ def create_app(
         app.state.store.get_case(case_id)
         graph = build_graph(app.state.store, case_id)
         return node_evidence(app.state.store, case_id, graph, node_id)
+
+    @app.get("/api/cases/{case_id}/nodes/{node_id}/first_fir")
+    def get_node_first_fir_endpoint(
+        case_id: str,
+        node_id: str,
+        current_user: dict[str, Any] = Depends(require_role("viewer")),
+    ):
+        """Retrieve earliest FIR mention and related/unrelated entity partition for a node."""
+        validate_case_id(case_id)
+        app.state.store.get_case(case_id)
+        graph = build_graph(app.state.store, case_id)
+        res = compute_first_fir_mention(app.state.store, case_id, graph, node_id)
+        if res is None:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Node '{node_id}' not found in case graph")
+        return res
 
     @app.get("/api/cases/{case_id}/edges/{edge_id}")
     def get_edge_endpoint(

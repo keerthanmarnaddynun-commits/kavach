@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 from pathlib import Path
+import re
 from typing import Any, Sequence
 
 from kavach_api.render import compute_edge_id
@@ -155,11 +156,350 @@ def node_evidence(
                 }
             )
 
+    first_fir = compute_first_fir_mention(store, case_id, graph, node_id)
+    first_record = compute_first_record(store, case_id, graph, node_id)
+
     return {
         "node_id": node_id,
         "fir_evidence": fir_evidence,
         "csv_evidence": csv_evidence,
         "neighbours": neighbours,
+        "first_fir": first_fir,
+        "first_record": first_record,
+    }
+
+
+def compute_first_record(
+    store: Storage,
+    case_id: str,
+    graph: dict[str, Any],
+    node_id: str,
+) -> dict[str, Any] | None:
+    """
+    Retrieve the counterpart(s) of a node's FIRST record in CDR/bank data.
+    - Phone: other party (b_party/a_party) and IMEI used (imei_a/imei) from cdr.csv.
+    - Account: other account (to_acct/from_acct) from bank.csv.
+    - IMEI: phone that used it (a_party) from cdr.csv.
+    Includes first timestamp and 1-based data-row reference(s) (capped at 5).
+    """
+    target_node = None
+    for n in graph.get("nodes", []):
+        if n.get("id") == node_id:
+            target_node = n
+            break
+
+    node_type = target_node.get("type", "") if target_node else ""
+    raw_val = target_node.get("value") or target_node.get("label") or node_id if target_node else node_id
+    raw_val = str(raw_val).strip()
+    for prefix in ("PHONE:", "ACCOUNT:", "IMEI:", "PERSON:", "VEHICLE:"):
+        if raw_val.startswith(prefix):
+            raw_val = raw_val[len(prefix):].strip()
+
+    if not node_type:
+        if node_id.startswith("PHONE:"):
+            node_type = "PHONE"
+        elif node_id.startswith("ACCOUNT:"):
+            node_type = "ACCOUNT"
+        elif node_id.startswith("IMEI:"):
+            node_type = "IMEI"
+
+    if node_type == "PHONE":
+        cdr_path = store.csv_path(case_id, "cdr")
+        if not cdr_path.is_file():
+            return None
+        earliest_t: str | None = None
+        records: list[dict[str, Any]] = []
+        with open(cdr_path, "r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            for r_num, row in enumerate(reader, start=1):
+                st = row.get("start_time", "").strip()
+                if not st:
+                    continue
+                a_p = row.get("a_party", "").strip()
+                b_p = row.get("b_party", "").strip()
+                if a_p != raw_val and b_p != raw_val:
+                    continue
+
+                other_party = b_p if a_p == raw_val else a_p
+                imei_used = row.get("imei_a", "").strip() or row.get("imei", "").strip()
+                cps: list[str] = []
+                if other_party:
+                    cps.append(other_party)
+                if imei_used:
+                    cps.append(imei_used)
+
+                rec_entry = {"row": r_num, "timestamp": st, "counterparts": cps}
+                if earliest_t is None or st < earliest_t:
+                    earliest_t = st
+                    records = [rec_entry]
+                elif st == earliest_t:
+                    if len(records) < 5:
+                        records.append(rec_entry)
+
+        if earliest_t is None:
+            return None
+
+        unique_cps: list[str] = []
+        seen: set[str] = set()
+        for r in records:
+            for cp in r.get("counterparts", []):
+                if cp and cp not in seen:
+                    seen.add(cp)
+                    unique_cps.append(cp)
+
+        return {
+            "file": "cdr",
+            "timestamp": earliest_t,
+            "rows": [r["row"] for r in records],
+            "counterparts": unique_cps,
+            "records": records,
+        }
+
+    elif node_type == "ACCOUNT":
+        bank_path = store.csv_path(case_id, "bank")
+        if not bank_path.is_file():
+            return None
+        earliest_t: str | None = None
+        records: list[dict[str, Any]] = []
+        with open(bank_path, "r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            for r_num, row in enumerate(reader, start=1):
+                dt = row.get("datetime", "").strip()
+                if not dt:
+                    continue
+                from_a = row.get("from_acct", "").strip()
+                to_a = row.get("to_acct", "").strip()
+                if from_a != raw_val and to_a != raw_val:
+                    continue
+
+                other_acct = to_a if from_a == raw_val else from_a
+                cps = [other_acct] if other_acct else []
+
+                rec_entry = {"row": r_num, "timestamp": dt, "counterparts": cps}
+                if earliest_t is None or dt < earliest_t:
+                    earliest_t = dt
+                    records = [rec_entry]
+                elif dt == earliest_t:
+                    if len(records) < 5:
+                        records.append(rec_entry)
+
+        if earliest_t is None:
+            return None
+
+        unique_cps: list[str] = []
+        seen = set()
+        for r in records:
+            for cp in r.get("counterparts", []):
+                if cp and cp not in seen:
+                    seen.add(cp)
+                    unique_cps.append(cp)
+
+        return {
+            "file": "bank",
+            "timestamp": earliest_t,
+            "rows": [r["row"] for r in records],
+            "counterparts": unique_cps,
+            "records": records,
+        }
+
+    elif node_type == "IMEI":
+        cdr_path = store.csv_path(case_id, "cdr")
+        if not cdr_path.is_file():
+            return None
+        earliest_t: str | None = None
+        records: list[dict[str, Any]] = []
+        with open(cdr_path, "r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            for r_num, row in enumerate(reader, start=1):
+                st = row.get("start_time", "").strip()
+                if not st:
+                    continue
+                im_a = row.get("imei_a", "").strip()
+                im_b = row.get("imei", "").strip()
+                if im_a != raw_val and im_b != raw_val:
+                    continue
+
+                phone_used = row.get("a_party", "").strip()
+                cps = [phone_used] if phone_used else []
+
+                rec_entry = {"row": r_num, "timestamp": st, "counterparts": cps}
+                if earliest_t is None or st < earliest_t:
+                    earliest_t = st
+                    records = [rec_entry]
+                elif st == earliest_t:
+                    if len(records) < 5:
+                        records.append(rec_entry)
+
+        if earliest_t is None:
+            return None
+
+        unique_cps: list[str] = []
+        seen = set()
+        for r in records:
+            for cp in r.get("counterparts", []):
+                if cp and cp not in seen:
+                    seen.add(cp)
+                    unique_cps.append(cp)
+
+        return {
+            "file": "cdr",
+            "timestamp": earliest_t,
+            "rows": [r["row"] for r in records],
+            "counterparts": unique_cps,
+            "records": records,
+        }
+
+    return None
+
+
+def compute_first_fir_mention(
+    store: Storage,
+    case_id: str,
+    graph: dict[str, Any],
+    node_id: str,
+) -> dict[str, Any] | None:
+    """
+    Determine a node's earliest FIR mention and partition entities in that FIR
+    into: (a) entities related to this node via stated FIR relations, and
+          (b) other entities mentioned in the same FIR with no stated relation.
+    """
+    target_node = None
+    for n in graph.get("nodes", []):
+        if n.get("id") == node_id:
+            target_node = n
+            break
+
+    if target_node is None:
+        return None
+
+    # Collect all FIR IDs mentioning this node
+    fir_ids: set[str] = set()
+    for f in target_node.get("source_firs", []):
+        if f:
+            fir_ids.add(str(f))
+    for s in target_node.get("evidence_spans", []):
+        fid = s.get("fir_id")
+        if fid:
+            fir_ids.add(str(fid))
+
+    # Also check FIR edges incident to this node
+    for e in graph.get("edges", []):
+        if e.get("source_kind") == "FIR" and (e.get("source") == node_id or e.get("target") == node_id):
+            for f in e.get("source_firs", []):
+                if f:
+                    fir_ids.add(str(f))
+            for s in e.get("evidence_spans", []):
+                fid = s.get("fir_id")
+                if fid:
+                    fir_ids.add(str(fid))
+
+    if not fir_ids:
+        return {
+            "first_fir_id": None,
+            "date": None,
+            "related_entities": [],
+            "other_entities": [],
+        }
+
+    # Determine earliest FIR: earliest FIR date if available, otherwise lowest FIR number
+    def fir_key(fid: str) -> tuple[int, str, int, str]:
+        date_str = ""
+        try:
+            meta, _ = store.get_document(case_id, fid)
+            date_str = str(meta.get("date") or meta.get("fir_date") or "").strip()
+        except Exception:
+            pass
+        num_m = re.search(r"\d+", fid)
+        num = int(num_m.group()) if num_m else 999999
+        if date_str:
+            return (0, date_str, num, fid)
+        return (1, "", num, fid)
+
+    first_fir_id = min(fir_ids, key=fir_key)
+    first_fir_date = None
+    try:
+        meta, _ = store.get_document(case_id, first_fir_id)
+        first_fir_date = meta.get("date") or meta.get("fir_date") or None
+    except Exception:
+        pass
+
+    node_map = {n["id"]: n for n in graph.get("nodes", [])}
+
+    # Group (a): entities the FIR itself relates to this node
+    related_entities: list[dict[str, Any]] = []
+    related_node_ids: set[str] = set()
+
+    for e in graph.get("edges", []):
+        if e.get("source_kind") != "FIR":
+            continue
+        edge_firs: set[str] = set(e.get("source_firs", []))
+        for s in e.get("evidence_spans", []):
+            fid = s.get("fir_id")
+            if fid:
+                edge_firs.add(str(fid))
+        if first_fir_id not in edge_firs:
+            continue
+
+        src = e.get("source")
+        tgt = e.get("target")
+        rel = e.get("relation")
+
+        if src == node_id and tgt in node_map and tgt != node_id:
+            other = node_map[tgt]
+            related_entities.append({
+                "id": tgt,
+                "label": other.get("canonical_name") or other.get("value") or tgt,
+                "type": other.get("type", "UNKNOWN"),
+                "relation": rel,
+                "direction": "out",
+            })
+            related_node_ids.add(tgt)
+        elif tgt == node_id and src in node_map and src != node_id:
+            other = node_map[src]
+            related_entities.append({
+                "id": src,
+                "label": other.get("canonical_name") or other.get("value") or src,
+                "type": other.get("type", "UNKNOWN"),
+                "relation": rel,
+                "direction": "in",
+            })
+            related_node_ids.add(src)
+
+    # Deduplicate related_entities by (id, relation, direction)
+    dedup_related: list[dict[str, Any]] = []
+    seen_rel = set()
+    for item in related_entities:
+        key = (item["id"], item["relation"], item["direction"])
+        if key not in seen_rel:
+            seen_rel.add(key)
+            dedup_related.append(item)
+    dedup_related.sort(key=lambda x: (x["type"], x["label"], x["id"]))
+
+    # Group (b): other entities mentioned in the same FIR with no stated relation to this node
+    other_entities: list[dict[str, Any]] = []
+    for n in graph.get("nodes", []):
+        nid = n["id"]
+        if nid == node_id or nid in related_node_ids:
+            continue
+        n_firs: set[str] = set(n.get("source_firs", []))
+        for s in n.get("evidence_spans", []):
+            fid = s.get("fir_id")
+            if fid:
+                n_firs.add(str(fid))
+        if first_fir_id in n_firs:
+            other_entities.append({
+                "id": nid,
+                "label": n.get("canonical_name") or n.get("value") or nid,
+                "type": n.get("type", "UNKNOWN"),
+            })
+
+    other_entities.sort(key=lambda x: (x["type"], x["label"], x["id"]))
+
+    return {
+        "first_fir_id": first_fir_id,
+        "date": first_fir_date,
+        "related_entities": dedup_related,
+        "other_entities": other_entities,
     }
 
 

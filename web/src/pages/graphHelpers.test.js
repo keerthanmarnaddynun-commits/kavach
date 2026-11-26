@@ -5,6 +5,11 @@ import {
   getLabelVisibility,
   getNodeLabelVisibilityMap,
   parseSelectedIdFromUrl,
+  parseHighlightIdsFromUrl,
+  parseFirstFirFromUrl,
+  resolveNodeId,
+  computeAdjustedFiltersForNode,
+  computeAdjustedFiltersForNodes,
   filterGraphElements,
   splitExcerptHighlight,
   getIsolatedNodesControlState,
@@ -90,6 +95,81 @@ describe("parseSelectedIdFromUrl", () => {
     expect(parseSelectedIdFromUrl("?select=ACCOUNT:123")).toBe("ACCOUNT:123");
     expect(parseSelectedIdFromUrl("#/case/C-01/graph")).toBe(null);
     expect(parseSelectedIdFromUrl("")).toBe(null);
+  });
+});
+
+describe("parseFirstFirFromUrl", () => {
+  it("detects firstfir=1 in hash or query parameters", () => {
+    expect(parseFirstFirFromUrl("#/case/C-01/graph?select=PHONE:123&firstfir=1")).toBe(true);
+    expect(parseFirstFirFromUrl("?select=ACCOUNT:456&firstfir=true")).toBe(true);
+    expect(parseFirstFirFromUrl("#/case/C-01/graph?select=PHONE:123")).toBe(false);
+    expect(parseFirstFirFromUrl("")).toBe(false);
+  });
+});
+
+describe("resolveNodeId", () => {
+  const nodes = [
+    { data: { id: "PHONE:9876543210", type: "PHONE", value: "9876543210" } },
+    { data: { id: "ACCOUNT:ACC9988", type: "ACCOUNT", value: "ACC9988" } },
+    { data: { id: "PERSON:FIR_01:ent_02", type: "PERSON", label: "Vikas Sharma" } },
+  ];
+
+  it("resolves direct ID and bare values with prefixes", () => {
+    expect(resolveNodeId(nodes, "PHONE:9876543210")).toBe("PHONE:9876543210");
+    expect(resolveNodeId(nodes, "9876543210")).toBe("PHONE:9876543210");
+    expect(resolveNodeId(nodes, "ACC9988")).toBe("ACCOUNT:ACC9988");
+    expect(resolveNodeId(nodes, "Vikas Sharma")).toBe("PERSON:FIR_01:ent_02");
+    expect(resolveNodeId(nodes, "UNKNOWN_NODE")).toBe(null);
+    expect(resolveNodeId(nodes, "")).toBe(null);
+  });
+});
+
+describe("computeAdjustedFiltersForNode", () => {
+  const rawNodes = [
+    { data: { id: "P1", type: "PERSON" } },
+    { data: { id: "V1", type: "VEHICLE" } },
+    { data: { id: "ISO1", type: "ACCOUNT" } },
+  ];
+  const rawEdges = [{ data: { source: "P1", target: "V1" } }];
+
+  it("turns off leadsOnly and enables target node type and isolated state when needed", () => {
+    const adj = computeAdjustedFiltersForNode({
+      targetNodeId: "V1",
+      rawNodes,
+      rawEdges,
+      currentLeadsOnly: true,
+      currentShowIsolated: false,
+      currentNodeTypes: { PERSON: true, VEHICLE: false },
+    });
+    expect(adj.changed).toBe(true);
+    expect(adj.leadsOnly).toBe(false);
+    expect(adj.nodeTypes.VEHICLE).toBe(true);
+
+    // Isolated node adjustment
+    const adjIso = computeAdjustedFiltersForNode({
+      targetNodeId: "ISO1",
+      rawNodes,
+      rawEdges,
+      currentLeadsOnly: false,
+      currentShowIsolated: false,
+      currentNodeTypes: { PERSON: true, ACCOUNT: true },
+    });
+    expect(adjIso.changed).toBe(true);
+    expect(adjIso.showIsolated).toBe(true);
+
+    // Multi-node counterparts adjustment
+    const adjMulti = computeAdjustedFiltersForNodes({
+      targetNodeIds: ["V1", "ISO1"],
+      rawNodes,
+      rawEdges,
+      currentLeadsOnly: true,
+      currentShowIsolated: false,
+      currentNodeTypes: { PERSON: true, VEHICLE: false, ACCOUNT: false },
+    });
+    expect(adjMulti.changed).toBe(true);
+    expect(adjMulti.leadsOnly).toBe(false);
+    expect(adjMulti.showIsolated).toBe(true);
+    expect(adjMulti.nodeTypes.VEHICLE).toBe(true);
   });
 });
 

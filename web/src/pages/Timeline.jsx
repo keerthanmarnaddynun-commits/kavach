@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { request } from "../api/client.js";
 import { Table } from "../components/Table.jsx";
-import { computeBarLayout, formatPaise } from "./timelineHelpers.js";
+import { computeBarLayout, formatPaise, getGraphNodeId, selectExampleRows } from "./timelineHelpers.js";
 
 export function Timeline({ caseId }) {
   const [bucket, setBucket] = useState("day");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errorText, setErrorText] = useState(null);
+  const [activeTab, setActiveTab] = useState("phones");
 
   useEffect(() => {
     if (!caseId) return;
@@ -34,6 +35,8 @@ export function Timeline({ caseId }) {
       data={data}
       loading={loading}
       errorText={errorText}
+      activeTab={activeTab}
+      setActiveTab={setActiveTab}
     />
   );
 }
@@ -45,23 +48,123 @@ export function TimelineView({
   data = null,
   loading = false,
   errorText = null,
+  activeTab,
+  setActiveTab,
 }) {
+  const [localTab, setLocalTab] = useState(activeTab || "phones");
+  const currentTab = activeTab || localTab;
+  const handleTabChange = (tab) => {
+    setLocalTab(tab);
+    if (setActiveTab) setActiveTab(tab);
+  };
+
   const [focusedCall, setFocusedCall] = useState(null);
   const [focusedTransfer, setFocusedTransfer] = useState(null);
 
   const calls = (data && data.calls) || [];
   const transfers = (data && data.transfers) || [];
-  const firstSeen = (data && data.first_seen) || [];
+  const firstSeenPhones = (data && data.first_seen) || [];
+  const firstSeenAccounts = (data && data.first_seen_accounts) || [];
+  const firstSeenImeis = (data && data.first_seen_imeis) || [];
 
   const callsLayout = computeBarLayout(calls, "count", 640, 160);
   const transfersLayout = computeBarLayout(transfers, "count", 640, 160);
 
-  const firstSeenColumns = [
+  const phoneMarkers = useMemo(() => selectExampleRows(firstSeenPhones), [firstSeenPhones]);
+  const accountMarkers = useMemo(() => selectExampleRows(firstSeenAccounts), [firstSeenAccounts]);
+  const imeiMarkers = useMemo(() => selectExampleRows(firstSeenImeis), [firstSeenImeis]);
+
+  const currentMarkers =
+    currentTab === "phones" ? phoneMarkers : currentTab === "accounts" ? accountMarkers : imeiMarkers;
+  const hasAnyMarker = Object.keys(currentMarkers).length > 0;
+
+  const firstSeenPhoneColumns = [
     {
       key: "phone",
       header: "Phone Number",
       isIdentifier: true,
       headerStyle: { width: "200px" },
+      render: (val) => {
+        if (!val) return "-";
+        const nodeId = getGraphNodeId("PHONE", val);
+        const marker = phoneMarkers[val];
+        return (
+          <span style={{ display: "inline-flex", alignItems: "center" }}>
+            {caseId && nodeId ? (
+              <a href={`#/case/${caseId}/graph?select=${encodeURIComponent(nodeId)}&firstfir=1`}>
+                {val}
+              </a>
+            ) : (
+              val
+            )}
+            {marker && <ExampleTag category={marker} />}
+          </span>
+        );
+      },
+    },
+    {
+      key: "t",
+      header: "First Seen Timestamp",
+      headerStyle: { width: "240px" },
+      render: (t) => <span className="mono">{t}</span>,
+    },
+  ];
+
+  const firstSeenAccountColumns = [
+    {
+      key: "account",
+      header: "Account Number",
+      isIdentifier: true,
+      headerStyle: { width: "200px" },
+      render: (val) => {
+        if (!val) return "-";
+        const nodeId = getGraphNodeId("ACCOUNT", val);
+        const marker = accountMarkers[val];
+        return (
+          <span style={{ display: "inline-flex", alignItems: "center" }}>
+            {caseId && nodeId ? (
+              <a href={`#/case/${caseId}/graph?select=${encodeURIComponent(nodeId)}&firstfir=1`}>
+                {val}
+              </a>
+            ) : (
+              val
+            )}
+            {marker && <ExampleTag category={marker} />}
+          </span>
+        );
+      },
+    },
+    {
+      key: "t",
+      header: "First Seen Timestamp",
+      headerStyle: { width: "240px" },
+      render: (t) => <span className="mono">{t}</span>,
+    },
+  ];
+
+  const firstSeenImeiColumns = [
+    {
+      key: "imei",
+      header: "IMEI",
+      isIdentifier: true,
+      headerStyle: { width: "200px" },
+      render: (val) => {
+        if (!val) return "-";
+        const nodeId = getGraphNodeId("IMEI", val);
+        const marker = imeiMarkers[val];
+        return (
+          <span style={{ display: "inline-flex", alignItems: "center" }}>
+            {caseId && nodeId ? (
+              <a href={`#/case/${caseId}/graph?select=${encodeURIComponent(nodeId)}&firstfir=1`}>
+                {val}
+              </a>
+            ) : (
+              val
+            )}
+            {marker && <ExampleTag category={marker} />}
+          </span>
+        );
+      },
     },
     {
       key: "t",
@@ -175,17 +278,106 @@ export function TimelineView({
             />
           </div>
 
-          {/* First Seen Table */}
+          {/* First Seen Identifiers */}
           <div style={{ marginTop: "8px" }}>
-            <h4 style={{ marginBottom: "8px" }}>First Seen Identifiers ({firstSeen.length})</h4>
-            <Table
-              columns={firstSeenColumns}
-              data={firstSeen}
-              keyField="phone"
-              initialSortKey="t"
-              initialSortDir="asc"
-              emptyMessage="No first seen records available."
-            />
+            <h4 style={{ marginBottom: "8px" }}>First Seen Identifiers</h4>
+
+            {/* Tab switch */}
+            <div style={{ display: "flex", gap: "8px", marginBottom: "6px" }} role="tablist" aria-label="First seen identifier type">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={currentTab === "phones"}
+                className={currentTab === "phones" ? "primary" : ""}
+                onClick={() => handleTabChange("phones")}
+                style={{ fontSize: "11px", padding: "4px 8px" }}
+              >
+                {`Phones (${firstSeenPhones.length})`}
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={currentTab === "accounts"}
+                className={currentTab === "accounts" ? "primary" : ""}
+                onClick={() => handleTabChange("accounts")}
+                style={{ fontSize: "11px", padding: "4px 8px" }}
+              >
+                {`Accounts (${firstSeenAccounts.length})`}
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={currentTab === "imeis"}
+                className={currentTab === "imeis" ? "primary" : ""}
+                onClick={() => handleTabChange("imeis")}
+                style={{ fontSize: "11px", padding: "4px 8px" }}
+              >
+                {`IMEIs (${firstSeenImeis.length})`}
+              </button>
+            </div>
+
+            <p style={{ margin: "0 0 10px 0", fontSize: "11px", color: "var(--muted)" }}>
+              First seen means the first time it appears in the uploaded records, not when it first existed.
+            </p>
+
+            {/* One-line key explaining tags: shown only when at least one marker is present */}
+            {hasAnyMarker && (
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "12px",
+                  alignItems: "center",
+                  fontSize: "11px",
+                  color: "var(--muted)",
+                  marginBottom: "10px",
+                  padding: "4px 8px",
+                  backgroundColor: "var(--bg)",
+                  border: "1px solid var(--border)",
+                }}
+              >
+                <span style={{ fontWeight: "600" }}>Example tags:</span>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                  <ExampleTag category="category1" style={{ marginLeft: 0 }} />
+                  <span>FIR mention and records (shows FIR + record groups in graph)</span>
+                </span>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                  <ExampleTag category="category2" style={{ marginLeft: 0 }} />
+                  <span>No FIR mention with record activity (record group only)</span>
+                </span>
+              </div>
+            )}
+
+            {currentTab === "phones" && (
+              <Table
+                columns={firstSeenPhoneColumns}
+                data={firstSeenPhones}
+                keyField="phone"
+                initialSortKey="t"
+                initialSortDir="asc"
+                emptyMessage="No first seen records available."
+              />
+            )}
+            {currentTab === "accounts" && (
+              <Table
+                columns={firstSeenAccountColumns}
+                data={firstSeenAccounts}
+                keyField="account"
+                initialSortKey="t"
+                initialSortDir="asc"
+                emptyMessage="No first seen records available."
+              />
+            )}
+            {currentTab === "imeis" && (
+              <Table
+                columns={firstSeenImeiColumns}
+                data={firstSeenImeis}
+                keyField="imei"
+                initialSortKey="t"
+                initialSortDir="asc"
+                emptyMessage="No first seen records available."
+              />
+            )}
           </div>
         </div>
       )}
@@ -312,6 +504,54 @@ function SvgBarChart({ layout, focusedItem, onFocusItem, unit = "items" }) {
       )}
     </svg>
   );
+}
+
+export function ExampleTag({ category, style = {} }) {
+  if (category === "category1") {
+    return (
+      <span
+        style={{
+          display: "inline-block",
+          fontSize: "10px",
+          fontWeight: "600",
+          padding: "1px 5px",
+          borderRadius: "3px",
+          marginLeft: "6px",
+          color: "var(--tag-fir-text)",
+          backgroundColor: "var(--tag-fir-bg)",
+          border: "1px solid var(--tag-fir-border)",
+          whiteSpace: "nowrap",
+          ...style,
+        }}
+        title="Category 1: Mentions in FIR and records"
+      >
+        FIR + records
+      </span>
+    );
+  }
+  if (category === "category2") {
+    return (
+      <span
+        style={{
+          display: "inline-block",
+          fontSize: "10px",
+          fontWeight: "600",
+          padding: "1px 5px",
+          borderRadius: "3px",
+          marginLeft: "6px",
+          color: "var(--tag-records-text)",
+          backgroundColor: "var(--tag-records-bg)",
+          border: "1px solid var(--tag-records-border)",
+          whiteSpace: "nowrap",
+          ...style,
+        }}
+        title="Category 2: No FIR mention with record activity"
+      >
+        Records only
+      </span>
+    );
+  }
+  return null;
 }
 
 export default Timeline;

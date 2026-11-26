@@ -12,4 +12,11 @@
   --highlight-hover: #ffe8a1;
   --highlight-border: #ffeeba;
   --print-highlight: #e5e5e5;
+  --record-accent: #ea580c;
+  --tag-fir-bg: #f3e8ff;
+  --tag-fir-text: #6b21a8;
+  --tag-fir-border: #d8b4fe;
+  --tag-records-bg: #ffedd5;
+  --tag-records-text: #9a3412;
+  --tag-records-border: #fed7aa;
 }

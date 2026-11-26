@@ -53,3 +53,93 @@ export function formatPaise(paise) {
   if (typeof paise !== "number") return "-";
   return (paise / 100).toFixed(2);
 }
+
+export function getGraphNodeId(type, val) {
+  if (!val || typeof val !== "string") return null;
+  const trimmed = val.trim();
+  if (!trimmed) return null;
+  if (type === "ACCOUNT") {
+    return trimmed.startsWith("ACCOUNT:") ? trimmed : `ACCOUNT:${trimmed}`;
+  }
+  if (type === "IMEI") {
+    return trimmed.startsWith("IMEI:") ? trimmed : `IMEI:${trimmed}`;
+  }
+  if (type === "PHONE") {
+    return trimmed.startsWith("PHONE:") ? trimmed : `PHONE:${trimmed}`;
+  }
+  if (type === "PERSON") {
+    return trimmed.startsWith("PERSON:") ? trimmed : `PERSON:${trimmed}`;
+  }
+  return null;
+}
+
+/**
+ * Select at most one example row per category from a list of timeline first-seen rows.
+ * Category 1: identifier that HAS a FIR mention (shows FIR group + record group on graph),
+ *             preferring one with >= 2 linked entities in FIR.
+ * Category 2: identifier with NO FIR mention but with record activity (record group only).
+ * Category 3: identifier with neither (cannot exist in First Seen tables, skipped entirely).
+ *
+ * @param {Array<object>} rows - Array of first-seen items (phones, accounts, or imeis).
+ * @returns {{ [identifier: string]: "category1" | "category2" }} - Map of identifier to category.
+ */
+export function selectExampleRows(rows = []) {
+  if (!Array.isArray(rows) || rows.length === 0) {
+    return {};
+  }
+
+  const markers = {};
+
+  let bestCat1 = null;
+  let bestCat1Score = -1;
+
+  let bestCat2 = null;
+  let bestCat2Score = -1;
+
+  for (const row of rows) {
+    if (!row) continue;
+    const id = row.phone || row.account || row.imei || row.id;
+    if (!id) continue;
+
+    const firstFir = row.first_fir;
+    const hasFir = Boolean(firstFir && firstFir.first_fir_id);
+    const relatedCount = (firstFir && (firstFir.related_entities?.length ?? firstFir.related_count)) || 0;
+
+    const firstRecord = row.first_record;
+    const hasRecord = Boolean(
+      firstRecord && (firstRecord.timestamp || (firstRecord.rows && firstRecord.rows.length > 0))
+    );
+    const recordCps = (firstRecord && firstRecord.counterparts?.length) || 0;
+
+    if (hasFir) {
+      // Category 1: prefer >= 2 linked entities in FIR, then higher count
+      let score = relatedCount;
+      if (relatedCount >= 2) {
+        score += 1000;
+      }
+      if (recordCps > 0) {
+        score += Math.min(recordCps, 10);
+      }
+      if (score > bestCat1Score) {
+        bestCat1Score = score;
+        bestCat1 = id;
+      }
+    } else if (hasRecord) {
+      // Category 2: no FIR mention, has record activity
+      let score = recordCps;
+      if (score > bestCat2Score) {
+        bestCat2Score = score;
+        bestCat2 = id;
+      }
+    }
+  }
+
+  if (bestCat1) {
+    markers[bestCat1] = "category1";
+  }
+  if (bestCat2 && bestCat2 !== bestCat1) {
+    markers[bestCat2] = "category2";
+  }
+
+  return markers;
+}
