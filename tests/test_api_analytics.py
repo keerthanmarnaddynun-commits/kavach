@@ -297,3 +297,100 @@ def test_disclaimer_and_limitations_always_present(temp_store: Storage) -> None:
     )
     assert res["disclaimer"] == DISCLAIMER
     assert res["note"] == BREAK_NOTE
+
+
+def test_run_break_2_bridge_connects_unchanged(temp_store: Storage) -> None:
+    """Existing 2-bridge examples' results remain unchanged (previous outputs are subset or equal)."""
+    case_id = _setup_demo_case(temp_store)
+    group_a = ["PERSON:FIR_06:ent_02"]
+    group_b = ["PERSON:FIR_10:ent_02"]
+
+    res = run_break(temp_store, case_id, group_a, group_b)
+    assert res["finite"] is True
+    assert res["size"] == 2
+    cut_names = {c["name"] for c in res["cut"]}
+    assert "Rashid Khan" in cut_names
+    assert "Farooq Ahmed" in cut_names
+
+    # Check connects pairs for both cut persons
+    cut_details = res["cut_details"]
+    for c in res["cut"]:
+        pid = c["person_id"]
+        assert pid in cut_details
+        pairs = cut_details[pid]["connects"]
+        assert len(pairs) >= 1
+        pair_texts = [p["pair_text"] for p in pairs]
+        # Previous 2-bridge example output
+        assert "Aslam Parvez <-> Mukhtar Ansari" in pair_texts
+
+
+def test_compute_cut_details_parallel_routes_of_different_lengths() -> None:
+    """3 cut persons on parallel disjoint routes of different lengths all get connects pairs."""
+    from kavach_api.leads import _compute_cut_details
+
+    # Route 1: A -> P_CUT_1 -> B (length 2)
+    # Route 2: A -> X2 -> P_CUT_2 -> B (length 3)
+    # Route 3: A -> X3 -> Y3 -> P_CUT_3 -> B (length 4)
+    nodes = [
+        {"id": "P_A"},
+        {"id": "P_B"},
+        {"id": "P_CUT_1"},
+        {"id": "P_CUT_2"},
+        {"id": "P_CUT_3"},
+        {"id": "X2"},
+        {"id": "X3"},
+        {"id": "Y3"},
+    ]
+    edges = [
+        # Route 1
+        {"source": "P_A", "target": "P_CUT_1"},
+        {"source": "P_CUT_1", "target": "P_B"},
+        # Route 2
+        {"source": "P_A", "target": "X2"},
+        {"source": "X2", "target": "P_CUT_2"},
+        {"source": "P_CUT_2", "target": "P_B"},
+        # Route 3
+        {"source": "P_A", "target": "X3"},
+        {"source": "X3", "target": "Y3"},
+        {"source": "Y3", "target": "P_CUT_3"},
+        {"source": "P_CUT_3", "target": "P_B"},
+    ]
+    call_graph = {"nodes": nodes, "edges": edges}
+    raw_cut = ["P_CUT_1", "P_CUT_2", "P_CUT_3"]
+    known_persons = {
+        "P_A": "Alice",
+        "P_B": "Bob",
+        "P_CUT_1": "Cut One",
+        "P_CUT_2": "Cut Two",
+        "P_CUT_3": "Cut Three",
+        "X2": "X2",
+        "X3": "X3",
+        "Y3": "Y3",
+    }
+    case_graph = {"nodes": [], "edges": []}
+    person_to_phones = {}
+
+    details = _compute_cut_details(
+        call_graph=call_graph,
+        raw_cut=raw_cut,
+        group_a=["P_A"],
+        group_b=["P_B"],
+        known_persons=known_persons,
+        person_to_phones=person_to_phones,
+        case_graph=case_graph,
+    )
+
+    assert set(details.keys()) == {"P_CUT_1", "P_CUT_2", "P_CUT_3"}
+    for cut_id in raw_cut:
+        cd = details[cut_id]
+        assert len(cd["connects"]) >= 1, f"{cut_id} has no connects pairs"
+        pair = cd["connects"][0]
+        assert pair["pair_text"] == "Alice <-> Bob"
+        assert cut_id in pair["path"]
+        assert pair["path"][0] == "P_A"
+        assert pair["path"][-1] == "P_B"
+
+    assert details["P_CUT_1"]["connects"][0]["path"] == ["P_A", "P_CUT_1", "P_B"]
+    assert details["P_CUT_2"]["connects"][0]["path"] == ["P_A", "X2", "P_CUT_2", "P_B"]
+    assert details["P_CUT_3"]["connects"][0]["path"] == ["P_A", "X3", "Y3", "P_CUT_3", "P_B"]
+

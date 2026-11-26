@@ -318,6 +318,8 @@ export function BreakView({
     });
   }, [people, filterTextB]);
 
+  const [expandedPersons, setExpandedPersons] = useState(() => ({}));
+
   return (
     <div>
       <div style={{ marginBottom: "16px" }}>
@@ -608,14 +610,46 @@ export function BreakView({
                       const connectsPairs = details?.connects || [];
                       const hlIds = details?.highlight_ids || [person.person_id];
                       const hlParam = hlIds.length > 0 ? `&hl=${encodeURIComponent(hlIds.join(","))}` : "";
+                      const isExpanded = Boolean(expandedPersons[person.person_id]);
+                      const displayPairs = isExpanded ? connectsPairs : connectsPairs.slice(0, 5);
+                      const hasMore = connectsPairs.length > 5;
+                      const moreCount = connectsPairs.length - 5;
+
                       return (
                         <tr key={person.person_id}>
                           <td><strong>{person.name || "-"}</strong></td>
                           <td className="mono">{person.person_id}</td>
                           <td style={{ fontSize: "11px", whiteSpace: "pre-line" }}>
-                            {connectsPairs.length > 0
-                              ? connectsPairs.map((c) => c.pair_text).join("\n")
-                              : "-"}
+                            {connectsPairs.length === 0 ? (
+                              <span style={{ color: "var(--muted)" }}>no pair found</span>
+                            ) : (
+                              <div>
+                                <div>{displayPairs.map((c) => c.pair_text).join("\n")}</div>
+                                {hasMore && (
+                                  <button
+                                    type="button"
+                                    className="table-link"
+                                    style={{
+                                      background: "none",
+                                      border: "none",
+                                      padding: 0,
+                                      cursor: "pointer",
+                                      fontSize: "11px",
+                                      marginTop: "4px",
+                                      display: "inline-block",
+                                    }}
+                                    onClick={() =>
+                                      setExpandedPersons((prev) => ({
+                                        ...prev,
+                                        [person.person_id]: !prev[person.person_id],
+                                      }))
+                                    }
+                                  >
+                                    {isExpanded ? "Show less" : `+${moreCount} more`}
+                                  </button>
+                                )}
+                              </div>
+                            )}
                           </td>
                           <td>
                             <a

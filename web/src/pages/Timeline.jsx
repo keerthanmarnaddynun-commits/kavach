@@ -9,6 +9,7 @@ export function Timeline({ caseId }) {
   const [loading, setLoading] = useState(true);
   const [errorText, setErrorText] = useState(null);
   const [activeTab, setActiveTab] = useState("phones");
+  const [insightsCount, setInsightsCount] = useState(0);
 
   useEffect(() => {
     if (!caseId) return;
@@ -27,6 +28,19 @@ export function Timeline({ caseId }) {
       });
   }, [caseId, bucket]);
 
+  useEffect(() => {
+    if (!caseId) return;
+    request(`/cases/${caseId}/timeline/insights`)
+      .then((res) => {
+        if (res && typeof res.count === "number") {
+          setInsightsCount(res.count);
+        }
+      })
+      .catch(() => {
+        setInsightsCount(0);
+      });
+  }, [caseId]);
+
   return (
     <TimelineView
       caseId={caseId}
@@ -37,6 +51,7 @@ export function Timeline({ caseId }) {
       errorText={errorText}
       activeTab={activeTab}
       setActiveTab={setActiveTab}
+      insightsCount={insightsCount}
     />
   );
 }
@@ -50,6 +65,7 @@ export function TimelineView({
   errorText = null,
   activeTab,
   setActiveTab,
+  insightsCount = 0,
 }) {
   const [localTab, setLocalTab] = useState(activeTab || "phones");
   const currentTab = activeTab || localTab;
@@ -184,25 +200,68 @@ export function TimelineView({
           </p>
         </div>
 
-        {/* Day / Hour Toggle */}
-        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-          <span style={{ fontSize: "11px", color: "var(--muted)" }}>Aggregation:</span>
-          <button
-            type="button"
-            className={bucket === "day" ? "primary" : ""}
-            onClick={() => setBucket && setBucket("day")}
-            style={{ fontSize: "11px", padding: "4px 8px" }}
+        {/* Header Controls: Insights and Aggregation */}
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          {/* Insights Button */}
+          <a
+            href={`#/case/${caseId}/timeline/insights`}
+            className="insights-link-btn"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              fontSize: "11px",
+              padding: "4px 8px",
+              textDecoration: "none",
+              border: "1px solid var(--border)",
+              borderRadius: "2px",
+              backgroundColor: "var(--surface)",
+              color: "var(--text)",
+            }}
           >
-            Day
-          </button>
-          <button
-            type="button"
-            className={bucket === "hour" ? "primary" : ""}
-            onClick={() => setBucket && setBucket("hour")}
-            style={{ fontSize: "11px", padding: "4px 8px" }}
-          >
-            Hour
-          </button>
+            <span>Insights</span>
+            {insightsCount > 0 && (
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minWidth: "16px",
+                  height: "16px",
+                  padding: "0 4px",
+                  borderRadius: "9999px",
+                  backgroundColor: "var(--badge-danger-bg)",
+                  color: "var(--badge-danger-text)",
+                  fontSize: "10px",
+                  fontWeight: "bold",
+                  lineHeight: 1,
+                }}
+              >
+                {insightsCount}
+              </span>
+            )}
+          </a>
+
+          {/* Day / Hour Toggle */}
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <span style={{ fontSize: "11px", color: "var(--muted)" }}>Aggregation:</span>
+            <button
+              type="button"
+              className={bucket === "day" ? "primary" : ""}
+              onClick={() => setBucket && setBucket("day")}
+              style={{ fontSize: "11px", padding: "4px 8px" }}
+            >
+              Day
+            </button>
+            <button
+              type="button"
+              className={bucket === "hour" ? "primary" : ""}
+              onClick={() => setBucket && setBucket("hour")}
+              style={{ fontSize: "11px", padding: "4px 8px" }}
+            >
+              Hour
+            </button>
+          </div>
         </div>
       </div>
 
@@ -385,7 +444,15 @@ export function TimelineView({
   );
 }
 
-function SvgBarChart({ layout, focusedItem, onFocusItem, unit = "items" }) {
+export function SvgBarChart({
+  layout,
+  focusedItem,
+  onFocusItem,
+  unit = "items",
+  annotations = [],
+  onSelectAnnotation,
+  selectedAnnotationId,
+}) {
   const { bars, maxVal, plotWidth, plotHeight, margin } = layout;
   const svgWidth = 640;
   const svgHeight = 160;
@@ -399,6 +466,14 @@ function SvgBarChart({ layout, focusedItem, onFocusItem, unit = "items" }) {
   }
 
   const yZero = margin.top + plotHeight;
+
+  // Group annotations by day/label
+  const annByDay = new Map();
+  for (const ann of annotations || []) {
+    if (!ann || !ann.day) continue;
+    if (!annByDay.has(ann.day)) annByDay.set(ann.day, []);
+    annByDay.get(ann.day).push(ann);
+  }
 
   return (
     <svg
@@ -454,6 +529,9 @@ function SvgBarChart({ layout, focusedItem, onFocusItem, unit = "items" }) {
       {/* Bars */}
       {bars.map((b, idx) => {
         const isFocused = focusedItem && focusedItem.label === b.label;
+        const dayAnns = annByDay.get(b.label) || [];
+        const hasSelectedAnn = dayAnns.some((a) => a.insightId === selectedAnnotationId);
+
         return (
           <g key={idx}>
             <rect
@@ -461,9 +539,9 @@ function SvgBarChart({ layout, focusedItem, onFocusItem, unit = "items" }) {
               y={b.y}
               width={b.width}
               height={b.height}
-              fill={isFocused ? "var(--accent)" : "var(--border)"}
-              stroke={isFocused ? "var(--text)" : "var(--muted)"}
-              strokeWidth={isFocused ? 2 : 1}
+              fill={hasSelectedAnn || isFocused ? "var(--accent)" : "var(--border)"}
+              stroke={hasSelectedAnn || isFocused ? "var(--text)" : "var(--muted)"}
+              strokeWidth={hasSelectedAnn || isFocused ? 2 : 1}
               tabIndex={0}
               role="button"
               aria-label={`${b.label}: ${b.value} ${unit}`}
@@ -473,6 +551,55 @@ function SvgBarChart({ layout, focusedItem, onFocusItem, unit = "items" }) {
             >
               <title>{`${b.label}: ${b.value} ${unit}`}</title>
             </rect>
+
+            {/* Circle annotations on bars */}
+            {dayAnns.map((ann, aIdx) => {
+              const k = dayAnns.length;
+              const offset = (aIdx - (k - 1) / 2) * 18;
+              const cx = b.x + b.width / 2 + offset;
+              const cyPos = Math.max(margin.top + 9, b.y - 12);
+              const isSelected = selectedAnnotationId === ann.insightId;
+
+              return (
+                <g
+                  key={aIdx}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Insight ${ann.number}`}
+                  style={{ cursor: "pointer" }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onSelectAnnotation) onSelectAnnotation(ann.insightId);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.stopPropagation();
+                      if (onSelectAnnotation) onSelectAnnotation(ann.insightId);
+                    }
+                  }}
+                >
+                  <circle
+                    cx={cx}
+                    cy={cyPos}
+                    r={isSelected ? 9 : 8}
+                    fill={isSelected ? "var(--highlight)" : "var(--surface)"}
+                    stroke="var(--text)"
+                    strokeWidth={isSelected ? 2.5 : 1.5}
+                  />
+                  <text
+                    x={cx}
+                    y={cyPos + 3}
+                    textAnchor="middle"
+                    fontSize="9"
+                    fontWeight="bold"
+                    fill="var(--text)"
+                    fontFamily="ui-monospace, monospace"
+                  >
+                    {ann.number}
+                  </text>
+                </g>
+              );
+            })}
           </g>
         );
       })}

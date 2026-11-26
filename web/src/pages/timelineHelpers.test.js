@@ -5,6 +5,13 @@ import {
   formatPaise,
   getGraphNodeId,
   selectExampleRows,
+  insightViewCache,
+  getCachedInsightView,
+  setCachedInsightView,
+  clearCachedInsightView,
+  filterInsightsByView,
+  alignDailyBuckets,
+  getChartAnnotations,
 } from "./timelineHelpers.js";
 
 describe("computeMax", () => {
@@ -145,3 +152,94 @@ describe("selectExampleRows", () => {
     expect(selectExampleRows(undefined)).toEqual({});
   });
 });
+
+describe("insightViewCache", () => {
+  it("defaults to Both when uncached and persists updates in memory per caseId", () => {
+    clearCachedInsightView();
+    expect(getCachedInsightView("C-case1")).toBe("Both");
+
+    setCachedInsightView("C-case1", "Calls only");
+    expect(getCachedInsightView("C-case1")).toBe("Calls only");
+    expect(getCachedInsightView("C-case2")).toBe("Both");
+
+    setCachedInsightView("C-case2", "Transfers only");
+    expect(getCachedInsightView("C-case2")).toBe("Transfers only");
+
+    clearCachedInsightView("C-case1");
+    expect(getCachedInsightView("C-case1")).toBe("Both");
+    expect(getCachedInsightView("C-case2")).toBe("Transfers only");
+
+    clearCachedInsightView();
+    expect(getCachedInsightView("C-case2")).toBe("Both");
+  });
+});
+
+describe("filterInsightsByView", () => {
+  const sampleInsights = [
+    { id: "ins-1", kind: "call_spike", chart: "calls", days: ["2026-03-01"] },
+    { id: "ins-2", kind: "call_then_transfer", chart: "both", days: ["2026-03-01", "2026-03-03"] },
+    { id: "ins-3", kind: "transfer_spike", chart: "transfers", days: ["2026-03-03"] },
+    { id: "ins-4", kind: "new_and_busy", chart: "calls", days: ["2026-03-05"] },
+  ];
+
+  it("filters Calls only and assigns 1-based sequential numbers", () => {
+    const callsView = filterInsightsByView(sampleInsights, "Calls only");
+    expect(callsView.map((x) => x.id)).toEqual(["ins-1", "ins-4"]);
+    expect(callsView[0].number).toBe(1);
+    expect(callsView[1].number).toBe(2);
+  });
+
+  it("filters Transfers only and assigns 1-based sequential numbers", () => {
+    const trView = filterInsightsByView(sampleInsights, "Transfers only");
+    expect(trView.map((x) => x.id)).toEqual(["ins-3"]);
+    expect(trView[0].number).toBe(1);
+  });
+
+  it("includes all insights in Both view with sequential numbers", () => {
+    const bothView = filterInsightsByView(sampleInsights, "Both");
+    expect(bothView.map((x) => x.id)).toEqual(["ins-1", "ins-2", "ins-3", "ins-4"]);
+    expect(bothView.map((x) => x.number)).toEqual([1, 2, 3, 4]);
+  });
+});
+
+describe("alignDailyBuckets", () => {
+  it("aligns distinct call and transfer dates onto a shared timeline with zero-fill", () => {
+    const calls = [
+      { t: "2026-03-01", count: 15 },
+      { t: "2026-03-03", count: 25 },
+    ];
+    const transfers = [
+      { t: "2026-03-02", count: 10, paise: 50000 },
+      { t: "2026-03-03", count: 8, paise: 40000 },
+    ];
+
+    const { alignedCalls, alignedTransfers, allDays } = alignDailyBuckets(calls, transfers);
+    expect(allDays).toEqual(["2026-03-01", "2026-03-02", "2026-03-03"]);
+
+    expect(alignedCalls.map((c) => c.count)).toEqual([15, 0, 25]);
+    expect(alignedTransfers.map((tr) => tr.count)).toEqual([0, 10, 8]);
+  });
+});
+
+describe("getChartAnnotations", () => {
+  const visible = [
+    { id: "ins-1", chart: "calls", days: ["2026-03-01"], number: 1 },
+    { id: "ins-2", chart: "both", days: ["2026-03-01", "2026-03-03"], number: 2 },
+    { id: "ins-3", chart: "transfers", days: ["2026-03-03"], number: 3 },
+  ];
+
+  it("returns circle annotations for calls and transfers correctly", () => {
+    const callAnn = getChartAnnotations(visible, "calls");
+    expect(callAnn).toEqual([
+      { day: "2026-03-01", number: 1, insightId: "ins-1" },
+      { day: "2026-03-01", number: 2, insightId: "ins-2" },
+    ]);
+
+    const trAnn = getChartAnnotations(visible, "transfers");
+    expect(trAnn).toEqual([
+      { day: "2026-03-03", number: 2, insightId: "ins-2" },
+      { day: "2026-03-03", number: 3, insightId: "ins-3" },
+    ]);
+  });
+});
+

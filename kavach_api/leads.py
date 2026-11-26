@@ -520,31 +520,33 @@ def _compute_cut_details(
 
     cut_details: dict[str, Any] = {}
     for p in raw_cut:
+        p_str = str(p)
         p_name = known_persons.get(p, p)
         connects: list[dict[str, Any]] = []
         hl_node_ids = set([p])
         hl_edge_ids: set[str] = set()
 
-        if str(p) in G:
+        if p_str in G:
+            G_p = G.copy()
+            other_cut = [str(x) for x in raw_cut if str(x) != p_str and str(x) in G_p]
+            G_p.remove_nodes_from(other_cut)
+
             for a in group_a:
                 a_str = str(a)
-                if a_str not in G:
+                if a_str not in G_p:
                     continue
                 for b in group_b:
                     b_str = str(b)
-                    if b_str not in G:
+                    if b_str not in G_p:
                         continue
-                    best_path = None
+                    path = None
                     try:
-                        if nx.has_path(G, a_str, b_str):
-                            for sp in nx.all_shortest_paths(G, a_str, b_str):
-                                if (set(sp) & cut_set) == {p}:
-                                    best_path = sp
-                                    break
+                        if nx.has_path(G_p, a_str, b_str):
+                            path = nx.shortest_path(G_p, a_str, b_str)
                     except Exception:
-                        best_path = None
+                        path = None
 
-                    if best_path is not None:
+                    if path is not None:
                         a_name = known_persons.get(a, a)
                         b_name = known_persons.get(b, b)
                         connects.append({
@@ -553,13 +555,13 @@ def _compute_cut_details(
                             "b_id": b,
                             "b_name": b_name,
                             "pair_text": f"{a_name} <-> {b_name}",
-                            "path": best_path,
+                            "path": path,
                         })
-                        for pid in best_path:
+                        for pid in path:
                             hl_node_ids.add(pid)
-                        for idx in range(len(best_path) - 1):
-                            u_pid = best_path[idx]
-                            v_pid = best_path[idx + 1]
+                        for idx in range(len(path) - 1):
+                            u_pid = path[idx]
+                            v_pid = path[idx + 1]
                             u_devs = [
                                 ("PHONE:" + d if not str(d).startswith("PHONE:") else str(d))
                                 for d in person_to_phones.get(u_pid, [])

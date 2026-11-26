@@ -13,6 +13,7 @@ import { IntakeDocumentsTable, RowErrorTable } from "./Intake.jsx";
 import { LoginFormView } from "./Login.jsx";
 import { BreakView } from "./Break.jsx";
 import { TimelineView } from "./Timeline.jsx";
+import { TimelineInsights } from "./TimelineInsights.jsx";
 import { DossierView } from "./Dossier.jsx";
 import { ErrorBoundaryFallback } from "../App.jsx";
 import { buildDossier } from "../lib/dossier.js";
@@ -717,6 +718,62 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).toContain("hl=PERSON%3A1%2CPHONE%3A123");
   });
 
+  it("renders BreakView with +N more expandable connects pairs", () => {
+    const pairs = Array.from({ length: 8 }, (_, i) => ({
+      pair_text: `Person A${i} <-> Person B${i}`,
+    }));
+    const vm = {
+      finite: true,
+      size: 1,
+      cut: [{ person_id: "PERSON:1", name: "Rashid Khan" }],
+      cutDetails: {
+        "PERSON:1": {
+          person_id: "PERSON:1",
+          connects: pairs,
+          highlight_ids: ["PERSON:1"],
+        },
+      },
+    };
+
+    const html = renderToString(
+      <BreakView
+        caseId="C-927fc7de12"
+        people={[{ id: "PERSON:1", name: "Rashid Khan" }]}
+        breakVm={vm}
+      />
+    );
+
+    expect(html).toContain("+3 more");
+    expect(html).toContain("Person A0 &lt;-&gt; Person B0");
+    expect(html).toContain("Person A4 &lt;-&gt; Person B4");
+    expect(html).not.toContain("Person A5 &lt;-&gt; Person B5");
+  });
+
+  it("renders BreakView showing 'no pair found' when a cut person has no connects pairs", () => {
+    const vm = {
+      finite: true,
+      size: 1,
+      cut: [{ person_id: "PERSON:1", name: "Rashid Khan" }],
+      cutDetails: {
+        "PERSON:1": {
+          person_id: "PERSON:1",
+          connects: [],
+          highlight_ids: ["PERSON:1"],
+        },
+      },
+    };
+
+    const html = renderToString(
+      <BreakView
+        caseId="C-927fc7de12"
+        people={[{ id: "PERSON:1", name: "Rashid Khan" }]}
+        breakVm={vm}
+      />
+    );
+
+    expect(html).toContain("no pair found");
+  });
+
   it("renders BreakView with Clear A and Clear B buttons in group headers", () => {
     const html = renderToString(
       <BreakView
@@ -907,6 +964,57 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).toContain("Case not analyzed: no leads or graph summary.");
     expect(html).not.toContain("Priority Leads");
     expect(html).not.toContain("Certificate under Section 63(4)(c)");
+  });
+
+  it("renders TimelineView with Insights button and count badge", () => {
+    // Zero count: button has no badge
+    const htmlZero = renderToString(
+      <TimelineView caseId="C-test" data={timelineDayFixture} insightsCount={0} />
+    );
+    expect(htmlZero).toContain("Insights");
+    expect(htmlZero).toContain("#/case/C-test/timeline/insights");
+
+    // Count > 0: button shows solid red badge
+    const htmlCount = renderToString(
+      <TimelineView caseId="C-test" data={timelineDayFixture} insightsCount={4} />
+    );
+    expect(htmlCount).toContain("Insights");
+    expect(htmlCount).toContain("4");
+    expect(htmlCount).toContain("var(--badge-danger-bg)");
+  });
+
+  it("renders TimelineInsights page elements and disclaimer line", () => {
+    const html = renderToString(<TimelineInsights caseId="C-test" />);
+    expect(html).toContain("Activity Timeline Insights");
+    expect(html).toContain("Decision support derived only from the uploaded records. Not findings of guilt and not proof.");
+    expect(html).toContain("Back to Timeline");
+    expect(html).toContain("Download PDF");
+    expect(html).toContain("Calls only");
+    expect(html).toContain("Transfers only");
+    expect(html).toContain("Both");
+  });
+
+  it("renders TimelineInsights informative empty state with busiest call and transfer days", () => {
+    const mockEmptyData = {
+      case_id: "C-test",
+      count: 0,
+      insights: [],
+      reason: null,
+      summary: {
+        busiest_call_day: { date: "2026-01-25", count: 278, ratio: 1.13 },
+        busiest_transfer_day: { date: "2026-01-04", count: 54, ratio: 1.08 },
+      },
+    };
+    const html = renderToString(
+      <TimelineInsights
+        caseId="C-test"
+        initialData={mockEmptyData}
+        initialTimelineData={timelineDayFixture}
+      />
+    );
+    expect(html).toContain("No unusual patterns found in the uploaded records.");
+    expect(html).toContain("Busiest call day: 2026-01-25, 278 calls (1.13x a typical day).");
+    expect(html).toContain("Busiest transfer day: 2026-01-04, 54 transfers (1.08x a typical day).");
   });
 });
 

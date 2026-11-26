@@ -143,3 +143,132 @@ export function selectExampleRows(rows = []) {
 
   return markers;
 }
+
+/**
+ * Module-level in-memory cache for Timeline Insights view selection per caseId.
+ */
+export const insightViewCache = new Map();
+
+export function getCachedInsightView(caseId) {
+  if (!caseId) return "Both";
+  return insightViewCache.get(caseId) || "Both";
+}
+
+export function setCachedInsightView(caseId, view) {
+  if (!caseId) return;
+  insightViewCache.set(caseId, view);
+}
+
+export function clearCachedInsightView(caseId) {
+  if (!caseId) {
+    insightViewCache.clear();
+  } else {
+    insightViewCache.delete(caseId);
+  }
+}
+
+/**
+ * Filter insights based on active view switch: "Both", "Calls only", or "Transfers only".
+ * Assigns sequential numbers (1, 2, ...) to the visible insights in that view.
+ *
+ * @param {Array<object>} insights - Full list of insight objects from API.
+ * @param {string} view - "Both" | "Calls only" | "Transfers only".
+ * @returns {Array<object>} - Filtered insights with `number` (1-indexed).
+ */
+export function filterInsightsByView(insights = [], view = "Both") {
+  if (!Array.isArray(insights)) return [];
+
+  let filtered = [];
+  if (view === "Calls only") {
+    filtered = insights.filter((it) => it && it.chart === "calls");
+  } else if (view === "Transfers only") {
+    filtered = insights.filter((it) => it && it.chart === "transfers");
+  } else {
+    // "Both": all insights (call_spike, transfer_spike, call_then_transfer, new_and_busy)
+    filtered = [...insights];
+  }
+
+  return filtered.map((it, idx) => ({
+    ...it,
+    number: idx + 1,
+  }));
+}
+
+/**
+ * Align calls and transfers onto a unified day axis so their bar positions match 1:1.
+ *
+ * @param {Array<object>} calls - Daily calls array.
+ * @param {Array<object>} transfers - Daily transfers array.
+ * @returns {{ alignedCalls: Array<object>, alignedTransfers: Array<object>, allDays: Array<string> }}
+ */
+export function alignDailyBuckets(calls = [], transfers = []) {
+  const callDays = (calls || []).map((c) => (c.t ? c.t.slice(0, 10) : "")).filter(Boolean);
+  const transferDays = (transfers || []).map((t) => (t.t ? t.t.slice(0, 10) : "")).filter(Boolean);
+  const allDays = Array.from(new Set([...callDays, ...transferDays])).sort();
+
+  const callMap = new Map();
+  for (const c of calls || []) {
+    if (c && c.t) callMap.set(c.t.slice(0, 10), c);
+  }
+
+  const transferMap = new Map();
+  for (const t of transfers || []) {
+    if (t && t.t) transferMap.set(t.t.slice(0, 10), t);
+  }
+
+  const alignedCalls = allDays.map((d) => callMap.get(d) || { t: d, count: 0, voice: 0, sms: 0 });
+  const alignedTransfers = allDays.map((d) => transferMap.get(d) || { t: d, count: 0, paise: 0 });
+
+  return { alignedCalls, alignedTransfers, allDays };
+}
+
+/**
+ * Extract circle annotations for a given chart ("calls" or "transfers")
+ * from the list of currently visible insights.
+ *
+ * @param {Array<object>} insights - Visible insights with `number` field.
+ * @param {"calls" | "transfers"} chartType - Target chart.
+ * @returns {Array<{ day: string, number: number, insightId: string }>}
+ */
+export function getChartAnnotations(insights = [], chartType = "calls") {
+  if (!Array.isArray(insights)) return [];
+  const annotations = [];
+
+  for (const ins of insights) {
+    if (!ins) continue;
+    if (chartType === "calls") {
+      if (ins.chart === "calls" && ins.days && ins.days.length > 0) {
+        annotations.push({
+          day: ins.days[0],
+          number: ins.number,
+          insightId: ins.id,
+        });
+      } else if (ins.chart === "both" && ins.days && ins.days.length > 0) {
+        // For call_then_transfer: first day is the call day
+        annotations.push({
+          day: ins.days[0],
+          number: ins.number,
+          insightId: ins.id,
+        });
+      }
+    } else if (chartType === "transfers") {
+      if (ins.chart === "transfers" && ins.days && ins.days.length > 0) {
+        annotations.push({
+          day: ins.days[0],
+          number: ins.number,
+          insightId: ins.id,
+        });
+      } else if (ins.chart === "both" && ins.days && ins.days.length > 1) {
+        // For call_then_transfer: second day is the transfer day
+        annotations.push({
+          day: ins.days[1],
+          number: ins.number,
+          insightId: ins.id,
+        });
+      }
+    }
+  }
+
+  return annotations;
+}
+

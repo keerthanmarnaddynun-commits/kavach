@@ -464,5 +464,27 @@ button.primary:hover {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
+
+  /* Insights print rules */
+  .insights-no-print {
+    display: none !important;
+  }
+
+  .insights-print-only {
+    display: block !important;
+  }
+
+  details.rules-details {
+    display: block !important;
+  }
+
+  details.rules-details > * {
+    display: block !important;
+  }
 }
+
+.insights-print-only {
+  display: none;
+}
+
 

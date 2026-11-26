@@ -12,6 +12,7 @@ import { EvidenceDoc } from "./pages/EvidenceDoc.jsx";
 import { EvidenceRows } from "./pages/EvidenceRows.jsx";
 import { Break } from "./pages/Break.jsx";
 import { Timeline } from "./pages/Timeline.jsx";
+import { TimelineInsights } from "./pages/TimelineInsights.jsx";
 import { Dossier } from "./pages/Dossier.jsx";
 
 export function App() {
@@ -347,6 +348,12 @@ function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdat
   if (rowsMatch) {
     const fileKind = rowsMatch[1];
     return <EvidenceRows caseId={caseId} fileKind={fileKind} route={route} />;
+  }
+
+  // Timeline insights route: #/case/<id>/timeline/insights
+  const insightsMatch = route.match(/^#\/case\/[^/]+\/timeline\/insights(?:\?(.*))?$/);
+  if (insightsMatch) {
+    return <TimelineInsights caseId={caseId} route={route} />;
   }
 
   if (subPage === "intake") {

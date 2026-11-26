@@ -64,6 +64,7 @@ from kavach_api.storage import (
     validate_doc_id,
 )
 from kavach_api.timeline import build_timeline
+from kavach_api.insights import compute_timeline_insights
 
 logger = logging.getLogger(__name__)
 
@@ -770,6 +771,16 @@ def create_app(
         validate_case_id(case_id)
         app.state.store.get_case(case_id)
         return build_timeline(app.state.store, case_id, bucket)
+
+    @app.get("/api/cases/{case_id}/timeline/insights")
+    def get_timeline_insights_endpoint(
+        case_id: str,
+        current_user: dict[str, Any] = Depends(require_role("viewer")),
+    ):
+        """Retrieve pattern insights derived from uploaded timeline records."""
+        validate_case_id(case_id)
+        app.state.store.get_case(case_id)
+        return compute_timeline_insights(app.state.store, case_id)
 
     @app.get("/api/jobs/{job_id}")
     def get_job_endpoint(
