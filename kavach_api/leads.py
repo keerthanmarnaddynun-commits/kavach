@@ -454,9 +454,23 @@ def run_break(
         for pid in raw_cut
     ]
 
+    try:
+        cut_details = _compute_cut_details(
+            call_graph=call_graph,
+            raw_cut=raw_cut,
+            group_a=sorted(set_a),
+            group_b=sorted(set_b),
+            known_persons=known_persons,
+            person_to_phones=_extract_owner_maps(graph)["person_to_phones"],
+            case_graph=graph,
+        )
+    except Exception:
+        cut_details = {}
+
     return {
         "bridging_unowned_phones": bridging,
         "cut": cut_formatted,
+        "cut_details": cut_details,
         "direct_link": direct_link,
         "disclaimer": DISCLAIMER,
         "finite": finite,
@@ -467,3 +481,114 @@ def run_break(
         "note": BREAK_NOTE,
         "size": size,
     }
+
+
+def _compute_cut_details(
+    call_graph: dict[str, Any],
+    raw_cut: Sequence[str],
+    group_a: Sequence[str],
+    group_b: Sequence[str],
+    known_persons: dict[str, str],
+    person_to_phones: dict[str, list[str]],
+    case_graph: dict[str, Any],
+) -> dict[str, Any]:
+    """
+    Determine observed call-layer shortest paths connecting group A and group B members via each cut person.
+    """
+    import networkx as nx
+    from kavach_api.render import render_graph
+
+    cut_set = set(raw_cut)
+    if not cut_set:
+        return {}
+
+    G = nx.Graph()
+    for node in call_graph.get("nodes", []):
+        G.add_node(str(node.get("id", "")))
+    for edge in call_graph.get("edges", []):
+        G.add_edge(str(edge.get("source", "")), str(edge.get("target", "")))
+
+    rendered = render_graph(case_graph)
+    edge_id_map: dict[tuple[str, str], list[str]] = defaultdict(list)
+    for e in rendered.get("elements", {}).get("edges", []):
+        ed = e.get("data", {})
+        src = str(ed.get("source", "")).strip()
+        tgt = str(ed.get("target", "")).strip()
+        eid = str(ed.get("id", "")).strip()
+        if src and tgt and eid:
+            edge_id_map[(min(src, tgt), max(src, tgt))].append(eid)
+
+    cut_details: dict[str, Any] = {}
+    for p in raw_cut:
+        p_name = known_persons.get(p, p)
+        connects: list[dict[str, Any]] = []
+        hl_node_ids = set([p])
+        hl_edge_ids: set[str] = set()
+
+        if str(p) in G:
+            for a in group_a:
+                a_str = str(a)
+                if a_str not in G:
+                    continue
+                for b in group_b:
+                    b_str = str(b)
+                    if b_str not in G:
+                        continue
+                    best_path = None
+                    try:
+                        if nx.has_path(G, a_str, b_str):
+                            for sp in nx.all_shortest_paths(G, a_str, b_str):
+                                if (set(sp) & cut_set) == {p}:
+                                    best_path = sp
+                                    break
+                    except Exception:
+                        best_path = None
+
+                    if best_path is not None:
+                        a_name = known_persons.get(a, a)
+                        b_name = known_persons.get(b, b)
+                        connects.append({
+                            "a_id": a,
+                            "a_name": a_name,
+                            "b_id": b,
+                            "b_name": b_name,
+                            "pair_text": f"{a_name} <-> {b_name}",
+                            "path": best_path,
+                        })
+                        for pid in best_path:
+                            hl_node_ids.add(pid)
+                        for idx in range(len(best_path) - 1):
+                            u_pid = best_path[idx]
+                            v_pid = best_path[idx + 1]
+                            u_devs = [
+                                ("PHONE:" + d if not str(d).startswith("PHONE:") else str(d))
+                                for d in person_to_phones.get(u_pid, [])
+                            ]
+                            v_devs = [
+                                ("PHONE:" + d if not str(d).startswith("PHONE:") else d)
+                                for d in person_to_phones.get(v_pid, [])
+                            ]
+                            for ud in u_devs:
+                                for vd in v_devs:
+                                    e_key = (min(ud, vd), max(ud, vd))
+                                    if e_key in edge_id_map:
+                                        hl_node_ids.add(ud)
+                                        hl_node_ids.add(vd)
+                                        hl_edge_ids.update(edge_id_map[e_key])
+                                        oe_u = (min(u_pid, ud), max(u_pid, ud))
+                                        if oe_u in edge_id_map:
+                                            hl_edge_ids.update(edge_id_map[oe_u])
+                                        oe_v = (min(v_pid, vd), max(v_pid, vd))
+                                        if oe_v in edge_id_map:
+                                            hl_edge_ids.update(edge_id_map[oe_v])
+
+        cut_details[p] = {
+            "person_id": p,
+            "name": p_name,
+            "connects": connects,
+            "highlight_ids": sorted(hl_node_ids | hl_edge_ids),
+            "highlight_node_ids": sorted(hl_node_ids),
+            "highlight_edge_ids": sorted(hl_edge_ids),
+        }
+
+    return cut_details

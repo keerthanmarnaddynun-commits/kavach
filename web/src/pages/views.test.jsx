@@ -16,6 +16,11 @@ import { TimelineView } from "./Timeline.jsx";
 import { DossierView } from "./Dossier.jsx";
 import { ErrorBoundaryFallback } from "../App.jsx";
 import { buildDossier } from "../lib/dossier.js";
+import {
+  parseHighlightIdsFromUrl,
+  saveHighlightIds,
+  getSavedHighlightIds,
+} from "./graphHelpers.js";
 
 // Import Real Fixtures
 import nodeDetailFixture from "../fixtures/node_detail.json";
@@ -410,6 +415,141 @@ describe("Render Smoke Tests (Repair 1)", () => {
     );
     expect(html).toContain("Courier Break Analysis");
     expect(html).toContain("Persons in Cut");
+  });
+
+  it("renders BreakView example buttons when examples are provided", () => {
+    const examples = [
+      {
+        label: "Example 1: 2 + 2 people, 1 bridge",
+        groupA: ["P1", "P2"],
+        groupB: ["P3", "P4"],
+        result: { finite: true, size: 1, cut: [{ person_id: "P5", name: "Farooq" }] },
+      },
+      {
+        label: "Example 2: 2 + 2 people, 2 bridges",
+        groupA: ["P6", "P7"],
+        groupB: ["P8", "P9"],
+        result: { finite: true, size: 2, cut: [{ person_id: "P10" }, { person_id: "P11" }] },
+      },
+    ];
+
+    const html = renderToString(
+      <BreakView
+        caseId="C-01"
+        people={peopleFixture || []}
+        examples={examples}
+        loadingExamples={false}
+      />
+    );
+    expect(html).toContain("Try an example:");
+    expect(html).toContain("Example 1: 2 + 2 people, 1 bridge");
+    expect(html).toContain("Example 2: 2 + 2 people, 2 bridges");
+  });
+
+  it("renders Finding examples... loading state when loadingExamples is true", () => {
+    const html = renderToString(
+      <BreakView
+        caseId="C-01"
+        people={peopleFixture || []}
+        examples={[]}
+        loadingExamples={true}
+      />
+    );
+    expect(html).toContain("Finding examples...");
+  });
+
+  it("renders selected example with checked checkboxes and Show on graph link", () => {
+    const example = {
+      label: "Example 1: 2 + 2 people, 1 bridge",
+      groupA: ["PERSON:FIR_01:ent_02", "PERSON:FIR_02:ent_02"],
+      groupB: ["PERSON:FIR_01:ent_09", "PERSON:FIR_06:ent_02"],
+      result: {
+        finite: true,
+        size: 1,
+        cut: [{ person_id: "PERSON:FIR_23:ent_05", name: "Farooq Ahmed" }],
+        direct_link: false,
+        bridging_unowned_phones: [],
+        note: "Only observed calls used.",
+        disclaimer: "Leads are decision support.",
+      },
+    };
+
+    const vm = {
+      finite: true,
+      size: 1,
+      cut: example.result.cut,
+      directLink: false,
+      bridgingPhones: [],
+      note: example.result.note,
+      disclaimer: example.result.disclaimer,
+      isEmptyCut: false,
+      emptyCutMessage: "No observed link between the groups on the call layer.",
+    };
+
+    const html = renderToString(
+      <BreakView
+        caseId="C-927fc7de12"
+        people={[
+          { id: "PERSON:FIR_01:ent_02", name: "Vikas Sharma" },
+          { id: "PERSON:FIR_02:ent_02", name: "Pankaj Tiwari" },
+          { id: "PERSON:FIR_01:ent_09", name: "Bikas Sharma" },
+          { id: "PERSON:FIR_06:ent_02", name: "Aslam Parvez" },
+        ]}
+        groupA={example.groupA}
+        groupB={example.groupB}
+        breakVm={vm}
+        examples={[example]}
+      />
+    );
+
+    expect(html).toContain("Show on graph");
+    expect(html).toContain("Farooq Ahmed");
+    expect(html).toContain("#/case/C-927fc7de12/graph?select=PERSON%3AFIR_23%3Aent_05");
+  });
+
+  it("renders BreakView with Connects column, Clear button, and footnote", () => {
+    const vm = {
+      finite: true,
+      size: 1,
+      cut: [{ person_id: "PERSON:1", name: "Rashid Khan" }],
+      cutDetails: {
+        "PERSON:1": {
+          person_id: "PERSON:1",
+          connects: [{ pair_text: "Aslam Parvez <-> Suresh Pal" }],
+          highlight_ids: ["PERSON:1", "PHONE:123"],
+        },
+      },
+      directLink: false,
+      bridgingPhones: [],
+      note: "Only observed calls used.",
+      disclaimer: "Leads are decision support.",
+      isEmptyCut: false,
+    };
+
+    const html = renderToString(
+      <BreakView
+        caseId="C-927fc7de12"
+        people={[{ id: "PERSON:1", name: "Rashid Khan" }]}
+        breakVm={vm}
+      />
+    );
+
+    expect(html).toContain("Connects");
+    expect(html).toContain("Aslam Parvez &lt;-&gt; Suresh Pal");
+    expect(html).toContain("Clear");
+    expect(html).toContain("Each person in the cut links the pairs shown; not every person links every member.");
+    expect(html).toContain("hl=PERSON%3A1%2CPHONE%3A123");
+  });
+
+  it("parses highlight IDs from URL and handles storage fallback", () => {
+    const hl = parseHighlightIdsFromUrl("#/case/C-01/graph?select=P1&hl=P1,PHONE:123");
+    expect(hl).toEqual(["P1", "PHONE:123"]);
+
+    saveHighlightIds(["P1", "PHONE:456"]);
+    expect(getSavedHighlightIds()).toEqual(["P1", "PHONE:456"]);
+
+    saveHighlightIds(null);
+    expect(getSavedHighlightIds()).toEqual([]);
   });
 
   it("renders TimelineView with real timeline_day fixture without throwing", () => {

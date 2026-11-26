@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { request } from "../api/client.js";
 import { canAnalyze } from "../lib/roles.js";
-import { validateBreakGroups, buildBreakViewModel } from "./breakHelpers.js";
+import { validateBreakGroups, buildBreakViewModel, findBreakExamples } from "./breakHelpers.js";
+import { saveHighlightIds } from "./graphHelpers.js";
 
 export function Break({ caseId, user }) {
   const [people, setPeople] = useState([]);
@@ -13,6 +14,10 @@ export function Break({ caseId, user }) {
   const [filterTextB, setFilterTextB] = useState("");
   const [groupA, setGroupA] = useState([]);
   const [groupB, setGroupB] = useState([]);
+
+  // Examples state
+  const [examples, setExamples] = useState([]);
+  const [loadingExamples, setLoadingExamples] = useState(false);
 
   // Break analysis execution state
   const [running, setRunning] = useState(false);
@@ -39,6 +44,58 @@ export function Break({ caseId, user }) {
         setLoadingPeople(false);
       });
   }, [caseId, isAnalyst]);
+
+  // Lazily find examples once case individuals are loaded
+  useEffect(() => {
+    if (!caseId || !isAnalyst || people.length === 0) {
+      setExamples([]);
+      setLoadingExamples(false);
+      return;
+    }
+    let cancelled = false;
+    setLoadingExamples(true);
+
+    findBreakExamples(caseId, people, request, () => cancelled)
+      .then((found) => {
+        if (!cancelled) {
+          setExamples(found || []);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setExamples([]);
+        }
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setLoadingExamples(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [caseId, isAnalyst, people]);
+
+  function handleSelectExample(example) {
+    if (!example) return;
+    setClientError(null);
+    setServerError(null);
+    setGroupA(example.groupA || []);
+    setGroupB(example.groupB || []);
+    // Example buttons must only SELECT people: no analysis, no result shown.
+    setResultData(null);
+  }
+
+  function handleClear() {
+    setFilterTextA("");
+    setFilterTextB("");
+    setGroupA([]);
+    setGroupB([]);
+    setClientError(null);
+    setServerError(null);
+    setResultData(null);
+  }
 
   function handleToggleA(personId) {
     setClientError(null);
@@ -110,6 +167,10 @@ export function Break({ caseId, user }) {
       clientError={clientError}
       serverError={serverError}
       breakVm={breakVm}
+      examples={examples}
+      loadingExamples={loadingExamples}
+      onSelectExample={handleSelectExample}
+      onClear={handleClear}
     />
   );
 }
@@ -128,10 +189,14 @@ export function BreakView({
   onToggleA,
   onToggleB,
   onRunBreak,
+  onClear,
   running = false,
   clientError = null,
   serverError = null,
   breakVm = null,
+  examples = [],
+  loadingExamples = false,
+  onSelectExample,
 }) {
   const filteredA = useMemo(() => {
     const q = filterTextA.trim().toLowerCase();
@@ -172,6 +237,29 @@ export function BreakView({
 
       {!loadingPeople && (
         <div>
+          {/* Example Buttons */}
+          {loadingExamples && (
+            <div style={{ marginBottom: "12px", fontSize: "12px", color: "var(--muted)" }}>
+              Finding examples...
+            </div>
+          )}
+          {!loadingExamples && examples && examples.length > 0 && (
+            <div style={{ display: "flex", gap: "8px", marginBottom: "12px", flexWrap: "wrap", alignItems: "center" }}>
+              <span style={{ fontSize: "12px", fontWeight: "bold" }}>Try an example:</span>
+              {examples.map((ex, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className="secondary"
+                  style={{ fontSize: "11px", padding: "4px 8px" }}
+                  onClick={() => onSelectExample && onSelectExample(ex)}
+                >
+                  {ex.label}
+                </button>
+              ))}
+            </div>
+          )}
+
           {/* Two Group Selectors */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
             {/* Group A Box */}
@@ -301,7 +389,7 @@ export function BreakView({
             </div>
           )}
 
-          <div style={{ marginBottom: "20px" }}>
+          <div style={{ marginBottom: "20px", display: "flex", gap: "10px" }}>
             <button
               type="button"
               className="primary"
@@ -309,6 +397,14 @@ export function BreakView({
               disabled={running}
             >
               {running ? "Calculating Cut..." : "Run Break Analysis"}
+            </button>
+            <button
+              type="button"
+              className="secondary"
+              onClick={onClear}
+              disabled={running}
+            >
+              Clear
             </button>
           </div>
         </div>
@@ -382,26 +478,44 @@ export function BreakView({
                     <tr>
                       <th>Name</th>
                       <th>Person ID</th>
+                      <th>Connects</th>
                       <th style={{ width: "120px" }}>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {breakVm.cut.map((person) => (
-                      <tr key={person.person_id}>
-                        <td><strong>{person.name || "-"}</strong></td>
-                        <td className="mono">{person.person_id}</td>
-                        <td>
-                          <a
-                            href={`#/case/${caseId}/graph?select=${encodeURIComponent(person.person_id)}`}
-                            className="table-link"
-                          >
-                            Show on Graph
-                          </a>
-                        </td>
-                      </tr>
-                    ))}
+                    {breakVm.cut.map((person) => {
+                      const details = breakVm.cutDetails?.[person.person_id];
+                      const connectsPairs = details?.connects || [];
+                      const hlIds = details?.highlight_ids || [person.person_id];
+                      const hlParam = hlIds.length > 0 ? `&hl=${encodeURIComponent(hlIds.join(","))}` : "";
+                      return (
+                        <tr key={person.person_id}>
+                          <td><strong>{person.name || "-"}</strong></td>
+                          <td className="mono">{person.person_id}</td>
+                          <td style={{ fontSize: "11px", whiteSpace: "pre-line" }}>
+                            {connectsPairs.length > 0
+                              ? connectsPairs.map((c) => c.pair_text).join("\n")
+                              : "-"}
+                          </td>
+                          <td>
+                            <a
+                              href={`#/case/${caseId}/graph?select=${encodeURIComponent(person.person_id)}${hlParam}`}
+                              className="table-link"
+                              onClick={() => {
+                                saveHighlightIds(hlIds);
+                              }}
+                            >
+                              Show on Graph
+                            </a>
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
+                <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "6px" }}>
+                  Each person in the cut links the pairs shown; not every person links every member.
+                </div>
               </div>
 
               {/* Unowned Bridging Phones */}
@@ -427,20 +541,31 @@ export function BreakView({
               {/* Show on graph button */}
               {breakVm.cut.length > 0 && (
                 <div style={{ marginTop: "12px" }}>
-                  <a
-                    href={`#/case/${caseId}/graph?select=${encodeURIComponent(breakVm.cut[0].person_id)}`}
-                    className="table-link"
-                    style={{
-                      display: "inline-block",
-                      padding: "6px 12px",
-                      backgroundColor: "var(--accent)",
-                      color: "var(--surface)",
-                      textDecoration: "none",
-                      borderRadius: "2px",
-                    }}
-                  >
-                    Show on graph
-                  </a>
+                  {(() => {
+                    const firstPerson = breakVm.cut[0];
+                    const details = breakVm.cutDetails?.[firstPerson.person_id];
+                    const hlIds = details?.highlight_ids || [firstPerson.person_id];
+                    const hlParam = hlIds.length > 0 ? `&hl=${encodeURIComponent(hlIds.join(","))}` : "";
+                    return (
+                      <a
+                        href={`#/case/${caseId}/graph?select=${encodeURIComponent(firstPerson.person_id)}${hlParam}`}
+                        className="table-link"
+                        style={{
+                          display: "inline-block",
+                          padding: "6px 12px",
+                          backgroundColor: "var(--accent)",
+                          color: "var(--surface)",
+                          textDecoration: "none",
+                          borderRadius: "2px",
+                        }}
+                        onClick={() => {
+                          saveHighlightIds(hlIds);
+                        }}
+                      >
+                        Show on graph
+                      </a>
+                    );
+                  })()}
                 </div>
               )}
             </div>

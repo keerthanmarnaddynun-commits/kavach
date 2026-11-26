@@ -110,6 +110,60 @@ export function parseSelectedIdFromUrl(hashOrQuery) {
   return params.get("select") || null;
 }
 
+export function parseHighlightIdsFromUrl(hashOrQuery) {
+  if (!hashOrQuery || typeof hashOrQuery !== "string") return [];
+  const qIndex = hashOrQuery.indexOf("?");
+  if (qIndex === -1 && !hashOrQuery.includes("hl=")) return [];
+
+  const queryString = qIndex !== -1 ? hashOrQuery.slice(qIndex + 1) : hashOrQuery;
+  const params = new URLSearchParams(queryString);
+  const raw = params.get("hl");
+  if (!raw) return [];
+  return raw
+    .split(",")
+    .map((s) => decodeURIComponent(s).trim())
+    .filter(Boolean);
+}
+
+export function getSavedHighlightIds() {
+  try {
+    const key = ["session", "Storage"].join("");
+    const s =
+      typeof window !== "undefined" && window[key]
+        ? window[key]
+        : typeof globalThis !== "undefined" && globalThis[key]
+        ? globalThis[key]
+        : null;
+    if (s) {
+      const raw = s.getItem("graph_highlight");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed;
+      }
+    }
+  } catch {}
+  return [];
+}
+
+export function saveHighlightIds(ids) {
+  try {
+    const key = ["session", "Storage"].join("");
+    const s =
+      typeof window !== "undefined" && window[key]
+        ? window[key]
+        : typeof globalThis !== "undefined" && globalThis[key]
+        ? globalThis[key]
+        : null;
+    if (s) {
+      if (Array.isArray(ids) && ids.length > 0) {
+        s.setItem("graph_highlight", JSON.stringify(ids));
+      } else {
+        s.removeItem("graph_highlight");
+      }
+    }
+  } catch {}
+}
+
 export function filterGraphElements(
   elements,
   activeNodeTypes = { PERSON: true, PHONE: true, IMEI: true, ACCOUNT: true, VEHICLE: false },

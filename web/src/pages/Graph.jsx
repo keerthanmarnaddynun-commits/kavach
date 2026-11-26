@@ -7,6 +7,9 @@ import {
   getEdgeWidth,
   getNodeLabelVisibilityMap,
   parseSelectedIdFromUrl,
+  parseHighlightIdsFromUrl,
+  getSavedHighlightIds,
+  saveHighlightIds,
   filterGraphElements,
   splitExcerptHighlight,
   getIsolatedNodeIds,
@@ -122,6 +125,45 @@ export function getCytoscapeStyles() {
         width: 3,
       },
     },
+    {
+      selector: "node.highlighted",
+      style: {
+        "border-color": accent,
+        "border-width": 3,
+        opacity: 1,
+        "min-zoomed-font-size": 0,
+        "font-weight": "bold",
+      },
+    },
+    {
+      selector: "node.dimmed",
+      style: {
+        opacity: 0.15,
+      },
+    },
+    {
+      selector: "edge.highlighted",
+      style: {
+        label: "data(label)",
+        "font-size": "10px",
+        color: accent,
+        opacity: 1,
+        width: 3,
+        "line-color": accent,
+        "target-arrow-color": accent,
+        "curve-style": "bezier",
+        "text-rotation": "autorotate",
+        "text-background-color": surface,
+        "text-background-opacity": 0.9,
+        "text-background-padding": 2,
+      },
+    },
+    {
+      selector: "edge.dimmed",
+      style: {
+        opacity: 0.05,
+      },
+    },
   ];
 }
 
@@ -155,6 +197,10 @@ export function Graph({ caseId, route }) {
   const selectedItemRef = useRef(selectedItem);
   selectedItemRef.current = selectedItem;
   const lastAppliedUrlSelectRef = useRef(null);
+  const [isHighlighted, setIsHighlighted] = useState(false);
+  const lastAppliedHighlightRef = useRef(null);
+  const lastSeenRouteRef = useRef(null);
+  const highlightClearedRef = useRef(false);
   const [inspectorData, setInspectorData] = useState(null);
   const [inspectorLoading, setInspectorLoading] = useState(false);
   const [inspectorCollapsed, setInspectorCollapsed] = useState(false);
@@ -163,6 +209,9 @@ export function Graph({ caseId, route }) {
   useEffect(() => {
     if (!caseId) return;
     lastAppliedUrlSelectRef.current = null;
+    lastAppliedHighlightRef.current = null;
+    highlightClearedRef.current = false;
+    setIsHighlighted(false);
     setSelectedItem(null);
     setInspectorData(null);
     setInspectorCollapsed(false);
@@ -358,37 +407,111 @@ export function Graph({ caseId, route }) {
       } else {
         updateSelection(null);
       }
-    } else {
-      // Initial load URL parameter check
-      const currentUrlSelect = parseSelectedIdFromUrl(route || (typeof window !== "undefined" ? window.location.hash : ""));
-      if (currentUrlSelect && currentUrlSelect !== lastAppliedUrlSelectRef.current) {
-        lastAppliedUrlSelectRef.current = currentUrlSelect;
-        const targetNode = cy.getElementById(currentUrlSelect);
-        if (targetNode.length > 0) {
-          targetNode.select();
-          cy.center(targetNode);
-          selectNode(targetNode);
-        }
-      }
     }
   }, [loading, filteredElements, topLeadIds]);
 
-  // Dynamic URL selection change if route hash changes while Graph is mounted
+  // Auto-adjust filters so selected or highlighted nodes become visible
   useEffect(() => {
-    if (!cyRef.current || loading) return;
-    const currentUrlSelect = parseSelectedIdFromUrl(route || (typeof window !== "undefined" ? window.location.hash : ""));
-    if (currentUrlSelect && currentUrlSelect !== lastAppliedUrlSelectRef.current) {
-      lastAppliedUrlSelectRef.current = currentUrlSelect;
-      const targetNode = cyRef.current.getElementById(currentUrlSelect);
-      if (targetNode.length > 0) {
-        cyRef.current.nodes().unselect();
-        cyRef.current.edges().unselect();
-        targetNode.select();
-        cyRef.current.center(targetNode);
-        selectNode(targetNode);
+    if (!rawElements || !rawElements.nodes) return;
+    const hashOrRoute = route || (typeof window !== "undefined" ? window.location.hash : "");
+    const selectId = parseSelectedIdFromUrl(hashOrRoute);
+    const hlFromUrl = parseHighlightIdsFromUrl(hashOrRoute);
+    const hlIds = hlFromUrl.length > 0 ? hlFromUrl : getSavedHighlightIds();
+
+    const idsToCheck = [selectId, ...hlIds].filter(Boolean);
+    if (idsToCheck.length === 0) return;
+
+    const idSet = new Set(idsToCheck);
+    const rawNodes = rawElements.nodes || [];
+    const matchedRawNodes = rawNodes.filter((n) => idSet.has(n.data && n.data.id));
+    if (matchedRawNodes.length === 0) return;
+
+    if (leadsOnly) {
+      const topSet = new Set(topLeadIds);
+      const hasNonLead = matchedRawNodes.some((n) => !topSet.has(n.data && n.data.id));
+      if (hasNonLead) {
+        setLeadsOnly(false);
       }
     }
-  }, [route, loading, filteredElements]);
+
+    let typesChanged = false;
+    const updatedTypes = { ...nodeTypes };
+    for (const n of matchedRawNodes) {
+      const t = n.data && n.data.type;
+      if (t && updatedTypes[t] === false) {
+        updatedTypes[t] = true;
+        typesChanged = true;
+      }
+    }
+    if (typesChanged) {
+      setNodeTypes(updatedTypes);
+    }
+
+    if (!showIsolated) {
+      const isolatedIds = new Set(getIsolatedNodeIds(rawNodes, rawElements.edges || []));
+      const hasIsolated = matchedRawNodes.some((n) => isolatedIds.has(n.data && n.data.id));
+      if (hasIsolated) {
+        setShowIsolated(true);
+      }
+    }
+  }, [route, rawElements, topLeadIds, leadsOnly, showIsolated, nodeTypes]);
+
+  // Synchronize URL selection and highlight to Cytoscape instance
+  useEffect(() => {
+    if (!cyRef.current || loading || !rawElements) return;
+    const cy = cyRef.current;
+    const hashOrRoute = route || (typeof window !== "undefined" ? window.location.hash : "");
+
+    // Reset clear state if route has changed
+    if (hashOrRoute !== lastSeenRouteRef.current) {
+      lastSeenRouteRef.current = hashOrRoute;
+      highlightClearedRef.current = false;
+    }
+
+    const selectId = parseSelectedIdFromUrl(hashOrRoute);
+    const hlFromUrl = parseHighlightIdsFromUrl(hashOrRoute);
+    const hlIds = hlFromUrl.length > 0 ? hlFromUrl : getSavedHighlightIds();
+
+    // 1. Apply Highlighting if hlIds present and not manually cleared
+    if (hlIds && hlIds.length > 0 && !highlightClearedRef.current) {
+      const hlKey = hlIds.join(",");
+      const hlSet = new Set(hlIds);
+      cy.batch(() => {
+        cy.nodes().forEach((n) => {
+          if (hlSet.has(n.id())) {
+            n.addClass("highlighted").removeClass("dimmed");
+          } else {
+            n.addClass("dimmed").removeClass("highlighted");
+          }
+        });
+        cy.edges().forEach((e) => {
+          const src = e.data("source");
+          const tgt = e.data("target");
+          if (hlSet.has(e.id()) || (hlSet.has(src) && hlSet.has(tgt))) {
+            e.addClass("highlighted").removeClass("dimmed");
+          } else {
+            e.addClass("dimmed").removeClass("highlighted");
+          }
+        });
+      });
+      setIsHighlighted(true);
+      lastAppliedHighlightRef.current = hlKey;
+    }
+
+    // 2. Apply Node Selection if selectId present
+    if (selectId) {
+      const targetNode = cy.getElementById(selectId);
+      if (targetNode.length > 0) {
+        cy.nodes().unselect();
+        cy.edges().unselect();
+        targetNode.select();
+        cy.center(targetNode);
+        selectNode(targetNode);
+        setInspectorCollapsed(false);
+        lastAppliedUrlSelectRef.current = selectId;
+      }
+    }
+  }, [route, loading, rawElements, filteredElements]);
 
   // Label policy update via Cytoscape classes
   useEffect(() => {
@@ -548,6 +671,18 @@ export function Graph({ caseId, route }) {
     }
   }
 
+  function handleClearHighlight() {
+    if (cyRef.current) {
+      cyRef.current.batch(() => {
+        cyRef.current.elements().removeClass("highlighted dimmed");
+      });
+    }
+    saveHighlightIds(null);
+    setIsHighlighted(false);
+    highlightClearedRef.current = true;
+    lastAppliedHighlightRef.current = null;
+  }
+
   return (
     <div className="graph-page" style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", minWidth: 0, overflow: "hidden" }}>
       {/* Top Filter & Toolbar */}
@@ -620,7 +755,24 @@ export function Graph({ caseId, route }) {
         </form>
 
         {/* Controls */}
-        <div style={{ display: "flex", gap: "6px", marginLeft: "auto" }}>
+        <div style={{ display: "flex", gap: "6px", marginLeft: "auto", alignItems: "center" }}>
+          {isHighlighted && (
+            <button
+              type="button"
+              onClick={handleClearHighlight}
+              style={{
+                fontSize: "11px",
+                padding: "2px 8px",
+                backgroundColor: "var(--accent-weak)",
+                color: "var(--accent)",
+                borderColor: "var(--accent)",
+                fontWeight: "600",
+                cursor: "pointer",
+              }}
+            >
+              Clear highlight
+            </button>
+          )}
           <button type="button" onClick={() => runLayout()} disabled={layoutRunning}>
             Re-layout
           </button>
@@ -1107,3 +1259,4 @@ export function EdgeInspectorView({ caseId, selectedItem, data = {}, onNeighbour
 }
 
 export default Graph;
+
