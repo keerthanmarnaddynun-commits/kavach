@@ -466,5 +466,23 @@ export function setStoredSidebarCollapsed(collapsed, storage = null) {
   }
 }
 
+/**
+ * Format human-readable status for active first FIR highlight.
+ * @param {object} firstFir
+ * @returns {string|null}
+ */
+export function formatFirstFirHighlightStatus(firstFir) {
+  if (!firstFir || !firstFir.first_fir_id) return null;
+  const count = Array.isArray(firstFir.related_entities) ? firstFir.related_entities.length : 0;
+  if (count === 0) return null;
+  const countText = count === 1 ? "1 entity" : `${count} entities`;
+  const firId = String(firstFir.first_fir_id).trim();
+  const firLabel = firId.toUpperCase().startsWith("FIR")
+    ? firId.replace(/^FIR_?/i, "FIR ")
+    : `FIR ${firId}`;
+  return `Highlighting ${countText} from ${firLabel}`;
+}
+
+
 
 

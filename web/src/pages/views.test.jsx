@@ -21,6 +21,7 @@ import {
   parseHighlightIdsFromUrl,
   saveHighlightIds,
   getSavedHighlightIds,
+  formatFirstFirHighlightStatus,
 } from "./graphHelpers.js";
 
 // Import Real Fixtures
@@ -283,6 +284,86 @@ describe("Render Smoke Tests (Repair 1)", () => {
     expect(html).toContain("First seen in records");
     expect(html).toContain("ACCT_200");
     expect(html).toContain("#/case/C-01/evidence/rows/bank?rows=5&amp;highlight=ACCT_100");
+  });
+
+  it("formats first FIR highlight status message properly", () => {
+    expect(formatFirstFirHighlightStatus(null)).toBeNull();
+    expect(formatFirstFirHighlightStatus({})).toBeNull();
+    expect(formatFirstFirHighlightStatus({ first_fir_id: "FIR_005", related_entities: [] })).toBeNull();
+    expect(
+      formatFirstFirHighlightStatus({
+        first_fir_id: "FIR_005",
+        related_entities: [{ id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }],
+      })
+    ).toBe("Highlighting 4 entities from FIR 005");
+    expect(
+      formatFirstFirHighlightStatus({
+        first_fir_id: "FIR_01",
+        related_entities: [{ id: "1" }],
+      })
+    ).toBe("Highlighting 1 entity from FIR 01");
+  });
+
+  it("renders NodeInspectorView with Highlight active button and status message when FIR highlight is active", () => {
+    const selectedItem = {
+      type: "node",
+      id: "PERSON:1",
+      data: { id: "PERSON:1", label: "John Doe", type: "PERSON" },
+    };
+    const nodeData = {
+      node_id: "PERSON:1",
+      first_fir: {
+        first_fir_id: "FIR_005",
+        date: "2026-01-05",
+        related_entities: [{ id: "PHONE:1", label: "9899112233", relation: "OWNS_DEVICE" }],
+        other_entities: [{ id: "PERSON:2", label: "Jane Doe", type: "PERSON" }],
+      },
+    };
+
+    const html = renderToString(
+      <NodeInspectorView
+        caseId="C-01"
+        selectedItem={selectedItem}
+        data={nodeData}
+        isHighlighted={true}
+        highlightStatus="Highlighting 1 entity from FIR 005"
+        onNeighbourClick={() => {}}
+      />
+    );
+
+    expect(html).toContain("Highlight active");
+    expect(html).toContain("Highlighting 1 entity from FIR 005");
+    expect(html).toContain("9899112233");
+    expect(html).toContain("Jane Doe");
+  });
+
+  it("renders NodeInspectorView with disabled No linked entities button when related_entities is empty", () => {
+    const selectedItem = {
+      type: "node",
+      id: "PERSON:1",
+      data: { id: "PERSON:1", label: "John Doe", type: "PERSON" },
+    };
+    const nodeData = {
+      node_id: "PERSON:1",
+      first_fir: {
+        first_fir_id: "FIR_005",
+        date: "2026-01-05",
+        related_entities: [],
+        other_entities: [],
+      },
+    };
+
+    const html = renderToString(
+      <NodeInspectorView
+        caseId="C-01"
+        selectedItem={selectedItem}
+        data={nodeData}
+        onNeighbourClick={() => {}}
+      />
+    );
+
+    expect(html).toContain("No linked entities");
+    expect(html).not.toContain("Show first FIR mention");
   });
 
   it("renders EdgeInspectorView with real edge_detail_fir fixture without throwing", () => {

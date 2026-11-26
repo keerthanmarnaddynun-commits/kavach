@@ -21,6 +21,7 @@ import {
   formatInspectorError,
   isSelectedItemVisible,
   getMatchingInspectorData,
+  formatFirstFirHighlightStatus,
 } from "./graphHelpers.js";
 
 // Register fcose layout plugin once
@@ -231,6 +232,7 @@ export function Graph({ caseId, route }) {
   const lastAppliedUrlSelectRef = useRef(null);
   const [isHighlighted, setIsHighlighted] = useState(false);
   const [highlightLegend, setHighlightLegend] = useState(null);
+  const [highlightStatus, setHighlightStatus] = useState(null);
   const lastAppliedHighlightRef = useRef(null);
   const lastSeenRouteRef = useRef(null);
   const highlightClearedRef = useRef(false);
@@ -245,6 +247,7 @@ export function Graph({ caseId, route }) {
     lastAppliedHighlightRef.current = null;
     highlightClearedRef.current = false;
     setIsHighlighted(false);
+    setHighlightStatus(null);
     setSelectedItem(null);
     setInspectorData(null);
     setInspectorCollapsed(false);
@@ -351,6 +354,9 @@ export function Graph({ caseId, route }) {
     });
 
     cyRef.current = cy;
+    if (typeof window !== "undefined") {
+      window.cy = cy;
+    }
 
     // Event listeners bound ONCE to lifetime instance
     cy.on("tap", "node", (evt) => {
@@ -370,6 +376,9 @@ export function Graph({ caseId, route }) {
     return () => {
       cy.destroy();
       cyRef.current = null;
+      if (typeof window !== "undefined" && window.cy === cy) {
+        window.cy = null;
+      }
     };
   }, []);
 
@@ -709,11 +718,27 @@ export function Graph({ caseId, route }) {
   // Handle selecting a neighbour node
   function handleNeighbourClick(neighbourId) {
     if (!cyRef.current) return;
-    const target = cyRef.current.getElementById(neighbourId);
+    const resolved = (rawElements && rawElements.nodes ? resolveNodeId(rawElements.nodes, neighbourId) : null) || neighbourId;
+    if (rawElements && rawElements.nodes) {
+      const adj = computeAdjustedFiltersForNode({
+        targetNodeId: resolved,
+        rawNodes: rawElements.nodes,
+        rawEdges: rawElements.edges || [],
+        currentLeadsOnly: leadsOnly,
+        currentShowIsolated: showIsolated,
+        currentNodeTypes: nodeTypes,
+      });
+      if (adj.changed) {
+        if (adj.leadsOnly !== leadsOnly) setLeadsOnly(adj.leadsOnly);
+        if (adj.showIsolated !== showIsolated) setShowIsolated(adj.showIsolated);
+        if (adj.nodeTypes !== nodeTypes) setNodeTypes(adj.nodeTypes);
+      }
+    }
+    const target = cyRef.current.getElementById(resolved);
     if (target.length > 0) {
       cyRef.current.nodes().unselect();
       target.select();
-      cy.center(target);
+      cyRef.current.center(target);
       setSelectedItem({ type: "node", id: target.id(), data: target.data() });
       setInspectorCollapsed(false);
     }
@@ -774,22 +799,46 @@ export function Graph({ caseId, route }) {
       });
     });
 
+    const highlightedNodes = cy.nodes(".highlighted, .highlighted-record");
+    if (highlightedNodes.length > 1) {
+      cy.fit(highlightedNodes, 60);
+    } else if (highlightedNodes.length === 1) {
+      cy.center(highlightedNodes);
+    }
+
     setIsHighlighted(true);
     setHighlightLegend({
-      hasFir: Boolean(firstFir && firstFir.first_fir_id),
-      hasRecord: Boolean(firstRecord && firstRecord.timestamp),
+      hasFir: Boolean(firstFir && firstFir.first_fir_id && firGroup.length > 0),
+      hasRecord: Boolean(firstRecord && firstRecord.timestamp && recordCounterpartIds.length > 0),
       recordTimestamp: firstRecord ? firstRecord.timestamp : null,
     });
+
+    const statusText = formatFirstFirHighlightStatus(firstFir);
+    setHighlightStatus(statusText);
   };
 
-  // Ensure counterpart nodes from first_record are made visible
+  // Ensure counterpart nodes from first_record and related entities from first_fir are made visible
   useEffect(() => {
     if (!inspectorData || !rawElements || !rawElements.nodes) return;
+    const targetNodeIds = [];
     const firstRecord = inspectorData.first_record;
-    if (!firstRecord || !Array.isArray(firstRecord.counterparts) || firstRecord.counterparts.length === 0) return;
-    const cpIds = firstRecord.counterparts.map((cp) => resolveNodeId(rawElements.nodes, cp) || cp);
+    if (firstRecord && Array.isArray(firstRecord.counterparts)) {
+      for (const cp of firstRecord.counterparts) {
+        targetNodeIds.push(resolveNodeId(rawElements.nodes, cp) || cp);
+      }
+    }
+    const firstFir = inspectorData.first_fir;
+    if (firstFir && Array.isArray(firstFir.related_entities)) {
+      for (const rel of firstFir.related_entities) {
+        if (rel.id) {
+          targetNodeIds.push(resolveNodeId(rawElements.nodes, rel.id) || rel.id);
+        }
+      }
+    }
+    if (targetNodeIds.length === 0) return;
+
     const adj = computeAdjustedFiltersForNodes({
-      targetNodeIds: cpIds,
+      targetNodeIds,
       rawNodes: rawElements.nodes,
       rawEdges: rawElements.edges || [],
       currentLeadsOnly: leadsOnly,
@@ -834,6 +883,7 @@ export function Graph({ caseId, route }) {
     saveHighlightIds(null);
     setIsHighlighted(false);
     setHighlightLegend(null);
+    setHighlightStatus(null);
     highlightClearedRef.current = true;
     lastAppliedHighlightRef.current = null;
     lastAppliedEvidenceRef.current = null;
@@ -914,18 +964,28 @@ export function Graph({ caseId, route }) {
         <div style={{ display: "flex", gap: "6px", marginLeft: "auto", alignItems: "center" }}>
           {isHighlighted && (
             <div style={{ display: "flex", gap: "8px", alignItems: "center", marginRight: "4px" }}>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "11px" }}>
-                <span style={{ width: "10px", height: "10px", backgroundColor: "var(--accent)", borderRadius: "2px", display: "inline-block" }} />
-                <span>First FIR mention</span>
-              </span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "11px" }}>
-                <span style={{ width: "10px", height: "10px", backgroundColor: "var(--record-accent)", borderRadius: "2px", display: "inline-block" }} />
-                <span>
-                  {highlightLegend && highlightLegend.recordTimestamp
-                    ? `First seen in records: ${highlightLegend.recordTimestamp}`
-                    : "First seen in records"}
+              {highlightLegend?.hasFir && (
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "11px" }}>
+                  <span style={{ width: "10px", height: "10px", backgroundColor: "var(--accent)", borderRadius: "2px", display: "inline-block" }} />
+                  <span>First FIR mention</span>
                 </span>
-              </span>
+              )}
+              {highlightLegend?.hasRecord && (
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "11px" }}>
+                  <span style={{ width: "10px", height: "10px", backgroundColor: "var(--record-accent)", borderRadius: "2px", display: "inline-block" }} />
+                  <span>
+                    {highlightLegend.recordTimestamp
+                      ? `First seen in records: ${highlightLegend.recordTimestamp}`
+                      : "First seen in records"}
+                  </span>
+                </span>
+              )}
+              {(!highlightLegend || (!highlightLegend.hasFir && !highlightLegend.hasRecord)) && (
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", fontSize: "11px" }}>
+                  <span style={{ width: "10px", height: "10px", backgroundColor: "var(--accent)", borderRadius: "2px", display: "inline-block" }} />
+                  <span>Highlighted path</span>
+                </span>
+              )}
               <button
                 type="button"
                 onClick={handleClearHighlight}
@@ -1025,6 +1085,8 @@ export function Graph({ caseId, route }) {
           onNeighbourClick={handleNeighbourClick}
           onShowFirstFir={handleShowEvidenceHighlight}
           onShowEvidenceHighlight={handleShowEvidenceHighlight}
+          highlightStatus={highlightStatus}
+          isHighlighted={isHighlighted}
         />
       </div>
     </div>
@@ -1041,6 +1103,8 @@ export function GraphInspectorAside({
   onNeighbourClick,
   onShowFirstFir,
   onShowEvidenceHighlight,
+  highlightStatus = null,
+  isHighlighted = false,
 }) {
   if (!selectedItem) return null;
 
@@ -1125,6 +1189,8 @@ export function GraphInspectorAside({
               onNeighbourClick={onNeighbourClick}
               onShowFirstFir={onShowFirstFir}
               onShowEvidenceHighlight={onShowEvidenceHighlight}
+              highlightStatus={highlightStatus}
+              isHighlighted={isHighlighted}
             />
           )}
         </div>
@@ -1141,6 +1207,8 @@ function InspectorContent({
   onNeighbourClick,
   onShowFirstFir,
   onShowEvidenceHighlight,
+  highlightStatus = null,
+  isHighlighted = false,
 }) {
   const matchingData = getMatchingInspectorData(data, selectedItem?.id);
   if (itemType === "node") {
@@ -1152,6 +1220,8 @@ function InspectorContent({
         onNeighbourClick={onNeighbourClick}
         onShowFirstFir={onShowFirstFir}
         onShowEvidenceHighlight={onShowEvidenceHighlight}
+        highlightStatus={highlightStatus}
+        isHighlighted={isHighlighted}
       />
     );
   }
@@ -1172,6 +1242,8 @@ export function NodeInspectorView({
   onNeighbourClick,
   onShowFirstFir,
   onShowEvidenceHighlight,
+  highlightStatus = null,
+  isHighlighted = false,
 }) {
   const rawData = (selectedItem && selectedItem.data) || {};
   const firEvidence = data.fir_evidence || [];
@@ -1182,6 +1254,8 @@ export function NodeInspectorView({
 
   const hasFir = Boolean(firstFir && firstFir.first_fir_id);
   const hasRecord = Boolean(firstRecord && firstRecord.timestamp);
+  const relatedCount = Array.isArray(firstFir?.related_entities) ? firstFir.related_entities.length : 0;
+  const isFirHighlightActive = isHighlighted && Boolean(highlightStatus);
 
   // Visual Fix 6: Extractor confidence calculation
   let confidence = "not recorded";
@@ -1228,137 +1302,260 @@ export function NodeInspectorView({
               border: "1px solid var(--border)",
               fontSize: "11px",
               color: "var(--muted)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            Not mentioned in any FIR and no activity in the records
+            <span>Not mentioned in any FIR and no activity in the records</span>
+            <button
+              type="button"
+              disabled
+              style={{
+                fontSize: "10px",
+                padding: "2px 6px",
+                opacity: 0.6,
+                cursor: "not-allowed",
+              }}
+              title="Not mentioned in any FIR"
+            >
+              Not mentioned in any FIR
+            </button>
           </div>
         </div>
       ) : (
         <>
           {/* First FIR Mention */}
-          <div>
-            <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
-              First FIR Mention
+      <div>
+        <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
+          First FIR Mention
+        </div>
+        {hasFir ? (
+          <div
+            style={{
+              padding: "8px",
+              backgroundColor: "var(--bg)",
+              border: "1px solid var(--border)",
+              fontSize: "11px",
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+              <span>
+                First FIR mention:{" "}
+                <a
+                  href={`#/case/${caseId}/evidence/doc/${firstFir.first_fir_id}`}
+                  className="mono table-link"
+                >
+                  {firstFir.first_fir_id.startsWith("FIR") ? firstFir.first_fir_id : `FIR ${firstFir.first_fir_id}`}
+                </a>
+                {firstFir.date && (
+                  <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
+                    ({firstFir.date})
+                  </span>
+                )}
+              </span>
+              {relatedCount === 0 ? (
+                <button
+                  type="button"
+                  disabled
+                  style={{
+                    fontSize: "10px",
+                    padding: "2px 6px",
+                    opacity: 0.6,
+                    cursor: "not-allowed",
+                  }}
+                  title="No linked entities in this FIR"
+                >
+                  No linked entities
+                </button>
+              ) : isFirHighlightActive ? (
+                <button
+                  type="button"
+                  disabled
+                  style={{
+                    fontSize: "10px",
+                    padding: "2px 6px",
+                    backgroundColor: "var(--accent-weak)",
+                    color: "var(--accent)",
+                    border: "1px solid var(--accent)",
+                    fontWeight: "600",
+                    cursor: "default",
+                  }}
+                >
+                  Highlight active
+                </button>
+              ) : (
+                (onShowEvidenceHighlight || onShowFirstFir) && (
+                  <button
+                    type="button"
+                    onClick={onShowEvidenceHighlight || onShowFirstFir}
+                    style={{
+                      fontSize: "10px",
+                      padding: "2px 6px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Show first FIR mention
+                  </button>
+                )
+              )}
             </div>
-            {hasFir ? (
+
+            {/* One-line status in the panel */}
+            {isFirHighlightActive && highlightStatus && (
               <div
                 style={{
-                  padding: "8px",
-                  backgroundColor: "var(--bg)",
-                  border: "1px solid var(--border)",
                   fontSize: "11px",
+                  color: "var(--accent)",
+                  fontWeight: "600",
+                  marginBottom: "6px",
                 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                  <span>
-                    First FIR mention:{" "}
-                    <a
-                      href={`#/case/${caseId}/evidence/doc/${firstFir.first_fir_id}`}
-                      className="mono table-link"
-                    >
-                      {firstFir.first_fir_id.startsWith("FIR") ? firstFir.first_fir_id : `FIR ${firstFir.first_fir_id}`}
-                    </a>
-                    {firstFir.date && (
-                      <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
-                        ({firstFir.date})
-                      </span>
-                    )}
-                  </span>
-                  {(onShowEvidenceHighlight || onShowFirstFir) && (
-                    <button
-                      type="button"
-                      onClick={onShowEvidenceHighlight || onShowFirstFir}
-                      style={{
-                        fontSize: "10px",
-                        padding: "2px 6px",
-                        cursor: "pointer",
-                      }}
-                    >
-                      Show first FIR mention
-                    </button>
-                  )}
-                </div>
-
-                {/* Group (a) Related Entities */}
-                {firstFir.related_entities && firstFir.related_entities.length > 0 && (
-                  <div style={{ marginTop: "6px" }}>
-                    <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "2px" }}>
-                      Related in this FIR:
-                    </div>
-                    <ul style={{ margin: 0, paddingLeft: "16px" }}>
-                      {firstFir.related_entities.map((relEnt, idx) => (
-                        <li key={idx} style={{ marginBottom: "2px" }}>
-                          <span className="mono">{relEnt.label || relEnt.id}</span>
-                          <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
-                            ({relEnt.relation})
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Group (b) Other Entities (collapsed by default) */}
-                {firstFir.other_entities && firstFir.other_entities.length > 0 && (
-                  <details style={{ marginTop: "6px" }}>
-                    <summary style={{ cursor: "pointer", color: "var(--muted)", fontSize: "10px" }}>
-                      {`Also mentioned in this FIR (${firstFir.other_entities.length})`}
-                    </summary>
-                    <ul style={{ margin: "4px 0 0 0", paddingLeft: "16px", fontSize: "10px" }}>
-                      {firstFir.other_entities.map((oth, idx) => (
-                        <li key={idx} style={{ marginBottom: "2px" }}>
-                          <span className="mono">{oth.label || oth.id}</span>
-                          <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
-                            ({oth.type})
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                )}
-              </div>
-            ) : (
-              <div style={{ fontSize: "11px", color: "var(--muted)" }}>
-                Not mentioned in any FIR
+                {highlightStatus}
               </div>
             )}
-          </div>
 
-          {/* First Seen in Records */}
-          <div>
-            <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
-              First seen in records
-            </div>
-            {hasRecord ? (
-              <div
-                style={{
-                  padding: "8px",
-                  backgroundColor: "var(--bg)",
-                  border: "1px solid var(--border)",
-                  fontSize: "11px",
-                }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                  <span>
-                    First seen in records:{" "}
-                    <span className="mono" style={{ fontWeight: "600" }}>
-                      {firstRecord.timestamp}
-                    </span>
-                  </span>
-                  {(onShowEvidenceHighlight || onShowFirstFir) && (
-                    <button
-                      type="button"
-                      onClick={onShowEvidenceHighlight || onShowFirstFir}
-                      style={{
-                        fontSize: "10px",
-                        padding: "2px 6px",
-                        cursor: "pointer",
-                      }}
-                    >
-                      Highlight in graph
-                    </button>
-                  )}
+            {/* Group (a) Related Entities */}
+            {firstFir.related_entities && firstFir.related_entities.length > 0 && (
+              <div style={{ marginTop: "6px" }}>
+                <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "2px" }}>
+                  Related in this FIR:
                 </div>
+                <ul style={{ margin: 0, paddingLeft: "16px" }}>
+                  {firstFir.related_entities.map((relEnt, idx) => (
+                    <li key={idx} style={{ marginBottom: "2px" }}>
+                      {onNeighbourClick ? (
+                        <button
+                          type="button"
+                          className="table-link"
+                          style={{
+                            background: "none",
+                            border: "none",
+                            padding: 0,
+                            cursor: "pointer",
+                            textAlign: "left",
+                            fontSize: "11px",
+                          }}
+                          onClick={() => onNeighbourClick(relEnt.id)}
+                        >
+                          <span className="mono">{relEnt.label || relEnt.id}</span>
+                        </button>
+                      ) : (
+                        <span className="mono">{relEnt.label || relEnt.id}</span>
+                      )}
+                      <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
+                        ({relEnt.relation})
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Group (b) Other Entities (collapsed by default) */}
+            {firstFir.other_entities && firstFir.other_entities.length > 0 && (
+              <details style={{ marginTop: "6px" }}>
+                <summary style={{ cursor: "pointer", color: "var(--muted)", fontSize: "10px" }}>
+                  {`Also mentioned in this FIR (${firstFir.other_entities.length})`}
+                </summary>
+                <ul style={{ margin: "4px 0 0 0", paddingLeft: "16px", fontSize: "10px" }}>
+                  {firstFir.other_entities.map((oth, idx) => (
+                    <li key={idx} style={{ marginBottom: "2px" }}>
+                      {onNeighbourClick ? (
+                        <button
+                          type="button"
+                          className="table-link"
+                          style={{
+                            background: "none",
+                            border: "none",
+                            padding: 0,
+                            cursor: "pointer",
+                            textAlign: "left",
+                            fontSize: "10px",
+                          }}
+                          onClick={() => onNeighbourClick(oth.id)}
+                        >
+                          <span className="mono">{oth.label || oth.id}</span>
+                        </button>
+                      ) : (
+                        <span className="mono">{oth.label || oth.id}</span>
+                      )}
+                      <span style={{ color: "var(--muted)", marginLeft: "4px" }}>
+                        ({oth.type})
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </div>
+        ) : (
+          <div
+            style={{
+              padding: "8px",
+              backgroundColor: "var(--bg)",
+              border: "1px solid var(--border)",
+              fontSize: "11px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <span style={{ color: "var(--muted)" }}>Not mentioned in any FIR</span>
+            <button
+              type="button"
+              disabled
+              style={{
+                fontSize: "10px",
+                padding: "2px 6px",
+                opacity: 0.6,
+                cursor: "not-allowed",
+              }}
+              title="Not mentioned in any FIR"
+            >
+              Not mentioned in any FIR
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* First Seen in Records */}
+      <div>
+        <div style={{ color: "var(--muted)", fontSize: "10px", marginBottom: "4px" }}>
+          First seen in records
+        </div>
+        {hasRecord ? (
+          <div
+            style={{
+              padding: "8px",
+              backgroundColor: "var(--bg)",
+              border: "1px solid var(--border)",
+              fontSize: "11px",
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+              <span>
+                First seen in records:{" "}
+                <span className="mono" style={{ fontWeight: "600" }}>
+                  {firstRecord.timestamp}
+                </span>
+              </span>
+              {(onShowEvidenceHighlight || onShowFirstFir) && (
+                <button
+                  type="button"
+                  disabled={isHighlighted}
+                  onClick={onShowEvidenceHighlight || onShowFirstFir}
+                  style={{
+                    fontSize: "10px",
+                    padding: "2px 6px",
+                    cursor: isHighlighted ? "default" : "pointer",
+                    opacity: isHighlighted ? 0.7 : 1,
+                  }}
+                >
+                  {isHighlighted ? "Highlight active" : "Highlight in graph"}
+                </button>
+              )}
+            </div>
 
                 {firstRecord.counterparts && firstRecord.counterparts.length > 0 && (
                   <div style={{ marginTop: "6px" }}>
