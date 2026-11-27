@@ -18,6 +18,7 @@ import { TimelineInsights } from "./pages/TimelineInsights.jsx";
 import { Dossier } from "./pages/Dossier.jsx";
 import { AuditLog } from "./pages/AuditLog.jsx";
 import { ModelPerformance } from "./pages/ModelPerformance.jsx";
+import { HowItWorks } from "./pages/HowItWorks.jsx";
 
 export function App() {
   const [route, setRoute] = useState(() => window.location.hash || "#/cases");
@@ -70,6 +71,8 @@ export function App() {
       document.title = "KAVACH - Audit Log";
     } else if (route.startsWith("#/admin/model")) {
       document.title = "KAVACH - Model Performance";
+    } else if (route.startsWith("#/admin/how-it-works")) {
+      document.title = "KAVACH - How the NLP works";
     } else if (routeCaseId) {
       const pageTitle = subPage ? subPage.charAt(0).toUpperCase() + subPage.slice(1) : "Overview";
       document.title = `KAVACH - ${routeCaseId} [${pageTitle}]`;
@@ -232,6 +235,21 @@ export function App() {
                 title="Model performance"
               >
                 Model performance
+              </a>
+              <a
+                href="#/admin/how-it-works"
+                className="status-link"
+                data-testid="admin-how-it-works-header-link"
+                style={{
+                  fontSize: "12px",
+                  marginLeft: "12px",
+                  color: "var(--accent)",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                }}
+                title="How it works"
+              >
+                How it works
               </a>
             </>
           )}
@@ -492,6 +510,10 @@ function CaseContentView({
 
   if (route.startsWith("#/admin/model")) {
     return <ModelPerformance user={user} />;
+  }
+
+  if (route.startsWith("#/admin/how-it-works")) {
+    return <HowItWorks user={user} />;
   }
 
   if (!caseId || route === "#/cases" || route === "#/") {
