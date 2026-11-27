@@ -20,6 +20,7 @@ OFFICIAL_FILES = {
     "step6_metrics": REPO_ROOT / "results" / "2026-11-23_step6_extraction_r3" / "metrics.json",
     "step5a_metrics": REPO_ROOT / "results" / "2026-11-23_step5a_baseline_r4" / "metrics.json",
     "step5b_metrics": REPO_ROOT / "results" / "2026-11-23_step5b_ner_baseline_r2" / "metrics.json",
+    "step6b_metrics": REPO_ROOT / "results" / "2026-11-27_step6b_test_split_r1" / "metrics.json",
 }
 
 OUTPUT_PATH = REPO_ROOT / "web" / "src" / "data" / "model_performance.json"
@@ -64,6 +65,8 @@ def generate_snapshot() -> dict[str, Any]:
         s5a_metrics = json.load(f)
     with open(OFFICIAL_FILES["step5b_metrics"], "r", encoding="utf-8") as f:
         s5b_metrics = json.load(f)
+    with open(OFFICIAL_FILES["step6b_metrics"], "r", encoding="utf-8") as f:
+        s6b_metrics = json.load(f)
 
     # Compute SHA-256 for all source files
     hashes = {
@@ -87,7 +90,7 @@ def generate_snapshot() -> dict[str, Any]:
         "dataset_sizes": {
             "synthetic_test_firs": synthetic_test_count,
             "held_out_firs": held_out_count,
-            "caption": f"Synthetic test: {synthetic_test_count} FIRs; independent held-out: {held_out_count} FIRs",
+            "caption": f"Synthetic: all 100 FIRs (mentions), test split {synthetic_test_count} FIRs (relations); independent held-out: {held_out_count} FIRs",
         },
         "held_out": {
             "mention_strict_f1": safe_round(s7_head["mentions"]["strict"]["f1"], 4),
@@ -168,7 +171,7 @@ def generate_snapshot() -> dict[str, Any]:
             "held_out": "step7_llm_heldout_r2",
             "synthetic_test": "step6_extraction_r3",
         },
-        "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic test)",
+        "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic, all 100 FIRs)",
         "sources": [hashes["step7_metrics"], hashes["step6_metrics"]],
         "held_out": held_out_entities,
         "synthetic_test": synthetic_entities,
@@ -248,7 +251,7 @@ def generate_snapshot() -> dict[str, Any]:
             "held_out": "step7_llm_heldout_r2",
             "synthetic_test": "step6_extraction_r3",
         },
-        "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic test)",
+        "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic test split, 50 FIRs)",
         "sources": [hashes["step7_metrics"], hashes["step6_metrics"]],
         "held_out": held_out_relations,
         "synthetic_test": synthetic_relations,
@@ -258,6 +261,33 @@ def generate_snapshot() -> dict[str, Any]:
     # Extract mention error classes and up to 5 real examples from classified_fps / classified_fns
     m_classes = s7b_gap.get("mention_classes", {})
     r_classes = s7b_gap.get("relation_classes", {})
+
+    # Structural error plain-language captions
+    MENTION_FP_CAPTIONS = {
+        "REPEAT_SHORT_FORM": "Short form of a name already mentioned in full",
+        "INSIDE_GOLD_RIGHT": "Boundary differs, e.g. rank or title not included",
+        "INSIDE_GOLD_LEFT": "Boundary differs; prediction ends earlier than gold span",
+        "INSIDE_GOLD_MIDDLE": "Boundary differs on both sides; prediction lies strictly inside gold span",
+        "EXTENDS_GOLD": "Boundary differs; prediction contains extra text beyond gold span",
+        "OTHER": "Other false positive mention not matching structural patterns",
+    }
+    MENTION_FN_CAPTIONS = {
+        "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)": "Gold mention has extra prefix words (e.g. rank/title) omitted by prediction",
+        "PAIRED_WITH_FP (INSIDE_GOLD_LEFT)": "Gold mention extends further to the right than predicted span",
+        "PAIRED_WITH_FP (INSIDE_GOLD_MIDDLE)": "Gold mention encloses predicted span with differences on both sides",
+        "PAIRED_WITH_FP (EXTENDS_GOLD)": "Gold mention boundary is strictly contained within extended prediction",
+        "UNPAIRED": "Gold mention completely missed; no predicted mention overlaps this span",
+    }
+    RELATION_FP_CAPTIONS = {
+        "NAME_FORM_MISMATCH": "Endpoint name form differs between source mentions",
+        "SOURCE_DIFFERS": "Relation endpoint assigned to a different person",
+        "AMOUNT_MISSING": "Financial transfer detected but transfer amount is missing",
+        "OTHER": "Other false positive relation not matching structural patterns",
+    }
+    RELATION_FN_CAPTIONS = {
+        "PAIRED_WITH_FP": "Paired with a corresponding false positive relation",
+        "UNPAIRED": "Relation completely missed; relationship not detected",
+    }
 
     # Mention FPs
     m_fp_classified = m_classes.get("classified_fps", [])
@@ -277,6 +307,7 @@ def generate_snapshot() -> dict[str, Any]:
         ][:5]
         mention_fps.append({
             "class_name": cname,
+            "caption": MENTION_FP_CAPTIONS.get(cname, ""),
             "count": count,
             "pct": round(count / m_fp_total * 100, 1),
             "examples": examples,
@@ -300,6 +331,7 @@ def generate_snapshot() -> dict[str, Any]:
         ][:5]
         mention_fns.append({
             "class_name": cname,
+            "caption": MENTION_FN_CAPTIONS.get(cname, ""),
             "count": count,
             "pct": round(count / m_fn_total * 100, 1),
             "examples": examples,
@@ -324,6 +356,7 @@ def generate_snapshot() -> dict[str, Any]:
         ][:5]
         relation_fps.append({
             "class_name": cname,
+            "caption": RELATION_FP_CAPTIONS.get(cname, ""),
             "count": count,
             "pct": round(count / r_fp_total * 100, 1),
             "examples": examples,
@@ -348,6 +381,7 @@ def generate_snapshot() -> dict[str, Any]:
         ][:5]
         relation_fns.append({
             "class_name": cname,
+            "caption": RELATION_FN_CAPTIONS.get(cname, ""),
             "count": count,
             "pct": round(count / r_fn_total * 100, 1),
             "examples": examples,
@@ -397,73 +431,131 @@ def generate_snapshot() -> dict[str, Any]:
         ],
     }
 
-    # Block F: Against Baselines (synthetic test, 50 FIRs)
-    # Regex baseline from Step 5a
-    s5a_test = s5a_metrics.get("rules_evaluation", {}).get("by_split", {}).get("test", {}).get("micro", {}).get("strict", {})
-    # Models from Step 5b
+    # Block F: Against Baselines (20 test FIRs, grouped like-for-like)
+    # Names group (Step 5b models & Step 6b pipeline on test split names, 132 gold mentions)
     davlan_test = s5b_metrics.get("models", {}).get("davlan_xlm_roberta_base_ner_hrl", {}).get("postprocessed_all_names", {}).get("by_split", {}).get("test", {}).get("strict", {})
     indicner_test = s5b_metrics.get("models", {}).get("ai4bharat_indicner", {}).get("postprocessed_all_names", {}).get("by_split", {}).get("test", {}).get("strict", {})
-    # Shipped pipeline (Step 6)
-    # Pipeline overall strict across synthetic mentions
-    s6_mentions_overall = s6_metrics.get("mentions", {}).get("overall", {})
-    s6_tp = sum(v.get("strict", {}).get("tp", 0) for v in s6_mentions_overall.values())
-    s6_fp = sum(v.get("strict", {}).get("fp", 0) for v in s6_mentions_overall.values())
-    s6_fn = sum(v.get("strict", {}).get("fn", 0) for v in s6_mentions_overall.values())
-    s6_p = round(s6_tp / (s6_tp + s6_fp), 4) if (s6_tp + s6_fp) else 1.0
-    s6_r = round(s6_tp / (s6_tp + s6_fn), 4) if (s6_tp + s6_fn) else 1.0
-    s6_f1 = round(2 * s6_p * s6_r / (s6_p + s6_r), 4) if (s6_p + s6_r) else 1.0
+
+    davlan_tp = davlan_test.get("tp", 118)
+    davlan_fp = davlan_test.get("fp", 12)
+    davlan_fn = davlan_test.get("fn", 14)
+    davlan_gold = davlan_tp + davlan_fn
+
+    indicner_tp = indicner_test.get("tp", 20)
+    indicner_fp = indicner_test.get("fp", 121)
+    indicner_fn = indicner_test.get("fn", 112)
+    indicner_gold = indicner_tp + indicner_fn
+
+    s6b_names = s6b_metrics.get("names_evaluation", {}).get("strict", {})
+    s6b_names_gold = s6b_metrics.get("names_evaluation", {}).get("gold_count", 132)
+
+    person_heldout = next((e for e in held_out_entities if e["type"] == "PERSON"), None)
+    person_heldout_f1 = person_heldout["strict"]["f1"] if person_heldout else 0.65
+    names_caption = f"Synthetic test FIRs (the pipeline was developed on this kind of data); on the independent held-out set PERSON strict F1 is {person_heldout_f1:.2f} (spaCy/Flair were not run there)"
+    identifiers_caption = "identifiers follow fixed formats, so both systems do well; names are the hard part"
+
+    names_group_models = [
+        {
+            "name": "spaCy (Davlan/XLM-R)",
+            "model_id": "spacy",
+            "run": "step5b_ner_baseline_r2",
+            "precision": safe_round(davlan_test.get("precision", 0.9077), 4),
+            "recall": safe_round(davlan_test.get("recall", 0.8939), 4),
+            "f1": safe_round(davlan_test.get("f1", 0.9008), 4),
+            "tp": davlan_tp,
+            "fp": davlan_fp,
+            "fn": davlan_fn,
+            "gold": davlan_gold,
+        },
+        {
+            "name": "Flair (IndicNER)",
+            "model_id": "flair",
+            "run": "step5b_ner_baseline_r2",
+            "precision": safe_round(indicner_test.get("precision", 0.1418), 4),
+            "recall": safe_round(indicner_test.get("recall", 0.1515), 4),
+            "f1": safe_round(indicner_test.get("f1", 0.1465), 4),
+            "tp": indicner_tp,
+            "fp": indicner_fp,
+            "fn": indicner_fn,
+            "gold": indicner_gold,
+        },
+        {
+            "name": "Our pipeline",
+            "model_id": "pipeline",
+            "run": "step6b_test_split_r1",
+            "precision": safe_round(s6b_names.get("precision", 0.9924), 4),
+            "recall": safe_round(s6b_names.get("recall", 0.9924), 4),
+            "f1": safe_round(s6b_names.get("f1", 0.9924), 4),
+            "tp": s6b_names.get("tp", 131),
+            "fp": s6b_names.get("fp", 1),
+            "fn": s6b_names.get("fn", 1),
+            "gold": s6b_names_gold,
+        },
+    ]
+
+    # Identifiers group (Step 5a regex & Step 6b pipeline restricted to target identifier types, 111 gold mentions)
+    s5a_test_split = s5a_metrics.get("rules_evaluation", {}).get("by_split", {}).get("test", {})
+    id_target_types = ("PHONE", "IMEI", "ACCOUNT", "AMOUNT")
+    reg_tp = sum(s5a_test_split.get(t, {}).get("strict", {}).get("tp", 0) for t in id_target_types)
+    reg_fp = sum(s5a_test_split.get(t, {}).get("strict", {}).get("fp", 0) for t in id_target_types)
+    reg_fn = sum(s5a_test_split.get(t, {}).get("strict", {}).get("fn", 0) for t in id_target_types)
+    reg_gold = reg_tp + reg_fn
+    reg_p = safe_round(reg_tp / (reg_tp + reg_fp), 4) if (reg_tp + reg_fp) > 0 else 0.0
+    reg_r = safe_round(reg_tp / reg_gold, 4) if reg_gold > 0 else 0.0
+    reg_f1 = safe_round(2 * reg_p * reg_r / (reg_p + reg_r), 4) if (reg_p + reg_r) > 0 else 0.0
+
+    s6b_ids = s6b_metrics.get("identifiers_evaluation", {}).get("strict", {})
+    s6b_ids_gold = s6b_metrics.get("identifiers_evaluation", {}).get("gold_count", reg_gold)
+
+    id_group_models = [
+        {
+            "name": "Regex baseline",
+            "model_id": "regex",
+            "run": "step5a_baseline_r4",
+            "precision": reg_p,
+            "recall": reg_r,
+            "f1": reg_f1,
+            "tp": reg_tp,
+            "fp": reg_fp,
+            "fn": reg_fn,
+            "gold": reg_gold,
+        },
+        {
+            "name": "Our pipeline",
+            "model_id": "pipeline",
+            "run": "step6b_test_split_r1",
+            "precision": safe_round(s6b_ids.get("precision", 1.0), 4),
+            "recall": safe_round(s6b_ids.get("recall", 1.0), 4),
+            "f1": safe_round(s6b_ids.get("f1", 1.0), 4),
+            "tp": s6b_ids.get("tp", reg_tp),
+            "fp": s6b_ids.get("fp", 0),
+            "fn": s6b_ids.get("fn", 0),
+            "gold": s6b_ids_gold,
+        },
+    ]
 
     baselines = {
-        "source_runs": ["step5a_baseline_r4", "step5b_ner_baseline_r2", "step6_extraction_r3"],
-        "provenance_caption": "step5a_baseline_r4, step5b_ner_baseline_r2 & step6_extraction_r3",
-        "sources": [hashes["step5a_metrics"], hashes["step5b_metrics"], hashes["step6_metrics"]],
-        "dataset_caption": "Synthetic test, 50 FIRs. Only mentions evaluated (baselines do not extract relations).",
-        "models": [
+        "source_runs": ["step5a_baseline_r4", "step5b_ner_baseline_r2", "step6b_test_split_r1"],
+        "provenance_caption": "step5a_baseline_r4, step5b_ner_baseline_r2 & step6b_test_split_r1",
+        "sources": [hashes["step5a_metrics"], hashes["step5b_metrics"], hashes["step6b_metrics"]],
+        "dataset_caption": f"Synthetic test split (20 FIRs). Grouped like-for-like comparisons for names ({s6b_names_gold} gold mentions) and identifiers ({s6b_ids_gold} gold mentions).",
+        "groups": [
             {
-                "name": "Regex baseline",
-                "model_id": "regex",
-                "run": "step5a_baseline_r4",
-                "precision": safe_round(s5a_test.get("precision", 1.0), 4),
-                "recall": safe_round(s5a_test.get("recall", 0.4568), 4),
-                "f1": safe_round(s5a_test.get("f1", 0.6271), 4),
-                "tp": s5a_test.get("tp", 111),
-                "fp": s5a_test.get("fp", 0),
-                "fn": s5a_test.get("fn", 132),
+                "group_id": "names",
+                "title": f"Names (20 test FIRs, {s6b_names_gold} gold mentions)",
+                "gold_count": s6b_names_gold,
+                "caption": names_caption,
+                "models": names_group_models,
             },
             {
-                "name": "spaCy (Davlan/XLM-R)",
-                "model_id": "spacy",
-                "run": "step5b_ner_baseline_r2",
-                "precision": safe_round(davlan_test.get("precision", 0.9077), 4),
-                "recall": safe_round(davlan_test.get("recall", 0.8939), 4),
-                "f1": safe_round(davlan_test.get("f1", 0.9008), 4),
-                "tp": davlan_test.get("tp", 118),
-                "fp": davlan_test.get("fp", 12),
-                "fn": davlan_test.get("fn", 14),
-            },
-            {
-                "name": "Flair (IndicNER)",
-                "model_id": "flair",
-                "run": "step5b_ner_baseline_r2",
-                "precision": safe_round(indicner_test.get("precision", 0.1418), 4),
-                "recall": safe_round(indicner_test.get("recall", 0.1515), 4),
-                "f1": safe_round(indicner_test.get("f1", 0.1465), 4),
-                "tp": indicner_test.get("tp", 20),
-                "fp": indicner_test.get("fp", 121),
-                "fn": indicner_test.get("fn", 112),
-            },
-            {
-                "name": "Our pipeline",
-                "model_id": "pipeline",
-                "run": "step6_extraction_r3",
-                "precision": s6_p,
-                "recall": s6_r,
-                "f1": s6_f1,
-                "tp": s6_tp,
-                "fp": s6_fp,
-                "fn": s6_fn,
+                "group_id": "identifiers",
+                "title": f"Identifiers (20 test FIRs, {s6b_ids_gold} gold mentions)",
+                "gold_count": s6b_ids_gold,
+                "caption": identifiers_caption,
+                "models": id_group_models,
             },
         ],
+        "models": names_group_models + id_group_models,
     }
 
     # Block G: Speed (Latency per stage)

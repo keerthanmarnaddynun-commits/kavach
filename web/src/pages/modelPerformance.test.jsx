@@ -10,6 +10,7 @@ import {
   getPerTypeItems,
   getErrorClasses,
   getGeneralisationGapData,
+  getBaselineGroups,
   getBaselineModels,
   getSpeedData,
 } from "./modelPerformanceHelpers.js";
@@ -34,7 +35,7 @@ describe("Model Performance Helpers", () => {
       expect(data.heldOut.relationsF1).toBe("0.3182");
       expect(data.syntheticTest.mentionsF1).toBe("0.9992");
       expect(data.syntheticTest.relationsF1).toBe("0.9672");
-      expect(data.caption).toBe("Synthetic test: 50 FIRs; independent held-out: 25 FIRs");
+      expect(data.caption).toBe("Synthetic: all 100 FIRs (mentions), test split 50 FIRs (relations); independent held-out: 25 FIRs");
       expect(data.provenance).toContain("step7_llm_heldout_r2");
     });
 
@@ -133,17 +134,50 @@ describe("Model Performance Helpers", () => {
   });
 
   describe("Baselines helper (Block F)", () => {
-    it("returns baseline models with their respective metrics", () => {
-      const data = getBaselineModels(snapshot.baselines, "f1");
-      expect(data.models.length).toBe(4);
-      expect(data.caption).toContain("Synthetic test, 50 FIRs");
+    it("returns baseline groups with their respective metrics", () => {
+      const data = getBaselineGroups(snapshot.baselines, "f1");
+      expect(data.groups.length).toBe(2);
+      expect(data.caption).toContain("Synthetic test split");
+      expect(data.provenance).toBe("step5a_baseline_r4, step5b_ner_baseline_r2 & step6b_test_split_r1");
 
-      const regex = data.models.find((m) => m.modelId === "regex");
-      const pipeline = data.models.find((m) => m.modelId === "pipeline");
+      const namesGroup = data.groups[0];
+      expect(namesGroup.title).toBe("Names (20 test FIRs, 132 gold mentions)");
+      expect(namesGroup.goldCount).toBe(132);
+      expect(namesGroup.caption).toContain("Synthetic test FIRs");
+      expect(namesGroup.caption).toContain("PERSON strict F1 is 0.65");
+      expect(namesGroup.models.length).toBe(3);
+
+      const spacy = namesGroup.models.find((m) => m.modelId === "spacy");
+      const flair = namesGroup.models.find((m) => m.modelId === "flair");
+      const pipelineNames = namesGroup.models.find((m) => m.modelId === "pipeline");
+
+      expect(spacy.precision).toBe(0.9077);
+      expect(spacy.f1).toBe(0.9008);
+      expect(spacy.gold).toBe(132);
+      expect(flair.f1).toBe(0.1465);
+      expect(flair.gold).toBe(132);
+      expect(pipelineNames.precision).toBe(0.9924);
+      expect(pipelineNames.recall).toBe(0.9924);
+      expect(pipelineNames.f1).toBe(0.9924);
+      expect(pipelineNames.gold).toBe(132);
+
+      const idGroup = data.groups[1];
+      expect(idGroup.title).toBe("Identifiers (20 test FIRs, 111 gold mentions)");
+      expect(idGroup.goldCount).toBe(111);
+      expect(idGroup.caption).toBe("identifiers follow fixed formats, so both systems do well; names are the hard part");
+      expect(idGroup.models.length).toBe(2);
+
+      const regex = idGroup.models.find((m) => m.modelId === "regex");
+      const pipelineId = idGroup.models.find((m) => m.modelId === "pipeline");
 
       expect(regex.precision).toBe(1.0);
-      expect(regex.f1).toBe(0.6271);
-      expect(pipeline.f1).toBe(0.9992);
+      expect(regex.recall).toBe(1.0);
+      expect(regex.f1).toBe(1.0);
+      expect(regex.gold).toBe(111);
+      expect(pipelineId.precision).toBe(1.0);
+      expect(pipelineId.recall).toBe(1.0);
+      expect(pipelineId.f1).toBe(1.0);
+      expect(pipelineId.gold).toBe(111);
     });
   });
 
@@ -167,7 +201,9 @@ describe("Model Performance Helpers", () => {
 
       const b = getBaselineModels(snapshot.baselines, "f1");
       b.models.forEach((m) => {
-        const sourceModel = snapshot.baselines.models.find((sm) => sm.model_id === m.modelId);
+        const sourceModel = snapshot.baselines.models.find(
+          (sm) => sm.model_id === m.modelId && sm.gold === m.gold
+        );
         expect(m.f1).toBe(sourceModel.f1);
         expect(m.precision).toBe(sourceModel.precision);
         expect(m.recall).toBe(sourceModel.recall);
@@ -211,7 +247,9 @@ describe("ModelPerformance Component Rendering", () => {
       expect(html).toContain("0.3182");
       expect(html).toContain("0.9992");
       expect(html).toContain("0.9672");
-      expect(html).toContain("Synthetic test: 50 FIRs; independent held-out: 25 FIRs");
+      expect(html).toContain("Synthetic, all 100 FIRs");
+      expect(html).toContain("Synthetic test split (50 FIRs)");
+      expect(html).toContain("Synthetic: all 100 FIRs (mentions), test split 50 FIRs (relations); independent held-out: 25 FIRs");
       expect(html).toContain("step7_llm_heldout_r2 &amp; step6_extraction_r3");
     });
 
@@ -219,7 +257,7 @@ describe("ModelPerformance Component Rendering", () => {
       const html = renderToString(<ModelPerformance user={adminUser} />);
       expect(html).toContain("Entity extraction by type");
       expect(html).toContain("Held-out");
-      expect(html).toContain("Synthetic test");
+      expect(html).toContain("Synthetic, all 100 FIRs");
       expect(html).toContain("Strict");
       expect(html).toContain("Lenient");
       expect(html).toContain("PERSON");
@@ -231,6 +269,8 @@ describe("ModelPerformance Component Rendering", () => {
     it("renders Block C: Relation extraction by type with table and support", () => {
       const html = renderToString(<ModelPerformance user={adminUser} />);
       expect(html).toContain("Relation extraction by type");
+      expect(html).toContain("Relations are scored with one matching rule (same two entities, same relation type).");
+      expect(html).toContain("Synthetic test split (50 FIRs)");
       expect(html).toContain("OWNS_DEVICE");
       expect(html).toContain("ASSOCIATED_IMEI");
       expect(html).toContain("COMMUNICATED_WITH");
@@ -240,8 +280,9 @@ describe("ModelPerformance Component Rendering", () => {
 
     it("renders Block D: How it fails with error classes and example errors", () => {
       const html = renderToString(<ModelPerformance user={adminUser} />);
-      expect(html).toContain("How it fails (held-out error breakdown)");
+      expect(html).toContain("How PERSON mentions fail (held-out)");
       expect(html).toContain("REPEAT_SHORT_FORM");
+      expect(html).toContain("Short form of a name already mentioned in full");
       expect(html).toContain("INSIDE_GOLD_RIGHT");
       expect(html).toContain("Showing up to 5 real examples from errors.json");
     });
@@ -255,14 +296,20 @@ describe("ModelPerformance Component Rendering", () => {
       expect(html).toContain("Gap: -0.6490");
     });
 
-    it("renders Block F: Against baselines with caption", () => {
+    it("renders Block F: Against baselines with grouped models and provenance caption", () => {
       const html = renderToString(<ModelPerformance user={adminUser} />);
       expect(html).toContain("Against baselines");
-      expect(html).toContain("Regex baseline");
+      expect(html).toContain("Names (20 test FIRs, 132 gold mentions)");
+      expect(html).toContain("Identifiers (20 test FIRs, 111 gold mentions)");
       expect(html).toContain("spaCy (Davlan/XLM-R)");
       expect(html).toContain("Flair (IndicNER)");
+      expect(html).toContain("Regex baseline");
       expect(html).toContain("Our pipeline");
-      expect(html).toContain("Synthetic test, 50 FIRs. Only mentions evaluated (baselines do not extract relations).");
+      expect(html).toContain("Gold: 132");
+      expect(html).toContain("Gold: 111");
+      expect(html).toContain("identifiers follow fixed formats, so both systems do well; names are the hard part");
+      expect(html).toContain("Synthetic test FIRs (the pipeline was developed on this kind of data); on the independent held-out set PERSON strict F1 is 0.65 (spaCy/Flair were not run there)");
+      expect(html).toContain("step5a_baseline_r4, step5b_ner_baseline_r2 &amp; step6b_test_split_r1");
     });
 
     it("renders Block G: Speed latency stages and total", () => {

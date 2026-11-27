@@ -120,6 +120,7 @@ export function getErrorClasses(errorBreakdown = snapshot?.error_breakdown, targ
     className: item.class_name,
     count: item.count,
     pct: item.pct,
+    caption: item.caption || "",
     examples: item.examples || [],
   }));
 }
@@ -143,11 +144,45 @@ export function getGeneralisationGapData(snap = snapshot) {
  * @param {Object} baselines - baselines block from snapshot
  * @param {string} metricKey - "f1" | "precision" | "recall"
  */
+export function getBaselineGroups(baselines = snapshot?.baselines, metricKey = "f1") {
+  if (!baselines || !Array.isArray(baselines.groups)) {
+    return { groups: [], caption: "", provenance: "" };
+  }
+  const groups = baselines.groups.map((g) => ({
+    groupId: g.group_id,
+    title: g.title,
+    goldCount: g.gold_count,
+    caption: g.caption || "",
+    models: (g.models || []).map((m) => ({
+      name: m.name,
+      modelId: m.model_id,
+      run: m.run,
+      value: m[metricKey] ?? 0,
+      precision: m.precision ?? 0,
+      recall: m.recall ?? 0,
+      f1: m.f1 ?? 0,
+      tp: m.tp ?? 0,
+      fp: m.fp ?? 0,
+      fn: m.fn ?? 0,
+      gold: m.gold ?? ((m.tp ?? 0) + (m.fn ?? 0)),
+    })),
+  }));
+  return {
+    groups,
+    caption: baselines.dataset_caption || "",
+    provenance: baselines.provenance_caption || "",
+  };
+}
+
 export function getBaselineModels(baselines = snapshot?.baselines, metricKey = "f1") {
-  if (!baselines || !Array.isArray(baselines.models)) {
+  if (!baselines) {
     return { models: [], caption: "", provenance: "" };
   }
-  const models = baselines.models.map((m) => ({
+  let rawModels = Array.isArray(baselines.models) ? baselines.models : [];
+  if (!rawModels.length && Array.isArray(baselines.groups)) {
+    rawModels = baselines.groups.flatMap((g) => g.models || []);
+  }
+  const models = rawModels.map((m) => ({
     name: m.name,
     modelId: m.model_id,
     run: m.run,
@@ -158,6 +193,7 @@ export function getBaselineModels(baselines = snapshot?.baselines, metricKey = "
     tp: m.tp ?? 0,
     fp: m.fp ?? 0,
     fn: m.fn ?? 0,
+    gold: m.gold ?? ((m.tp ?? 0) + (m.fn ?? 0)),
   }));
   return {
     models,

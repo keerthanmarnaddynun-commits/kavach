@@ -9,6 +9,7 @@ import {
   getPerTypeItems,
   getErrorClasses,
   getGeneralisationGapData,
+  getBaselineGroups,
   getBaselineModels,
   getSpeedData,
 } from "./modelPerformanceHelpers.js";
@@ -68,7 +69,7 @@ export function ModelPerformance({ user }) {
   // Data extraction
   const headline = useMemo(() => getHeadlineData(snapshot), []);
   const generalisation = useMemo(() => getGeneralisationGapData(snapshot), []);
-  const baselines = useMemo(() => getBaselineModels(snapshot?.baselines, "f1"), []);
+  const baselines = useMemo(() => getBaselineGroups(snapshot?.baselines, baselineMetric), [baselineMetric]);
   const speed = useMemo(() => getSpeedData(snapshot?.speed), []);
 
   // Entity items
@@ -192,29 +193,29 @@ export function ModelPerformance({ user }) {
             </div>
           </div>
 
-          {/* Synthetic Test Mentions */}
+          {/* Synthetic Mentions (All 100 FIRs) */}
           <div style={{ borderLeft: "3px solid var(--tag-records-text)", paddingLeft: "12px" }}>
             <div style={{ fontSize: "11px", color: "var(--muted)", textTransform: "uppercase" }}>
-              Synthetic Test Mentions
+              Synthetic, all 100 FIRs
             </div>
             <div style={{ fontSize: "24px", fontWeight: 700, color: "var(--text)", marginTop: "2px" }}>
               {headline.syntheticTest.mentionsF1}
             </div>
             <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "2px" }}>
-              Strict F1 across test set
+              Strict F1 across all 100 FIRs
             </div>
           </div>
 
-          {/* Synthetic Test Relations */}
+          {/* Synthetic Relations (50 FIRs) */}
           <div style={{ borderLeft: "3px solid var(--tag-fir-text)", paddingLeft: "12px" }}>
             <div style={{ fontSize: "11px", color: "var(--muted)", textTransform: "uppercase" }}>
-              Synthetic Test Relations
+              Synthetic test split (50 FIRs)
             </div>
             <div style={{ fontSize: "24px", fontWeight: 700, color: "var(--text)", marginTop: "2px" }}>
               {headline.syntheticTest.relationsF1}
             </div>
             <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "2px" }}>
-              Micro F1 on test split
+              Micro F1 on 50-FIR test split
             </div>
           </div>
         </div>
@@ -291,7 +292,7 @@ export function ModelPerformance({ user }) {
                     fontWeight: entityDataset === "synthetic_test" ? 600 : 400,
                   }}
                 >
-                  Synthetic test
+                  Synthetic, all 100 FIRs
                 </button>
               </div>
 
@@ -452,6 +453,9 @@ export function ModelPerformance({ user }) {
               <div style={{ fontSize: "12px", color: "var(--muted)", marginTop: "2px" }}>
                 Relational link detection precision, recall, and F1 score with support counts.
               </div>
+              <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "4px", fontStyle: "italic" }}>
+                Relations are scored with one matching rule (same two entities, same relation type).
+              </div>
             </div>
             {/* Toggles */}
             <div style={{ display: "flex", gap: "8px" }}>
@@ -486,42 +490,7 @@ export function ModelPerformance({ user }) {
                     fontWeight: relDataset === "synthetic_test" ? 600 : 400,
                   }}
                 >
-                  Synthetic test
-                </button>
-              </div>
-
-              <div style={{ display: "inline-flex", border: "1px solid var(--border)", borderRadius: "3px" }}>
-                <button
-                  type="button"
-                  data-testid="rel-mode-strict"
-                  onClick={() => setRelMode("strict")}
-                  style={{
-                    padding: "4px 10px",
-                    fontSize: "12px",
-                    border: "none",
-                    cursor: "pointer",
-                    backgroundColor: relMode === "strict" ? "var(--muted)" : "var(--surface)",
-                    color: relMode === "strict" ? "var(--surface)" : "var(--text)",
-                    fontWeight: relMode === "strict" ? 600 : 400,
-                  }}
-                >
-                  Strict
-                </button>
-                <button
-                  type="button"
-                  data-testid="rel-mode-lenient"
-                  onClick={() => setRelMode("lenient")}
-                  style={{
-                    padding: "4px 10px",
-                    fontSize: "12px",
-                    border: "none",
-                    cursor: "pointer",
-                    backgroundColor: relMode === "lenient" ? "var(--muted)" : "var(--surface)",
-                    color: relMode === "lenient" ? "var(--surface)" : "var(--text)",
-                    fontWeight: relMode === "lenient" ? 600 : 400,
-                  }}
-                >
-                  Lenient
+                  Synthetic test split (50 FIRs)
                 </button>
               </div>
             </div>
@@ -644,7 +613,7 @@ export function ModelPerformance({ user }) {
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
           <div>
-            <h2 style={{ fontSize: "16px", fontWeight: 700, margin: 0 }}>How it fails (held-out error breakdown)</h2>
+            <h2 style={{ fontSize: "16px", fontWeight: 700, margin: 0 }}>How PERSON mentions fail (held-out)</h2>
             <div style={{ fontSize: "12px", color: "var(--muted)", marginTop: "2px" }}>
               Taxonomy of extraction errors from held-out gap analysis. Click any bar to inspect real examples.
             </div>
@@ -754,8 +723,15 @@ export function ModelPerformance({ user }) {
                   border: isSelected ? "1px solid var(--highlight-border)" : "1px solid transparent",
                 }}
               >
-                <div style={{ width: "260px", fontSize: "12px", fontWeight: 600 }} className="mono">
-                  {item.className}
+                <div style={{ width: "320px", display: "flex", flexDirection: "column" }}>
+                  <div style={{ fontSize: "12px", fontWeight: 600 }} className="mono">
+                    {item.className}
+                  </div>
+                  {item.caption && (
+                    <div style={{ fontSize: "11px", color: "var(--muted)", fontStyle: "italic", marginTop: "1px" }}>
+                      {item.caption}
+                    </div>
+                  )}
                 </div>
                 <div style={{ flex: 1, backgroundColor: "var(--bg)", height: "18px", borderRadius: "2px", overflow: "hidden", margin: "0 12px" }}>
                   <div
@@ -787,9 +763,16 @@ export function ModelPerformance({ user }) {
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "8px" }}>
-            <span style={{ fontSize: "13px", fontWeight: 700 }}>
-              {`Class: ${activeErrorObj?.className || "None"} (${activeErrorObj?.count || 0} occurrences, ${activeErrorObj?.pct || 0}%)`}
-            </span>
+            <div>
+              <span style={{ fontSize: "13px", fontWeight: 700 }}>
+                {`Class: ${activeErrorObj?.className || "None"} (${activeErrorObj?.count || 0} occurrences, ${activeErrorObj?.pct || 0}%)`}
+              </span>
+              {activeErrorObj?.caption && (
+                <div style={{ fontSize: "12px", color: "var(--muted)", marginTop: "2px", fontStyle: "italic" }}>
+                  {activeErrorObj.caption}
+                </div>
+              )}
+            </div>
             <span style={{ fontSize: "11px", color: "var(--muted)" }}>Showing up to 5 real examples from errors.json</span>
           </div>
 
@@ -872,7 +855,9 @@ export function ModelPerformance({ user }) {
                 {/* Visual bar pair */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                   <div style={{ display: "flex", alignItems: "center", fontSize: "11px" }}>
-                    <span style={{ width: "110px", color: "var(--muted)" }}>Synthetic test:</span>
+                    <span style={{ width: "185px", color: "var(--muted)" }}>
+                      {row.metric.includes("Mentions") ? "Synthetic, all 100 FIRs:" : "Synthetic test split (50 FIRs):"}
+                    </span>
                     <div style={{ flex: 1, backgroundColor: "var(--bg)", height: "14px", borderRadius: "2px", margin: "0 8px" }}>
                       <div
                         style={{
@@ -888,7 +873,7 @@ export function ModelPerformance({ user }) {
                     </span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", fontSize: "11px" }}>
-                    <span style={{ width: "110px", color: "var(--muted)" }}>Held-out:</span>
+                    <span style={{ width: "185px", color: "var(--muted)" }}>Held-out:</span>
                     <div style={{ flex: 1, backgroundColor: "var(--bg)", height: "14px", borderRadius: "2px", margin: "0 8px" }}>
                       <div
                         style={{
@@ -967,29 +952,50 @@ export function ModelPerformance({ user }) {
             </div>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            {baselines.models.map((model) => (
-              <div key={model.name} style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px" }}>
-                  <span style={{ fontWeight: 600 }}>{model.name}</span>
-                  <span className="mono">
-                    {baselineMetric === "f1"
-                      ? `F1: ${formatScore(model.f1)}`
-                      : `P: ${formatScore(model.precision)} | R: ${formatScore(model.recall)} | F1: ${formatScore(model.f1)}`}
-                  </span>
+          <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+            {baselines.groups && baselines.groups.length > 0 ? (
+              baselines.groups.map((group) => (
+                <div key={group.groupId} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <div style={{ fontSize: "13px", fontWeight: 700, color: "var(--text)", borderBottom: "1px solid var(--border)", paddingBottom: "4px" }}>
+                    {group.title}
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                    {group.models.map((model) => (
+                      <div key={model.name + "-" + group.groupId} style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px" }}>
+                          <div>
+                            <span style={{ fontWeight: 600 }}>{model.name}</span>
+                            <span style={{ color: "var(--muted)", fontSize: "11px", marginLeft: "8px" }} className="mono">
+                              {`(Gold: ${model.gold})`}
+                            </span>
+                          </div>
+                          <span className="mono">
+                            {baselineMetric === "f1"
+                              ? `F1: ${formatScore(model.f1)}`
+                              : `P: ${formatScore(model.precision)} | R: ${formatScore(model.recall)} | F1: ${formatScore(model.f1)}`}
+                          </span>
+                        </div>
+                        <div style={{ backgroundColor: "var(--bg)", height: "16px", borderRadius: "2px", overflow: "hidden" }}>
+                          <div
+                            style={{
+                              width: `${Math.min(model.f1 * 100, 100)}%`,
+                              backgroundColor: model.modelId === "pipeline" ? "var(--tag-records-text)" : "var(--accent)",
+                              height: "100%",
+                              borderRadius: "2px",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {group.caption && (
+                    <div style={{ fontSize: "11px", color: "var(--muted)", fontStyle: "italic", marginTop: "4px" }}>
+                      {group.caption}
+                    </div>
+                  )}
                 </div>
-                <div style={{ backgroundColor: "var(--bg)", height: "16px", borderRadius: "2px", overflow: "hidden" }}>
-                  <div
-                    style={{
-                      width: `${Math.min(model.f1 * 100, 100)}%`,
-                      backgroundColor: model.modelId === "pipeline" ? "var(--tag-records-text)" : "var(--accent)",
-                      height: "100%",
-                      borderRadius: "2px",
-                    }}
-                  />
-                </div>
-              </div>
-            ))}
+              ))
+            ) : null}
           </div>
 
           <div style={{ marginTop: "14px", fontStyle: "italic", fontSize: "11px", color: "var(--muted)" }}>

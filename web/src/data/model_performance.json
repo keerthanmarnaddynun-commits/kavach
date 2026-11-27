@@ -1,22 +1,90 @@
 {
   "baselines": {
-    "dataset_caption": "Synthetic test, 50 FIRs. Only mentions evaluated (baselines do not extract relations).",
-    "models": [
+    "dataset_caption": "Synthetic test split (20 FIRs). Grouped like-for-like comparisons for names (132 gold mentions) and identifiers (111 gold mentions).",
+    "groups": [
       {
-        "f1": 0.6271,
-        "fn": 132,
-        "fp": 0,
-        "model_id": "regex",
-        "name": "Regex baseline",
-        "precision": 1.0,
-        "recall": 0.4568,
-        "run": "step5a_baseline_r4",
-        "tp": 111
+        "caption": "Synthetic test FIRs (the pipeline was developed on this kind of data); on the independent held-out set PERSON strict F1 is 0.65 (spaCy/Flair were not run there)",
+        "gold_count": 132,
+        "group_id": "names",
+        "models": [
+          {
+            "f1": 0.9008,
+            "fn": 14,
+            "fp": 12,
+            "gold": 132,
+            "model_id": "spacy",
+            "name": "spaCy (Davlan/XLM-R)",
+            "precision": 0.9077,
+            "recall": 0.8939,
+            "run": "step5b_ner_baseline_r2",
+            "tp": 118
+          },
+          {
+            "f1": 0.1465,
+            "fn": 112,
+            "fp": 121,
+            "gold": 132,
+            "model_id": "flair",
+            "name": "Flair (IndicNER)",
+            "precision": 0.1418,
+            "recall": 0.1515,
+            "run": "step5b_ner_baseline_r2",
+            "tp": 20
+          },
+          {
+            "f1": 0.9924,
+            "fn": 1,
+            "fp": 1,
+            "gold": 132,
+            "model_id": "pipeline",
+            "name": "Our pipeline",
+            "precision": 0.9924,
+            "recall": 0.9924,
+            "run": "step6b_test_split_r1",
+            "tp": 131
+          }
+        ],
+        "title": "Names (20 test FIRs, 132 gold mentions)"
       },
+      {
+        "caption": "identifiers follow fixed formats, so both systems do well; names are the hard part",
+        "gold_count": 111,
+        "group_id": "identifiers",
+        "models": [
+          {
+            "f1": 1.0,
+            "fn": 0,
+            "fp": 0,
+            "gold": 111,
+            "model_id": "regex",
+            "name": "Regex baseline",
+            "precision": 1.0,
+            "recall": 1.0,
+            "run": "step5a_baseline_r4",
+            "tp": 111
+          },
+          {
+            "f1": 1.0,
+            "fn": 0,
+            "fp": 0,
+            "gold": 111,
+            "model_id": "pipeline",
+            "name": "Our pipeline",
+            "precision": 1.0,
+            "recall": 1.0,
+            "run": "step6b_test_split_r1",
+            "tp": 111
+          }
+        ],
+        "title": "Identifiers (20 test FIRs, 111 gold mentions)"
+      }
+    ],
+    "models": [
       {
         "f1": 0.9008,
         "fn": 14,
         "fp": 12,
+        "gold": 132,
         "model_id": "spacy",
         "name": "spaCy (Davlan/XLM-R)",
         "precision": 0.9077,
@@ -28,6 +96,7 @@
         "f1": 0.1465,
         "fn": 112,
         "fp": 121,
+        "gold": 132,
         "model_id": "flair",
         "name": "Flair (IndicNER)",
         "precision": 0.1418,
@@ -36,22 +105,47 @@
         "tp": 20
       },
       {
-        "f1": 0.9992,
+        "f1": 0.9924,
         "fn": 1,
         "fp": 1,
+        "gold": 132,
         "model_id": "pipeline",
         "name": "Our pipeline",
-        "precision": 0.9992,
-        "recall": 0.9992,
-        "run": "step6_extraction_r3",
-        "tp": 1234
+        "precision": 0.9924,
+        "recall": 0.9924,
+        "run": "step6b_test_split_r1",
+        "tp": 131
+      },
+      {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 111,
+        "model_id": "regex",
+        "name": "Regex baseline",
+        "precision": 1.0,
+        "recall": 1.0,
+        "run": "step5a_baseline_r4",
+        "tp": 111
+      },
+      {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 111,
+        "model_id": "pipeline",
+        "name": "Our pipeline",
+        "precision": 1.0,
+        "recall": 1.0,
+        "run": "step6b_test_split_r1",
+        "tp": 111
       }
     ],
-    "provenance_caption": "step5a_baseline_r4, step5b_ner_baseline_r2 & step6_extraction_r3",
+    "provenance_caption": "step5a_baseline_r4, step5b_ner_baseline_r2 & step6b_test_split_r1",
     "source_runs": [
       "step5a_baseline_r4",
       "step5b_ner_baseline_r2",
-      "step6_extraction_r3"
+      "step6b_test_split_r1"
     ],
     "sources": [
       {
@@ -63,8 +157,8 @@
         "sha256": "de311827262ada8e7d24e14333f0d839fe9af3703c84ce2eccc613ab7e3df4f2"
       },
       {
-        "path": "results/2026-11-23_step6_extraction_r3/metrics.json",
-        "sha256": "926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be"
+        "path": "results/2026-11-27_step6b_test_split_r1/metrics.json",
+        "sha256": "96ba5d88ef8e575cd62cd775e1e586e9e5f6519d08420e043ae95ab7c020e5a2"
       }
     ]
   },
@@ -323,7 +417,7 @@
         "type": "IFSC"
       }
     ],
-    "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic test)",
+    "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic, all 100 FIRs)",
     "source_runs": {
       "held_out": "step7_llm_heldout_r2",
       "synthetic_test": "step6_extraction_r3"
@@ -492,6 +586,7 @@
     "mentions": {
       "fn_classes": [
         {
+          "caption": "Gold mention has extra prefix words (e.g. rank/title) omitted by prediction",
           "class_name": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
           "count": 8,
           "examples": [
@@ -544,6 +639,7 @@
           "pct": 61.5
         },
         {
+          "caption": "Gold mention extends further to the right than predicted span",
           "class_name": "PAIRED_WITH_FP (INSIDE_GOLD_LEFT)",
           "count": 2,
           "examples": [
@@ -569,12 +665,14 @@
           "pct": 15.4
         },
         {
+          "caption": "Gold mention encloses predicted span with differences on both sides",
           "class_name": "PAIRED_WITH_FP (INSIDE_GOLD_MIDDLE)",
           "count": 0,
           "examples": [],
           "pct": 0.0
         },
         {
+          "caption": "Gold mention boundary is strictly contained within extended prediction",
           "class_name": "PAIRED_WITH_FP (EXTENDS_GOLD)",
           "count": 2,
           "examples": [
@@ -600,6 +698,7 @@
           "pct": 15.4
         },
         {
+          "caption": "Gold mention completely missed; no predicted mention overlaps this span",
           "class_name": "UNPAIRED",
           "count": 1,
           "examples": [
@@ -618,6 +717,7 @@
       ],
       "fp_classes": [
         {
+          "caption": "Short form of a name already mentioned in full",
           "class_name": "REPEAT_SHORT_FORM",
           "count": 48,
           "examples": [
@@ -670,6 +770,7 @@
           "pct": 66.7
         },
         {
+          "caption": "Boundary differs, e.g. rank or title not included",
           "class_name": "INSIDE_GOLD_RIGHT",
           "count": 8,
           "examples": [
@@ -722,6 +823,7 @@
           "pct": 11.1
         },
         {
+          "caption": "Boundary differs; prediction ends earlier than gold span",
           "class_name": "INSIDE_GOLD_LEFT",
           "count": 2,
           "examples": [
@@ -747,12 +849,14 @@
           "pct": 2.8
         },
         {
+          "caption": "Boundary differs on both sides; prediction lies strictly inside gold span",
           "class_name": "INSIDE_GOLD_MIDDLE",
           "count": 0,
           "examples": [],
           "pct": 0.0
         },
         {
+          "caption": "Boundary differs; prediction contains extra text beyond gold span",
           "class_name": "EXTENDS_GOLD",
           "count": 2,
           "examples": [
@@ -778,6 +882,7 @@
           "pct": 2.8
         },
         {
+          "caption": "Other false positive mention not matching structural patterns",
           "class_name": "OTHER",
           "count": 12,
           "examples": [
@@ -837,6 +942,7 @@
     "relations": {
       "fn_classes": [
         {
+          "caption": "Paired with a corresponding false positive relation",
           "class_name": "PAIRED_WITH_FP",
           "count": 18,
           "examples": [
@@ -879,6 +985,7 @@
           "pct": 26.9
         },
         {
+          "caption": "Relation completely missed; relationship not detected",
           "class_name": "UNPAIRED",
           "count": 49,
           "examples": [
@@ -923,6 +1030,7 @@
       ],
       "fp_classes": [
         {
+          "caption": "Endpoint name form differs between source mentions",
           "class_name": "NAME_FORM_MISMATCH",
           "count": 11,
           "examples": [
@@ -965,6 +1073,7 @@
           "pct": 47.8
         },
         {
+          "caption": "Relation endpoint assigned to a different person",
           "class_name": "SOURCE_DIFFERS",
           "count": 6,
           "examples": [
@@ -1007,6 +1116,7 @@
           "pct": 26.1
         },
         {
+          "caption": "Financial transfer detected but transfer amount is missing",
           "class_name": "AMOUNT_MISSING",
           "count": 1,
           "examples": [
@@ -1021,6 +1131,7 @@
           "pct": 4.3
         },
         {
+          "caption": "Other false positive relation not matching structural patterns",
           "class_name": "OTHER",
           "count": 5,
           "examples": [
@@ -1096,7 +1207,7 @@
   },
   "headline": {
     "dataset_sizes": {
-      "caption": "Synthetic test: 50 FIRs; independent held-out: 25 FIRs",
+      "caption": "Synthetic: all 100 FIRs (mentions), test split 50 FIRs (relations); independent held-out: 25 FIRs",
       "held_out_firs": 25,
       "synthetic_test_firs": 50
     },
@@ -1142,6 +1253,10 @@
       "step6_metrics": {
         "path": "results/2026-11-23_step6_extraction_r3/metrics.json",
         "sha256": "926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be"
+      },
+      "step6b_metrics": {
+        "path": "results/2026-11-27_step6b_test_split_r1/metrics.json",
+        "sha256": "96ba5d88ef8e575cd62cd775e1e586e9e5f6519d08420e043ae95ab7c020e5a2"
       },
       "step7_errors": {
         "path": "results/2026-11-16_step7_llm_heldout_r2/errors.json",
@@ -1265,7 +1380,7 @@
         }
       }
     ],
-    "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic test)",
+    "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic test split, 50 FIRs)",
     "source_runs": {
       "held_out": "step7_llm_heldout_r2",
       "synthetic_test": "step6_extraction_r3"

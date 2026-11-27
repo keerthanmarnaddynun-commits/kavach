@@ -1,0 +1,201 @@
+{
+  "dataset_counts": {
+    "by_type": {
+      "ACCOUNT": 27,
+      "ALIAS": 31,
+      "AMOUNT": 21,
+      "FATHER": 25,
+      "IMEI": 14,
+      "PERSON": 76,
+      "PHONE": 49
+    },
+    "gold_identifiers_count": 111,
+    "gold_names_count": 132,
+    "total_gold_mentions": 243,
+    "total_test_firs": 20
+  },
+  "identifiers_evaluation": {
+    "by_type": {
+      "ACCOUNT": {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 27,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 27
+      },
+      "AMOUNT": {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 21,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 21
+      },
+      "IMEI": {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 14,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 14
+      },
+      "PHONE": {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 49,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 49
+      }
+    },
+    "gold_count": 111,
+    "lenient": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 111
+    },
+    "strict": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 111
+    },
+    "types": [
+      "PHONE",
+      "IMEI",
+      "ACCOUNT",
+      "AMOUNT"
+    ]
+  },
+  "input_hashes": {
+    "assemble.py": "11b00bb78c3773d280af2b0d0a97102370e9d3a42c10acb1fee3c048bb10c4e0",
+    "firs_v5_index": "a21ef522c2a21a8f098ae317742ecb2bb99d4f17b27ffeb6854a4b86e5c38f85",
+    "identifiers.py": "3dc5b861b5f048ae675608915853b78fa745ded9c9f900604930ac7abdf01d99",
+    "names.py": "50476b26268c22e676e223b22072e1ba6dcb0aa8857ef27ae6b19b3445caac72",
+    "normalizer.py": "d1cfa0fa1c8480c9d55f7b0ccb6dbc31f0305deb73b7343a2c039d6a7d3a4123",
+    "pipeline.py": "6aca2a9861790d6482d4837cda892e9ae629aca713bd2e49b61fb0888daf92e5",
+    "relations.py": "22628af79080c42ac1e1e53ebda39a228770d28c13572400bdf4d2463c8c5770",
+    "scoring.py": "f756585451c5d2724a65c6dd48962ecf7e4ccc1b1cbdf259cb9c7b147301b94b",
+    "validators.py": "e1413ab1e636514c74041490eed35ebaebaa17d6d2c8e4891e890e612c3a2c99"
+  },
+  "meta": {
+    "command": "python scripts/report/step6b_baseline_comparison.py --run-id step6b_test_split_r1",
+    "created_at": "2026-11-27T09:38:10.810254+00:00",
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "python_version_short": "3.11.9",
+    "run_id": "step6b_test_split_r1",
+    "test_split_firs": [
+      "FIR_100",
+      "FIR_81",
+      "FIR_82",
+      "FIR_83",
+      "FIR_84",
+      "FIR_85",
+      "FIR_86",
+      "FIR_87",
+      "FIR_88",
+      "FIR_89",
+      "FIR_90",
+      "FIR_91",
+      "FIR_92",
+      "FIR_93",
+      "FIR_94",
+      "FIR_95",
+      "FIR_96",
+      "FIR_97",
+      "FIR_98",
+      "FIR_99"
+    ],
+    "test_split_firs_count": 20
+  },
+  "names_evaluation": {
+    "gold_count": 132,
+    "lenient": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 132
+    },
+    "mode": "ALL_NAMES",
+    "strict": {
+      "f1": 0.9924,
+      "fn": 1,
+      "fp": 1,
+      "precision": 0.9924,
+      "recall": 0.9924,
+      "tp": 131
+    },
+    "types": [
+      "PERSON",
+      "ALIAS",
+      "FATHER"
+    ]
+  },
+  "regex_identifiers_evaluation": {
+    "by_type": {
+      "ACCOUNT": {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 27,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 27
+      },
+      "AMOUNT": {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 21,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 21
+      },
+      "IMEI": {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 14,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 14
+      },
+      "PHONE": {
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "gold": 49,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 49
+      }
+    },
+    "gold_count": 111,
+    "strict": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 111
+    },
+    "types": [
+      "PHONE",
+      "IMEI",
+      "ACCOUNT",
+      "AMOUNT"
+    ]
+  }
+}
