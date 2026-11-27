@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { getToken, clearToken, request, setUnauthorizedHandler } from "./api/client.js";
 import { formatCaseFingerprint, copyToClipboard } from "./lib/format.js";
-import { canDeleteCase } from "./lib/roles.js";
+import { canDeleteCase, hasRole } from "./lib/roles.js";
 import { getLimitations } from "./pages/overviewHelpers.js";
 import { Login } from "./pages/Login.jsx";
 import { CaseRail } from "./components/CaseRail.jsx";
@@ -16,6 +16,7 @@ import { Break } from "./pages/Break.jsx";
 import { Timeline } from "./pages/Timeline.jsx";
 import { TimelineInsights } from "./pages/TimelineInsights.jsx";
 import { Dossier } from "./pages/Dossier.jsx";
+import { AuditLog } from "./pages/AuditLog.jsx";
 
 export function App() {
   const [route, setRoute] = useState(() => window.location.hash || "#/cases");
@@ -64,13 +65,15 @@ export function App() {
     if (typeof document === "undefined") return;
     if (isLogin) {
       document.title = "KAVACH - Login";
+    } else if (route.startsWith("#/admin/audit")) {
+      document.title = "KAVACH - Audit Log";
     } else if (routeCaseId) {
       const pageTitle = subPage ? subPage.charAt(0).toUpperCase() + subPage.slice(1) : "Overview";
       document.title = `KAVACH - ${routeCaseId} [${pageTitle}]`;
     } else {
       document.title = "KAVACH - Cases";
     }
-  }, [isLogin, routeCaseId, subPage]);
+  }, [isLogin, route, routeCaseId, subPage]);
 
   useEffect(() => {
     if (routeCaseId && routeCaseId !== activeCaseId) {
@@ -195,6 +198,23 @@ export function App() {
           >
             KAVACH
           </a>
+          {user && hasRole(user.role, "admin") && (
+            <a
+              href="#/admin/audit"
+              className="status-link"
+              data-testid="admin-audit-header-link"
+              style={{
+                fontSize: "12px",
+                marginLeft: "12px",
+                color: "var(--accent)",
+                textDecoration: "none",
+                fontWeight: 600,
+              }}
+              title="Audit log"
+            >
+              Audit log
+            </a>
+          )}
           {routeCaseId && activeCaseId && (
             <>
               <span className="status-item">
@@ -446,6 +466,10 @@ function CaseContentView({
   onCaseUpdated,
   onDeleteCase,
 }) {
+  if (route.startsWith("#/admin/audit")) {
+    return <AuditLog user={user} />;
+  }
+
   if (!caseId || route === "#/cases" || route === "#/") {
     return (
       <CaseListView
