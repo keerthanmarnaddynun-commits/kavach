@@ -17,6 +17,7 @@ import { Timeline } from "./pages/Timeline.jsx";
 import { TimelineInsights } from "./pages/TimelineInsights.jsx";
 import { Dossier } from "./pages/Dossier.jsx";
 import { AuditLog } from "./pages/AuditLog.jsx";
+import { ModelPerformance } from "./pages/ModelPerformance.jsx";
 
 export function App() {
   const [route, setRoute] = useState(() => window.location.hash || "#/cases");
@@ -67,6 +68,8 @@ export function App() {
       document.title = "KAVACH - Login";
     } else if (route.startsWith("#/admin/audit")) {
       document.title = "KAVACH - Audit Log";
+    } else if (route.startsWith("#/admin/model")) {
+      document.title = "KAVACH - Model Performance";
     } else if (routeCaseId) {
       const pageTitle = subPage ? subPage.charAt(0).toUpperCase() + subPage.slice(1) : "Overview";
       document.title = `KAVACH - ${routeCaseId} [${pageTitle}]`;
@@ -199,21 +202,38 @@ export function App() {
             KAVACH
           </a>
           {user && hasRole(user.role, "admin") && (
-            <a
-              href="#/admin/audit"
-              className="status-link"
-              data-testid="admin-audit-header-link"
-              style={{
-                fontSize: "12px",
-                marginLeft: "12px",
-                color: "var(--accent)",
-                textDecoration: "none",
-                fontWeight: 600,
-              }}
-              title="Audit log"
-            >
-              Audit log
-            </a>
+            <>
+              <a
+                href="#/admin/audit"
+                className="status-link"
+                data-testid="admin-audit-header-link"
+                style={{
+                  fontSize: "12px",
+                  marginLeft: "12px",
+                  color: "var(--accent)",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                }}
+                title="Audit log"
+              >
+                Audit log
+              </a>
+              <a
+                href="#/admin/model"
+                className="status-link"
+                data-testid="admin-model-header-link"
+                style={{
+                  fontSize: "12px",
+                  marginLeft: "12px",
+                  color: "var(--accent)",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                }}
+                title="Model performance"
+              >
+                Model performance
+              </a>
+            </>
           )}
           {routeCaseId && activeCaseId && (
             <>
@@ -468,6 +488,10 @@ function CaseContentView({
 }) {
   if (route.startsWith("#/admin/audit")) {
     return <AuditLog user={user} />;
+  }
+
+  if (route.startsWith("#/admin/model")) {
+    return <ModelPerformance user={user} />;
   }
 
   if (!caseId || route === "#/cases" || route === "#/") {

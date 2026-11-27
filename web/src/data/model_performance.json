@@ -1,0 +1,1442 @@
+{
+  "baselines": {
+    "dataset_caption": "Synthetic test, 50 FIRs. Only mentions evaluated (baselines do not extract relations).",
+    "models": [
+      {
+        "f1": 0.6271,
+        "fn": 132,
+        "fp": 0,
+        "model_id": "regex",
+        "name": "Regex baseline",
+        "precision": 1.0,
+        "recall": 0.4568,
+        "run": "step5a_baseline_r4",
+        "tp": 111
+      },
+      {
+        "f1": 0.9008,
+        "fn": 14,
+        "fp": 12,
+        "model_id": "spacy",
+        "name": "spaCy (Davlan/XLM-R)",
+        "precision": 0.9077,
+        "recall": 0.8939,
+        "run": "step5b_ner_baseline_r2",
+        "tp": 118
+      },
+      {
+        "f1": 0.1465,
+        "fn": 112,
+        "fp": 121,
+        "model_id": "flair",
+        "name": "Flair (IndicNER)",
+        "precision": 0.1418,
+        "recall": 0.1515,
+        "run": "step5b_ner_baseline_r2",
+        "tp": 20
+      },
+      {
+        "f1": 0.9992,
+        "fn": 1,
+        "fp": 1,
+        "model_id": "pipeline",
+        "name": "Our pipeline",
+        "precision": 0.9992,
+        "recall": 0.9992,
+        "run": "step6_extraction_r3",
+        "tp": 1234
+      }
+    ],
+    "provenance_caption": "step5a_baseline_r4, step5b_ner_baseline_r2 & step6_extraction_r3",
+    "source_runs": [
+      "step5a_baseline_r4",
+      "step5b_ner_baseline_r2",
+      "step6_extraction_r3"
+    ],
+    "sources": [
+      {
+        "path": "results/2026-11-23_step5a_baseline_r4/metrics.json",
+        "sha256": "1d6beb0f8c95c642d4fae5ff931e47378a6a3097ec5c58b78b4706fdf6c45210"
+      },
+      {
+        "path": "results/2026-11-23_step5b_ner_baseline_r2/metrics.json",
+        "sha256": "de311827262ada8e7d24e14333f0d839fe9af3703c84ce2eccc613ab7e3df4f2"
+      },
+      {
+        "path": "results/2026-11-23_step6_extraction_r3/metrics.json",
+        "sha256": "926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be"
+      }
+    ]
+  },
+  "entities_by_type": {
+    "held_out": [
+      {
+        "gold": 92,
+        "lenient": {
+          "f1": 0.749,
+          "fn": 1,
+          "fp": 60,
+          "precision": 0.6026,
+          "recall": 0.9891,
+          "tp": 91
+        },
+        "predicted": 151,
+        "strict": {
+          "f1": 0.6502,
+          "fn": 13,
+          "fp": 72,
+          "precision": 0.5232,
+          "recall": 0.8587,
+          "tp": 79
+        },
+        "type": "PERSON"
+      },
+      {
+        "gold": 27,
+        "lenient": {
+          "f1": 0.875,
+          "fn": 6,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.7778,
+          "tp": 21
+        },
+        "predicted": 21,
+        "strict": {
+          "f1": 0.875,
+          "fn": 6,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.7778,
+          "tp": 21
+        },
+        "type": "ALIAS"
+      },
+      {
+        "gold": 19,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 19
+        },
+        "predicted": 19,
+        "strict": {
+          "f1": 0.8947,
+          "fn": 2,
+          "fp": 2,
+          "precision": 0.8947,
+          "recall": 0.8947,
+          "tp": 17
+        },
+        "type": "FATHER"
+      },
+      {
+        "gold": 40,
+        "lenient": {
+          "f1": 0.9474,
+          "fn": 4,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.9,
+          "tp": 36
+        },
+        "predicted": 36,
+        "strict": {
+          "f1": 0.9474,
+          "fn": 4,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.9,
+          "tp": 36
+        },
+        "type": "PHONE"
+      },
+      {
+        "gold": 9,
+        "lenient": {
+          "f1": 0.8,
+          "fn": 1,
+          "fp": 3,
+          "precision": 0.7273,
+          "recall": 0.8889,
+          "tp": 8
+        },
+        "predicted": 11,
+        "strict": {
+          "f1": 0.8,
+          "fn": 1,
+          "fp": 3,
+          "precision": 0.7273,
+          "recall": 0.8889,
+          "tp": 8
+        },
+        "type": "IMEI"
+      },
+      {
+        "gold": 21,
+        "lenient": {
+          "f1": 0.9231,
+          "fn": 3,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.8571,
+          "tp": 18
+        },
+        "predicted": 18,
+        "strict": {
+          "f1": 0.8718,
+          "fn": 4,
+          "fp": 1,
+          "precision": 0.9444,
+          "recall": 0.8095,
+          "tp": 17
+        },
+        "type": "ACCOUNT"
+      },
+      {
+        "gold": 6,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 6
+        },
+        "predicted": 6,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 6
+        },
+        "type": "AADHAAR"
+      },
+      {
+        "gold": 5,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 5
+        },
+        "predicted": 5,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 5
+        },
+        "type": "PAN"
+      },
+      {
+        "gold": 4,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 4
+        },
+        "predicted": 4,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 4
+        },
+        "type": "UPI"
+      },
+      {
+        "gold": 9,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 9
+        },
+        "predicted": 9,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 9
+        },
+        "type": "VEHICLE"
+      },
+      {
+        "gold": 38,
+        "lenient": {
+          "f1": 0.9157,
+          "fn": 0,
+          "fp": 7,
+          "precision": 0.8444,
+          "recall": 1.0,
+          "tp": 38
+        },
+        "predicted": 45,
+        "strict": {
+          "f1": 0.8916,
+          "fn": 1,
+          "fp": 8,
+          "precision": 0.8222,
+          "recall": 0.9737,
+          "tp": 37
+        },
+        "type": "AMOUNT"
+      },
+      {
+        "gold": 4,
+        "lenient": {
+          "f1": 0.0,
+          "fn": 4,
+          "fp": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "predicted": 0,
+        "strict": {
+          "f1": 0.0,
+          "fn": 4,
+          "fp": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "type": "IFSC"
+      }
+    ],
+    "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic test)",
+    "source_runs": {
+      "held_out": "step7_llm_heldout_r2",
+      "synthetic_test": "step6_extraction_r3"
+    },
+    "sources": [
+      {
+        "path": "results/2026-11-16_step7_llm_heldout_r2/metrics.json",
+        "sha256": "84a2cebdea91dba0020382173ce50dba47b8f52b93f66352b9473744d6c5e995"
+      },
+      {
+        "path": "results/2026-11-23_step6_extraction_r3/metrics.json",
+        "sha256": "926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be"
+      }
+    ],
+    "synthetic_test": [
+      {
+        "gold": 383,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 383
+        },
+        "predicted": 383,
+        "strict": {
+          "f1": 0.9974,
+          "fn": 1,
+          "fp": 1,
+          "precision": 0.9974,
+          "recall": 0.9974,
+          "tp": 382
+        },
+        "type": "PERSON"
+      },
+      {
+        "gold": 155,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 155
+        },
+        "predicted": 155,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 155
+        },
+        "type": "ALIAS"
+      },
+      {
+        "gold": 127,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 127
+        },
+        "predicted": 127,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 127
+        },
+        "type": "FATHER"
+      },
+      {
+        "gold": 255,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 255
+        },
+        "predicted": 255,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 255
+        },
+        "type": "PHONE"
+      },
+      {
+        "gold": 74,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 74
+        },
+        "predicted": 74,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 74
+        },
+        "type": "IMEI"
+      },
+      {
+        "gold": 134,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 134
+        },
+        "predicted": 134,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 134
+        },
+        "type": "ACCOUNT"
+      },
+      {
+        "gold": 107,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 107
+        },
+        "predicted": 107,
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 107
+        },
+        "type": "AMOUNT"
+      }
+    ]
+  },
+  "error_breakdown": {
+    "mentions": {
+      "fn_classes": [
+        {
+          "class_name": "PAIRED_WITH_FP (INSIDE_GOLD_RIGHT)",
+          "count": 8,
+          "examples": [
+            {
+              "char_span": [
+                402,
+                422
+              ],
+              "file": "D_02",
+              "note": null,
+              "surface": "\u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0915 \u0935\u093f\u091c\u092f \u0936\u0941\u0915\u094d\u0932\u093e"
+            },
+            {
+              "char_span": [
+                334,
+                350
+              ],
+              "file": "D_03",
+              "note": null,
+              "surface": "\u0939\u0935\u0932\u0926\u093e\u0930 \u0930\u093e\u092e\u092a\u094d\u0930\u0924\u093e\u092a"
+            },
+            {
+              "char_span": [
+                393,
+                415
+              ],
+              "file": "D_04",
+              "note": null,
+              "surface": "\u0909\u092a\u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0915 \u0938\u0902\u091c\u092f \u092e\u093f\u0936\u094d\u0930\u093e"
+            },
+            {
+              "char_span": [
+                609,
+                629
+              ],
+              "file": "D_05",
+              "note": null,
+              "surface": "\u0921\u0940\u090f\u0938\u092a\u0940 \u0930\u093e\u091c\u0940\u0935 \u0938\u0915\u094d\u0938\u0947\u0928\u093e"
+            },
+            {
+              "char_span": [
+                420,
+                442
+              ],
+              "file": "E_01",
+              "note": null,
+              "surface": "Inspector Ramesh Gowda"
+            }
+          ],
+          "pct": 61.5
+        },
+        {
+          "class_name": "PAIRED_WITH_FP (INSIDE_GOLD_LEFT)",
+          "count": 2,
+          "examples": [
+            {
+              "char_span": [
+                360,
+                372
+              ],
+              "file": "H_07",
+              "note": null,
+              "surface": "Baban Shinde"
+            },
+            {
+              "char_span": [
+                390,
+                400
+              ],
+              "file": "H_09",
+              "note": null,
+              "surface": "Dharam Pal"
+            }
+          ],
+          "pct": 15.4
+        },
+        {
+          "class_name": "PAIRED_WITH_FP (INSIDE_GOLD_MIDDLE)",
+          "count": 0,
+          "examples": [],
+          "pct": 0.0
+        },
+        {
+          "class_name": "PAIRED_WITH_FP (EXTENDS_GOLD)",
+          "count": 2,
+          "examples": [
+            {
+              "char_span": [
+                250,
+                261
+              ],
+              "file": "H_06",
+              "note": null,
+              "surface": "Geeta Verma"
+            },
+            {
+              "char_span": [
+                178,
+                191
+              ],
+              "file": "H_11",
+              "note": null,
+              "surface": "Archana Joshi"
+            }
+          ],
+          "pct": 15.4
+        },
+        {
+          "class_name": "UNPAIRED",
+          "count": 1,
+          "examples": [
+            {
+              "char_span": [
+                180,
+                191
+              ],
+              "file": "H_12",
+              "note": null,
+              "surface": "Jaspal Brar"
+            }
+          ],
+          "pct": 7.7
+        }
+      ],
+      "fp_classes": [
+        {
+          "class_name": "REPEAT_SHORT_FORM",
+          "count": 48,
+          "examples": [
+            {
+              "char_span": [
+                210,
+                214
+              ],
+              "file": "D_01",
+              "note": null,
+              "surface": "\u0938\u0941\u092e\u0928"
+            },
+            {
+              "char_span": [
+                273,
+                278
+              ],
+              "file": "D_01",
+              "note": null,
+              "surface": "\u0930\u093e\u0915\u0947\u0936"
+            },
+            {
+              "char_span": [
+                186,
+                190
+              ],
+              "file": "D_02",
+              "note": null,
+              "surface": "\u0926\u0940\u092a\u0915"
+            },
+            {
+              "char_span": [
+                149,
+                153
+              ],
+              "file": "D_04",
+              "note": null,
+              "surface": "\u0938\u094b\u0928\u0942"
+            },
+            {
+              "char_span": [
+                214,
+                218
+              ],
+              "file": "D_05",
+              "note": null,
+              "surface": "\u0905\u0936\u094b\u0915"
+            }
+          ],
+          "pct": 66.7
+        },
+        {
+          "class_name": "INSIDE_GOLD_RIGHT",
+          "count": 8,
+          "examples": [
+            {
+              "char_span": [
+                411,
+                422
+              ],
+              "file": "D_02",
+              "note": null,
+              "surface": "\u0935\u093f\u091c\u092f \u0936\u0941\u0915\u094d\u0932\u093e"
+            },
+            {
+              "char_span": [
+                341,
+                350
+              ],
+              "file": "D_03",
+              "note": null,
+              "surface": "\u0930\u093e\u092e\u092a\u094d\u0930\u0924\u093e\u092a"
+            },
+            {
+              "char_span": [
+                404,
+                415
+              ],
+              "file": "D_04",
+              "note": null,
+              "surface": "\u0938\u0902\u091c\u092f \u092e\u093f\u0936\u094d\u0930\u093e"
+            },
+            {
+              "char_span": [
+                616,
+                629
+              ],
+              "file": "D_05",
+              "note": null,
+              "surface": "\u0930\u093e\u091c\u0940\u0935 \u0938\u0915\u094d\u0938\u0947\u0928\u093e"
+            },
+            {
+              "char_span": [
+                430,
+                442
+              ],
+              "file": "E_01",
+              "note": null,
+              "surface": "Ramesh Gowda"
+            }
+          ],
+          "pct": 11.1
+        },
+        {
+          "class_name": "INSIDE_GOLD_LEFT",
+          "count": 2,
+          "examples": [
+            {
+              "char_span": [
+                360,
+                370
+              ],
+              "file": "H_07",
+              "note": null,
+              "surface": "Baban Shin"
+            },
+            {
+              "char_span": [
+                390,
+                391
+              ],
+              "file": "H_09",
+              "note": null,
+              "surface": "D"
+            }
+          ],
+          "pct": 2.8
+        },
+        {
+          "class_name": "INSIDE_GOLD_MIDDLE",
+          "count": 0,
+          "examples": [],
+          "pct": 0.0
+        },
+        {
+          "class_name": "EXTENDS_GOLD",
+          "count": 2,
+          "examples": [
+            {
+              "char_span": [
+                244,
+                261
+              ],
+              "file": "H_06",
+              "note": null,
+              "surface": "Pidit Geeta Verma"
+            },
+            {
+              "char_span": [
+                172,
+                191
+              ],
+              "file": "H_11",
+              "note": null,
+              "surface": "Pidit Archana Joshi"
+            }
+          ],
+          "pct": 2.8
+        },
+        {
+          "class_name": "OTHER",
+          "count": 12,
+          "examples": [
+            {
+              "char_span": [
+                51,
+                56
+              ],
+              "file": "D_04",
+              "note": "overlaps a gold ALIAS mention",
+              "surface": "\u091a\u093f\u0902\u091f\u0942"
+            },
+            {
+              "char_span": [
+                333,
+                336
+              ],
+              "file": "H_02",
+              "note": "overlaps no gold mention",
+              "surface": "ASI"
+            },
+            {
+              "char_span": [
+                388,
+                393
+              ],
+              "file": "H_04",
+              "note": "overlaps no gold mention",
+              "surface": "Chomu"
+            },
+            {
+              "char_span": [
+                97,
+                102
+              ],
+              "file": "H_05",
+              "note": "overlaps a gold ALIAS mention",
+              "surface": "Lamba"
+            },
+            {
+              "char_span": [
+                34,
+                42
+              ],
+              "file": "H_07",
+              "note": "overlaps no gold mention",
+              "surface": "Hadapsar"
+            }
+          ],
+          "pct": 16.7
+        }
+      ],
+      "total_fn": 13,
+      "total_fp": 72
+    },
+    "provenance_caption": "step7b_gap_analysis_r2",
+    "relations": {
+      "fn_classes": [
+        {
+          "class_name": "PAIRED_WITH_FP",
+          "count": 18,
+          "examples": [
+            {
+              "amount": null,
+              "file": "D_02",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "\u0926\u0940\u092a\u0915 \u0938\u093f\u0902\u0939",
+              "target_surface": "1234000100567890"
+            },
+            {
+              "amount": null,
+              "file": "D_04",
+              "relation": "OWNS_DEVICE",
+              "source_surface": "\u0905\u092e\u093f\u0924 \u091a\u094c\u0939\u093e\u0928",
+              "target_surface": "7000123456"
+            },
+            {
+              "amount": null,
+              "file": "E_03",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "Sanjay Mehta",
+              "target_surface": "50100987654321"
+            },
+            {
+              "amount": null,
+              "file": "E_03",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "Pooja Deshmukh",
+              "target_surface": "038901567890"
+            },
+            {
+              "amount": null,
+              "file": "E_05",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "Tarlok Bansal",
+              "target_surface": "6412345678"
+            }
+          ],
+          "pct": 26.9
+        },
+        {
+          "class_name": "UNPAIRED",
+          "count": 49,
+          "examples": [
+            {
+              "amount": null,
+              "file": "D_01",
+              "relation": "ASSOCIATED_IMEI",
+              "source_surface": "9936012345",
+              "target_surface": "358912076543210"
+            },
+            {
+              "amount": null,
+              "file": "D_01",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "\u0930\u093e\u0915\u0947\u0936 \u092a\u093e\u0902\u0921\u0947\u092f",
+              "target_surface": "31245098761"
+            },
+            {
+              "amount": 48000.0,
+              "file": "D_01",
+              "relation": "TRANSFERRED_FUNDS",
+              "source_surface": "\u0938\u0941\u092e\u0928 \u0935\u0930\u094d\u092e\u093e",
+              "target_surface": "31245098761"
+            },
+            {
+              "amount": 200000.0,
+              "file": "D_02",
+              "relation": "TRANSFERRED_FUNDS",
+              "source_surface": "\u092e\u0939\u0947\u0936 \u0917\u0941\u092a\u094d\u0924\u093e",
+              "target_surface": "1234000100567890"
+            },
+            {
+              "amount": 150000.0,
+              "file": "D_02",
+              "relation": "TRANSFERRED_FUNDS",
+              "source_surface": "1234000100567890",
+              "target_surface": "50100456789012"
+            }
+          ],
+          "pct": 73.1
+        }
+      ],
+      "fp_classes": [
+        {
+          "class_name": "NAME_FORM_MISMATCH",
+          "count": 11,
+          "examples": [
+            {
+              "amount": null,
+              "file": "D_02",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "\u0926\u0940\u092a\u0915",
+              "target_surface": "1234000100567890"
+            },
+            {
+              "amount": null,
+              "file": "E_03",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "Mehta",
+              "target_surface": "50100987654321"
+            },
+            {
+              "amount": null,
+              "file": "E_03",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "Pooja Deshmukh",
+              "target_surface": "038901567890"
+            },
+            {
+              "amount": null,
+              "file": "E_05",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "Bansal",
+              "target_surface": "6412345678"
+            },
+            {
+              "amount": null,
+              "file": "E_05",
+              "relation": "CONTROLS_ACCOUNT",
+              "source_surface": "Nair",
+              "target_surface": "3987001234567890"
+            }
+          ],
+          "pct": 47.8
+        },
+        {
+          "class_name": "SOURCE_DIFFERS",
+          "count": 6,
+          "examples": [
+            {
+              "amount": null,
+              "file": "D_04",
+              "relation": "OWNS_DEVICE",
+              "source_surface": "\u0938\u094b\u0928\u0942 \u092c\u0918\u0947\u0932",
+              "target_surface": "7000123456"
+            },
+            {
+              "amount": 85000.0,
+              "file": "H_01",
+              "relation": "TRANSFERRED_FUNDS",
+              "source_surface": "Mohit Sharma",
+              "target_surface": "4521003298761"
+            },
+            {
+              "amount": null,
+              "file": "H_05",
+              "relation": "OWNS_DEVICE",
+              "source_surface": "Lamba",
+              "target_surface": "7007123456"
+            },
+            {
+              "amount": null,
+              "file": "H_10",
+              "relation": "OWNS_DEVICE",
+              "source_surface": "Dabri",
+              "target_surface": "9654321098"
+            },
+            {
+              "amount": 10000000.0,
+              "file": "H_12",
+              "relation": "TRANSFERRED_FUNDS",
+              "source_surface": "Manjeet Kaur",
+              "target_surface": "4120001002345678"
+            }
+          ],
+          "pct": 26.1
+        },
+        {
+          "class_name": "AMOUNT_MISSING",
+          "count": 1,
+          "examples": [
+            {
+              "amount": null,
+              "file": "H_04",
+              "relation": "TRANSFERRED_FUNDS",
+              "source_surface": "Bhanwar Singh",
+              "target_surface": "123405009876"
+            }
+          ],
+          "pct": 4.3
+        },
+        {
+          "class_name": "OTHER",
+          "count": 5,
+          "examples": [
+            {
+              "amount": null,
+              "file": "D_02",
+              "relation": "TRANSFERRED_FUNDS",
+              "source_surface": "\u0926\u0940\u092a\u0915",
+              "target_surface": "1234000100567890"
+            },
+            {
+              "amount": null,
+              "file": "E_02",
+              "relation": "COMMUNICATED_WITH",
+              "source_surface": "9900112233",
+              "target_surface": "9448099887"
+            },
+            {
+              "amount": null,
+              "file": "H_05",
+              "relation": "ASSOCIATED_IMEI",
+              "source_surface": "9415098765",
+              "target_surface": "917020045512345"
+            },
+            {
+              "amount": null,
+              "file": "H_13",
+              "relation": "OWNS_DEVICE",
+              "source_surface": "Sonu Pathak",
+              "target_surface": "8527341290"
+            },
+            {
+              "amount": null,
+              "file": "H_15",
+              "relation": "OWNS_DEVICE",
+              "source_surface": "Arjun Menon",
+              "target_surface": "9847012345"
+            }
+          ],
+          "pct": 21.7
+        }
+      ],
+      "total_fn": 67,
+      "total_fp": 23
+    },
+    "source": {
+      "path": "results/2026-11-23_step7b_gap_analysis_r2/gap_analysis.json",
+      "sha256": "0d19d853c485f67b5540a194a14a5e58636fc2a629ca6c2bd8cd6460419ea4c0"
+    },
+    "source_run": "step7b_gap_analysis_r2"
+  },
+  "generalisation_gap": {
+    "comparison": [
+      {
+        "gap": 0.2101,
+        "held_out": 0.7891,
+        "metric": "Mentions F1 (strict)",
+        "synthetic_test": 0.9992
+      },
+      {
+        "gap": 0.649,
+        "held_out": 0.3182,
+        "metric": "Relations F1 (micro)",
+        "synthetic_test": 0.9672
+      }
+    ],
+    "provenance_caption": "step7_llm_heldout_r2 (headline.synthetic_comparison)",
+    "source": {
+      "path": "results/2026-11-16_step7_llm_heldout_r2/metrics.json",
+      "sha256": "84a2cebdea91dba0020382173ce50dba47b8f52b93f66352b9473744d6c5e995"
+    },
+    "source_run": "step7_llm_heldout_r2"
+  },
+  "headline": {
+    "dataset_sizes": {
+      "caption": "Synthetic test: 50 FIRs; independent held-out: 25 FIRs",
+      "held_out_firs": 25,
+      "synthetic_test_firs": 50
+    },
+    "held_out": {
+      "mention_strict_f1": 0.7891,
+      "mention_strict_p": 0.7214,
+      "mention_strict_r": 0.8707,
+      "relation_micro_f1": 0.3182,
+      "relation_micro_p": 0.4773,
+      "relation_micro_r": 0.2386
+    },
+    "provenance_caption": "step7_llm_heldout_r2 & step6_extraction_r3",
+    "source_runs": [
+      "step7_llm_heldout_r2",
+      "step6_extraction_r3"
+    ],
+    "sources": [
+      {
+        "path": "results/2026-11-16_step7_llm_heldout_r2/metrics.json",
+        "sha256": "84a2cebdea91dba0020382173ce50dba47b8f52b93f66352b9473744d6c5e995"
+      },
+      {
+        "path": "results/2026-11-23_step6_extraction_r3/metrics.json",
+        "sha256": "926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be"
+      }
+    ],
+    "synthetic_test": {
+      "mention_strict_f1": 0.9992,
+      "relation_micro_f1": 0.9672
+    }
+  },
+  "meta": {
+    "generated_by": "scripts/build_model_performance.py",
+    "source_files": {
+      "step5a_metrics": {
+        "path": "results/2026-11-23_step5a_baseline_r4/metrics.json",
+        "sha256": "1d6beb0f8c95c642d4fae5ff931e47378a6a3097ec5c58b78b4706fdf6c45210"
+      },
+      "step5b_metrics": {
+        "path": "results/2026-11-23_step5b_ner_baseline_r2/metrics.json",
+        "sha256": "de311827262ada8e7d24e14333f0d839fe9af3703c84ce2eccc613ab7e3df4f2"
+      },
+      "step6_metrics": {
+        "path": "results/2026-11-23_step6_extraction_r3/metrics.json",
+        "sha256": "926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be"
+      },
+      "step7_errors": {
+        "path": "results/2026-11-16_step7_llm_heldout_r2/errors.json",
+        "sha256": "28628f71a5e98fe152985bdc71bc290057256d8794f2dbd07312156b85d35906"
+      },
+      "step7_metrics": {
+        "path": "results/2026-11-16_step7_llm_heldout_r2/metrics.json",
+        "sha256": "84a2cebdea91dba0020382173ce50dba47b8f52b93f66352b9473744d6c5e995"
+      },
+      "step7b_gap": {
+        "path": "results/2026-11-23_step7b_gap_analysis_r2/gap_analysis.json",
+        "sha256": "0d19d853c485f67b5540a194a14a5e58636fc2a629ca6c2bd8cd6460419ea4c0"
+      }
+    }
+  },
+  "relations_by_type": {
+    "held_out": [
+      {
+        "gold": 27,
+        "lenient": {
+          "f1": 0.2927,
+          "fn": 21,
+          "fp": 8,
+          "precision": 0.4286,
+          "recall": 0.2222,
+          "tp": 6
+        },
+        "predicted": 14,
+        "relation": "OWNS_DEVICE",
+        "strict": {
+          "f1": 0.2927,
+          "fn": 21,
+          "fp": 8,
+          "precision": 0.4286,
+          "recall": 0.2222,
+          "tp": 6
+        }
+      },
+      {
+        "gold": 9,
+        "lenient": {
+          "f1": 0.75,
+          "fn": 3,
+          "fp": 1,
+          "precision": 0.8571,
+          "recall": 0.6667,
+          "tp": 6
+        },
+        "predicted": 7,
+        "relation": "ASSOCIATED_IMEI",
+        "strict": {
+          "f1": 0.75,
+          "fn": 3,
+          "fp": 1,
+          "precision": 0.8571,
+          "recall": 0.6667,
+          "tp": 6
+        }
+      },
+      {
+        "gold": 11,
+        "lenient": {
+          "f1": 0.5,
+          "fn": 7,
+          "fp": 1,
+          "precision": 0.8,
+          "recall": 0.3636,
+          "tp": 4
+        },
+        "predicted": 5,
+        "relation": "COMMUNICATED_WITH",
+        "strict": {
+          "f1": 0.5,
+          "fn": 7,
+          "fp": 1,
+          "precision": 0.8,
+          "recall": 0.3636,
+          "tp": 4
+        }
+      },
+      {
+        "gold": 20,
+        "lenient": {
+          "f1": 0.2069,
+          "fn": 17,
+          "fp": 6,
+          "precision": 0.3333,
+          "recall": 0.15,
+          "tp": 3
+        },
+        "predicted": 9,
+        "relation": "CONTROLS_ACCOUNT",
+        "strict": {
+          "f1": 0.2069,
+          "fn": 17,
+          "fp": 6,
+          "precision": 0.3333,
+          "recall": 0.15,
+          "tp": 3
+        }
+      },
+      {
+        "gold": 21,
+        "lenient": {
+          "f1": 0.1333,
+          "fn": 19,
+          "fp": 7,
+          "precision": 0.2222,
+          "recall": 0.0952,
+          "tp": 2
+        },
+        "predicted": 9,
+        "relation": "TRANSFERRED_FUNDS",
+        "strict": {
+          "f1": 0.1333,
+          "fn": 19,
+          "fp": 7,
+          "precision": 0.2222,
+          "recall": 0.0952,
+          "tp": 2
+        }
+      }
+    ],
+    "provenance_caption": "step7_llm_heldout_r2 (held-out) / step6_extraction_r3 (synthetic test)",
+    "source_runs": {
+      "held_out": "step7_llm_heldout_r2",
+      "synthetic_test": "step6_extraction_r3"
+    },
+    "sources": [
+      {
+        "path": "results/2026-11-16_step7_llm_heldout_r2/metrics.json",
+        "sha256": "84a2cebdea91dba0020382173ce50dba47b8f52b93f66352b9473744d6c5e995"
+      },
+      {
+        "path": "results/2026-11-23_step6_extraction_r3/metrics.json",
+        "sha256": "926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be"
+      }
+    ],
+    "synthetic_test": [
+      {
+        "gold": 74,
+        "lenient": {
+          "f1": 0.9865,
+          "fn": 1,
+          "fp": 1,
+          "precision": 0.9865,
+          "recall": 0.9865,
+          "tp": 73
+        },
+        "predicted": 74,
+        "relation": "OWNS_DEVICE",
+        "strict": {
+          "f1": 0.9865,
+          "fn": 1,
+          "fp": 1,
+          "precision": 0.9865,
+          "recall": 0.9865,
+          "tp": 73
+        }
+      },
+      {
+        "gold": 74,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 74
+        },
+        "predicted": 74,
+        "relation": "ASSOCIATED_IMEI",
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 74
+        }
+      },
+      {
+        "gold": 56,
+        "lenient": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 56
+        },
+        "predicted": 56,
+        "relation": "COMMUNICATED_WITH",
+        "strict": {
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tp": 56
+        }
+      },
+      {
+        "gold": 54,
+        "lenient": {
+          "f1": 0.9811,
+          "fn": 2,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.963,
+          "tp": 52
+        },
+        "predicted": 52,
+        "relation": "CONTROLS_ACCOUNT",
+        "strict": {
+          "f1": 0.9811,
+          "fn": 2,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.963,
+          "tp": 52
+        }
+      },
+      {
+        "gold": 54,
+        "lenient": {
+          "f1": 0.9815,
+          "fn": 1,
+          "fp": 1,
+          "precision": 0.9815,
+          "recall": 0.9815,
+          "tp": 53
+        },
+        "predicted": 54,
+        "relation": "TRANSFERRED_FUNDS",
+        "strict": {
+          "f1": 0.9815,
+          "fn": 1,
+          "fp": 1,
+          "precision": 0.9815,
+          "recall": 0.9815,
+          "tp": 53
+        }
+      }
+    ]
+  },
+  "speed": {
+    "model_load_ms": 11854.83,
+    "provenance_caption": "step6_extraction_r3 (latency.run2)",
+    "source": {
+      "path": "results/2026-11-23_step6_extraction_r3/metrics.json",
+      "sha256": "926e0a690a969ce9a73d5c2b2f9676a72a769ad2350628bbde4431ba8f88e2be"
+    },
+    "source_run": "step6_extraction_r3",
+    "stages": [
+      {
+        "id": "model",
+        "label": "Neural model inference",
+        "mean_ms": 659.61,
+        "p95_ms": 926.24
+      },
+      {
+        "id": "postprocess",
+        "label": "Postprocessing",
+        "mean_ms": 0.04,
+        "p95_ms": 0.06
+      },
+      {
+        "id": "names_identifiers",
+        "label": "Names & identifiers",
+        "mean_ms": 1.88,
+        "p95_ms": 3.67
+      },
+      {
+        "id": "assemble",
+        "label": "Entity assembly",
+        "mean_ms": 5.58,
+        "p95_ms": 9.4
+      },
+      {
+        "id": "relations",
+        "label": "Relation extraction",
+        "mean_ms": 14.1,
+        "p95_ms": 23.25
+      },
+      {
+        "id": "validate",
+        "label": "Contract validation",
+        "mean_ms": 3.73,
+        "p95_ms": 6.0
+      }
+    ],
+    "total": {
+      "mean_ms": 684.95,
+      "p95_ms": 965.17
+    }
+  }
+}
