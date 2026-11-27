@@ -1,0 +1,140 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-9C-AB-1590"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL9CAB1590"
+      },
+      {
+        "ai_confidence": 0.995445,
+        "aliases": [
+          "Bade Miyan"
+        ],
+        "canonical_name": "Mukhtar Ansari",
+        "char_span": [
+          203,
+          217
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.995445,
+          "validator": null
+        },
+        "father_name": "Iqbal Ansari",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              217
+            ],
+            "kind": "NAME",
+            "surface": "Mukhtar Ansari"
+          },
+          {
+            "char_span": [
+              222,
+              232
+            ],
+            "kind": "ALIAS",
+            "surface": "Bade Miyan"
+          },
+          {
+            "char_span": [
+              242,
+              254
+            ],
+            "kind": "FATHER",
+            "surface": "Iqbal Ansari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.790419,
+        "canonical_name": "Ram Avatar",
+        "char_span": [
+          387,
+          397
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.790419,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              387,
+              397
+            ],
+            "kind": "NAME",
+            "surface": "Ram Avatar"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_30"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 573,
+    "document_hash": "a6e008b737cd87f490f85471eefab350ef08a224e81e64d14f23f5a7cdfb9313",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

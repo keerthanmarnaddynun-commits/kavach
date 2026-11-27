@@ -1,0 +1,476 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 631,
+        "start": 616,
+        "surface": "Rs. 32,577.69/-",
+        "value": 32577.69
+      },
+      {
+        "end": 851,
+        "start": 838,
+        "surface": "INR 15,000.00",
+        "value": 15000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          162,
+          175
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              162,
+              175
+            ],
+            "kind": "VALUE",
+            "surface": "DL-2C-AB-3564"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL2CAB3564"
+      },
+      {
+        "ai_confidence": 0.973927,
+        "aliases": [
+          "Bicky",
+          "Viku",
+          "Kallu"
+        ],
+        "canonical_name": "Vikas Sharma",
+        "char_span": [
+          203,
+          215
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.973927,
+          "validator": null
+        },
+        "father_name": "Harish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              203,
+              215
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          },
+          {
+            "char_span": [
+              220,
+              225
+            ],
+            "kind": "ALIAS",
+            "surface": "Bicky"
+          },
+          {
+            "char_span": [
+              228,
+              232
+            ],
+            "kind": "ALIAS",
+            "surface": "Viku"
+          },
+          {
+            "char_span": [
+              235,
+              240
+            ],
+            "kind": "ALIAS",
+            "surface": "Kallu"
+          },
+          {
+            "char_span": [
+              250,
+              263
+            ],
+            "kind": "FATHER",
+            "surface": "Harish Sharma"
+          },
+          {
+            "char_span": [
+              1061,
+              1073
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999869,
+        "aliases": [
+          "Biku"
+        ],
+        "canonical_name": "Bikas Sharma",
+        "char_span": [
+          328,
+          340
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999869,
+          "validator": null
+        },
+        "father_name": "Girish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              328,
+              340
+            ],
+            "kind": "NAME",
+            "surface": "Bikas Sharma"
+          },
+          {
+            "char_span": [
+              345,
+              349
+            ],
+            "kind": "ALIAS",
+            "surface": "Biku"
+          },
+          {
+            "char_span": [
+              359,
+              372
+            ],
+            "kind": "FATHER",
+            "surface": "Girish Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.998641,
+        "canonical_name": "Kuldeep Yadav",
+        "char_span": [
+          436,
+          449
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998641,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              436,
+              449
+            ],
+            "kind": "NAME",
+            "surface": "Kuldeep Yadav"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          582,
+          598
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              582,
+              598
+            ],
+            "kind": "VALUE",
+            "surface": "7909670546688937"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "7909670546688937"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          647,
+          663
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              647,
+              663
+            ],
+            "kind": "VALUE",
+            "surface": "1075079752217806"
+          },
+          {
+            "char_span": [
+              719,
+              735
+            ],
+            "kind": "VALUE",
+            "surface": "1075079752217806"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "1075079752217806"
+      },
+      {
+        "ai_confidence": 0.992747,
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          757,
+          771
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.992747,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              757,
+              771
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          960,
+          970
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              960,
+              970
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          },
+          {
+            "char_span": [
+              1106,
+              1116
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          },
+          {
+            "char_span": [
+              1171,
+              1181
+            ],
+            "kind": "VALUE",
+            "surface": "6834738299"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6834738299"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          980,
+          990
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              980,
+              990
+            ],
+            "kind": "VALUE",
+            "surface": "7081219136"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7081219136"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1197,
+          1212
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_10",
+        "mentions": [
+          {
+            "char_span": [
+              1197,
+              1212
+            ],
+            "kind": "VALUE",
+            "surface": "837631165667016"
+          }
+        ],
+        "type": "IMEI",
+        "value": "837631165667016"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 32577.69,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          523,
+          682
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "transfer hua"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          683,
+          786
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_07",
+        "target": "ent_06",
+        "trigger": "authorized signatory"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          913,
+          1025
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_08",
+        "target": "ent_09",
+        "trigger": "calling traffic"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1026,
+          1136
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_08",
+        "trigger": "recovred"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1137,
+          1229
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_08",
+        "target": "ent_10",
+        "trigger": "apparatus IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_65"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1332,
+    "document_hash": "a327ea44748d1c4053a96dfec6f1eda7d560df06bb38fe3ffe041316e6cc110f",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 4,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

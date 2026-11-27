@@ -1,0 +1,262 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 412,
+        "start": 399,
+        "surface": "INR 10,925.38",
+        "value": 10925.38
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-1C-AB-5332"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL1CAB5332"
+      },
+      {
+        "ai_confidence": 0.988941,
+        "aliases": [
+          "Bicky",
+          "Viku",
+          "Kallu"
+        ],
+        "canonical_name": "Vikas Sharma",
+        "char_span": [
+          220,
+          232
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.988941,
+          "validator": null
+        },
+        "father_name": "Harish Sharma",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              232
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          },
+          {
+            "char_span": [
+              237,
+              242
+            ],
+            "kind": "ALIAS",
+            "surface": "Bicky"
+          },
+          {
+            "char_span": [
+              245,
+              249
+            ],
+            "kind": "ALIAS",
+            "surface": "Viku"
+          },
+          {
+            "char_span": [
+              252,
+              257
+            ],
+            "kind": "ALIAS",
+            "surface": "Kallu"
+          },
+          {
+            "char_span": [
+              267,
+              280
+            ],
+            "kind": "FATHER",
+            "surface": "Harish Sharma"
+          },
+          {
+            "char_span": [
+              369,
+              381
+            ],
+            "kind": "NAME",
+            "surface": "Vikas Sharma"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          432,
+          443
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              432,
+              443
+            ],
+            "kind": "VALUE",
+            "surface": "82788957986"
+          },
+          {
+            "char_span": [
+              476,
+              487
+            ],
+            "kind": "VALUE",
+            "surface": "82788957986"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "82788957986"
+      },
+      {
+        "ai_confidence": 0.999252,
+        "canonical_name": "Sunil Kumar",
+        "char_span": [
+          501,
+          512
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999252,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              501,
+              512
+            ],
+            "kind": "NAME",
+            "surface": "Sunil Kumar"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.874902,
+        "canonical_name": "Ram Avatar",
+        "char_span": [
+          562,
+          572
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.874902,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              562,
+              572
+            ],
+            "kind": "NAME",
+            "surface": "Ram Avatar"
+          }
+        ],
+        "role": "COMPLAINANT",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 10925.38,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          324,
+          465
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "deposit"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          466,
+          544
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_04",
+        "target": "ent_03",
+        "trigger": "handler"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_90"
+  },
+  "info": {
+    "amounts_count": 1,
+    "char_count": 740,
+    "document_hash": "7cefbe7304d76690cf8ed4bd97d32bec23932619d39fd5d89bb75d63496ce916",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "PERSON": 3,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "CONTROLS_ACCOUNT": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 2
+    },
+    "warnings": []
+  }
+}

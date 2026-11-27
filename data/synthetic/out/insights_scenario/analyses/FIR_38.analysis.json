@@ -1,0 +1,282 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-3C-AB-5930"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL3CAB5930"
+      },
+      {
+        "ai_confidence": 0.999542,
+        "aliases": [
+          "Kabira"
+        ],
+        "canonical_name": "Imran Sheikh",
+        "char_span": [
+          220,
+          232
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999542,
+          "validator": null
+        },
+        "father_name": "Mustaq Sheikh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              232
+            ],
+            "kind": "NAME",
+            "surface": "Imran Sheikh"
+          },
+          {
+            "char_span": [
+              237,
+              243
+            ],
+            "kind": "ALIAS",
+            "surface": "Kabira"
+          },
+          {
+            "char_span": [
+              253,
+              266
+            ],
+            "kind": "FATHER",
+            "surface": "Mustaq Sheikh"
+          },
+          {
+            "char_span": [
+              434,
+              446
+            ],
+            "kind": "NAME",
+            "surface": "Imran Sheikh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.998426,
+        "canonical_name": "Rajesh Kumar",
+        "char_span": [
+          322,
+          334
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998426,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              322,
+              334
+            ],
+            "kind": "NAME",
+            "surface": "Rajesh Kumar"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          484,
+          495
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              484,
+              495
+            ],
+            "kind": "VALUE",
+            "surface": "77109 47775"
+          },
+          {
+            "char_span": [
+              527,
+              538
+            ],
+            "kind": "VALUE",
+            "surface": "77109 47775"
+          },
+          {
+            "char_span": [
+              624,
+              635
+            ],
+            "kind": "VALUE",
+            "surface": "77109 47775"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7710947775"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          556,
+          571
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              556,
+              571
+            ],
+            "kind": "VALUE",
+            "surface": "304711671902299"
+          }
+        ],
+        "type": "IMEI",
+        "value": "304711671902299"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          671,
+          681
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              671,
+              681
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7963605766"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          408,
+          508
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_04",
+        "trigger": "baramad"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          509,
+          587
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_04",
+        "target": "ent_05",
+        "trigger": "hardware IMEI"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          588,
+          696
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_04",
+        "target": "ent_06",
+        "trigger": "seedha"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_38"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 791,
+    "document_hash": "54b8b84d768130c1a2ed4c5c4e3ae6f5ca15f4313ab62a07001474e2809d1b55",
+    "entities_by_type": {
+      "IMEI": 1,
+      "PERSON": 2,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "OWNS_DEVICE": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

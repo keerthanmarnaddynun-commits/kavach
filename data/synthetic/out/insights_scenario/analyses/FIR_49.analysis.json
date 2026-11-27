@@ -1,0 +1,408 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 467,
+        "start": 455,
+        "surface": "Rs. 49,200/-",
+        "value": 49200.0
+      },
+      {
+        "end": 660,
+        "start": 647,
+        "surface": "INR 18,500.00",
+        "value": 18500.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          165,
+          178
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              165,
+              178
+            ],
+            "kind": "VALUE",
+            "surface": "DL-7C-AB-5133"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL7CAB5133"
+      },
+      {
+        "ai_confidence": 0.999667,
+        "aliases": [
+          "मुन्ना"
+        ],
+        "canonical_name": "मनोज रावत",
+        "char_span": [
+          197,
+          206
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999667,
+          "validator": null
+        },
+        "father_name": "किशोरी रावत",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              197,
+              206
+            ],
+            "kind": "NAME",
+            "surface": "मनोज रावत"
+          },
+          {
+            "char_span": [
+              212,
+              218
+            ],
+            "kind": "ALIAS",
+            "surface": "मुन्ना"
+          },
+          {
+            "char_span": [
+              230,
+              241
+            ],
+            "kind": "FATHER",
+            "surface": "किशोरी रावत"
+          },
+          {
+            "char_span": [
+              823,
+              832
+            ],
+            "kind": "NAME",
+            "surface": "मनोज रावत"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          331,
+          341
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              331,
+              341
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          },
+          {
+            "char_span": [
+              866,
+              876
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          },
+          {
+            "char_span": [
+              924,
+              934
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6112805982"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          357,
+          367
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              357,
+              367
+            ],
+            "kind": "VALUE",
+            "surface": "7081219136"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7081219136"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          433,
+          444
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              433,
+              444
+            ],
+            "kind": "VALUE",
+            "surface": "95217729622"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "95217729622"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          478,
+          489
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              478,
+              489
+            ],
+            "kind": "VALUE",
+            "surface": "15329318393"
+          },
+          {
+            "char_span": [
+              547,
+              558
+            ],
+            "kind": "VALUE",
+            "surface": "15329318393"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "15329318393"
+      },
+      {
+        "ai_confidence": 0.99978,
+        "canonical_name": "सलमान मिर्ज़ा",
+        "char_span": [
+          577,
+          590
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.99978,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              577,
+              590
+            ],
+            "kind": "NAME",
+            "surface": "सलमान मिर्ज़ा"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.999506,
+        "canonical_name": "अरविंद स्वामीनाथन",
+        "char_span": [
+          729,
+          746
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999506,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              729,
+              746
+            ],
+            "kind": "NAME",
+            "surface": "अरविंद स्वामीनाथन"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          962,
+          977
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              962,
+              977
+            ],
+            "kind": "VALUE",
+            "surface": "720450533158693"
+          }
+        ],
+        "type": "IMEI",
+        "value": "720450533158693"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          284,
+          390
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "संपर्क"
+      },
+      {
+        "amount": 49200.0,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          391,
+          507
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "अंतरित"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          508,
+          597
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_07",
+        "target": "ent_06",
+        "trigger": "अधिकृत प्रचालक"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          799,
+          887
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "बरामद"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          888,
+          992
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_09",
+        "trigger": "दर्ज किया"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_49"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1083,
+    "document_hash": "f2a6adc48c983799e7e145f22aa6acb82b9f60fad893b46d22c6e3fe9f90c367",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 3,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

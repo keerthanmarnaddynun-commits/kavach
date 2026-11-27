@@ -1,0 +1,390 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 383,
+        "start": 368,
+        "surface": "Rs. 26,479.48/-",
+        "value": 26479.48
+      },
+      {
+        "end": 818,
+        "start": 805,
+        "surface": "INR 15,000.00",
+        "value": 15000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          173,
+          186
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              173,
+              186
+            ],
+            "kind": "VALUE",
+            "surface": "DL-2C-AB-4846"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL2CAB4846"
+      },
+      {
+        "ai_confidence": 0.997301,
+        "aliases": [
+          "Vicky"
+        ],
+        "canonical_name": "Wasim Akram",
+        "char_span": [
+          214,
+          225
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.997301,
+          "validator": null
+        },
+        "father_name": "Shabir Akram",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              214,
+              225
+            ],
+            "kind": "NAME",
+            "surface": "Wasim Akram"
+          },
+          {
+            "char_span": [
+              230,
+              235
+            ],
+            "kind": "ALIAS",
+            "surface": "Vicky"
+          },
+          {
+            "char_span": [
+              245,
+              257
+            ],
+            "kind": "FATHER",
+            "surface": "Shabir Akram"
+          },
+          {
+            "char_span": [
+              349,
+              360
+            ],
+            "kind": "NAME",
+            "surface": "Wasim Akram"
+          },
+          {
+            "char_span": [
+              910,
+              921
+            ],
+            "kind": "NAME",
+            "surface": "Wasim Akram"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          404,
+          420
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              404,
+              420
+            ],
+            "kind": "VALUE",
+            "surface": "9184147623802670"
+          },
+          {
+            "char_span": [
+              452,
+              468
+            ],
+            "kind": "VALUE",
+            "surface": "9184147623802670"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "9184147623802670"
+      },
+      {
+        "ai_confidence": 0.996476,
+        "canonical_name": "Mukhtar Ansari",
+        "char_span": [
+          482,
+          496
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.996476,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              482,
+              496
+            ],
+            "kind": "NAME",
+            "surface": "Mukhtar Ansari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          574,
+          584
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              574,
+              584
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          },
+          {
+            "char_span": [
+              954,
+              964
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          },
+          {
+            "char_span": [
+              998,
+              1008
+            ],
+            "kind": "VALUE",
+            "surface": "8674680715"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8674680715"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          597,
+          607
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              597,
+              607
+            ],
+            "kind": "VALUE",
+            "surface": "6531003309"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6531003309"
+      },
+      {
+        "ai_confidence": 0.994019,
+        "canonical_name": "Dinesh Joshi",
+        "char_span": [
+          668,
+          680
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.994019,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              668,
+              680
+            ],
+            "kind": "NAME",
+            "surface": "Dinesh Joshi"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1022,
+          1037
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              1022,
+              1037
+            ],
+            "kind": "VALUE",
+            "surface": "551680876038599"
+          }
+        ],
+        "type": "IMEI",
+        "value": "551680876038599"
+      }
+    ],
+    "relationships": [
+      {
+        "amount": 26479.48,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          300,
+          441
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "credit karwaya"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          442,
+          528
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_04",
+        "target": "ent_03",
+        "trigger": "handler"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          983,
+          1067
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_08",
+        "trigger": "handset IMEI"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          529,
+          652
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "STRUCTURE"
+      },
+      {
+        "confidence": 0.6,
+        "evidence_char_span": [
+          880,
+          982
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_05",
+        "trigger": "STRUCTURE"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_81"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1163,
+    "document_hash": "9d7822d673c4d3f904749177dc97c30017c83151e4ba23aae5937817d6850e67",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 3,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 2,
+      "cue": 3
+    },
+    "warnings": []
+  }
+}

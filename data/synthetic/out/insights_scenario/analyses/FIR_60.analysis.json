@@ -1,0 +1,140 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          174,
+          187
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              174,
+              187
+            ],
+            "kind": "VALUE",
+            "surface": "DL-6C-AB-3939"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL6CAB3939"
+      },
+      {
+        "ai_confidence": 0.997423,
+        "aliases": [
+          "Hawai"
+        ],
+        "canonical_name": "Suresh Pal",
+        "char_span": [
+          212,
+          222
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.997423,
+          "validator": null
+        },
+        "father_name": "Mohan Pal",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              212,
+              222
+            ],
+            "kind": "NAME",
+            "surface": "Suresh Pal"
+          },
+          {
+            "char_span": [
+              229,
+              234
+            ],
+            "kind": "ALIAS",
+            "surface": "Hawai"
+          },
+          {
+            "char_span": [
+              244,
+              253
+            ],
+            "kind": "FATHER",
+            "surface": "Mohan Pal"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.972686,
+        "canonical_name": "Rameshwar Dayal",
+        "char_span": [
+          359,
+          374
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.972686,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              359,
+              374
+            ],
+            "kind": "NAME",
+            "surface": "Rameshwar Dayal"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_60"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 551,
+    "document_hash": "ab61d382f3dc1f7c695f3e524d394f4498a408f27e94adc47bab1a074c669772",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

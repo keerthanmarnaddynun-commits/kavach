@@ -1,0 +1,421 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 451,
+        "start": 438,
+        "surface": "INR 18,500.00",
+        "value": 18500.0
+      },
+      {
+        "end": 999,
+        "start": 984,
+        "surface": "Rs. 13,388.48/-",
+        "value": 13388.48
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          172,
+          185
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              172,
+              185
+            ],
+            "kind": "VALUE",
+            "surface": "DL-1C-AB-7882"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL1CAB7882"
+      },
+      {
+        "ai_confidence": 0.999376,
+        "aliases": [
+          "Munna"
+        ],
+        "canonical_name": "Manoj Rawat",
+        "char_span": [
+          210,
+          221
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999376,
+          "validator": null
+        },
+        "father_name": "Kishori Rawat",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              210,
+              221
+            ],
+            "kind": "NAME",
+            "surface": "Manoj Rawat"
+          },
+          {
+            "char_span": [
+              228,
+              233
+            ],
+            "kind": "ALIAS",
+            "surface": "Munna"
+          },
+          {
+            "char_span": [
+              243,
+              256
+            ],
+            "kind": "FATHER",
+            "surface": "Kishori Rawat"
+          },
+          {
+            "char_span": [
+              754,
+              765
+            ],
+            "kind": "NAME",
+            "surface": "Manoj Rawat"
+          },
+          {
+            "char_span": [
+              944,
+              955
+            ],
+            "kind": "NAME",
+            "surface": "Manoj Rawat"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99931,
+        "aliases": [
+          "Raju Bhai"
+        ],
+        "canonical_name": "Rajendra Singh",
+        "char_span": [
+          293,
+          307
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.99931,
+          "validator": null
+        },
+        "father_name": "Maheshwar Singh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              293,
+              307
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          },
+          {
+            "char_span": [
+              314,
+              323
+            ],
+            "kind": "ALIAS",
+            "surface": "Raju Bhai"
+          },
+          {
+            "char_span": [
+              333,
+              348
+            ],
+            "kind": "FATHER",
+            "surface": "Maheshwar Singh"
+          },
+          {
+            "char_span": [
+              1126,
+              1140
+            ],
+            "kind": "NAME",
+            "surface": "Rajendra Singh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99657,
+        "canonical_name": "Kuldeep Yadav",
+        "char_span": [
+          516,
+          529
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.99657,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              516,
+              529
+            ],
+            "kind": "NAME",
+            "surface": "Kuldeep Yadav"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          676,
+          686
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              676,
+              686
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          },
+          {
+            "char_span": [
+              791,
+              801
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          },
+          {
+            "char_span": [
+              844,
+              854
+            ],
+            "kind": "VALUE",
+            "surface": "6112805982"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6112805982"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          691,
+          701
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              691,
+              701
+            ],
+            "kind": "VALUE",
+            "surface": "6957015430"
+          }
+        ],
+        "type": "PHONE",
+        "value": "6957015430"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          882,
+          897
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              882,
+              897
+            ],
+            "kind": "VALUE",
+            "surface": "720450533158693"
+          }
+        ],
+        "type": "IMEI",
+        "value": "720450533158693"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1023,
+          1034
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              1023,
+              1034
+            ],
+            "kind": "VALUE",
+            "surface": "53839750530"
+          },
+          {
+            "char_span": [
+              1081,
+              1092
+            ],
+            "kind": "VALUE",
+            "surface": "53839750530"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "53839750530"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          591,
+          702
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "calling sessions"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          703,
+          802
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_05",
+        "trigger": "secured mobile"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          803,
+          898
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_07",
+        "trigger": "device IMEI"
+      },
+      {
+        "amount": 13388.48,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          899,
+          1035
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_02",
+        "target": "ent_08",
+        "trigger": "remitted"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1036,
+          1141
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_03",
+        "target": "ent_08",
+        "trigger": "operated"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_53"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1246,
+    "document_hash": "0e4d644b7cfa5fcecfc9d4d73e0dbe7df8966661e51312b4d2f89ebc5297227e",
+    "entities_by_type": {
+      "ACCOUNT": 1,
+      "IMEI": 1,
+      "PERSON": 3,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

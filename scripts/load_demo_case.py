@@ -30,10 +30,11 @@ def load_demo_case(
     firs_dir: Path | str | None = None,
     analyses_dir: Path | str | None = None,
     csv_dir: Path | str | None = None,
+    case_name: str | None = None,
 ) -> dict[str, Any]:
     """
     Load demo case using the same service functions as the HTTP path.
-    Refuses to run if a case with name 'Demo (synthetic case_demo_v2)' already exists.
+    Refuses to run if a case with the target name already exists.
     """
     if settings is None:
         settings = load_settings()
@@ -42,12 +43,14 @@ def load_demo_case(
     store = Storage(settings)
     audit_log = AuditLog(settings.audit_path)
 
+    target_case_name = case_name or DEMO_CASE_NAME
+
     # 1. Refuse if case already exists
     existing_cases = store.list_cases()
     for c in existing_cases:
-        if c.get("name") == DEMO_CASE_NAME:
+        if c.get("name") == target_case_name:
             raise RuntimeError(
-                f"Case with name {DEMO_CASE_NAME!r} already exists: {c['case_id']}"
+                f"Case with name {target_case_name!r} already exists: {c['case_id']}"
             )
 
     # 2. Pre-validate FIR text files
@@ -129,7 +132,7 @@ def load_demo_case(
         raise ValueError(f"Demo Bank CSV failed validation: {bank_report.errors[:5]}")
 
     # 5. All validation passed. Create case and persist documents, analyses, and CSVs.
-    case = store.create_case(name=DEMO_CASE_NAME, created_by="system", synthetic=True)
+    case = store.create_case(name=target_case_name, created_by="system", synthetic=True)
     case_id = case["case_id"]
 
     for stem, fir_info in preloaded_firs.items():
@@ -181,7 +184,7 @@ def load_demo_case(
         case_id=case_id,
         detail={
             "case_id": case_id,
-            "name": DEMO_CASE_NAME,
+            "name": target_case_name,
             "documents": len(fir_files),
             "cdr_rows": cdr_report.rows,
             "bank_rows": bank_report.rows,
@@ -190,7 +193,7 @@ def load_demo_case(
 
     return {
         "case_id": case_id,
-        "name": DEMO_CASE_NAME,
+        "name": target_case_name,
         "documents": len(fir_files),
         "cdr_rows": cdr_report.rows,
         "bank_rows": bank_report.rows,
@@ -198,11 +201,31 @@ def load_demo_case(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Load reference demo case into KAVACH")
+    parser = argparse.ArgumentParser(description="Load reference demo or scenario case into KAVACH")
     parser.add_argument(
         "--runtime-dir",
         default=None,
         help="Custom runtime directory path",
+    )
+    parser.add_argument(
+        "--case-name",
+        default=None,
+        help="Custom case name",
+    )
+    parser.add_argument(
+        "--csv-dir",
+        default=None,
+        help="Directory containing cdr.csv and bank.csv",
+    )
+    parser.add_argument(
+        "--firs-dir",
+        default=None,
+        help="Directory containing FIR_*.txt files",
+    )
+    parser.add_argument(
+        "--analyses-dir",
+        default=None,
+        help="Directory containing *.analysis.json files",
     )
     args = parser.parse_args()
 
@@ -211,9 +234,15 @@ def main() -> None:
         custom_env = {"KAVACH_RUNTIME_DIR": args.runtime_dir}
     settings = load_settings(custom_env)
 
-    result = load_demo_case(settings)
+    result = load_demo_case(
+        settings,
+        firs_dir=args.firs_dir,
+        analyses_dir=args.analyses_dir,
+        csv_dir=args.csv_dir,
+        case_name=args.case_name,
+    )
     print(
-        f"Demo case loaded successfully: {result['name']} (ID: {result['case_id']}) with "
+        f"Case loaded successfully: {result['name']} (ID: {result['case_id']}) with "
         f"{result['documents']} documents, {result['cdr_rows']} CDR rows, {result['bank_rows']} Bank rows."
     )
 

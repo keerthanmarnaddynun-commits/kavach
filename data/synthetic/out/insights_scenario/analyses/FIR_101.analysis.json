@@ -1,0 +1,93 @@
+{
+  "aux": {
+    "source_doc_id": "FIR_101"
+  },
+  "doc": {
+    "case_id": "INSIGHTS_SCENARIO",
+    "source_doc_id": "FIR_101",
+    "schema_version": "1.1",
+    "entities": [
+      {
+        "id": "ent_01",
+        "type": "PERSON",
+        "canonical_name": "Rajendra Singh",
+        "father_name": "Maheshwar Singh",
+        "role": "SUSPECT",
+        "char_span": [
+          138,
+          152
+        ],
+        "mentions": [
+          {
+            "surface": "Rajendra Singh",
+            "kind": "NAME",
+            "char_span": [
+              138,
+              152
+            ]
+          }
+        ],
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.99,
+          "validator": null
+        },
+        "flags": []
+      },
+      {
+        "id": "ent_02",
+        "type": "PHONE",
+        "value": "9899112233",
+        "char_span": [
+          278,
+          288
+        ],
+        "mentions": [
+          {
+            "surface": "9899112233",
+            "kind": "VALUE",
+            "char_span": [
+              278,
+              288
+            ]
+          }
+        ],
+        "ai_confidence": 0.99,
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": []
+      }
+    ],
+    "relationships": [
+      {
+        "source": "ent_01",
+        "target": "ent_02",
+        "relation": "OWNS_DEVICE",
+        "trigger": "calling connection",
+        "confidence": 0.95,
+        "evidence_char_span": [
+          138,
+          288
+        ]
+      }
+    ]
+  },
+  "info": {
+    "document_hash": "c3ab3e350a67664c8817fc546ba604ee0af89060325edebfbd72ffc8ac624299",
+    "char_count": 310,
+    "amounts_count": 0,
+    "entities_by_type": {
+      "PERSON": 1,
+      "PHONE": 1
+    },
+    "relations_by_label": {
+      "OWNS_DEVICE": 1
+    },
+    "mode": "MODEL",
+    "warnings": []
+  }
+}

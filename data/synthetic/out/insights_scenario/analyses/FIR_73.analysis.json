@@ -1,0 +1,408 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 524,
+        "start": 512,
+        "surface": "Rs. 25,000/-",
+        "value": 25000.0
+      },
+      {
+        "end": 931,
+        "start": 918,
+        "surface": "INR 15,000.00",
+        "value": 15000.0
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          179,
+          192
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              179,
+              192
+            ],
+            "kind": "VALUE",
+            "surface": "DL-8C-AB-8941"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL8CAB8941"
+      },
+      {
+        "ai_confidence": 0.998069,
+        "aliases": [
+          "Postman"
+        ],
+        "canonical_name": "Ramesh Chand",
+        "char_span": [
+          220,
+          232
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998069,
+          "validator": null
+        },
+        "father_name": "Kishan Chand",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              220,
+              232
+            ],
+            "kind": "NAME",
+            "surface": "Ramesh Chand"
+          },
+          {
+            "char_span": [
+              237,
+              244
+            ],
+            "kind": "ALIAS",
+            "surface": "Postman"
+          },
+          {
+            "char_span": [
+              254,
+              266
+            ],
+            "kind": "FATHER",
+            "surface": "Kishan Chand"
+          },
+          {
+            "char_span": [
+              711,
+              723
+            ],
+            "kind": "NAME",
+            "surface": "Ramesh Chand"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          354,
+          365
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              354,
+              365
+            ],
+            "kind": "VALUE",
+            "surface": "74005 04556"
+          },
+          {
+            "char_span": [
+              756,
+              767
+            ],
+            "kind": "VALUE",
+            "surface": "74005 04556"
+          },
+          {
+            "char_span": [
+              806,
+              817
+            ],
+            "kind": "VALUE",
+            "surface": "74005 04556"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7400504556"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          383,
+          393
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              383,
+              393
+            ],
+            "kind": "VALUE",
+            "surface": "8255341928"
+          }
+        ],
+        "type": "PHONE",
+        "value": "8255341928"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          482,
+          496
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              482,
+              496
+            ],
+            "kind": "VALUE",
+            "surface": "44671844617327"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "44671844617327"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          538,
+          554
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              538,
+              554
+            ],
+            "kind": "VALUE",
+            "surface": "6869261796405377"
+          },
+          {
+            "char_span": [
+              608,
+              624
+            ],
+            "kind": "VALUE",
+            "surface": "6869261796405377"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "6869261796405377"
+      },
+      {
+        "ai_confidence": 0.999783,
+        "canonical_name": "Deepak Chauhan",
+        "char_span": [
+          646,
+          660
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999783,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              646,
+              660
+            ],
+            "kind": "NAME",
+            "surface": "Deepak Chauhan"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          835,
+          850
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              835,
+              850
+            ],
+            "kind": "VALUE",
+            "surface": "338692221969378"
+          }
+        ],
+        "type": "IMEI",
+        "value": "338692221969378"
+      },
+      {
+        "ai_confidence": 0.999724,
+        "canonical_name": "Arvind Swaminathan",
+        "char_span": [
+          1006,
+          1024
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999724,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              1006,
+              1024
+            ],
+            "kind": "NAME",
+            "surface": "Arvind Swaminathan"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          309,
+          433
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_03",
+        "target": "ent_04",
+        "trigger": "ke beech"
+      },
+      {
+        "amount": 25000.0,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          434,
+          571
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "credit hui"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          572,
+          675
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_07",
+        "target": "ent_06",
+        "trigger": "authorized signatory"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          676,
+          787
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_03",
+        "trigger": "recovred"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          788,
+          866
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_03",
+        "target": "ent_08",
+        "trigger": "hardware IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_73"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1192,
+    "document_hash": "bc18bc262f302d8a8b04099b6992e524bd50447b6b004f043361d66019dd5343",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 3,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "aux": {
+    "amounts": [],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          174,
+          187
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              174,
+              187
+            ],
+            "kind": "VALUE",
+            "surface": "DL-3C-AB-1243"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL3CAB1243"
+      },
+      {
+        "ai_confidence": 0.99963,
+        "aliases": [
+          "Kabira"
+        ],
+        "canonical_name": "Imran Sheikh",
+        "char_span": [
+          212,
+          224
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.99963,
+          "validator": null
+        },
+        "father_name": "Mustaq Sheikh",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              212,
+              224
+            ],
+            "kind": "NAME",
+            "surface": "Imran Sheikh"
+          },
+          {
+            "char_span": [
+              231,
+              237
+            ],
+            "kind": "ALIAS",
+            "surface": "Kabira"
+          },
+          {
+            "char_span": [
+              247,
+              260
+            ],
+            "kind": "FATHER",
+            "surface": "Mustaq Sheikh"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.998759,
+        "canonical_name": "Rajesh Kumar",
+        "char_span": [
+          380,
+          392
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.998759,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              380,
+              392
+            ],
+            "kind": "NAME",
+            "surface": "Rajesh Kumar"
+          }
+        ],
+        "role": "OFFICER",
+        "type": "PERSON"
+      }
+    ],
+    "relationships": [],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_98"
+  },
+  "info": {
+    "amounts_count": 0,
+    "char_count": 569,
+    "document_hash": "fa0f938611428177d2d8de964694ba8fb3b3ec894041a7bb101583c9bc0ad588",
+    "entities_by_type": {
+      "PERSON": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {},
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 0
+    },
+    "warnings": []
+  }
+}

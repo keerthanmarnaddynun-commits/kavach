@@ -1,0 +1,458 @@
+{
+  "aux": {
+    "amounts": [
+      {
+        "end": 517,
+        "start": 511,
+        "surface": "18,500",
+        "value": 18500.0
+      },
+      {
+        "end": 772,
+        "start": 763,
+        "surface": "22,666.43",
+        "value": 22666.43
+      }
+    ],
+    "dropped": {
+      "alias_no_owner": 0,
+      "father_no_owner": 0
+    },
+    "ifsc": [],
+    "short_name_ambiguous": [],
+    "short_name_merges": 0
+  },
+  "doc": {
+    "case_id": "CASE_DEMO_V2",
+    "entities": [
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          171,
+          184
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_01",
+        "mentions": [
+          {
+            "char_span": [
+              171,
+              184
+            ],
+            "kind": "VALUE",
+            "surface": "DL-5C-AB-4777"
+          }
+        ],
+        "type": "VEHICLE",
+        "value": "DL5CAB4777"
+      },
+      {
+        "ai_confidence": 0.999809,
+        "aliases": [
+          "Sallu"
+        ],
+        "canonical_name": "Salman Mirza",
+        "char_span": [
+          209,
+          221
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.999809,
+          "validator": null
+        },
+        "father_name": "Feroz Mirza",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_02",
+        "mentions": [
+          {
+            "char_span": [
+              209,
+              221
+            ],
+            "kind": "NAME",
+            "surface": "Salman Mirza"
+          },
+          {
+            "char_span": [
+              228,
+              233
+            ],
+            "kind": "ALIAS",
+            "surface": "Sallu"
+          },
+          {
+            "char_span": [
+              243,
+              254
+            ],
+            "kind": "FATHER",
+            "surface": "Feroz Mirza"
+          },
+          {
+            "char_span": [
+              934,
+              946
+            ],
+            "kind": "NAME",
+            "surface": "Salman Mirza"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.904612,
+        "aliases": [
+          "Postman"
+        ],
+        "canonical_name": "Ramesh Chand",
+        "char_span": [
+          292,
+          304
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.904612,
+          "validator": null
+        },
+        "father_name": "Kishan Chand",
+        "flags": [
+          "RULE_ALIAS",
+          "RULE_FATHER"
+        ],
+        "id": "ent_03",
+        "mentions": [
+          {
+            "char_span": [
+              292,
+              304
+            ],
+            "kind": "NAME",
+            "surface": "Ramesh Chand"
+          },
+          {
+            "char_span": [
+              311,
+              318
+            ],
+            "kind": "ALIAS",
+            "surface": "Postman"
+          },
+          {
+            "char_span": [
+              328,
+              340
+            ],
+            "kind": "FATHER",
+            "surface": "Kishan Chand"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99977,
+        "canonical_name": "Kishore Sen",
+        "char_span": [
+          388,
+          399
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.99977,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_04",
+        "mentions": [
+          {
+            "char_span": [
+              388,
+              399
+            ],
+            "kind": "NAME",
+            "surface": "Kishore Sen"
+          }
+        ],
+        "role": "WITNESS",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          613,
+          624
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_05",
+        "mentions": [
+          {
+            "char_span": [
+              613,
+              624
+            ],
+            "kind": "VALUE",
+            "surface": "97737 82639"
+          },
+          {
+            "char_span": [
+              989,
+              1000
+            ],
+            "kind": "VALUE",
+            "surface": "97737 82639"
+          },
+          {
+            "char_span": [
+              1024,
+              1035
+            ],
+            "kind": "VALUE",
+            "surface": "97737 82639"
+          }
+        ],
+        "type": "PHONE",
+        "value": "9773782639"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          659,
+          669
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_06",
+        "mentions": [
+          {
+            "char_span": [
+              659,
+              669
+            ],
+            "kind": "VALUE",
+            "surface": "7963605766"
+          }
+        ],
+        "type": "PHONE",
+        "value": "7963605766"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          726,
+          742
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_07",
+        "mentions": [
+          {
+            "char_span": [
+              726,
+              742
+            ],
+            "kind": "VALUE",
+            "surface": "9184147623802670"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "9184147623802670"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          786,
+          797
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_08",
+        "mentions": [
+          {
+            "char_span": [
+              786,
+              797
+            ],
+            "kind": "VALUE",
+            "surface": "95217729622"
+          },
+          {
+            "char_span": [
+              850,
+              861
+            ],
+            "kind": "VALUE",
+            "surface": "95217729622"
+          }
+        ],
+        "type": "ACCOUNT",
+        "value": "95217729622"
+      },
+      {
+        "ai_confidence": 0.989628,
+        "canonical_name": "Mukhtar Ansari",
+        "char_span": [
+          888,
+          902
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": 0.989628,
+          "validator": null
+        },
+        "flags": [],
+        "id": "ent_09",
+        "mentions": [
+          {
+            "char_span": [
+              888,
+              902
+            ],
+            "kind": "NAME",
+            "surface": "Mukhtar Ansari"
+          }
+        ],
+        "role": "SUSPECT",
+        "type": "PERSON"
+      },
+      {
+        "ai_confidence": 0.99,
+        "char_span": [
+          1076,
+          1091
+        ],
+        "confidence_breakdown": {
+          "context": null,
+          "model": null,
+          "validator": 0.99
+        },
+        "flags": [],
+        "id": "ent_10",
+        "mentions": [
+          {
+            "char_span": [
+              1076,
+              1091
+            ],
+            "kind": "VALUE",
+            "surface": "921465840449970"
+          }
+        ],
+        "type": "IMEI",
+        "value": "921465840449970"
+      }
+    ],
+    "relationships": [
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          560,
+          670
+        ],
+        "relation": "COMMUNICATED_WITH",
+        "source": "ent_05",
+        "target": "ent_06",
+        "trigger": "calling"
+      },
+      {
+        "amount": 22666.43,
+        "confidence": 0.9,
+        "evidence_char_span": [
+          671,
+          798
+        ],
+        "relation": "TRANSFERRED_FUNDS",
+        "source": "ent_07",
+        "target": "ent_08",
+        "trigger": "credited"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          799,
+          903
+        ],
+        "relation": "CONTROLS_ACCOUNT",
+        "source": "ent_09",
+        "target": "ent_08",
+        "trigger": "controlled"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          904,
+          1001
+        ],
+        "relation": "OWNS_DEVICE",
+        "source": "ent_02",
+        "target": "ent_05",
+        "trigger": "in possession of"
+      },
+      {
+        "confidence": 0.9,
+        "evidence_char_span": [
+          1002,
+          1092
+        ],
+        "relation": "ASSOCIATED_IMEI",
+        "source": "ent_05",
+        "target": "ent_10",
+        "trigger": "hardware IMEI"
+      }
+    ],
+    "schema_version": "1.1",
+    "source_doc_id": "FIR_59"
+  },
+  "info": {
+    "amounts_count": 2,
+    "char_count": 1207,
+    "document_hash": "3f9bf4dbe0c80f8bf8109f12cc4957158a89403db1bd26f494b4b25cc8d275ff",
+    "entities_by_type": {
+      "ACCOUNT": 2,
+      "IMEI": 1,
+      "PERSON": 4,
+      "PHONE": 2,
+      "VEHICLE": 1
+    },
+    "mode": "MODEL",
+    "model_name": "Davlan/xlm-roberta-base-ner-hrl",
+    "relations_by_label": {
+      "ASSOCIATED_IMEI": 1,
+      "COMMUNICATED_WITH": 1,
+      "CONTROLS_ACCOUNT": 1,
+      "OWNS_DEVICE": 1,
+      "TRANSFERRED_FUNDS": 1
+    },
+    "relations_by_origin": {
+      "STRUCTURE": 0,
+      "cue": 5
+    },
+    "warnings": []
+  }
+}
