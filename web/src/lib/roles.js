@@ -23,5 +23,9 @@ export function canAnalyze(role) {
 }
 
 export function canBreak(role) {
-  return hasRole(role, "analyst");
+  return hasRole(role, "viewer");
+}
+
+export function canDeleteCase(role) {
+  return hasRole(role, "admin");
 }

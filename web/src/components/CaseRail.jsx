@@ -97,6 +97,33 @@ export function CaseRail({ cases = [], activeCaseId, user, onCaseCreated, defaul
         </div>
       </div>
 
+      <div
+        className="case-rail-all-cases"
+        style={{
+          borderBottom: "1px solid var(--border)",
+          padding: sidebarCollapsed ? "6px 0" : "6px 0",
+        }}
+      >
+        <a
+          href="#/cases"
+          className="all-cases-link"
+          data-testid="all-cases-link"
+          title="All cases"
+          aria-label="All cases"
+          style={{
+            display: "block",
+            padding: sidebarCollapsed ? "6px 0" : "6px 12px",
+            fontSize: "12px",
+            fontWeight: 600,
+            color: "var(--accent)",
+            textDecoration: "none",
+            textAlign: sidebarCollapsed ? "center" : "left",
+          }}
+        >
+          {sidebarCollapsed ? "All" : "All cases"}
+        </a>
+      </div>
+
       {!sidebarCollapsed && creating && (
         <form onSubmit={handleCreateCase} style={{ padding: "8px 10px", borderBottom: "1px solid var(--border)" }}>
           {createError && (

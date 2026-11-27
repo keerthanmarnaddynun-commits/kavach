@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { request } from "../api/client.js";
-import { canAnalyze } from "../lib/roles.js";
+import { canBreak } from "../lib/roles.js";
 import {
   validateBreakGroups,
   buildBreakViewModel,
@@ -38,7 +38,7 @@ export function Break({ caseId, user }) {
   const [clientError, setClientError] = useState(null);
   const [resultData, setResultData] = useState(() => cachedState?.resultData || null);
 
-  const isAnalyst = user && canAnalyze(user.role);
+  const canRunBreak = user && canBreak(user.role);
 
   // Sync state to module cache
   useEffect(() => {
@@ -73,7 +73,7 @@ export function Break({ caseId, user }) {
 
   // Load people for selection and drop any stale members from restored selection
   useEffect(() => {
-    if (!caseId || !isAnalyst) return;
+    if (!caseId || !canRunBreak) return;
     setLoadingPeople(true);
     setPeopleError(null);
 
@@ -90,11 +90,11 @@ export function Break({ caseId, user }) {
       .finally(() => {
         setLoadingPeople(false);
       });
-  }, [caseId, isAnalyst]);
+  }, [caseId, canRunBreak]);
 
   // Compute example list once per case and keep it in module-level in-memory cache
   useEffect(() => {
-    if (!caseId || !isAnalyst) return;
+    if (!caseId || !canRunBreak) return;
 
     if (breakExamplesCache.has(caseId)) {
       setExamples(breakExamplesCache.get(caseId) || []);
@@ -154,7 +154,7 @@ export function Break({ caseId, user }) {
     return () => {
       mounted = false;
     };
-  }, [caseId, isAnalyst, people]);
+  }, [caseId, canRunBreak, people]);
 
   function handleSelectExample(example) {
     if (!example) return;
@@ -236,10 +236,10 @@ export function Break({ caseId, user }) {
     return buildBreakViewModel(resultData);
   }, [resultData]);
 
-  if (!isAnalyst) {
+  if (!canRunBreak) {
     return (
       <div style={{ padding: "16px", backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
-        Requires the analyst role
+        Requires the viewer role
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { hasRole, canUpload, canAnalyze, canBreak } from "./roles.js";
+import { hasRole, canUpload, canAnalyze, canBreak, canDeleteCase } from "./roles.js";
 
 describe("roles permissions", () => {
   it("evaluates role hierarchy correctly", () => {
@@ -16,7 +16,7 @@ describe("roles permissions", () => {
     expect(hasRole("viewer", "admin")).toBe(false);
   });
 
-  it("restricts upload, analyze and break to analyst and admin", () => {
+  it("restricts upload and analyze to analyst and admin", () => {
     expect(canUpload("viewer")).toBe(false);
     expect(canUpload("analyst")).toBe(true);
     expect(canUpload("admin")).toBe(true);
@@ -24,9 +24,19 @@ describe("roles permissions", () => {
     expect(canAnalyze("viewer")).toBe(false);
     expect(canAnalyze("analyst")).toBe(true);
     expect(canAnalyze("admin")).toBe(true);
+  });
 
-    expect(canBreak("viewer")).toBe(false);
+  it("permits viewer, analyst, and admin to run break", () => {
+    expect(canBreak("viewer")).toBe(true);
     expect(canBreak("analyst")).toBe(true);
     expect(canBreak("admin")).toBe(true);
+    expect(canBreak(null)).toBe(false);
+  });
+
+  it("restricts delete case to admin only", () => {
+    expect(canDeleteCase("viewer")).toBe(false);
+    expect(canDeleteCase("analyst")).toBe(false);
+    expect(canDeleteCase("admin")).toBe(true);
+    expect(canDeleteCase(null)).toBe(false);
   });
 });

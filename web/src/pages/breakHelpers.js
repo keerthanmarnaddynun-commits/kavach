@@ -1,6 +1,7 @@
 /**
  * Pure helpers for Network Break Analysis page: group validation and result view-model.
  */
+import { clearCachedInsightView } from "./timelineHelpers.js";
 
 export function validateBreakGroups(groupA = [], groupB = []) {
   if (!Array.isArray(groupA) || groupA.length === 0) {
@@ -309,5 +310,12 @@ export function filterValidPeopleIds(selectedIds = [], people = []) {
   if (!Array.isArray(people) || people.length === 0) return selectedIds;
   const validSet = new Set(people.map((p) => p.id || p.person_id).filter(Boolean));
   return selectedIds.filter((id) => validSet.has(id));
+}
+
+export function clearCaseCaches(caseId) {
+  if (!caseId) return;
+  clearCachedBreakExamples(caseId);
+  clearCachedBreakState(caseId, "all");
+  clearCachedInsightView(caseId);
 }
 

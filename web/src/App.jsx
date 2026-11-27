@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { getToken, clearToken, request, setUnauthorizedHandler } from "./api/client.js";
 import { formatCaseFingerprint, copyToClipboard } from "./lib/format.js";
+import { canDeleteCase } from "./lib/roles.js";
 import { getLimitations } from "./pages/overviewHelpers.js";
 import { Login } from "./pages/Login.jsx";
 import { CaseRail } from "./components/CaseRail.jsx";
+import { DeleteCaseModal } from "./components/DeleteCaseModal.jsx";
 import { Intake } from "./pages/Intake.jsx";
 import { Overview } from "./pages/Overview.jsx";
 import { People } from "./pages/People.jsx";
@@ -26,6 +28,7 @@ export function App() {
   const [activeCaseLeads, setActiveCaseLeads] = useState(null);
   const [showLimits, setShowLimits] = useState(false);
   const [copyStatus, setCopyStatus] = useState(false);
+  const [caseToDelete, setCaseToDelete] = useState(null);
 
   // Register 401 unauthorized handler to clear session
   useEffect(() => {
@@ -75,9 +78,9 @@ export function App() {
     }
   }, [routeCaseId, activeCaseId]);
 
-  // Sync default route #/cases to active case overview once loaded
+  // Sync default route to active case overview only when no route specified
   useEffect(() => {
-    if (activeCaseId && (route === "#/cases" || route === "#/" || !route)) {
+    if (activeCaseId && (route === "#/" || !route)) {
       window.location.hash = `#/case/${activeCaseId}/overview`;
     }
   }, [activeCaseId, route]);
@@ -183,8 +186,16 @@ export function App() {
       {/* Status Bar */}
       <header className="status-bar">
         <div className="status-bar-left">
-          <span className="status-brand">KAVACH</span>
-          {activeCaseId && (
+          <a
+            href="#/cases"
+            className="status-brand"
+            data-testid="status-brand-link"
+            style={{ textDecoration: "none", cursor: "pointer" }}
+            title="All cases"
+          >
+            KAVACH
+          </a>
+          {routeCaseId && activeCaseId && (
             <>
               <span className="status-item">
                 <span>Case:</span>
@@ -263,8 +274,10 @@ export function App() {
                 route={route}
                 subPage={subPage}
                 user={user}
+                cases={cases}
                 activeCase={activeCase}
                 onCaseUpdated={handleCaseUpdated}
+                onDeleteCase={(target) => setCaseToDelete(target)}
                 onLimitsLoaded={(limits) => {
                   if (limits && activeCaseLeads) {
                     // Leads loaded via Overview
@@ -327,13 +340,123 @@ export function App() {
           </div>
         </div>
       )}
+
+      {/* Delete Case Confirmation Modal */}
+      <DeleteCaseModal
+        isOpen={Boolean(caseToDelete)}
+        caseId={caseToDelete?.caseId}
+        caseName={caseToDelete?.caseName}
+        onClose={() => setCaseToDelete(null)}
+        onDeleted={(deletedId) => {
+          setCaseToDelete(null);
+          if (activeCaseId === deletedId) {
+            setActiveCaseId(null);
+            setActiveCase(null);
+            setActiveCaseLeads(null);
+          }
+          loadCases();
+          window.location.hash = "#/cases";
+          setRoute("#/cases");
+        }}
+      />
     </div>
   );
 }
 
-function CaseContentView({ caseId, route, subPage, user, activeCase, onCaseUpdated }) {
-  if (!caseId) {
-    return <div>Select a case from the rail to inspect.</div>;
+export function CaseListView({ cases = [], user, onSelectCase, onDeleteCase }) {
+  return (
+    <div className="case-list-page" style={{ padding: "16px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+        <h2 style={{ margin: 0 }}>Cases ({cases.length})</h2>
+      </div>
+      {cases.length === 0 ? (
+        <div style={{ color: "var(--muted)", fontSize: "13px" }}>No cases available.</div>
+      ) : (
+        <table className="data-table" style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              <th style={{ textAlign: "left", padding: "8px" }}>Case ID</th>
+              <th style={{ textAlign: "left", padding: "8px" }}>Name</th>
+              <th style={{ textAlign: "left", padding: "8px" }}>Created</th>
+              <th style={{ textAlign: "right", padding: "8px" }}>Docs</th>
+              <th style={{ textAlign: "right", padding: "8px" }}>CDR</th>
+              <th style={{ textAlign: "right", padding: "8px" }}>Bank</th>
+              <th style={{ textAlign: "center", padding: "8px" }}>Status</th>
+              <th style={{ textAlign: "center", padding: "8px" }}>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cases.map((c) => (
+              <tr key={c.case_id} style={{ borderBottom: "1px solid var(--border)" }}>
+                <td className="mono" style={{ padding: "8px" }}>
+                  <a href={`#/case/${c.case_id}/overview`} onClick={() => onSelectCase && onSelectCase(c.case_id)}>
+                    {c.case_id}
+                  </a>
+                </td>
+                <td style={{ padding: "8px" }}><strong>{c.name}</strong></td>
+                <td style={{ padding: "8px" }}>{c.created_at ? c.created_at.slice(0, 10) : "-"}</td>
+                <td style={{ textAlign: "right", padding: "8px" }}>{c.counts?.documents || 0}</td>
+                <td style={{ textAlign: "right", padding: "8px" }}>{c.counts?.cdr_rows || 0}</td>
+                <td style={{ textAlign: "right", padding: "8px" }}>{c.counts?.bank_rows || 0}</td>
+                <td style={{ textAlign: "center", padding: "8px" }}>
+                  <span className={`status-badge ${c.analyzed ? "analyzed" : ""}`}>
+                    {c.analyzed ? "Analyzed" : "Not Analyzed"}
+                  </span>
+                </td>
+                <td style={{ textAlign: "center", padding: "8px", whiteSpace: "nowrap" }}>
+                  <a href={`#/case/${c.case_id}/overview`} style={{ marginRight: "8px", fontSize: "11px" }}>
+                    Open
+                  </a>
+                  {user && canDeleteCase(user.role) && (
+                    <button
+                      type="button"
+                      className="delete-case-list-btn"
+                      data-testid={`delete-case-list-btn-${c.case_id}`}
+                      onClick={() => onDeleteCase && onDeleteCase({ caseId: c.case_id, caseName: c.name || c.case_id })}
+                      style={{
+                        fontSize: "11px",
+                        padding: "2px 6px",
+                        color: "var(--danger)",
+                        backgroundColor: "transparent",
+                        border: "1px solid var(--danger)",
+                        borderRadius: "2px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Delete case
+                    </button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
+}
+
+function CaseContentView({
+  caseId,
+  route,
+  subPage,
+  user,
+  cases = [],
+  activeCase,
+  onCaseUpdated,
+  onDeleteCase,
+}) {
+  if (!caseId || route === "#/cases" || route === "#/") {
+    return (
+      <CaseListView
+        cases={cases}
+        user={user}
+        onSelectCase={(id) => {
+          window.location.hash = `#/case/${id}/overview`;
+        }}
+        onDeleteCase={onDeleteCase}
+      />
+    );
   }
 
   // Evidence document route: #/case/<id>/evidence/doc/<doc_id>

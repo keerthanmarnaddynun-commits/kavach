@@ -148,12 +148,20 @@ def test_write_auth_and_permissions(write_app_setup):
     assert r_an_forbid.status_code == 403
 
     # 5. POST /api/cases/{id}/break
-    r_brk_forbid = client.post(
+    # Unauthenticated request is rejected (401)
+    r_brk_unauth = client.post(
+        "/api/cases/C-0000000001/break",
+        json={"group_a": ["P-1"], "group_b": ["P-2"]},
+    )
+    assert r_brk_unauth.status_code == 401
+
+    # Viewer role is permitted through role check (not 403; returns 404 because C-0000000001 does not exist)
+    r_brk_viewer = client.post(
         "/api/cases/C-0000000001/break",
         json={"group_a": ["P-1"], "group_b": ["P-2"]},
         headers=viewer_headers,
     )
-    assert r_brk_forbid.status_code == 403
+    assert r_brk_viewer.status_code == 404
 
 
 def test_full_write_flow_and_analysis(write_app_setup):
@@ -514,6 +522,51 @@ def test_break_endpoint_behavior(write_app_setup):
     )
     assert r_empty.status_code == 422
     assert r_empty.json()["error"]["code"] == "invalid_groups"
+
+    # 4. Viewer allowed on Break -> 200
+    viewer_h = write_app_setup["viewer_headers"]
+    r_brk_viewer = client.post(
+        f"/api/cases/{case_id}/break",
+        json={"group_a": [pid1], "group_b": [pid2]},
+        headers=viewer_h,
+    )
+    assert r_brk_viewer.status_code == 200
+
+    # 5. Admin allowed on Break -> 200
+    app = write_app_setup["app"]
+    app.state.user_store.create_user("admin_user", "AdminSecret123!", "admin")
+    admin_token = create_token(secret=app.state.secret, username="admin_user", role="admin", ttl_seconds=3600)
+    admin_h = {"Authorization": f"Bearer {admin_token}"}
+    r_brk_admin = client.post(
+        f"/api/cases/{case_id}/break",
+        json={"group_a": [pid1], "group_b": [pid2]},
+        headers=admin_h,
+    )
+    assert r_brk_admin.status_code == 200
+
+    # 6. Unauthenticated on Break -> 401
+    r_brk_unauth = client.post(
+        f"/api/cases/{case_id}/break",
+        json={"group_a": [pid1], "group_b": [pid2]},
+    )
+    assert r_brk_unauth.status_code == 401
+
+    # 7. Viewer still refused on upload/analyze/delete -> 403
+    assert client.post(f"/api/cases/{case_id}/documents", data={"name": "x.txt", "text": "foo"}, headers=viewer_h).status_code == 403
+    assert client.post(f"/api/cases/{case_id}/analyze", headers=viewer_h).status_code == 403
+    assert client.delete(f"/api/cases/{case_id}", headers=viewer_h).status_code == 403
+
+    # 8. Audit entry recorded and valid
+    audit = app.state.audit_log
+    ok, count, first_bad = audit.verify()
+    assert ok is True
+    assert first_bad is None
+    entries = audit.read(limit=50, offset=0)
+    break_entries = [e for e in entries if e["action"] == "break_run"]
+    assert len(break_entries) >= 3  # analyst, viewer, admin
+    viewer_entry = next(e for e in break_entries if e["role"] == "viewer")
+    assert viewer_entry["actor"] == "viewer_user"
+    assert viewer_entry["case_id"] == case_id
 
 
 def test_audit_log_verification(write_app_setup):

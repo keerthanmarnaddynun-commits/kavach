@@ -584,6 +584,53 @@ def create_app(
             "latest_jobs": jobs[-5:] if jobs else [],
         }
 
+    @app.delete("/api/cases/{case_id}")
+    @app.delete("/cases/{case_id}")
+    def delete_case_endpoint(
+        case_id: str,
+        current_user: dict[str, Any] = Depends(require_role("admin")),
+    ):
+        """Delete case folder/files, check jobs, append audit log entry (admin only)."""
+        validate_case_id(case_id)
+        case = app.state.store.get_case(case_id)
+        case_name = case.get("name", "")
+
+        active_jobs = [
+            j for j in app.state.job_store.list_for_case(case_id)
+            if j.get("status") in ("queued", "running")
+        ]
+        if active_jobs:
+            job_desc = ", ".join(f"{j.get('job_id')} ({j.get('status')})" for j in active_jobs)
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail=f"Cannot delete case: job(s) currently active: {job_desc}",
+            )
+
+        app.state.store.delete_case(case_id)
+
+        for j in app.state.job_store.list_for_case(case_id):
+            jid = j.get("job_id")
+            if jid:
+                try:
+                    (app.state.job_store.jobs_dir / f"{jid}.json").unlink(missing_ok=True)
+                except OSError:
+                    pass
+
+        audit_entry = app.state.audit_log.append(
+            actor=current_user["username"],
+            role=current_user["role"],
+            action="case_deleted",
+            case_id=case_id,
+            detail={"name": case_name, "case_name": case_name},
+        )
+
+        return {
+            "deleted": True,
+            "case_id": case_id,
+            "name": case_name,
+            "audit_seq": audit_entry.get("seq"),
+        }
+
     @app.get("/api/cases/{case_id}/graph")
     def get_graph_endpoint(
         case_id: str,
@@ -1195,11 +1242,12 @@ def create_app(
             },
         )
 
+    @app.post("/cases/{case_id}/break")
     @app.post("/api/cases/{case_id}/break")
     def run_break_endpoint(
         case_id: str,
         body: BreakRequest,
-        current_user: dict[str, Any] = Depends(require_role("analyst")),
+        current_user: dict[str, Any] = Depends(require_role("viewer")),
     ):
         """Run call-layer courier network break between two person groups."""
         validate_case_id(case_id)

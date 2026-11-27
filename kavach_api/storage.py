@@ -174,6 +174,42 @@ class Store:
         data = json.loads(case_file.read_text(encoding="utf-8"))
         return data
 
+    def delete_case(self, case_id: str) -> dict[str, Any]:
+        """Delete case directory and files safely, preventing path traversal."""
+        cdir = self.case_dir(case_id)
+        case_file = cdir / "case.json"
+        if not cdir.is_dir() or not case_file.is_file():
+            raise CaseNotFoundError(f"Case not found: {case_id}")
+
+        try:
+            case_info = json.loads(case_file.read_text(encoding="utf-8"))
+        except Exception:
+            case_info = {"case_id": case_id, "name": ""}
+
+        base = self.cases_dir.resolve()
+        target = cdir.resolve()
+        if target.parent != base or not target.name.startswith("C-"):
+            raise InvalidIdError(f"Refusing to delete unsafe target: {cdir}")
+
+        with self.case_lock(case_id):
+            import shutil
+            for attempt in range(20):
+                try:
+                    shutil.rmtree(target)
+                    break
+                except (PermissionError, OSError) as e:
+                    if not target.exists():
+                        break
+                    if attempt < 19:
+                        time.sleep(0.05)
+                    else:
+                        raise StorageError(f"Failed to delete case directory {case_id}: {e}")
+
+        with self._global_lock:
+            self._case_locks.pop(case_id, None)
+
+        return case_info
+
     def list_cases(self) -> list[dict[str, Any]]:
         """List all cases with summary statistics."""
         if not self.cases_dir.exists():
